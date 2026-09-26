@@ -1,0 +1,37 @@
+{
+  "catalogTotal": 85,
+  "unitRetailPrice": 199,
+  "retailShelfMSRP": 16915,
+  "buildVerified": 85,
+  "previewHttp200": 85,
+  "diligenceGrade": "L3-SUPABASE-READY",
+  "buildIntegrity": "85/85 PASSED (EXIT 0)",
+  "sectors": {
+    "hospitality": 23,
+    "wealth": 16,
+    "medical": 13,
+    "creative": 12,
+    "automotive": 6,
+    "fitness": 5,
+    "home_services": 5,
+    "heavy_fleet": 5,
+    "total": 85
+  },
+  "archetypes": {
+    "A": 15,
+    "B": 17,
+    "C": 17,
+    "D": 22,
+    "E": 14,
+    "total": 85
+  },
+  "commercialTiers": {
+    "singleBlueprint": 150,
+    "starterUI": 79,
+    "fullStack": 199,
+    "agencyVaultPilot": 1499,
+    "agencyVaultStandard": 1999,
+    "agencyVaultMaster": 2999
+  },
+  "verifiedTimestamp": "2026-09-26T23:00:00Z"
+}

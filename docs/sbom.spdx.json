@@ -1,0 +1,227 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Aura-and-Grid-Fleet-SBOM",
+  "documentNamespace": "https://auraandgrid.com/spdxdocs/aura-and-grid-fleet-sbom-2026-v1.0",
+  "creationInfo": {
+    "creators": [
+      "Tool: Ghost Factory Automated Diligence Engine v2.0",
+      "Organization: ZoMae Media LLC"
+    ],
+    "created": "2026-09-26T22:50:00Z",
+    "licenseListVersion": "3.23"
+  },
+  "documentDescribes": [
+    "SPDXRef-Package-AuraAndGridFleet"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-AuraAndGridFleet",
+      "name": "aura-and-grid-fleet",
+      "versionInfo": "1.0.0",
+      "downloadLocation": "https://github.com/gcoinstash-cmd/aura-and-grid",
+      "filesAnalyzed": false,
+      "homepage": "https://aura-and-grid-showroom.onrender.com",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2026 ZoMae Media LLC",
+      "summary": "85-Blueprint Full-Stack Commercial Web Operating Systems Fleet",
+      "description": "Standardized React 19, TypeScript, Tailwind CSS and Supabase PostgreSQL full-stack blueprints for commercial agencies."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-react",
+      "name": "react",
+      "versionInfo": "18.3.1",
+      "downloadLocation": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://react.dev",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Meta Platforms, Inc. and affiliates.",
+      "supplier": "Organization: Meta Platforms, Inc."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-react-dom",
+      "name": "react-dom",
+      "versionInfo": "18.3.1",
+      "downloadLocation": "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://react.dev",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Meta Platforms, Inc. and affiliates.",
+      "supplier": "Organization: Meta Platforms, Inc."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-vite",
+      "name": "vite",
+      "versionInfo": "5.4.14",
+      "downloadLocation": "https://registry.npmjs.org/vite/-/vite-5.4.14.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://vitejs.dev",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2019-present Yuxi (Evan) You and Vite contributors",
+      "supplier": "Person: Evan You"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tailwindcss",
+      "name": "tailwindcss",
+      "versionInfo": "3.4.17",
+      "downloadLocation": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://tailwindcss.com",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Tailwind Labs, Inc.",
+      "supplier": "Organization: Tailwind Labs, Inc."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-lucide-react",
+      "name": "lucide-react",
+      "versionInfo": "0.475.0",
+      "downloadLocation": "https://registry.npmjs.org/lucide-react/-/lucide-react-0.475.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://lucide.dev",
+      "licenseConcluded": "ISC",
+      "licenseDeclared": "ISC",
+      "copyrightText": "Copyright (c) Lucide Project",
+      "supplier": "Organization: Lucide Project"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-supabase-js",
+      "name": "@supabase/supabase-js",
+      "versionInfo": "2.48.1",
+      "downloadLocation": "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.48.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://supabase.com",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Supabase, Inc.",
+      "supplier": "Organization: Supabase, Inc."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-typescript",
+      "name": "typescript",
+      "versionInfo": "5.7.3",
+      "downloadLocation": "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://www.typescriptlang.org",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright (c) Microsoft Corporation.",
+      "supplier": "Organization: Microsoft Corporation"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-framer-motion",
+      "name": "framer-motion",
+      "versionInfo": "11.18.2",
+      "downloadLocation": "https://registry.npmjs.org/framer-motion/-/framer-motion-11.18.2.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://motion.dev",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Framer B.V.",
+      "supplier": "Organization: Framer B.V."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-clsx",
+      "name": "clsx",
+      "versionInfo": "2.1.1",
+      "downloadLocation": "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/lukeed/clsx",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Luke Edwards",
+      "supplier": "Person: Luke Edwards"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-tailwind-merge",
+      "name": "tailwind-merge",
+      "versionInfo": "2.6.0",
+      "downloadLocation": "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/dcastil/tailwind-merge",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Dany Castillo",
+      "supplier": "Person: Dany Castillo"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-canvas-confetti",
+      "name": "canvas-confetti",
+      "versionInfo": "1.9.4",
+      "downloadLocation": "https://registry.npmjs.org/canvas-confetti/-/canvas-confetti-1.9.4.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/catdad/canvas-confetti",
+      "licenseConcluded": "ISC",
+      "licenseDeclared": "ISC",
+      "copyrightText": "Copyright (c) Kiril Vatev",
+      "supplier": "Person: Kiril Vatev"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-AuraAndGridFleet"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-react"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-react-dom"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-vite"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-tailwindcss"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-lucide-react"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-supabase-js"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-typescript"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-framer-motion"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-clsx"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-tailwind-merge"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-canvas-confetti"
+    }
+  ]
+}

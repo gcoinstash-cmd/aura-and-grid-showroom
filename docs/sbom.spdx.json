@@ -3,13 +3,13 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "Aura-and-Grid-Fleet-SBOM",
-  "documentNamespace": "https://auraandgrid.com/spdxdocs/aura-and-grid-fleet-sbom-2026-v1.0",
+  "documentNamespace": "https://auraandgrid.com/spdxdocs/aura-and-grid-fleet-sbom-2026-v2.0",
   "creationInfo": {
     "creators": [
-      "Tool: Ghost Factory Automated Diligence Engine v2.0",
+      "Tool: Ghost Factory Automated Diligence Engine v2.1",
       "Organization: ZoMae Media LLC"
     ],
-    "created": "2026-09-26T22:50:00Z",
+    "created": "2026-09-26T23:30:00Z",
     "licenseListVersion": "3.23"
   },
   "documentDescribes": [
@@ -27,7 +27,8 @@
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) 2026 ZoMae Media LLC",
       "summary": "85-Blueprint Full-Stack Commercial Web Operating Systems Fleet",
-      "description": "Standardized React 19, TypeScript, Tailwind CSS and Supabase PostgreSQL full-stack blueprints for commercial agencies."
+      "description": "Standardized React, TypeScript, Tailwind CSS, and Supabase PostgreSQL full-stack blueprints with 0% copyleft (GPL) exposure.",
+      "comment": "Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure."
     },
     {
       "SPDXID": "SPDXRef-Package-react",
@@ -39,7 +40,8 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Meta Platforms, Inc. and affiliates.",
-      "supplier": "Organization: Meta Platforms, Inc."
+      "supplier": "Organization: Meta Platforms, Inc.",
+      "description": "Declarative component-based UI framework for web applications."
     },
     {
       "SPDXID": "SPDXRef-Package-react-dom",
@@ -51,7 +53,8 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Meta Platforms, Inc. and affiliates.",
-      "supplier": "Organization: Meta Platforms, Inc."
+      "supplier": "Organization: Meta Platforms, Inc.",
+      "description": "DOM rendering engine for React applications."
     },
     {
       "SPDXID": "SPDXRef-Package-vite",
@@ -63,7 +66,8 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) 2019-present Yuxi (Evan) You and Vite contributors",
-      "supplier": "Person: Evan You"
+      "supplier": "Person: Evan You",
+      "description": "Next Generation Frontend Tooling with native ES modules and fast HMR."
     },
     {
       "SPDXID": "SPDXRef-Package-tailwindcss",
@@ -75,7 +79,34 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Tailwind Labs, Inc.",
-      "supplier": "Organization: Tailwind Labs, Inc."
+      "supplier": "Organization: Tailwind Labs, Inc.",
+      "description": "Utility-first CSS framework for rapid and modular UI development."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-postcss",
+      "name": "postcss",
+      "versionInfo": "8.5.1",
+      "downloadLocation": "https://registry.npmjs.org/postcss/-/postcss-8.5.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://postcss.org",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Andrey Sitnik",
+      "supplier": "Person: Andrey Sitnik",
+      "description": "Tool for transforming styles with JS plugins across modern CSS pipelines."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-autoprefixer",
+      "name": "autoprefixer",
+      "versionInfo": "10.4.20",
+      "downloadLocation": "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.20.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/postcss/autoprefixer",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Andrey Sitnik",
+      "supplier": "Person: Andrey Sitnik",
+      "description": "PostCSS plugin to parse CSS and add vendor prefixes to CSS rules."
     },
     {
       "SPDXID": "SPDXRef-Package-lucide-react",
@@ -87,7 +118,8 @@
       "licenseConcluded": "ISC",
       "licenseDeclared": "ISC",
       "copyrightText": "Copyright (c) Lucide Project",
-      "supplier": "Organization: Lucide Project"
+      "supplier": "Organization: Lucide Project",
+      "description": "Clean, consistent icon system for React applications."
     },
     {
       "SPDXID": "SPDXRef-Package-supabase-js",
@@ -99,7 +131,8 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Supabase, Inc.",
-      "supplier": "Organization: Supabase, Inc."
+      "supplier": "Organization: Supabase, Inc.",
+      "description": "Isomorphic JavaScript client for Supabase PostgreSQL and authentication."
     },
     {
       "SPDXID": "SPDXRef-Package-typescript",
@@ -111,19 +144,8 @@
       "licenseConcluded": "Apache-2.0",
       "licenseDeclared": "Apache-2.0",
       "copyrightText": "Copyright (c) Microsoft Corporation.",
-      "supplier": "Organization: Microsoft Corporation"
-    },
-    {
-      "SPDXID": "SPDXRef-Package-framer-motion",
-      "name": "framer-motion",
-      "versionInfo": "11.18.2",
-      "downloadLocation": "https://registry.npmjs.org/framer-motion/-/framer-motion-11.18.2.tgz",
-      "filesAnalyzed": false,
-      "homepage": "https://motion.dev",
-      "licenseConcluded": "MIT",
-      "licenseDeclared": "MIT",
-      "copyrightText": "Copyright (c) Framer B.V.",
-      "supplier": "Organization: Framer B.V."
+      "supplier": "Organization: Microsoft Corporation",
+      "description": "Typed superset of JavaScript that compiles to plain JavaScript."
     },
     {
       "SPDXID": "SPDXRef-Package-clsx",
@@ -135,7 +157,8 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Luke Edwards",
-      "supplier": "Person: Luke Edwards"
+      "supplier": "Person: Luke Edwards",
+      "description": "Tiny utility for constructing className strings conditionally."
     },
     {
       "SPDXID": "SPDXRef-Package-tailwind-merge",
@@ -147,7 +170,47 @@
       "licenseConcluded": "MIT",
       "licenseDeclared": "MIT",
       "copyrightText": "Copyright (c) Dany Castillo",
-      "supplier": "Person: Dany Castillo"
+      "supplier": "Person: Dany Castillo",
+      "description": "Merge Tailwind CSS classes in JS without style conflict issues."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-framer-motion",
+      "name": "framer-motion",
+      "versionInfo": "11.18.2",
+      "downloadLocation": "https://registry.npmjs.org/framer-motion/-/framer-motion-11.18.2.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://motion.dev",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Framer B.V.",
+      "supplier": "Organization: Framer B.V.",
+      "description": "Production-ready motion and physics animation library for React."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-vitejs-plugin-react",
+      "name": "@vitejs/plugin-react",
+      "versionInfo": "4.3.4",
+      "downloadLocation": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.3.4.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/vitejs/vite-plugin-react",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Vite Contributors",
+      "supplier": "Organization: Vite Contributors",
+      "description": "Official Vite plugin providing Fast Refresh with Babel and JSX transforms."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-esbuild",
+      "name": "esbuild",
+      "versionInfo": "0.25.0",
+      "downloadLocation": "https://registry.npmjs.org/esbuild/-/esbuild-0.25.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://esbuild.github.io",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) Evan Wallace",
+      "supplier": "Person: Evan Wallace",
+      "description": "Extremely fast JavaScript and TypeScript bundler written in Go."
     },
     {
       "SPDXID": "SPDXRef-Package-canvas-confetti",
@@ -159,7 +222,47 @@
       "licenseConcluded": "ISC",
       "licenseDeclared": "ISC",
       "copyrightText": "Copyright (c) Kiril Vatev",
-      "supplier": "Person: Kiril Vatev"
+      "supplier": "Person: Kiril Vatev",
+      "description": "High performance on-demand HTML5 canvas confetti celebration animations."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-types-react",
+      "name": "@types/react",
+      "versionInfo": "18.3.18",
+      "downloadLocation": "https://registry.npmjs.org/@types/react/-/react-18.3.18.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) DefinitelyTyped contributors",
+      "supplier": "Organization: DefinitelyTyped",
+      "description": "TypeScript definitions for React."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-types-react-dom",
+      "name": "@types/react-dom",
+      "versionInfo": "18.3.5",
+      "downloadLocation": "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.3.5.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) DefinitelyTyped contributors",
+      "supplier": "Organization: DefinitelyTyped",
+      "description": "TypeScript definitions for React-DOM."
+    },
+    {
+      "SPDXID": "SPDXRef-Package-types-node",
+      "name": "@types/node",
+      "versionInfo": "22.14.0",
+      "downloadLocation": "https://registry.npmjs.org/@types/node/-/node-22.14.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) DefinitelyTyped contributors",
+      "supplier": "Organization: DefinitelyTyped",
+      "description": "TypeScript definitions for Node.js standard libraries."
     }
   ],
   "relationships": [
@@ -191,6 +294,16 @@
     {
       "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
       "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-postcss"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-autoprefixer"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-Package-lucide-react"
     },
     {
@@ -206,11 +319,6 @@
     {
       "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
       "relationshipType": "DEPENDS_ON",
-      "relatedSpdxElement": "SPDXRef-Package-framer-motion"
-    },
-    {
-      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
-      "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-Package-clsx"
     },
     {
@@ -221,7 +329,37 @@
     {
       "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
       "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-framer-motion"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-vitejs-plugin-react"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-esbuild"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-Package-canvas-confetti"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-types-react"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-types-react-dom"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-AuraAndGridFleet",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-types-node"
     }
   ]
 }

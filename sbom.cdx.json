@@ -1,17 +1,17 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "version": 1,
+  "serialNumber": "urn:uuid:e2f4a6c8-10b2-4d3e-8f5a-9c7d1e3b5a7f",
+  "version": 2,
   "metadata": {
-    "timestamp": "2026-09-26T22:50:00Z",
+    "timestamp": "2026-09-26T23:30:00Z",
     "tools": {
       "components": [
         {
           "type": "application",
           "author": "ZoMae Media LLC",
           "name": "Ghost Factory Diligence Engine",
-          "version": "2.0.0"
+          "version": "2.1.0"
         }
       ]
     },
@@ -20,7 +20,7 @@
       "bom-ref": "pkg:npm/aura-and-grid-fleet@1.0.0",
       "name": "aura-and-grid-fleet",
       "version": "1.0.0",
-      "description": "85 Single-Tenant Full-Stack Operating System Blueprints with Turnkey Supabase Schemas",
+      "description": "85 Single-Tenant Full-Stack Operating System Blueprints with Turnkey Supabase Schemas. Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure.",
       "licenses": [
         {
           "license": {
@@ -36,7 +36,7 @@
       "bom-ref": "pkg:npm/react@18.3.1",
       "name": "react",
       "version": "18.3.1",
-      "description": "React is a JavaScript library for building user interfaces.",
+      "description": "Declarative component-based UI framework for web applications.",
       "purl": "pkg:npm/react@18.3.1",
       "licenses": [
         {
@@ -54,7 +54,7 @@
       "bom-ref": "pkg:npm/react-dom@18.3.1",
       "name": "react-dom",
       "version": "18.3.1",
-      "description": "React package for working with the DOM.",
+      "description": "DOM rendering engine for React applications.",
       "purl": "pkg:npm/react-dom@18.3.1",
       "licenses": [
         {
@@ -72,7 +72,7 @@
       "bom-ref": "pkg:npm/vite@5.4.14",
       "name": "vite",
       "version": "5.4.14",
-      "description": "Native-ESM powered web dev build tool",
+      "description": "Next Generation Frontend Tooling with native ES modules and fast HMR.",
       "purl": "pkg:npm/vite@5.4.14",
       "licenses": [
         {
@@ -90,7 +90,7 @@
       "bom-ref": "pkg:npm/tailwindcss@3.4.17",
       "name": "tailwindcss",
       "version": "3.4.17",
-      "description": "A utility-first CSS framework for rapid UI development.",
+      "description": "Utility-first CSS framework for rapid and modular UI development.",
       "purl": "pkg:npm/tailwindcss@3.4.17",
       "licenses": [
         {
@@ -105,10 +105,46 @@
     },
     {
       "type": "library",
+      "bom-ref": "pkg:npm/postcss@8.5.1",
+      "name": "postcss",
+      "version": "8.5.1",
+      "description": "Tool for transforming styles with JS plugins across modern CSS pipelines.",
+      "purl": "pkg:npm/postcss@8.5.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Andrey Sitnik"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/autoprefixer@10.4.20",
+      "name": "autoprefixer",
+      "version": "10.4.20",
+      "description": "PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.",
+      "purl": "pkg:npm/autoprefixer@10.4.20",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Andrey Sitnik"
+      }
+    },
+    {
+      "type": "library",
       "bom-ref": "pkg:npm/lucide-react@0.475.0",
       "name": "lucide-react",
       "version": "0.475.0",
-      "description": "Beautiful & consistent icon toolkit made by the community.",
+      "description": "Clean, consistent icon system for React applications.",
       "purl": "pkg:npm/lucide-react@0.475.0",
       "licenses": [
         {
@@ -126,7 +162,7 @@
       "bom-ref": "pkg:npm/@supabase/supabase-js@2.48.1",
       "name": "@supabase/supabase-js",
       "version": "2.48.1",
-      "description": "Isomorphic JavaScript client for Supabase.",
+      "description": "Isomorphic JavaScript client for Supabase PostgreSQL and authentication.",
       "purl": "pkg:npm/@supabase/supabase-js@2.48.1",
       "licenses": [
         {
@@ -144,7 +180,7 @@
       "bom-ref": "pkg:npm/typescript@5.7.3",
       "name": "typescript",
       "version": "5.7.3",
-      "description": "TypeScript is a language for application scale JavaScript development",
+      "description": "Typed superset of JavaScript that compiles to plain JavaScript.",
       "purl": "pkg:npm/typescript@5.7.3",
       "licenses": [
         {
@@ -159,28 +195,10 @@
     },
     {
       "type": "library",
-      "bom-ref": "pkg:npm/framer-motion@11.18.2",
-      "name": "framer-motion",
-      "version": "11.18.2",
-      "description": "A production-ready motion library for React",
-      "purl": "pkg:npm/framer-motion@11.18.2",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "supplier": {
-        "name": "Framer B.V."
-      }
-    },
-    {
-      "type": "library",
       "bom-ref": "pkg:npm/clsx@2.1.1",
       "name": "clsx",
       "version": "2.1.1",
-      "description": "A tiny (228B) utility for constructing className strings conditionally",
+      "description": "Tiny utility for constructing className strings conditionally.",
       "purl": "pkg:npm/clsx@2.1.1",
       "licenses": [
         {
@@ -198,7 +216,7 @@
       "bom-ref": "pkg:npm/tailwind-merge@2.6.0",
       "name": "tailwind-merge",
       "version": "2.6.0",
-      "description": "Merge Tailwind CSS classes without style conflicts",
+      "description": "Merge Tailwind CSS classes in JS without style conflict issues.",
       "purl": "pkg:npm/tailwind-merge@2.6.0",
       "licenses": [
         {
@@ -210,23 +228,132 @@
       "supplier": {
         "name": "Dany Castillo"
       }
-    }
-  ],
-  "dependencies": [
+    },
     {
-      "ref": "pkg:npm/aura-and-grid-fleet@1.0.0",
-      "dependsOn": [
-        "pkg:npm/react@18.3.1",
-        "pkg:npm/react-dom@18.3.1",
-        "pkg:npm/vite@5.4.14",
-        "pkg:npm/tailwindcss@3.4.17",
-        "pkg:npm/lucide-react@0.475.0",
-        "pkg:npm/@supabase/supabase-js@2.48.1",
-        "pkg:npm/typescript@5.7.3",
-        "pkg:npm/framer-motion@11.18.2",
-        "pkg:npm/clsx@2.1.1",
-        "pkg:npm/tailwind-merge@2.6.0"
-      ]
+      "type": "library",
+      "bom-ref": "pkg:npm/framer-motion@11.18.2",
+      "name": "framer-motion",
+      "version": "11.18.2",
+      "description": "Production-ready motion and physics animation library for React.",
+      "purl": "pkg:npm/framer-motion@11.18.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Framer B.V."
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/@vitejs/plugin-react@4.3.4",
+      "name": "@vitejs/plugin-react",
+      "version": "4.3.4",
+      "description": "Official Vite plugin providing Fast Refresh with Babel and JSX transforms.",
+      "purl": "pkg:npm/@vitejs/plugin-react@4.3.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Vite Contributors"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/esbuild@0.25.0",
+      "name": "esbuild",
+      "version": "0.25.0",
+      "description": "Extremely fast JavaScript and TypeScript bundler written in Go.",
+      "purl": "pkg:npm/esbuild@0.25.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Evan Wallace"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/canvas-confetti@1.9.4",
+      "name": "canvas-confetti",
+      "version": "1.9.4",
+      "description": "High performance on-demand HTML5 canvas confetti celebration animations.",
+      "purl": "pkg:npm/canvas-confetti@1.9.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Kiril Vatev"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/@types/react@18.3.18",
+      "name": "@types/react",
+      "version": "18.3.18",
+      "description": "TypeScript definitions for React.",
+      "purl": "pkg:npm/@types/react@18.3.18",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "DefinitelyTyped"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/@types/react-dom@18.3.5",
+      "name": "@types/react-dom",
+      "version": "18.3.5",
+      "description": "TypeScript definitions for React-DOM.",
+      "purl": "pkg:npm/@types/react-dom@18.3.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "DefinitelyTyped"
+      }
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/@types/node@22.14.0",
+      "name": "@types/node",
+      "version": "22.14.0",
+      "description": "TypeScript definitions for Node.js standard libraries.",
+      "purl": "pkg:npm/@types/node@22.14.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "DefinitelyTyped"
+      }
     }
   ]
 }

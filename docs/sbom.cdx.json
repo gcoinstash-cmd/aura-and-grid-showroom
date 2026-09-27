@@ -20,7 +20,7 @@
       "bom-ref": "pkg:npm/aura-and-grid-fleet@1.0.0",
       "name": "aura-and-grid-fleet",
       "version": "1.0.0",
-      "description": "85 Single-Tenant Full-Stack Operating System Blueprints with Turnkey Supabase Schemas and 0% Copyleft Risk",
+      "description": "85 Single-Tenant Full-Stack Operating System Blueprints with Turnkey Supabase Schemas. Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure.",
       "licenses": [
         {
           "license": {

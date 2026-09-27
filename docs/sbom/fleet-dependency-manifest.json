@@ -1,0 +1,273 @@
+{
+  "fleetScope": "85 Full-Stack Operating System Blueprints",
+  "auditDate": "2026-09-26",
+  "copyleftExposure": "0% GPL / 0% AGPL / 0% LGPL",
+  "legalDeclaration": "Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure.",
+  "totalUniquePackages": 33,
+  "packages": [
+    {
+      "name": "@vitejs/plugin-react",
+      "versions": "^5.0.4, ^4.2.1, ^4.3.1",
+      "count": 81,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "lucide-react",
+      "versions": "^0.546.0, ^0.344.0",
+      "count": 81,
+      "license": "ISC",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "react",
+      "versions": "^19.0.1, ^18.2.0, ^18.3.1",
+      "count": 81,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "react-dom",
+      "versions": "^19.0.1, ^18.2.0, ^18.3.1",
+      "count": 81,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "vite",
+      "versions": "^6.2.3, ^6.2.0, ^5.1.6, ^5.4.2",
+      "count": 81,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "typescript",
+      "versions": "~5.8.2, ^5.2.2, ^5.5.3",
+      "count": 81,
+      "license": "Apache-2.0",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "autoprefixer",
+      "versions": "^10.4.21, ^10.4.18",
+      "count": 58,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "tailwindcss",
+      "versions": "^4.1.14, ^3.4.1",
+      "count": 58,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@google/genai",
+      "versions": "^2.4.0, ^1.29.0",
+      "count": 53,
+      "license": "Apache-2.0",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "versions": "^4.1.14",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "express",
+      "versions": "^4.21.2",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "dotenv",
+      "versions": "^17.2.3",
+      "count": 53,
+      "license": "BSD-2-Clause",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "motion",
+      "versions": "^12.23.24",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@types/node",
+      "versions": "^22.14.0",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "tsx",
+      "versions": "^4.21.0",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@types/express",
+      "versions": "^4.17.21",
+      "count": 53,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "esbuild",
+      "versions": "^0.25.0",
+      "count": 52,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@types/react",
+      "versions": "^18.2.66, ^18.3.5",
+      "count": 28,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@types/react-dom",
+      "versions": "^18.2.22, ^18.3.0",
+      "count": 28,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "clsx",
+      "versions": "^2.1.1",
+      "count": 6,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "tailwind-merge",
+      "versions": "^2.5.2, ^3.6.0",
+      "count": 6,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "postcss",
+      "versions": "^8.4.35",
+      "count": 5,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "firebase",
+      "versions": "^12.14.0",
+      "count": 3,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "prop-types",
+      "versions": "^15.8.1",
+      "count": 2,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "versions": "^2.108.2",
+      "count": 2,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "jspdf",
+      "versions": "^4.2.1",
+      "count": 2,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@vis.gl/react-google-maps",
+      "versions": "^1.8.3",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "bignumber.js",
+      "versions": "^11.1.4",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "pg",
+      "versions": "^8.22.0",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "zustand",
+      "versions": "^5.0.14",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "@types/pg",
+      "versions": "^8.20.0",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "html2canvas",
+      "versions": "^1.4.1",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    },
+    {
+      "name": "recharts",
+      "versions": "^3.8.1",
+      "count": 1,
+      "license": "MIT",
+      "copyleftRisk": "0% (Permissive)",
+      "institutionalStatus": "Diligence Approved — Permissive Commercial Redistribution"
+    }
+  ]
+}

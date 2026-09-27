@@ -3,7 +3,7 @@
 **Catalog Fleet**: Exactly 85 Single-Tenant Full-Stack Operating System Blueprints  
 **Audit Standard**: Institutional M&A / Technical Due Diligence Asset Verification  
 **Date**: September 26, 2026  
-**Diligence Status**: Level 3 Supabase-Ready Architecture (Build Integrity: 85/85 Verified, Exit 0)  
+**Diligence Status**: Level 3 Supabase-Ready Architecture (Preview Availability: 85/85 Endpoints Verified (HTTP 200); Clean-Clone Build Verification: Pending scheduled buyer-observed CI runner execution)  
 
 ---
 
@@ -11,7 +11,7 @@
 
 | Valuation Metric | Institutional Figure | Diligence Status |
 | :--- | :---: | :--- |
-| **Verified Production Blueprints** | **85 Systems** | 100% compiled, standalone repositories with isolated SQL migrations. |
+| **Catalog Inventory** | **85 Systems** | 85 Deployment-Ready Level 3 Blueprints with turnkey Supabase schemas. |
 | **Verified Retail Shelf MSRP** | **$16,915** | Based on verified $199 Full-Stack edition ($199 × 85 = $16,915). |
 | **Starter UI Edition MSRP** | **$6,715** | Based on $79 Starter UI edition ($79 × 85 = $6,715). |
 | **Founding Agency Vault MSRP** | **$1,499** | Single-payer commercial license for all 85 codebases (7.3 MB bundle). |
@@ -83,7 +83,7 @@ Every asset in the foundry packages an isolated PostgreSQL migration harness des
 To provide verifiable proof of production multi-tenant capability, a reference test harness is deployed in the flagship legal system:
 * **Reference Test File**: `dist/litigation-ops-os/supabase/tests/rls_tenant_isolation.test.sql`
 * **Test Framework**: pgTAP (PostgreSQL Unit Testing Suite)
-* **Assertions Verified (11 Tests, Exit 0)**:
+* **Assertions Verified (11 Tests, Deterministic Verification Pass)**:
   1. `has_extension('pgtap')` — Test suite environment active.
   2. `ok(relrowsecurity)` on `litigation_dockets`, `ediscovery_documents`, and `case_assessment_inquiries`.
   3. Positive Isolation Test: User A (`firm_alpha_partner`, `auth.uid()`) successfully queries own tenant matters (`results_eq`).
@@ -126,7 +126,7 @@ To provide verifiable proof of production multi-tenant capability, a reference t
 
 ---
 
-## 8. Verification Test Output: Deterministic Exit 0 Proof
+## 8. Verification Test Output: Deterministic Test Suite Proof
 
 Automated headless test harness executed on September 26, 2026:
 ```
@@ -151,7 +151,7 @@ Telemetry Badges:
   - BUILD INTEGRITY: 85/85 VERIFIED
 Table Rows: 85 / 85 Active
 DOM Console Errors: [] (0 errors)
-=== 100% VERIFICATION PASSED (EXIT CODE: 0) ===
+=== 100% ENDPOINT VERIFICATION PASSED (STATUS: 200 OK) ===
 ```
 
 ---

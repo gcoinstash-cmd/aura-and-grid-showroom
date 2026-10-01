@@ -8166,6 +8166,29 @@
       </div>
     </div>
 
+    <!-- Showroom Pagination & Fleet Navigation (24 Blueprints / Page) -->
+    <div id="paginationContainer" class="mt-12 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs border-t border-white/5 pt-8">
+      <div id="paginationInfo" class="text-neutral-400 text-center md:text-left">
+        Showing <span id="pageRangeStart" class="text-white font-bold">1</span>–<span id="pageRangeEnd" class="text-white font-bold">24</span> of <span id="pageTotalCount" class="text-gold font-bold">110</span> Catalog Blueprints
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="prevPageBtn" class="px-3.5 py-2 rounded-lg bg-card hairline-border text-neutral-300 hover:text-white hover:border-gold/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-semibold">
+          ‹ Previous
+        </button>
+        <div id="paginationPages" class="flex items-center gap-1.5 flex-wrap justify-center">
+          <!-- Dynamically populated page buttons -->
+        </div>
+        <button id="nextPageBtn" class="px-3.5 py-2 rounded-lg bg-card hairline-border text-neutral-300 hover:text-white hover:border-gold/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-semibold">
+          Next ›
+        </button>
+      </div>
+      <div>
+        <button id="viewAllToggle" class="px-4 py-2 rounded-lg bg-card hairline-border text-neutral-400 hover:text-gold hover:border-gold/40 transition-all">
+          Show All (110)
+        </button>
+      </div>
+    </div>
+
     <div id="noResults" class="hidden text-center py-20">
       <p class="text-neutral-500 font-mono text-sm">No systems match your filter criteria.</p>
     </div>
@@ -8310,35 +8333,131 @@
 
   <!-- ================= CLIENT SCRIPT ================= -->
   <script>
+    const PAGE_SIZE = 24;
+    let currentPage = 1;
+    let viewAll = false;
     let activeSector = 'all';
     let searchQuery = '';
 
     const noResults = document.getElementById('noResults');
+    const paginationContainer = document.getElementById('paginationContainer');
+    const paginationPages = document.getElementById('paginationPages');
+    const prevPageBtn = document.getElementById('prevPageBtn');
+    const nextPageBtn = document.getElementById('nextPageBtn');
+    const viewAllToggle = document.getElementById('viewAllToggle');
+    const pageRangeStart = document.getElementById('pageRangeStart');
+    const pageRangeEnd = document.getElementById('pageRangeEnd');
+    const pageTotalCount = document.getElementById('pageTotalCount');
 
     function filterCards() {
-      let visibleCount = 0;
-      const cards = document.querySelectorAll('#productsGrid .product-card');
-      cards.forEach(card => {
+      const cards = Array.from(document.querySelectorAll('#productsGrid .product-card'));
+      
+      const matchingCards = cards.filter(card => {
         const sector = card.getAttribute('data-sector') || '';
         const name = (card.getAttribute('data-name') || '').toLowerCase();
         const cat = (card.getAttribute('data-category') || '').toLowerCase();
         
         const matchesSector = (activeSector === 'all' || sector === activeSector);
         const matchesSearch = (!searchQuery || name.includes(searchQuery) || cat.includes(searchQuery) || sector.toLowerCase().includes(searchQuery));
-        
-        if (matchesSector && matchesSearch) {
-          card.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('hidden');
-        }
+        return matchesSector && matchesSearch;
       });
 
-      if (visibleCount === 0) {
+      const totalMatches = matchingCards.length;
+
+      if (totalMatches === 0) {
+        cards.forEach(c => c.classList.add('hidden'));
         noResults.classList.remove('hidden');
-      } else {
-        noResults.classList.add('hidden');
+        if (paginationContainer) paginationContainer.classList.add('hidden');
+        return;
       }
+
+      noResults.classList.remove('hidden');
+      if (paginationContainer) paginationContainer.classList.remove('hidden');
+
+      const totalPages = Math.ceil(totalMatches / PAGE_SIZE);
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      // Hide all cards first
+      cards.forEach(card => card.classList.add('hidden'));
+
+      if (viewAll) {
+        matchingCards.forEach(card => card.classList.remove('hidden'));
+        if (pageRangeStart) pageRangeStart.innerText = '1';
+        if (pageRangeEnd) pageRangeEnd.innerText = totalMatches.toString();
+        if (pageTotalCount) pageTotalCount.innerText = totalMatches.toString();
+        if (paginationPages) paginationPages.innerHTML = '';
+        if (prevPageBtn) prevPageBtn.disabled = true;
+        if (nextPageBtn) nextPageBtn.disabled = true;
+        if (viewAllToggle) viewAllToggle.innerText = 'Paginate (24/pg)';
+      } else {
+        const startIdx = (currentPage - 1) * PAGE_SIZE;
+        const endIdx = Math.min(startIdx + PAGE_SIZE, totalMatches);
+        
+        for (let i = startIdx; i < endIdx; i++) {
+          matchingCards[i].classList.remove('hidden');
+        }
+
+        if (pageRangeStart) pageRangeStart.innerText = (startIdx + 1).toString();
+        if (pageRangeEnd) pageRangeEnd.innerText = endIdx.toString();
+        if (pageTotalCount) pageTotalCount.innerText = totalMatches.toString();
+
+        if (prevPageBtn) prevPageBtn.disabled = (currentPage === 1);
+        if (nextPageBtn) nextPageBtn.disabled = (currentPage === totalPages);
+        if (viewAllToggle) viewAllToggle.innerText = 'Show All (' + totalMatches + ')';
+
+        renderPaginationControls(totalPages);
+      }
+    }
+
+    function renderPaginationControls(totalPages) {
+      if (!paginationPages) return;
+      paginationPages.innerHTML = '';
+      if (totalPages <= 1) return;
+
+      for (let p = 1; p <= totalPages; p++) {
+        const btn = document.createElement('button');
+        btn.innerText = p.toString();
+        btn.className = 'w-8 h-8 rounded text-xs font-mono font-bold transition-all ' + (
+          p === currentPage
+            ? 'bg-gold text-black shadow-md'
+            : 'bg-card hairline-border text-neutral-400 hover:text-white hover:border-gold/40'
+        );
+        btn.addEventListener('click', () => {
+          currentPage = p;
+          filterCards();
+          const catEl = document.getElementById('catalog');
+          if (catEl) catEl.scrollIntoView({ behavior: 'smooth' });
+        });
+        paginationPages.appendChild(btn);
+      }
+    }
+
+    if (prevPageBtn) {
+      prevPageBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          filterCards();
+          const catEl = document.getElementById('catalog');
+          if (catEl) catEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    if (nextPageBtn) {
+      nextPageBtn.addEventListener('click', () => {
+        currentPage++;
+        filterCards();
+        const catEl = document.getElementById('catalog');
+        if (catEl) catEl.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    if (viewAllToggle) {
+      viewAllToggle.addEventListener('click', () => {
+        viewAll = !viewAll;
+        filterCards();
+      });
     }
 
     // Filter Buttons
@@ -8351,6 +8470,7 @@
         btn.classList.add('bg-gold', 'text-black', 'font-semibold');
         btn.classList.remove('bg-card', 'text-neutral-300');
         activeSector = btn.getAttribute('data-sector');
+        currentPage = 1;
         filterCards();
       });
     });
@@ -8358,8 +8478,16 @@
     // Search Input
     document.getElementById('searchInput').addEventListener('input', (e) => {
       searchQuery = e.target.value.toLowerCase().trim();
+      currentPage = 1;
       filterCards();
     });
+
+    // Auto-init on page ready
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      filterCards();
+    } else {
+      window.addEventListener('DOMContentLoaded', filterCards);
+    }
 
     // Modal Helpers
     function openModal(btn) {

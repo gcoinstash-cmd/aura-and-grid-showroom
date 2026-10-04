@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg-128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08090A"/>
+      <stop offset="50%" stop-color="#0D1017"/>
+      <stop offset="100%" stop-color="#141824"/>
+    </linearGradient>
+    <pattern id="grid-128" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#232630" stroke-width="0.75" stroke-opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg-128)"/>
+  <rect width="1280" height="720" fill="url(#grid-128)"/>
+  
+  <!-- Subtle decorative technical radar lines -->
+  <circle cx="1060" cy="220" r="180" fill="none" stroke="#C5A880" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="6 8"/>
+  <circle cx="1060" cy="220" r="120" fill="none" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.1"/>
+  <circle cx="1060" cy="220" r="60" fill="none" stroke="#10B981" stroke-width="1" stroke-opacity="0.08"/>
+  
+  <!-- Header Bar -->
+  <rect x="60" y="50" width="1160" height="40" fill="#14161C" rx="6" stroke="#232630" stroke-width="1"/>
+  <text x="80" y="75" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" letter-spacing="2">AURA &amp; GRID // TECHNICAL REPOSITORY</text>
+  <text x="1200" y="75" text-anchor="end" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 2 // FLAGSHIP TIER-1</text>
+  
+  <!-- Title Block -->
+  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">AUTOMOTIVE &amp; MOBILITY // DENSE OPERATIONAL CONSOLE</text>
+  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">Hydra Endurance Deck</text>
+  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">Le Mans 24H Liquid H2 Fuel-Cell Hypercar Telemetry Console</text>
+  
+  <!-- Specs Console Box -->
+  <rect x="60" y="320" width="1160" height="260" fill="#090B0E" rx="10" stroke="#232630" stroke-width="1"/>
+  <line x1="60" y1="400" x2="1220" y2="400" stroke="#232630" stroke-width="1"/>
+  
+  <text x="90" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">ARCHITECTURE</text>
+  <text x="260" y="365" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">React 19 + TypeScript + Tailwind CSS</text>
+  
+  <text x="680" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">DATABASE ENGINE</text>
+  <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Supabase PostgreSQL + Active RLS</text>
+  
+  <text x="90" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">BENCHMARK</text>
+  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">Toyota Gazoo Racing GR010 Le Mans Telemetry &amp; MissionH24 Console</text>
+  
+  <text x="680" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">RELATIONAL TABLES</text>
+  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">endurance_vehicles, h2_telemetry_snapshots, supercapacitor_cycle_logs, stint_strategy_records</text>
+  
+  <text x="90" y="525" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">PRODUCT TRUTH</text>
+  <text x="260" y="525" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600">[SIMULATED DATA PROTOTYPE] — CONCEPT DEMONSTRATION &amp; DEPLOYABLE SOURCE</text>
+  
+  <!-- Footer Bar -->
+  <rect x="60" y="615" width="1160" height="50" fill="#14161C" rx="8" stroke="#232630" stroke-width="1"/>
+  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #128</text>
+  <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v1.8.0</text>
+  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$14,500 BUYOUT ANCHOR</text>
+</svg>

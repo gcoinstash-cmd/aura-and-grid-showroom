@@ -101,39 +101,33 @@
 </head>
 <body class="selection:bg-gold selection:text-black">
 
-  <!-- ================= FLOATING GLASSMORPHISM PILL HEADER ================= -->
+  <!-- ================= CONCEPT 2: UNIFIED FLOATING GLASS ISLAND ================= -->
   <header class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
-    <nav class="pointer-events-auto flex items-center justify-between w-full max-w-6xl px-6 py-3 rounded-full bg-neutral-950/70 backdrop-blur-xl border border-neutral-800/80 shadow-2xl shadow-black/60 transition-all">
-      <!-- Left: Brand & Status Lockup -->
-      <div class="flex items-center gap-3">
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-7 h-7 rounded-full border border-gold/40 flex items-center justify-center font-cinzel font-bold text-gold text-xs group-hover:border-gold transition-colors">
-            A
-          </div>
-          <span class="font-bold tracking-tight text-sm sm:text-base text-white group-hover:text-gold transition-colors">AURA &amp; GRID</span>
-        </a>
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-800/60">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          122 FLEET
-        </span>
-      </div>
+    <div class="pointer-events-auto flex items-center justify-between gap-4 sm:gap-6 px-4 sm:px-6 py-2 rounded-full bg-neutral-900/80 backdrop-blur-xl border border-neutral-700/60 shadow-2xl shadow-black/80 max-w-4xl w-full">
+      
+      <!-- Brand & Fleet Lockup -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="w-7 h-7 rounded-full bg-amber-400/10 border border-amber-400/40 flex items-center justify-center text-amber-400 font-bold text-xs font-mono group-hover:scale-105 transition">A</div>
+        <span class="text-white font-bold tracking-tight text-xs sm:text-sm">AURA &amp; GRID</span>
+        <span class="text-[10px] font-mono uppercase bg-neutral-800/90 text-amber-400 px-2 py-0.5 rounded-full border border-neutral-700">122 FLEET</span>
+      </a>
 
-      <!-- Center: Clean Navigation Items -->
-      <div class="hidden md:flex items-center gap-6">
-        <a href="#catalog" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-150">Fleet Catalog</a>
-        <a href="#pricing" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-150">Offer Ladder</a>
-        <a href="#architecture" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-150">Architecture &amp; RLS</a>
-        <button onclick="openLegalModal('license')" class="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-150 cursor-pointer">Trust &amp; Legal</button>
-      </div>
+      <!-- Center Navigation -->
+      <nav class="hidden md:flex items-center gap-5 text-xs font-medium text-neutral-400">
+        <a href="#catalog" class="hover:text-white transition">Fleet Catalog</a>
+        <a href="#ladder" class="hover:text-white transition">Offer Ladder</a>
+        <a href="#architecture" class="hover:text-white transition">Architecture &amp; RLS</a>
+        <a href="#legal" onclick="openLegalModal('license')" class="hover:text-white transition">Trust &amp; Legal</a>
+      </nav>
 
-      <!-- Right: High-Contrast Primary Action -->
-      <div>
-        <a href="#catalog" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-black bg-white hover:bg-neutral-200 active:scale-95 transition-all shadow-sm min-h-[44px]">
-          <span>Explore Fleet</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      <!-- Integrated Action CTA -->
+      <div class="flex items-center shrink-0">
+        <a href="#catalog" class="rounded-full bg-white text-black text-xs font-semibold px-4 py-1.5 hover:bg-neutral-200 transition shadow-sm">
+          EXPLORE FLEET &rarr;
         </a>
       </div>
-    </nav>
+
+    </div>
   </header>
 
   <!-- ================= HERO SECTION ================= -->
@@ -201,6 +195,7 @@
 
   <!-- ================= STRUCTURED COMMERCIAL ACQUISITION LADDER (DUAL-TRACK) ================= -->
   <section id="pricing" class="scroll-mt-32 py-24 px-6 border-b border-white/5 relative">
+    <div id="ladder" class="scroll-mt-32"></div>
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="text-xs font-mono uppercase tracking-widest text-gold mb-2">Dual-Track Pricing Protocol</div>

@@ -1,0 +1,205 @@
+
+  <svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGradR_10" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#050709"/>
+        <stop offset="50%" stop-color="#090E13"/>
+        <stop offset="100%" stop-color="#030507"/>
+      </linearGradient>
+      <linearGradient id="glassCardGrad_10" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0F1A15" stop-opacity="0.95"/>
+        <stop offset="50%" stop-color="#0A120E" stop-opacity="0.98"/>
+        <stop offset="100%" stop-color="#060A08" stop-opacity="0.99"/>
+      </linearGradient>
+      <linearGradient id="emeraldEdge_10" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#10B981" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#059669" stop-opacity="0.2"/>
+      </linearGradient>
+      <linearGradient id="emeraldBar_10" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#064E3B"/>
+        <stop offset="100%" stop-color="#10B981"/>
+      </linearGradient>
+      <filter id="emeraldGlow_10">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Canvas Background -->
+    <rect width="1280" height="800" fill="url(#bgGradR_10)"/>
+
+    <!-- Subtle Diagonal Pattern / Depth Grid -->
+    <g stroke="#0F241A" stroke-width="1" opacity="0.35">
+      <line x1="0" y1="0" x2="200" y2="800"/>
+<line x1="65" y1="0" x2="265" y2="800"/>
+<line x1="130" y1="0" x2="330" y2="800"/>
+<line x1="195" y1="0" x2="395" y2="800"/>
+<line x1="260" y1="0" x2="460" y2="800"/>
+<line x1="325" y1="0" x2="525" y2="800"/>
+<line x1="390" y1="0" x2="590" y2="800"/>
+<line x1="455" y1="0" x2="655" y2="800"/>
+<line x1="520" y1="0" x2="720" y2="800"/>
+<line x1="585" y1="0" x2="785" y2="800"/>
+<line x1="650" y1="0" x2="850" y2="800"/>
+<line x1="715" y1="0" x2="915" y2="800"/>
+<line x1="780" y1="0" x2="980" y2="800"/>
+<line x1="845" y1="0" x2="1045" y2="800"/>
+<line x1="910" y1="0" x2="1110" y2="800"/>
+<line x1="975" y1="0" x2="1175" y2="800"/>
+<line x1="1040" y1="0" x2="1240" y2="800"/>
+<line x1="1105" y1="0" x2="1305" y2="800"/>
+<line x1="1170" y1="0" x2="1370" y2="800"/>
+<line x1="1235" y1="0" x2="1435" y2="800"/>
+<line x1="1300" y1="0" x2="1500" y2="800"/>
+<line x1="1365" y1="0" x2="1565" y2="800"/>
+      <line x1="0" y1="0" x2="1280" y2="0"/>
+<line x1="0" y1="60" x2="1280" y2="60"/>
+<line x1="0" y1="120" x2="1280" y2="120"/>
+<line x1="0" y1="180" x2="1280" y2="180"/>
+<line x1="0" y1="240" x2="1280" y2="240"/>
+<line x1="0" y1="300" x2="1280" y2="300"/>
+<line x1="0" y1="360" x2="1280" y2="360"/>
+<line x1="0" y1="420" x2="1280" y2="420"/>
+<line x1="0" y1="480" x2="1280" y2="480"/>
+<line x1="0" y1="540" x2="1280" y2="540"/>
+<line x1="0" y1="600" x2="1280" y2="600"/>
+<line x1="0" y1="660" x2="1280" y2="660"/>
+<line x1="0" y1="720" x2="1280" y2="720"/>
+<line x1="0" y1="780" x2="1280" y2="780"/>
+<line x1="0" y1="840" x2="1280" y2="840"/>
+    </g>
+
+    <!-- 2.5D Angled Glass Dashboard Card -->
+    <g transform="translate(110, 80)">
+      <!-- Main Glass Card Body -->
+      <rect x="0" y="0" width="1060" height="640" rx="16" fill="url(#glassCardGrad_10)" stroke="#16382A" stroke-width="1.5"/>
+      
+      <!-- Top Emerald Accent Edge Bar -->
+      <rect x="0" y="0" width="1060" height="4" fill="url(#emeraldEdge_10)" filter="url(#emeraldGlow_10)"/>
+
+      <!-- Header Rail -->
+      <g transform="translate(36, 30)">
+        <rect x="0" y="0" width="145" height="26" rx="13" fill="#06281C" stroke="#10B981" stroke-width="1"/>
+        <text x="72" y="17" fill="#10B981" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">LEAN RAPID-SALE</text>
+
+        <circle cx="170" cy="13" r="5" fill="#10B981" filter="url(#emeraldGlow_10)"/>
+        <text x="185" y="17" fill="#34D399" font-family="monospace" font-size="11" font-weight="600">TRACK 1 // $199 MSRP • $4,500 BUYOUT ANCHOR</text>
+
+        <text x="988" y="17" fill="#64748B" font-family="monospace" font-size="12" text-anchor="end" font-weight="600">ASSET #10</text>
+      </g>
+
+      <!-- Vehicle Title -->
+      <text x="36" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="28" font-weight="800">AURA RESERVE</text>
+      <text x="36" y="118" fill="#94A3B8" font-family="sans-serif" font-size="14" font-weight="500">Specialized Operations • Business Operating System &amp; Deployable Blueprint</text>
+
+      <!-- Center Analytics Dashboard -->
+      <!-- Left Column: Primary Revenue Velocity & Key Metrics -->
+      <g transform="translate(36, 145)">
+        <rect width="310" height="420" rx="10" fill="#070D0A" stroke="#13291F" stroke-width="1"/>
+        <text x="20" y="30" fill="#6EE7B7" font-family="monospace" font-size="11" font-weight="700">REVENUE &amp; PIPELINE VELOCITY</text>
+
+        <g transform="translate(20, 50)">
+          <text x="0" y="14" fill="#64748B" font-family="monospace" font-size="10">30-DAY RUN RATE</text>
+          <text x="0" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="28" font-weight="800">$184,500</text>
+          <rect x="0" y="55" width="75" height="20" rx="4" fill="#064E3B"/>
+          <text x="37" y="69" fill="#10B981" font-family="monospace" font-size="10" font-weight="700" text-anchor="middle">+28.4% MOM</text>
+        </g>
+
+        <g transform="translate(20, 150)">
+          <text x="0" y="14" fill="#64748B" font-family="monospace" font-size="10">AVERAGE ORDER VALUE (AOV)</text>
+          <text x="0" y="44" fill="#FFFFFF" font-family="sans-serif" font-size="26" font-weight="700">$2,450.00</text>
+          <text x="0" y="66" fill="#94A3B8" font-family="monospace" font-size="10">HIGH-TICKET CART RETENTION</text>
+        </g>
+
+        <g transform="translate(20, 245)">
+          <rect width="270" height="145" rx="8" fill="#0A140F" stroke="#163325" stroke-width="1"/>
+          <text x="14" y="24" fill="#A7F3D0" font-family="monospace" font-size="10" font-weight="700">FUNNEL CONVERSION RATE</text>
+          <text x="14" y="56" fill="#10B981" font-family="sans-serif" font-size="24" font-weight="800">14.8% <tspan fill="#64748B" font-size="12">/ 4.2% BENCHMARK</tspan></text>
+          <rect x="14" y="70" width="242" height="8" rx="4" fill="#142B20"/>
+          <rect x="14" y="70" width="180" height="8" rx="4" fill="#10B981" filter="url(#emeraldGlow_10)"/>
+          <text x="14" y="105" fill="#6EE7B7" font-family="monospace" font-size="10">✓ SUPABASE RLS ROW-LEVEL LOCKS ACTIVE</text>
+          <text x="14" y="122" fill="#64748B" font-family="monospace" font-size="9">POSTGRES ENGINE // MIGRATIONS INCLUDED</text>
+        </g>
+      </g>
+
+      <!-- Center Column: Bar Chart & System Activity -->
+      <g transform="translate(366, 145)">
+        <rect width="410" height="420" rx="10" fill="#070D0A" stroke="#13291F" stroke-width="1"/>
+        <text x="20" y="30" fill="#6EE7B7" font-family="monospace" font-size="11" font-weight="700">WEEKLY OPERATING TRAJECTORY</text>
+
+        <g transform="translate(20, 50)">
+          <rect width="370" height="195" rx="6" fill="#09120D" stroke="#11241A" stroke-width="1"/>
+          <line x1="0" y1="45" x2="370" y2="45" stroke="#102017" stroke-width="1"/>
+          <line x1="0" y1="95" x2="370" y2="95" stroke="#102017" stroke-width="1"/>
+          <line x1="0" y1="145" x2="370" y2="145" stroke="#102017" stroke-width="1"/>
+
+          <rect x="25" y="95" width="28" height="90" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="75" y="75" width="28" height="110" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="125" y="55" width="28" height="130" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="175" y="85" width="28" height="100" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="225" y="45" width="28" height="140" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="275" y="35" width="28" height="150" rx="3" fill="url(#emeraldBar_10)"/>
+          <rect x="325" y="20" width="28" height="165" rx="3" fill="#34D399" filter="url(#emeraldGlow_10)"/>
+
+          <text x="39" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">MON</text>
+          <text x="89" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">TUE</text>
+          <text x="139" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">WED</text>
+          <text x="189" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">THU</text>
+          <text x="239" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">FRI</text>
+          <text x="289" y="200" fill="#64748B" font-family="monospace" font-size="9" text-anchor="middle">SAT</text>
+          <text x="339" y="200" fill="#10B981" font-family="monospace" font-size="9" font-weight="700" text-anchor="middle">SUN</text>
+        </g>
+
+        <g transform="translate(20, 265)">
+          <rect width="370" height="135" rx="8" fill="#0A140F" stroke="#163325" stroke-width="1"/>
+          <text x="14" y="24" fill="#34D399" font-family="monospace" font-size="10" font-weight="700">RECENT DISPATCH &amp; BOOKING</text>
+          <text x="14" y="50" fill="#E2E8F0" font-family="sans-serif" font-size="11">● Lead Conversion: Enterprise Client Inbound ($14,500)</text>
+          <text x="14" y="74" fill="#94A3B8" font-family="sans-serif" font-size="11">● Automated Schedule Confirmed: VIP Priority Suite</text>
+          <text x="14" y="98" fill="#94A3B8" font-family="sans-serif" font-size="11">● Invoice Dispatched: Stripe Connect Payout Settled</text>
+          <text x="14" y="122" fill="#10B981" font-family="monospace" font-size="9">✓ 0 UNRESOLVED WEBHOOK FAILURES</text>
+        </g>
+      </g>
+
+      <!-- Right Column: System Specs & Truth Badge -->
+      <g transform="translate(796, 145)">
+        <rect width="228" height="420" rx="10" fill="#070D0A" stroke="#13291F" stroke-width="1"/>
+        <text x="16" y="30" fill="#6EE7B7" font-family="monospace" font-size="11" font-weight="700">ARCHITECTURE</text>
+
+        <g transform="translate(16, 50)">
+          <text x="0" y="14" fill="#64748B" font-family="monospace" font-size="10">FRONTEND STACK</text>
+          <text x="0" y="32" fill="#E2E8F0" font-family="sans-serif" font-size="12" font-weight="600">React 19 + TypeScript</text>
+          <text x="0" y="48" fill="#10B981" font-family="monospace" font-size="10">Tailwind CSS 4.0</text>
+        </g>
+
+        <g transform="translate(16, 115)">
+          <text x="0" y="14" fill="#64748B" font-family="monospace" font-size="10">BACKEND &amp; STORAGE</text>
+          <text x="0" y="32" fill="#E2E8F0" font-family="sans-serif" font-size="12" font-weight="600">Supabase PostgreSQL</text>
+          <text x="0" y="48" fill="#10B981" font-family="monospace" font-size="10">Row-Level Security (RLS)</text>
+        </g>
+
+        <g transform="translate(16, 180)">
+          <text x="0" y="14" fill="#64748B" font-family="monospace" font-size="10">COMMERCIAL RIGHTS</text>
+          <text x="0" y="32" fill="#E2E8F0" font-family="sans-serif" font-size="12" font-weight="600">Commercial Source License</text>
+          <text x="0" y="48" fill="#34D399" font-family="monospace" font-size="10">Custom Inq for Fleets</text>
+        </g>
+
+        <g transform="translate(16, 260)">
+          <rect width="196" height="140" rx="8" fill="#0A1811" stroke="#1D4230" stroke-width="1"/>
+          <text x="12" y="24" fill="#F59E0B" font-family="monospace" font-size="10" font-weight="700">PRODUCT TRUTH</text>
+          <text x="12" y="45" fill="#E2E8F0" font-family="sans-serif" font-size="11" font-weight="600">Sample/Simulated Data</text>
+          <text x="12" y="65" fill="#94A3B8" font-family="sans-serif" font-size="10">Deployable Blueprint</text>
+          <text x="12" y="85" fill="#94A3B8" font-family="sans-serif" font-size="10">Customer Review Req'd</text>
+          <text x="12" y="120" fill="#10B981" font-family="monospace" font-size="9" font-weight="700">[TRUTH VERIFIED]</text>
+        </g>
+      </g>
+
+      <!-- Footer Bar -->
+      <g transform="translate(36, 590)">
+        <text x="0" y="22" fill="#64748B" font-family="monospace" font-size="11">GHOSTFACTORYOS v1.6.0 // AURA &amp; GRID SHOWROOM</text>
+        <text x="988" y="22" fill="#10B981" font-family="monospace" font-size="12" font-weight="700" text-anchor="end">2.5D GLASS CARDS // NO STOCK PHOTOS</text>
+      </g>
+    </g>
+  </svg>

@@ -1,54 +1,201 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
-  <defs>
-    <linearGradient id="bg-113" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#08090A"/>
-      <stop offset="50%" stop-color="#0D1017"/>
-      <stop offset="100%" stop-color="#141824"/>
-    </linearGradient>
-    <pattern id="grid-113" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#232630" stroke-width="0.75" stroke-opacity="0.45"/>
-    </pattern>
-  </defs>
-  <rect width="1280" height="720" fill="url(#bg-113)"/>
-  <rect width="1280" height="720" fill="url(#grid-113)"/>
-  
-  <!-- Subtle decorative technical radar lines -->
-  <circle cx="1060" cy="220" r="180" fill="none" stroke="#C5A880" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="6 8"/>
-  <circle cx="1060" cy="220" r="120" fill="none" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.1"/>
-  <circle cx="1060" cy="220" r="60" fill="none" stroke="#10B981" stroke-width="1" stroke-opacity="0.08"/>
-  
-  <!-- Header Bar -->
-  <rect x="60" y="50" width="1160" height="40" fill="#14161C" rx="6" stroke="#232630" stroke-width="1"/>
-  <text x="80" y="75" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" letter-spacing="2">AURA &amp; GRID // TECHNICAL REPOSITORY</text>
-  <text x="1200" y="75" text-anchor="end" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 2 // FLAGSHIP TIER-1</text>
-  
-  <!-- Title Block -->
-  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">DEEP TECH &amp; SCADA // DENSE OPERATIONAL CONSOLE</text>
-  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">Superconducting Quantum Processor Cryostat OS</text>
-  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">Superconducting Quantum Processor Cryostat OS Console</text>
-  
-  <!-- Specs Console Box -->
-  <rect x="60" y="320" width="1160" height="260" fill="#090B0E" rx="10" stroke="#232630" stroke-width="1"/>
-  <line x1="60" y1="400" x2="1220" y2="400" stroke="#232630" stroke-width="1"/>
-  
-  <text x="90" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">ARCHITECTURE</text>
-  <text x="260" y="365" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">React 19 + TypeScript + Tailwind CSS</text>
-  
-  <text x="680" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">DATABASE ENGINE</text>
-  <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Supabase PostgreSQL + Active RLS</text>
-  
-  <text x="90" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">BENCHMARK</text>
-  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">Bluefors XLD Dilution &amp; IBM Quantum Control Matrix</text>
-  
-  <text x="680" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">RELATIONAL TABLES</text>
-  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">quantum_cryostats, qubit_lattices, cryo_temperature_stages, coherence_benchmarks</text>
-  
-  <text x="90" y="525" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">PRODUCT TRUTH</text>
-  <text x="260" y="525" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600">[SIMULATED DATA PROTOTYPE] — CONCEPT DEMONSTRATION &amp; DEPLOYABLE SOURCE</text>
-  
-  <!-- Footer Bar -->
-  <rect x="60" y="615" width="1160" height="50" fill="#14161C" rx="8" stroke="#232630" stroke-width="1"/>
-  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #113</text>
-  <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v1.6.0</text>
-  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$14,500 BUYOUT ANCHOR</text>
-</svg>
+
+  <svg width="1280" height="800" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bgGrad_107" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06070A"/>
+        <stop offset="50%" stop-color="#0B0E17"/>
+        <stop offset="100%" stop-color="#030406"/>
+      </linearGradient>
+      <linearGradient id="cardGrad_107" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#111622"/>
+        <stop offset="100%" stop-color="#090B12"/>
+      </linearGradient>
+      <linearGradient id="cyanGlow_107" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.25"/>
+      </linearGradient>
+      <linearGradient id="amberGlow_107" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#EF4444" stop-opacity="0.2"/>
+      </linearGradient>
+      <filter id="glow_107">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- Deep Obsidian Canvas -->
+    <rect width="1280" height="800" fill="url(#bgGrad_107)"/>
+
+    <!-- Holographic 3D Wireframe Telemetry Grid -->
+    <g stroke="#141C2B" stroke-width="1" opacity="0.6">
+      <line x1="0" y1="0" x2="0" y2="800"/>
+<line x1="55" y1="0" x2="55" y2="800"/>
+<line x1="110" y1="0" x2="110" y2="800"/>
+<line x1="165" y1="0" x2="165" y2="800"/>
+<line x1="220" y1="0" x2="220" y2="800"/>
+<line x1="275" y1="0" x2="275" y2="800"/>
+<line x1="330" y1="0" x2="330" y2="800"/>
+<line x1="385" y1="0" x2="385" y2="800"/>
+<line x1="440" y1="0" x2="440" y2="800"/>
+<line x1="495" y1="0" x2="495" y2="800"/>
+<line x1="550" y1="0" x2="550" y2="800"/>
+<line x1="605" y1="0" x2="605" y2="800"/>
+<line x1="660" y1="0" x2="660" y2="800"/>
+<line x1="715" y1="0" x2="715" y2="800"/>
+<line x1="770" y1="0" x2="770" y2="800"/>
+<line x1="825" y1="0" x2="825" y2="800"/>
+<line x1="880" y1="0" x2="880" y2="800"/>
+<line x1="935" y1="0" x2="935" y2="800"/>
+<line x1="990" y1="0" x2="990" y2="800"/>
+<line x1="1045" y1="0" x2="1045" y2="800"/>
+<line x1="1100" y1="0" x2="1100" y2="800"/>
+<line x1="1155" y1="0" x2="1155" y2="800"/>
+<line x1="1210" y1="0" x2="1210" y2="800"/>
+<line x1="1265" y1="0" x2="1265" y2="800"/>
+<line x1="1320" y1="0" x2="1320" y2="800"/>
+      <line x1="0" y1="0" x2="1280" y2="0"/>
+<line x1="0" y1="55" x2="1280" y2="55"/>
+<line x1="0" y1="110" x2="1280" y2="110"/>
+<line x1="0" y1="165" x2="1280" y2="165"/>
+<line x1="0" y1="220" x2="1280" y2="220"/>
+<line x1="0" y1="275" x2="1280" y2="275"/>
+<line x1="0" y1="330" x2="1280" y2="330"/>
+<line x1="0" y1="385" x2="1280" y2="385"/>
+<line x1="0" y1="440" x2="1280" y2="440"/>
+<line x1="0" y1="495" x2="1280" y2="495"/>
+<line x1="0" y1="550" x2="1280" y2="550"/>
+<line x1="0" y1="605" x2="1280" y2="605"/>
+<line x1="0" y1="660" x2="1280" y2="660"/>
+<line x1="0" y1="715" x2="1280" y2="715"/>
+<line x1="0" y1="770" x2="1280" y2="770"/>
+<line x1="0" y1="825" x2="1280" y2="825"/>
+    </g>
+
+    <!-- 3D Console Mockup Chassis -->
+    <g transform="translate(100, 75)">
+      <!-- Console Body -->
+      <rect x="0" y="0" width="1080" height="650" rx="16" fill="url(#cardGrad_107)" stroke="#1F2A3D" stroke-width="1.5"/>
+      
+      <!-- Cyan/Amber Edge Lighting -->
+      <rect x="0" y="0" width="1080" height="4" fill="url(#cyanGlow_107)" filter="url(#glow_107)"/>
+
+      <!-- Header Rail -->
+      <g transform="translate(36, 32)">
+        <rect x="0" y="0" width="145" height="26" rx="13" fill="#0E2838" stroke="#00F0FF" stroke-width="1"/>
+        <text x="72" y="17" fill="#00F0FF" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">FLAGSHIP TIER-1</text>
+
+        <circle cx="170" cy="13" r="5" fill="#10B981" filter="url(#glow_107)"/>
+        <text x="185" y="17" fill="#10B981" font-family="monospace" font-size="11" font-weight="600">SCADA MISSION CONTROL // $14,500 BUYOUT ANCHOR</text>
+
+        <text x="1008" y="17" fill="#64748B" font-family="monospace" font-size="12" text-anchor="end" font-weight="600">ASSET #107</text>
+      </g>
+
+      <!-- Vehicle Title -->
+      <text x="36" y="98" fill="#FFFFFF" font-family="sans-serif" font-size="26" font-weight="800">SUPERCONDUCTING QUANTUM PROCESSOR CRYOSTAT OS</text>
+      <text x="36" y="125" fill="#94A3B8" font-family="sans-serif" font-size="13" font-weight="500">Deep Tech &amp; SCADA • Autonomous SCADA Telemetry &amp; Physics Solver</text>
+
+      <!-- Multi-Panel Telemetry Grid -->
+      <!-- Left Panel: Radar / Coordinate Tracker -->
+      <g transform="translate(36, 155)">
+        <rect width="320" height="415" rx="10" fill="#080B11" stroke="#1A2333" stroke-width="1"/>
+        <text x="20" y="30" fill="#94A3B8" font-family="monospace" font-size="11" font-weight="700">DILUTION STAGE GRADIENT</text>
+        <circle cx="160" cy="205" r="110" fill="none" stroke="#1A2536" stroke-width="1.5"/>
+        <circle cx="160" cy="205" r="75" fill="none" stroke="#1A2536" stroke-width="1"/>
+        <circle cx="160" cy="205" r="40" fill="none" stroke="#00F0FF" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="160" y1="95" x2="160" y2="315" stroke="#1A2536" stroke-width="1"/>
+        <line x1="50" y1="205" x2="270" y2="205" stroke="#1A2536" stroke-width="1"/>
+        <line x1="160" y1="205" x2="238" y2="127" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow_107)"/>
+        <circle cx="195" cy="155" r="4" fill="#00F0FF" filter="url(#glow_107)"/>
+        <circle cx="120" cy="245" r="3.5" fill="#F59E0B" filter="url(#glow_107)"/>
+        <circle cx="225" cy="235" r="4.5" fill="#10B981" filter="url(#glow_107)"/>
+        <text x="20" y="385" fill="#00F0FF" font-family="monospace" font-size="11" font-weight="700">10.2 mK BASE // ZERO QUENCH</text>
+      </g>
+
+      <!-- Center Panel: High-Frequency Waveform & Process Loop -->
+      <g transform="translate(380, 155)">
+        <rect width="400" height="415" rx="10" fill="#080B11" stroke="#1A2333" stroke-width="1"/>
+        <text x="20" y="30" fill="#94A3B8" font-family="monospace" font-size="11" font-weight="700">QUBIT COHERENCE RESONATOR</text>
+        
+        <g transform="translate(20, 50)">
+          <rect width="170" height="65" rx="6" fill="#0F1420" stroke="#1A2436" stroke-width="1"/>
+          <text x="14" y="22" fill="#64748B" font-family="monospace" font-size="10">COHERENCE T1</text>
+          <text x="14" y="50" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="700">184.2 μs</text>
+        </g>
+        <g transform="translate(205, 50)">
+          <rect width="175" height="65" rx="6" fill="#0F1420" stroke="#1A2436" stroke-width="1"/>
+          <text x="14" y="22" fill="#64748B" font-family="monospace" font-size="10">GATE FIDELITY</text>
+          <text x="14" y="50" fill="#FFFFFF" font-family="sans-serif" font-size="22" font-weight="700">99.94 %</text>
+        </g>
+
+        <!-- Waveform Oscilloscope -->
+        <g transform="translate(20, 135)">
+          <rect width="360" height="155" rx="6" fill="#05070B" stroke="#141C2B" stroke-width="1"/>
+          <line x1="0" y1="38" x2="360" y2="38" stroke="#101826" stroke-width="1"/>
+          <line x1="0" y1="77" x2="360" y2="77" stroke="#101826" stroke-width="1"/>
+          <line x1="0" y1="116" x2="360" y2="116" stroke="#101826" stroke-width="1"/>
+          <path d="M 0 95 Q 40 45 80 85 T 160 75 T 240 115 T 320 55 T 360 85" fill="none" stroke="#00F0FF" stroke-width="2.5" filter="url(#glow_107)"/>
+          <path d="M 0 115 Q 50 135 100 100 T 200 125 T 300 90 T 360 110" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="3,3"/>
+        </g>
+
+        <!-- Closed Loop State Log -->
+        <g transform="translate(20, 310)">
+          <rect width="360" height="85" rx="6" fill="#0A0E17" stroke="#161F2E" stroke-width="1"/>
+          <text x="14" y="24" fill="#10B981" font-family="monospace" font-size="10">✓ SCADA INTERLOCK: NOMINAL [0.00ms JITTER]</text>
+          <text x="14" y="44" fill="#00F0FF" font-family="monospace" font-size="10">✓ CLOSED-LOOP PID TUNING: CONVERGED</text>
+          <text x="14" y="64" fill="#94A3B8" font-family="monospace" font-size="10">● DISTRIBUTED NODES: ZERO UNRESOLVED ALARMS</text>
+        </g>
+      </g>
+
+      <!-- Right Panel: Telemetry Bus & NIST Trust Box -->
+      <g transform="translate(804, 155)">
+        <rect width="240" height="415" rx="10" fill="#080B11" stroke="#1A2333" stroke-width="1"/>
+        <text x="18" y="30" fill="#94A3B8" font-family="monospace" font-size="11" font-weight="700">SUB-SYSTEM BUS</text>
+
+        <g transform="translate(18, 50)">
+          <text x="0" y="12" fill="#E2E8F0" font-family="monospace" font-size="10" font-weight="600">ALPHA BUS</text>
+          <text x="204" y="12" fill="#10B981" font-family="monospace" font-size="10" text-anchor="end">100%</text>
+          <rect x="0" y="18" width="204" height="5" rx="2.5" fill="#1A2436"/>
+          <rect x="0" y="18" width="204" height="5" rx="2.5" fill="#10B981"/>
+        </g>
+
+        <g transform="translate(18, 95)">
+          <text x="0" y="12" fill="#E2E8F0" font-family="monospace" font-size="10" font-weight="600">PROCESS FLOW</text>
+          <text x="204" y="12" fill="#00F0FF" font-family="monospace" font-size="10" text-anchor="end">88.4%</text>
+          <rect x="0" y="18" width="204" height="5" rx="2.5" fill="#1A2436"/>
+          <rect x="0" y="18" width="180" height="5" rx="2.5" fill="#00F0FF"/>
+        </g>
+
+        <g transform="translate(18, 140)">
+          <text x="0" y="12" fill="#E2E8F0" font-family="monospace" font-size="10" font-weight="600">THERMAL BUS</text>
+          <text x="204" y="12" fill="#F59E0B" font-family="monospace" font-size="10" text-anchor="end">74.2%</text>
+          <rect x="0" y="18" width="204" height="5" rx="2.5" fill="#1A2436"/>
+          <rect x="0" y="18" width="151" height="5" rx="2.5" fill="#F59E0B"/>
+        </g>
+
+        <!-- Compliance & Product Truth Drawer -->
+        <g transform="translate(18, 205)">
+          <rect width="204" height="185" rx="8" fill="#0D1420" stroke="#1F2E45" stroke-width="1"/>
+          <text x="12" y="24" fill="#38BDF8" font-family="monospace" font-size="10" font-weight="700">NIST SP 800-218</text>
+          <text x="12" y="44" fill="#E2E8F0" font-family="sans-serif" font-size="11" font-weight="600">SSDF v1.1 Aligned</text>
+          <text x="12" y="64" fill="#94A3B8" font-family="sans-serif" font-size="10">Zero Public Passkeys</text>
+          <text x="12" y="84" fill="#94A3B8" font-family="sans-serif" font-size="10">Postgres RLS Pattern</text>
+          
+          <rect x="12" y="105" width="180" height="1" fill="#1E2A3D"/>
+          <text x="12" y="125" fill="#F59E0B" font-family="monospace" font-size="9" font-weight="700">[PRODUCT TRUTH]</text>
+          <text x="12" y="142" fill="#CBD5E1" font-family="sans-serif" font-size="10">Simulated Data Prototype</text>
+          <text x="12" y="158" fill="#64748B" font-family="sans-serif" font-size="9">Deployable Source Blueprint</text>
+          <text x="12" y="174" fill="#10B981" font-family="monospace" font-size="9" font-weight="700">VERIFIED GATE #4 PASS</text>
+        </g>
+      </g>
+
+      <!-- Footer Bar -->
+      <g transform="translate(36, 600)">
+        <text x="0" y="22" fill="#64748B" font-family="monospace" font-size="11">GHOSTFACTORYOS v1.6.0 // AURA &amp; GRID SHOWROOM</text>
+        <text x="1008" y="22" fill="#00F0FF" font-family="monospace" font-size="12" font-weight="700" text-anchor="end">8K 3D ISOMETRIC MOCKUP</text>
+      </g>
+    </g>
+  </svg>

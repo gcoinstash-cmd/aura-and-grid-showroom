@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./site/index.html', './scripts/site/**/*.mjs'],
+  content: ['./site/index.html', './scripts/site/**/*.mjs', './index.html'],
   theme: {
     extend: {
       colors: {
@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
         cinzel: ['Cinzel', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace']
       }
     }

@@ -12326,103 +12326,103 @@
 
   <!-- ================= TRUST & LEGAL COMPLIANCE MODAL (TABBED) ================= -->
   <div id="legalModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-card hairline-border rounded-xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto flex flex-col">
+    <div class="w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative flex flex-col">
       <button onclick="closeLegalModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-lg font-mono p-2 cursor-pointer">✕</button>
       
-      <div class="text-xs font-mono uppercase tracking-widest text-gold mb-2">Institutional Compliance &amp; Governance</div>
-      <h3 class="text-2xl font-serif font-bold text-white mb-6">Trust, Terms &amp; Legal Disclosures</h3>
+      <div class="text-xs sm:text-sm font-mono uppercase tracking-widest text-gold mb-2">Institutional Compliance &amp; Governance</div>
+      <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-6">Trust, Terms &amp; Legal Disclosures</h3>
 
       <!-- Tab Buttons -->
-      <div class="flex flex-wrap gap-2 mb-6 border-b border-white/10 pb-4 font-mono text-xs">
-        <button onclick="switchLegalTab('license')" id="tabBtn-license" class="px-3.5 py-2 rounded-lg bg-gold text-black font-bold transition-all min-h-[44px]">License Agreement</button>
-        <button onclick="switchLegalTab('product-truth')" id="tabBtn-product-truth" class="px-3.5 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Product Truth</button>
-        <button onclick="switchLegalTab('privacy')" id="tabBtn-privacy" class="px-3.5 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Privacy Policy</button>
-        <button onclick="switchLegalTab('refunds')" id="tabBtn-refunds" class="px-3.5 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Refund &amp; Support</button>
-        <button onclick="switchLegalTab('contact')" id="tabBtn-contact" class="px-3.5 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Contact &amp; Operator</button>
+      <div class="flex flex-wrap gap-2 mb-6 border-b border-white/10 pb-4">
+        <button onclick="switchLegalTab('license')" id="tabBtn-license" class="text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-gold text-black font-bold transition-all min-h-[44px]">License Agreement</button>
+        <button onclick="switchLegalTab('product-truth')" id="tabBtn-product-truth" class="text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Product Truth</button>
+        <button onclick="switchLegalTab('privacy')" id="tabBtn-privacy" class="text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Privacy Policy</button>
+        <button onclick="switchLegalTab('refunds')" id="tabBtn-refunds" class="text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Refund &amp; Support</button>
+        <button onclick="switchLegalTab('contact')" id="tabBtn-contact" class="text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]">Contact &amp; Operator</button>
       </div>
 
       <!-- Tab Content: License Agreement -->
-      <div id="tabContent-license" class="space-y-4 text-sm text-neutral-300 leading-relaxed font-sans">
-        <h4 class="text-lg font-bold text-white font-serif">Commercial Source Code License vs. Micro-APA Asset Purchase</h4>
-        <p>
+      <div id="tabContent-license" class="space-y-4 text-base text-neutral-200 leading-relaxed font-sans">
+        <h4 class="text-xl font-bold text-white mb-4">Commercial Source Code License vs. Micro-APA Asset Purchase</h4>
+        <p class="text-base text-neutral-200 leading-relaxed">
           Aura &amp; Grid offers non-exclusive source-code licenses for deployable web operating system blueprints. Purchasing a Track 1 Source License ($199) or Commercial Team Seat ($599) grants your organization perpetual, royalty-free commercial rights to adapt, reskin, modify, and deploy the code for client projects.
         </p>
-        <div class="p-3.5 bg-black/40 rounded-lg hairline-border text-xs font-mono space-y-2">
-          <div class="text-gold font-bold uppercase tracking-wider">License vs. Ownership APA Distinction:</div>
-          <p>• <strong>License:</strong> Grants usage and client deployment rights. Does NOT transfer copyright or ownership of the underlying framework templates.</p>
-          <p>• <strong>Micro-APA (Asset Purchase Agreement):</strong> A selective agreement transferring exclusive code rights to one defined asset only. A micro-APA NEVER transfers GhostFactoryOS core infrastructure, Aura &amp; Grid showroom brands, shared design tokens, component libraries, or future catalog rights.</p>
-          <p>• <strong>80% Retention Floor:</strong> ZoMae Media LLC permanently vaults and retains at least 80% of all digital vehicles in the catalog (minimum 91 of 114 assets retained). Maximum micro-APA transfer capacity across the entire collection is capped at 23 assets.</p>
+        <div class="p-4 sm:p-6 bg-black/40 rounded-xl hairline-border space-y-3">
+          <div class="text-gold font-bold uppercase tracking-wider text-sm sm:text-base">License vs. Ownership APA Distinction:</div>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>License:</strong> Grants usage and client deployment rights. Does NOT transfer copyright or ownership of the underlying framework templates.</p>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Micro-APA (Asset Purchase Agreement):</strong> A selective agreement transferring exclusive code rights to one defined asset only. A micro-APA NEVER transfers GhostFactoryOS core infrastructure, Aura &amp; Grid showroom brands, shared design tokens, component libraries, or future catalog rights.</p>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>80% Retention Floor:</strong> ZoMae Media LLC permanently vaults and retains at least 80% of all digital vehicles in the catalog (minimum 91 of 114 assets retained). Maximum micro-APA transfer capacity across the entire collection is capped at 23 assets.</p>
         </div>
-        <p class="text-xs text-neutral-400">
-          Prohibited: Redistribution, reselling, or public dissemination of raw source code, SQL migrations, or zip archives on third-party template marketplaces or public repositories.
+        <p class="text-base text-neutral-300 leading-relaxed">
+          <strong>Prohibited:</strong> Redistribution, reselling, or public dissemination of raw source code, SQL migrations, or zip archives on third-party template marketplaces or public repositories.
         </p>
       </div>
 
       <!-- Tab Content: Product Truth -->
-      <div id="tabContent-product-truth" class="hidden space-y-4 text-sm text-neutral-300 leading-relaxed font-sans">
-        <h4 class="text-lg font-bold text-white font-serif">Product Truth &amp; Non-Production Disclosures</h4>
-        <p>
+      <div id="tabContent-product-truth" class="hidden space-y-4 text-base text-neutral-200 leading-relaxed font-sans">
+        <h4 class="text-xl font-bold text-white mb-4">Product Truth &amp; Non-Production Disclosures</h4>
+        <p class="text-base text-neutral-200 leading-relaxed">
           In accordance with FTC guidelines and truth-in-advertising standards, Aura &amp; Grid adheres to strict descriptive disclosures:
         </p>
-        <div class="space-y-3 text-xs font-mono">
-          <div class="p-3 bg-amber-950/30 border border-amber-500/30 rounded-lg text-amber-200">
+        <div class="space-y-3">
+          <div class="p-4 bg-amber-950/30 border border-amber-500/30 rounded-xl text-base text-amber-200 leading-relaxed">
             <strong>Asset Maturity Disclosure:</strong> Hosted Interactive Demos &amp; Source Templates (Sample/Simulated Data). All demonstrations, telemetry values, charts, alerts, and calculations utilize sample or simulated data models.
           </div>
-          <div class="p-3 bg-black/40 rounded-lg hairline-border text-neutral-300">
+          <div class="p-4 bg-black/40 rounded-xl hairline-border text-base text-neutral-300 leading-relaxed">
             <strong>Accessibility Status:</strong> Designed toward WCAG 2.2 AA (Formal evaluation pending). Layouts, contrast ratios, and touch targets follow accessibility best practices, but have not completed external certification.
           </div>
-          <div class="p-3 bg-black/40 rounded-lg hairline-border text-neutral-300">
+          <div class="p-4 bg-black/40 rounded-xl hairline-border text-base text-neutral-300 leading-relaxed">
             <strong>Security Architecture:</strong> Supabase schema and RLS policy patterns included. Customer-specific configuration and deployment review required prior to production exposure.
           </div>
-          <div class="p-3 bg-black/40 rounded-lg hairline-border text-neutral-300">
+          <div class="p-4 bg-black/40 rounded-xl hairline-border text-base text-neutral-300 leading-relaxed">
             <strong>Non-Production Notice:</strong> None of our prototypes or blueprints are pre-certified for live operational, medical, clinical, flight-qualified, legal, or life-critical environments. Customer-specific implementation, security hardening, and auditing are required.
           </div>
         </div>
       </div>
 
       <!-- Tab Content: Privacy Policy -->
-      <div id="tabContent-privacy" class="hidden space-y-4 text-sm text-neutral-300 leading-relaxed font-sans">
-        <h4 class="text-lg font-bold text-white font-serif">Privacy Policy &amp; Data Handling</h4>
-        <p>
+      <div id="tabContent-privacy" class="hidden space-y-4 text-base text-neutral-200 leading-relaxed font-sans">
+        <h4 class="text-xl font-bold text-white mb-4">Privacy Policy &amp; Data Handling</h4>
+        <p class="text-base text-neutral-200 leading-relaxed">
           Aura &amp; Grid and ZoMae Media LLC respect your privacy with minimal data footprint principles:
         </p>
-        <ul class="space-y-2 text-xs font-mono text-neutral-300">
-          <li>• <strong>Zero Third-Party Tracking:</strong> We do not deploy invasive tracking pixels, session replay software, or third-party behavioral advertising scripts.</li>
-          <li>• <strong>Payment Processing:</strong> Commercial transactions are fulfilled securely via Gumroad and its authorized payment gateways (Stripe, PayPal). No credit card numbers or banking secrets are ever stored on our servers.</li>
-          <li>• <strong>Customer Inquiries:</strong> Any email addresses or contact details submitted for Flagship inquiries are used exclusively for direct commercial communication and are never sold or rented.</li>
+        <ul class="space-y-3">
+          <li class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Zero Third-Party Tracking:</strong> We do not deploy invasive tracking pixels, session replay software, or third-party behavioral advertising scripts.</li>
+          <li class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Payment Processing:</strong> Commercial transactions are fulfilled securely via Gumroad and its authorized payment gateways (Stripe, PayPal). No credit card numbers or banking secrets are ever stored on our servers.</li>
+          <li class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Customer Inquiries:</strong> Any email addresses or contact details submitted for Flagship inquiries are used exclusively for direct commercial communication and are never sold or rented.</li>
         </ul>
       </div>
 
       <!-- Tab Content: Refund & Support Policy -->
-      <div id="tabContent-refunds" class="hidden space-y-4 text-sm text-neutral-300 leading-relaxed font-sans">
-        <h4 class="text-lg font-bold text-white font-serif">Refund &amp; Support Policy (Source Code Disclosures)</h4>
-        <p>
+      <div id="tabContent-refunds" class="hidden space-y-4 text-base text-neutral-200 leading-relaxed font-sans">
+        <h4 class="text-xl font-bold text-white mb-4">Refund &amp; Support Policy (Source Code Disclosures)</h4>
+        <p class="text-base text-neutral-200 leading-relaxed">
           Due to the digital, irrevocable nature of downloadable source code, TypeScript implementations, and database schema files, all sales are final and strictly non-refundable.
         </p>
-        <div class="p-3.5 bg-black/40 rounded-lg hairline-border text-xs font-mono space-y-2.5">
-          <p>• <strong>All Sales Final:</strong> Transactions are non-refundable once access or files are delivered.</p>
-          <p>• <strong>Inspection Opportunity:</strong> Interactive hosted demos serve as pre-purchase test drives.</p>
-          <p>• <strong>Defect Remediation:</strong> If you identify a verifiable code defect or missing migration file, our technical support desk will provide a verified patch or updated archive within 14 days (no cash refunds).</p>
-          <p>• <strong>Scope of Support:</strong> Source and docs provided; custom integrations and hosting remain customer responsibilities.</p>
+        <div class="p-4 sm:p-6 bg-black/40 rounded-xl hairline-border space-y-3">
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>All Sales Final:</strong> Transactions are non-refundable once access or files are delivered.</p>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Inspection Opportunity:</strong> Interactive hosted demos serve as pre-purchase test drives.</p>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Defect Remediation:</strong> If you identify a verifiable code defect or missing migration file, our technical support desk will provide a verified patch or updated archive within 14 days (no cash refunds).</p>
+          <p class="text-base text-neutral-300 leading-relaxed my-2">• <strong>Scope of Support:</strong> Source and docs provided; custom integrations and hosting remain customer responsibilities.</p>
         </div>
       </div>
 
       <!-- Tab Content: Operator & Contact -->
-      <div id="tabContent-contact" class="hidden space-y-4 text-sm text-neutral-300 leading-relaxed font-sans">
-        <h4 class="text-lg font-bold text-white font-serif">Operator &amp; Business Contact Information</h4>
-        <p>
+      <div id="tabContent-contact" class="hidden space-y-4 text-base text-neutral-200 leading-relaxed font-sans">
+        <h4 class="text-xl font-bold text-white mb-4">Operator &amp; Business Contact Information</h4>
+        <p class="text-base text-neutral-200 leading-relaxed">
           Aura &amp; Grid operates as an independent software foundry delivering deployable web operating system blueprints.
         </p>
-        <div class="space-y-2.5 text-xs font-mono bg-obsidian p-4 rounded-lg hairline-border">
-          <div><span class="text-neutral-500">Operator Entity:</span> <span class="text-white font-bold">Aura &amp; Grid (Independent Software Foundry)</span></div>
-          <div><span class="text-neutral-500">Direct Support &amp; Licensing Desk:</span> <a href="mailto:inquiries@zomaemedia.com" class="text-emerald hover:underline font-bold">inquiries@zomaemedia.com</a></div>
-          <div><span class="text-neutral-500">Business Inquiries:</span> <span class="text-neutral-300">Contact form or direct email desk for licensing, managed deployments, and custom fleet terms.</span></div>
-          <div><span class="text-neutral-500">Response Standard:</span> <span class="text-neutral-400">Inquiries reviewed within 24–48 business hours.</span></div>
+        <div class="space-y-3 bg-obsidian p-5 rounded-xl hairline-border">
+          <div class="text-base text-neutral-300 leading-relaxed my-2"><span class="text-neutral-400 font-medium">Operator Entity:</span> <span class="text-white font-bold">Aura &amp; Grid (Independent Software Foundry)</span></div>
+          <div class="text-base text-neutral-300 leading-relaxed my-2"><span class="text-neutral-400 font-medium">Direct Support &amp; Licensing Desk:</span> <a href="mailto:inquiries@zomaemedia.com" class="text-emerald hover:underline font-bold">inquiries@zomaemedia.com</a></div>
+          <div class="text-base text-neutral-300 leading-relaxed my-2"><span class="text-neutral-400 font-medium">Business Inquiries:</span> <span class="text-neutral-200">Contact form or direct email desk for licensing, managed deployments, and custom fleet terms.</span></div>
+          <div class="text-base text-neutral-300 leading-relaxed my-2"><span class="text-neutral-400 font-medium">Response Standard:</span> <span class="text-neutral-300">Inquiries reviewed within 24–48 business hours.</span></div>
         </div>
       </div>
 
       <div class="mt-8 pt-4 border-t border-white/10 flex justify-end">
-        <button onclick="closeLegalModal()" class="px-6 py-2.5 rounded-lg bg-white text-black font-semibold text-xs uppercase tracking-wider transition-all hover:bg-neutral-200 min-h-[44px]">
+        <button onclick="closeLegalModal()" class="px-6 py-2.5 rounded-lg bg-white text-black font-semibold text-sm uppercase tracking-wider transition-all hover:bg-neutral-200 min-h-[44px]">
           Close Window
         </button>
       </div>
@@ -12723,9 +12723,9 @@
         }
         if (btn) {
           if (t === tab) {
-            btn.className = 'px-3.5 py-2 rounded-lg bg-gold text-black font-bold transition-all min-h-[44px]';
+            btn.className = 'text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-gold text-black font-bold transition-all min-h-[44px]';
           } else {
-            btn.className = 'px-3.5 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]';
+            btn.className = 'text-sm sm:text-base font-medium px-4 py-2 rounded-lg bg-panel hairline-border text-neutral-300 hover:text-white transition-all min-h-[44px]';
           }
         }
       });

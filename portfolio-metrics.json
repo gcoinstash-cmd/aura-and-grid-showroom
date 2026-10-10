@@ -4,9 +4,9 @@
   "track2FlagshipTotal": 51,
   "retainedFloorMinimum": 128,
   "maxOwnershipTransferCapacity": 32,
-  "syncVersion": "v1.6.0",
+  "syncVersion": "v2.0-PROD",
   "diligenceGrade": "L3-SUPABASE-READY",
-  "buildIntegrity": "114/114 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
+  "buildIntegrity": "160/160 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
   "sectors": {
     "hospitality": 28,
     "creative": 18,

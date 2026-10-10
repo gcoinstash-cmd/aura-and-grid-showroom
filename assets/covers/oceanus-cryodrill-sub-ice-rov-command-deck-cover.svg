@@ -49,6 +49,6 @@
   <!-- Footer Bar -->
   <rect x="60" y="615" width="1160" height="50" fill="#14161C" rx="8" stroke="#232630" stroke-width="1"/>
   <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #133</text>
-  <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v1.8.0</text>
+  <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v2.0-PROD</text>
   <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$14,500 BUYOUT ANCHOR</text>
 </svg>

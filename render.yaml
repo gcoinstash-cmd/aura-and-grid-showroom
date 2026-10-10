@@ -1,7 +1,7 @@
 services:
   - type: web
     name: aura-and-grid-showroom
-    runtime: static
+    env: static
     buildCommand: ""
     staticPublishPath: .
     routes:

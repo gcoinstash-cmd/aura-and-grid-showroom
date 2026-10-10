@@ -1,9 +1,9 @@
 {
-  "catalogTotal": 114,
+  "catalogTotal": 160,
   "track1LeanTotal": 86,
-  "track2FlagshipTotal": 28,
-  "retainedFloorMinimum": 91,
-  "maxOwnershipTransferCapacity": 23,
+  "track2FlagshipTotal": 51,
+  "retainedFloorMinimum": 128,
+  "maxOwnershipTransferCapacity": 32,
   "syncVersion": "v1.6.0",
   "diligenceGrade": "L3-SUPABASE-READY",
   "buildIntegrity": "114/114 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
@@ -36,11 +36,30 @@
     "track1CommercialTeamSeat": 599,
     "track1ExclusiveBuyoutFloor": 3800,
     "track1ExclusiveBuyoutAnchor": 4500,
-    "track2FlagshipCommercialLicenseRange": [1500, 3500],
+    "track2FlagshipCommercialLicenseRange": [
+      1500,
+      3500
+    ],
     "track2EntryExclusiveBuyoutAnchor": 14500,
-    "track2EntryExclusiveBuyoutRange": [10000, 18000],
-    "track2FullAssetBuyoutRange": [18000, 35000],
-    "track2StrategicBuyoutRange": [35000, 75000]
+    "track2EntryExclusiveBuyoutRange": [
+      10000,
+      18000
+    ],
+    "track2FullAssetBuyoutRange": [
+      18000,
+      35000
+    ],
+    "track2StrategicBuyoutRange": [
+      35000,
+      75000
+    ]
   },
-  "verifiedTimestamp": "2026-10-03T19:50:00Z"
+  "verifiedTimestamp": "2026-10-03T19:50:00Z",
+  "track3ServiceEngineTotal": 23,
+  "valuation": {
+    "asc350ReplacementFloor": 1751840,
+    "commercialAgencyBuildReplacement": 2280000,
+    "masterVaultCollectionAskingPrice": 3630000,
+    "distressedFloorCard4": 1050000
+  }
 }

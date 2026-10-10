@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
   <defs>
-    <linearGradient id="bg-112" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg-130" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#08090A"/>
       <stop offset="50%" stop-color="#0D1017"/>
       <stop offset="100%" stop-color="#141824"/>
     </linearGradient>
-    <pattern id="grid-112" width="40" height="40" patternUnits="userSpaceOnUse">
+    <pattern id="grid-130" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#232630" stroke-width="0.75" stroke-opacity="0.45"/>
     </pattern>
   </defs>
-  <rect width="1280" height="720" fill="url(#bg-112)"/>
-  <rect width="1280" height="720" fill="url(#grid-112)"/>
+  <rect width="1280" height="720" fill="url(#bg-130)"/>
+  <rect width="1280" height="720" fill="url(#grid-130)"/>
   
   <!-- Subtle decorative technical radar lines -->
   <circle cx="1060" cy="220" r="180" fill="none" stroke="#C5A880" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="6 8"/>
@@ -20,12 +20,12 @@
   <!-- Header Bar -->
   <rect x="60" y="50" width="1160" height="40" fill="#14161C" rx="6" stroke="#232630" stroke-width="1"/>
   <text x="80" y="75" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" letter-spacing="2">AURA &amp; GRID // TECHNICAL REPOSITORY</text>
-  <text x="1200" y="75" text-anchor="end" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 1 // LEAN PROTOTYPE</text>
+  <text x="1200" y="75" text-anchor="end" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 2 // FLAGSHIP TIER-1</text>
   
   <!-- Title Block -->
-  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">CREATIVE &amp; MEDIA STUDIOS // ASYMMETRIC EDITORIAL SHOWCASE</text>
-  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">VibePulse OS — YouTube Community Sentiment Radar</text>
-  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">YouTube Community Sentiment Radar &amp; Telemetry Console</text>
+  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">AUTOMOTIVE &amp; MOBILITY // DENSE OPERATIONAL CONSOLE</text>
+  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">VORTEX Apex-GT Hypercar Telemetry Deck</text>
+  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">Quad-Motor Torque Vectoring &amp; Active Aero Hypercar Telemetry Console</text>
   
   <!-- Specs Console Box -->
   <rect x="60" y="320" width="1160" height="260" fill="#090B0E" rx="10" stroke="#232630" stroke-width="1"/>
@@ -38,17 +38,17 @@
   <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Supabase PostgreSQL + Active RLS</text>
   
   <text x="90" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">BENCHMARK</text>
-  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">YouTube Studio Analytics &amp; Tubular Labs Intelligence</text>
+  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">Rimac Nevera Torque Vectoring HUD &amp; Porsche Mission X Telemetry</text>
   
   <text x="680" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">RELATIONAL TABLES</text>
-  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">videos, sentiment_telemetry, comment_velocity_points, mined_comments</text>
+  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">hypercar_vehicles, telemetry_snapshots, motor_torque_logs, lap_sector_records</text>
   
   <text x="90" y="525" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">PRODUCT TRUTH</text>
   <text x="260" y="525" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600">[SIMULATED DATA PROTOTYPE] — CONCEPT DEMONSTRATION &amp; DEPLOYABLE SOURCE</text>
   
   <!-- Footer Bar -->
   <rect x="60" y="615" width="1160" height="50" fill="#14161C" rx="8" stroke="#232630" stroke-width="1"/>
-  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #112</text>
+  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #130</text>
   <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v1.8.0</text>
-  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$199 SOURCE LICENSE</text>
+  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$14,500 BUYOUT ANCHOR</text>
 </svg>

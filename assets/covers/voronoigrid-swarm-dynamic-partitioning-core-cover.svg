@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
   <defs>
-    <linearGradient id="bg-128" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg-160" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#08090A"/>
       <stop offset="50%" stop-color="#0D1017"/>
       <stop offset="100%" stop-color="#141824"/>
     </linearGradient>
-    <pattern id="grid-128" width="40" height="40" patternUnits="userSpaceOnUse">
+    <pattern id="grid-160" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#232630" stroke-width="0.75" stroke-opacity="0.45"/>
     </pattern>
   </defs>
-  <rect width="1280" height="720" fill="url(#bg-128)"/>
-  <rect width="1280" height="720" fill="url(#grid-128)"/>
+  <rect width="1280" height="720" fill="url(#bg-160)"/>
+  <rect width="1280" height="720" fill="url(#grid-160)"/>
   
   <!-- Subtle decorative technical radar lines -->
   <circle cx="1060" cy="220" r="180" fill="none" stroke="#C5A880" stroke-width="1" stroke-opacity="0.12" stroke-dasharray="6 8"/>
@@ -20,35 +20,35 @@
   <!-- Header Bar -->
   <rect x="60" y="50" width="1160" height="40" fill="#14161C" rx="6" stroke="#232630" stroke-width="1"/>
   <text x="80" y="75" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" letter-spacing="2">AURA &amp; GRID // TECHNICAL REPOSITORY</text>
-  <text x="1200" y="75" text-anchor="end" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 2 // FLAGSHIP TIER-1</text>
+  <text x="1200" y="75" text-anchor="end" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">● TRACK 3 // F1 SERVICE ENGINE</text>
   
   <!-- Title Block -->
-  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">AUTOMOTIVE &amp; MOBILITY // DENSE OPERATIONAL CONSOLE</text>
-  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">Hydra Endurance Deck</text>
-  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">Le Mans 24H Liquid H2 Fuel-Cell Hypercar Telemetry Console</text>
+  <text x="60" y="150" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="bold" letter-spacing="3">DEEP TECH &amp; SCADA // F1 SKUNKWORKS SERVICE ENGINE</text>
+  <text x="60" y="225" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="bold">VoronoiGrid Swarm Dynamic Partitioning Core</text>
+  <text x="60" y="270" fill="#9CA3AF" font-family="'Inter', sans-serif" font-size="17">Decentralized Lloyd Relaxation, Lyapunov-Stable Voronoi Partitioning &amp; Distortion Bounding</text>
   
   <!-- Specs Console Box -->
   <rect x="60" y="320" width="1160" height="260" fill="#090B0E" rx="10" stroke="#232630" stroke-width="1"/>
   <line x1="60" y1="400" x2="1220" y2="400" stroke="#232630" stroke-width="1"/>
   
   <text x="90" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">ARCHITECTURE</text>
-  <text x="260" y="365" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">React 19 + TypeScript + Tailwind CSS</text>
+  <text x="260" y="365" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Deterministic Containerized Python 3.11 / FastAPI</text>
   
   <text x="680" y="365" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">DATABASE ENGINE</text>
-  <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Supabase PostgreSQL + Active RLS</text>
+  <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">PostgreSQL AlloyDB + In-Memory State</text>
   
   <text x="90" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">BENCHMARK</text>
-  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">Toyota Gazoo Racing GR010 Le Mans Telemetry &amp; MissionH24 Console</text>
+  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">Production Reference Engine</text>
   
   <text x="680" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">RELATIONAL TABLES</text>
-  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">endurance_vehicles, h2_telemetry_snapshots, supercapacitor_cycle_logs, stint_strategy_records</text>
+  <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">state_frames, telemetry_records, execution_logs, audit_trail</text>
   
   <text x="90" y="525" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">PRODUCT TRUTH</text>
-  <text x="260" y="525" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600">[SIMULATED DATA PROTOTYPE] — CONCEPT DEMONSTRATION &amp; DEPLOYABLE SOURCE</text>
+  <text x="260" y="525" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600">[WORKING SERVICE ENGINE] — VERIFIED CLEAN-ROOM PRODUCTION REFERENCE ARCHITECTURE</text>
   
   <!-- Footer Bar -->
   <rect x="60" y="615" width="1160" height="50" fill="#14161C" rx="8" stroke="#232630" stroke-width="1"/>
-  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #128</text>
+  <text x="90" y="646" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">VEHICLE #160</text>
   <text x="360" y="646" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="12">CATALOG SYNCHRONIZED WITH GHOSTFACTORYOS v2.0-PROD</text>
-  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$14,500 BUYOUT ANCHOR</text>
+  <text x="1200" y="646" text-anchor="end" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">$35,000 BUYOUT FLOOR</text>
 </svg>

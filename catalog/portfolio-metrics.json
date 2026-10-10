@@ -1,5 +1,5 @@
 {
-  "catalogTotal": 85,
+  "catalogTotal": 160,
   "unitRetailPrice": 199,
   "retailShelfMSRP": 16915,
   "buildVerified": 85,
@@ -33,5 +33,16 @@
     "agencyVaultStandard": 1999,
     "agencyVaultMaster": 2999
   },
-  "verifiedTimestamp": "2026-09-26T23:00:00Z"
+  "verifiedTimestamp": "2026-09-26T23:00:00Z",
+  "track1LeanTotal": 86,
+  "track2FlagshipTotal": 51,
+  "track3ServiceEngineTotal": 23,
+  "retainedFloorMinimum": 128,
+  "maxOwnershipTransferCapacity": 32,
+  "valuation": {
+    "asc350ReplacementFloor": 1751840,
+    "commercialAgencyBuildReplacement": 2280000,
+    "masterVaultCollectionAskingPrice": 3630000,
+    "distressedFloorCard4": 1050000
+  }
 }

@@ -31,20 +31,20 @@
 
 ## 2. AVOIDED-COST / R&D JUSTIFICATION (BUYER ROI MEMO)
 
-Why build a deterministic matching and margin engine from scratch when your engineering team can deploy a verified reference core on Day 1?
+Why spend 2 to 3 months building a deterministic matching and margin engine from scratch when your engineering team can deploy a verified reference core on Day 1?
 
-### Engineering Replacement Cost Breakdown (ASC 350-40 Benchmark)
-| Engineering Workstream | Senior Architect Hours | Fully Burdened Rate (`$109.49/hr`) | Avoided R&D Cost |
+### Engineering Replacement Cost & Avoided-Cost Arbitrage (`300–400 Hours @ $85–$125/hr`)
+| Engineering Workstream | Internal Dev Hours Saved | Market Dev Rate (`$85–$125/hr`) | Avoided R&D Cost |
 | :--- | :---: | :---: | :---: |
-| **1. Fixed-Point $10^8$ FIFO Matching Core & $O(1)$ Queue Cancel** | 32 hrs | `$109.49/hr` | `$3,503.68` |
-| **2. Synchronous Pre-Trade Margin Lock & Liquidation Sentinel** | 24 hrs | `$109.49/hr` | `$2,627.76` |
-| **3. FastAPI Gateway, OpenAPI 3.1.0 Contract & SQL Audit DDL** | 18 hrs | `$109.49/hr` | `$1,970.82` |
-| **4. React 19 L2 Depth Visualizer & Margin Stress Console** | 14 hrs | `$109.49/hr` | `$1,532.86` |
-| **5. Offline Pytest Verification Suite (`95.27%`) & Docker Hardening** | 12 hrs | `$109.49/hr` | `$1,313.88` |
-| **TOTAL AVOIDED SENIOR ARCHITECT PAYROLL** | **~100 hrs** | **`$109.49/hr`** | **`$10,949.00+`** *(~`$19,500+` External Agency Equivalent)* |
+| **1. Fixed-Point $10^8$ FIFO Matching Core & $O(1)$ Queue Cancel** | `110 – 140 hrs` | `$85 – $125/hr` | `$9,350 – $17,500` |
+| **2. Synchronous Pre-Trade Margin Lock & Liquidation Sentinel** | `70 – 90 hrs` | `$85 – $125/hr` | `$5,950 – $11,250` |
+| **3. FastAPI Gateway, OpenAPI 3.1.0 Contract & SQL Audit DDL** | `50 – 70 hrs` | `$85 – $125/hr` | `$4,250 – $8,750` |
+| **4. React 19 L2 Depth Visualizer & Margin Stress Console** | `40 – 55 hrs` | `$85 – $125/hr` | `$3,400 – $6,875` |
+| **5. Offline Pytest Verification Suite (`95.27%`) & Docker Hardening** | `30 – 45 hrs` | `$85 – $125/hr` | `$2,550 – $5,625` |
+| **TOTAL AVOIDED DEVELOPER PAYROLL** | **`300 – 400 hrs`** | **`$85 – $125/hr`** | **`$25,500 – $50,000`** *(Senior Architect ASC 350-40 Benchmark: `$109.49/hr`)* |
 
 ### Speed-to-Market Advantage
-- **Avoided Engineering Payroll:** Saves **~100 senior systems architect hours** (**`$10,900+` direct internal replacement cost**, or **`$18,000–$25,000+`** if contracted to an external FinTech dev agency) plus 4–8 weeks of specification, debugging, and edge-case testing.
+- **Avoided-Cost Arbitrage:** Saves **300–400 developer hours @ `$85–$125/hr`** (**`$25,500–$50,000`** in avoided engineering payroll) plus 8–12 weeks of specification, mathematical verification, and edge-case debugging.
 - **15-Minute Turnkey Deployment:** Ships with a 1-click **Google Cloud Run** deployment command, **Render.com** container configuration, and local **Docker Compose** recipe (`UID 10001` non-root container with built-in `/healthz` readiness probes).
 - **Zero External Network Dependencies:** Runs 100% offline out of the box—no third-party API keys, paid data feeds, or cloud databases required to verify or demo.
 
@@ -80,7 +80,7 @@ Upon closing of the Micro-APA via Acquire.com Escrow, Buyer receives **100% owne
 Seller (**ZoMae Media LLC**) permanently retains 100% right, title, and interest in and to:
 1. **Dealership Identity & Storefront:** The **Aura & Grid™** brand identity, domain names, public dealership storefront (`aura-and-grid-showroom`), and customer ledger.
 2. **Foundry Brand & Operating System:** The **GhostFactoryOS™** brand, trademarks, internal command consoles (`ghost-factory-console`), valuation engines, build harnesses, and proprietary factory prompts.
-3. **Master Catalog & 80% Sovereign Vault Floor:** All other **159 software assets, SCADA flagships, and service engines** in Seller's 160-unit Master Fleet Catalog (`86 Track 1 + 51 Track 2 + 22 other Track 3 engines`), including the permanently vaulted 80% retention floor.
+3. **Master Catalog & 80% Sovereign Vault Floor:** All other **159 software assets, SCADA flagships, and service engines** in Seller's 160-unit Master Fleet Catalog (`86 Track 1 + 51 Track 2 + 22 other Track 3 engines`), including the permanently vaulted 80% retention floor (`>98%` active fleet retention maintained per cycle).
 4. **Shared Cross-Portfolio Design Systems:** Reusable factory UI primitives and harness templates outside the standalone code delivered in Schedule A.
 
 ---
@@ -89,7 +89,8 @@ Seller (**ZoMae Media LLC**) permanently retains 100% right, title, and interest
 
 | Deal Term | Micro-APA Pilot Specification |
 | :--- | :--- |
-| **Suggested Asking Price Range** | **`$14,500 – $25,000 USD`** *(Pilot Quick-Close Micro-APA Anchor; vs. `$35,000–$65,000` Institutional Track 3 Floor)* |
+| **Tier 1 Asking Price Range** | **`$15,000 – $25,000 USD`** *(Pilot Target Anchor: **`$19,500 USD`** · Hard Walk-Away Floor: **`$15,000 USD`**)* |
+| **Platform Economics** | **8% Acquire.com closing fee** on sales under `$250k` + **`$25/mo` listing fee** (`$17,915` net before monthly carry at `$19,500` target) |
 | **Payment Structure** | **100% All-Cash at Closing** via **Acquire.com Escrow** (Escrow.com integration) |
 | **Inspection Window** | **Standard 14-Day Technical Escrow Inspection Window** for buyer code audit, container build verification, and offline test suite execution (`pytest packages/track3-acquire-pilot/VERIFICATION_SUITE/ -q`) |
 | **Closing Deliverables** | Private Git archive / repository transfer + signed Schedule A/B Micro-APA bill of sale + Clean-Room IP Certificate |

@@ -62,6 +62,7 @@ const MASTER_FILES = [
   { src: 'docs/AUDIT_360_VERIFIED_REPORT.md', destName: 'AUDIT_360_VERIFIED_REPORT.md' },
   { src: 'docs/audits/TRACK3_INCOMING_REGISTRATION.md', destName: 'TRACK3_INCOMING_REGISTRATION.md' },
   { src: 'docs/audits/FLEET_VALUATION_APPRAISAL_ASC350.md', destName: 'FLEET_VALUATION_APPRAISAL_ASC350.md' },
+  { src: 'docs/audits/ACQUIRE_TIER1_STRATEGY.md', destName: 'ACQUIRE_TIER1_STRATEGY.md' },
   { src: 'templates/compliance/COMPLIANCE.template.md', destName: 'COMPLIANCE.template.md' },
   { src: 'protocols/INSTITUTIONAL_PRODUCTION_STANDARD.md', destName: 'INSTITUTIONAL_PRODUCTION_STANDARD.md' },
   { src: 'src/data/track3Engines.ts', destName: 'track3Engines.ts' },
@@ -72,7 +73,7 @@ const MASTER_FILES = [
 
 /**
  * STRICT EXCLUSION LIST FOR RSYNC
- * Strictly ignores node_modules, .git, dist, and .vite cache folders.
+ * Strictly ignores node_modules, .git, dist, .venv, and .vite cache folders.
  */
 const STRICT_EXCLUDE_PATTERNS = [
   'node_modules',
@@ -95,6 +96,9 @@ const STRICT_EXCLUDE_PATTERNS = [
   '*.log',
   '__pycache__',
   '__pycache__/**',
+  '.venv',
+  '.venv/**',
+  '*/.venv/**',
   '.pytest_cache',
   '.pytest_cache/**',
   '.turbo',

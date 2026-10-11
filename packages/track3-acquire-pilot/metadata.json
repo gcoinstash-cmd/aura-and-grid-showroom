@@ -1,0 +1,6 @@
+{
+  "name": "ApexLimit Engine - GF-T3-151 Quant HFT Order & Risk System",
+  "description": "Ghost Factory OS Skunkworks GF-T3-151 microsecond-grade order matching and risk liquidation engine with Level 2 orderbook, fixed-point math, and institutional vault specs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

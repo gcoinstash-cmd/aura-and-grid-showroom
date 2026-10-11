@@ -1,0 +1,11 @@
+"""
+Pytest Configuration & Path Resolution for GF-T3-151 Offline Verification Suite.
+SPDX-License-Identifier: Apache-2.0 / MIT (Permissive Clean-Room IP)
+"""
+
+import sys
+from pathlib import Path
+
+PACKAGE_ROOT = Path(__file__).resolve().parent.parent
+if str(PACKAGE_ROOT) not in sys.path:
+    sys.path.insert(0, str(PACKAGE_ROOT))

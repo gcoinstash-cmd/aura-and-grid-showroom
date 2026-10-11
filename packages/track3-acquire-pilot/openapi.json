@@ -1,0 +1,706 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ApexLimit HFT Matching & Risk Engine (GF-T3-151)",
+    "description": "Microsecond-grade order matching and real-time risk liquidation engine. Clean-room certified, zero copyleft.",
+    "version": "1.0.0-PROD"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Telemetry"
+        ],
+        "summary": "Get Health",
+        "description": "Engine telemetry, latency metrics, and memory fence state.",
+        "operationId": "get_health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Get Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/orders": {
+      "post": {
+        "tags": [
+          "Trading Operations"
+        ],
+        "summary": "Submit Limit, Market, or Stop Order",
+        "description": "Submit order to matching core.\nExecutes synchronous Pre-Trade Risk checks before matching.",
+        "operationId": "submit_order_v1_orders_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderSubmissionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderResponseDTO"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/orders/{order_id}": {
+      "delete": {
+        "tags": [
+          "Trading Operations"
+        ],
+        "summary": "Cancel open order and release margin locks",
+        "operationId": "cancel_order_v1_orders__order_id__delete",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Order UUID to cancel",
+              "title": "Order Id"
+            },
+            "description": "Order UUID to cancel"
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Market symbol",
+              "default": "BTC-USD",
+              "title": "Symbol"
+            },
+            "description": "Market symbol"
+          },
+          {
+            "name": "account_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Account UUID for margin unlock verification",
+              "title": "Account Id"
+            },
+            "description": "Account UUID for margin unlock verification"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Cancel Order V1 Orders  Order Id  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/orderbook/{symbol}": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Level 2 Orderbook Snapshot",
+        "operationId": "get_orderbook_v1_orderbook__symbol__get",
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Symbol, e.g. BTC-USD",
+              "title": "Symbol"
+            },
+            "description": "Symbol, e.g. BTC-USD"
+          },
+          {
+            "name": "depth",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Depth levels to return",
+              "default": 20,
+              "title": "Depth"
+            },
+            "description": "Depth levels to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Get Orderbook V1 Orderbook  Symbol  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/risk/margin/{account_id}": {
+      "get": {
+        "tags": [
+          "Risk Management"
+        ],
+        "summary": "Real-time margin utilization, liquidation threshold, and leverage",
+        "operationId": "get_margin_state_v1_risk_margin__account_id__get",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Account UUID",
+              "title": "Account Id"
+            },
+            "description": "Account UUID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Get Margin State V1 Risk Margin  Account Id  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/risk/deposit": {
+      "post": {
+        "tags": [
+          "Risk Management"
+        ],
+        "summary": "Deposit cash or collateral",
+        "operationId": "deposit_collateral_v1_risk_deposit_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepositRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Deposit Collateral V1 Risk Deposit Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/risk/mark-price": {
+      "post": {
+        "tags": [
+          "Risk Management"
+        ],
+        "summary": "Update mark price for stress testing",
+        "operationId": "update_mark_price_v1_risk_mark_price_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarkPriceUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Update Mark Price V1 Risk Mark Price Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/risk/liquidate/{account_id}": {
+      "post": {
+        "tags": [
+          "Risk Management"
+        ],
+        "summary": "Trigger liquidation cascade",
+        "operationId": "trigger_liquidation_v1_risk_liquidate__account_id__post",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Account Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Response Trigger Liquidation V1 Risk Liquidate  Account Id  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DepositRequest": {
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "title": "Account Id"
+          },
+          "amount": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Amount"
+          },
+          "asset_id": {
+            "type": "string",
+            "title": "Asset Id",
+            "default": "USD"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "amount"
+        ],
+        "title": "DepositRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MarkPriceUpdate": {
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Price"
+          }
+        },
+        "type": "object",
+        "required": [
+          "symbol",
+          "price"
+        ],
+        "title": "MarkPriceUpdate"
+      },
+      "OrderResponseDTO": {
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "title": "Order Id"
+          },
+          "client_order_id": {
+            "type": "string",
+            "title": "Client Order Id"
+          },
+          "account_id": {
+            "type": "string",
+            "title": "Account Id"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "side": {
+            "$ref": "#/components/schemas/OrderSide"
+          },
+          "order_type": {
+            "$ref": "#/components/schemas/OrderType"
+          },
+          "price": {
+            "type": "number",
+            "title": "Price"
+          },
+          "quantity": {
+            "type": "number",
+            "title": "Quantity"
+          },
+          "filled_quantity": {
+            "type": "number",
+            "title": "Filled Quantity"
+          },
+          "remaining_quantity": {
+            "type": "number",
+            "title": "Remaining Quantity"
+          },
+          "status": {
+            "$ref": "#/components/schemas/OrderStatus"
+          },
+          "margin_locked": {
+            "type": "number",
+            "title": "Margin Locked"
+          },
+          "trades": {
+            "items": {
+              "$ref": "#/components/schemas/TradeExecutionDTO"
+            },
+            "type": "array",
+            "title": "Trades",
+            "default": []
+          },
+          "created_at_ns": {
+            "type": "integer",
+            "title": "Created At Ns"
+          },
+          "updated_at_ns": {
+            "type": "integer",
+            "title": "Updated At Ns"
+          }
+        },
+        "type": "object",
+        "required": [
+          "order_id",
+          "client_order_id",
+          "account_id",
+          "symbol",
+          "side",
+          "order_type",
+          "price",
+          "quantity",
+          "filled_quantity",
+          "remaining_quantity",
+          "status",
+          "margin_locked",
+          "created_at_ns",
+          "updated_at_ns"
+        ],
+        "title": "OrderResponseDTO"
+      },
+      "OrderSide": {
+        "type": "string",
+        "enum": [
+          "BUY",
+          "SELL"
+        ],
+        "title": "OrderSide"
+      },
+      "OrderStatus": {
+        "type": "string",
+        "enum": [
+          "NEW",
+          "PARTIALLY_FILLED",
+          "FILLED",
+          "CANCELLED",
+          "REJECTED"
+        ],
+        "title": "OrderStatus"
+      },
+      "OrderSubmissionRequest": {
+        "properties": {
+          "client_order_id": {
+            "type": "string",
+            "title": "Client Order Id",
+            "description": "Unique client-supplied idempotency key"
+          },
+          "account_id": {
+            "type": "string",
+            "title": "Account Id",
+            "description": "Trading account UUID"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "Symbol",
+            "description": "Market symbol, e.g. BTC-USD",
+            "default": "BTC-USD"
+          },
+          "side": {
+            "$ref": "#/components/schemas/OrderSide",
+            "description": "Order side: BUY or SELL"
+          },
+          "order_type": {
+            "$ref": "#/components/schemas/OrderType",
+            "description": "LIMIT, MARKET, or STOP_LIMIT",
+            "default": "LIMIT"
+          },
+          "price": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Price",
+            "description": "Order price in quote currency (will be scaled to 10^8)"
+          },
+          "quantity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Quantity",
+            "description": "Base asset quantity (will be scaled to 10^8)"
+          },
+          "stop_price": {
+            "anyOf": [
+              {
+                "type": "number",
+                "exclusiveMinimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stop Price",
+            "description": "Stop trigger price for STOP_LIMIT"
+          }
+        },
+        "type": "object",
+        "required": [
+          "client_order_id",
+          "account_id",
+          "side",
+          "price",
+          "quantity"
+        ],
+        "title": "OrderSubmissionRequest"
+      },
+      "OrderType": {
+        "type": "string",
+        "enum": [
+          "LIMIT",
+          "MARKET",
+          "STOP_LIMIT"
+        ],
+        "title": "OrderType"
+      },
+      "TradeExecutionDTO": {
+        "properties": {
+          "trade_id": {
+            "type": "string",
+            "title": "Trade Id"
+          },
+          "symbol": {
+            "type": "string",
+            "title": "Symbol"
+          },
+          "price": {
+            "type": "number",
+            "title": "Price"
+          },
+          "quantity": {
+            "type": "number",
+            "title": "Quantity"
+          },
+          "notional": {
+            "type": "number",
+            "title": "Notional"
+          },
+          "maker_order_id": {
+            "type": "string",
+            "title": "Maker Order Id"
+          },
+          "taker_order_id": {
+            "type": "string",
+            "title": "Taker Order Id"
+          },
+          "maker_account_id": {
+            "type": "string",
+            "title": "Maker Account Id"
+          },
+          "taker_account_id": {
+            "type": "string",
+            "title": "Taker Account Id"
+          },
+          "executed_at_ns": {
+            "type": "integer",
+            "title": "Executed At Ns"
+          }
+        },
+        "type": "object",
+        "required": [
+          "trade_id",
+          "symbol",
+          "price",
+          "quantity",
+          "notional",
+          "maker_order_id",
+          "taker_order_id",
+          "maker_account_id",
+          "taker_account_id",
+          "executed_at_ns"
+        ],
+        "title": "TradeExecutionDTO"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

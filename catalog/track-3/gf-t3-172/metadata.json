@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-172 Cockpit (export) ",
+  "description": "Production-grade BFT consensus & DIRECT4 torque-split engineering specification cockpit for GF-T3-172 Lexus TX 500h F SPORT Performance Core micro-APA buyout asset.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

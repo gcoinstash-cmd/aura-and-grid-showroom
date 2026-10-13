@@ -194,6 +194,7 @@ class MarkPriceUpdate(BaseModel):
 # ---------------------------------------------------------
 
 @app.get("/health", tags=["Telemetry"])
+@app.get("/healthz", tags=["Telemetry"])
 def get_health() -> Dict[str, Any]:
     """Engine telemetry, latency metrics, and memory fence state."""
     return engine.get_telemetry()

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-185 (export) ",
+  "description": "Turnkey micro-APA deliverable with linear solenoid AVS damping, predictive deceleration regeneration, and PostgreSQL 16 HMAC ledger for GF-T3-185.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

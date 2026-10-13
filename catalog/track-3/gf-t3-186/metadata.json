@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-186 (export)",
+  "description": "Turnkey micro-APA engineering cockpit and asset buyout package for Lexus UX 300h E-Four hybrid power split device and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-190 (export) ",
+  "description": "Turnkey micro-APA deliverable for Lexus Electrified Sport Concept Solid-State Core with battery thermal matrix, virtual manual transmission, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

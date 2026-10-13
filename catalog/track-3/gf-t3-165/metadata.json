@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-165 DIRECT4 HyperGrid (export) ",
+  "description": "Ghost FactoryOS Track 3 F1 Skunkworks Engine for cross-venue constant product market maker arbitrage and DIRECT4 torque-vectored quant routing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

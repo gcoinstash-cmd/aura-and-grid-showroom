@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-196 (export)",
+  "description": "Turnkey micro-APA buyout asset for Acquire.com: Lexus RZ 450e Steer-by-Wire One-Motion Grip and DIRECT4 e-Axle core with PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

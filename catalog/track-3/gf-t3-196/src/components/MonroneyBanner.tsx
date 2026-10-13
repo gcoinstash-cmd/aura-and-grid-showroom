@@ -1,0 +1,99 @@
+import React from 'react';
+import { Play, ShieldCheck, Download, CheckCircle2 } from 'lucide-react';
+
+interface MonroneyBannerProps {
+  onSimulateSbw: () => void;
+  onVerifyHash: () => void;
+  onExportSpec: () => void;
+}
+
+export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
+  onSimulateSbw,
+  onVerifyHash,
+  onExportSpec,
+}) => {
+  return (
+    <div className="w-full bg-slate-900/90 border border-slate-800 rounded-2xl p-5 mb-6 shadow-2xl relative overflow-hidden">
+      {/* Decorative subtle ambient glow */}
+      <div className="absolute top-0 right-0 w-96 h-32 bg-amber-500/5 blur-3xl pointer-events-none rounded-full" />
+      <div className="absolute bottom-0 left-0 w-80 h-24 bg-emerald-500/5 blur-3xl pointer-events-none rounded-full" />
+
+      {/* a) Top Badge Strip */}
+      <div className="flex flex-row flex-wrap items-center gap-1.5 mb-3">
+        <span className="text-amber-400 bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
+          GF-T3-196
+        </span>
+        <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
+          RZ 450e SBW CORE
+        </span>
+        <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
+          v1.0.0-PROD
+        </span>
+      </div>
+
+      {/* b) Title & Description */}
+      <h1 className="text-2xl font-black text-white tracking-tight mb-1">
+        Lexus RZ 450e Steer-by-Wire DIRECT4 Core
+      </h1>
+      <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
+        Turnkey micro-APA deliverable with One-Motion Grip steer-by-wire ratio adaptation, dual e-Axle DIRECT4 torque vectoring, and PostgreSQL 16 HMAC ledger.
+      </p>
+
+      {/* c) Action Buttons (STRICT SINGLE HORIZONTAL ROW, NEVER VERTICALLY STACKED) */}
+      <div className="flex flex-row items-center gap-1.5 pb-3 mb-3 border-b border-slate-800 overflow-x-auto">
+        <button
+          onClick={onSimulateSbw}
+          type="button"
+          className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs h-8 px-2.5 rounded-lg inline-flex items-center gap-1 shrink-0 cursor-pointer transition-colors shadow-sm active:scale-95"
+          title="Launch Interactive Steer-by-Wire Simulator"
+        >
+          <Play className="w-3.5 h-3.5 fill-current" />
+          <span>Simulate SBW</span>
+        </button>
+
+        <button
+          onClick={onVerifyHash}
+          type="button"
+          className="bg-slate-800 hover:bg-slate-700 border border-emerald-500/40 text-emerald-400 font-bold text-xs h-8 px-2.5 rounded-lg inline-flex items-center gap-1 shrink-0 cursor-pointer transition-colors active:scale-95"
+          title="Cryptographically Audit HMAC Ledger Hashes"
+        >
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Verify Hash</span>
+        </button>
+
+        <button
+          onClick={onExportSpec}
+          type="button"
+          className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs h-8 px-2.5 rounded-lg inline-flex items-center gap-1 shrink-0 cursor-pointer transition-colors shadow-sm active:scale-95"
+          title="Download Master GF_T3_196_SPEC.md Deliverable"
+        >
+          <Download className="w-3.5 h-3.5" />
+          <span>Export Spec</span>
+        </button>
+      </div>
+
+      {/* d) Valuation & Audit Strip */}
+      <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
+        <div className="text-slate-300 font-medium flex items-center gap-1.5">
+          <span className="text-slate-500 font-mono">Buyout:</span>
+          <span className="font-bold text-amber-300 font-mono">$45,000 USD</span>
+        </div>
+        <span className="text-slate-700 hidden sm:inline">|</span>
+        <div className="text-slate-300 font-medium flex items-center gap-1.5">
+          <span className="text-slate-500 font-mono">Enterprise:</span>
+          <span className="font-bold text-emerald-400 font-mono">$125,000 USD</span>
+        </div>
+        <span className="text-slate-700 hidden sm:inline">|</span>
+        <div className="text-slate-300 font-medium flex items-center gap-1.5">
+          <span className="text-slate-500 font-mono">License:</span>
+          <span className="font-semibold text-slate-200">MIT Permissive</span>
+        </div>
+        <span className="text-slate-700 hidden sm:inline">|</span>
+        <div className="text-emerald-400 font-medium flex items-center gap-1">
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+          <span>Clean-Room Certified</span>
+        </div>
+      </div>
+    </div>
+  );
+};

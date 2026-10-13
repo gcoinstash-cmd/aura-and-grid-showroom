@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-200 (export) ",
+  "description": "Turnkey micro-APA deliverable with quad-motor independent torque vectoring, solid-state battery thermal matrix, sub-2.0s launch dynamics, and PostgreSQL 16 HMAC ledger for Acquire.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

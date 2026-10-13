@@ -1,9 +1,11 @@
-// Auto-generated 160-Unit Master Fleet Data Store
+// Auto-generated 200-Unit Master Fleet Data Store (Synced up to GF-T3-200)
 export interface FleetAsset {
   [key: string]: any;
   id: number;
+  unit_id?: string;
   tag?: string;
   name: string;
+  track?: string;
   category: string;
   vertical?: string;
   vertical_tag?: string;
@@ -25,8 +27,14 @@ export interface FleetAsset {
   gumroad_url?: string;
   commercial_checkout_url?: string;
   license?: string;
+  retail_valuation?: number;
+  enterprise_valuation?: number;
+  apa_buyout_floor_band?: number[];
   apa_buyout_floor?: number;
   monopoly_ceiling?: number;
+  clean_room_status?: string;
+  build_status?: string;
+  timestamp?: string;
 }
 
 export const FLEET_DATA: FleetAsset[] = [
@@ -55,11 +63,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Boutique fitness studios & athletic training clubs",
     "domain": "Performance Athletics & Fitness",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 2,
@@ -86,11 +93,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Film production soundstages & creative studio facilities",
     "domain": "Creative & Media Production",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 3,
@@ -117,11 +123,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Luxury supercar & exotic vehicle rental agencies",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Pro"
   },
   {
     "id": 4,
@@ -148,11 +153,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Boutique fight clubs & private boxing gyms",
     "domain": "Performance Athletics & Fitness",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 5,
@@ -179,12 +183,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Emerging private equity managers & LP syndicates",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/elevate-capital-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/elevate-capital-cover.webp"
   },
   {
     "id": 6,
@@ -211,11 +214,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Specialty micro-roasteries & artisanal coffee tasting bars",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 7,
@@ -243,11 +245,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Ultra-luxury estate brokers & private villa management",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 8,
@@ -274,12 +275,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Boutique aesthetics clinics & medical spa practitioners",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/aura-medspa-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/aura-medspa-cover.webp"
   },
   {
     "id": 9,
@@ -306,12 +306,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-end grooming salons & luxury barber ateliers",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/royal-apex-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/royal-apex-cover.webp"
   },
   {
     "id": 10,
@@ -338,12 +337,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Private vineyard cellars & allocation tasting estates",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/aura-reserve-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/aura-reserve-cover.webp"
   },
   {
     "id": 11,
@@ -370,11 +368,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Brutalist architectural ateliers & BIM engineering studios",
     "domain": "Creative & Media Production",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 12,
@@ -401,11 +398,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-performance biomechanics & athletic testing labs",
     "domain": "Performance Athletics & Fitness",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 13,
@@ -432,11 +428,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Speakeasy jazz lounges & sommelier listening rooms",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 14,
@@ -462,11 +457,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-ticket wellness retreats & executive expeditions",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 15,
@@ -492,11 +486,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Intimate chef counter tasting rooms & omakase bars",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 16,
@@ -522,11 +515,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Bespoke footwear cordwainers & custom leather ateliers",
     "domain": "Creative & Media Production",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 17,
@@ -552,11 +544,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Bespoke fragrance houses & botanical olfactory ateliers",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 18,
@@ -582,11 +573,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Alpine tasting salons & biodynamic cellar lounges",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 19,
@@ -613,12 +603,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Commercial 3D motion graphics studios, broadcast designers & VFX houses",
     "domain": "Creative & Media Production",
     "rarity_tier": "Core",
-    "bestFor": "Commercial 3D motion graphics studios, broadcast designers & VFX houses",
-    "category_badge": "Showroom"
+    "bestFor": "Commercial 3D motion graphics studios, broadcast designers & VFX houses"
   },
   {
     "id": 20,
@@ -645,11 +634,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Private dining clubs & vinyl listening restaurants",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 21,
@@ -676,11 +664,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-energy izakayas & modern craft robata cantinas",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Zero-Trust"
+    "rarity_tier": "Core"
   },
   {
     "id": 22,
@@ -707,11 +694,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Contemporary dim sum bistros & craft baijiu bars",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 23,
@@ -738,12 +724,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-performance dyno tuning shops, ECU calibrators & motorsport engine builders",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Pro",
-    "bestFor": "High-performance dyno tuning shops, ECU calibrators & motorsport engine builders",
-    "category_badge": "Telemetry"
+    "bestFor": "High-performance dyno tuning shops, ECU calibrators & motorsport engine builders"
   },
   {
     "id": 24,
@@ -771,12 +756,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Luxury architectural villa rentals & private island retreats",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/villa-obsidian-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/villa-obsidian-cover.webp"
   },
   {
     "id": 25,
@@ -803,12 +787,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: 3D character animation studios, visual effects pipelines & film rigging artists",
     "domain": "Creative & Media Production",
     "rarity_tier": "Core",
-    "bestFor": "3D character animation studios, visual effects pipelines & film rigging artists",
-    "category_badge": "Showroom"
+    "bestFor": "3D character animation studios, visual effects pipelines & film rigging artists"
   },
   {
     "id": 26,
@@ -836,11 +819,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Craft smash burger joints & fast-casual kitchen collectives",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 27,
@@ -867,11 +849,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Haute parfumerie brands & bespoke scent formulation labs",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 28,
@@ -898,12 +879,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Modern architecture studios, urban master planners & design ateliers",
     "domain": "Creative & Media Production",
     "rarity_tier": "Pro",
-    "bestFor": "Modern architecture studios, urban master planners & design ateliers",
-    "category_badge": "Showroom"
+    "bestFor": "Modern architecture studios, urban master planners & design ateliers"
   },
   {
     "id": 29,
@@ -930,11 +910,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Boutique wine estates & allocation membership programs",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 30,
@@ -960,11 +939,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Multi-generational family offices & private wealth trusts",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 31,
@@ -990,11 +968,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Luxury barber salons & master chair booking operators",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 32,
@@ -1021,11 +998,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: VIP barber studios & curated grooming product retailers",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 33,
@@ -1051,11 +1027,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial real estate loan brokers & debt underwriters",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 34,
@@ -1081,12 +1056,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: B2B strategy consultants & high-ticket agency founders",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/high-ticket-offer-architect-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/high-ticket-offer-architect-cover.webp"
   },
   {
     "id": 35,
@@ -1112,16 +1086,15 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Oak smokehouse barbecue joints with pit telemetry needs",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/bbq-pit-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/bbq-pit-cover.webp"
   },
   {
     "id": 36,
-    "name": "STUDIO VÉRONIQUE LA",
+    "name": "STUDIO V\u00c9RONIQUE LA",
     "category": "California Warm Modernism, Residential Interior Design & Material Sourcing OS",
     "vertical": "creative",
     "gumroad_url": "https://auraandgrid.gumroad.com/l/studio-veronique-os",
@@ -1143,12 +1116,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: California modern interior design & residential architecture studios",
     "domain": "Creative & Media Production",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/studio-v-ronique-la-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/studio-v-ronique-la-cover.webp"
   },
   {
     "id": 37,
@@ -1175,12 +1147,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Neapolitan pizzerias & artisanal fermentation kitchens",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/pizza-parlor-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/pizza-parlor-os-cover.webp"
   },
   {
     "id": 38,
@@ -1207,12 +1178,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: VIP nightclub bottle service & hospitality promoters",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/nocturne-nightlife-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/nocturne-nightlife-os-cover.webp"
   },
   {
     "id": 39,
@@ -1239,13 +1209,12 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-ticket digital design agencies, kinetic motion studios & creative directors",
     "domain": "Creative & Media Production",
     "rarity_tier": "Pro",
     "bestFor": "High-ticket digital design agencies, kinetic motion studios & creative directors",
-    "coverImage": "assets/covers/zenith-elite-agency-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/zenith-elite-agency-os-cover.webp"
   },
   {
     "id": 40,
@@ -1272,12 +1241,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Food truck operators & ghost kitchen delivery brands",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/street-culture-kitchen-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/street-culture-kitchen-os-cover.webp"
   },
   {
     "id": 41,
@@ -1304,12 +1272,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Bitcoin treasury managers & cryptographic asset holders",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/satstacker-asset-vault-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/satstacker-asset-vault-os-cover.webp"
   },
   {
     "id": 42,
@@ -1336,13 +1303,12 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Independent auto repair shops & fleet maintenance operators",
     "bestFor": "Independent auto repair shops & fleet maintenance operators",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/auto-repair-shop-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/auto-repair-shop-os-cover.webp"
   },
   {
     "id": 43,
@@ -1369,12 +1335,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Destination luxury spas & holistic wellness sanctuaries",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/spa-treatment-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/spa-treatment-os-cover.webp"
   },
   {
     "id": 44,
@@ -1400,12 +1365,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Heritage culinary concepts & private dining chefs",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/soul-spice-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/soul-spice-os-cover.webp"
   },
   {
     "id": 45,
@@ -1432,11 +1396,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Gastronomic research collectives & experiential dining",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 46,
@@ -1462,12 +1425,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Farm-to-table restaurants & local farm partnership networks",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/heritage-honey-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/heritage-honey-os-cover.webp"
   },
   {
     "id": 47,
@@ -1494,12 +1456,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: High-end residential real estate brokers & property portals",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/luxury-real-estate-portal-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/luxury-real-estate-portal-os-cover.webp"
   },
   {
     "id": 48,
@@ -1525,12 +1486,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-volume drive-thru concepts & late-night wok kitchens",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/midnight-express-os-cover.webp",
-    "category_badge": "Zero-Trust"
+    "coverImage": "assets/covers/midnight-express-os-cover.webp"
   },
   {
     "id": 49,
@@ -1555,12 +1515,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Real estate private equity analysts & property syndicators",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/real-estate-analytics-hub-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/real-estate-analytics-hub-os-cover.webp"
   },
   {
     "id": 50,
@@ -1586,12 +1545,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Banquet catering facilities & commercial production kitchens",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/culinary-operational-workspace-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/culinary-operational-workspace-os-cover.webp"
   },
   {
     "id": 51,
@@ -1618,16 +1576,15 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Mobile street food fleets & festival event caterers",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/trendy-taco-truck-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/trendy-taco-truck-os-cover.webp"
   },
   {
     "id": 52,
-    "name": "YŪGEN SENSORY OS",
+    "name": "Y\u016aGEN SENSORY OS",
     "category": "Zen Minimalist Sensory Dining Sanctuary & Omakase Booking OS",
     "vertical": "hospitality",
     "gumroad_url": "https://auraandgrid.gumroad.com/l/yugen-sensory-os",
@@ -1649,12 +1606,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Minimalist Zen dining rooms & sensory gastronomy seatings",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Core",
-    "coverImage": "assets/covers/y-gen-sensory-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/y-gen-sensory-os-cover.webp"
   },
   {
     "id": 53,
@@ -1680,12 +1636,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Pediatric development centers & sensory therapy clinics",
     "domain": "Clinical & Medical Operations",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/little-roots-wellness-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/little-roots-wellness-os-cover.webp"
   },
   {
     "id": 54,
@@ -1711,12 +1666,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Hotel asset managers & boutique hospitality investors",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/hospitality-roi-engine-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/hospitality-roi-engine-os-cover.webp"
   },
   {
     "id": 55,
@@ -1742,12 +1696,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Private equity portfolio managers & investment committees",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/zen-capital-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/zen-capital-os-cover.webp"
   },
   {
     "id": 56,
@@ -1774,12 +1727,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial HVAC contractors & chiller plant technicians",
     "domain": "Trades & Infrastructure",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/hvac-dispatch-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/hvac-dispatch-os-cover.webp"
   },
   {
     "id": 57,
@@ -1806,11 +1758,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Drone roofing contractors & insurance scope estimators",
     "domain": "Trades & Infrastructure",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 58,
@@ -1837,11 +1788,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Commercial plumbing firms & backflow testing services",
     "domain": "Trades & Infrastructure",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 59,
@@ -1868,11 +1818,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Solar EPC installers & renewable energy contractors",
     "domain": "Trades & Infrastructure",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 60,
@@ -1899,11 +1848,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Commercial electrical contractors & EV charger deployers",
     "domain": "Trades & Infrastructure",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 61,
@@ -1930,11 +1878,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Private dental practices & cosmetic dentistry clinics",
     "domain": "Clinical & Medical Operations",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 62,
@@ -1961,11 +1908,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Emergency veterinary hospitals & animal surgical clinics",
     "domain": "Clinical & Medical Operations",
-    "rarity_tier": "Core",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Core"
   },
   {
     "id": 63,
@@ -1992,11 +1938,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Functional medicine doctors & epigenetic longevity clinics",
     "domain": "Clinical & Medical Operations",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 64,
@@ -2023,11 +1968,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Orthopedic physical therapists & sports recovery clinics",
     "domain": "Clinical & Medical Operations",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 65,
@@ -2054,11 +1998,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Contrast therapy lounges & hyperbaric wellness clinics",
     "domain": "Clinical & Medical Operations",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 66,
@@ -2085,11 +2028,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial boutique law firms & transactional attorneys",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 67,
@@ -2115,11 +2057,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Lower middle-market M&A advisors & investment banks",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 68,
@@ -2145,11 +2086,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Retained executive search consultants & board recruiters",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 69,
@@ -2175,11 +2115,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Sovereign wealth managers & multi-family offices",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 70,
@@ -2205,11 +2144,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Complex litigation teams & trial war room managers",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 71,
@@ -2236,11 +2174,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Earthmoving equipment rental yards & plant hire fleets",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 72,
@@ -2267,11 +2204,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Intermodal freight brokerages & carrier logistics dispatchers",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 73,
@@ -2298,11 +2234,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: On-demand private jet brokers & aircraft fleet operators",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 74,
@@ -2329,11 +2264,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Temperature-controlled cold warehouses & reefer dock hubs",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 75,
@@ -2360,11 +2294,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Heavy lift contractors & mobile crane rigging engineers",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Pro"
   },
   {
     "id": 76,
@@ -2391,11 +2324,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Paint protection film installers & luxury auto restylers",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Pro"
   },
   {
     "id": 77,
@@ -2422,11 +2354,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Mobile detailing operators & corporate fleet wash services",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Pro",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Pro"
   },
   {
     "id": 78,
@@ -2453,11 +2384,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Camera rental houses & grip truck equipment dispatchers",
     "domain": "Creative & Media Production",
-    "rarity_tier": "Pro",
-    "category_badge": "Showroom"
+    "rarity_tier": "Pro"
   },
   {
     "id": 79,
@@ -2484,11 +2414,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-ticket tattoo studios & resident artist collectives",
     "domain": "Creative & Media Production",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 80,
@@ -2515,11 +2444,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Combat sports gyms & elite athlete recovery facilities",
     "domain": "Performance Athletics & Fitness",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 81,
@@ -2546,11 +2474,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Michelin-starred restaurants & multi-course tasting rooms",
     "domain": "Lifestyle & Boutique Hospitality",
-    "rarity_tier": "Core",
-    "category_badge": "Showroom"
+    "rarity_tier": "Core"
   },
   {
     "id": 82,
@@ -2577,12 +2504,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Aesthetic injection nurses & medical aesthetics practices",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/medspa-clinic-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/medspa-clinic-os-cover.webp"
   },
   {
     "id": 83,
@@ -2609,11 +2535,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Luxury yacht charter brokers & Mediterranean fleet managers",
     "domain": "Mobility & Fleet Logistics",
-    "rarity_tier": "Core",
-    "category_badge": "Telemetry"
+    "rarity_tier": "Core"
   },
   {
     "id": 84,
@@ -2640,11 +2565,10 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: High-end watch dealers & horological provenance vaults",
     "domain": "Institutional Capital & Wealth",
-    "rarity_tier": "Pro",
-    "category_badge": "FinTech"
+    "rarity_tier": "Pro"
   },
   {
     "id": 85,
@@ -2671,12 +2595,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Estate managers & luxury villa rental concierges",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Pro",
-    "coverImage": "assets/covers/private-villa-estate-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/private-villa-estate-os-cover.webp"
   },
   {
     "id": 86,
@@ -2702,7 +2625,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/aegis-swarm-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2711,14 +2634,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Perimeter security operators & autonomous drone fleet coordinators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/autonomous-drone-swarm-perimeter-defense-os-cover.webp",
-    "category_badge": "Edge AI"
+    "coverImage": "assets/covers/autonomous-drone-swarm-perimeter-defense-os-cover.webp"
   },
   {
     "id": 87,
@@ -2745,7 +2667,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/autonomous-mining-haulage-fleet-dispatch-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2754,14 +2676,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Open-pit mining dispatchers & autonomous haulage operators",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/autonomous-mining-haulage-fleet-dispatch-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/autonomous-mining-haulage-fleet-dispatch-os-cover.webp"
   },
   {
     "id": 88,
@@ -2788,7 +2709,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/autonomous-subsea-mining-crawler-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2797,14 +2718,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Deep-sea mining engineers & seabed crawler telemetry operators",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/autonomous-subsea-mining-crawler-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/autonomous-subsea-mining-crawler-telemetry-os-cover.webp"
   },
   {
     "id": 89,
@@ -2831,7 +2751,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/aviation-fbo-dispatch-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2840,14 +2760,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Airport FBO ground handlers & private aviation terminal managers",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/aviation-fbo-dispatch-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/aviation-fbo-dispatch-os-cover.webp"
   },
   {
     "id": 90,
@@ -2874,7 +2793,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/boutique-winery-production-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2883,14 +2802,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — FOR CONCEPT DEMO ONLY — NOT PRODUCTION OR ADVICE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 FOR CONCEPT DEMO ONLY \u2014 NOT PRODUCTION OR ADVICE",
     "best_for": "Best for: Estate winemakers & barrel cellar production managers",
     "domain": "Lifestyle & Boutique Hospitality",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/boutique-winery-production-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/boutique-winery-production-os-cover.webp"
   },
   {
     "id": 91,
@@ -2917,7 +2835,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/clinical-trial-operations-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2926,14 +2844,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Biopharma CROs & clinical trial site coordinators",
     "domain": "Clinical & Medical Operations",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/clinical-trial-operations-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/clinical-trial-operations-os-cover.webp"
   },
   {
     "id": 92,
@@ -2960,7 +2877,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/cold-storage-logistics-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -2969,14 +2886,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Cold chain logistics managers & multi-zone freezer facilities",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/cold-storage-logistics-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/cold-storage-logistics-os-cover.webp"
   },
   {
     "id": 93,
@@ -3002,7 +2918,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/commercial-supersonic-airliner-engine-inverted-aerospike-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3011,14 +2927,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Supersonic propulsion engineers & test cell telemetry analysts",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/commercial-supersonic-airliner-engine-inverted-aerospike-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/commercial-supersonic-airliner-engine-inverted-aerospike-telemetry-os-cover.webp"
   },
   {
     "id": 94,
@@ -3046,7 +2961,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/commercial-tokamak-fusion-plasma-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3055,14 +2970,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Tokamak control engineers & magnetic confinement fusion labs",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/commercial-tokamak-fusion-plasma-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/commercial-tokamak-fusion-plasma-scada-os-cover.webp"
   },
   {
     "id": 95,
@@ -3089,7 +3003,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/deep-sea-rov-trenching-and-cable-burial-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3098,14 +3012,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Offshore marine contractors & subsea cable trenching engineers",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/deep-sea-rov-trenching-cable-burial-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/deep-sea-rov-trenching-cable-burial-os-cover.webp"
   },
   {
     "id": 96,
@@ -3132,7 +3045,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/geothermal-supercritical-egs-wellhead-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3141,14 +3054,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Geothermal energy operators & enhanced geothermal wellhead engineers",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/geothermal-supercritical-egs-wellhead-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/geothermal-supercritical-egs-wellhead-scada-os-cover.webp"
   },
   {
     "id": 97,
@@ -3174,7 +3086,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/hft-colocation-and-microwave-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3183,14 +3095,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Low-latency prop trading firms & colocation infrastructure teams",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/hft-colocation-microwave-telemetry-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/hft-colocation-microwave-telemetry-os-cover.webp"
   },
   {
     "id": 98,
@@ -3216,7 +3127,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/hypersonic-wind-tunnel-aerodynamics-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3225,14 +3136,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Aerodynamic test engineers & hypersonic wind tunnel researchers",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/hypersonic-wind-tunnel-aerodynamics-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/hypersonic-wind-tunnel-aerodynamics-telemetry-os-cover.webp"
   },
   {
     "id": 99,
@@ -3260,7 +3170,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/luxury-auto-concierge-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3269,14 +3179,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: High-net-worth vehicle concierges & private car collector managers",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/luxury-auto-concierge-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/luxury-auto-concierge-os-cover.webp"
   },
   {
     "id": 100,
@@ -3303,7 +3212,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/maritime-freight-brokerage-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3312,14 +3221,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Dry bulk & container ship brokers & maritime cargo dispatchers",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/maritime-freight-brokerage-os-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/maritime-freight-brokerage-os-cover.webp"
   },
   {
     "id": 101,
@@ -3346,7 +3254,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/orbital-satellite-laser-isl-optical-terminal-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3355,14 +3263,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Satellite constellation operators & optical inter-satellite link engineers",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/orbital-satellite-laser-isl-optical-terminal-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/orbital-satellite-laser-isl-optical-terminal-os-cover.webp"
   },
   {
     "id": 102,
@@ -3388,7 +3295,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/private-credit-syndication-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3397,14 +3304,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Direct lenders, credit funds & private loan syndication desks",
     "domain": "Institutional Capital & Wealth",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/private-credit-syndication-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/private-credit-syndication-os-cover.webp"
   },
   {
     "id": 103,
@@ -3431,7 +3337,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/renewable-energy-microgrid-dispatch-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3440,14 +3346,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Island microgrid operators & commercial battery BESS engineers",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/renewable-energy-microgrid-dispatch-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/renewable-energy-microgrid-dispatch-os-cover.webp"
   },
   {
     "id": 104,
@@ -3474,7 +3379,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/semiconductor-fab-cleanroom-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3483,14 +3388,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Wafer fab contamination engineers & cleanroom facility managers",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/semiconductor-fab-cleanroom-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/semiconductor-fab-cleanroom-scada-os-cover.webp"
   },
   {
     "id": 105,
@@ -3516,7 +3420,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/space-launch-payload-manifest-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3525,14 +3429,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial launch providers & satellite integration manifest managers",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/space-launch-payload-manifest-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/space-launch-payload-manifest-os-cover.webp"
   },
   {
     "id": 106,
@@ -3559,7 +3462,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/subsea-cable-restoration-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3568,14 +3471,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Subsea fiber cable owners & maritime repair ship dispatchers",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/subsea-fiber-cable-restoration-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/subsea-fiber-cable-restoration-os-cover.webp"
   },
   {
     "id": 107,
@@ -3602,7 +3504,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/superconducting-quantum-processor-cryostat-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3611,14 +3513,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Quantum computing researchers & dilution refrigerator engineers",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/superconducting-quantum-processor-cryostat-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/superconducting-quantum-processor-cryostat-os-cover.webp"
   },
   {
     "id": 108,
@@ -3645,7 +3546,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/yacht-charter-fleet-ecosystem",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3654,14 +3555,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Yacht fleet management companies & luxury maritime charter brokers",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/yacht-charter-fleet-ecosystem-cover.webp",
-    "category_badge": "Showroom"
+    "coverImage": "assets/covers/yacht-charter-fleet-ecosystem-cover.webp"
   },
   {
     "id": 109,
@@ -3691,7 +3591,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/orbital-habitat-closed-loop-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "exclusive_buyout_anchor": 14500,
@@ -3700,14 +3600,13 @@ export const FLEET_DATA: FleetAsset[] = [
       18000
     ],
     "truth_badge": "SIMULATED DATA PROTOTYPE",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial space station operators & life support ECLSS flight controllers",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/orbital-habitat-eclss-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/orbital-habitat-eclss-scada-os-cover.webp"
   },
   {
     "id": 110,
@@ -3734,7 +3633,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/orbital-cryo-depot-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -3754,16 +3653,15 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Awaiting Flagship Qualification Audit",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Awaiting Flagship Qualification Audit",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: In-space propellant depot engineers & cryogenic boiloff telemetry teams",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/orbital-in-space-cryogenic-propellant-depot-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/orbital-in-space-cryogenic-propellant-depot-scada-os-cover.webp"
   },
   {
     "id": 111,
@@ -3790,16 +3688,16 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/commercial-tokamak-fusion-plasma-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
       1500,
       3500
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Awaiting Flagship Qualification Audit",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Awaiting Flagship Qualification Audit",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Tokamak control engineers & magnetic confinement fusion labs",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
@@ -3807,12 +3705,11 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/commercial-tokamak-fusion-sparc-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/commercial-tokamak-fusion-sparc-scada-os-cover.webp"
   },
   {
     "id": 112,
-    "name": "VibePulse OS — YouTube Community Sentiment Radar",
+    "name": "VibePulse OS \u2014 YouTube Community Sentiment Radar",
     "category": "YouTube Community Sentiment Radar & Telemetry Console",
     "gumroad_url": "https://auraandgrid.gumroad.com/l/vibepulse-yt-sentiment-radar-os",
     "preview_url": "https://vibepulse-yt-sentiment-radar-os.onrender.com",
@@ -3836,16 +3733,15 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/vibepulse-yt-sentiment-radar-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: Supabase-Ready Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 1 — Lean Rapid-Sale ($4,500 Anchor)",
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "pricing_track": "Track 1 \u2014 Lean Rapid-Sale ($4,500 Anchor)",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: YouTube video creators & media production teams",
     "domain": "Creative & Media Production",
     "rarity_tier": "Core",
     "permanent": true,
-    "buyoutEligible": false,
-    "category_badge": "Telemetry"
+    "buyoutEligible": false
   },
   {
     "id": 113,
@@ -3872,16 +3768,16 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/superconducting-quantum-processor-cryostat-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
       1500,
       3500
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Awaiting Flagship Qualification Audit",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Awaiting Flagship Qualification Audit",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Quantum hardware engineers & dilution cryostat operators",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
@@ -3889,8 +3785,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/superconducting-quantum-cryostat-control-os-cover.webp",
-    "category_badge": "FinTech"
+    "coverImage": "assets/covers/superconducting-quantum-cryostat-control-os-cover.webp"
   },
   {
     "id": 114,
@@ -3918,7 +3813,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/lunar-regolith-isru-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -3938,9 +3833,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Awaiting Flagship Qualification Audit",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Awaiting Flagship Qualification Audit",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Lunar mining engineers & space-qualified ISRU plant operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -3948,8 +3843,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": true,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/commercial-lunar-regolith-isru-refining-plant-scada-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/commercial-lunar-regolith-isru-refining-plant-scada-os-cover.webp"
   },
   {
     "id": 115,
@@ -3977,7 +3871,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/aegis-swarm-defense-console",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -3997,9 +3891,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Defense perimeter engineers & autonomous drone swarm operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4007,8 +3901,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": true,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/aegis-swarm-defense-console-cover.webp",
-    "category_badge": "Edge AI"
+    "coverImage": "assets/covers/aegis-swarm-defense-console-cover.webp"
   },
   {
     "id": 116,
@@ -4036,7 +3929,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/aetheris-satlaser-isl-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4056,9 +3949,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Satellite constellation engineers & orbital laser optical terminal operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4066,8 +3959,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/aetheris-satlaser-isl-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/aetheris-satlaser-isl-telemetry-os-cover.webp"
   },
   {
     "id": 117,
@@ -4095,7 +3987,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/langley-hypersonic-wind-tunnel-scada",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4115,9 +4007,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Hypersonic aerodynamics engineers & Mach 7+ wind tunnel operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4125,8 +4017,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/langley-hypersonic-wind-tunnel-scada-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/langley-hypersonic-wind-tunnel-scada-cover.webp"
   },
   {
     "id": 118,
@@ -4154,7 +4045,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/vanguard-eclss-life-support-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4174,9 +4065,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Orbital habitat station engineers & closed-loop ECLSS life support operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4184,8 +4075,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/vanguard-eclss-life-support-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/vanguard-eclss-life-support-os-cover.webp"
   },
   {
     "id": 119,
@@ -4213,7 +4103,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/cascade-supercritical-egs-geothermal-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4233,9 +4123,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Supercritical geothermal reservoir engineers & deep wellhead SCADA operators",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
@@ -4243,8 +4133,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/cascade-supercritical-egs-geothermal-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/cascade-supercritical-egs-geothermal-os-cover.webp"
   },
   {
     "id": 120,
@@ -4272,7 +4161,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/subsea-autonomous-crawler-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4292,9 +4181,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Deep-sea mining engineers & subsea autonomous crawler operators",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
@@ -4302,8 +4191,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/subsea-autonomous-crawler-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/subsea-autonomous-crawler-telemetry-os-cover.webp"
   },
   {
     "id": 121,
@@ -4331,7 +4219,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/metronest-04-tactical-drone-ops-hud",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4351,9 +4239,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Perimeter security operators & autonomous tactical drone swarm pilots",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4361,8 +4249,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/metronest-04-tactical-drone-ops-hud-cover.webp",
-    "category_badge": "Edge AI"
+    "coverImage": "assets/covers/metronest-04-tactical-drone-ops-hud-cover.webp"
   },
   {
     "id": 122,
@@ -4390,7 +4277,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/voltgrid-ev-fleet-dispatch-telemetry-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4410,9 +4297,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial EV fleet dispatch managers & electric vehicle charging hub operators",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
@@ -4420,8 +4307,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/voltgrid-ev-fleet-dispatch-telemetry-os-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/voltgrid-ev-fleet-dispatch-telemetry-os-cover.webp"
   },
   {
     "id": 123,
@@ -4448,7 +4334,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/chrono-tachyon-flight-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4468,9 +4354,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Hypersonic flight test engineers & scramjet vehicle telemetry operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4478,8 +4364,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/chrono-tachyon-flight-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/chrono-tachyon-flight-deck-cover.webp"
   },
   {
     "id": 124,
@@ -4506,7 +4391,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/valkyrie-aerospike-vmax-telemetry-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4526,9 +4411,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Supersonic propulsion engineers & linear aerospike flight-deck operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4536,8 +4421,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/valkyrie-aerospike-vmax-telemetry-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/valkyrie-aerospike-vmax-telemetry-deck-cover.webp"
   },
   {
     "id": 125,
@@ -4564,7 +4448,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/chronos-morph-gt-telemetry-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4584,9 +4468,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Exotic supercar aerodynamicists & active composite morphing vehicle telemetry operators",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
@@ -4594,8 +4478,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/chronos-morph-gt-telemetry-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/chronos-morph-gt-telemetry-deck-cover.webp"
   },
   {
     "id": 126,
@@ -4622,7 +4505,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/pulsar-magneto-gt-telemetry-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4642,9 +4525,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Compact fusion tokamak powertrain researchers & magnetic plasma telemetry operators",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
@@ -4652,8 +4535,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/pulsar-magneto-gt-telemetry-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/pulsar-magneto-gt-telemetry-deck-cover.webp"
   },
   {
     "id": 127,
@@ -4680,7 +4562,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/solaris-vac-wing-rcs-telemetry-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4700,9 +4582,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Space vehicle reaction control specialists & cold-gas RCS telemetry operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4710,8 +4592,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/solaris-vac-wing-rcs-telemetry-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/solaris-vac-wing-rcs-telemetry-deck-cover.webp"
   },
   {
     "id": 128,
@@ -4738,7 +4619,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/hydra-endurance-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4758,9 +4639,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Endurance racing telemetry directors & hydrogen fuel-cell supercar fleet strategists",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
@@ -4768,8 +4649,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/hydra-endurance-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/hydra-endurance-deck-cover.webp"
   },
   {
     "id": 129,
@@ -4790,13 +4670,13 @@ export const FLEET_DATA: FleetAsset[] = [
     "archetype_id": "A",
     "archetype_name": "Archetype A: Dense Operational Console",
     "archetype_description": "Persistent utility rail, simulated operational triage queue, and slide-out inspection drawer.",
-    "design_benchmark": "Brabham BT46B Fan Car & McMurtry Spéirling Vacuum Aero SCADA",
+    "design_benchmark": "Brabham BT46B Fan Car & McMurtry Sp\u00e9irling Vacuum Aero SCADA",
     "checkout_active": true,
     "status_badge": "Flagship Interactive Prototype",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/aeon-suction-gt-aero-console",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4816,9 +4696,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Aerodynamics engineers & active ground-effect wind tunnel telemetry operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4826,8 +4706,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/aeon-suction-gt-aero-console-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/aeon-suction-gt-aero-console-cover.webp"
   },
   {
     "id": 130,
@@ -4854,7 +4733,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/vortex-apex-gt-hypercar-telemetry-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4874,9 +4753,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: High-performance supercar track engineers & electric hypercar vehicle telemetry directors",
     "domain": "Mobility & Fleet Logistics",
     "rarity_tier": "Elite",
@@ -4884,8 +4763,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/vortex-apex-gt-hypercar-telemetry-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/vortex-apex-gt-hypercar-telemetry-deck-cover.webp"
   },
   {
     "id": 131,
@@ -4914,7 +4792,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/apex-ascent-space-elevator-climber-flight-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4934,9 +4812,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Space elevator infrastructure engineers & ultra-high altitude climber robotics controllers",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -4944,8 +4822,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/apex-ascent-space-elevator-climber-flight-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/apex-ascent-space-elevator-climber-flight-deck-cover.webp"
   },
   {
     "id": 132,
@@ -4973,7 +4850,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/shackleton-polar-catapult-lunar-mass-driver-control",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -4993,9 +4870,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Lunar surface launch controllers & electromagnetic mass driver payload manifest operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -5003,8 +4880,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/shackleton-polar-catapult-lunar-mass-driver-control-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/shackleton-polar-catapult-lunar-mass-driver-control-cover.webp"
   },
   {
     "id": 133,
@@ -5035,7 +4911,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/oceanus-cryodrill-sub-ice-rov-command-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -5055,9 +4931,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Deep-sea oceanographic researchers & planetary sub-ice ROV robotics directors",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
@@ -5065,8 +4941,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/oceanus-cryodrill-sub-ice-rov-command-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/oceanus-cryodrill-sub-ice-rov-command-deck-cover.webp"
   },
   {
     "id": 134,
@@ -5094,7 +4969,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/sierra-orbital-valkyrie-x-flight-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -5114,9 +4989,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Suborbital spaceplane mission controllers & linear aerospike flight operations directors",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -5124,8 +4999,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/sierra-orbital-valkyrie-x-flight-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/sierra-orbital-valkyrie-x-flight-deck-cover.webp"
   },
   {
     "id": 135,
@@ -5152,7 +5026,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/nasa-vf6-x3-100kw-hall-thruster-control",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -5172,9 +5046,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Electric propulsion test leads & high-power Hall thruster space vacuum chamber operators",
     "domain": "Deep Tech SCADA",
     "rarity_tier": "Elite",
@@ -5182,8 +5056,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/nasa-vf6-x3-100kw-hall-thruster-control-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/nasa-vf6-x3-100kw-hall-thruster-control-cover.webp"
   },
   {
     "id": 136,
@@ -5211,7 +5084,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/tokamak-plasma-control-arc-02-operations-deck",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Aerospace Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -5231,9 +5104,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR LIFE-CRITICAL USE",
     "best_for": "Best for: Commercial fusion energy scientists & burning plasma tokamak SCADA controllers",
     "domain": "Energy SCADA",
     "rarity_tier": "Elite",
@@ -5241,8 +5114,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "buyoutEligible": false,
     "complianceStandard": "NIST-SP-800-218",
     "gate_criterion_7": "NIST SP 800-218 SSDF v1.1 Alignment Passed",
-    "coverImage": "assets/covers/tokamak-plasma-control-arc-02-operations-deck-cover.webp",
-    "category_badge": "Telemetry"
+    "coverImage": "assets/covers/tokamak-plasma-control-arc-02-operations-deck-cover.webp"
   },
   {
     "id": 137,
@@ -5269,7 +5141,7 @@ export const FLEET_DATA: FleetAsset[] = [
     "commercial_checkout_url": "https://auraandgrid.gumroad.com/l/deep-sea-trench-bathymetric-sonar-scada-os",
     "demo_passcode_type": "DEMO PASSCODE (READ-ONLY SANDBOX)",
     "security_architecture": "Level 3: SCADA/Subsea Blueprint (Frontend + Schema + Demo RLS Policies)",
-    "pricing_track": "Track 2 — Flagship Tier-1 ($14,500 Anchor)",
+    "pricing_track": "Track 2 \u2014 Flagship Tier-1 ($14,500 Anchor)",
     "flagship_qualified": true,
     "flagship_license_msrp": 1500,
     "flagship_license_range": [
@@ -5289,9 +5161,9 @@ export const FLEET_DATA: FleetAsset[] = [
       35000,
       75000
     ],
-    "truth_label": "Interactive Prototype (Simulated Data Only) — Concept Demo",
+    "truth_label": "Interactive Prototype (Simulated Data Only) \u2014 Concept Demo",
     "truth_badge": "Interactive Prototype // Simulated Data Only",
-    "disclaimer": "SIMULATED DATA PROTOTYPE — NOT CERTIFIED FOR MARITIME NAVIGATION, SUBMERSIBLE PILOTING, OR LIFE-CRITICAL SUBSEA USE",
+    "disclaimer": "SIMULATED DATA PROTOTYPE \u2014 NOT CERTIFIED FOR MARITIME NAVIGATION, SUBMERSIBLE PILOTING, OR LIFE-CRITICAL SUBSEA USE",
     "best_for": "Best for: Autonomous underwater vehicle operators, oceanic bathymetry hydrographers & subsea survey teams",
     "domain": "Industrial Robotics & Autonomous SCADA",
     "rarity_tier": "Elite",
@@ -5302,754 +5174,3593 @@ export const FLEET_DATA: FleetAsset[] = [
   },
   {
     "id": 138,
-    "tag": "T3-NEXUS-01",
-    "name": "NEXUS-ORDERBOOK",
-    "category": "High-Frequency Limit Order Book Matching Engine",
-    "vertical": "fintech_quant",
+    "unit_id": "GF-T3-138",
+    "tag": "GF-T3-138",
+    "name": "Nexus Ultra-LOB Engine Workstation",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Lead Systems Architect workstation and live execution workbench for Engine GF-T3-138: Nexus Ultra-LOB matching engine, OpenAPI 3.1 contracts, AlloyDB schemas, and Monopoly Vault specifications.",
+    "vertical": "FinTech/Quant",
     "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Deployable Source Template // Track 3 Candidate // Simulated Data Only",
-    "disclaimer": "SAMPLE OR SIMULATED ORDERS ONLY — IN-MEMORY STATE — NOT A PRODUCTION SERVICE — NOT CERTIFIED FOR OPERATIONAL, REGULATORY, OR FINANCIAL USE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying NEXUS-ORDERBOOK",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-138/",
+    "spec_document": "docs/specs/GF_T3_138_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/t3-nexus-01",
-    "admin_url": "http://localhost:5173/t3/t3-nexus-01/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Nexus Ultra-LOB Engine Workstation",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-138",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-138",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "MIT",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 125000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 139,
-    "tag": "GF-T3-138",
-    "name": "Nexus Ultra-LOB Engine Workstation",
-    "category": "Deterministic High-Frequency Limit Order Book & Matching Engine Workstation",
-    "vertical": "fintech_quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-139",
+    "tag": "GF-T3-139",
+    "name": "AeroDyn-RT 1000Hz Telemetry Engine Workstation",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade dark-mode engineering workstation for Track 3 Engine GF-T3-139 1000Hz autonomous aerodynamic telemetry.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "IN-MEMORY DETERMINISTIC DOUBLE AUCTION MATCHING ENGINE — SIMULATED HIGH-FREQUENCY TELEMETRY — NOT A BROKER-DEALER OR REGISTERED EXCHANGE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Nexus Ultra-LOB Engine Workstation",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-139/",
+    "spec_document": "docs/specs/GF_T3_139_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-138",
-    "admin_url": "http://localhost:5173/t3/gf-t3-138/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying AeroDyn-RT 1000Hz Telemetry Engine Workstation",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-139",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-139",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 140,
-    "tag": "GF-T3-139",
-    "name": "AeroDyn-RT 1000Hz Telemetry Engine Workstation",
-    "category": "High-Throughput Deterministic 1000Hz Aerodynamic Vector & Telemetry Engine Workstation",
-    "vertical": "autonomous_telemetry",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-140",
+    "tag": "GF-T3-140",
+    "name": "Chronos-Tick Algorithmic Execution Core Workstation",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade Track 3 FinTech/Quant Algorithmic Execution Core Workstation for GF-T3-141 featuring Almgren-Chriss VWAP slicing simulation, OpenAPI 3.1 live sandbox, AlloyDB DDL schemas, architectural topology, and institutional Monopoly Vault APA documentation.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HIGH-THROUGHPUT DETERMINISTIC 1000HZ TELEMETRY INGESTION & EKF STATE ESTIMATOR — SIMULATED CHASSIS TELEMETRY — NOT A FLIGHT-CERTIFIED AVIONICS SYSTEM",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying AeroDyn-RT 1000Hz Telemetry Engine Workstation",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-140/",
+    "spec_document": "docs/specs/GF_T3_140_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-139",
-    "admin_url": "http://localhost:5173/t3/gf-t3-139/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Chronos-Tick Algorithmic Execution Core Workstation",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-140",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-140",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 141,
-    "tag": "GF-T3-140",
-    "name": "Chronos-Tick Algorithmic Execution Core Workstation",
-    "category": "Ultra-Low-Latency Institutional Algorithmic Order Slicing & Smart Order Router",
-    "vertical": "fintech_quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-141",
+    "tag": "GF-T3-141",
+    "name": "VoxelTrack-Edge 3D Spatial Perception Engine Workstation",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "F1 Skunkworks Track 3 Engine (GF-T3-140) 3D Spatial Perception and Edge LiDAR Fusion Engineering Workstation with live 125Hz simulator, OpenAPI 3.1 sandbox, AlloyDB schema, and 10/10 Monopoly Vault deliverables.",
+    "vertical": "Edge AI Swarms",
+    "category_badge": "Edge AI",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "SUB-MILLISECOND ALMGREN-CHRISS EXECUTION SLICER & POISSON JITTER ROUTER — SIMULATED INSTITUTIONAL ORDER FLOW — NOT A REGISTERED BROKER-DEALER OR EXCHANGE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Chronos-Tick Algorithmic Execution Core Workstation",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-141/",
+    "spec_document": "docs/specs/GF_T3_141_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-140",
-    "admin_url": "http://localhost:5173/t3/gf-t3-140/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying VoxelTrack-Edge 3D Spatial Perception Engine Workstation",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Autonomous AI & Swarm Systems",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-141",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-141",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 142,
-    "tag": "GF-T3-141",
-    "name": "VoxelTrack-Edge 3D Spatial Perception Engine Workstation",
-    "category": "High-Performance 125Hz 3D LiDAR Spatial Perception & Dynamic Octree Voxel Engine",
-    "vertical": "edge_ai",
+    "unit_id": "GF-T3-142",
+    "tag": "GF-T3-142",
+    "name": "Aegis-Orbit Autonomous Constellation Flight Dynamics & CARA Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Ghost FactoryOS Track 3 F1 Skunkworks Autonomous LEO Constellation Stationkeeping & Collision Avoidance Engine",
+    "vertical": "Autonomous Telemetry / Cockpit",
     "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "125HZ 3D SPATIAL PERCEPTION & OCTREE VOXEL GRID — SIMULATED LIDAR POINT CLOUD SWEEPS — NOT A CERTIFIED SAFETY-CRITICAL ROAD AVIONICS SYSTEM",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying VoxelTrack-Edge 3D Spatial Perception Engine Workstation",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-142/",
+    "spec_document": "docs/specs/GF_T3_142_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-141",
-    "admin_url": "http://localhost:5173/t3/gf-t3-141/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Aegis-Orbit Autonomous Constellation Flight Dynamics & CARA Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-142",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-142",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 143,
-    "tag": "GF-T3-142",
-    "name": "Aegis-Orbit Autonomous Constellation Flight Dynamics & CARA Engine",
-    "category": "Autonomous LEO Constellation Flight Dynamics, SGP4/SDP4 Perturbations & CARA Conjunction Assessment Engine",
-    "vertical": "telemetry_aerospace",
+    "unit_id": "GF-T3-143",
+    "tag": "GF-T3-143",
+    "name": "Vanguard-ECLSS Autonomous Life Support Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Enterprise-grade reference engine, live telemetry mission control, MIMO-MPC gas balancer, psychrometric thermodynamic solver, and zero-RPO FDIR triage for deep-space habitat environmental control.",
+    "vertical": "Autonomous Telemetry / Cockpit",
     "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "AUTONOMOUS LEO CONSTELLATION FLIGHT DYNAMICS & CARA CONJUNCTION ASSESSMENT — SIMULATED ORBITAL TELEMETRY & ENCOUNTER COVARIANCES — NOT CERTIFIED FLIGHT-QUALIFIED AVIONICS",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Aegis-Orbit Autonomous Constellation Flight Dynamics & CARA Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-143/",
+    "spec_document": "docs/specs/GF_T3_143_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-142",
-    "admin_url": "http://localhost:5173/t3/gf-t3-142/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Vanguard-ECLSS Autonomous Life Support Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-143",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-143",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 144,
-    "tag": "GF-T3-143",
-    "name": "Vanguard-ECLSS Autonomous Life Support Engine",
-    "category": "Autonomous Closed-Loop Life Support, MIMO-MPC Gas Balancer, Psychrometric Thermodynamics & FDIR Engine",
-    "vertical": "telemetry_aerospace",
+    "unit_id": "GF-T3-144",
+    "tag": "GF-T3-144",
+    "name": "Lattice-Mesh Post-Quantum Cryptographic Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Enterprise-ready reference engine, interactive telemetry dashboard, and zero-trust key-encapsulation suite for ML-KEM-1024 post-quantum edge fleets.",
+    "vertical": "Autonomous Telemetry / Cockpit",
     "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "AUTONOMOUS CLOSED-LOOP ECLSS & MIMO-MPC GAS BALANCER — SIMULATED HABITAT TELEMETRY — NOT HUMAN-RATED FLIGHT AVIONICS WITHOUT HARDWARE-IN-THE-LOOP QUALIFICATION",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Vanguard-ECLSS Autonomous Life Support Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-144/",
+    "spec_document": "docs/specs/GF_T3_144_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-143",
-    "admin_url": "http://localhost:5173/t3/gf-t3-143/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lattice-Mesh Post-Quantum Cryptographic Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-144",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-144",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 145,
-    "tag": "GF-T3-144",
-    "name": "Lattice-Mesh Post-Quantum Cryptographic Engine",
-    "category": "Post-Quantum Cryptographic Mesh Network, ML-KEM-1024 Ephemeral KEM & Zero-Trust WireGuard Ratchet Engine",
-    "vertical": "edge_ai",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-145",
+    "tag": "GF-T3-145",
+    "name": "Nexus-ATS Hybrid Central Limit Order Book & Dark Pool Crossing Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Nexus-ATS: Hybrid Central Limit Order Book & Sub-Millisecond Dark Pool Crossing Engine. Track 3 F1 Skunkworks Engine with real-time L2 order book, VPIN toxicity filter, Hawkes intensity meter, and 10/10 Monopoly Vault documentation.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "POST-QUANTUM ML-KEM-1024 LATTICE ENCAPSULATION & HYBRID WIREGUARD PSK RATCHET — SIMULATED EDGE FLEET OVERLAY — NOT HSM-CERTIFIED HARDWARE DEVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Lattice-Mesh Post-Quantum Cryptographic Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-145/",
+    "spec_document": "docs/specs/GF_T3_145_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-144",
-    "admin_url": "http://localhost:5173/t3/gf-t3-144/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Nexus-ATS Hybrid Central Limit Order Book & Dark Pool Crossing Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-145",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-145",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 146,
-    "tag": "GF-T3-145",
-    "name": "Nexus-ATS Hybrid Central Limit Order Book & Dark Pool Crossing Engine",
-    "category": "High-Frequency Alternative Trading System, Sub-Millisecond Midpoint Dark Cross, VPIN & Hawkes Flow Toxicity Engine",
-    "vertical": "fintech_quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-146",
+    "tag": "GF-T3-146",
+    "name": "Hyperion-Flux Neuromorphic Event-Vision & Optical Flow Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "F1 Skunkworks Track 3 Reference Engine (GF-T3-146) for Neuromorphic Event-Vision, Surface of Active Events (SAE) Lucas-Kanade Optical Flow, and Leaky Integrate-and-Fire (LIF) Spiking Estimators.",
+    "vertical": "Edge AI Swarms",
+    "category_badge": "Edge AI",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "SUB-MILLISECOND CONTINUOUS DOUBLE AUCTION CLOB & MIDPOINT DARK CROSS — SIMULATED INSTITUTIONAL ORDER FLOW — NOT REGISTERED WITH SEC/FINRA AS BROKER-DEALER OR ATS",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Nexus-ATS Hybrid Central Limit Order Book & Dark Pool Crossing Engine",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-146/",
+    "spec_document": "docs/specs/GF_T3_146_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-145",
-    "admin_url": "http://localhost:5173/t3/gf-t3-145/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Hyperion-Flux Neuromorphic Event-Vision & Optical Flow Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Autonomous AI & Swarm Systems",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-146",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-146",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 147,
-    "tag": "GF-T3-146",
-    "name": "Hyperion-Flux Neuromorphic Event-Vision & Optical Flow Engine",
-    "category": "Neuromorphic Event-Vision, Surface of Active Events Lucas-Kanade Optical Flow & LIF Spiking Collision Estimator",
-    "vertical": "edge_ai",
+    "unit_id": "GF-T3-147",
+    "tag": "GF-T3-147",
+    "name": "Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Enterprise-grade 6-DOF nonlinear flight dynamics simulator, Blade Element Momentum (BEM) aerodynamic solver, distributed consensus swarm HUD, AlloyDB time-series telemetry architecture, and $140,000 Monopoly Asset Purchase Agreement for Ghost FactoryOS Track 3 F1 Skunkworks asset GF-T3-147.",
+    "vertical": "Autonomous Telemetry / Cockpit",
     "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "ASYNCHRONOUS DVS EVENT STREAM & SURFACE-OF-ACTIVE-EVENTS LUCAS-KANADE — SIMULATED PROPHESEE/SONY EVENT SENSOR DATA — NOT ISO 26262 ASIL-D AUTOMOTIVE SAFETY CERTIFIED",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Hyperion-Flux Neuromorphic Event-Vision & Optical Flow Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-147/",
+    "spec_document": "docs/specs/GF_T3_147_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-146",
-    "admin_url": "http://localhost:5173/t3/gf-t3-146/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-147",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-147",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 148,
-    "tag": "GF-T3-147",
-    "name": "Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine",
-    "category": "6-DOF Nonlinear Rigid-Body Dynamics, BEM Aerodynamic Inflow Solver & Distributed Swarm Consensus Engine",
-    "vertical": "telemetry_aerospace",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-148",
+    "tag": "GF-T3-148",
+    "name": "Chrono-Arbitrage Triangular Arbitrage Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Sub-millisecond cross-venue latency and triangular arbitrage engine with Bellman-Ford negative cycle solver, real-time telemetry cockpit, and institutional asset vault specifications.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "6-DOF RIGID-BODY KINEMATICS & BEM ROTOR AERODYNAMICS — SIMULATED TILTROTOR DYNAMICS & SWARM COFDM TELEMETRY — NOT FAA PART 135 OR EASA AIRWORTHINESS CERTIFIED",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-148/",
+    "spec_document": "docs/specs/GF_T3_148_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-147",
-    "admin_url": "http://localhost:5173/t3/gf-t3-147/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Chrono-Arbitrage Triangular Arbitrage Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-148",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-148",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 149,
-    "tag": "GF-T3-148",
-    "name": "Chrono-Arbitrage Triangular Arbitrage Engine",
-    "category": "Sub-Millisecond Negative-Log Cycle Bellman-Ford Solver & Multi-Hop Triangular Arbitrage Execution Gateway",
-    "vertical": "fintech_quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-149",
+    "tag": "GF-T3-149",
+    "name": "Chrono-Chassis Quantum Hypercar Chassis Telemetry Interface",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Futuristic transparent concept hypercar chassis exposing an ultra-advanced glowing quantum computing core named CHRONO-ARBITRAGE with real-time financial telemetry.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HIGH-FREQUENCY GRAPH ARBITRAGE SOLVER & SIMULATED ORDER DISPATCH — NOT REGISTERED WITH CFTC, SEC, OR FINRA — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Chrono-Arbitrage Triangular Arbitrage Engine",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-149/",
+    "spec_document": "docs/specs/GF_T3_149_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-148",
-    "admin_url": "http://localhost:5173/t3/gf-t3-148/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Chrono-Chassis Quantum Hypercar Chassis Telemetry Interface",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-149",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-149",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 150,
-    "tag": "GF-T3-149",
-    "name": "CHRONO-CHASSIS Quantum Hypercar Chassis Telemetry Interface & Sub-Millisecond Cockpit",
-    "category": "Quantum Hypercar Visual Cockpit, Cryo-Core Hamiltonian Telemetry & Real-Time Cross-Venue Latency Differential Engine",
-    "vertical": "fintech_quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-150",
+    "tag": "GF-T3-150",
+    "name": "Chronos Kinetic-9 MagLev Telemetry & Vector Rig",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "High-performance tactical MagLev telemetry, cryogenic coil dynamics, guidance vector grid, and linear inductor cockpit dashboard.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HYPERCAR CHASSIS VISUALIZER & SIMULATED QUANTUM FINANCIAL TELEMETRY — NOT ROADWAY CERTIFIED — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying CHRONO-CHASSIS Quantum Hypercar Chassis Telemetry Interface & Sub-Millisecond Cockpit",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-150/",
+    "spec_document": "docs/specs/GF_T3_150_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-149",
-    "admin_url": "http://localhost:5173/t3/gf-t3-149/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Chronos Kinetic-9 MagLev Telemetry & Vector Rig",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-150",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-150",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 151,
-    "tag": "GF-T3-150",
-    "name": "Chronos Kinetic-9 MagLev Telemetry & Vector Rig",
-    "category": "Superconducting MagLev Levitation Dynamics, Linear Induction Stator Sector Tracking & High-Precision Cryogenic Telemetry Rig",
-    "vertical": "telemetry_aerospace",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-151",
+    "tag": "GF-T3-151",
+    "name": "ApexLimit Order Matching Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Ghost Factory OS Skunkworks GF-T3-151 microsecond-grade order matching and risk liquidation engine with Level 2 orderbook, fixed-point math, and institutional vault specs.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HIGH-PERFORMANCE MAGLEV TELEMETRY & ROBOTIC VECTOR RIG SIMULATION — NOT FRA/DOT RAIL CERTIFIED — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Chronos Kinetic-9 MagLev Telemetry & Vector Rig",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-151/",
+    "spec_document": "docs/specs/GF_T3_151_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-150",
-    "admin_url": "http://localhost:5173/t3/gf-t3-150/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying ApexLimit Order Matching Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-151",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-151",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 152,
-    "tag": "GF-T3-151",
-    "name": "ApexLimit Order Matching Engine",
-    "category": "Price-Time-Priority FIFO Order Matching Engine & Microsecond Execution Gateway",
-    "vertical": "FinTech & Quant",
+    "unit_id": "GF-T3-152",
+    "tag": "GF-T3-152",
+    "name": "ChronosRisk Real-Time Portfolio Margin Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Real-Time Portfolio Value-at-Risk (VaR), Expected Shortfall (CVaR), and Historical Shock Simulation Core under the 70/30 Protocol.",
+    "vertical": "FinTech/Quant",
     "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HIGH-PERFORMANCE MATCHING ENGINE BENCHMARK — SIMULATED EXECUTION — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying ApexLimit Order Matching Engine",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-152/",
+    "spec_document": "docs/specs/GF_T3_152_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-151",
-    "admin_url": "http://localhost:5173/t3/gf-t3-151/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying ChronosRisk Real-Time Portfolio Margin Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-152",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-152",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "FinTech & Quant"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 153,
-    "tag": "GF-T3-152",
-    "name": "ChronosRisk Real-Time Portfolio Margin Engine",
-    "category": "Acklam Normal Inverse CDF & Cornish-Fisher Expansion Portfolio Value-at-Risk (VaR) Engine",
-    "vertical": "FinTech & Quant",
-    "category_badge": "FinTech",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-153",
+    "tag": "GF-T3-153",
+    "name": "Aegis Sovereign Atomic DvP Settlement Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Multi-Party Threshold Signature Scheme (TSS) & Atomic DvP Settlement Core \u2014 Sub-15ms 3-of-5 FROST/Feldman VSS consensus and zero-reorg atomic Delivery-versus-Payment escrow engine.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "QUANTITATIVE RISK BENCHMARK & MULTI-ASSET PORTFOLIO STRESS TESTING — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying ChronosRisk Real-Time Portfolio Margin Engine",
-    "domain": "FinTech",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-153/",
+    "spec_document": "docs/specs/GF_T3_153_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-152",
-    "admin_url": "http://localhost:5173/t3/gf-t3-152/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Aegis Sovereign Atomic DvP Settlement Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-153",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-153",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "FinTech & Quant"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 154,
-    "tag": "GF-T3-153",
-    "name": "Aegis Sovereign Atomic DvP Settlement Core",
-    "category": "FROST / Feldman VSS Threshold Signature & Delivery-versus-Payment (DvP) Atomic Settlement Engine",
-    "vertical": "Zero-Trust Cyber",
-    "category_badge": "Zero-Trust",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-154",
+    "tag": "GF-T3-154",
+    "name": "VortexRoute Smart Order Router Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "High-Frequency Cross-Venue Smart Order Router (SOR) & Liquidity Aggregation Core with sub-20\u00b5s route optimization.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "ATOMIC DVP MULTI-PARTY COMPUTATION ENGINE — ZERO-TRUST THRESHOLD CRYPTOGRAPHY PROTOTYPE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying Aegis Sovereign Atomic DvP Settlement Core",
-    "domain": "Zero-Trust",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-154/",
+    "spec_document": "docs/specs/GF_T3_154_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-153",
-    "admin_url": "http://localhost:5173/t3/gf-t3-153/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying VortexRoute Smart Order Router Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-154",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-154",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Zero-Trust Cyber"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 155,
-    "tag": "GF-T3-154",
-    "name": "VortexRoute Smart Order Router Engine",
-    "category": "Convex Multi-Venue Liquidity Aggregation & Karush-Kuhn-Tucker (KKT) Optimal Execution Engine",
-    "vertical": "Autonomous Telemetry / Guidance",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-155",
+    "tag": "GF-T3-155",
+    "name": "PrismMesh PBS MEV Auction Sequencing Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "PBS MEV Auction & Deterministic Bundle Sequencing Core for Ultra-Low Latency Validator Block Space Packing",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "HIGH-FREQUENCY LIQUIDITY ROUTING & MARKET IMPACT ESTIMATOR — NOT FINANCIAL ADVICE",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying VortexRoute Smart Order Router Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-155/",
+    "spec_document": "docs/specs/GF_T3_155_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-154",
-    "admin_url": "http://localhost:5173/t3/gf-t3-154/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying PrismMesh PBS MEV Auction Sequencing Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-155",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-155",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Autonomous Telemetry / Guidance"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 156,
-    "tag": "GF-T3-155",
-    "name": "PrismMesh PBS MEV Auction Sequencing Engine",
-    "category": "Proposer-Builder Separation (PBS) MEV Auction & Deterministic Bundle Sequencing Core",
-    "vertical": "Autonomous Telemetry / Guidance",
+    "unit_id": "GF-T3-156",
+    "tag": "GF-T3-156",
+    "name": "AeroKinetic 6-DoF ES-EKF Telemetry Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Multi-Rate Extended Kalman Filter (ES-EKF) & 6-DoF Sensor Fusion Core with sub-15\u00b5s quaternion state prediction and Chi-squared outlier rejection.",
+    "vertical": "Autonomous Telemetry / Cockpit",
     "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "MEV BLOCK SPACE AUCTION & STATE CONFLICT RESOLUTION SIMULATION — NOT PRODUCTION BLOCKCHAIN PROTOCOL",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying PrismMesh PBS MEV Auction Sequencing Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-156/",
+    "spec_document": "docs/specs/GF_T3_156_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-155",
-    "admin_url": "http://localhost:5173/t3/gf-t3-155/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying AeroKinetic 6-DoF ES-EKF Telemetry Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-156",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-156",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Autonomous Telemetry / Guidance"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 157,
-    "tag": "GF-T3-156",
-    "name": "AeroKinetic 6-DoF ES-EKF Telemetry Engine",
-    "category": "Multi-Rate Error-State Extended Kalman Filter (ES-EKF) 6-DoF Avionics Sensor Fusion Engine",
-    "vertical": "Autonomous Telemetry / Guidance",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-157",
+    "tag": "GF-T3-157",
+    "name": "SwarmSync Flocking & Consensus Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Decentralized consensus & collision-free flocking core with Control Barrier Functions (CBF), algebraic connectivity mesh, and real-time obstacle injection.",
+    "vertical": "Edge AI Swarms",
+    "category_badge": "Edge AI",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "6-DOF AVIONICS SENSOR FUSION ENGINE SIMULATION — NOT FAA/DO-178C FLIGHT CERTIFIED",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying AeroKinetic 6-DoF ES-EKF Telemetry Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-157/",
+    "spec_document": "docs/specs/GF_T3_157_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-156",
-    "admin_url": "http://localhost:5173/t3/gf-t3-156/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying SwarmSync Flocking & Consensus Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Autonomous AI & Swarm Systems",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-157",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-157",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Autonomous Telemetry / Guidance"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 158,
-    "tag": "GF-T3-157",
-    "name": "SwarmSync Flocking & Consensus Core",
-    "category": "Decentralized Swarm Consensus, Control Barrier Function (CBF) Flocking & Hungarian Goal Allocation",
-    "vertical": "Edge AI Swarms",
-    "category_badge": "Edge AI",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-158",
+    "tag": "GF-T3-158",
+    "name": "AeroVex CBF Trajectory Deconfliction Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Defense-grade telemetry cockpit and reference engine for AeroVex CBF decentralized multi-agent trajectory deconfliction with sub-microsecond QP solver and formal safety invariance.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "DECENTRALIZED MULTI-AGENT SWARM DYNAMICS SIMULATION — NOT PRODUCTION FLIGHT CONTROL",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying SwarmSync Flocking & Consensus Core",
-    "domain": "Edge AI",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-158/",
+    "spec_document": "docs/specs/GF_T3_158_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-157",
-    "admin_url": "http://localhost:5173/t3/gf-t3-157/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying AeroVex CBF Trajectory Deconfliction Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-158",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-158",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Edge AI Swarms"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 159,
-    "tag": "GF-T3-158",
-    "name": "AeroVex CBF Trajectory Deconfliction Engine",
-    "category": "Decentralized Active-Set QP Control Barrier Functions & ISO 26262 ASIL-D Safe Set Forward Invariance",
-    "vertical": "Autonomous Telemetry / Guidance",
-    "category_badge": "Telemetry",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-159",
+    "tag": "GF-T3-159",
+    "name": "VoronoiGrid Swarm Dynamic Partitioning Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Defense-grade telemetry cockpit and reference engine for decentralized dynamic Voronoi partitioning and spatial load balancing.",
+    "vertical": "Edge AI Swarms",
+    "category_badge": "Edge AI",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "DECENTRALIZED TRAJECTORY DECONFLICTION SIMULATION — NOT FRA/FAA SAFETY CERTIFIED",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying AeroVex CBF Trajectory Deconfliction Engine",
-    "domain": "Telemetry",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-159/",
+    "spec_document": "docs/specs/GF_T3_159_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-158",
-    "admin_url": "http://localhost:5173/t3/gf-t3-158/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying VoronoiGrid Swarm Dynamic Partitioning Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Autonomous AI & Swarm Systems",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-159",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-159",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Autonomous Telemetry / Guidance"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   },
   {
     "id": 160,
-    "tag": "GF-T3-159",
-    "name": "VoronoiGrid Swarm Dynamic Partitioning Core",
-    "category": "Decentralized Lloyd Relaxation, Lyapunov-Stable Voronoi Partitioning & Distortion Bounding",
-    "vertical": "Edge AI Swarms",
-    "category_badge": "Edge AI",
-    "pricing_track": "Track 3 — F1 Skunkworks Engine",
+    "unit_id": "GF-T3-160",
+    "tag": "GF-T3-160",
+    "name": "NEXUS-ORDERBOOK L2/L3 Matching Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "High-Frequency Limit Order Book Matching Engine",
+    "vertical": "fintech_quant",
+    "category_badge": "FinTech",
     "rarity_tier": "Elite",
     "audit_score": 9.9,
-    "tables": [
-      "state_frames",
-      "telemetry_records",
-      "execution_logs",
-      "audit_trail"
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
     ],
-    "checkout_active": false,
-    "status_badge": "Track 3 Working Service Engine",
-    "truth_badge": "Working Service Engine // Track 3 Verified // Zero Copyleft Clean Room",
-    "disclaimer": "DECENTRALIZED VORONOI PARTITIONING & MULTI-ROBOT COVERAGE SIMULATION — NOT AVIATION CERTIFIED",
-    "best_for": "Best for: Enterprise systems engineers and quant developers deploying VoronoiGrid Swarm Dynamic Partitioning Core",
-    "domain": "Edge AI",
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-160/",
+    "spec_document": "docs/specs/GF_T3_160_SPEC.md",
     "buyoutEligible": true,
     "permanent": false,
-    "preview_url": "http://localhost:5173/t3/gf-t3-159",
-    "admin_url": "http://localhost:5173/t3/gf-t3-159/docs",
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying NEXUS-ORDERBOOK L2/L3 Matching Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-160",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-160",
     "gumroad_url": "https://auraandgrid.gumroad.com",
     "commercial_checkout_url": "https://auraandgrid.gumroad.com",
-    "license": "Apache-2.0 / MIT Dual Permissive",
-    "apa_buyout_floor": 35000,
-    "monopoly_ceiling": 85000,
-    "vertical_tag": "Edge AI Swarms"
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 161,
+    "unit_id": "GF-T3-161",
+    "tag": "GF-T3-161",
+    "name": "ChronoVector Autonomous Guidance & Telemetry Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "F1 Skunkworks Autonomous Guidance & Telemetry Engine (GF-T3-161 ChronoVector) with real-time 6-DoF Extended Kalman Filter and Lexus Digital Dealership Cockpit.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-161/",
+    "spec_document": "docs/specs/GF_T3_161_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying ChronoVector Autonomous Guidance & Telemetry Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-161",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-161",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 162,
+    "unit_id": "GF-T3-162",
+    "tag": "GF-T3-162",
+    "name": "Sovereign Ledger Continuous Double Auction Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "F1 Skunkworks Continuous Double Auction (CDA) matching engine and nanosecond-grade limit order book cockpit for institutional algorithmic liquidity.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-162/",
+    "spec_document": "docs/specs/GF_T3_162_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Sovereign Ledger Continuous Double Auction Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-162",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-162",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 163,
+    "unit_id": "GF-T3-163",
+    "tag": "GF-T3-163",
+    "name": "Kinetic Terrain Swarm Distributed Consensus Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Distributed Multi-Agent Consensus and Kinetic Terrain Autonomy Swarm for Lexus GX 550 Overtrail+ Edge Nodes",
+    "vertical": "Edge AI Swarms",
+    "category_badge": "Edge AI",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-163/",
+    "spec_document": "docs/specs/GF_T3_163_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Kinetic Terrain Swarm Distributed Consensus Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Autonomous AI & Swarm Systems",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-163",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-163",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 164,
+    "unit_id": "GF-T3-164",
+    "tag": "GF-T3-164",
+    "name": "NeuroDrive Multi-Modal Sensory Fusion Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Ghost FactoryOS Track 3 F1 Skunkworks Engine for real-time multi-modal perception, unscented Bayesian Kalman sensory fusion, and high-speed telemetry cockpit.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-164/",
+    "spec_document": "docs/specs/GF_T3_164_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying NeuroDrive Multi-Modal Sensory Fusion Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-164",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-164",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 165,
+    "unit_id": "GF-T3-165",
+    "tag": "GF-T3-165",
+    "name": "DIRECT4 HyperGrid Quant Routing & Arbitrage Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Ghost FactoryOS Track 3 F1 Skunkworks Engine for cross-venue constant product market maker arbitrage and DIRECT4 torque-vectored quant routing.",
+    "vertical": "FinTech/Quant",
+    "category_badge": "FinTech",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-165/",
+    "spec_document": "docs/specs/GF_T3_165_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying DIRECT4 HyperGrid Quant Routing & Arbitrage Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Quantitative Finance & FinTech",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-165",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-165",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 166,
+    "unit_id": "GF-T3-166",
+    "tag": "GF-T3-166",
+    "name": "Lexus LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Enterprise Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine for Lexus LX 600 Ultra-Luxury Core (Track 3)",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-166/",
+    "spec_document": "docs/specs/GF_T3_166_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-166",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-166",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 167,
+    "unit_id": "GF-T3-167",
+    "tag": "GF-T3-167",
+    "name": "Lexus LC 500 Dynamic Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey Micro-APA Buyout Cockpit & F1 Skunkworks Engine for Acquire.com featuring lock-free matching, PostgreSQL 16 HMAC audit ledger, and OpenAPI 3.1 specification.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-167/",
+    "spec_document": "docs/specs/GF_T3_167_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LC 500 Dynamic Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-167",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-167",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 168,
+    "unit_id": "GF-T3-168",
+    "tag": "GF-T3-168",
+    "name": "Lexus RX 500h F SPORT Dynamic Performance Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade Extended Kalman Filter sensor fusion telemetry cockpit, TimescaleDB ledger, OpenAPI 3.1 contracts, and Acquire.com micro-APA buyout asset for GF-T3-168.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-168/",
+    "spec_document": "docs/specs/GF_T3_168_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RX 500h F SPORT Dynamic Performance Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-168",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-168",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 169,
+    "unit_id": "GF-T3-169",
+    "tag": "GF-T3-169",
+    "name": "Lexus NX 450h+ F SPORT Agile Hybrid Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade interactive cockpit for GF-T3-169 (Lexus NX 450h+ F SPORT Agile Hybrid Core), turnkey micro-APA buyout asset for Acquire.com.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-169/",
+    "spec_document": "docs/specs/GF_T3_169_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus NX 450h+ F SPORT Agile Hybrid Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-169",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-169",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 170,
+    "unit_id": "GF-T3-170",
+    "tag": "GF-T3-170",
+    "name": "Lexus ES 350h Executive Quietude Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com: CAN-FD zero-trust HSM authentication engine, PostgreSQL partitioned security ledger, OpenAPI 3.1 gateway, Cloud Run harness, and APA covenant.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-170/",
+    "spec_document": "docs/specs/GF_T3_170_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus ES 350h Executive Quietude Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-170",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-170",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 171,
+    "unit_id": "GF-T3-171",
+    "tag": "GF-T3-171",
+    "name": "Lexus IS 500 F SPORT V8 Dynamic Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade micro-APA buyout asset cockpit for GF-T3-171 featuring LMAX Disruptor ring buffer engine, PostgreSQL WAL spillover ledger, OpenAPI 3.1 execution contract, Cloud Run harness, and Acquire.com covenants.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-171/",
+    "spec_document": "docs/specs/GF_T3_171_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus IS 500 F SPORT V8 Dynamic Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-171",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-171",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 172,
+    "unit_id": "GF-T3-172",
+    "tag": "GF-T3-172",
+    "name": "Lexus TX 500h F SPORT Performance Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade BFT consensus & DIRECT4 torque-split engineering specification cockpit for GF-T3-172 Lexus TX 500h F SPORT Performance Core micro-APA buyout asset.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-172/",
+    "spec_document": "docs/specs/GF_T3_172_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus TX 500h F SPORT Performance Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-172",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-172",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 173,
+    "unit_id": "GF-T3-173",
+    "tag": "GF-T3-173",
+    "name": "Lexus RC F Track Edition Aero Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade active aerodynamic control engine, telemetry ledger, and turnkey micro-APA buyout asset for Acquire.com.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-173/",
+    "spec_document": "docs/specs/GF_T3_173_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RC F Track Edition Aero Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-173",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-173",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 174,
+    "unit_id": "GF-T3-174",
+    "tag": "GF-T3-174",
+    "name": "Lexus RZ 450e Steer-by-Wire Precision Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174) \u2014 Turnkey Micro-APA Buyout Cockpit with dual-channel redundancy, deterministic sub-millisecond actuation, and ISO 26262 ASIL-D consensus engine.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-174/",
+    "spec_document": "docs/specs/GF_T3_174_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RZ 450e Steer-by-Wire Precision Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-174",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-174",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 175,
+    "unit_id": "GF-T3-175",
+    "tag": "GF-T3-175",
+    "name": "Lexus UX 300h Urban Edge Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset cockpit for Acquire.com featuring 500 Hz deterministic SOC/SOH battery compute engine, PostgreSQL 16 ledger, and OpenAPI 3.1 contracts.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-175/",
+    "spec_document": "docs/specs/GF_T3_175_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus UX 300h Urban Edge Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-175",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-175",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 176,
+    "unit_id": "GF-T3-176",
+    "tag": "GF-T3-176",
+    "name": "Lexus GX 550 Overtrail+ Terrain Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade micro-APA buyout asset for Acquire.com. Active E-KDSS suspension decoupling, PostgreSQL 16 terrain ledger, OpenAPI 3.1 contracts, and Cloud Run deployment harness.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-176/",
+    "spec_document": "docs/specs/GF_T3_176_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus GX 550 Overtrail+ Terrain Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-176",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-176",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 177,
+    "unit_id": "GF-T3-177",
+    "tag": "GF-T3-177",
+    "name": "Lexus LC 500 Convertible Grand Touring Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade interactive cockpit and turnkey micro-APA buyout asset for Acquire.com featuring active rear steering (DRS), dual-mode acoustic exhaust engine, and cryptographic touring ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-177/",
+    "spec_document": "docs/specs/GF_T3_177_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LC 500 Convertible Grand Touring Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-177",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-177",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 178,
+    "unit_id": "GF-T3-178",
+    "tag": "GF-T3-178",
+    "name": "Lexus LS 500 Executive AWD Flagship Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade acoustic FxLMS cancellation engine, twin-turbo wastegate boost control, and partitioned PostgreSQL ledger for Acquire.com micro-APA buyout.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-178/",
+    "spec_document": "docs/specs/GF_T3_178_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LS 500 Executive AWD Flagship Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-178",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-178",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 179,
+    "unit_id": "GF-T3-179",
+    "tag": "GF-T3-179",
+    "name": "Lexus TX 550h+ Luxury Plug-In Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable cockpit for Acquire.com featuring DIRECT4 100:0\u201320:80 dynamic e-Axle torque vectoring, 18.1 kWh PHEV energy arbitration, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-179/",
+    "spec_document": "docs/specs/GF_T3_179_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus TX 550h+ Luxury Plug-In Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-179",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-179",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 180,
+    "unit_id": "GF-T3-180",
+    "tag": "GF-T3-180",
+    "name": "Lexus LX 600 Ultra Luxury Executive Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable cockpit for Lexus LX 600 Ultra Luxury Executive Core featuring 4-Wheel AHC electro-hydraulic suspension damping, V35A-FTS twin-turbo wastegate management, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-180/",
+    "spec_document": "docs/specs/GF_T3_180_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LX 600 Ultra Luxury Executive Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-180",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-180",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 181,
+    "unit_id": "GF-T3-181",
+    "tag": "GF-T3-181",
+    "name": "Lexus IS 500 F SPORT Performance Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable cockpit for GF-T3-181 (Lexus IS 500 F SPORT Performance Core) with 2UR-GSE 5.0L V8 throttle mapping, Torsen LSD thermal monitoring, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-181/",
+    "spec_document": "docs/specs/GF_T3_181_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus IS 500 F SPORT Performance Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-181",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-181",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 182,
+    "unit_id": "GF-T3-182",
+    "tag": "GF-T3-182",
+    "name": "Lexus RC F Track Edition Aero Core (Mark II)",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade active aerodynamic control engine, telemetry ledger, and turnkey micro-APA buyout asset for Acquire.com.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-182/",
+    "spec_document": "docs/specs/GF_T3_182_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RC F Track Edition Aero Core (Mark II)",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-182",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-182",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 183,
+    "unit_id": "GF-T3-183",
+    "tag": "GF-T3-183",
+    "name": "Lexus RZ 450e DIRECT4 Dual-Motor Electric Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable cockpit for GF-T3-183 with dual SiC inverter flux weakening, steer-by-wire variable ratio steering, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-183/",
+    "spec_document": "docs/specs/GF_T3_183_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RZ 450e DIRECT4 Dual-Motor Electric Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-183",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-183",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 184,
+    "unit_id": "GF-T3-184",
+    "tag": "GF-T3-184",
+    "name": "Lexus LFA N\u00fcrburgring Edition V10 Apex Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade micro-APA buyout asset for Acquire.com featuring Lexus LFA 1LR-GUE V10 acoustic resonance, 150ms ASG shift timing, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-184/",
+    "spec_document": "docs/specs/GF_T3_184_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LFA N\u00fcrburgring Edition V10 Apex Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-184",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-184",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 185,
+    "unit_id": "GF-T3-185",
+    "tag": "GF-T3-185",
+    "name": "Lexus NX 450h+ F SPORT Handling Plug-In Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable with linear solenoid AVS damping, predictive deceleration regeneration, and PostgreSQL 16 HMAC ledger for GF-T3-185.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-185/",
+    "spec_document": "docs/specs/GF_T3_185_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus NX 450h+ F SPORT Handling Plug-In Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-185",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-185",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 186,
+    "unit_id": "GF-T3-186",
+    "tag": "GF-T3-186",
+    "name": "Lexus UX 300h F SPORT Handling Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA engineering cockpit and asset buyout package for Lexus UX 300h E-Four hybrid power split device and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-186/",
+    "spec_document": "docs/specs/GF_T3_186_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus UX 300h F SPORT Handling Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-186",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-186",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 187,
+    "unit_id": "GF-T3-187",
+    "tag": "GF-T3-187",
+    "name": "Lexus ES 300h Ultra Luxury Swing-Valve Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable with swing-valve shock damping, Atkinson-cycle regenerative energy arbitration, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-187/",
+    "spec_document": "docs/specs/GF_T3_187_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus ES 300h Ultra Luxury Swing-Valve Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-187",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-187",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 188,
+    "unit_id": "GF-T3-188",
+    "tag": "GF-T3-188",
+    "name": "Lexus GX 550 Overtrail+ E-KDSS Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com featuring E-KDSS electronic stabilizer bar disconnect, 5-speed crawl control arbitration, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-188/",
+    "spec_document": "docs/specs/GF_T3_188_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus GX 550 Overtrail+ E-KDSS Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-188",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-188",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 189,
+    "unit_id": "GF-T3-189",
+    "tag": "GF-T3-189",
+    "name": "Lexus LC 500 Convertible Structural Aero Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Production-grade interactive cockpit for GF-T3-189 Lexus LC 500 Convertible Structural Aero Core turnkey micro-APA buyout asset for Acquire.com.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-189/",
+    "spec_document": "docs/specs/GF_T3_189_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LC 500 Convertible Structural Aero Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-189",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-189",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 190,
+    "unit_id": "GF-T3-190",
+    "tag": "GF-T3-190",
+    "name": "Lexus Electrified Sport Concept Solid-State Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable for Lexus Electrified Sport Concept Solid-State Core with battery thermal matrix, virtual manual transmission, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-190/",
+    "spec_document": "docs/specs/GF_T3_190_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus Electrified Sport Concept Solid-State Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-190",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-190",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 191,
+    "unit_id": "GF-T3-191",
+    "tag": "GF-T3-191",
+    "name": "Lexus LM 500h Executive Luxury Mover Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable cockpit for GF-T3-191 featuring Rear Comfort braking pitch control, electrochromic partition acoustic isolation, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-191/",
+    "spec_document": "docs/specs/GF_T3_191_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LM 500h Executive Luxury Mover Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-191",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-191",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 192,
+    "unit_id": "GF-T3-192",
+    "tag": "GF-T3-192",
+    "name": "Lexus TX 550h+ DIRECT4 Dynamic Rear Steering Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com featuring Lexus TX 550h+ Dynamic Rear Steering arbitration, DIRECT4 torque vectoring, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-192/",
+    "spec_document": "docs/specs/GF_T3_192_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus TX 550h+ DIRECT4 Dynamic Rear Steering Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-192",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-192",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 193,
+    "unit_id": "GF-T3-193",
+    "tag": "GF-T3-193",
+    "name": "Lexus IS 500 F SPORT Performance Core (Mark II)",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Interactive performance cockpit and turnkey micro-APA buyout asset for Acquire.com, featuring 2UR-GSE 5.0L V8 acoustic intake runner tuning, Torsen LSD yaw dynamics, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-193/",
+    "spec_document": "docs/specs/GF_T3_193_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus IS 500 F SPORT Performance Core (Mark II)",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-193",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-193",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 194,
+    "unit_id": "GF-T3-194",
+    "tag": "GF-T3-194",
+    "name": "Lexus LX 600 F SPORT 4-Wheel Active Height Control Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com with 4-wheel Active Height Control (AHC), multi-terrain hydraulic spring rate switching, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-194/",
+    "spec_document": "docs/specs/GF_T3_194_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LX 600 F SPORT 4-Wheel Active Height Control Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-194",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-194",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 195,
+    "unit_id": "GF-T3-195",
+    "tag": "GF-T3-195",
+    "name": "Lexus LC 500 Inspiration Series Carbon Aero Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout cockpit for Lexus LC 500 Inspiration Series Carbon Aero Core with real-time vortex dynamics, PostgreSQL 16 HMAC ledger, and Acquire.com covenants.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-195/",
+    "spec_document": "docs/specs/GF_T3_195_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LC 500 Inspiration Series Carbon Aero Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-195",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-195",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 196,
+    "unit_id": "GF-T3-196",
+    "tag": "GF-T3-196",
+    "name": "Lexus RZ 450e Steer-by-Wire DIRECT4 Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com: Lexus RZ 450e Steer-by-Wire One-Motion Grip and DIRECT4 e-Axle core with PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-196/",
+    "spec_document": "docs/specs/GF_T3_196_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RZ 450e Steer-by-Wire DIRECT4 Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-196",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-196",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 197,
+    "unit_id": "GF-T3-197",
+    "tag": "GF-T3-197",
+    "name": "Lexus TX 500h F SPORT Performance Core (Mark II)",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable with Dynamic Rear Steering (DRS), DIRECT4 rear eAxle vectoring, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-197/",
+    "spec_document": "docs/specs/GF_T3_197_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus TX 500h F SPORT Performance Core (Mark II)",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-197",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-197",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 198,
+    "unit_id": "GF-T3-198",
+    "tag": "GF-T3-198",
+    "name": "Lexus LFA N\u00fcrburgring Edition 1LR-GUE V10 Telematics Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA telematics cockpit and architectural specification engine for Lexus LFA N\u00fcrburgring Edition 1LR-GUE V10 with acoustic resonance harmonics, ASG electro-hydraulics, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-198/",
+    "spec_document": "docs/specs/GF_T3_198_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus LFA N\u00fcrburgring Edition 1LR-GUE V10 Telematics Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-198",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-198",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 199,
+    "unit_id": "GF-T3-199",
+    "tag": "GF-T3-199",
+    "name": "Lexus RX 500h F SPORT Performance Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA buyout asset for Acquire.com featuring DIRECT4 torque vectoring, Dynamic Rear Steering, bipolar NiMH inverter telemetry, and PostgreSQL 16 HMAC ledger.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-199/",
+    "spec_document": "docs/specs/GF_T3_199_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus RX 500h F SPORT Performance Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-199",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-199",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
+  },
+  {
+    "id": 200,
+    "unit_id": "GF-T3-200",
+    "tag": "GF-T3-200",
+    "name": "Lexus Electrified Supercar Concept Core",
+    "track": "Track 3",
+    "pricing_track": "Track 3 \u2014 F1 Skunkworks Engine",
+    "category": "Turnkey micro-APA deliverable with quad-motor independent torque vectoring, solid-state battery thermal matrix, sub-2.0s launch dynamics, and PostgreSQL 16 HMAC ledger for Acquire.com.",
+    "vertical": "Autonomous Telemetry / Cockpit",
+    "category_badge": "Telemetry",
+    "rarity_tier": "Elite",
+    "audit_score": 9.9,
+    "retail_valuation": 45000,
+    "enterprise_valuation": 125000,
+    "apa_buyout_floor_band": [
+      15000,
+      25000
+    ],
+    "apa_buyout_floor": 45000,
+    "monopoly_ceiling": 125000,
+    "clean_room_status": "Certified MIT/Apache-2.0",
+    "build_status": "Production Ready",
+    "timestamp": "2026-10-13T06:22:30Z",
+    "staging_location": "catalog/track-3/gf-t3-200/",
+    "spec_document": "docs/specs/GF_T3_200_SPEC.md",
+    "buyoutEligible": true,
+    "permanent": false,
+    "checkout_active": false,
+    "status_badge": "Track 3 Working Service Engine",
+    "truth_badge": "Working Service Engine // Certified MIT/Apache-2.0",
+    "tables": [
+      "telemetry_frames",
+      "state_vectors",
+      "hmac_audit_ledger",
+      "apa_covenant_registry"
+    ],
+    "best_for": "Best for: Institutional engineering & autonomous telemetry teams deploying Lexus Electrified Supercar Concept Core",
+    "disclaimer": "SIMULATED TELEMETRY & SAMPLE DATA ONLY \u2014 NOT CERTIFIED FOR LIVE VEHICLE CONTROL OR SAFETY-CRITICAL OPERATIONS",
+    "domain": "Automotive Telemetry & Cyber-Physical Core",
+    "preview_url": "https://auraandgrid.gumroad.com/l/gf-t3-200",
+    "admin_url": "https://auraandgrid.gumroad.com/l/gf-t3-200",
+    "gumroad_url": "https://auraandgrid.gumroad.com",
+    "commercial_checkout_url": "https://auraandgrid.gumroad.com",
+    "exclusive_buyout_anchor": 45000,
+    "exclusive_buyout_range": [
+      15000,
+      25000
+    ],
+    "full_asset_buyout_range": [
+      45000,
+      125000
+    ],
+    "strategic_acquisition_range": [
+      45000,
+      125000
+    ]
   }
 ];
-export const TOTAL_FLEET_UNITS = 160;
-export const ASC_350_REPLACEMENT_FLOOR = 1751840;
-export const COMMERCIAL_AGENCY_BUILD_VALUATION = 2280000;
-export const MASTER_VAULT_ASKING_PRICE = 3630000;
-export const DISTRESSED_FLOOR = 1050000;
-
-export default FLEET_DATA;

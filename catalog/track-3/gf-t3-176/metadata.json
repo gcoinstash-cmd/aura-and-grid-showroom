@@ -1,0 +1,6 @@
+{
+  "name": "GF-T3-176 | Lexus GX 550 Overtrail+ Terrain Core",
+  "description": "Production-grade micro-APA buyout asset for Acquire.com. Active E-KDSS suspension decoupling, PostgreSQL 16 terrain ledger, OpenAPI 3.1 contracts, and Cloud Run deployment harness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

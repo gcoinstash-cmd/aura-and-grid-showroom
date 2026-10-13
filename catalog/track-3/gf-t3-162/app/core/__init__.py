@@ -1,0 +1,1 @@
+"""Ghost FactoryOS Core"""

@@ -1,0 +1,121 @@
+import { LedgerRecord } from '../types/telemetry';
+
+export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
+  {
+    id: "e4a1b021-9921-4d33-8fa9-9941a80c101a",
+    nonce: 1000008,
+    recordedAt: "2026-10-12T20:18:59.980Z",
+    yokeAngle: 42.5,
+    rackAngle: 4.88,
+    divergenceDelta: 0.04,
+    pinionResistanceNm: 2.14,
+    direct4Split: "75:25",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "9a7f311c8901df4b423188d01f8e91cb319d67710c55ea9120e74b330e71ba02",
+    verified: true
+  },
+  {
+    id: "f83b1239-1234-4567-89ab-cdef01234567",
+    nonce: 1000007,
+    recordedAt: "2026-10-12T20:18:59.730Z",
+    yokeAngle: 38.0,
+    rackAngle: 4.36,
+    divergenceDelta: 0.03,
+    pinionResistanceNm: 2.05,
+    direct4Split: "75:25",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "e812d4a5c0934f82811a0c476839d332ba119c80d540fba109e4401a719c8511",
+    verified: true
+  },
+  {
+    id: "a1904bc2-8901-4455-88aa-123456789abc",
+    nonce: 1000006,
+    recordedAt: "2026-10-12T20:18:59.480Z",
+    yokeAngle: 25.4,
+    rackAngle: 2.92,
+    divergenceDelta: 0.02,
+    pinionResistanceNm: 1.88,
+    direct4Split: "65:35",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "4f6789a012bcde34567890abcdef1234567890abcdef1234567890abcdef1234",
+    verified: true
+  },
+  {
+    id: "338910ac-ff12-4211-9988-aabbccddeeff",
+    nonce: 1000005,
+    recordedAt: "2026-10-12T20:18:59.230Z",
+    yokeAngle: 12.0,
+    rackAngle: 1.38,
+    divergenceDelta: 0.01,
+    pinionResistanceNm: 1.45,
+    direct4Split: "55:45",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "8b1928374650aefc12349081726354abcedf890123456789abcdef0123456789",
+    verified: true
+  },
+  {
+    id: "99104bc1-2244-4889-bbcc-001122334455",
+    nonce: 1000004,
+    recordedAt: "2026-10-12T20:18:58.980Z",
+    yokeAngle: 0.0,
+    rackAngle: 0.0,
+    divergenceDelta: 0.00,
+    pinionResistanceNm: 0.85,
+    direct4Split: "50:50",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+    verified: true
+  },
+  {
+    id: "10293847-5647-4839-2019-ffeeddccbbaa",
+    nonce: 1000003,
+    recordedAt: "2026-10-12T20:18:58.730Z",
+    yokeAngle: -15.5,
+    rackAngle: -1.78,
+    divergenceDelta: 0.02,
+    pinionResistanceNm: 1.55,
+    direct4Split: "75:25",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456",
+    verified: true
+  },
+  {
+    id: "77665544-3322-1100-9988-776655443322",
+    nonce: 1000002,
+    recordedAt: "2026-10-12T20:18:58.480Z",
+    yokeAngle: -35.0,
+    rackAngle: -4.02,
+    divergenceDelta: 0.03,
+    pinionResistanceNm: 2.10,
+    direct4Split: "75:25",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
+    verified: true
+  },
+  {
+    id: "bbccdde0-1122-3344-5566-778899aabbcc",
+    nonce: 1000001,
+    recordedAt: "2026-10-12T20:18:58.230Z",
+    yokeAngle: -65.2,
+    rackAngle: -7.50,
+    divergenceDelta: 0.05,
+    pinionResistanceNm: 2.80,
+    direct4Split: "50:50",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234",
+    verified: true
+  },
+  {
+    id: "00000000-0000-0000-0000-000000000001",
+    nonce: 1000000,
+    recordedAt: "2026-10-12T20:18:58.000Z",
+    yokeAngle: 0.0,
+    rackAngle: 0.0,
+    divergenceDelta: 0.00,
+    pinionResistanceNm: 0.50,
+    direct4Split: "60:40",
+    canBusState: "BUS_A (Healthy)",
+    hmacSignature: "c0ffeebabe123456789abcdef0123456789abcdef0123456789abcdef01234567",
+    verified: true
+  }
+];

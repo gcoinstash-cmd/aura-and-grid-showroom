@@ -1,12 +1,13 @@
 {
-  "catalogTotal": 160,
+  "catalogTotal": 200,
   "track1LeanTotal": 86,
   "track2FlagshipTotal": 51,
-  "retainedFloorMinimum": 128,
-  "maxOwnershipTransferCapacity": 32,
-  "syncVersion": "v1.6.0",
-  "diligenceGrade": "L3-SUPABASE-READY",
-  "buildIntegrity": "114/114 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
+  "track3ServiceEngineTotal": 63,
+  "retainedFloorMinimum": 160,
+  "maxOwnershipTransferCapacity": 40,
+  "syncVersion": "v2.0.0",
+  "diligenceGrade": "L3-SUPABASE-READY // TRACK-3-CLEAN-ROOM",
+  "buildIntegrity": "200/200 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
   "sectors": {
     "hospitality": 28,
     "creative": 18,
@@ -14,14 +15,14 @@
     "heavy_fleet": 9,
     "medical": 8,
     "aerospace": 8,
-    "automotive": 6,
+    "automotive": 46,
     "fitness": 5,
     "home_services": 5,
     "clean_energy": 5,
-    "subsea": 4,
-    "deep_tech": 2,
+    "subsea": 5,
+    "deep_tech": 25,
     "defense": 1,
-    "total": 114
+    "total": 200
   },
   "archetypes": {
     "A": 23,
@@ -52,14 +53,32 @@
     "track2StrategicBuyoutRange": [
       35000,
       75000
+    ],
+    "track3RetailValuationBaseline": 45000,
+    "track3EnterpriseValuationCeiling": 125000,
+    "apaBuyoutFloorTargetLiquidityBand": [
+      15000,
+      25000
     ]
   },
-  "verifiedTimestamp": "2026-10-03T19:50:00Z",
-  "track3ServiceEngineTotal": 23,
+  "verifiedTimestamp": "2026-10-13T06:22:30Z",
   "valuation": {
-    "asc350ReplacementFloor": 1751840,
-    "commercialAgencyBuildReplacement": 2280000,
-    "masterVaultCollectionAskingPrice": 3630000,
-    "distressedFloorCard4": 1050000
+    "totalAssetCount": 200,
+    "apaBuyoutFloorUnitBand": [
+      15000,
+      25000
+    ],
+    "apaBuyoutFloorFleetBand": [
+      3000000,
+      5000000
+    ],
+    "retailMonroneyUnitBaseline": 45000,
+    "retailMonroneySum": 9000000,
+    "enterpriseAsc350UnitCeiling": 125000,
+    "enterpriseAsc350ReplacementCeiling": 25000000,
+    "asc350ReplacementFloor": 2189800,
+    "commercialAgencyBuildReplacement": 9000000,
+    "masterVaultCollectionAskingPrice": 25000000,
+    "distressedFloorCard4": 1500000
   }
 }

@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-size: 19px;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Enforce strict 16px floor on all micro-labels, sensor telemetry, and status badges */
+.text-xs {
+  font-size: 0.85rem !important; /* 0.85 * 19px = 16.15px */
+  line-height: 1.35rem;
+}
+
+.text-sm {
+  font-size: 0.95rem; /* ~18px */
+  line-height: 1.45rem;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-198 (export) ",
+  "description": "Turnkey micro-APA telematics cockpit and architectural specification engine for Lexus LFA Nürburgring Edition 1LR-GUE V10 with acoustic resonance harmonics, ASG electro-hydraulics, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

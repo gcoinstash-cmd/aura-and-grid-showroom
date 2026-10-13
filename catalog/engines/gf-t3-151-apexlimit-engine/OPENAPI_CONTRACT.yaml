@@ -1,0 +1,738 @@
+openapi: 3.1.0
+info:
+  title: ApexLimit HFT Matching & Risk Engine (GF-T3-151)
+  version: 1.0.0-PROD
+  summary: Deterministic FIFO Central Limit Order Book (CLOB) & Synchronous Pre-Trade Risk Engine
+  description: >
+    Microsecond-grade order matching and real-time risk liquidation reference engine.
+    Engineered with 10^8 fixed-point integer arithmetic (zero IEEE-754 floating-point drift),
+    O(1) hash-to-queue order cancellation, and multi-collateral haircut valuation.
+    Clean-room certified: 100% permissive IP (MIT / Apache-2.0 / BSD-3-Clause), zero copyleft.
+  license:
+    name: MIT / Apache-2.0 Dual Permissive
+    identifier: MIT OR Apache-2.0
+  contact:
+    name: GhostFactoryOS Skunkworks Architecture Board
+    url: https://aura-and-grid-showroom.onrender.com
+
+servers:
+  - url: http://localhost:8080
+    description: Local Docker & Uvicorn Verification Server
+  - url: https://gf-t3-151-apexlimit-engine.a.run.app
+    description: Google Cloud Run Production Reference Deployment
+
+tags:
+  - name: Telemetry
+    description: Engine health probes, nanosecond latency histograms, and memory state metrics
+  - name: Trading Operations
+    description: Deterministic order ingress (LIMIT, MARKET, STOP_LIMIT) and O(1) order cancellation
+  - name: Market Data
+    description: Real-time Level 2 (L2) aggregated orderbook depth snapshots
+  - name: Risk Management
+    description: Synchronous pre-trade margin checks, collateral deposits, mark-price updates, and liquidation cascades
+
+paths:
+  /health:
+    get:
+      tags:
+        - Telemetry
+      summary: Get Engine Telemetry & Health State
+      description: Returns deterministic engine status, active symbols, cumulative matched volume, and nanosecond execution latency metrics.
+      operationId: get_health_health_get
+      responses:
+        '200':
+          description: Engine telemetry snapshot returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthTelemetryResponse'
+
+  /healthz:
+    get:
+      tags:
+        - Telemetry
+      summary: Container Liveness & Readiness Probe
+      description: Lightweight Kubernetes / Cloud Run / Docker liveness probe endpoint.
+      operationId: get_healthz_healthz_get
+      responses:
+        '200':
+          description: Service container is healthy and accepting requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthTelemetryResponse'
+
+  /v1/orders:
+    post:
+      tags:
+        - Trading Operations
+      summary: Submit Limit, Market, or Stop-Limit Order
+      description: >
+        Submits an order to the deterministic matching core.
+        Executes synchronous Pre-Trade Risk validation (initial margin reservation) prior to orderbook ingress.
+      operationId: submit_order_v1_orders_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderSubmissionRequest'
+      responses:
+        '201':
+          description: Order accepted, risk-validated, and processed by the matching engine
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponseDTO'
+        '400':
+          description: Pre-Trade Risk Rejection (insufficient free collateral margin or account in liquidation)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '422':
+          description: Request Payload Validation Error (invalid price, quantity, or enum value)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+        '500':
+          description: Unhandled Internal Engine Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+
+  /v1/orders/{order_id}:
+    delete:
+      tags:
+        - Trading Operations
+      summary: Cancel Open Order & Release Margin Locks
+      description: Executes O(1) hash-indexed order removal from the active price level FIFO queue and immediately releases locked pre-trade margin.
+      operationId: cancel_order_v1_orders__order_id__delete
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          description: UUID of the open order to cancel
+          schema:
+            type: string
+        - name: symbol
+          in: query
+          required: false
+          description: Market symbol (defaults to BTC-USD)
+          schema:
+            type: string
+            default: BTC-USD
+        - name: account_id
+          in: query
+          required: false
+          description: Optional account UUID override for margin release verification
+          schema:
+            anyOf:
+              - type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: Order cancelled and reserved margin unlocked
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelOrderResponse'
+        '404':
+          description: Order not found or already completely filled/cancelled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorEnvelope'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/orderbook/{symbol}:
+    get:
+      tags:
+        - Market Data
+      summary: Level 2 (L2) Aggregated Orderbook Snapshot
+      description: Returns price-aggregated bid and ask depth levels, top-of-book spread, and sequence counters.
+      operationId: get_orderbook_v1_orderbook__symbol__get
+      parameters:
+        - name: symbol
+          in: path
+          required: true
+          description: Market symbol (e.g., BTC-USD, ETH-USD)
+          schema:
+            type: string
+        - name: depth
+          in: query
+          required: false
+          description: Number of price levels per side to return (1 to 100)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: L2 Orderbook depth snapshot returned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderbookSnapshotResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/risk/margin/{account_id}:
+    get:
+      tags:
+        - Risk Management
+      summary: Evaluate Real-Time Account Margin & Liquidation State
+      description: Computes total hair-cutted equity, unrealized PnL, initial/maintenance margin requirements, leverage ratio, and liquidation trigger status.
+      operationId: get_margin_state_v1_risk_margin__account_id__get
+      parameters:
+        - name: account_id
+          in: path
+          required: true
+          description: Trading account UUID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Real-time margin evaluation state returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarginStateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/risk/deposit:
+    post:
+      tags:
+        - Risk Management
+      summary: Deposit Cash or Multi-Asset Collateral
+      description: Credits USD cash or supported collateral assets (USD, USDT, USDC, BTC, ETH) to the target trading account in 10^8 fixed-point scale.
+      operationId: deposit_collateral_v1_risk_deposit_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DepositRequest'
+      responses:
+        '200':
+          description: Collateral deposit credited successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DepositResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/risk/mark-price:
+    post:
+      tags:
+        - Risk Management
+      summary: Update Symbol Mark Price for Stress Testing
+      description: Updates the reference mark price for a symbol to evaluate unrealized PnL and maintenance margin breach thresholds.
+      operationId: update_mark_price_v1_risk_mark_price_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MarkPriceUpdate'
+      responses:
+        '200':
+          description: Reference mark price updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarkPriceUpdateResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+  /v1/risk/liquidate/{account_id}:
+    post:
+      tags:
+        - Risk Management
+      summary: Trigger Deterministic Liquidation Cascade
+      description: Evaluates account maintenance margin and executes a deterministic liquidation cascade (cancelling open orders and flattening underwater positions) if total equity is below maintenance margin.
+      operationId: trigger_liquidation_v1_risk_liquidate__account_id__post
+      parameters:
+        - name: account_id
+          in: path
+          required: true
+          description: Account UUID to evaluate and liquidate
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Liquidation cascade evaluation completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LiquidationCascadeResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+
+components:
+  schemas:
+    OrderSide:
+      type: string
+      title: OrderSide
+      enum:
+        - BUY
+        - SELL
+
+    OrderType:
+      type: string
+      title: OrderType
+      enum:
+        - LIMIT
+        - MARKET
+        - STOP_LIMIT
+
+    OrderStatus:
+      type: string
+      title: OrderStatus
+      enum:
+        - NEW
+        - PARTIALLY_FILLED
+        - FILLED
+        - CANCELLED
+        - REJECTED
+        - UNTRIGGERED
+
+    OrderSubmissionRequest:
+      type: object
+      title: OrderSubmissionRequest
+      required:
+        - client_order_id
+        - account_id
+        - side
+        - price
+        - quantity
+      properties:
+        client_order_id:
+          type: string
+          description: Unique client-supplied idempotency key
+          examples: ["ord_inst_001"]
+        account_id:
+          type: string
+          description: Trading account UUID
+          examples: ["acc_institutional_01"]
+        symbol:
+          type: string
+          default: BTC-USD
+          description: Market symbol, e.g. BTC-USD
+        side:
+          $ref: '#/components/schemas/OrderSide'
+        order_type:
+          $ref: '#/components/schemas/OrderType'
+          default: LIMIT
+        price:
+          type: number
+          exclusiveMinimum: 0.0
+          description: Order price in quote currency (scaled internally to 10^8 integer units)
+          examples: [65000.0]
+        quantity:
+          type: number
+          exclusiveMinimum: 0.0
+          description: Base asset quantity (scaled internally to 10^8 integer units)
+          examples: [1.25]
+        stop_price:
+          anyOf:
+            - type: number
+              exclusiveMinimum: 0.0
+            - type: 'null'
+          description: Stop trigger price required when order_type is STOP_LIMIT
+
+    TradeExecutionDTO:
+      type: object
+      title: TradeExecutionDTO
+      required:
+        - trade_id
+        - symbol
+        - price
+        - quantity
+        - notional
+        - maker_order_id
+        - taker_order_id
+        - maker_account_id
+        - taker_account_id
+        - executed_at_ns
+      properties:
+        trade_id:
+          type: string
+        symbol:
+          type: string
+        price:
+          type: number
+        quantity:
+          type: number
+        notional:
+          type: number
+        maker_order_id:
+          type: string
+        taker_order_id:
+          type: string
+        maker_account_id:
+          type: string
+        taker_account_id:
+          type: string
+        executed_at_ns:
+          type: integer
+
+    OrderResponseDTO:
+      type: object
+      title: OrderResponseDTO
+      required:
+        - order_id
+        - client_order_id
+        - account_id
+        - symbol
+        - side
+        - order_type
+        - price
+        - quantity
+        - filled_quantity
+        - remaining_quantity
+        - status
+        - margin_locked
+        - created_at_ns
+        - updated_at_ns
+      properties:
+        order_id:
+          type: string
+        client_order_id:
+          type: string
+        account_id:
+          type: string
+        symbol:
+          type: string
+        side:
+          $ref: '#/components/schemas/OrderSide'
+        order_type:
+          $ref: '#/components/schemas/OrderType'
+        price:
+          type: number
+        quantity:
+          type: number
+        filled_quantity:
+          type: number
+        remaining_quantity:
+          type: number
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        margin_locked:
+          type: number
+        trades:
+          type: array
+          default: []
+          items:
+            $ref: '#/components/schemas/TradeExecutionDTO'
+        created_at_ns:
+          type: integer
+        updated_at_ns:
+          type: integer
+
+    CancelOrderResponse:
+      type: object
+      title: CancelOrderResponse
+      required:
+        - status
+        - message
+        - order_id
+        - symbol
+        - cancelled_status
+      properties:
+        status:
+          type: string
+          examples: ["SUCCESS"]
+        message:
+          type: string
+        order_id:
+          type: string
+        symbol:
+          type: string
+        cancelled_status:
+          $ref: '#/components/schemas/OrderStatus'
+
+    OrderbookLevelDTO:
+      type: object
+      title: OrderbookLevelDTO
+      required:
+        - price
+        - quantity
+        - order_count
+      properties:
+        price:
+          type: number
+        quantity:
+          type: number
+        order_count:
+          type: integer
+
+    OrderbookSnapshotResponse:
+      type: object
+      title: OrderbookSnapshotResponse
+      required:
+        - symbol
+        - bids
+        - asks
+        - timestamp_ns
+      properties:
+        symbol:
+          type: string
+        bids:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderbookLevelDTO'
+        asks:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderbookLevelDTO'
+        best_bid:
+          anyOf:
+            - type: number
+            - type: 'null'
+        best_ask:
+          anyOf:
+            - type: number
+            - type: 'null'
+        spread:
+          anyOf:
+            - type: number
+            - type: 'null'
+        last_trade_price:
+          anyOf:
+            - type: number
+            - type: 'null'
+        timestamp_ns:
+          type: integer
+
+    MarginStateResponse:
+      type: object
+      title: MarginStateResponse
+      required:
+        - account_id
+        - cash_balance
+        - collateral_value
+        - unrealized_pnl
+        - total_equity
+        - initial_margin_requirement
+        - maintenance_margin_requirement
+        - open_orders_margin_locked
+        - free_collateral_margin
+        - margin_utilization_ratio_pct
+        - portfolio_leverage_ratio
+        - is_liquidation_triggered
+        - health_status
+      properties:
+        account_id:
+          type: string
+        cash_balance:
+          type: number
+        collateral_value:
+          type: number
+        unrealized_pnl:
+          type: number
+        total_equity:
+          type: number
+        initial_margin_requirement:
+          type: number
+        maintenance_margin_requirement:
+          type: number
+        open_orders_margin_locked:
+          type: number
+        free_collateral_margin:
+          type: number
+        margin_utilization_ratio_pct:
+          type: number
+        portfolio_leverage_ratio:
+          type: number
+        is_liquidation_triggered:
+          type: boolean
+        health_status:
+          type: string
+          enum: [HEALTHY, WARNING, MARGIN_CALL, LIQUIDATION]
+
+    DepositRequest:
+      type: object
+      title: DepositRequest
+      required:
+        - account_id
+        - amount
+      properties:
+        account_id:
+          type: string
+        amount:
+          type: number
+          exclusiveMinimum: 0.0
+        asset_id:
+          type: string
+          default: USD
+
+    DepositResponse:
+      type: object
+      title: DepositResponse
+      required:
+        - status
+        - account_id
+        - deposited
+        - asset
+        - new_balance
+      properties:
+        status:
+          type: string
+        account_id:
+          type: string
+        deposited:
+          type: number
+        asset:
+          type: string
+        new_balance:
+          type: number
+
+    MarkPriceUpdate:
+      type: object
+      title: MarkPriceUpdate
+      required:
+        - symbol
+        - price
+      properties:
+        symbol:
+          type: string
+        price:
+          type: number
+          exclusiveMinimum: 0.0
+
+    MarkPriceUpdateResponse:
+      type: object
+      title: MarkPriceUpdateResponse
+      required:
+        - status
+        - symbol
+        - new_mark_price
+      properties:
+        status:
+          type: string
+        symbol:
+          type: string
+        new_mark_price:
+          type: number
+
+    LiquidationCascadeResponse:
+      type: object
+      title: LiquidationCascadeResponse
+      required:
+        - status
+        - account_id
+        - actions_taken
+        - liquidation_cleared
+      properties:
+        status:
+          type: string
+        account_id:
+          type: string
+        actions_taken:
+          type: array
+          items:
+            type: string
+        liquidation_cleared:
+          type: boolean
+
+    HealthTelemetryResponse:
+      type: object
+      title: HealthTelemetryResponse
+      required:
+        - engine_id
+        - status
+        - precision_scale
+      properties:
+        engine_id:
+          type: string
+          examples: ["GF-T3-151-APEXLIMIT"]
+        status:
+          type: string
+          examples: ["OPERATIONAL"]
+        precision_scale:
+          type: integer
+          examples: [100000000]
+        active_symbols:
+          type: array
+          items:
+            type: string
+        total_orders_processed:
+          type: integer
+        total_trades_executed:
+          type: integer
+        avg_match_latency_ns:
+          type: number
+        last_match_latency_ns:
+          type: integer
+
+    ErrorEnvelope:
+      type: object
+      title: ErrorEnvelope
+      properties:
+        detail:
+          anyOf:
+            - type: string
+            - type: object
+        error_code:
+          type: string
+        message:
+          type: string
+
+    ValidationError:
+      type: object
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      properties:
+        loc:
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          type: string
+        type:
+          type: string
+
+    HTTPValidationError:
+      type: object
+      title: HTTPValidationError
+      properties:
+        detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'

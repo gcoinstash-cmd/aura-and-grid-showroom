@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-191 (export) ",
+  "description": "Turnkey micro-APA deliverable cockpit for GF-T3-191 featuring Rear Comfort braking pitch control, electrochromic partition acoustic isolation, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-197 (export) ",
+  "description": "Turnkey micro-APA deliverable with Dynamic Rear Steering (DRS), DIRECT4 rear eAxle vectoring, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

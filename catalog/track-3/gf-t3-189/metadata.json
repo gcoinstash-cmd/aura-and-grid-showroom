@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-189 (export)",
+  "description": "Production-grade interactive cockpit for GF-T3-189 Lexus LC 500 Convertible Structural Aero Core turnkey micro-APA buyout asset for Acquire.com.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

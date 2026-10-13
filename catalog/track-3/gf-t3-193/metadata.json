@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-193 (export) ",
+  "description": "Interactive performance cockpit and turnkey micro-APA buyout asset for Acquire.com, featuring 2UR-GSE 5.0L V8 acoustic intake runner tuning, Torsen LSD yaw dynamics, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

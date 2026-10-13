@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-187 (export)",
+  "description": "Turnkey micro-APA deliverable with swing-valve shock damping, Atkinson-cycle regenerative energy arbitration, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

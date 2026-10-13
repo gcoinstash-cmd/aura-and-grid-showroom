@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-168|Dynamic Core (export) ",
+  "description": "Production-grade Extended Kalman Filter sensor fusion telemetry cockpit, TimescaleDB ledger, OpenAPI 3.1 contracts, and Acquire.com micro-APA buyout asset for GF-T3-168.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

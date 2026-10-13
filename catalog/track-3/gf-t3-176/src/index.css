@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-size: 20px;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: dark;
+    background-color: #0a0a0c;
+    color: #f3f4f6;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  code, pre, kbd, samp, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-feature-settings: "calt" 1, "zero" 1;
+  }
+}
+
+/* Ensure no element drops below 16px floor in technical components */
+.text-floor-16 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Monospace tabular display */
+.num-tabular {
+  font-variant-numeric: tabular-nums;
+}

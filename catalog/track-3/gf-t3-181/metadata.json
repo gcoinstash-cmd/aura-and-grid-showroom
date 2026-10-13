@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-181 Cockpit (export)",
+  "description": "Turnkey micro-APA deliverable cockpit for GF-T3-181 (Lexus IS 500 F SPORT Performance Core) with 2UR-GSE 5.0L V8 throttle mapping, Torsen LSD thermal monitoring, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

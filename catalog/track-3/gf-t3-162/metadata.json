@@ -1,0 +1,8 @@
+{
+  "name": "Ghost FactoryOS GF-T3-162 Sovereign Ledger (export) ",
+  "description": "F1 Skunkworks Continuous Double Auction (CDA) matching engine and nanosecond-grade limit order book cockpit for institutional algorithmic liquidity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

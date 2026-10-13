@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-164 NeuroDrive Sensory Fusion (export) ",
+  "description": "Ghost FactoryOS Track 3 F1 Skunkworks Engine for real-time multi-modal perception, unscented Bayesian Kalman sensory fusion, and high-speed telemetry cockpit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

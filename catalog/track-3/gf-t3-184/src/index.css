@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-size: 19px;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #020617;
+    color: #f8fafc;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars for telemetry feeds */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Tachometer glow effects */
+.glow-amber {
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.45));
+}
+
+.glow-emerald {
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4));
+}
+
+.glow-red {
+  filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.6));
+}

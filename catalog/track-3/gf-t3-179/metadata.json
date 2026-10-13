@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-179 Plug-in Core (export) ",
+  "description": "Turnkey micro-APA deliverable cockpit for Acquire.com featuring DIRECT4 100:0–20:80 dynamic e-Axle torque vectoring, 18.1 kWh PHEV energy arbitration, and PostgreSQL 16 HMAC ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

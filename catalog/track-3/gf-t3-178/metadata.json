@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-178: Flagship Core (export) ",
+  "description": "Production-grade acoustic FxLMS cancellation engine, twin-turbo wastegate boost control, and partitioned PostgreSQL ledger for Acquire.com micro-APA buyout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

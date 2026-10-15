@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE VAULT — Luxury Tattoo Atelier & Piercing Sanctuary</title>
+  <meta name="description" content="Private bespoke tattoo atelier and fine jewelry piercing studio. World-class resident artists, sterile surgical suites, and dark obsidian aesthetic.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vaultDark: '#0A0A0B',
+            vaultCard: '#121215',
+            vaultGold: '#D4AF37',
+            vaultGoldMuted: '#AA820A',
+            vaultCrimson: '#E63946',
+            vaultBorder: 'rgba(255, 255, 255, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#D4AF37] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Top Status Announcement Bar -->
+  <div class="bg-gradient-to-r from-zinc-950 via-[#121215] to-zinc-950 border-b border-white/10 text-xs py-2 px-4 text-center tracking-wider flex items-center justify-center gap-3">
+    <span class="pulse-gold"></span>
+    <span class="text-zinc-300 font-mono-vault"><strong class="text-white">ATELIER PRIVÉ:</strong> Autumn & Winter Resident Books Now Open &bull; Strictly by Appointment</span>
+    <a href="book" class="underline text-[#D4AF37] hover:text-white transition-colors ml-2 font-medium">Reserve Chair &rarr;</a>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D4AF37] to-[#121215] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-cinzel font-black text-lg tracking-tighter text-[#D4AF37] group-hover:bg-transparent transition-colors">
+            V
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cinzel font-bold text-xl tracking-wider text-white">THE VAULT</span>
+          <span class="text-[9px] font-mono-vault tracking-widest text-[#D4AF37] uppercase">Tattoo Atelier &bull; Piercing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="artists" class="hover:text-[#D4AF37] transition-colors">Resident Artists</a>
+        <a href="flash" class="hover:text-[#D4AF37] transition-colors flex items-center gap-2">
+          Flash Archive <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+        </a>
+        <a href="book" class="hover:text-[#D4AF37] transition-colors">Book Chair</a>
+        <a href="waiver" class="hover:text-[#D4AF37] transition-colors">Digital Waiver</a>
+        <a href="admin" class="hover:text-[#D4AF37] transition-colors text-xs font-mono-vault border border-white/10 px-3 py-1.5 rounded-lg hover:border-[#D4AF37]/50">
+          Command OS [⚡]
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="book" class="hidden sm:inline-flex btn-gold text-xs uppercase tracking-widest font-mono-vault font-bold">
+          Consultation
+        </a>
+        <button data-mobile-toggle class="md:hidden p-2 rounded-lg bg-zinc-900 border border-white/10 text-white" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div data-mobile-menu class="hidden md:hidden border-b border-white/10 bg-[#0A0A0B]/95 backdrop-blur-xl px-6 py-6 space-y-4 text-sm font-medium">
+      <a href="artists" class="block text-zinc-300 hover:text-white">Resident Artists</a>
+      <a href="flash" class="block text-zinc-300 hover:text-white">Flash Archive</a>
+      <a href="book" class="block text-[#D4AF37] font-bold">Book Chair & Consult</a>
+      <a href="waiver" class="block text-zinc-300 hover:text-white">Digital Waiver</a>
+      <a href="admin" class="block text-xs font-mono-vault text-zinc-400 hover:text-white pt-2 border-t border-white/10">
+        Studio Admin OS &rarr;
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden border-b border-white/10">
+    <!-- Ambient Gold Glow -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-[#D4AF37]/15 via-zinc-800/10 to-transparent blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/5 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+          <span class="text-xs text-[#D4AF37] font-mono-vault font-semibold tracking-wider">PRIVATE BESPOKE ATELIER</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl font-cinzel font-bold tracking-tight leading-[1.08] text-white">
+          Permanent Art for the <span class="gold-gradient-text">Discerning Soul.</span>
+        </h1>
+
+        <p class="text-lg text-zinc-400 max-w-xl font-normal leading-relaxed">
+          The Vault is an exclusive sanctuary for bespoke micro-realism, dark surrealism, and surgical-grade fine jewelry piercings. Zero walk-in chaos. Completely private sessions.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="book" class="btn-gold">
+            Reserve Studio Session
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="flash" class="btn-ghost-vault">
+            Explore Flash Wall
+          </a>
+        </div>
+
+        <!-- Trust & Quality Badges -->
+        <div class="grid grid-cols-3 gap-6 pt-10 border-t border-white/10 max-w-lg">
+          <div>
+            <div class="font-cinzel font-bold text-2xl text-white">100%</div>
+            <div class="text-xs text-zinc-400 font-mono-vault">Surgical Sterile</div>
+          </div>
+          <div>
+            <div class="font-cinzel font-bold text-2xl text-[#D4AF37]">4 Master</div>
+            <div class="text-xs text-zinc-400 font-mono-vault">Resident Artists</div>
+          </div>
+          <div>
+            <div class="font-cinzel font-bold text-2xl text-zinc-300">18K Solid</div>
+            <div class="text-xs text-zinc-400 font-mono-vault">Implant Grade Gold</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Card: Live Atelier Chair Status -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        <div class="relative w-full max-w-md glass-panel p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-xs font-mono-vault text-[#D4AF37]">
+              <span class="pulse-gold"></span> Studio Chamber 01
+            </span>
+            <span class="font-mono-vault text-xs text-zinc-500">LIVE ATELIER RADAR</span>
+          </div>
+
+          <!-- Featured Art Showcase -->
+          <div class="relative rounded-2xl overflow-hidden mb-6 aspect-square bg-zinc-950 border border-white/10 group">
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=800&q=80" 
+                 alt="The Vault Tattoo Artistry" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-[#D4AF37] font-mono-vault font-semibold">SOREN VEX &bull; MASTER RESIDENT</span>
+                <h3 class="font-cinzel font-bold text-lg text-white">Chiaroscuro Nocturne</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-lg bg-black/60 border border-white/20 text-xs font-mono-vault text-white">Booked</span>
+            </div>
+          </div>
+
+          <!-- Booking Summary Box -->
+          <div class="p-4 rounded-xl bg-zinc-950/80 border border-white/10 space-y-2">
+            <div class="flex justify-between text-xs font-mono-vault text-zinc-400">
+              <span>Next Open Chair:</span>
+              <span class="text-[#D4AF37] font-bold">Friday, Oct 4th</span>
+            </div>
+            <div class="flex justify-between text-xs font-mono-vault text-zinc-400">
+              <span>Session Deposit:</span>
+              <span class="text-white">100 PTS (Applied to total)</span>
+            </div>
+            <a href="book" class="mt-2 w-full py-2.5 rounded-lg bg-white/10 hover:bg-[#D4AF37] hover:text-black font-semibold text-xs text-center transition-all block font-mono-vault uppercase tracking-wider">
+              Reserve This Chamber &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live Status Ticker -->
+  <section class="border-b border-white/10 bg-zinc-950/60 py-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-xs font-mono-vault text-zinc-400">
+      <div class="flex items-center gap-2">
+        <span class="text-[#D4AF37] font-bold">LOCATIONS:</span>
+        <span>SoHo, New York &bull; Mayfair, London &bull; West Hollywood, CA</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>★ 100% SINGLE-USE NEEDLES</span>
+        <span>•</span>
+        <span>AUTOCLAVE CERTIFIED</span>
+        <span>•</span>
+        <span>HIPAA-COMPLIANT WAIVERS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resident Artists Teaser Section -->
+  <section class="py-24 border-b border-white/10 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">THE GUILD</span>
+          <h2 class="text-4xl sm:text-5xl font-cinzel font-bold text-white mt-2">Resident Virtuosos</h2>
+        </div>
+        <a href="artists" class="text-sm font-mono-vault text-[#D4AF37] hover:underline flex items-center gap-2">
+          View Complete Guild Profiles &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Artist 1 -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#D4AF37]/50 transition-all group">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" 
+                 alt="Soren Vex" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">
+              Resident Master
+            </div>
+          </div>
+          <h3 class="font-cinzel font-bold text-xl text-white">Soren Vex</h3>
+          <p class="text-xs text-[#D4AF37] font-mono-vault mt-1">Dark Surrealism &bull; Blackwork</p>
+          <p class="text-base sm:text-lg text-zinc-200 leading-relaxed mt-3 line-clamp-2">Specializing in high-contrast anatomical studies, mythological cryptids, and full-limb compositions.</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono-vault text-zinc-400">Rate: 250 PTS/hr</span>
+            <a href="book?artist=Soren+Vex" class="text-xs font-bold text-[#D4AF37] hover:underline">Book Chair &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Artist 2 -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#D4AF37]/50 transition-all group">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" 
+                 alt="Kaelen Cross" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">
+              Resident Master
+            </div>
+          </div>
+          <h3 class="font-cinzel font-bold text-xl text-white">Kaelen Cross</h3>
+          <p class="text-xs text-[#D4AF37] font-mono-vault mt-1">Single-Needle &bull; Micro-Realism</p>
+          <p class="text-base sm:text-lg text-zinc-200 leading-relaxed mt-3 line-clamp-2">Renaissance fine-art reproductions and microscopic architectural geometry on skin.</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono-vault text-zinc-400">Rate: 280 PTS/hr</span>
+            <a href="book?artist=Kaelen+Cross" class="text-xs font-bold text-[#D4AF37] hover:underline">Book Chair &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Artist 3 -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#D4AF37]/50 transition-all group">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80" 
+                 alt="Mireille Noir" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37] border border-[#D4AF37]/30">
+              Resident Master
+            </div>
+          </div>
+          <h3 class="font-cinzel font-bold text-xl text-white">Mireille Noir</h3>
+          <p class="text-xs text-[#D4AF37] font-mono-vault mt-1">Fine-Line &bull; Fine Jewelry Piercing</p>
+          <p class="text-base sm:text-lg text-zinc-200 leading-relaxed mt-3 line-clamp-2">Curated luxury ear styling, bespoke titanium piercing, and delicate botanical micro-ink.</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono-vault text-zinc-400">Rate: 200 PTS/hr</span>
+            <a href="book?artist=Mireille+Noir" class="text-xs font-bold text-[#D4AF37] hover:underline">Book Chair &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Flash Sheet Showcase -->
+  <section class="py-24 border-b border-white/10 bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono-vault text-[#D4AF37] uppercase tracking-widest">LIMITED EDITIONS</span>
+        <h2 class="text-4xl sm:text-5xl font-cinzel font-bold text-white mt-2">Vault Flash Archive</h2>
+        <p class="text-zinc-400 text-sm mt-4">Pre-drawn original collector pieces. Each design is tattooed once and retired permanently from the archive.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Flash Item 1 -->
+        <div class="glass-panel p-4 rounded-xl border border-white/10 hover:border-[#D4AF37] transition-all">
+          <div class="aspect-square bg-zinc-950 rounded-lg overflow-hidden mb-3 relative">
+            <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=400&q=80" alt="Flash 01" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37]">#VF-01</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-cinzel text-sm font-bold text-white">Obsidian Dagger</span>
+            <span class="font-mono-vault text-xs text-[#D4AF37]">350 PTS</span>
+          </div>
+          <a href="book?flash=VF-01" class="mt-3 block text-center py-1.5 rounded bg-white/5 hover:bg-[#D4AF37] hover:text-black text-xs font-mono-vault transition-colors">Claim Design</a>
+        </div>
+
+        <!-- Flash Item 2 -->
+        <div class="glass-panel p-4 rounded-xl border border-white/10 hover:border-[#D4AF37] transition-all">
+          <div class="aspect-square bg-zinc-950 rounded-lg overflow-hidden mb-3 relative">
+            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=600&q=80" alt="Flash 02" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37]">#VF-02</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-cinzel text-sm font-bold text-white">Solar Eclipse Serpent</span>
+            <span class="font-mono-vault text-xs text-[#D4AF37]">420 PTS</span>
+          </div>
+          <a href="book?flash=VF-02" class="mt-3 block text-center py-1.5 rounded bg-white/5 hover:bg-[#D4AF37] hover:text-black text-xs font-mono-vault transition-colors">Claim Design</a>
+        </div>
+
+        <!-- Flash Item 3 -->
+        <div class="glass-panel p-4 rounded-xl border border-white/10 hover:border-[#D4AF37] transition-all">
+          <div class="aspect-square bg-zinc-950 rounded-lg overflow-hidden mb-3 relative">
+            <img src="https://images.unsplash.com/photo-1560707303-4e980ce876ad?auto=format&fit=crop&w=400&q=80" alt="Flash 03" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37]">#VF-03</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-cinzel text-sm font-bold text-white">Gothic Rose Sigil</span>
+            <span class="font-mono-vault text-xs text-[#D4AF37]">380 PTS</span>
+          </div>
+          <a href="book?flash=VF-03" class="mt-3 block text-center py-1.5 rounded bg-white/5 hover:bg-[#D4AF37] hover:text-black text-xs font-mono-vault transition-colors">Claim Design</a>
+        </div>
+
+        <!-- Flash Item 4 -->
+        <div class="glass-panel p-4 rounded-xl border border-white/10 hover:border-[#D4AF37] transition-all">
+          <div class="aspect-square bg-zinc-950 rounded-lg overflow-hidden mb-3 relative">
+            <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=400&q=80" alt="Flash 04" class="w-full h-full object-cover">
+            <span class="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-xs font-semibold tracking-wider font-mono-vault text-[#D4AF37]">#VF-04</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-cinzel text-sm font-bold text-white">Anatomical Heart</span>
+            <span class="font-mono-vault text-xs text-[#D4AF37]">450 PTS</span>
+          </div>
+          <a href="book?flash=VF-04" class="mt-3 block text-center py-1.5 rounded bg-white/5 hover:bg-[#D4AF37] hover:text-black text-xs font-mono-vault transition-colors">Claim Design</a>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="flash" class="btn-ghost-vault">View All 18 Available Flash Designs &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-[#0A0A0B] to-[#121215]">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+      <h2 class="text-4xl sm:text-6xl font-cinzel font-bold text-white">Claim Your Consultation Chair.</h2>
+      <p class="text-zinc-400 max-w-xl mx-auto text-base">
+        Appointments require a verified \100 PTS deposit to secure your artist's studio chamber. Walk-ins are not accommodated.
+      </p>
+      <div class="pt-4 flex flex-wrap justify-center gap-4">
+        <a href="book" class="btn-gold text-sm uppercase tracking-widest font-mono-vault font-bold">
+          Start Booking Intake
+        </a>
+        <a href="waiver" class="btn-ghost-vault text-sm font-mono-vault">
+          Sign Pre-Session Waiver
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-zinc-500 text-xs font-mono-vault border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-cinzel font-bold text-white text-base">THE VAULT</span>
+        <span>&bull; Bespoke Atelier Operating System</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="admin" class="hover:text-white transition-colors">Studio Admin Portal</a>
+        <a href="waiver" class="hover:text-white transition-colors">Legal & Health Waiver</a>
+        <a href="book" class="text-[#D4AF37] hover:underline">Book Consultation</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

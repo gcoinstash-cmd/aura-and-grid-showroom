@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRIDE MB — Manhattan Beach Luxury Sneaker Boutique</title>
+  <meta name="description" content="Manhattan Beach's premier coastal luxury sneaker & streetwear boutique. Exclusive drops, rare grails, and authenticated collector kicks.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0A0A0B',
+            brandCard: '#131316',
+            brandOrange: '#FF5A36',
+            brandTeal: '#2EC4B6',
+            brandSand: '#E8E5DD',
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#FF5A36] selection:text-white font-body">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-zinc-950 via-[#131316] to-zinc-950 border-b border-white/10 text-xs py-2 px-4 text-center tracking-wider flex items-center justify-center gap-3">
+    <span class="pulse-dot"></span>
+    <span class="text-zinc-300 font-mono"><strong class="text-white">MANHATTAN BEACH FLAGSHIP:</strong> Private VIP Fitting Appointments Open This Weekend</span>
+    <a href="contact" class="underline text-[#FF5A36] hover:text-white transition-colors ml-2 font-medium">Book Suite &rarr;</a>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF5A36] to-[#2EC4B6] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-heading font-black text-lg tracking-tighter text-white group-hover:bg-transparent transition-colors">
+            S
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-xl tracking-tight leading-none">STRIDE<span class="text-[#FF5A36]">.</span>MB</span>
+          <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">Manhattan Beach, CA</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="shop" class="hover:text-white transition-colors">Shop All</a>
+        <a href="drops" class="hover:text-[#FF5A36] transition-colors flex items-center gap-2">
+          Drops <span class="w-1.5 h-1.5 rounded-full bg-[#FF5A36]"></span>
+        </a>
+        <a href="lookbook" class="hover:text-white transition-colors">Lookbook</a>
+        <a href="about" class="hover:text-white transition-colors">The Beach House</a>
+        <a href="contact" class="hover:text-white transition-colors">Concierge</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="shop" class="hidden sm:inline-flex text-xs font-mono text-zinc-400 hover:text-white py-2 px-3 rounded-lg border border-white/10 hover:border-white/20 transition-colors">
+          SEARCH [⌘K]
+        </a>
+        <button data-cart-trigger class="relative p-2.5 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-white/10 transition-all flex items-center justify-center" aria-label="Open Cart">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="absolute -top-1 -right-1 bg-[#FF5A36] text-white text-[10px] font-mono font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#0A0A0B]">
+            2
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden border-b border-white/10">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-[#FF5A36]/15 via-[#2EC4B6]/10 to-transparent blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 bg-white/5 backdrop-blur-md">
+          <span class="badge-mb">MB EXCLUSIVE</span>
+          <span class="text-xs text-zinc-300 font-mono">AUTUMN / WINTER 2026 ARCHIVE</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl font-heading font-extrabold tracking-tight leading-[1.05]">
+          Where Coastal Ease Meets <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-500">High-Heat Footwear.</span>
+        </h1>
+
+        <p class="text-lg text-zinc-400 max-w-xl font-normal leading-relaxed">
+          Curated grail silhouettes, limited deadstock collabs, and artisan coastal streetwear on Manhattan Beach Boulevard. Authenticated pair by pair.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="shop" class="btn-primary">
+            Explore Collection
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="drops" class="btn-secondary">
+            View Drop Calendar
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg">
+          <div>
+            <div class="font-heading font-bold text-2xl text-white">100%</div>
+            <div class="text-xs text-zinc-400 font-mono">Authentic Guaranteed</div>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-2xl text-[#FF5A36]">MB 90266</div>
+            <div class="text-xs text-zinc-400 font-mono">Flagship Boutique</div>
+          </div>
+          <div>
+            <div class="font-heading font-bold text-2xl text-[#2EC4B6]">Same-Day</div>
+            <div class="text-xs text-zinc-400 font-mono">SoCal Courier</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual / Real Sneaker Card -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        <div class="relative w-full max-w-md bg-gradient-to-b from-white/10 to-white/[0.02] p-6 sm:p-8 rounded-3xl border border-white/15 backdrop-blur-xl shadow-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <span class="badge-drop"><span class="pulse-dot"></span> Next Drop In</span>
+            <span class="font-mono text-xs text-zinc-400">SKU: MB-990-V6</span>
+          </div>
+
+          <!-- Countdown Timer Widget -->
+          <div class="flex justify-between items-center text-center p-4 rounded-2xl bg-black/60 border border-white/10 mb-6" data-countdown>
+            <div>
+              <span class="cd-days text-2xl font-mono font-bold text-white">03</span>
+              <span class="block text-[10px] text-zinc-500 font-mono uppercase">Days</span>
+            </div>
+            <span class="text-zinc-600 font-mono">:</span>
+            <div>
+              <span class="cd-hours text-2xl font-mono font-bold text-white">14</span>
+              <span class="block text-[10px] text-zinc-500 font-mono uppercase">Hours</span>
+            </div>
+            <span class="text-zinc-600 font-mono">:</span>
+            <div>
+              <span class="cd-minutes text-2xl font-mono font-bold text-white">28</span>
+              <span class="block text-[10px] text-zinc-500 font-mono uppercase">Mins</span>
+            </div>
+            <span class="text-zinc-600 font-mono">:</span>
+            <div>
+              <span class="cd-seconds text-2xl font-mono font-bold text-[#FF5A36]">45</span>
+              <span class="block text-[10px] text-zinc-500 font-mono uppercase">Secs</span>
+            </div>
+          </div>
+
+          <!-- Real Sneaker Image (High-Res Studio Shot) -->
+          <div class="relative py-4 flex items-center justify-center rounded-2xl overflow-hidden bg-zinc-950/40 border border-white/5 group">
+            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80" 
+                 alt="Aura Runner Pacific Dune" 
+                 class="w-full h-56 object-cover rounded-xl transition-transform duration-500 group-hover:scale-105">
+            <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-mono text-white border border-white/10">Limited Batch #150</span>
+          </div>
+
+          <!-- Product Card Details -->
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-white">Aura Runner 'Pacific Dune'</h3>
+              <p class="text-xs text-zinc-400 font-mono">Edition of 150 Pairs Worldwide</p>
+            </div>
+            <div class="text-right">
+              <span class="block font-heading font-bold text-xl text-white">240 PTS</span>
+              <a href="product-detail" class="text-xs font-mono text-[#FF5A36] hover:underline font-bold">View Drop &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker -->
+  <section class="border-b border-white/10 bg-zinc-950/60 py-4 overflow-hidden">
+    <div class="marquee-track">
+      <div class="marquee-content font-heading text-sm uppercase tracking-widest text-zinc-500 font-bold">
+        <span>★ MANHATTAN BEACH PIER EDITIONS</span>
+        <span>•</span>
+        <span>100% VERIFIED AUTHENTICITY</span>
+        <span>•</span>
+        <span>EXCLUSIVE SOLE RAFFLES</span>
+        <span>•</span>
+        <span>GLOBAL TEMPERATURE-CONTROLLED COURIER</span>
+        <span>•</span>
+        <span>LOCALLY CURATED IN 90266</span>
+        <span>•</span>
+        <span>PRIVATE VIP FITTING LOUNGE</span>
+      </div>
+      <div class="marquee-content font-heading text-sm uppercase tracking-widest text-zinc-500 font-bold">
+        <span>★ MANHATTAN BEACH PIER EDITIONS</span>
+        <span>•</span>
+        <span>100% VERIFIED AUTHENTICITY</span>
+        <span>•</span>
+        <span>EXCLUSIVE SOLE RAFFLES</span>
+        <span>•</span>
+        <span>GLOBAL TEMPERATURE-CONTROLLED COURIER</span>
+        <span>•</span>
+        <span>LOCALLY CURATED IN 90266</span>
+        <span>•</span>
+        <span>PRIVATE VIP FITTING LOUNGE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Curated Drops with Real Photos -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div class="badge-mb mb-2">CURATED ARCHIVE</div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold">Hot Releases in South Bay</h2>
+      </div>
+      <a href="shop" class="text-sm font-mono text-[#FF5A36] hover:text-white transition-colors flex items-center gap-2">
+        View Entire 84+ Pair Inventory &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Sneaker Card 1 -->
+      <div class="sneaker-card bg-[#131316] rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="badge-drop">LOW STOCK</span>
+            <span class="text-xs font-mono text-zinc-500">US 9 — 12</span>
+          </div>
+          <a href="product-detail" class="block h-52 bg-zinc-900/40 rounded-xl mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=80" 
+                 alt="Coastal Low El Porto" 
+                 class="w-full h-full object-cover product-img">
+          </a>
+          <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Aura x South Bay</span>
+          <h3 class="font-heading font-bold text-lg text-white group-hover:text-[#FF5A36] transition-colors">Coastal Low 'El Porto'</h3>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-mono font-bold text-lg text-white">210 PTS</span>
+          <button onclick="event.preventDefault(); CartState.addItem({ id: 'mb-low-ep', name: 'Coastal Low El Porto', price: 210, size: 'US 10.5', image: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=200&q=80' })" class="p-2 rounded-lg bg-zinc-800 hover:bg-[#FF5A36] text-white transition-colors" title="Quick Add to Bag">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sneaker Card 2 -->
+      <div class="sneaker-card bg-[#131316] rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="badge-mb">COLLAB</span>
+            <span class="text-xs font-mono text-zinc-500">US 8 — 13</span>
+          </div>
+          <a href="product-detail" class="block h-52 bg-zinc-900/40 rounded-xl mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=700&q=80" 
+                 alt="Midnight Strider 01" 
+                 class="w-full h-full object-cover product-img">
+          </a>
+          <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Obsidian Works</span>
+          <h3 class="font-heading font-bold text-lg text-white group-hover:text-[#FF5A36] transition-colors">Midnight Strider 01</h3>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-mono font-bold text-lg text-white">285 PTS</span>
+          <button onclick="event.preventDefault(); CartState.addItem({ id: 'mb-ms-01', name: 'Midnight Strider 01', price: 285, size: 'US 10.0', image: 'https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=200&q=80' })" class="p-2 rounded-lg bg-zinc-800 hover:bg-[#FF5A36] text-white transition-colors" title="Quick Add to Bag">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sneaker Card 3 -->
+      <div class="sneaker-card bg-[#131316] rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="badge-drop">RARE GRAIL</span>
+            <span class="text-xs font-mono text-zinc-500">US 10.5 Only</span>
+          </div>
+          <a href="product-detail" class="block h-52 bg-zinc-900/40 rounded-xl mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=700&q=80" 
+                 alt="The Strand Vintage 88" 
+                 class="w-full h-full object-cover product-img">
+          </a>
+          <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Heritage Studio</span>
+          <h3 class="font-heading font-bold text-lg text-white group-hover:text-[#FF5A36] transition-colors">The Strand Vintage '88</h3>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-mono font-bold text-lg text-white">450 PTS</span>
+          <button onclick="event.preventDefault(); CartState.addItem({ id: 'mb-sv-88', name: 'The Strand Vintage 88', price: 450, size: 'US 10.5', image: 'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=200&q=80' })" class="p-2 rounded-lg bg-zinc-800 hover:bg-[#FF5A36] text-white transition-colors" title="Quick Add to Bag">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sneaker Card 4 -->
+      <div class="sneaker-card bg-[#131316] rounded-2xl border border-white/10 p-5 flex flex-col justify-between group">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="badge-mb">RESTOCK</span>
+            <span class="text-xs font-mono text-zinc-500">US 7 — 11</span>
+          </div>
+          <a href="product-detail" class="block h-52 bg-zinc-900/40 rounded-xl mb-4 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" 
+                 alt="Pier View Trainer Coast" 
+                 class="w-full h-full object-cover product-img">
+          </a>
+          <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">Pacific Wave</span>
+          <h3 class="font-heading font-bold text-lg text-white group-hover:text-[#FF5A36] transition-colors">Pier View Trainer 'Coast'</h3>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+          <span class="font-mono font-bold text-lg text-white">195 PTS</span>
+          <button onclick="event.preventDefault(); CartState.addItem({ id: 'mb-pv-c', name: 'Pier View Trainer Coast', price: 195, size: 'US 10.0', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80' })" class="p-2 rounded-lg bg-zinc-800 hover:bg-[#FF5A36] text-white transition-colors" title="Quick Add to Bag">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Editorial Lookbook Highlight -->
+  <section class="border-y border-white/10 bg-zinc-950/80 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <span class="badge-mb">THE BEACH HOUSE EDITORIAL</span>
+          <h2 class="text-4xl sm:text-5xl font-heading font-black leading-tight">
+            Golden Hour On The Strand.
+          </h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We blend the salt-air laid-back ethos of Manhattan Beach with ultra-rare archival sneaker culture. Every release is curated to feel effortless yet unattainable elsewhere.
+          </p>
+          <div class="pt-2">
+            <a href="lookbook" class="btn-primary">
+              View Full Lookbook 2026 &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/60 min-h-[340px] relative group">
+            <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=800&q=80" 
+                 alt="Manhattan Beach Streetwear Editorial 1" 
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+            <div class="relative z-10 p-6 flex flex-col justify-end h-full">
+              <span class="text-xs font-mono text-[#FF5A36]">01 / DOWNTOWN MB</span>
+              <h4 class="font-heading font-bold text-xl text-white">Concrete & Sand</h4>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/60 min-h-[340px] relative mt-8 group">
+            <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80" 
+                 alt="Manhattan Beach Streetwear Editorial 2" 
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+            <div class="relative z-10 p-6 flex flex-col justify-end h-full">
+              <span class="text-xs font-mono text-[#2EC4B6]">02 / 26TH STREET</span>
+              <h4 class="font-heading font-bold text-xl text-white">Sunset Volley Club</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-out Cart Drawer -->
+  <div id="cartOverlay"></div>
+  <aside id="cartDrawer">
+    <div class="p-6 border-b border-white/10 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <h3 class="font-heading font-bold text-lg text-white">Your Bag</h3>
+        <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-300 font-bold" data-cart-count>2</span>
+      </div>
+      <button data-cart-close class="p-2 text-zinc-400 hover:text-white transition-colors" aria-label="Close cart">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="p-4 bg-zinc-950/80 border-b border-white/5 text-xs">
+      <div class="flex justify-between font-mono text-zinc-400 mb-1.5" id="shippingStatusText">
+        <span>Free SoCal Courier Delivery</span>
+        <span class="text-[#2EC4B6] font-bold">Unlocked!</span>
+      </div>
+      <div class="w-full bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+        <div id="shippingProgressBar" class="bg-[#2EC4B6] h-full w-full transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+
+    <div class="p-6 border-t border-white/10 bg-zinc-950/90 space-y-4">
+      <div class="space-y-1.5 text-sm font-mono">
+        <div class="flex justify-between text-zinc-400">
+          <span>Subtotal</span>
+          <span class="text-white font-bold" data-cart-subtotal>0.00 PTS</span>
+        </div>
+        <div class="flex justify-between text-white font-bold text-base pt-2 border-t border-white/10">
+          <span>Total</span>
+          <span class="text-[#FF5A36]" data-cart-total>0.00 PTS</span>
+        </div>
+      </div>
+      <button onclick="triggerCheckout()" class="w-full btn-heat !py-3.5 text-sm">
+        Proceed to Secure Checkout &rarr;
+      </button>
+      <p class="text-[10px] text-zinc-500 font-mono text-center">Encrypted 256-bit Checkout • Authenticity Guaranteed</p>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#070708] pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="font-heading font-extrabold text-xl tracking-tight">STRIDE<span class="text-[#FF5A36]">.</span>MB</span>
+        </div>
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          Luxury sneaker boutique & collector house located at Manhattan Beach Boulevard, California. Authenticity verified on site.
+        </p>
+        <p class="text-xs font-mono text-zinc-500">© 2026 STRIDE MB. All Rights Reserved.</p>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-white font-bold mb-4">Shop Collections</h4>
+        <ul class="space-y-2 text-xs text-zinc-400 font-medium">
+          <li><a href="shop" class="hover:text-white">All Footwear</a></li>
+          <li><a href="drops" class="hover:text-[#FF5A36]">Upcoming Releases</a></li>
+          <li><a href="shop" class="hover:text-white">Manhattan Beach Collabs</a></li>
+          <li><a href="shop" class="hover:text-white">Deadstock & Rare Grails</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-white font-bold mb-4">The Flagship</h4>
+        <ul class="space-y-2 text-xs text-zinc-400 font-medium">
+          <li><a href="about" class="hover:text-white">The Beach House Story</a></li>
+          <li><a href="contact" class="hover:text-white">VIP Suite Bookings</a></li>
+          <li><a href="lookbook" class="hover:text-white">Lookbook 2026</a></li>
+          <li><a href="styleguide" class="hover:text-white text-[#2EC4B6]">Design Styleguide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-white font-bold mb-4">Stay on the Pulse</h4>
+        <p class="text-xs text-zinc-400 mb-3">Join our private drop SMS / Email radar for first access.</p>
+        <form class="space-y-2" onsubmit="event.preventDefault(); alert('Signed up for Manhattan Beach Drop Radar!');">
+          <input type="email" placeholder="Enter your email" required class="w-full px-3 py-2 text-xs bg-zinc-900 border border-white/15 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-[#FF5A36]">
+          <button type="submit" class="w-full py-2 bg-white text-black font-heading font-bold text-xs rounded-lg hover:bg-[#FF5A36] hover:text-white transition-colors">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

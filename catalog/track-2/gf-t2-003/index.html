@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELOCITY — Exotic Car & Luxury Fleet Sanctuary</title>
+  <meta name="description" content="Premier private exotic vehicle rental and luxury chauffeur fleet. Curated Lamborghinis, Ferraris, McLarens, and Rolls-Royces delivered directly to your private terminal.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            veloDark: '#0A0A0B',
+            veloCard: '#121216',
+            veloCyan: '#06B6D4',
+            veloCobalt: '#2563EB',
+            veloBorder: 'rgba(255, 255, 255, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white selection:bg-[#06B6D4] selection:text-black text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-zinc-950 via-[#121216] to-zinc-950 border-b border-white/10 text-xs py-2 px-4 text-center tracking-wider flex items-center justify-center gap-3">
+    <span class="pulse-cyan"></span>
+    <span class="text-zinc-300 font-mono-velo"><strong class="text-white">VIP CONCIERGE FLEET:</strong> White-Glove Private Jet FBO & Villa Delivery Across Miami & LA</span>
+    <a href="book" class="underline text-[#06B6D4] hover:text-white transition-colors ml-2 font-medium">Reserve Exotic &rarr;</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#06B6D4] to-[#2563EB] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-grotesk font-black text-lg tracking-tighter text-white group-hover:bg-transparent transition-colors">
+            ⚡
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-grotesk font-extrabold text-xl tracking-tight text-white">VELOCITY<span class="text-[#06B6D4]">.</span>OS</span>
+          <span class="text-[9px] font-mono-velo tracking-widest text-[#06B6D4] uppercase">Exotic &bull; Luxury Fleet</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="fleet" class="hover:text-[#06B6D4] transition-colors">Fleet Showroom</a>
+        <a href="experience" class="hover:text-[#06B6D4] transition-colors">Track & Canyon Runs</a>
+        <a href="insurance" class="hover:text-[#06B6D4] transition-colors">Driver Verification</a>
+        <a href="book" class="hover:text-[#06B6D4] transition-colors flex items-center gap-2">
+          Reserve Fleet <span class="w-1.5 h-1.5 rounded-full bg-[#06B6D4]"></span>
+        </a>
+        <a href="admin" class="hover:text-[#06B6D4] text-xs font-mono-velo border border-white/10 px-3 py-1.5 rounded-lg hover:border-[#06B6D4]/50">
+          Fleet Tower [⚡]
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="book" class="hidden sm:inline-flex btn-cyan text-xs uppercase tracking-widest font-mono-velo font-bold">
+          Book Key
+        </a>
+        <button data-mobile-toggle class="md:hidden p-2 rounded-lg bg-zinc-900 border border-white/10 text-white" aria-label="Toggle Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div data-mobile-menu class="hidden md:hidden border-b border-white/10 bg-[#0A0A0B]/95 backdrop-blur-xl px-6 py-6 space-y-4 text-sm font-medium">
+      <a href="fleet" class="block text-zinc-300 hover:text-white">Fleet Showroom</a>
+      <a href="experience" class="block text-zinc-300 hover:text-white">VIP Experiences</a>
+      <a href="insurance" class="block text-zinc-300 hover:text-white">Driver Verification</a>
+      <a href="book" class="block text-[#06B6D4] font-bold">Reserve Exotic Vehicle</a>
+      <a href="admin" class="block text-xs font-mono-velo text-zinc-400 hover:text-white pt-2 border-t border-white/10">
+        Fleet Command OS &rarr;
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden border-b border-white/10">
+    <!-- Ambient Blue/Cyan Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-[#06B6D4]/15 via-[#2563EB]/10 to-transparent blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#06B6D4]/30 bg-[#06B6D4]/5 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-[#06B6D4]"></span>
+          <span class="text-xs text-[#06B6D4] font-mono-velo font-semibold tracking-wider">TIER 1 EXOTIC FLEET ARCHIVE</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-7xl font-grotesk font-extrabold tracking-tight leading-[1.05] text-white">
+          Precision Engineering for the <span class="cyan-gradient-text">Open Horizon.</span>
+        </h1>
+
+        <p class="text-lg text-zinc-400 max-w-xl font-normal leading-relaxed">
+          Command world-class supercars, limited-run hypercars, and armored executive SUVs. Zero dealership friction. Verified white-glove delivery straight to your tarmac.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-4">
+          <a href="fleet" class="btn-cyan">
+            Explore 2026 Fleet
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="book" class="btn-ghost-velo">
+            Instant Reservation
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6 pt-10 border-t border-white/10 max-w-lg">
+          <div>
+            <div class="font-grotesk font-bold text-2xl text-white">100%</div>
+            <div class="text-xs text-zinc-400 font-mono-velo">Clean Title Rigs</div>
+          </div>
+          <div>
+            <div class="font-grotesk font-bold text-2xl text-[#06B6D4]">710 HP</div>
+            <div class="text-xs text-zinc-400 font-mono-velo">Twin-Turbo Flagships</div>
+          </div>
+          <div>
+            <div class="font-grotesk font-bold text-2xl text-white">FBO</div>
+            <div class="text-xs text-zinc-400 font-mono-velo">Tarmac Delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Featured Supercar Card -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        <div class="relative w-full max-w-md glass-panel p-6 sm:p-8 rounded-3xl border border-white/15 shadow-2xl">
+          <div class="flex justify-between items-center mb-6">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#06B6D4]/10 border border-[#06B6D4]/30 text-xs font-mono-velo text-[#06B6D4]">
+              <span class="pulse-cyan"></span> Live In Garage
+            </span>
+            <span class="font-mono-velo text-xs text-zinc-400">VIN: LAM-EVO-88</span>
+          </div>
+
+          <div class="relative rounded-2xl overflow-hidden mb-6 aspect-video bg-zinc-950 border border-white/10 group">
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80" 
+                 alt="Lamborghini Huracan EVO" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 text-xs font-semibold tracking-wider font-mono-velo text-white">
+              631 HP &bull; 0-60 in 2.9s
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline">
+              <div>
+                <h3 class="font-grotesk font-bold text-xl text-white">Lamborghini Huracán EVO</h3>
+                <p class="text-base text-zinc-200 leading-relaxed font-mono-velo">V10 Naturally Aspirated &bull; AWD</p>
+              </div>
+              <div class="text-right">
+                <span class="font-grotesk font-bold text-2xl text-[#06B6D4]">1,450 PTS</span>
+                <span class="text-xs font-semibold tracking-wider text-zinc-400 block font-mono-velo">/ 24h day</span>
+              </div>
+            </div>
+
+            <a href="book?car=CAR-01" class="w-full btn-cyan justify-center text-xs font-mono-velo uppercase tracking-wider py-3 font-bold">
+              Reserve This Vehicle &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Live Fleet Radar Bar -->
+  <section class="border-b border-white/10 bg-zinc-950/60 py-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4 text-xs font-mono-velo text-zinc-400">
+      <div class="flex items-center gap-2">
+        <span class="text-[#06B6D4] font-bold">ACTIVE HUBS:</span>
+        <span>Miami Beach &bull; Beverly Hills &bull; Las Vegas Strip &bull; Scottsdale</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>★ 100 MILES INCLUDED / DAY</span>
+        <span>•</span>
+        <span>COMPREHENSIVE FLEET ESCROW</span>
+        <span>•</span>
+        <span>WHITE-GLOVE CONCIERGE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Fleet Grid -->
+  <section class="py-24 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-mono-velo text-[#06B6D4] uppercase tracking-widest">SHOWROOM RADAR</span>
+          <h2 class="text-4xl sm:text-5xl font-grotesk font-bold text-white mt-2">Active Hangar Fleet</h2>
+        </div>
+        <a href="fleet" class="text-sm font-mono-velo text-[#06B6D4] hover:underline flex items-center gap-2">
+          View Complete 12-Vehicle Roster &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Car 1: Ferrari F8 -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#06B6D4]/50 transition-all group">
+          <div class="aspect-video rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="Ferrari F8" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-velo text-[#06B6D4] border border-[#06B6D4]/30">
+              Supercar Tier
+            </div>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-white">Ferrari F8 Tributo</h3>
+          <p class="text-xs text-[#06B6D4] font-mono-velo mt-1">710 HP &bull; 0-60: 2.8s &bull; Twin-Turbo V8</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold font-grotesk text-white">1,650 PTS</span>
+              <span class="text-xs font-semibold tracking-wider text-zinc-400 font-mono-velo">/ day</span>
+            </div>
+            <a href="book?car=CAR-02" class="text-xs font-bold text-[#06B6D4] hover:underline font-mono-velo">Book Key &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Car 2: Porsche GT3 RS -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#06B6D4]/50 transition-all group">
+          <div class="aspect-video rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80" alt="Porsche GT3 RS" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-velo text-[#06B6D4] border border-[#06B6D4]/30">
+              Track Weapon
+            </div>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-white">Porsche 911 GT3 RS</h3>
+          <p class="text-xs text-[#06B6D4] font-mono-velo mt-1">518 HP &bull; 9,000 RPM &bull; Weissach Pack</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold font-grotesk text-white">1,350 PTS</span>
+              <span class="text-xs font-semibold tracking-wider text-zinc-400 font-mono-velo">/ day</span>
+            </div>
+            <a href="book?car=CAR-03" class="text-xs font-bold text-[#06B6D4] hover:underline font-mono-velo">Book Key &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Car 3: Mercedes G63 -->
+        <div class="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#06B6D4]/50 transition-all group">
+          <div class="aspect-video rounded-xl overflow-hidden bg-zinc-900 mb-6 relative">
+            <img src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?auto=format&fit=crop&w=800&q=80" alt="Mercedes-AMG G63" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-xs font-semibold tracking-wider font-mono-velo text-[#06B6D4] border border-[#06B6D4]/30">
+              Executive SUV
+            </div>
+          </div>
+          <h3 class="font-grotesk font-bold text-xl text-white">Mercedes-AMG G63 BiTurbo</h3>
+          <p class="text-xs text-[#06B6D4] font-mono-velo mt-1">577 HP &bull; Obsidian Black &bull; Red Nappa</p>
+          <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold font-grotesk text-white">950 PTS</span>
+              <span class="text-xs font-semibold tracking-wider text-zinc-400 font-mono-velo">/ day</span>
+            </div>
+            <a href="book?car=CAR-05" class="text-xs font-bold text-[#06B6D4] hover:underline font-mono-velo">Book Key &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-zinc-500 text-xs font-mono-velo border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-grotesk font-bold text-white text-base">VELOCITY.OS</span>
+        <span>&bull; Exotic Fleet Operational System</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="admin" class="hover:text-white transition-colors">Fleet Command Tower</a>
+        <a href="insurance" class="hover:text-white transition-colors">Driver Verification</a>
+        <a href="book" class="text-[#06B6D4] hover:underline">Instant Reservation</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX CLUB — Private Combat Guild & Strength Sanctuary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: {
+              DEFAULT: '#E11D48',
+              glow: 'rgba(225, 29, 72, 0.2)'
+            },
+            gold: '#EAB308'
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased selection:bg-rose-500 selection:text-white text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0A0A0B]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base shadow-[0_0_15px_rgba(225,29,72,0.4)]">A</span>
+        <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>CLUB</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-apex uppercase tracking-widest text-zinc-400">
+        <a href="schedule" class="hover:text-white transition-colors">Class Radar</a>
+        <a href="trainers" class="hover:text-white transition-colors">Fight Cadre</a>
+        <a href="waiver" class="hover:text-white transition-colors">Sparring Waiver</a>
+        <a href="admin" class="hover:text-rose-400 text-zinc-500 transition-colors">Command OS</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="join" class="btn-crimson text-xs py-2.5 px-6 font-mono-apex">
+          Request Access
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-20">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 py-24">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=1600&q=85" 
+             alt="Apex Boxing Arena" 
+             class="w-full h-full object-cover opacity-25 filter grayscale contrast-125">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-[#0A0A0B]/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.12)_0%,transparent_70%)]"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono-apex text-xs tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+          Private Invitation Only &bull; 64 Active Member Roster
+        </div>
+
+        <h1 class="font-syne font-black text-5xl sm:text-7xl lg:text-8xl tracking-tight text-white uppercase leading-[0.95]">
+          Violence <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-rose-400 to-amber-400">Refined</span><br>Into Art.
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-zinc-400 font-mono-apex text-sm sm:text-base leading-relaxed">
+          A bespoke combat sanctuary for high-performing founders, athletes, and executives. Closed-door sparring, championship pedigree coaches, and Olympic recovery chambers.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <a href="schedule" class="btn-crimson w-full sm:w-auto font-mono-apex text-xs">
+            Inspect Class Radar &rarr;
+          </a>
+          <a href="trainers" class="btn-ghost-apex w-full sm:w-auto font-mono-apex text-xs">
+            Review Head Coaches
+          </a>
+        </div>
+
+        <!-- Telemetry Highlights -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-12">
+          <div class="glass-panel p-5 rounded-2xl text-left border border-white/10">
+            <span class="text-xs font-semibold font-mono-apex text-zinc-500 uppercase">Sanctuary Capacity</span>
+            <div class="font-syne text-2xl font-bold text-white mt-1">64 Cap</div>
+            <span class="text-xs font-semibold tracking-wider font-mono-apex text-rose-400">Capped for Exclusivity</span>
+          </div>
+          <div class="glass-panel p-5 rounded-2xl text-left border border-white/10">
+            <span class="text-xs font-semibold font-mono-apex text-zinc-500 uppercase">Coaching Cadre</span>
+            <div class="font-syne text-2xl font-bold text-white mt-1">WBC & Olympic</div>
+            <span class="text-xs font-semibold tracking-wider font-mono-apex text-emerald-400">Pro Champions</span>
+          </div>
+          <div class="glass-panel p-5 rounded-2xl text-left border border-white/10">
+            <span class="text-xs font-semibold font-mono-apex text-zinc-500 uppercase">Sparring Ring</span>
+            <div class="font-syne text-2xl font-bold text-white mt-1">Cleto Reyes</div>
+            <span class="text-xs font-semibold tracking-wider font-mono-apex text-zinc-400">Regulation Canvas</span>
+          </div>
+          <div class="glass-panel p-5 rounded-2xl text-left border border-white/10">
+            <span class="text-xs font-semibold font-mono-apex text-zinc-500 uppercase">Escrow / Intake</span>
+            <div class="font-syne text-2xl font-bold text-white mt-1">Instant</div>
+            <span class="text-xs font-semibold tracking-wider font-mono-apex text-rose-400">Dual-Engine Verified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Combat Pillars -->
+    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/10 space-y-16">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="badge-crimson">The Disciplines</span>
+        <h2 class="font-syne text-4xl sm:text-5xl font-black text-white uppercase">Engineered for the Relentless</h2>
+        <p class="text-zinc-400 font-mono-apex text-base font-semibold">Every hour in APEX is programmed by master cornermen and Olympic sports scientists.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 rounded-3xl space-y-5 border border-white/10 relative overflow-hidden group hover:border-rose-500/50 transition-all">
+          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=85" 
+               class="w-full h-48 object-cover rounded-2xl filter contrast-125 group-hover:scale-105 transition-transform duration-500">
+          <div class="space-y-2">
+            <span class="text-xs font-mono-apex text-rose-400 uppercase tracking-wider">Discipline 01</span>
+            <h3 class="font-syne text-2xl font-bold text-white uppercase">Championship Pugilism</h3>
+            <p class="text-xs font-mono-apex text-zinc-400 leading-relaxed">
+              Footwork biomechanics, Mexican-style infighting, heavy bag output thresholds, and pro mitt work.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl space-y-5 border border-white/10 relative overflow-hidden group hover:border-rose-500/50 transition-all">
+          <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1200&q=85" 
+               class="w-full h-48 object-cover rounded-2xl filter contrast-125 group-hover:scale-105 transition-transform duration-500">
+          <div class="space-y-2">
+            <span class="text-xs font-mono-apex text-rose-400 uppercase tracking-wider">Discipline 02</span>
+            <h3 class="font-syne text-2xl font-bold text-white uppercase">Fighter Power & Kinetics</h3>
+            <p class="text-xs font-mono-apex text-zinc-400 leading-relaxed">
+              Velocity-based training, Olympic weightlifting transfers, and neck/core resilience protocols.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl space-y-5 border border-white/10 relative overflow-hidden group hover:border-rose-500/50 transition-all">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85" 
+               class="w-full h-48 object-cover rounded-2xl filter contrast-125 group-hover:scale-105 transition-transform duration-500">
+          <div class="space-y-2">
+            <span class="text-xs font-mono-apex text-rose-400 uppercase tracking-wider">Discipline 03</span>
+            <h3 class="font-syne text-2xl font-bold text-white uppercase">Bio-Recovery & Contrast</h3>
+            <p class="text-xs font-mono-apex text-zinc-400 leading-relaxed">
+              Commercial-grade 3°C cold plunge tanks, Finnish cedar sauna, compression boots, and red-light chambers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#0A0A0B] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="w-6 h-6 rounded bg-rose-600 flex items-center justify-center font-syne font-bold text-white text-xs">A</span>
+        <span class="font-syne font-bold text-sm tracking-wider text-white">APEX COMBAT GUILD</span>
+      </div>
+      <div class="flex items-center gap-6 font-mono-apex text-xs text-zinc-500">
+        <a href="schedule" class="hover:text-white">Schedule</a>
+        <a href="trainers" class="hover:text-white">Trainers</a>
+        <a href="waiver" class="hover:text-white">Waiver</a>
+        <a href="admin" class="hover:text-rose-400">Admin</a>
+      </div>
+      <span class="font-mono-apex text-xs text-zinc-600">&copy; 2026 APEX CLUB. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

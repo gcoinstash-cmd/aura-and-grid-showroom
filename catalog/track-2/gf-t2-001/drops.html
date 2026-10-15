@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop Radar & Sole Raffles — STRIDE MB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brandDark: '#0A0A0B', brandCard: '#131316', brandOrange: '#FF5A36', brandTeal: '#2EC4B6' },
+          fontFamily: { heading: ['Space Grotesk', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'], mono: ['Space Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-white font-body text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#FF5A36] to-[#2EC4B6] p-[2px] flex items-center justify-center">
+          <div class="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center font-heading font-black text-lg text-white">S</div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-xl tracking-tight">STRIDE<span class="text-[#FF5A36]">.</span>MB</span>
+          <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">Drop Radar</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="shop" class="hover:text-white transition-colors">Shop All</a>
+        <a href="drops" class="text-[#FF5A36] font-bold">Drops</a>
+        <a href="lookbook" class="hover:text-white transition-colors">Lookbook</a>
+        <a href="about" class="hover:text-white transition-colors">The Beach House</a>
+        <a href="contact" class="hover:text-white transition-colors">Concierge</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button data-cart-trigger class="p-2.5 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-16">
+    <div class="max-w-2xl space-y-4">
+      <span class="badge-drop"><span class="pulse-dot"></span> LIVE RAFFLE SYSTEM</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black">Upcoming High-Heat Drops</h1>
+      <p class="text-zinc-400 leading-relaxed">
+        Guaranteed bot-proof verification for our Manhattan Beach in-store and online allocations. Enter your credentials to register.
+      </p>
+    </div>
+
+    <div class="p-8 md:p-12 rounded-3xl border border-white/15 bg-gradient-to-br from-zinc-900 via-[#131316] to-black grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-6 space-y-6">
+        <div class="flex items-center gap-3">
+          <span class="badge-drop">RAFFLE OPEN NOW</span>
+          <span class="font-mono text-xs text-zinc-400">150 PAIRS ALLOTTED</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">STRIDE x MB Pier 'Solar Eclipse' Low</h2>
+        <p class="text-base sm:text-lg text-zinc-200 leading-relaxed">Handcrafted Japanese sashiko stitching with reflective amber sidewalls. Winner drawn live at sunset at the MB Flagship.</p>
+        
+        <div class="p-4 rounded-2xl bg-black/60 border border-white/10 max-w-sm" data-countdown>
+          <div class="text-xs font-semibold tracking-wider font-mono text-zinc-400 uppercase mb-2">Raffle Closes In:</div>
+          <div class="flex items-center justify-between font-mono font-bold text-2xl text-white">
+            <div><span class="cd-days">03</span><span class="block text-[9px] text-zinc-300 font-normal">DAYS</span></div>
+            <span>:</span>
+            <div><span class="cd-hours">14</span><span class="block text-[9px] text-zinc-300 font-normal">HRS</span></div>
+            <span>:</span>
+            <div><span class="cd-minutes">28</span><span class="block text-[9px] text-zinc-300 font-normal">MIN</span></div>
+            <span>:</span>
+            <div><span class="cd-seconds text-[#FF5A36]">45</span><span class="block text-[9px] text-zinc-300 font-normal">SEC</span></div>
+          </div>
+        </div>
+
+        <form id="raffleEntryForm" class="space-y-3 max-w-sm pt-2">
+          <input id="raffleName" type="text" placeholder="Full Legal Name" required class="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-xs text-white placeholder-zinc-500">
+          <input id="raffleEmail" type="email" placeholder="Email Address" required class="w-full px-4 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-xs text-white placeholder-zinc-500">
+          <div class="grid grid-cols-2 gap-2">
+            <input id="rafflePhone" type="tel" placeholder="Mobile Phone" required class="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-xs text-white placeholder-zinc-500">
+            <select id="raffleSize" class="w-full px-3 py-2.5 rounded-xl bg-zinc-900 border border-white/15 text-xs text-white font-mono focus:outline-none">
+              <option value="US 9.0">US 9.0</option>
+              <option value="US 9.5">US 9.5</option>
+              <option value="US 10.0">US 10.0</option>
+              <option value="US 10.5" selected>US 10.5</option>
+              <option value="US 11.0">US 11.0</option>
+              <option value="US 11.5">US 11.5</option>
+              <option value="US 12.0">US 12.0</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full btn-heat !py-3 text-xs">Enter MB Sole Raffle ($290 Retail) &rarr;</button>
+        </form>
+      </div>
+
+      <div class="lg:col-span-6 flex justify-center">
+        <div class="w-full max-w-lg h-96 bg-zinc-950/60 p-2 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=1000&q=80" 
+               alt="STRIDE x MB Pier Solar Eclipse" 
+               class="w-full h-full object-cover rounded-xl">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#070708] py-8 text-center text-xs text-zinc-300 font-mono">
+    © 2026 STRIDE MB — Manhattan Beach, CA.
+  </footer>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('raffleEntryForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const entry = {
+        full_name: document.getElementById('raffleName').value.trim(),
+        email: document.getElementById('raffleEmail').value.trim(),
+        phone: document.getElementById('rafflePhone').value.trim(),
+        shoe_size: document.getElementById('raffleSize').value,
+        status: 'registered'
+      };
+      await StrideDB.createRaffleEntry(entry);
+      alert(`🎉 SOLE RAFFLE REGISTRATION VERIFIED!\n\nName: ${entry.full_name}\nSilhouette: STRIDE x MB Pier Solar Eclipse Low\nSize: ${entry.shoe_size}\n\nYour registration has been logged in the boutique database.`);
+      document.getElementById('raffleEntryForm').reset();
+    });
+  </script>
+</body>
+</html>

@@ -13,6 +13,35 @@
     body { font-family: "Plus Jakarta Sans", sans-serif; background-color: #060910; color: #f1f5f9; }
     .font-mono { font-family: "JetBrains Mono", monospace; }
   </style>
+  <style id="gf-typography-boost">
+    html {
+      font-size: 16px !important;
+    }
+    body {
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+    }
+    /* Scale up compact tailwind utility classes */
+    .text-xs {
+      font-size: 0.875rem !important; /* 14px floor instead of 12px */
+      line-height: 1.25rem !important;
+    }
+    .text-sm {
+      font-size: 1rem !important; /* 16px instead of 14px */
+      line-height: 1.5rem !important;
+    }
+    .text-base {
+      font-size: 1.125rem !important; /* 18px */
+    }
+    /* Boost telemetry values, badges, and button labels */
+    button, a, input, select {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+    }
+    .metric-value, [class*="text-2xl"], [class*="text-3xl"] {
+      letter-spacing: -0.02em !important;
+    }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col bg-[#060910] text-slate-100 selection:bg-emerald-500 selection:text-black">
   <!-- TOP TELEMETRY STRIP -->

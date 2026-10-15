@@ -340,9 +340,9 @@ export default function App() {
             <span>VOXELTRACK-EDGE 3D SPATIAL FUSION</span>
           </div>
           <div className="flex items-center gap-4">
-            <span>DELAWARE APA ASSET PURCHASE STANDARD ($125K USD)</span>
+            <span>DELAWARE COURT OF CHANCERY JURISDICTION</span>
             <span className="text-zinc-700">|</span>
-            <span className="text-emerald-400 font-bold">10/10 MONOPOLY VERIFIED</span>
+            <span className="text-emerald-400 font-bold">10/10 SPECIFICATION VERIFIED</span>
           </div>
         </div>
       </footer>

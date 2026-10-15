@@ -246,7 +246,7 @@ export default function App() {
             GF-T3-142 // AEGIS-ORBIT &bull; Ghost FactoryOS Skunkworks Fleet Track 3
           </div>
           <div className="flex items-center space-x-4">
-            <span>Delaware APA Buyout: <span className="text-white font-bold">$135,000 USD</span></span>
+            <span>Delaware Court of Chancery Jurisdiction</span>
             <span>&bull;</span>
             <span className="text-emerald-400 font-extrabold">100% Clean-Room Permissive</span>
           </div>

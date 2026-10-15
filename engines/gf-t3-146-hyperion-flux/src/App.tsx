@@ -57,7 +57,6 @@ export default function App() {
           <div className="flex items-center gap-6">
             <span>Delaware Court of Chancery Jurisdiction</span>
             <span>100% Permissive Clean-Room IP</span>
-            <span className="font-mono text-cyan-400">$145,000 Monopoly Vault Tier</span>
           </div>
         </div>
       </footer>

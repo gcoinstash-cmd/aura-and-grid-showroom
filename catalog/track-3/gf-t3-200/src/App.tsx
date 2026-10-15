@@ -148,7 +148,7 @@ export default function App() {
               Download GF_T3_200_SPEC.md
             </button>
             <span className="text-slate-700">|</span>
-            <span className="text-slate-400">Acquire.com Turnkey Micro-APA ($45k USD)</span>
+            <span className="text-slate-400">Delaware Court of Chancery Jurisdiction</span>
           </div>
         </div>
       </footer>

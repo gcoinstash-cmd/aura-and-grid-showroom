@@ -184,8 +184,6 @@ export default function App() {
           <div className="flex items-center gap-4 flex-wrap justify-center text-xs text-slate-400">
             <span>DELAWARE COURT OF CHANCERY</span>
             <span>•</span>
-            <span>$140,000 MONOPOLY BUYOUT</span>
-            <span>•</span>
             <span>DO-178C LEVEL A COMPLIANT</span>
             <span>•</span>
             <span>CLEAN-ROOM PROVENANCE</span>

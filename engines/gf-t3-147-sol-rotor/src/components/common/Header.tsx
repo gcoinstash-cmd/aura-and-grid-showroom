@@ -42,9 +42,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onSelectTab, flightMo
               <span className="bg-slate-800 text-slate-300 font-mono text-xs px-2 py-0.5 rounded border border-slate-700">
                 ASSET: GF-T3-147
               </span>
-              <span className="bg-emerald-950 text-emerald-300 font-mono text-xs px-2.5 py-0.5 rounded-full border border-emerald-500/40 font-bold">
-                $140,000 MONOPOLY BUYOUT
-              </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold font-avionics tracking-wide text-white mt-1">
               SOL-ROTOR: <span className="text-cyan-400">AUTONOMOUS HEAVY-LIFT eVTOL & SWARM ENGINE</span>

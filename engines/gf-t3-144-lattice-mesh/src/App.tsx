@@ -185,8 +185,6 @@ export default function App() {
             <span className="font-bold text-slate-200">GF-T3-144 Lattice-Mesh</span>
             <span>·</span>
             <span>Ghost FactoryOS Fleet Track 3</span>
-            <span>·</span>
-            <span className="text-emerald-400 font-bold">$145,000 Monopoly Vault Asset</span>
           </div>
           <div className="text-slate-300">
             NIST FIPS 203 ML-KEM-1024 · Delaware Court of Chancery

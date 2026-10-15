@@ -97,9 +97,6 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
               <span className="text-xs tracking-widest font-bold uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
                 Asset GF-T3-145
               </span>
-              <span className="text-xs tracking-wider font-extrabold uppercase px-2 py-0.5 rounded bg-amber-950/70 text-amber-300 border border-amber-600/50 font-mono-numbers">
-                Valuation: $150,000 USD
-              </span>
             </div>
             <h1 className="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-2 mt-0.5">
               NEXUS-ATS <span className="text-slate-400 text-base font-normal">| Hybrid CLOB & Sub-Millisecond Dark Pool</span>

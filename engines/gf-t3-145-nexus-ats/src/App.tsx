@@ -308,7 +308,7 @@ export default function App() {
             <span>Kernel Bypass: <strong className="text-slate-200">Solarflare EF_VI</strong></span>
             <span>Memory: <strong className="text-emerald-400">0 Heap Allocs</strong></span>
             <span>Audit: <strong className="text-teal-400">100% Clean Room Permissive</strong></span>
-            <span>Valuation: <strong className="text-amber-300 font-bold">$150,000 USD APA</strong></span>
+            <span>Engine: <strong className="text-teal-400 font-bold">PostgreSQL 16 + RLS</strong></span>
           </div>
         </div>
       </footer>

@@ -12,8 +12,6 @@
   <style>
     body { font-family: "Plus Jakarta Sans", sans-serif; background-color: #060910; color: #f1f5f9; }
     .font-mono { font-family: "JetBrains Mono", monospace; }
-    @keyframes pulse-slow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .animate-pulse-slow { animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-[#060910] text-slate-100 selection:bg-emerald-500 selection:text-black">
@@ -30,13 +28,11 @@
         </span>
       </div>
       <div class="flex items-center gap-4">
-        <span class="text-zinc-400 hidden sm:inline">STATE: <strong id="state-badge" class="text-emerald-400 font-bold">NOMINAL_PEAK</strong></span>
-        <span class="text-zinc-400 hidden sm:inline">FREQ: <strong id="hz-counter" class="text-cyan-300 font-bold">500 Hz</strong></span>
-        <span class="text-zinc-400 hidden sm:inline">LATENCY: <strong id="lat-counter" class="text-purple-300 font-bold">142 µs</strong></span>
-        <a href="https://geothermal-supercritical-egs-wellhead-scada-os.onrender.com" target="_blank" rel="noopener noreferrer" 
-           class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20">
-          <span>Launch Live Cluster</span> &rarr;
-        </a>
+        <span class="text-zinc-400 hidden sm:inline">STATE: <strong class="text-emerald-400 font-bold">NOMINAL_PEAK</strong></span>
+        <span class="text-zinc-400 hidden sm:inline">FREQ: <strong class="text-cyan-300 font-bold">1,000 Hz</strong></span>
+        <button onclick="openExportModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20 cursor-pointer">
+          <span>Export Enterprise Spec</span> &rarr;
+        </button>
       </div>
     </div>
   </header>
@@ -49,92 +45,219 @@
         <div class="space-y-2">
           <div class="flex items-center gap-2">
             <span class="px-2.5 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-500/40 font-mono text-xs font-bold">
-              GF-T2-096 // AUTONOMOUS SCADA
+              GF-T2-096 // Geothermal Supercritical EGS Wellhead SCADA OS Console
             </span>
             <span class="px-2.5 py-1 rounded-full bg-amber-400 text-black font-mono text-xs font-black uppercase">
               [SIMULATED DATA PROTOTYPE]
             </span>
           </div>
           <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">Geothermal Supercritical EGS Wellhead SCADA OS</h1>
-          <p class="text-slate-400 text-sm max-w-2xl">Geothermal Supercritical EGS Wellhead SCADA OS Console</p>
+          <p class="text-slate-400 text-sm max-w-2xl">Geothermal Supercritical EGS Wellhead SCADA OS Console — Ghost FactoryOS High-Integrity Production Reference Architecture.</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://geothermal-supercritical-egs-wellhead-scada-os.onrender.com" target="_blank" rel="noopener noreferrer"
-             class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm text-center transition-all shadow-lg shadow-emerald-500/25 active:scale-95 font-mono">
-            Connect to Live Render Node &rarr;
-          </a>
+          <button onclick="logEvent('[DIAG] Deep-system health diagnostic executed.', 'text-cyan-400')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs font-bold transition-all border border-zinc-700">
+            Run Subsystem Audit
+          </button>
         </div>
       </div>
     </div>
 
     <!-- 4-METRIC TELEMETRY GRID -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 font-mono">
-      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
-        <span class="text-xs text-slate-400 block">Telemetry Sampling Loop</span>
-        <strong id="metric-hz" class="text-2xl font-bold text-cyan-300">500.0 Hz</strong>
-        <span class="text-[11px] text-slate-500 block">Deterministic Timer Bound</span>
-      </div>
-      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
-        <span class="text-xs text-slate-400 block">P99 Loop Latency</span>
-        <strong id="metric-lat" class="text-2xl font-bold text-purple-300">138 µs</strong>
-        <span class="text-[11px] text-slate-500 block">Sub-Millisecond Execution</span>
-      </div>
-      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
-        <span class="text-xs text-slate-400 block">Persistent Database Engine</span>
-        <strong class="text-2xl font-bold text-emerald-300">Postgres 16</strong>
-        <span class="text-[11px] text-slate-500 block">Supabase RLS Ledger</span>
-      </div>
-      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
-        <span class="text-xs text-slate-400 block">Hot-Path Heap Allocation</span>
-        <strong class="text-2xl font-bold text-amber-300">0 Bytes</strong>
-        <span class="text-[11px] text-slate-500 block">Zero-Garbage Collection</span>
-      </div>
+      
+        <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+          <span class="text-xs text-slate-400 block font-mono">Wellhead Steam Enthalpy</span>
+          <strong class="text-2xl font-bold text-amber-400 font-mono tracking-tight">3,120 kJ/kg</strong>
+          <span class="text-[11px] text-slate-500 block font-mono">448°C Supercritical Fluid</span>
+        </div>
+        
+
+        <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+          <span class="text-xs text-slate-400 block font-mono">Borehole Bottom Pressure</span>
+          <strong class="text-2xl font-bold text-rose-400 font-mono tracking-tight">28.4 MPa</strong>
+          <span class="text-[11px] text-slate-500 block font-mono">Depth 4,800m Igneous Core</span>
+        </div>
+        
+
+        <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+          <span class="text-xs text-slate-400 block font-mono">Binary Cycle Generation</span>
+          <strong class="text-2xl font-bold text-emerald-400 font-mono tracking-tight">45.2 MWe</strong>
+          <span class="text-[11px] text-slate-500 block font-mono">Zero Carbon Base Load</span>
+        </div>
+        
+
+        <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+          <span class="text-xs text-slate-400 block font-mono">Induced Seismicity Index</span>
+          <strong class="text-2xl font-bold text-cyan-400 font-mono tracking-tight">< M 0.4</strong>
+          <span class="text-[11px] text-slate-500 block font-mono">Microseismic Cloud Stable</span>
+        </div>
+        
     </div>
 
-    <!-- INTERACTIVE TELEMETRY OSCILLOSCOPE & ACTUATOR MATRIX -->
+    <!-- INTERACTIVE DOMAIN COCKPIT & ACTUATOR MATRIX -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Main Canvas Display (2 cols) -->
+      <!-- Main Visual Display (2 cols) -->
       <div class="lg:col-span-2 bg-slate-900/70 border border-zinc-800 rounded-2xl p-6 space-y-4">
         <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <h2 class="text-base font-bold text-slate-200 font-mono">Real-Time State Telemetry Waveform</h2>
+            <h2 class="text-base font-bold text-slate-200 font-mono">Subsurface Igneous Reservoir & Microseismic Fracture Network</h2>
           </div>
-          <span class="text-xs font-mono text-slate-400">Buffer: 1,024 Packets</span>
+          <span class="text-xs font-mono text-slate-400">Viewport: Real-Time Render</span>
         </div>
-        <canvas id="telemetryCanvas" class="w-full h-56 rounded-xl bg-slate-950 border border-zinc-800/80"></canvas>
+        <canvas id="domainCanvas" class="w-full h-64 rounded-xl bg-slate-950 border border-zinc-800/80"></canvas>
         <div class="grid grid-cols-3 gap-3 text-center text-xs font-mono pt-2">
-          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
-            <span class="text-slate-400 block">Channel α</span>
-            <strong id="ch-alpha" class="text-cyan-300 text-sm font-bold">0.842</strong>
-          </div>
-          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
-            <span class="text-slate-400 block">Channel β</span>
-            <strong id="ch-beta" class="text-emerald-300 text-sm font-bold">14.28</strong>
-          </div>
-          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
-            <span class="text-slate-400 block">Channel γ</span>
-            <strong id="ch-gamma" class="text-purple-300 text-sm font-bold">99.98%</strong>
-          </div>
+          
+        <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+          <span class="text-slate-400 block">Steam Enthalpy</span>
+          <strong class="text-amber-400 text-sm font-bold">3,120 kJ/kg</strong>
+        </div>
+        
+
+        <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+          <span class="text-slate-400 block">Turbine Output</span>
+          <strong class="text-emerald-400 text-sm font-bold">45.2 MWe</strong>
+        </div>
+        
+
+        <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+          <span class="text-slate-400 block">Max Magnitude</span>
+          <strong class="text-cyan-400 text-sm font-bold">M 0.22</strong>
+        </div>
+        
         </div>
       </div>
 
       <!-- Actuator Control Toggles & Stream Log (1 col) -->
       <div class="bg-slate-900/70 border border-zinc-800 rounded-2xl p-6 space-y-4 flex flex-col">
-        <h2 class="text-base font-bold text-slate-200 font-mono flex items-center justify-between border-b border-zinc-800 pb-3">
-          <span>Subsystem Telemetry Log</span>
-          <span class="text-xs text-emerald-400">ACTIVE</span>
-        </h2>
-        <div id="logTerminal" class="flex-1 bg-slate-950 rounded-xl p-3 font-mono text-[11px] text-slate-300 overflow-y-auto space-y-1.5 border border-zinc-800/80 max-h-56">
-          <div class="text-slate-500">[INIT] Subsystem initialized. Kernel ring allocated.</div>
-          <div class="text-cyan-400">[READY] 500 Hz high-frequency state poller engaged.</div>
-          <div class="text-emerald-400">[SYNC] PostgreSQL 16 HMAC ledger verified.</div>
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <h2 class="text-base font-bold text-slate-200 font-mono">Subsystem Operations Log</h2>
+          <span class="text-xs text-emerald-400 font-mono">ACTIVE_STREAM</span>
         </div>
-        <button id="throttleBtn" class="w-full py-2.5 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.10] text-slate-200 hover:text-white border border-white/10 font-mono text-xs font-bold transition-all cursor-pointer">
-          Inject State Calibration Event
+        <div id="logTerminal" class="flex-1 bg-slate-950 rounded-xl p-3 font-mono text-[11px] text-slate-300 overflow-y-auto space-y-1.5 border border-zinc-800/80 max-h-56">
+          <div class="text-slate-400">[GEOTHERMAL] Supercritical Wellhead WH-01 telemetry online.</div>
+<div class="text-amber-400">[PRESSURE] Wellhead production casing pressure steady at 28.4 MPa.</div>
+<div class="text-emerald-400">[ENERGY] ORC binary turbine #2 generator output 45.2 Megawatts into the grid.</div>
+<div class="text-cyan-400">[SEISMIC] 64-channel borehole geophone array confirms zero seismic anomalies.</div>
+        </div>
+        <div class="space-y-2 pt-2 border-t border-zinc-800/80">
+          <span class="text-xs font-mono text-slate-400 block font-semibold">Specialized Domain Actuators</span>
+          <div class="grid grid-cols-1 gap-2">
+            
+        <button onclick="regulateBypass()" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-black font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+          Regulate Turbine Bypass
         </button>
+        
+
+        <button onclick="adjustReinjection()" class="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+          Adjust Reinjection Flow
+        </button>
+        
+
+        <button onclick="runSeismicScan()" class="w-full py-2.5 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+          Run Microseismic Array Scan
+        </button>
+        
+
+        <button onclick="emergencyBlowoutCut()" class="w-full py-2.5 px-4 rounded-xl bg-red-800 hover:bg-red-700 text-white font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+          Emergency Wellhead Blowout Cut
+        </button>
+        
+          </div>
+        </div>
       </div>
     </div>
+
+    
+    <!-- DOMAIN RELATIONAL SCHEMAS -->
+    <div class="bg-slate-900/70 border border-zinc-800 rounded-2xl p-5 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <h2 class="text-sm font-bold text-slate-200 font-mono uppercase tracking-wider">Domain Telemetry Schemas</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="switchTableTab(0)" id="tab-btn-0" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-800 text-white border-zinc-700">wellhead_telemetry</button>
+<button onclick="switchTableTab(1)" id="tab-btn-1" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">enthalpy_monitors</button>
+<button onclick="switchTableTab(2)" id="tab-btn-2" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">reinjection_pumps</button>
+<button onclick="switchTableTab(3)" id="tab-btn-3" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">subsurface_seismic</button>
+<button onclick="switchTableTab(4)" id="tab-btn-4" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">steam_turbines</button>
+        </div>
+      </div>
+      <div>
+        
+        <div id="tab-content-0" class="space-y-2 ">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">wellhead_telemetry</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">Authenticated Read</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950/80">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-slate-900/80"><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Wellhead</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Depth</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Fluid</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Enthalpy</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Pressure</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Status</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Flow</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Sensors</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Trigger Threshold</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Noise</th></tr></thead>
+              <tbody><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">WH-CASCADE-01</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">4,850 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Supercritical Steam</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,120 kJ/kg</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">28.4 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">PRODUCING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">WH-CASCADE-02</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">4,920 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Supercritical Steam</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,250 kJ/kg</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">29.1 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">PRODUCING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">INJ-REINJECT-A</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,600 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Chilled Brine Return</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">14.8 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">INJECTING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">240 kg/s</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">SEISMIC-ARRAY-4</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">1,200 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">MONITORING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3-Component Geophone</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">M 0.2</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">< 2 µm/s</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+
+        <div id="tab-content-1" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">enthalpy_monitors</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">Authenticated Read</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950/80">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-slate-900/80"><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Identifier</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Channel</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Status</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Sampling Rate</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">State</th></tr></thead>
+              <tbody><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-01</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Telemetry Channel α</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">500 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-02</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Subsystem Channel β</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">200 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-03</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Actuator Channel γ</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">STANDBY // READY</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">100 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-04</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Enterprise Ledger Node</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">VERIFIED // SEALED</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">1,000 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">SEALED</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+
+        <div id="tab-content-2" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">reinjection_pumps</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">Authenticated Read</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950/80">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-slate-900/80"><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Identifier</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Channel</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Status</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Sampling Rate</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">State</th></tr></thead>
+              <tbody><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-01</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Telemetry Channel α</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">500 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-02</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Subsystem Channel β</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">200 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-03</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Actuator Channel γ</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">STANDBY // READY</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">100 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-04</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Enterprise Ledger Node</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">VERIFIED // SEALED</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">1,000 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">SEALED</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+
+        <div id="tab-content-3" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">subsurface_seismic</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">Authenticated Read</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950/80">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-slate-900/80"><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Wellhead</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Depth</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Fluid</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Enthalpy</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Pressure</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Status</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Flow</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Sensors</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Trigger Threshold</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Noise</th></tr></thead>
+              <tbody><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">WH-CASCADE-01</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">4,850 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Supercritical Steam</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,120 kJ/kg</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">28.4 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">PRODUCING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">WH-CASCADE-02</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">4,920 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Supercritical Steam</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,250 kJ/kg</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">29.1 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">PRODUCING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">INJ-REINJECT-A</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3,600 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Chilled Brine Return</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">14.8 MPa</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">INJECTING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">240 kg/s</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">SEISMIC-ARRAY-4</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">1,200 m</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">MONITORING</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">—</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">3-Component Geophone</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">M 0.2</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">< 2 µm/s</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+
+        <div id="tab-content-4" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">steam_turbines</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">Authenticated Read</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950/80">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-slate-900/80"><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Identifier</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Channel</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Status</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">Sampling Rate</th><th class="px-4 py-2 text-left font-mono text-xs font-semibold text-slate-300 border-b border-zinc-800">State</th></tr></thead>
+              <tbody><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-01</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Telemetry Channel α</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">500 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-02</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Subsystem Channel β</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">ACTIVE // ONLINE</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">200 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-03</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Actuator Channel γ</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">STANDBY // READY</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">100 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NOMINAL</td></tr><tr class="hover:bg-slate-800/40 transition-colors"><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">NODE-096-04</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">Enterprise Ledger Node</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">VERIFIED // SEALED</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">1,000 Hz</td><td class="px-4 py-2 font-mono text-xs text-slate-300 border-b border-zinc-900/80 whitespace-nowrap">SEALED</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
 
     <!-- ARCHITECTURAL CLEARANCE FOOTER -->
     <div class="bg-slate-900/40 border border-zinc-800/80 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400">
@@ -147,72 +270,207 @@
     </div>
   </main>
 
+  <!-- EXPORT MODAL -->
+  <div id="exportModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-slate-900 border border-zinc-700 rounded-2xl max-w-xl w-full p-6 space-y-4 font-mono text-xs">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <strong class="text-sm text-white">ENTERPRISE ASSET SPECIFICATION — GF-T2-096</strong>
+        <button onclick="closeExportModal()" class="text-slate-400 hover:text-white">&times;</button>
+      </div>
+      <div class="bg-slate-950 p-4 rounded-xl border border-zinc-800 overflow-y-auto max-h-64 text-slate-300 space-y-1">
+        <div>"unit_id": "GF-T2-096",</div>
+        <div>"name": "Geothermal Supercritical EGS Wellhead SCADA OS",</div>
+        <div>"category": "Geothermal Supercritical EGS Wellhead SCADA OS Console",</div>
+        <div>"track": "Track 2 Flagship Tier-1",</div>
+        <div>"jurisdiction": "Enterprise Architecture Clearance",</div>
+        <div>"compliance": "NIST SP 800-218 SSDF v1.1",</div>
+        <div>"status": "Clickable Interactive Prototype // Simulated Data Only"</div>
+      </div>
+      <div class="flex justify-end gap-3 pt-2">
+        <button onclick="closeExportModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700">Close</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Live animated telemetry simulator
-    const canvas = document.getElementById("telemetryCanvas");
-    const ctx = canvas.getContext("2d");
-    let points = Array.from({ length: 80 }, () => Math.random() * 0.4 + 0.3);
-    let step = 0;
-
-    function resize() {
-      canvas.width = canvas.clientWidth * window.devicePixelRatio;
-      canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    function logEvent(msg, colorClass = 'text-slate-300') {
+      const term = document.getElementById('logTerminal');
+      const div = document.createElement('div');
+      div.className = colorClass;
+      div.textContent = msg;
+      term.appendChild(div);
+      term.scrollTop = term.scrollHeight;
     }
-    window.addEventListener("resize", resize);
-    resize();
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.lineWidth = 2 * window.devicePixelRatio;
-      ctx.strokeStyle = "#06b6d4";
-      ctx.beginPath();
-      
-      const dx = canvas.width / (points.length - 1);
-      points.forEach((p, i) => {
-        const y = canvas.height - (p * canvas.height * 0.8 + canvas.height * 0.1);
-        if (i === 0) ctx.moveTo(0, y);
-        else ctx.lineTo(i * dx, y);
-      });
-      ctx.stroke();
-
-      // Shift wave
-      step++;
-      const nextVal = Math.sin(step * 0.08) * 0.25 + 0.5 + (Math.random() - 0.5) * 0.08;
-      points.shift();
-      points.push(Math.max(0.05, Math.min(0.95, nextVal)));
-
-      // Update counters
-      document.getElementById("ch-alpha").innerText = nextVal.toFixed(3);
-      document.getElementById("ch-beta").innerText = (nextVal * 16.8).toFixed(2);
-      document.getElementById("ch-gamma").innerText = (99.5 + nextVal * 0.4).toFixed(2) + "%";
-      
-      const lat = Math.round(135 + Math.random() * 15);
-      document.getElementById("lat-counter").innerText = lat + " µs";
-      document.getElementById("metric-lat").innerText = lat + " µs";
-
-      requestAnimationFrame(draw);
+    function switchTableTab(idx) {
+      const totalTabs = 5;
+      for (let i = 0; i < totalTabs; i++) {
+        const btn = document.getElementById('tab-btn-' + i);
+        const content = document.getElementById('tab-content-' + i);
+        if (btn && content) {
+          if (i === idx) {
+            btn.className = 'px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-800 text-white border-zinc-700';
+            content.classList.remove('hidden');
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white';
+            content.classList.add('hidden');
+          }
+        }
+      }
     }
-    draw();
 
-    // Stream logs
-    const terminal = document.getElementById("logTerminal");
-    setInterval(() => {
-      const ms = Math.round(Math.random() * 800 + 100);
-      const div = document.createElement("div");
-      div.className = "text-slate-400";
-      div.innerText = `[TICK +${ms}ms] State transition verified: NOMINAL (RPO=0)`;
-      terminal.appendChild(div);
-      if (terminal.children.length > 20) terminal.removeChild(terminal.children[0]);
-      terminal.scrollTop = terminal.scrollHeight;
-    }, 1200);
+    function openExportModal() {
+      document.getElementById('exportModal').classList.remove('hidden');
+    }
 
-    document.getElementById("throttleBtn").addEventListener("click", () => {
-      const div = document.createElement("div");
-      div.className = "text-amber-300 font-bold";
-      div.innerText = "[EVENT] State calibration injected. Micro-stepping state vector.";
-      terminal.appendChild(div);
-      terminal.scrollTop = terminal.scrollHeight;
-    });
+    function closeExportModal() {
+      document.getElementById('exportModal').classList.add('hidden');
+    }
+
+    // Actuator function handlers
+    function scrambleInterceptors() { logEvent('[ACTUATOR] Air interceptor squad scrambled into perimeter vector.', 'text-emerald-400'); }
+    function engageJamming() { logEvent('[ACTUATOR] High-power RF directional jamming engaged on 2.4/5.8 GHz.', 'text-cyan-400'); }
+    function launchKineticNet() { logEvent('[ACTUATOR] Kinetic capture net authorized. Deploying countermeasures.', 'text-amber-400'); }
+    function emergencyRecall() { logEvent('[ACTUATOR] Emergency RTB recall beacon active. Interceptors returning to hub.', 'text-rose-400'); }
+    
+    function dispatchNextTruck() { logEvent('[DISPATCH] Haul Truck HT-405 dispatched to Shovel Face North.', 'text-amber-400'); }
+    function rerouteInfeed() { logEvent('[DISPATCH] Infeed route diverted to Secondary Crushing Surge Bin B.', 'text-cyan-400'); }
+    function toggleSpeedRestrictor() { logEvent('[DISPATCH] Pit haulage ramp speed restrictor toggled: 25 km/h enforced.', 'text-purple-400'); }
+    function emergencyPitHalt() { logEvent('[ALERT] Emergency Pit Halt triggered. All autonomous haul units holding brakes.', 'text-rose-400'); }
+    
+    function engageSuction() { logEvent('[ACTUATOR] Slurry suction dredge head pump active at 318 bar.', 'text-cyan-400'); }
+    function purgeHydraulics() { logEvent('[ACTUATOR] Benthic hydraulic line purge executed with zero pressure drop.', 'text-blue-400'); }
+    function triggerSonarPing() { logEvent('[ACTUATOR] Multibeam high-frequency sonar ping transmitted across seabed.', 'text-emerald-400'); }
+    function umbilicalRelease() { logEvent('[SAFETY] Umbilical emergency quick-disconnect sequence armed.', 'text-rose-400'); }
+
+    function dispatchFuel() { logEvent('[RAMP] Fuel bowser truck #3 dispatched with 2,400 gal Jet-A.', 'text-sky-400'); }
+    function assignStand() { logEvent('[RAMP] Apron Stand 5 assigned to inbound Global 7500.', 'text-emerald-400'); }
+    function requestDeice() { logEvent('[RAMP] Mobile de-icing boom unit staged on north taxiway.', 'text-cyan-400'); }
+    function rampEmergencyHold() { logEvent('[RAMP] Ground movement emergency hold active.', 'text-rose-400'); }
+
+    function startPumpover() { logEvent('[WINERY] Fermentation pumpover cycle started on Tank 01 (30 min).', 'text-rose-400'); }
+    function chillGlycol() { logEvent('[WINERY] Glycol jacket valve opened; chilling tank to 18 C.', 'text-cyan-400'); }
+    function logHydrometer() { logEvent('[WINERY] Hydrometer specific gravity logged at 1.092 (Brix 24.2).', 'text-amber-400'); }
+    function purgeNitrogen() { logEvent('[WINERY] Tank ullage headspace purged with 99.9% food-grade nitrogen.', 'text-slate-300'); }
+
+    function randomizePatient() { logEvent('[EDC] Subject #842 randomized into Clinical Trial Arm A.', 'text-teal-400'); }
+    function lockDataset() { logEvent('[EDC] Cohort database lock milestone signed via cryptographic token.', 'text-emerald-400'); }
+    function triggerDsmb() { logEvent('[EDC] Data Safety Monitoring Board telemetry export generated.', 'text-cyan-400'); }
+    function flagSafetyDev() { logEvent('[SAFETY] Minor protocol deviation logged and routed to principal investigator.', 'text-rose-400'); }
+
+    function triggerDefrost() { logEvent('[COLD] Ultra-low temperature vault hot-gas defrost cycle scheduled.', 'text-blue-400'); }
+    function boostChiller() { logEvent('[COLD] Ammonia refrigeration compressor output boosted to 85% capacity.', 'text-cyan-400'); }
+    function sealDock() { logEvent('[COLD] Loading Dock Gate 7 inflatable thermal seal verified.', 'text-emerald-400'); }
+    function alarmThermalExcursion() { logEvent('[ALARM] Diagnostic thermal alarm simulated; all backup chillers verified.', 'text-rose-400'); }
+
+    function throttleAerospike() { logEvent('[PROPULSION] Linear aerospike throttle adjusted to 95% chamber pressure.', 'text-orange-400'); }
+    function adjustCowl() { logEvent('[PROPULSION] Variable expansion cowl ratio trimmed for Mach 2.4 cruising.', 'text-amber-400'); }
+    function igniteRamjet() { logEvent('[PROPULSION] Supersonic turboramjet transition sequence completed.', 'text-rose-400'); }
+    function dumpPropellant() { logEvent('[PROPULSION] Emergency propellant dump lines tested and pressurized.', 'text-red-400'); }
+
+    function injectPellet() { logEvent('[FUSION] Cryogenic deuterium-tritium pellet injected into plasma core.', 'text-violet-400'); }
+    function pulseIcrf() { logEvent('[FUSION] 20 MW Ion Cyclotron Radio Frequency heating pulse fired.', 'text-rose-400'); }
+    function engageDivertor() { logEvent('[FUSION] Poloidal magnetic divertor sweeping pattern activated.', 'text-cyan-400'); }
+    function emergencyQuench() { logEvent('[SAFETY] Superconducting magnet quench protection system verified.', 'text-red-400'); }
+
+    function engageJetters() { logEvent('[ROV] High-pressure subsea jet trenching nozzles active at 45 bar.', 'text-cyan-400'); }
+    function deploySword() { logEvent('[ROV] Depressor sword lowered to 2.85 meters depth of cover.', 'text-blue-400'); }
+    function pingCableTracker() { logEvent('[ROV] Tone generator acoustic pulse localized fiber cable axis.', 'text-emerald-400'); }
+    function surfaceAbort() { logEvent('[ROV] Trenching aborted; thrusters holding ROV altitude 5m off seafloor.', 'text-rose-400'); }
+
+    function regulateBypass() { logEvent('[GEOTHERMAL] Wellhead steam bypass valve trimmed to maintain 28.4 MPa.', 'text-amber-400'); }
+    function adjustReinjection() { logEvent('[GEOTHERMAL] Subsurface reinjection pump rate increased to 240 kg/s.', 'text-blue-400'); }
+    function runSeismicScan() { logEvent('[GEOTHERMAL] Borehole geophone array scan completed with zero micro-seismic events.', 'text-purple-400'); }
+    function emergencyBlowoutCut() { logEvent('[SAFETY] Hydraulic annular blowout preventer ram interlocks verified.', 'text-red-400'); }
+
+    function switchLaserHop() { logEvent('[HFT] Microwave relay diverted to backup optical laser hop at Tower 08.', 'text-emerald-400'); }
+    function flushFpgaQueue() { logEvent('[HFT] FPGA hardware execution FIFO queue flushed in 12 nanoseconds.', 'text-cyan-400'); }
+    function calibratePtp() { logEvent('[HFT] IEEE 1588 Precision Time Protocol clock synchronized with atomic standard.', 'text-purple-400'); }
+    function emergencyKillSwitch() { logEvent('[RISK] Automated trading kill switch engaged. All open orders cancelled.', 'text-rose-400'); }
+
+    function fireArcHeater() { logEvent('[TUNNEL] Arc heater chamber ignited; nitrogen stagnation temp 2,450 K.', 'text-rose-400'); }
+    function actuatePitch() { logEvent('[TUNNEL] 6-DOF balance actuated to +4.5 deg angle of attack.', 'text-amber-400'); }
+    function captureSchlieren() { logEvent('[TUNNEL] High-speed laser Schlieren imaging frame captured at 200,000 fps.', 'text-cyan-400'); }
+    function tunnelScram() { logEvent('[SAFETY] Wind tunnel emergency scram valve fired; vacuum chamber isolated.', 'text-red-400'); }
+
+    function dispatchCarrier() { logEvent('[CONCIERGE] Enclosed climate transporter T-05 dispatched for hypercar delivery.', 'text-amber-400'); }
+    function runBatteryDiag() { logEvent('[CONCIERGE] 48 vehicle battery float conditioners reporting 100% nominal state.', 'text-emerald-400'); }
+    function sealAirBarrier() { logEvent('[CONCIERGE] High-pressure air curtain active at Vault Tier-1 entryway.', 'text-slate-300'); }
+    function vaultLockdown() { logEvent('[SECURITY] Vault biometric perimeter placed into high-alert lockdown.', 'text-rose-400'); }
+
+    function fixCharter() { logEvent('[CHARTER] Fixture terms locked for 180k DWT Capesize hull voyage.', 'text-sky-400'); }
+    function optimizeRoute() { logEvent('[CHARTER] Weather routing updated: avoiding North Pacific storm system.', 'text-emerald-400'); }
+    function hedgeBunker() { logEvent('[CHARTER] VLSFO bunker fuel swap contract executed for Q4 voyages.', 'text-amber-400'); }
+    function issueNor() { logEvent('[CHARTER] Notice of Readiness tendered at arrival port anchorage.', 'text-purple-400'); }
+
+    // Fallback general triggers
+    function triggerActuator1() { logEvent('[ACTUATOR] Primary operational actuator engaged with zero error.', 'text-emerald-400'); }
+    function calibrateDomainSensor() { logEvent('[SENSOR] Precision calibration pulse completed across domain instrumentation.', 'text-cyan-400'); }
+    function executeDiagnostic() { logEvent('[DIAG] Subsystem health verification cycle returned 100% pass.', 'text-purple-400'); }
+    function emergencyOverride() { logEvent('[SAFETY] Operational interlock holding safe state.', 'text-rose-400'); }
+
+    
+        const canvas = document.getElementById('domainCanvas');
+        const ctx = canvas.getContext('2d');
+        let t = 0;
+
+        function resize() {
+          canvas.width = canvas.parentElement.clientWidth;
+          canvas.height = 256;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        function drawConstellation() {
+          const w = canvas.width;
+          const h = canvas.height;
+          ctx.fillStyle = '#060910';
+          ctx.fillRect(0, 0, w, h);
+
+          // Grid coordinates
+          ctx.strokeStyle = '#f59e0b15';
+          ctx.lineWidth = 1;
+          for (let x = 0; x < w; x += 40) {
+            ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+          }
+          for (let y = 0; y < h; y += 40) {
+            ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+          }
+
+          t += 0.02;
+          const nodes = [
+            { x: w * 0.2, y: h * 0.35 + Math.sin(t) * 12, id: 'NODE-01' },
+            { x: w * 0.45, y: h * 0.65 + Math.cos(t) * 10, id: 'NODE-02' },
+            { x: w * 0.7, y: h * 0.30 + Math.sin(t + 1) * 14, id: 'NODE-03' },
+            { x: w * 0.85, y: h * 0.70 + Math.cos(t + 2) * 8, id: 'NODE-04' },
+          ];
+
+          // Laser cross links
+          ctx.strokeStyle = '#f59e0b';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[0].x, nodes[0].y);
+          ctx.lineTo(nodes[1].x, nodes[1].y);
+          ctx.lineTo(nodes[2].x, nodes[2].y);
+          ctx.lineTo(nodes[3].x, nodes[3].y);
+          ctx.stroke();
+
+          // Nodes
+          nodes.forEach(n => {
+            ctx.fillStyle = '#f59e0b';
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#e2e8f0';
+            ctx.font = '10px monospace';
+            ctx.fillText(n.id, n.x + 8, n.y - 4);
+          });
+
+          requestAnimationFrame(drawConstellation);
+        }
+        requestAnimationFrame(drawConstellation);
+        
   </script>
 </body>
 </html>

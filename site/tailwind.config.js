@@ -4,13 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#08090A',
-        panel: '#101216',
-        card: '#14161C',
+        obsidian: '#05070B',
+        carbon: '#0A0D14',
+        panel: '#111724',
+        card: '#111724',
         border: '#232630',
         gold: '#C5A880',
         emerald: '#10B981',
-        cobalt: '#3B82F6'
+        cobalt: '#3B82F6',
+        cyberEmerald: '#10B981',
+        cyberGold: '#F59E0B',
+        cyberCyan: '#00F0FF',
+        cyberRose: '#F43F5E'
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],

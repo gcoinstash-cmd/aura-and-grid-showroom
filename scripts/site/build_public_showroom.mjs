@@ -243,7 +243,7 @@ function renderCoverMarkup(p) {
 }
 
 // Pre-render all 200 F1-tier Spec Cards into static DOM (Pure APA Title Buyout Model)
-const renderedCardsHtml = publicProducts.map(p => {
+const renderedCardsHtml = publicProducts.map((p, idx) => {
   const isTrack3 = Boolean(p.isTrack3);
   const isTrack2 = Boolean(p.isTrack2);
   const isRegulated = isTrack3 || isTrack2 || isRegulatedSector(p);
@@ -280,10 +280,11 @@ const renderedCardsHtml = publicProducts.map(p => {
 
   // SVG Circle Gauge Math (r=16, circumference = 100.53)
   const strokeDashoffset = (100 - p.pytestScore).toFixed(1);
+  const initialHidden = idx >= 6 ? ' hidden' : '';
 
   return `
       <!-- F1 Spec Card #${p.id} -->
-      <div class="product-card rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between scroll-mt-32 group"
+      <div class="product-card${initialHidden} rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between scroll-mt-32 group"
            id="vehicle-${p.id}"
            data-id="${p.id}"
            data-name="${escapeHtml(p.name)}"
@@ -407,11 +408,11 @@ const renderedCardsHtml = publicProducts.map(p => {
               <span>Live Demo ↗</span>
             </a>
           </div>
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="openModal(this)" class="cta-cyber-amber py-2.5 px-2 rounded-lg bg-emerald-500/20 hover:bg-[#FF9F0A] text-emerald-300 hover:text-black border border-[#FF9F0A] font-extrabold text-xs transition-all min-h-[44px] flex items-center justify-center cursor-pointer whitespace-nowrap">
+          <div class="flex flex-col gap-2 w-full mt-4">
+            <button onclick="openModal(this)" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded text-sm font-mono tracking-wider bg-emerald-500/20 hover:bg-[#FF9F0A] text-emerald-300 hover:text-black border border-[#FF9F0A] font-extrabold transition-all min-h-[44px] flex items-center justify-center cursor-pointer">
               ACQUIRE TITLE (APA)
             </button>
-            <button onclick="openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}')" class="cta-cyber-amber py-2.5 px-2 rounded-lg ${isTrack3 ? 'bg-sky-500/20 text-sky-200 hover:bg-[#FF9F0A] hover:text-black' : isTrack2 ? 'bg-amber-500/20 text-amber-200 hover:bg-[#FF9F0A] hover:text-black' : 'bg-[#FF9F0A]/15 text-[#FF9F0A] hover:bg-[#FF9F0A] hover:text-black'} border border-[#FF9F0A] font-extrabold text-xs transition-all min-h-[44px] flex items-center justify-center whitespace-nowrap cursor-pointer">
+            <button onclick="openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}')" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded text-sm font-mono tracking-wider ${isTrack3 ? 'bg-sky-500/20 text-sky-200 hover:bg-[#FF9F0A] hover:text-black' : isTrack2 ? 'bg-amber-500/20 text-amber-200 hover:bg-[#FF9F0A] hover:text-black' : 'bg-[#FF9F0A]/15 text-[#FF9F0A] hover:bg-[#FF9F0A] hover:text-black'} border border-[#FF9F0A] font-extrabold transition-all min-h-[44px] flex items-center justify-center cursor-pointer">
               INQUIRE VAULT BUYOUT
             </button>
           </div>
@@ -986,25 +987,17 @@ const showroomHtml = `<!DOCTYPE html>
 ${renderedCardsHtml}
         </div>
 
-        <!-- Showroom Pagination & Fleet Navigation (24 Engines / Page) -->
-        <div id="paginationContainer" class="mt-10 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-sm border-t border-white/10 pt-8">
-          <div id="paginationInfo" class="text-slate-300 text-center md:text-left">
-            Showing <span id="pageRangeStart" class="text-white font-bold">1</span>–<span id="pageRangeEnd" class="text-white font-bold">24</span> of <span id="pageTotalCount" class="text-emerald-400 font-bold">200</span> Production Software Assets
+        <!-- Showroom Pagination & Fleet Navigation (6 Units / Page) -->
+        <div id="paginationContainer" class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-sm border-t border-white/10 pt-8">
+          <button id="prevPageBtn" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#111724] border border-white/15 text-slate-200 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/10 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-[#111724] disabled:hover:border-white/15 disabled:hover:text-slate-200 transition-all font-bold tracking-wider cursor-pointer">
+            [ &lt; PREV LOT ]
+          </button>
+          <div id="paginationIndicator" class="text-center font-bold tracking-wider text-cyan-300 px-4 py-2.5 rounded-lg bg-[#05070B] border border-white/10 min-w-[280px]">
+            PAGE 1 OF 34 // ALL UNITS
           </div>
-          <div class="flex items-center gap-2">
-            <button id="prevPageBtn" class="px-3.5 py-2 rounded-lg bg-[#111724] border border-white/10 text-slate-200 hover:text-white hover:border-cyan-400/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-semibold cursor-pointer">
-              ‹ Previous
-            </button>
-            <div id="paginationPages" class="flex items-center gap-1.5 flex-wrap justify-center"></div>
-            <button id="nextPageBtn" class="px-3.5 py-2 rounded-lg bg-[#111724] border border-white/10 text-slate-200 hover:text-white hover:border-cyan-400/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-semibold cursor-pointer">
-              Next ›
-            </button>
-          </div>
-          <div>
-            <button id="viewAllToggle" class="px-4 py-2 rounded-lg bg-[#111724] border border-white/10 text-slate-200 hover:text-cyan-300 hover:border-cyan-400/40 transition-all cursor-pointer">
-              Show All (200)
-            </button>
-          </div>
+          <button id="nextPageBtn" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#111724] border border-white/15 text-slate-200 hover:text-white hover:border-cyan-400 hover:bg-cyan-500/10 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-[#111724] disabled:hover:border-white/15 disabled:hover:text-slate-200 transition-all font-bold tracking-wider cursor-pointer">
+            [ NEXT LOT &gt; ]
+          </button>
         </div>
 
         <div id="noResults" class="hidden text-center py-20">
@@ -1151,9 +1144,9 @@ ${renderedCardsHtml}
 
   <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
   <script>
-    const PAGE_SIZE = 24;
+    const PAGE_SIZE = 6;
     let currentPage = 1;
-    let viewAll = false;
+    let totalPages = 1;
     let activeFilter = 'all';
     let searchQuery = '';
     let currentHeroTrack = 'track1';
@@ -1162,13 +1155,9 @@ ${renderedCardsHtml}
 
     const noResults = document.getElementById('noResults');
     const paginationContainer = document.getElementById('paginationContainer');
-    const paginationPages = document.getElementById('paginationPages');
+    const paginationIndicator = document.getElementById('paginationIndicator');
     const prevPageBtn = document.getElementById('prevPageBtn');
     const nextPageBtn = document.getElementById('nextPageBtn');
-    const viewAllToggle = document.getElementById('viewAllToggle');
-    const pageRangeStart = document.getElementById('pageRangeStart');
-    const pageRangeEnd = document.getElementById('pageRangeEnd');
-    const pageTotalCount = document.getElementById('pageTotalCount');
 
     // 3D CAD Dyno Controls
     function rotateDynoGrid(delta) {
@@ -1241,6 +1230,7 @@ ${renderedCardsHtml}
         if (l2) l2.textContent = 'L2: KALMAN / ORDERBOOK / CONSENSUS ENGINE';
       }
       rotateDynoGrid(15);
+      filterByTrack(track);
     }
 
     function applyHeroTrackToCatalog() {
@@ -1271,6 +1261,14 @@ ${renderedCardsHtml}
       if (sidePrice) sidePrice.innerText = primaryApa + ' | ' + vaultApa;
 
       document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function getActiveTrackName() {
+      if (activeFilter === 'track1') return 'TRACK 1 LEAN TUNER';
+      if (activeFilter === 'track2') return 'TRACK 2 HYPERCAR';
+      if (activeFilter === 'track3') return 'TRACK 3 SKUNKWORKS';
+      if (activeFilter === 'all') return 'ALL UNITS';
+      return activeFilter.toUpperCase();
     }
 
     function filterCards() {
@@ -1308,61 +1306,25 @@ ${renderedCardsHtml}
       noResults.classList.add('hidden');
       if (paginationContainer) paginationContainer.classList.remove('hidden');
 
-      const totalPages = Math.ceil(totalMatches / PAGE_SIZE);
+      totalPages = Math.max(1, Math.ceil(totalMatches / PAGE_SIZE));
       if (currentPage > totalPages) currentPage = totalPages;
       if (currentPage < 1) currentPage = 1;
 
       cards.forEach(card => card.classList.add('hidden'));
 
-      if (viewAll) {
-        matchingCards.forEach(card => card.classList.remove('hidden'));
-        if (pageRangeStart) pageRangeStart.innerText = '1';
-        if (pageRangeEnd) pageRangeEnd.innerText = totalMatches.toString();
-        if (pageTotalCount) pageTotalCount.innerText = totalMatches.toString();
-        if (paginationPages) paginationPages.innerHTML = '';
-        if (prevPageBtn) prevPageBtn.disabled = true;
-        if (nextPageBtn) nextPageBtn.disabled = true;
-        if (viewAllToggle) viewAllToggle.innerText = 'Paginate (24/pg)';
-      } else {
-        const startIdx = (currentPage - 1) * PAGE_SIZE;
-        const endIdx = Math.min(startIdx + PAGE_SIZE, totalMatches);
-        
-        for (let i = startIdx; i < endIdx; i++) {
-          matchingCards[i].classList.remove('hidden');
-        }
-
-        if (pageRangeStart) pageRangeStart.innerText = (startIdx + 1).toString();
-        if (pageRangeEnd) pageRangeEnd.innerText = endIdx.toString();
-        if (pageTotalCount) pageTotalCount.innerText = totalMatches.toString();
-
-        if (prevPageBtn) prevPageBtn.disabled = (currentPage === 1);
-        if (nextPageBtn) nextPageBtn.disabled = (currentPage === totalPages);
-        if (viewAllToggle) viewAllToggle.innerText = 'Show All (' + totalMatches + ')';
-
-        renderPaginationControls(totalPages);
+      const startIdx = (currentPage - 1) * PAGE_SIZE;
+      const endIdx = Math.min(startIdx + PAGE_SIZE, totalMatches);
+      
+      for (let i = startIdx; i < endIdx; i++) {
+        matchingCards[i].classList.remove('hidden');
       }
-    }
 
-    function renderPaginationControls(totalPages) {
-      if (!paginationPages) return;
-      paginationPages.innerHTML = '';
-      if (totalPages <= 1) return;
-
-      for (let p = 1; p <= totalPages; p++) {
-        const btn = document.createElement('button');
-        btn.innerText = p.toString();
-        btn.className = 'w-9 h-9 rounded-lg text-xs font-mono font-bold transition-all flex items-center justify-center cursor-pointer ' + (
-          p === currentPage
-            ? 'bg-emerald-500 text-black shadow-md'
-            : 'bg-[#111724] border border-white/10 text-slate-400 hover:text-white hover:border-cyan-400/40'
-        );
-        btn.addEventListener('click', () => {
-          currentPage = p;
-          filterCards();
-          document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-        });
-        paginationPages.appendChild(btn);
+      if (paginationIndicator) {
+        paginationIndicator.innerText = 'PAGE ' + currentPage + ' OF ' + totalPages + ' // ' + getActiveTrackName();
       }
+
+      if (prevPageBtn) prevPageBtn.disabled = (currentPage === 1);
+      if (nextPageBtn) nextPageBtn.disabled = (currentPage >= totalPages);
     }
 
     function filterByTrack(track) {
@@ -1393,16 +1355,11 @@ ${renderedCardsHtml}
 
     if (nextPageBtn) {
       nextPageBtn.addEventListener('click', () => {
-        currentPage++;
-        filterCards();
-        document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-
-    if (viewAllToggle) {
-      viewAllToggle.addEventListener('click', () => {
-        viewAll = !viewAll;
-        filterCards();
+        if (currentPage < totalPages) {
+          currentPage++;
+          filterCards();
+          document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     }
 

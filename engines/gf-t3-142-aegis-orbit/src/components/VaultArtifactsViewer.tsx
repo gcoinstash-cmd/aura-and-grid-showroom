@@ -54,9 +54,9 @@ export const VaultArtifactsViewer: React.FC = () => {
     },
     ENTERPRISE_APA: {
       title: 'ENTERPRISE_APA_AGREEMENT.md',
-      type: 'Delaware Asset Purchase Agreement',
+      type: 'Turnkey Software Asset Purchase Agreement',
       icon: Scale,
-      badge: 'Monopoly Buyout ($135,000 USD)',
+      badge: 'Monopoly Vault Diligence',
       content: ENTERPRISE_APA_AGREEMENT_MD,
       filename: 'ENTERPRISE_APA_AGREEMENT.md'
     }
@@ -110,7 +110,7 @@ export const VaultArtifactsViewer: React.FC = () => {
 
         <div className="flex items-center gap-2">
           <span className="px-3.5 py-1.5 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800 text-sm font-mono font-extrabold">
-            VALUATION: $135,000 USD
+            SPECIFICATION: $135,000 USD
           </span>
         </div>
       </div>

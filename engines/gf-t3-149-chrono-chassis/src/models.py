@@ -64,7 +64,7 @@ class TelemetryState(BaseModel):
     quantum: QuantumCoreTelemetry = Field(..., description="Quantum computing core state")
     aero: AeroMechanicalTelemetry = Field(..., description="Aeromechanical and ground-effect telemetry")
     arbitrageRoutes: List[ArbitrageVector] = Field(default_factory=list, description="Global arbitrage vector telemetry")
-    accumulatedAlphaUsd: float = Field(..., description="Accumulated profit in USD", json_schema_extra={"example": 4821590.40})
+    accumulatedAlphaUsd: float = Field(..., description="Accumulated yield in USD", json_schema_extra={"example": 4821590.40})
     systemHealth: float = Field(99.98, description="Subsystem health percentage")
     coolingPumpActive: bool = Field(True, description="Cryogenic dilution refrigeration pump status")
     conduitLaserFreqHz: float = Field(5.32e14, description="Optical conduit laser frequency in Hz")

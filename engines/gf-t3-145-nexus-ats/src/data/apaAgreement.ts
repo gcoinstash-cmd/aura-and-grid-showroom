@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Ghost FactoryOS GF-T3-145 (Nexus-ATS)
- * Delaware Enterprise Asset Purchase Agreement ($150,000 Outright Buyout)
+ * Turnkey Software Asset Purchase Agreement ($150,000 Outright Asset Transfer)
  */
 
 export const ENTERPRISE_APA_AGREEMENT_MD = `# ENTERPRISE ASSET PURCHASE AGREEMENT (DELAWARE)

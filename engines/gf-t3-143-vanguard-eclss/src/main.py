@@ -60,7 +60,7 @@ async def health_check():
 async def balance_atmosphere(req: AtmosphericBalanceRequest) -> AtmosphericBalanceResponse:
     """
     Ingests current barometric and gas partial pressure telemetry, calculates metabolic burn
-    from crew profile, and computes optimal MIMO-MPC actuator rates within <6.5ms compute budget.
+    from crew profile, and computes optimal MIMO-MPC actuator rates within <6.5ms compute threshold.
     """
     try:
         return engine.solve_atmospheric_balance(req)
@@ -134,7 +134,7 @@ async def get_telemetry_stream() -> TelemetryStreamPayload:
     summary="Detailed Engine Health Diagnostics",
 )
 async def get_health_diagnostics() -> EngineHealthResponse:
-    """Returns detailed operational health, compute budget, and clean-room compliance status."""
+    """Returns detailed operational health, compute threshold, and clean-room compliance status."""
     return engine.get_health()
 
 

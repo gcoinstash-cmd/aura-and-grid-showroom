@@ -33,7 +33,7 @@ export const EngineSpecViewer: React.FC = () => {
 
 5. INSTITUTIONAL VAULT DOCUMENTATION
 - LEGAL_IP_AUDIT.md: Clean-room derivation record and permissive license whitelist.
-- ENTERPRISE_APA_AGREEMENT.md: Delaware Asset Purchase Agreement for $145,000.00 USD.`;
+- ENTERPRISE_APA_AGREEMENT.md: Turnkey Software Asset Purchase Agreement for $145,000.00 USD.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(engineSpec);

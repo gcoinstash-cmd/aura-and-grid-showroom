@@ -11,7 +11,7 @@
 ## 1. Executive Summary & Core Moat
 
 An enterprise **autonomous closed-loop life support and environmental control engine**:
-- **MIMO-MPC Closed-Loop Atmospheric Balancer:** High-speed quadratic objective optimization (<6.5ms compute budget) balancing $pp\text{O}_2, pp\text{CO}_2, pp\text{N}_2$, total barometric pressure, and relative humidity against metabolic crew respiration profiles.
+- **MIMO-MPC Closed-Loop Atmospheric Balancer:** High-speed quadratic objective optimization (<6.5ms compute threshold) balancing $pp\text{O}_2, pp\text{CO}_2, pp\text{N}_2$, total barometric pressure, and relative humidity against metabolic crew respiration profiles.
 - **Sabatier Heterogeneous Methanation Kinetics:** Catalytic reaction modeling ($\text{CO}_2 + 4\text{H}_2 \to \text{CH}_4 + 2\text{H}_2\text{O}$) with Le Chatelier pressure/temperature kinetics and exothermic heat generation.
 - **PEM Water Electrolysis Faraday Solver:** Electrochemical dissociation ($2\text{H}_2\text{O} \to 2\text{H}_2 + \text{O}_2$) calculating molar gas production, stack current efficiency, and cell degradation index.
 - **Psychrometric Cabin Thermodynamics:** Continuous solver for saturation vapor pressure, actual vapor pressure, dew point temperature, humidity ratio, and condensing heat exchanger (CHX) latent heat moisture extraction.
@@ -33,13 +33,13 @@ An enterprise **autonomous closed-loop life support and environmental control en
 
 ---
 
-## 3. Valuation & M&A Economics
+## 3. Specification & M&A Economics
 
-| Valuation Benchmark | Tier / Methodology | Amount |
+| Specification Benchmark | Tier / Methodology | Amount |
 |---|---|---|
-| Monthly Enterprise Seat License | 5.0x ARR SaaS Multiple | $1,500 / month |
+| Container Runtime | 5.0x ARR SaaS Multiple | Cloud Run Turnkeynth |
 | Baseline Trim APA Floor | ASC 350-40 Replacement Appraisal | $35,000 |
-| Monopoly Vault Buyout Anchor | Exclusive Deep-Tech IP Acquisition | $85,000 |
+| Monopoly Vault Reference Core | Exclusive Deep-Tech IP Acquisition | $85,000 |
 | Strategic Monopoly Ceiling | Uncapped Vertical Acquisition | $150,000+ |
 
 ---
@@ -49,7 +49,7 @@ An enterprise **autonomous closed-loop life support and environmental control en
 - **Runtime:** Python 3.11.15 / macOS arm64
 - **Test Framework:** Pytest 8.3.3 + pytest-cov 5.0.0
 - **Coverage Target:** Enforcing >80% path & branch coverage across all modules.
-- **Compute Budget SLA:** P50 latency < 0.42ms, P99 latency < 6.5ms per closed-loop control cycle.
+- **Compute Threshold SLA:** P50 latency < 0.42ms, P99 latency < 6.5ms per closed-loop control cycle.
 
 ---
 

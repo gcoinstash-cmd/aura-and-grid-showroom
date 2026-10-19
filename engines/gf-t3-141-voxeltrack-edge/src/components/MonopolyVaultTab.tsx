@@ -54,19 +54,19 @@ export const MonopolyVaultTab: React.FC = () => {
             </span>
           </div>
           <h2 className="text-2xl font-black text-white">
-            Delaware Asset Purchase Agreement & Clean-Room IP Certification
+            Turnkey Software Asset Purchase Agreement & Clean-Room IP Certification
           </h2>
           <p className="text-sm text-zinc-300 mt-1 max-w-2xl leading-relaxed">
-            Institutional buyout terms ($125,000.00 USD), clean-room legal IP audit, and complete non-infringement indemnity for Track 3 Engine GF-T3-140.
+            Institutional reference core (PostgreSQL 16 + RLS), clean-room legal IP audit, and complete non-infringement indemnity for Track 3 Engine GF-T3-140.
           </p>
         </div>
 
         <div className="p-4 rounded-xl bg-slate-950/90 border border-emerald-500/30 text-right font-mono shrink-0 shadow-lg">
           <div className="text-[11px] text-zinc-400 uppercase tracking-wider">
-            VALUATION & MONOPOLY BUYOUT
+            SPECIFICATION & MONOPOLY ASSET TRANSFER
           </div>
           <div className="text-2xl font-black text-emerald-400 mt-0.5">
-            $125,000.00 USD
+            PostgreSQL 16 + RLS
           </div>
           <div className="text-[11px] text-zinc-500 mt-1">
             Escrow Wire / Immediate IP Assignment
@@ -119,7 +119,7 @@ export const MonopolyVaultTab: React.FC = () => {
 
       {/* Dual Document Viewers */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        {/* Document 1: Delaware APA Agreement */}
+        {/* Document 1: Turnkey Software Asset Purchase Agreement Agreement */}
         <div className="p-5 rounded-xl bg-slate-900/90 border border-zinc-800 shadow-xl space-y-3">
           <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
             <div className="flex items-center gap-2">

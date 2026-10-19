@@ -88,7 +88,7 @@ export const OPENAPI_SPEC_JSON = {
         },
         "responses": {
           "200": {
-            "description": "Actuator control allocation computed within the < 4.5ms budget.",
+            "description": "Actuator control allocation computed within the < 4.5ms threshold.",
             "content": {
               "application/json": {
                 "schema": {

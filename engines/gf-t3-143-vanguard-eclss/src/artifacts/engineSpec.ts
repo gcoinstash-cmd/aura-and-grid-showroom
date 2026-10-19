@@ -10,7 +10,7 @@ export const ENGINE_SPEC_T3_VANGUARD_MD = `# ENGINE_SPEC_T3_VANGUARD.md: GF-T3-1
 **FLEET TIER:** Ghost FactoryOS Track 3 (F1 Skunkworks Engine)  
 **ASSET CODE:** GF-T3-143  
 **TARGET ENVIRONMENT:** Lunar Surface Habitat / Martian Deep-Space Outpost / Orbital Platform  
-**P99 COMPUTE BUDGET:** < 6.5 ms per closed-loop MIMO-MPC step  
+**P99 COMPUTE THRESHOLD:** < 6.5 ms per closed-loop MIMO-MPC step  
 **RELIABILITY STANDARD:** Zero-Loss-of-Crew (LOC) Grade / Triple-Modular Redundancy (TMR)  
 
 ---
@@ -67,7 +67,7 @@ $$W = 0.62198 \\cdot \\frac{p_v}{P_{\\text{tot}} - p_v} \\quad (\\text{kg H}_2\\
 $$h = 1.006 \\cdot T + W(2501 + 1.86 \\cdot T) \\quad (\\text{kJ/kg})$$
 
 ### 2.4 Multi-Input Multi-Output (MIMO) Model Predictive Control
-Quadratic Cost Function:
+Quadratic Matrix Function:
 $$\\min_{\\mathbf{u}} J = \\sum_{k=0}^{N-1} \\left( \\|\\mathbf{x}_k - \\mathbf{x}_{\\text{ref}}\\|_{\\mathbf{Q}}^2 + \\|\\mathbf{u}_k\\|_{\\mathbf{R}}^2 + \\|\\Delta \\mathbf{u}_k\\|_{\\mathbf{S}}^2 \\right)$$
 Subject to strict physiological boundaries:
 $$98.0 \\text{ kPa} \\le P_{\\text{total}} \\le 103.4 \\text{ kPa}$$
@@ -91,11 +91,11 @@ Fully normalized DDL with monthly range partitioning on \`atmospheric_telemetry_
 
 ---
 
-## 5. INSTITUTIONAL CLEAN-ROOM IP AUDIT & DELAWARE APA AGREEMENT
+## 5. INSTITUTIONAL CLEAN-ROOM IP AUDIT & Turnkey Software Asset Purchase Agreement AGREEMENT
 
 - **Clean-Room Certification:** 100% first-principles engineering derivation.
 - **SPDX Whitelist:** 100% MIT, Apache-2.0, BSD-3-Clause. Zero copyleft / GPL / AGPL / SSPL risks.
-- **Enterprise Buyout:** Standard Delaware APA contract specifying $140,000.00 USD outright buyout with perpetual assignment and Court of Chancery exclusive forum selection.
+- **Enterprise Asset Transfer:** Standard Turnkey Software Asset Purchase Agreement contract specifying $140,000.00 USD outright asset transfer with perpetual assignment and Court of Chancery exclusive forum selection.
 
 ---
 **END OF SPECIFICATION: ASSET GF-T3-143 (VANGUARD-ECLSS).**

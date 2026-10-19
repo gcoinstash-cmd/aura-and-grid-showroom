@@ -645,7 +645,7 @@ export const AlgoSimulatorTab: React.FC = () => {
                 <th className="py-3 px-3.5">Scheduled Time (UTC)</th>
                 <th className="py-3 px-3.5">Routing Venue</th>
                 <th className="py-3 px-3.5 text-right">Filled Qty (BTC)</th>
-                <th className="py-3 px-3.5 text-right">Fill Price ($)</th>
+                <th className="py-3 px-3.5 text-right">Fill Price (UNITS)</th>
                 <th className="py-3 px-3.5 text-right">VWAP Delta</th>
                 <th className="py-3 px-3.5 text-right">Slippage (bps)</th>
                 <th className="py-3 px-3.5 text-center">Status</th>

@@ -292,7 +292,7 @@ export function solveMimoMpcStep(
   let optimalChxTempC = 10.0 - (errRH * 0.15) - (metabolicMoistureGenerationGps * 2.5);
   optimalChxTempC = Math.max(4.0, Math.min(15.0, optimalChxTempC));
 
-  // Calculate Quadratic Objective Cost J(x, u)
+  // Calculate Quadratic Objective Matrix J(x, u)
   const quadraticCost = (
     W_PPO2 * Math.pow(errO2, 2) +
     W_PTOT * Math.pow(errPtot, 2) +

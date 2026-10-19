@@ -70,7 +70,7 @@ export const OPENAPI_SPEC_JSON = {
         },
         "responses": {
           "200": {
-            "description": "Optimal actuator commands generated within sub-6.5ms compute budget.",
+            "description": "Optimal actuator commands generated within sub-6.5ms compute threshold.",
             "content": {
               "application/json": {
                 "schema": {

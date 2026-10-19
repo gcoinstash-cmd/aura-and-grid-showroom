@@ -3,7 +3,7 @@
 **Author:** Lead Systems Architect, Ghost FactoryOS  
 **Classification:** Institutional Monopoly Vault Asset  
 **License:** Permissive MIT / Commercial APA Pre-Cleared  
-**Buyout Target:** $125,000 USD (Monopoly Vault Standard)
+**Reference Core:** PostgreSQL 16 + RLS (Monopoly Vault Standard)
 
 ---
 
@@ -42,12 +42,12 @@ Chronos-Tick is a ultra-low-latency algorithmic execution micro-engine engineere
                                   [ AlloyDB PostgreSQL WAL ]
 \`\`\`
 
-### Latency Budget Allocation (Max Target: 4.80 ms)
+### Latency Threshold Allocation (Max Target: 4.80 ms)
 * Ingest & Parent Order Validation: **0.80 ms**
 * Volume Profile & Almgren-Chriss Trajectory: **1.40 ms**
 * RingBuffer Poisson Child Router: **1.20 ms**
 * Execution Telemetry & Slippage Ledger: **1.40 ms**
-* **Total End-to-End Budget:** **4.80 ms** (Deterministic 99.9th percentile)
+* **Total End-to-End Threshold:** **4.80 ms** (Deterministic 99.9th percentile)
 
 ---
 

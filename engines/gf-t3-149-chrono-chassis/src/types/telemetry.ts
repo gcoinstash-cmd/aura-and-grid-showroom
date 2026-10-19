@@ -55,7 +55,7 @@ export interface DealershipTier {
   id: 'demo' | 'standard' | 'monopoly';
   name: string;
   tagline: string;
-  priceUsd: number;
+  unitIndex: number;
   priceFormatted: string;
   licenseType: string;
   leadTime: string;

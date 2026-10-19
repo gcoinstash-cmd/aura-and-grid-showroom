@@ -8,7 +8,7 @@
 
 **Date of Certification:** October 4, 2026  
 **Auditor / Architect:** Lead Systems Architect, Ghost FactoryOS  
-**Asset Valuation Tier:** Monopoly Vault Enterprise Tier ($125,000 USD APA Target)  
+**Asset Specification Tier:** Monopoly Vault Enterprise Tier (PostgreSQL 16 + RLS APA Target)  
 **Target Engine:** `T3-QUANT-02: CHRONO-ARBITRAGE`
 
 ### Clean-Room Engineering Declaration

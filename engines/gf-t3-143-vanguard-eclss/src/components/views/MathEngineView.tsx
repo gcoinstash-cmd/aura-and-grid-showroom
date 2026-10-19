@@ -51,7 +51,7 @@ export const MathEngineView: React.FC = () => {
           PROPRIETARY MATHEMATICAL & THERMODYNAMIC ENGINE
         </h2>
         <p className="text-base text-slate-300 font-medium mt-1">
-          Zero-placeholder, analytical first-principles formulation: Sabatier Catalytic Kinetics, PEM Electrochemical Dissociation, Buck Psychrometrics, and MIMO Quadratic Cost Minimization.
+          Zero-placeholder, analytical first-principles formulation: Sabatier Catalytic Kinetics, PEM Electrochemical Dissociation, Buck Psychrometrics, and MIMO Quadratic Matrix Minimization.
         </p>
       </div>
 

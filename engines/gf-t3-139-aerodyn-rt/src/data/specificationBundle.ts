@@ -2,7 +2,7 @@ export const SPEC_ENGINE_MD = `# GHOST FACTORYOS: ENGINE GF-T3-139 SPECIFICATION
 ## Track 3: Autonomous Aerodynamic & 1000Hz Telemetry State-Estimation Engine
 **Version:** 3.1.0-PRODUCTION  
 **Target Platform:** High-Throughput ASGI / Cython EKF / Linux Real-Time (PREEMPT_RT)  
-**Monopoly Vault Classification:** Level 10 Institutional Asset ($125,000 Monopoly Value)
+**Monopoly Vault Classification:** Level 10 Institutional Asset (PostgreSQL 16 + RLS Monopoly Value)
 
 ---
 
@@ -98,7 +98,7 @@ $$\\text{Clamp}(\\alpha_{\\text{cmd}}) = \\begin{cases}
 
 ---
 
-## 3. REAL-TIME LATENCY BUDGET (< 1.000 ms)
+## 3. REAL-TIME LATENCY THRESHOLD (< 1.000 ms)
 - **Sensor Ingest (CAN-FD + DMA Buffer):** 0.12 ms
 - **EKF State Prediction & Measurement Update:** 0.28 ms
 - **Aero Matrix & Center of Pressure Migration:** 0.16 ms
@@ -142,7 +142,7 @@ The Kalman filter formulation, aerodynamic Center of Pressure migration clamp al
 
 export const SPEC_APA_AGREEMENT_MD = `# ASSET PURCHASE AGREEMENT (APA)
 ## GHOST FACTORYOS TRACK 3 ENGINE: GF-T3-139
-**Total Transaction Consideration:** $125,000 USD (Monopoly Vault Standard)  
+**Total Transaction Consideration:** PostgreSQL 16 + RLS (Monopoly Vault Standard)  
 **Governing Law:** State of Delaware  
 
 ---
@@ -163,7 +163,7 @@ The Acquired Assets encompass all mathematical models, source code, Extended Kal
 ---
 
 ### 3. PURCHASE PRICE & CLOSING
-The agreed purchase price for the Acquired Asset is **One Hundred Twenty-Five Thousand United States Dollars ($125,000.00 USD)**, payable upon execution and verified delivery of the Complete 10/10 Bundle.
+The agreed purchase price for the Acquired Asset is **One Hundred Twenty-Five Thousand United States Dollars (PostgreSQL 16 + RLS)**, payable upon execution and verified delivery of the Complete 10/10 Bundle.
 
 ---
 

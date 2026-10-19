@@ -55,7 +55,7 @@ export const SpecAndExportTab: React.FC = () => {
       id: 'apa',
       name: 'ENTERPRISE_APA_AGREEMENT.md',
       label: '4. Commercial APA Agreement',
-      badge: '$125K Monopoly Buyout',
+      badge: 'Monopoly Vault Diligence',
       content: ENTERPRISE_APA_AGREEMENT_MD,
       type: 'markdown',
     },
@@ -101,7 +101,7 @@ export const SpecAndExportTab: React.FC = () => {
             asset_code: 'GF-T3-141',
             title: 'Chronos-Tick Algorithmic Execution Core Workstation',
             tier: 'Track 3: F1 Skunkworks Service Engine',
-            buyout_valuation_usd: 125000,
+            reference_core_spec: 125000,
             jurisdiction: 'Delaware, USA',
             clean_room_certified: true,
             copyleft_risk: 'ZERO_PERCENT',
@@ -144,7 +144,7 @@ export const SpecAndExportTab: React.FC = () => {
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Complete technical specification satisfying the 5 Monopoly Vault criteria: Topology, Almgren-Chriss Math, AlloyDB DDL, OpenAPI 3.1, and Delaware APA Agreement.
+            Complete technical specification satisfying the 5 Monopoly Vault criteria: Topology, Almgren-Chriss Math, AlloyDB DDL, OpenAPI 3.1, and Turnkey Software Asset Purchase Agreement Agreement.
           </p>
         </div>
 

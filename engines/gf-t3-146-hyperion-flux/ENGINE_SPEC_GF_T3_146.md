@@ -1,7 +1,7 @@
 # ENGINE_SPEC.md: HYPERION-FLUX
 ## ASSET IDENTIFIER: GF-T3-146
 ## FLEET TIER: TRACK 3 — F1 SKUNKWORKS SERVICE ENGINE
-## VALUATION & MONOPOLY TIER: $145,000 USD (MONOPOLY VAULT BUYOUT)
+## ARCHITECTURAL COMPLETION: PRODUCTION REFERENCE ENGINE
 ## TARGET RUNTIME: AUTONOMOUS EDGE FLEETS / HIGH-VELOCITY VEHICLE PLATFORMS
 ## ARCHITECTURAL COMPLETION: 100% PRODUCTION READY (70% WORKLOAD DELIVERABLE STAGE)
 
@@ -42,10 +42,10 @@
 +---------------------------------------------------------------------------------------------------+
 \`\`\`
 
-### 1.1 Ingestion Flow & Microsecond Latency Budget
+### 1.1 Ingestion Flow & Microsecond Latency Threshold
 - **Event Sensor Interface**: Raw asynchronous DVS binary events \`[x:16, y:16, t:64, p:8]\` streamed over PCIe Gen4 x4 or MIPI-CSI2 direct memory access (DMA).
 - **Lock-Free Ring Buffer**: Pre-allocated contiguous typed buffers with index masking; push time < 12 nanoseconds.
-- **Microsecond Optical Flow Budget**: Target P99 latency $< 750\\mu s$ per calculation slice under 10,000,000 events/second continuous load.
+- **Microsecond Optical Flow Threshold**: Target P99 latency $< 750\\mu s$ per calculation slice under 10,000,000 events/second continuous load.
 - **Egress Actuation**: High-priority CAN-FD / Ethernet AVB telemetry dispatch with hard deadline guarantee $< 1.0\\text{ ms}$.
 
 ---
@@ -110,4 +110,4 @@ $$\\text{TTC}(t) = \\frac{r_{target}(t)}{\\left| \\frac{dr_{target}(t)}{dt} \\ri
 ## 5. CLEAN-ROOM IP & LEGAL COMPLIANCE
 - **100% Permissive Dependency Whitelist** (MIT / Apache-2.0 / BSD).
 - **0% Copyleft Risk** (Zero GPL/AGPL/SSPL).
-- **Delaware APA Valuation**: $145,000 USD outright buyout.
+- **Turnkey Software Asset Purchase Agreement Specification**: $145,000 USD outright asset transfer.

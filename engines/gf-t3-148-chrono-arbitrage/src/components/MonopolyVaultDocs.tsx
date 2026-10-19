@@ -28,8 +28,8 @@ export const MonopolyVaultDocs: React.FC<Props> = ({ legalIpAuditMd, enterpriseA
 
 ## 1. EXECUTIVE SUMMARY & ASSET APPRAISAL
 * **Asset Identifier**: T3-QUANT-02: CHRONO-ARBITRAGE (Track 3 F1 Skunkworks Engine)
-* **Acquire.com APA Buyout Floor**: $19,500 USD (As-Is Clean-Room Codebase)
-* **Enterprise Monopoly Ceiling**: $125,000 USD (Exclusive IP, Vault blueprints)
+* **Acquire.com APA Reference Core**: $19,500 USD (As-Is Clean-Room Codebase)
+* **Enterprise Monopoly Ceiling**: PostgreSQL 16 + RLS (Exclusive IP, Vault blueprints)
 * **Sector**: Institutional High-Frequency Quantitative Trading / Arbitrage Infrastructure
 * **Architecture Track**: Ghost FactoryOS Track 3 (70% Skunkworks Workload Blueprint)
 
@@ -97,7 +97,7 @@ export const MonopolyVaultDocs: React.FC<Props> = ({ legalIpAuditMd, enterpriseA
             <span>INSTITUTIONAL 1-CLICK ACQUISITION PACKAGE</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black font-mono text-white tracking-tight">
-            Acquire.com Deal Memo &amp; Buyout Sheet
+            Acquire.com Deal Memo &amp; Asset Transfer Sheet
           </h2>
           <p className="text-sm font-sans text-zinc-200">
             Copy clean-room summary with verified $19.5k APA floor &amp; $125k Monopoly ceiling terms.
@@ -138,11 +138,11 @@ export const MonopolyVaultDocs: React.FC<Props> = ({ legalIpAuditMd, enterpriseA
         <div className="bg-zinc-950 p-5 rounded-xl border border-zinc-800 space-y-1.5">
           <div className="flex items-center gap-2 text-amber-300 font-bold">
             <DollarSign className="w-4 h-4" />
-            <span>MONOPOLY VAULT VALUATION</span>
+            <span>MONOPOLY VAULT SPECIFICATION</span>
           </div>
-          <div className="text-2xl font-black text-amber-300">$125,000.00 USD</div>
+          <div className="text-2xl font-black text-amber-300">PostgreSQL 16 + RLS</div>
           <p className="text-sm text-zinc-200 font-sans">
-            Institutional buyout target ($75k–$150k band). Full IP transfer and trade secret assignment.
+            Institutional reference core ($75k–$150k band). Full IP transfer and trade secret assignment.
           </p>
         </div>
 

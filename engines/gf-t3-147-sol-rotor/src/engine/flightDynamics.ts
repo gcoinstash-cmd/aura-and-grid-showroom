@@ -62,7 +62,7 @@ export interface FlightState {
   payloadKg: number;        // Active heavy-lift payload [kg]
   rotors: RotorState[];     // 8 distributed electric rotors
   totalThrustKn: number;    // Aggregated thrust vector magnitude [kN]
-  ndiLoopLatencyMs: number; // Inner-loop NDI calculation budget latency [ms]
+  ndiLoopLatencyMs: number; // Inner-loop NDI calculation threshold latency [ms]
   vrsRiskLevel: 'NONE' | 'CAUTION' | 'CRITICAL'; // Vortex Ring State indicator
   flightMode: 'VTOL_HOVER' | 'TRANSITION_CLIMB' | 'CRUISE_AIRPLANE' | 'SWARM_CONVOY' | 'PRECISION_SLING_CARGO';
 }

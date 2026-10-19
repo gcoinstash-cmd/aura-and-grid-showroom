@@ -56,7 +56,7 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({ onSelectTab }) => {
       zip.file('OPENAPI_SPEC.json', OPENAPI_SPEC_JSON);
       zip.file('README_MONOPOLY_VAULT.txt', `CHRONOS-TICK ALGORITHMIC EXECUTION CORE (GF-T3-141)
 MONOPOLY VAULT 10/10 ASSET BUNDLE
-Buyout Valuation: $125,000 USD
+Asset Transfer Specification: PostgreSQL 16 + RLS
 Delaware Commercial Asset Purchase Agreement Included
 100% Permissive MIT/Apache-2.0 Clean-Room Certified
 AlloyDB PostgreSQL Partitioned DDL Included

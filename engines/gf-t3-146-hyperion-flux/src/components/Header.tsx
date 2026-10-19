@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'math', label: 'Mathematical Engine', icon: Zap },
     { id: 'alloydb', label: 'AlloyDB DDL Schema', icon: Database },
     { id: 'openapi', label: 'OpenAPI 3.1 Console', icon: Code },
-    { id: 'legal', label: 'Legal & APA ($145K)', icon: ShieldCheck },
+    { id: 'legal', label: 'Legal & Diligence Architecture', icon: ShieldCheck },
     { id: 'spec', label: 'Engine Spec (70%)', icon: FileText },
   ];
 
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
                   TRACK 3 F1 SKUNKWORKS
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full text-base font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
-                  $145,000 BUYOUT
+                  $145,000 ASSET TRANSFER
                 </span>
               </div>
               <h1 className="text-base font-medium text-slate-400">
@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div className="h-8 w-px bg-slate-800 mx-1" />
             <div className="text-left">
-              <span className="text-sm font-mono text-slate-400 block">P99 BUDGET</span>
+              <span className="text-sm font-mono text-slate-400 block">P99 THRESHOLD</span>
               <span className={`text-xl font-bold font-mono ${p99LatencyUs < 750 ? 'text-emerald-400' : 'text-red-400'}`}>
                 {p99LatencyUs.toFixed(1)} µs <span className="text-sm text-slate-400 font-normal">(&lt;750µs)</span>
               </span>

@@ -23,7 +23,7 @@ export async function exportMonopolyBundle(): Promise<void> {
   // Add SHA256 integrity manifest
   const manifest = `================================================================================
 GHOST FACTORYOS ASSET GF-T3-146 (HYPERION-FLUX) MASTER ARCHIVE MANIFEST
-MONOPOLY VAULT TIER 3 (F1 SKUNKWORKS) - VALUATION: $145,000 USD
+MONOPOLY VAULT TIER 3 (F1 SKUNKWORKS) - SPECIFICATION: $145,000 USD
 DATE GENERATED: ${new Date().toISOString()}
 ================================================================================
 ENGINE_SPEC_T3_HYPERION.md     - SHA256: e81b29fc4828f7bb9c018241e1276a6b8e39097721865a9db43085f121d5a712

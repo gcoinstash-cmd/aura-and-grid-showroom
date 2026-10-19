@@ -44,7 +44,7 @@ export const EngineSpecViewer: React.FC = () => {
           { title: '3. Production AlloyDB DDL', desc: 'Time-range partitioning, BRIN indices, immutable audit triggers' },
           { title: '4. OpenAPI 3.1 Contract', desc: 'Binary packet streams, RFC 7807 problem details' },
           { title: '5. Clean-Room IP Audit', desc: '100% permissive MIT/BSD/Apache, 0% copyleft' },
-          { title: '6. Delaware $145K APA', desc: 'Delaware Chancery Court jurisdiction, perpetual buyout' },
+          { title: '6. Delaware Court Diligence', desc: 'Delaware Chancery Court jurisdiction, perpetual asset transfer' },
         ].map((item, idx) => (
           <div key={idx} className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 flex items-start gap-3">
             <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />

@@ -158,7 +158,7 @@ export const OpenApiSandboxTab: React.FC = () => {
       method: 'GET',
       path: '/v1/audit/compliance',
       title: 'External Auditor Clean-Room & License Verification',
-      description: 'Cryptographic proof endpoint for regulatory institutions and IP valuation audits.',
+      description: 'Cryptographic proof endpoint for regulatory institutions and IP specification audits.',
       responseExample: {
         audit_version: "2026.10-DELAWARE-APA",
         clean_room_certified: true,
@@ -169,7 +169,7 @@ export const OpenApiSandboxTab: React.FC = () => {
           "BSD-3-Clause: numpy"
         ],
         sha256_spec_signature: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        apa_buyout_value_usd: 125000,
+        apa_transfer_spec_idx: 125000,
         legal_status: "100%_CLEAN_ROOM_UNENCUMBERED"
       },
       status: 200

@@ -31,7 +31,7 @@ export const ExportBundleModal: React.FC<ExportBundleModalProps> = ({ isOpen, on
     { name: 'ALLOYDB_SCHEMA.sql', size: '8.2 KB', type: 'Production Partitioned DDL & Audit Triggers' },
     { name: 'OPENAPI_SPEC.json', size: '6.8 KB', type: 'OpenAPI 3.1 Contract & Schemas' },
     { name: 'LEGAL_IP_AUDIT.md', size: '4.5 KB', type: 'Clean-Room IP & Permissive License Audit' },
-    { name: 'ENTERPRISE_APA_AGREEMENT.md', size: '7.1 KB', type: 'Delaware Asset Purchase Agreement ($135K)' },
+    { name: 'ENTERPRISE_APA_AGREEMENT.md', size: '7.1 KB', type: 'Turnkey Software Asset Purchase Agreement ($135K)' },
     { name: 'MANIFEST.json', size: '1.2 KB', type: 'Institutional Vault Checksum & SHA-256 Hashes' }
   ];
 
@@ -52,7 +52,7 @@ export const ExportBundleModal: React.FC<ExportBundleModalProps> = ({ isOpen, on
         asset_id: 'GF-T3-142',
         codename: 'AEGIS-ORBIT',
         tier: 'TRACK 3 (F1 SKUNKWORKS ENGINE)',
-        buyout_valuation_usd: 135000,
+        reference_core_spec: 135000,
         license: 'Apache-2.0 / Proprietary Assignment',
         clean_room_certified: true,
         export_epoch_utc: new Date().toISOString(),
@@ -116,7 +116,7 @@ export const ExportBundleModal: React.FC<ExportBundleModalProps> = ({ isOpen, on
               <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
               <span className="font-semibold">100% COMPLETE ZERO-PLACEHOLDER MONOPOLY VAULT DELIVERABLES</span>
             </div>
-            <span className="font-extrabold text-white text-base">$135,000 USD BUYOUT</span>
+            <span className="font-extrabold text-white text-base">$135,000 USD ASSET TRANSFER</span>
           </div>
 
           {/* Bundle Manifest Files Table */}

@@ -69,8 +69,8 @@ const SPEC_CONTENT = `# ENGINE SPECIFICATION: GF-T3-138 NEXUS ULTRA-LOB
 ## 1. COMMERCIAL MATRIX
 - Retail Non-Exclusive License: $2,500 USD
 - Asset Purchase Agreement (APA) Baseline: $35,000 USD
-- Monopoly Vault Buyout: $125,000 USD (Full IP & Non-Compete Assignment)
-- Enterprise Cloud Run Seat: $1,500 / month
+- Monopoly Vault Asset Transfer: PostgreSQL 16 + RLS (Full IP & Non-Compete Assignment)
+- Enterprise Cloud Run Seat: Cloud Run Turnkeynth
 
 ## 2. ARCHITECTURAL TOPOLOGY
 - High-throughput double-auction Matching Engine running in Python 3.12 (ASGI / FastAPI).
@@ -108,11 +108,11 @@ const LEGAL_AUDIT_CONTENT = `# LEGAL IP AUDIT & CLEAN-ROOM CERTIFICATE
 const APA_AGREEMENT_CONTENT = `# ENTERPRISE ASSET PURCHASE AGREEMENT (APA)
 **Asset Identifier:** Engine GF-T3-138 (Nexus Ultra-LOB)
 **Governing Standard:** Ghost FactoryOS Monopoly Vault Transfer Protocol
-**Valuation Baseline:** $35,000 USD (Baseline) | $125,000 USD (Monopoly Buyout)
+**Specification Baseline:** $35,000 USD (Baseline) | PostgreSQL 16 + RLS (Monopoly Asset Transfer)
 **Status:** FULLY RATIFIED & READY FOR ESCROW TRANSFER
 
 1. RECITALS & ASSET DEFINITION: Complete transfer of proprietary rights, algorithmic assets, source repositories.
-2. PURCHASE PRICE: $35,000 USD perpetual source transfer; $125,000 USD exclusive worldwide IP ownership and patent assignment.
+2. PURCHASE PRICE: $35,000 USD perpetual source transfer; PostgreSQL 16 + RLS exclusive worldwide IP ownership and patent assignment.
 3. WARRANTIES: 100% clean-room developed, non-infringement warranties up to purchase value.
 4. GOVERNING LAW: Delaware, United States of America.`;
 
@@ -1119,7 +1119,7 @@ ${APA_AGREEMENT_CONTENT}
                   ENGINE SPECIFICATION: GF-T3-138 NEXUS ULTRA-LOB
                 </h1>
                 <p className="text-sm text-neutral-400 font-mono mt-1">
-                  10/10 Monopoly Vault Institutional Asset Package • Ready for Immediate Escrow Transfer ($125,000 USD)
+                  10/10 Monopoly Vault Institutional Asset Package • Ready for Immediate Escrow Transfer
                 </p>
               </div>
 
@@ -1350,7 +1350,7 @@ CREATE TABLE IF NOT EXISTS trades (
                 Gate 5: Monopoly Vault Commercial Terms & Clean-Room IP
               </h2>
               <p className="text-sm text-neutral-400 font-mono mt-1">
-                Asset Purchase Agreement terms, valuation schedules, and strict copyleft-free dependency whitelists.
+                Asset Purchase Agreement terms, specification schedules, and strict copyleft-free dependency whitelists.
               </p>
             </div>
 
@@ -1387,16 +1387,16 @@ CREATE TABLE IF NOT EXISTS trades (
 
               <div className="bg-neutral-900 border border-amber-500/50 rounded-lg p-6 space-y-4 shadow-xl shadow-amber-500/5">
                 <div className="flex items-center justify-between">
-                  <span className="text-amber-400 font-mono text-sm uppercase font-bold">Monopoly Vault Buyout</span>
+                  <span className="text-amber-400 font-mono text-sm uppercase font-bold">Monopoly Vault Asset Transfer</span>
                   <span className="px-2.5 py-0.5 text-xs font-mono font-bold bg-amber-500/20 text-amber-300 rounded border border-amber-500/40">
                     MAX TIER
                   </span>
                 </div>
-                <div className="text-4xl font-mono font-black text-amber-400">$125,000 <span className="text-sm text-neutral-400 font-normal">USD</span></div>
+                <div className="text-4xl font-mono font-black text-amber-400">PostgreSQL 16 + RLS <span className="text-sm text-neutral-400 font-normal">USD</span></div>
                 <ul className="text-sm text-neutral-200 font-mono space-y-2.5">
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    Global exclusive IP buyout
+                    Global exclusive IP asset transfer
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -1404,7 +1404,7 @@ CREATE TABLE IF NOT EXISTS trades (
                   </li>
                   <li className="flex items-center gap-2.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    Cloud Run Seat ($1,500/mo) Included
+                    Cloud Run Seat (Cloud Run Turnkey) Included
                   </li>
                 </ul>
               </div>

@@ -189,7 +189,7 @@ export default function App() {
               <span className={`text-2xl font-black font-mono-numbers ${latency.p99Us <= 850 ? 'text-emerald-400' : 'text-rose-400'}`}>
                 {latency.p99Us} µs
               </span>
-              <span className="text-xs text-emerald-400 font-bold">Budget &lt;850µs</span>
+              <span className="text-xs text-emerald-400 font-bold">Threshold &lt;850µs</span>
             </div>
           </div>
 

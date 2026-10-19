@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Ghost FactoryOS GF-T3-145 (Nexus-ATS)
- * Delaware Enterprise Asset Purchase Agreement ($150k Buyout)
+ * Turnkey Software Asset Purchase Agreement ($150k Asset Transfer)
  */
 
 import React, { useState } from 'react';
@@ -25,14 +25,14 @@ export const ApaAgreementModal: React.FC = () => {
       <div className="bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-emerald-500/40 rounded-xl p-6 shadow-2xl flex flex-wrap items-center justify-between gap-4">
         <div>
           <span className="text-xs font-bold uppercase tracking-widest px-2.5 py-1 rounded bg-emerald-950 text-emerald-300 border border-emerald-700/50 flex items-center gap-1.5 w-fit">
-            <Landmark className="w-3.5 h-3.5" /> Institutional Buyout Contract
+            <Landmark className="w-3.5 h-3.5" /> Institutional Asset Transfer Contract
           </span>
           <h2 className="text-3xl font-black text-white mt-2 flex items-center gap-3">
             <Scale className="w-8 h-8 text-emerald-400" />
-            Delaware Asset Purchase Agreement ($150,000 USD)
+            Turnkey Software Asset Purchase Agreement ($150,000 USD)
           </h2>
           <p className="text-slate-300 text-base mt-1 max-w-4xl">
-            Unredacted Delaware Asset Purchase Agreement for the complete perpetual intellectual property transfer of asset GF-T3-145 (Nexus-ATS) under exclusive Delaware Court of Chancery jurisdiction.
+            Unredacted Turnkey Software Asset Purchase Agreement for the complete perpetual intellectual property transfer of asset GF-T3-145 (Nexus-ATS) under exclusive Delaware Court of Chancery jurisdiction.
           </p>
         </div>
 

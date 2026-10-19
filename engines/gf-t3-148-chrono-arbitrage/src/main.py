@@ -61,7 +61,7 @@ def audit_compliance():
     summary="Retrieve currently detected profitable triangular arbitrage cycles",
 )
 def get_triangular_routes(
-    min_profit_bps: float = Query(default=5.0, ge=0.0, description="Minimum profit threshold in basis points"),
+    min_profit_bps: float = Query(default=5.0, ge=0.0, description="Minimum yield threshold in basis points"),
     max_hops: int = Query(default=4, ge=3, le=6, description="Maximum hops in cycle"),
 ):
     """

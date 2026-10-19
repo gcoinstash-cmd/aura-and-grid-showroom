@@ -580,7 +580,7 @@ Analytical closed-form state transition matrix derived from the Hill-Euler relat
 3. **Monopoly Vault Eligibility:** Asset GF-T3-142 meets 100% of the criteria required for institutional acquisition and autonomous Antigravity code synthesis.
 `;
 
-export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AGREEMENT (ENTERPRISE MONOPOLY BUYOUT)
+export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AGREEMENT (ENTERPRISE MONOPOLY ASSET TRANSFER)
 
 **ASSET IDENTIFIER:** GF-T3-142  
 **PROJECT CODENAME:** AEGIS-ORBIT AUTONOMOUS LEO ENGINE  
@@ -678,7 +678,7 @@ export const ENGINE_SPEC_T3_AEGIS_MD = `# GHOST FACTORYOS FLEET TRACK 3 (F1 SKUN
 **System Name:** Aegis-Orbit: Autonomous Low-Earth Orbit Satellite Constellation Stationkeeping & Collision Avoidance Reference Engine  
 **Classification:** Fleet Track 3 — Monopoly Grade 10/10 Deliverable  
 **Antigravity Autonomous Scaffold Target:** Zero-Placeholder Full Architecture Ingestion  
-**Delaware APA Valuation:** $135,000 USD  
+**Turnkey Software Asset Purchase Agreement Specification: ** $135,000 USD  
 
 ---
 
@@ -763,8 +763,8 @@ The closed-form 2-impulse collision avoidance delta-V optimization delivers mini
 
 ---
 
-## 3. P99 LATENCY & COMPUTE BUDGET SLA
-- **Target Orbital Step Budget:** $< 8.2\text{ ms}$ per satellite per orbital revolution.
+## 3. P99 LATENCY & COMPUTE THRESHOLD SLA
+- **Target Orbital Step Threshold:** $< 8.2\text{ ms}$ per satellite per orbital revolution.
 - **P50 Latency:** $0.42\text{ ms}$ (Single RK4 6-DOF propagation step).
 - **P99 Latency:** $4.85\text{ ms}$ (Full 7-state EKF update + 20-object CARA B-plane Foster integral).
 - **Memory Overhead:** 0 GC allocations per step via pre-allocated matrix memory buffers.
@@ -777,5 +777,5 @@ The closed-form 2-impulse collision avoidance delta-V optimization delivers mini
 - [x] **Criterion 3: Production Data Schema:** Complete PostgreSQL / Google Cloud AlloyDB DDL (\`ALLOYDB_SCHEMA.sql\`).
 - [x] **Criterion 4: OpenAPI 3.1 Spec:** Fully validated JSON schema (\`OPENAPI_SPEC.json\`) with RFC 7807 problem details.
 - [x] **Criterion 5: Clean-Room IP Audit:** 100% permissive whitelist verification (\`LEGAL_IP_AUDIT.md\`).
-- [x] **Criterion 6: Delaware APA Contract:** Executable $135,000 USD Asset Purchase Agreement (\`ENTERPRISE_APA_AGREEMENT.md\`).
+- [x] **Criterion 6: Turnkey Software Asset Purchase Agreement Contract:** Executable $135,000 USD Asset Purchase Agreement (\`ENTERPRISE_APA_AGREEMENT.md\`).
 `;

@@ -151,7 +151,7 @@ async def get_fleet_telemetry() -> FleetTelemetryResponse:
     summary="Detailed Engine Health Diagnostics",
 )
 async def get_health_diagnostics() -> EngineHealthResponse:
-    """Returns operational health, compute budget, and clean-room compliance status."""
+    """Returns operational health, compute threshold, and clean-room compliance status."""
     return engine.get_health()
 
 

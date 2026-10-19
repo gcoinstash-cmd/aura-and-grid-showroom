@@ -7,7 +7,7 @@ export const LegalVaultViewer: React.FC = () => {
 
   const apaText = `# ASSET PURCHASE AGREEMENT (ENTERPRISE MONOPOLY VAULT)
 CONTRACT REFERENCE: APA-GF-T3-144-2026
-TRANSACTION VALUE: $145,000.00 USD (ONE HUNDRED FORTY-FIVE THOUSAND UNITED STATES DOLLARS)
+TRANSACTION SPECIFICATION: $145,000.00 USD (ONE HUNDRED FORTY-FIVE THOUSAND UNITED STATES DOLLARS)
 ASSET CODE & DESCRIPTION: GF-T3-144 (Lattice-Mesh: Post-Quantum Cryptographic Mesh Network & Ephemeral Key-Encapsulation Engine)
 GOVERNING LAW: STATE OF DELAWARE, UNITED STATES OF AMERICA
 
@@ -38,7 +38,7 @@ ARTICLE IV: GOVERNING LAW & JURISDICTION
 ASSET CODE: GF-T3-144
 TITLE: Lattice-Mesh: Post-Quantum Cryptographic Mesh Network & Ephemeral Key-Encapsulation Engine
 AUDIT CLASSIFICATION: Pristine Clean-Room Certification / Zero-Copyleft Contagion
-BUYOUT VALUE: $145,000.00 USD
+REFERENCE CORE: $145,000.00 USD
 EFFECTIVE DATE: October 5, 2026
 
 1. EXECUTIVE CLEAN-ROOM CERTIFICATION
@@ -81,7 +81,7 @@ STATUS: 100% UNENCUMBERED / READY FOR FULL ASSET PURCHASE TRANSFER`;
               Institutional Legal &amp; Intellectual Property Vault
             </h2>
             <span className="text-base text-slate-400 block mt-1 font-mono">
-              Delaware Court of Chancery Jurisdiction · $145,000.00 USD Buyout Terms · Zero-Copyleft Certified
+              Delaware Court of Chancery Jurisdiction · $145,000.00 USD Reference Core · Zero-Copyleft Certified
             </span>
           </div>
 

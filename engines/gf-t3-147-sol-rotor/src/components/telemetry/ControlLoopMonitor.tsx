@@ -58,10 +58,10 @@ export const ControlLoopMonitor: React.FC<ControlLoopMonitorProps> = ({ state })
           </div>
         </div>
 
-        {/* Latency Budget Progress Bar */}
+        {/* Latency Threshold Progress Bar */}
         <div className="space-y-2 mb-6">
           <div className="flex justify-between text-sm font-mono font-semibold">
-            <span className="text-slate-300">BUDGET UTILIZATION: {budgetUsedPct.toFixed(1)}%</span>
+            <span className="text-slate-300">THRESHOLD UTILIZATION: {budgetUsedPct.toFixed(1)}%</span>
             <span className="text-cyan-300">MARGIN: {(budgetMaxMs - ndiLoopLatencyMs).toFixed(2)} ms</span>
           </div>
           <div className="w-full bg-slate-950 rounded-full h-4 p-0.5 border border-slate-700 overflow-hidden flex">

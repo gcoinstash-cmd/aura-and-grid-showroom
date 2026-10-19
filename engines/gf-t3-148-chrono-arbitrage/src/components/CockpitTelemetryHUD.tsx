@@ -254,7 +254,7 @@ export const CockpitTelemetryHUD: React.FC<Props> = ({
                   <th className="py-3 px-3.5 text-right">GROSS MULT</th>
                   <th className="py-3 px-3.5 text-right">NET SPREAD</th>
                   <th className="py-3 px-3.5 text-right">SLIPPAGE</th>
-                  <th className="py-3 px-3.5 text-right">EST. NET PROFIT</th>
+                  <th className="py-3 px-3.5 text-right">EST. NET YIELD</th>
                   <th className="py-3 px-3.5 text-center">FILL LATENCY</th>
                   <th className="py-3 px-3.5 text-right">ACTION</th>
                 </tr>

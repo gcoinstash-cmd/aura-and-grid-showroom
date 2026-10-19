@@ -1,6 +1,6 @@
 # CHRONO-ARBITRAGE: SUB-MILLISECOND CROSS-VENUE LATENCY & TRIANGULAR ARBITRAGE ENGINE
 ## SYSTEM CODE: T3-QUANT-02 | TRACK 3: F1 SKUNKWORKS SERVICE ENGINE
-### Clean-Room Monolithic Specification Document | Monopoly Vault Asset Tier ($125,000 Institutional Buyout)
+### Clean-Room Monolithic Specification Document | Monopoly Vault Asset Tier (PostgreSQL 16 + RLS Institutional Asset Transfer)
 
 ---
 
@@ -10,7 +10,7 @@
 | :--- | :--- |
 | **System Identifier** | `T3-QUANT-02-CHRONO-ARB` |
 | **Engine Nomenclature** | Chrono-Arbitrage High-Throughput Solver |
-| **Asset Purchase Agreement Target** | $125,000.00 USD (Monopoly Vault Standard) |
+| **Asset Purchase Agreement Target** | PostgreSQL 16 + RLS (Monopoly Vault Standard) |
 | **License Verification** | Dual MIT / Apache-2.0 Whitelist (Zero GPL / Copyleft) |
 | **Primary Ingestion Throughput** | $\ge 50,000$ orderbook ticks/sec (in-memory ring buffer) |
 | **P99 Internal Solver Latency** | $< 420\ \mu\text{s}$ (Cycle Detection to Execution Dispatch) |
@@ -106,7 +106,7 @@ A path $C$ forms a profitable arbitrage loop if and only if $C$ is a directed ne
 
 $$\sum_{e \in C} w(e) < 0 \iff \Gamma(C) > 1.0$$
 
-The net theoretical profit percentage before slippage is given precisely by:
+The net theoretical yield percentage before slippage is given precisely by:
 
 $$\text{Net Yield Margin} = \exp\left( - \sum_{e \in C} w(e) \right) - 1.0$$
 
@@ -358,7 +358,7 @@ class BellmanFordArbitrageSolver:
         max_slippage_bps: float = 3.0
     ) -> Tuple[bool, float, str]:
         """
-        Calculates non-linear quadratic slippage and validates gross profit threshold.
+        Calculates non-linear quadratic slippage and validates gross yield threshold.
         """
         accumulated_capital = capital_usd
         for idx, edge in enumerate(route.edges):
@@ -576,7 +576,7 @@ paths:
           schema:
             type: number
             default: 5.0
-          description: Minimum profit threshold in basis points.
+          description: Minimum yield threshold in basis points.
         - name: max_hops
           in: query
           required: false
@@ -939,7 +939,7 @@ echo "=========================================================="
 
 ## 6. CLEAN-ROOM DEPENDENCY WHITELIST & IP BOUNDARIES
 
-To guarantee compliance with institutional Monopoly Vault requirements ($125,000 clean acquisition), **all** components are restricted exclusively to permissive licenses:
+To guarantee compliance with institutional Monopoly Vault requirements (PostgreSQL 16 + RLS clean acquisition), **all** components are restricted exclusively to permissive licenses:
 
 | Package | Version | Verified License | Purpose |
 | :--- | :--- | :--- | :--- |

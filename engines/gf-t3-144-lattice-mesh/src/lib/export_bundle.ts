@@ -2,7 +2,7 @@
  * Master Monopoly Bundle Exporter
  * Generates a complete, verifiable .zip archive containing all source code,
  * mathematical engines, AlloyDB SQL schemas, OpenAPI 3.1 specifications,
- * and institutional Delaware APA legal agreements.
+ * and institutional Turnkey Software Asset Purchase Agreement legal agreements.
  */
 
 import JSZip from 'jszip';
@@ -51,7 +51,7 @@ export async function generateMasterMonopolyZip(): Promise<Blob> {
   const vaultReadme = `# GHOST FACTORYOS FLEET TRACK 3 — MONOPOLY VAULT MASTER BUNDLE
 Asset ID: GF-T3-144
 Asset Title: Lattice-Mesh: Post-Quantum Cryptographic Mesh Network & Ephemeral Key-Encapsulation Engine
-Transaction Buyout Value: $145,000.00 USD
+Transaction Reference Core: $145,000.00 USD
 Delaware Court of Chancery Jurisdiction
 NIST FIPS 203 (ML-KEM-1024) Compliant
 
@@ -60,7 +60,7 @@ CONTENTS:
 2. ALLOYDB_SCHEMA.sql (Normalized PostgreSQL/AlloyDB Enterprise DDL)
 3. OPENAPI_SPEC.json (OpenAPI 3.1 REST API Specification)
 4. LEGAL_IP_AUDIT.md (Clean-Room IP Certification & Dependency Whitelist)
-5. ENTERPRISE_APA_AGREEMENT.md (Delaware Asset Purchase Agreement Contract)
+5. ENTERPRISE_APA_AGREEMENT.md (Turnkey Software Asset Purchase Agreement Contract)
 6. src/lib/pqc/ml_kem.ts (Module-LWE Polynomial Ring & NTT Implementation)
 7. src/lib/pqc/hybrid_engine.ts (Curve25519 + ML-KEM-1024 + HKDF-SHA512 Key Fusion)
 

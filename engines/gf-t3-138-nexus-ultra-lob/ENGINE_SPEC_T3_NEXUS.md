@@ -13,12 +13,12 @@
 The **Nexus Ultra-LOB** (Limit Order Book) is a deterministic, low-latency, price-time priority (FIFO) double-auction matching engine engineered in Python 3.12 (ASGI / FastAPI runtime) with an in-memory sorted radix data structure, asynchronous Redis Pub/Sub market data dissemination, and write-optimized Google Cloud AlloyDB / PostgreSQL persistence.
 
 ### Monopoly Vault Commercial Matrix
-| Tier / Licensing Model | Valuation / Fee | Rights & Grant Scope |
+| Tier / Licensing Model | Specification / Fee | Rights & Grant Scope |
 | :--- | :--- | :--- |
 | **Retail Non-Exclusive License** | **$2,500 USD** | Single-tenant deployment license, compiled binaries, 1-year security patches, no source code resale rights. |
 | **Asset Purchase Agreement (APA) Baseline** | **$35,000 USD** | Complete proprietary source code transfer, clean-room copyright assignment, full perpetual commercial ownership. |
-| **Monopoly Vault Buyout** | **$125,000 USD** | Global exclusive IP buyout, non-compete release, transfer of all git histories, mathematical proofs, and patentable trade-dress. |
-| **Enterprise Cloud Run Seat** | **$1,500 / month** | Managed High-Availability Cloud Run container seat, multi-region failover, SLA 99.999%, real-time AlloyDB sync. |
+| **Monopoly Vault Asset Transfer** | **PostgreSQL 16 + RLS** | Global exclusive IP asset transfer, non-compete release, transfer of all git histories, mathematical proofs, and patentable trade-dress. |
+| **Enterprise Cloud Run Seat** | **Cloud Run Turnkeynth** | Managed High-Availability Cloud Run container seat, multi-region failover, SLA 99.999%, real-time AlloyDB sync. |
 
 ---
 
@@ -946,6 +946,6 @@ All dependencies are certified and restricted to non-viral permissive software l
 
 The intellectual property, algorithms, schemas, benchmark test suites, and deployment manifests associated with **Engine GF-T3-138 (Nexus Ultra-LOB)** are available under the following institutional terms:
 
-1. **Standard APA Buyout Baseline:** $35,000 USD (Includes standard source code transfer, clean-room audit certificate, and perpetual exploitation rights).
-2. **Monopoly Vault Buyout:** $125,000 USD (Full exclusive worldwide patent & copyright assignment, non-compete release for the HFT FinTech vertical, and automated Antigravity scaffolding manifest).
+1. **Standard APA Reference Core:** $35,000 USD (Includes standard source code transfer, clean-room audit certificate, and perpetual exploitation rights).
+2. **Monopoly Vault Asset Transfer:** PostgreSQL 16 + RLS (Full exclusive worldwide patent & copyright assignment, non-compete release for the HFT FinTech vertical, and automated Antigravity scaffolding manifest).
 3. **Monthly Cloud Run Seat:** $1,500 USD / month (Managed dedicated container instance, zero-downtime hot-reloads, 99.999% SLA).

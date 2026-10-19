@@ -22,11 +22,11 @@ export const LegalVaultViewer: React.FC = () => {
           <div className="flex items-center gap-3 mb-2">
             <ShieldCheck className="w-7 h-7 text-emerald-400" />
             <h2 className="text-2xl font-bold text-white">
-              Institutional Legal Vault & Delaware APA Agreement
+              Institutional Legal Vault & Turnkey Software Asset Purchase Agreement Agreement
             </h2>
           </div>
           <p className="text-base text-slate-300">
-            Unredacted Delaware Asset Purchase Agreement ($145,000 Buyout) and 100% Clean-Room Intellectual Property Audit Certification.
+            Unredacted Turnkey Software Asset Purchase Agreement ($145,000 Asset Transfer) and 100% Clean-Room Intellectual Property Audit Certification.
           </p>
         </div>
 
@@ -50,9 +50,9 @@ export const LegalVaultViewer: React.FC = () => {
         </div>
 
         <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 glow-amber">
-          <div className="text-sm font-semibold text-slate-400 mb-1">TRANSACTION VALUATION</div>
+          <div className="text-sm font-semibold text-slate-400 mb-1">TRANSACTION SPECIFICATION</div>
           <div className="text-2xl font-black font-mono text-amber-400">$145,000 USD</div>
-          <div className="text-sm text-slate-400 mt-1">Outright Perpetual Buyout</div>
+          <div className="text-sm text-slate-400 mt-1">Outright Perpetual Asset Transfer</div>
         </div>
 
         <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 glow-cyan">
@@ -80,7 +80,7 @@ export const LegalVaultViewer: React.FC = () => {
             }`}
           >
             <Scale className="w-5 h-5 text-amber-400" />
-            1. Delaware APA Agreement ($145,000 Buyout)
+            1. Turnkey Software Asset Purchase Agreement Agreement (Institutional Asset Transfer)
           </button>
 
           <button

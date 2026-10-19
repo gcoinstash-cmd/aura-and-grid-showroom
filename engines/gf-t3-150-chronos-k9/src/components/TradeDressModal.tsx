@@ -48,7 +48,7 @@ export const TradeDressModal: React.FC<TradeDressModalProps> = ({ isOpen, onClos
 
         {/* Modal Content Body */}
         <div className="p-6 sm:p-8 space-y-7 max-h-[75vh] overflow-y-auto font-mono-tactical text-sm text-zinc-200">
-          {/* Section 1: Dealership Fleet Tier & Inventory Valuation Card */}
+          {/* Section 1: Dealership Fleet Tier & Inventory Specification Card */}
           <div className="p-6 rounded-xl bg-zinc-900/80 border border-blue-500/40 glow-blue">
             <div className="flex items-center justify-between pb-4 border-b border-zinc-800 flex-wrap gap-2">
               <span className="text-sm sm:text-base font-extrabold text-blue-300 font-display-hud tracking-wider uppercase flex items-center gap-2.5">
@@ -63,8 +63,8 @@ export const TradeDressModal: React.FC<TradeDressModalProps> = ({ isOpen, onClos
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
               {/* Tier 1 */}
               <div className="p-4 rounded-xl bg-zinc-950/80 border border-zinc-800">
-                <div className="text-xs text-zinc-400 uppercase font-bold tracking-wider">Evaluation Tier</div>
-                <div className="text-base font-bold text-white mt-1">DEMO LICENSE</div>
+                <div className="text-xs text-zinc-400 uppercase font-bold tracking-wider">Assessment Tier</div>
+                <div className="text-base font-bold text-white mt-1">SANDBOX ACCESS</div>
                 <div className="text-3xl font-black text-blue-400 mt-2">$1,500 <span className="text-xs font-normal text-zinc-400">USD</span></div>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-2.5 leading-relaxed font-medium">
                   Interactive operational build access, localized client telemetry harness, non-exclusive internal evaluation rights.
@@ -74,7 +74,7 @@ export const TradeDressModal: React.FC<TradeDressModalProps> = ({ isOpen, onClos
               {/* Tier 2 */}
               <div className="p-4 rounded-xl bg-zinc-950/80 border border-purple-500/50 glow-purple">
                 <div className="text-xs text-purple-300 uppercase font-bold tracking-wider">Commercial Standard</div>
-                <div className="text-base font-bold text-white mt-1">STANDARD APA BUYOUT</div>
+                <div className="text-base font-bold text-white mt-1">STANDARD APA ASSET TRANSFER</div>
                 <div className="text-3xl font-black text-purple-400 mt-2">$14,500 <span className="text-xs font-normal text-zinc-400">USD</span></div>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-2.5 leading-relaxed font-medium">
                   Full Asset Purchase Agreement (APA) with clean-room codebase transfer, royalty-free perpetual commercial license.
@@ -84,7 +84,7 @@ export const TradeDressModal: React.FC<TradeDressModalProps> = ({ isOpen, onClos
               {/* Tier 3 */}
               <div className="p-4 rounded-xl bg-zinc-950/80 border border-amber-500/50 glow-amber">
                 <div className="text-xs text-amber-300 uppercase font-bold tracking-wider">Institutional Monopoly</div>
-                <div className="text-base font-bold text-white mt-1">MONOPOLY VAULT BUYOUT</div>
+                <div className="text-base font-bold text-white mt-1">MONOPOLY VAULT ASSET TRANSFER</div>
                 <div className="text-3xl font-black text-amber-400 mt-2">$35,000 <span className="text-xs font-normal text-zinc-400">USD</span></div>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-2.5 leading-relaxed font-medium">
                   Total exclusive IP assignment, worldwide trade-dress defense warranty, complete source surrender, and patent declaration.

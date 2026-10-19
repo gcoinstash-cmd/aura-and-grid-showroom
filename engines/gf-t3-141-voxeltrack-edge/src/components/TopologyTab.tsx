@@ -57,7 +57,7 @@ export const TopologyTab: React.FC = () => {
       latency: '1.45 ms',
       memory: 'Track Table: 64 Active Targets',
       throughput: '99.8% Association Accuracy',
-      details: 'Maintains state vectors [px, py, pz, vx, vy, vz, ax, ay, yaw, yaw_rate, scale] for all vehicles, pedestrians, and obstacles. Solves bipartite assignment via Generalized 3D IoU bounding cost matrix.'
+      details: 'Maintains state vectors [px, py, pz, vx, vy, vz, ax, ay, yaw, yaw_rate, scale] for all vehicles, pedestrians, and obstacles. Solves bipartite assignment via Generalized 3D IoU bounding matrix matrix.'
     },
     {
       id: 4,

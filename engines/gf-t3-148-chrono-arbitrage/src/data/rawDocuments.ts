@@ -1,6 +1,6 @@
 export const ENGINE_SPEC_MARKDOWN = `# CHRONO-ARBITRAGE: SUB-MILLISECOND CROSS-VENUE LATENCY & TRIANGULAR ARBITRAGE ENGINE
 ## SYSTEM CODE: T3-QUANT-02 | TRACK 3: F1 SKUNKWORKS SERVICE ENGINE
-### Clean-Room Monolithic Specification Document | Monopoly Vault Asset Tier ($125,000 Institutional Buyout)
+### Clean-Room Monolithic Specification Document | Monopoly Vault Asset Tier (PostgreSQL 16 + RLS Institutional Asset Transfer)
 
 ---
 
@@ -10,7 +10,7 @@ export const ENGINE_SPEC_MARKDOWN = `# CHRONO-ARBITRAGE: SUB-MILLISECOND CROSS-V
 | :--- | :--- |
 | **System Identifier** | \`T3-QUANT-02-CHRONO-ARB\` |
 | **Engine Nomenclature** | Chrono-Arbitrage High-Throughput Solver |
-| **Asset Purchase Agreement Target** | $125,000.00 USD (Monopoly Vault Standard) |
+| **Asset Purchase Agreement Target** | PostgreSQL 16 + RLS (Monopoly Vault Standard) |
 | **License Verification** | Dual MIT / Apache-2.0 Whitelist (Zero GPL / Copyleft) |
 | **Primary Ingestion Throughput** | $\\ge 50,000$ orderbook ticks/sec (in-memory ring buffer) |
 | **P99 Internal Solver Latency** | $< 420\\ \\mu\\text{s}$ (Cycle Detection to Execution Dispatch) |
@@ -111,7 +111,7 @@ export const LEGAL_IP_AUDIT_MARKDOWN = `# INSTITUTIONAL LEGAL & INTELLECTUAL PRO
 ## 1. CLEAN-ROOM METHODOLOGY & ORIGIN CERTIFICATION
 - Date of Certification: October 4, 2026
 - Lead Systems Architect, Ghost FactoryOS
-- Asset Valuation Tier: Monopoly Vault Enterprise Tier ($125,000 USD APA Target)
+- Asset Specification Tier: Monopoly Vault Enterprise Tier (PostgreSQL 16 + RLS APA Target)
 - Target Engine: T3-QUANT-02: CHRONO-ARBITRAGE
 
 1. Original Mathematical Formulation: The algorithms, graph data structures, Bellman-Ford negative-cycle relaxation adaptations, and dynamic order-routing logic embodied in T3-QUANT-02 were developed from first principles using standard textbook mathematical graph theory.
@@ -150,7 +150,7 @@ export const ENTERPRISE_APA_AGREEMENT_MARKDOWN = `# ENTERPRISE ASSET PURCHASE AG
 ---
 
 EFFECTIVE DATE: October 4, 2026
-PURCHASE PRICE: $125,000.00 USD (Monopoly Vault Standard Allocation)
+PURCHASE PRICE: PostgreSQL 16 + RLS (Monopoly Vault Standard Allocation)
 SELLER: Ghost FactoryOS Skunkworks Systems Division
 BUYER: Institutional Vault Acquisition Entity / Antigravity Execution Syndicate
 
@@ -163,7 +163,7 @@ Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer, free an
 - Trade secrets & full algorithm rights for the negative log-exchange rate transformation.
 
 ### SECTION 2: PURCHASE PRICE & PAYMENT SCHEDULE
-- Total Consideration: $125,000.00 USD
+- Total Consideration: PostgreSQL 16 + RLS
 - Tranche 1 (Execution Deposit): $25,000.00 USD (20%) upon mutual execution.
 - Tranche 2 (Algorithmic Verification & Test Suite Pass): $50,000.00 USD (40%) upon verification of the PyTest test harness showing zero failures and >40,000 ticks/sec throughput.
 - Tranche 3 (Final Antigravity Ingestion & Closing): $50,000.00 USD (40%) upon completion of clean-room audit and deployment readiness on Google Cloud Run Gen2.

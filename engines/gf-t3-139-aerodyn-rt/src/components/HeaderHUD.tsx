@@ -50,7 +50,7 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
     { id: 'tab3_specification', label: '3. SPECIFICATION & 10/10 EXPORT', icon: FileText, badge: 'BUNDLE' },
     { id: 'tab4_topology', label: '4. ARCHITECTURAL TOPOLOGY', icon: Layers, badge: 'PREEMPT_RT' },
     { id: 'tab5_alloydb', label: '5. ALLOYDB / TIMESCALE DDL', icon: Database, badge: 'HYPERTABLE' },
-    { id: 'tab6_monopoly', label: '6. MONOPOLY VAULT & APA', icon: Lock, badge: '$125K ASSET' },
+    { id: 'tab6_monopoly', label: '6. MONOPOLY VAULT & APA', icon: Lock, badge: 'VAULT COVENANT' },
     { id: 'tab7_deployment', label: '7. INFRASTRUCTURE & AUDIT', icon: Server, badge: '99.999%' },
   ];
 

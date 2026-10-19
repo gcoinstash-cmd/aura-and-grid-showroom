@@ -56,9 +56,9 @@ export const DocumentViewer: React.FC = () => {
     },
     APA_CONTRACT: {
       title: 'ENTERPRISE_APA_AGREEMENT.md',
-      label: 'Delaware Asset Purchase Agreement',
+      label: 'Turnkey Software Asset Purchase Agreement',
       icon: FileCheck,
-      badge: '$140,000 BUYOUT',
+      badge: 'LEGAL DILIGENCE',
       content: ENTERPRISE_APA_MD,
       mime: 'text/markdown',
       filename: 'ENTERPRISE_APA_AGREEMENT.md',

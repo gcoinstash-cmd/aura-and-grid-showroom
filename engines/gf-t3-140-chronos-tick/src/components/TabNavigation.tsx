@@ -44,7 +44,7 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onSelec
     {
       id: 'topology',
       label: '4. ARCHITECTURAL TOPOLOGY',
-      badge: '4.8ms BUDGET',
+      badge: '4.8ms THRESHOLD',
       icon: Network,
     },
     {
@@ -56,7 +56,7 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onSelec
     {
       id: 'vault',
       label: '6. MONOPOLY VAULT & APA AGREEMENT',
-      badge: '$125K ASSET',
+      badge: 'VAULT COVENANT',
       icon: ShieldCheck,
     },
   ];

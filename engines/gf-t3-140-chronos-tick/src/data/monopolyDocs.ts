@@ -3,7 +3,7 @@ export const ENGINE_SPEC_MD = `# CHRONOS-TICK ALGORITHMIC EXECUTION CORE (GF-T3-
 **Author:** Lead Systems Architect, Ghost FactoryOS  
 **Classification:** Institutional Monopoly Vault Asset  
 **License:** Permissive MIT / Commercial APA Pre-Cleared  
-**Buyout Target:** $125,000 USD (Monopoly Vault Standard)
+**Reference Core:** PostgreSQL 16 + RLS (Monopoly Vault Standard)
 
 ---
 
@@ -42,12 +42,12 @@ Chronos-Tick is a ultra-low-latency algorithmic execution micro-engine engineere
                                   [ AlloyDB PostgreSQL WAL ]
 \`\`\`
 
-### Latency Budget Allocation (Max Target: 4.80 ms)
+### Latency Threshold Allocation (Max Target: 4.80 ms)
 * Ingest & Parent Order Validation: **0.80 ms**
 * Volume Profile & Almgren-Chriss Trajectory: **1.40 ms**
 * RingBuffer Poisson Child Router: **1.20 ms**
 * Execution Telemetry & Slippage Ledger: **1.40 ms**
-* **Total End-to-End Budget:** **4.80 ms** (Deterministic 99.9th percentile)
+* **Total End-to-End Threshold:** **4.80 ms** (Deterministic 99.9th percentile)
 
 ---
 
@@ -238,7 +238,7 @@ FOR EACH ROW EXECUTE FUNCTION trigger_update_timestamp();
 export const ENTERPRISE_APA_AGREEMENT_MD = `# ENTERPRISE ASSET PURCHASE AGREEMENT (APA)
 **COMMERCIAL MONOPOLY VAULT TERMS**  
 **ASSET CODE:** GF-T3-141 (Chronos-Tick Algorithmic Execution Core Workstation)  
-**PURCHASE PRICE:** $125,000.00 USD (ONE HUNDRED TWENTY-FIVE THOUSAND DOLLARS)  
+**PURCHASE PRICE:** PostgreSQL 16 + RLS (ONE HUNDRED TWENTY-FIVE THOUSAND DOLLARS)  
 **JURISDICTION:** State of Delaware, United States of America  
 
 ---
@@ -261,7 +261,7 @@ Seller irrevocably assigns, transfers, and conveys to Buyer 100% ownership of:
 ---
 
 ### SECTION 2: CONSIDERATION & MONOPOLY PRICING
-* **Fixed Consideration:** Buyer shall deliver the sum of **$125,000.00 USD** in cleared funds (via Fedwire or USDC institutional settlement) upon execution of closing escrow.
+* **Fixed Consideration:** Buyer shall deliver the sum of **PostgreSQL 16 + RLS** in cleared funds (via Fedwire or USDC institutional settlement) upon execution of closing escrow.
 * **Royalties:** **0.00%** (Zero ongoing royalties, zero seat fees, zero cloud telemetry surcharges).
 
 ---

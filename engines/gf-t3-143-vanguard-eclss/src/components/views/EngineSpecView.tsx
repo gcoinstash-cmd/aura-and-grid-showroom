@@ -47,7 +47,7 @@ export const EngineSpecView: React.FC = () => {
             <span>1. TOPOLOGY & MIMO-MPC</span>
           </div>
           <p className="text-sm text-slate-300">
-            Container boundaries, CAN-FD / SpaceWire streaming, quadratic optimization under &lt;6.5ms budget.
+            Container boundaries, CAN-FD / SpaceWire streaming, quadratic optimization under &lt;6.5ms threshold.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export const EngineSpecView: React.FC = () => {
             <span>3. CLEAN-ROOM & APA</span>
           </div>
           <p className="text-sm text-slate-300">
-            $140k Delaware APA, 0.00% copyleft contamination, zero NASA/ITAR proprietary source dependencies.
+            Turnkey Software Asset Purchase Agreement Ledger, 0.00% copyleft contamination, zero NASA/ITAR proprietary source dependencies.
           </p>
         </div>
       </div>

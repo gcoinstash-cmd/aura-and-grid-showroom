@@ -30,14 +30,14 @@ export async function generateMasterBundleZip(): Promise<Blob> {
     // 4. Legal Clean-Room IP Audit
     rootFolder.file('LEGAL_IP_AUDIT.md', LEGAL_IP_AUDIT_MD);
 
-    // 5. Enterprise Asset Purchase Agreement ($140k Buyout)
+    // 5. Enterprise Asset Purchase Agreement ($140k Asset Transfer)
     rootFolder.file('ENTERPRISE_APA_AGREEMENT.md', ENTERPRISE_APA_AGREEMENT_MD);
 
     // 6. Standalone Engine Core TS
     const engineTs = `/**
  * GF-T3-143: VANGUARD-ECLSS STANDALONE CORE ENGINE
  * Autonomous Closed-Loop Life Support Mathematics & MPC State Estimator
- * License: Apache-2.0 / Commercial Buyout ($140,000 USD)
+ * License: Apache-2.0 / Commercial Asset Transfer ($140,000 USD)
  */
 
 export const PHYSICAL_CONSTANTS = {
@@ -84,7 +84,7 @@ export function calculatePsychrometrics(tempC: number, rhPct: number, totalP_kpa
     const readmeMd = `# GF-T3-143: VANGUARD-ECLSS MONOPOLY VAULT MASTER BUNDLE
 **Asset Name:** Vanguard-ECLSS (Autonomous Closed-Loop Environmental Control & Life Support System)
 **Asset Identifier:** GF-T3-143
-**Monopoly Buyout Valuation:** $140,000.00 USD
+**Monopoly Asset Transfer Specification: ** $140,000.00 USD
 **Jurisdiction:** State of Delaware
 
 ## Included Files in this Archive:
@@ -92,7 +92,7 @@ export function calculatePsychrometrics(tempC: number, rhPct: number, totalP_kpa
 2. \`ALLOYDB_SCHEMA.sql\` — Cloud-scale PostgreSQL 16 / AlloyDB time-series partitioned DDL with zero-RPO audit triggers.
 3. \`OPENAPI_SPEC.json\` — Production OpenAPI 3.1.0 contract for real-time telemetry, gas balancing, and FDIR emergency isolation.
 4. \`LEGAL_IP_AUDIT.md\` — Clean-Room intellectual property certification, 100% permissive dependency whitelist, copyleft blacklist audit.
-5. \`ENTERPRISE_APA_AGREEMENT.md\` — Unredacted Delaware Asset Purchase Agreement for $140,000 USD transfer.
+5. \`ENTERPRISE_APA_AGREEMENT.md\` — Unredacted Turnkey Software Asset Purchase Agreement for $140,000 USD transfer.
 6. \`vanguard_engine_core.ts\` — Standalone TypeScript reference engine.
 
 Engineered by Ghost FactoryOS Track 3 Lead Systems Architect.

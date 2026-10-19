@@ -2,7 +2,7 @@
 ## CHRONOS KINETIC-9: SUPERCONDUCTING MAGLEV TELEMETRY & VECTOR RIG
 **Track Designation:** Track 3 (F1 Skunkworks Service Engine - 70% Design Workload Deliverable)  
 **Security Clearance:** Institutional Enterprise Vault (Monopoly Grade)  
-**Asset Buyout Anchor:** $85,000 USD (Delaware APA Executed)  
+**Asset Reference Core:** $85,000 USD (Turnkey Software Asset Purchase Agreement Executed)  
 **Date:** October 7, 2026  
 
 ---

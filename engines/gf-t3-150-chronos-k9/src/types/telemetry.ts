@@ -76,8 +76,8 @@ export interface TradeDressDefense {
     assetName: string;
     chassisClass: string;
     demoLicensePrice: string;
-    apaBuyoutPrice: string;
-    monopolyVaultBuyout: string;
+    apatransferPrice: string;
+    monopolyVaulttransfer: string;
     cleanRoomLicensing: string;
     specifications: Record<string, string>;
   };

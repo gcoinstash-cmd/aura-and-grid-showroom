@@ -165,8 +165,8 @@ export const OPENAPI_SPEC_JSON = {
     },
     "/api/v1/telemetry/p99-audit": {
       "get": {
-        "summary": "Retrieve Real-Time P99 Latency & Compute Budget Telemetry",
-        "description": "Audits compute budget consumption ensuring event processing latency remains strictly under 750 microseconds at 10M events/second throughput.",
+        "summary": "Retrieve Real-Time P99 Latency & Compute Threshold Telemetry",
+        "description": "Audits compute threshold consumption ensuring event processing latency remains strictly under 750 microseconds at 10M events/second throughput.",
         "operationId": "getTelemetryAudit",
         "tags": ["Telemetry & Health"],
         "responses": {

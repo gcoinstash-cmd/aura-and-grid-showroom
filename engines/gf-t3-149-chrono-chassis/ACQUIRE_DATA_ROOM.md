@@ -9,15 +9,15 @@
 
 ---
 
-## 1. VALUATION METRICS & PRICING PROTOCOL
+## 1. SPECIFICATION METRICS & PRICING PROTOCOL
 
-| Valuation Tier | Parameter | Amount (USD) | Governance Status |
+| Specification Tier | Parameter | Amount (USD) | Governance Status |
 |:---|:---|:---:|:---|
-| **Enterprise Seat License** | Monthly Recurring License | **$1,500 / mo** | Available for institutional trading desks |
-| **Baseline Trim Floor** | Pre-Revenue Minimum APA Floor | **$35,000** | Strict walk-away floor reserve |
-| **Monopoly Vault Planning Value** | Institutional Vault Buyout Ceiling | **$85,000** | Authorized standard transaction target |
-| **Strategic Asking Ceiling** | Exclusive Monopoly Buyout Value | **$125,000** | Tier-1 quantitative firm buyout ask |
-| **ASC 350-40 Replacement Appraisal** | 1,120 Dedicated Engineering Hours | **$122,629** | R&D replacement baseline valuation |
+| **Enterprise Seat License** | Monthly Recurring License | **Cloud Run Turnkey** | Available for institutional trading desks |
+| **Baseline Trim Floor** | Pre-Throughput Minimum APA Floor | **$35,000** | Strict walk-away floor reserve |
+| **Monopoly Vault Planning Value** | Institutional Vault Asset Transfer Ceiling | **$85,000** | Authorized standard transaction target |
+| **Strategic Asking Ceiling** | Exclusive Monopoly Reference Core | **PostgreSQL 16 + RLS** | Tier-1 quantitative firm asset transfer ask |
+| **ASC 350-40 Replacement Appraisal** | 1,120 Dedicated Engineering Hours | **$122,629** | R&D replacement baseline specification |
 
 ---
 

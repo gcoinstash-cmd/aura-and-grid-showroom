@@ -195,7 +195,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <ShieldCheck className="w-5 h-5 text-amber-400" />
-            <span>MONOPOLY VAULT & $140K APA</span>
+            <span>MONOPOLY VAULT & APA LEDGER</span>
           </button>
 
           <button

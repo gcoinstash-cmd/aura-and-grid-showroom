@@ -24,7 +24,7 @@ export const MonopolyVaultTab: React.FC = () => {
     { name: '3. Production Data Schema', description: 'AlloyDB / Timescale hypertable DDL with compression & sub-millisecond indices.', score: '10/10', status: 'VERIFIED' },
     { name: '4. OpenAPI 3.1 & Protocol Specification', description: 'Strict JSON schemas, mock responses, and microsecond telemetry endpoints.', score: '10/10', status: 'VERIFIED' },
     { name: '5. Clean-Room Dependency Whitelist', description: '100% Permissive MIT/Apache-2.0/BSD. Zero GPL/AGPL/SSPL copyleft detected.', score: '10/10', status: 'VERIFIED' },
-    { name: '6. Institutional Asset Purchase Agreement (APA)', description: 'Pre-drafted Delaware APA specifying $125,000 Monopoly terms and complete IP assignment.', score: '10/10', status: 'VERIFIED' },
+    { name: '6. Institutional Asset Purchase Agreement (APA)', description: 'Pre-drafted Turnkey Software Asset Purchase Agreement specifying PostgreSQL 16 + RLS Monopoly terms and complete IP assignment.', score: '10/10', status: 'VERIFIED' },
   ];
 
   const handleCopy = (content: string) => {
@@ -50,7 +50,7 @@ export const MonopolyVaultTab: React.FC = () => {
               Asset Purchase Agreement & Clean-Room IP Audit
             </h2>
             <p className="text-base text-zinc-300 mt-1.5 max-w-4xl leading-relaxed">
-              Engine GF-T3-139 is certified 100% clean-room engineered under Delaware law with zero copyleft contamination and a pre-structured $125,000 institutional valuation buyout.
+              Engine GF-T3-139 is certified 100% clean-room engineered under Delaware law with zero copyleft contamination and a pre-structured PostgreSQL 16 + RLS institutional specification asset transfer.
             </p>
           </div>
 
@@ -59,8 +59,8 @@ export const MonopolyVaultTab: React.FC = () => {
               <DollarSign className="w-8 h-8" />
             </div>
             <div>
-              <div className="text-xs font-mono font-bold text-zinc-400 uppercase">Monopoly Buyout Price</div>
-              <div className="text-3xl font-black text-emerald-400 font-mono">$125,000 USD</div>
+              <div className="text-xs font-mono font-bold text-zinc-400 uppercase">Monopoly Reference Core</div>
+              <div className="text-3xl font-black text-emerald-400 font-mono">PostgreSQL 16 + RLS</div>
               <div className="text-sm text-zinc-400 font-mono">Governing Law: Delaware</div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export const MonopolyVaultTab: React.FC = () => {
           }`}
         >
           <Scale className="w-5 h-5 text-cyan-400" />
-          <span>Delaware APA Agreement ($125K)</span>
+          <span>Turnkey Software Asset Purchase Agreement Agreement</span>
         </button>
 
         <button
@@ -144,7 +144,7 @@ export const MonopolyVaultTab: React.FC = () => {
         <div className="bg-slate-900 border border-zinc-700 rounded-2xl p-6 shadow-xl space-y-4">
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
             <div>
-              <h3 className="text-lg font-bold text-white">Delaware Asset Purchase Agreement (APA)</h3>
+              <h3 className="text-lg font-bold text-white">Turnkey Software Asset Purchase Agreement (APA)</h3>
               <p className="text-sm text-zinc-300">Complete IP Assignment & $125k Purchase Consideration</p>
             </div>
             <button

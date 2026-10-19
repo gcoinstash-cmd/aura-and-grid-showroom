@@ -21,4 +21,4 @@ All software dependencies and runtime sub-modules are strictly restricted to the
 - Boost Software License 1.0
 
 ### 3. MONOPOLY VAULT CLEARANCE
-This software deliverable meets the requirements for full commercial assignment under standard Asset Purchase Agreement terms ($125,000.00 USD institutional consideration).
+This software deliverable meets the requirements for full commercial assignment under standard Asset Purchase Agreement terms (PostgreSQL 16 + RLS institutional consideration).

@@ -96,7 +96,7 @@ def update_flight_state(request: FlightStateUpdateRequest):
 )
 def compute_attitude_control(request: ControlAttitudeComputeRequest):
     """
-    Calculates closed-loop actuator PWM duty cycles, rotor RPM setpoints, and BEM induced inflow within < 4.5ms budget.
+    Calculates closed-loop actuator PWM duty cycles, rotor RPM setpoints, and BEM induced inflow within < 4.5ms threshold.
     """
     try:
         return engine.compute_attitude_control(request)

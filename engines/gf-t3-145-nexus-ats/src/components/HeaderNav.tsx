@@ -75,7 +75,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({
     { id: 'ALLOYDB_SQL', label: 'AlloyDB DDL', icon: <Database className="w-5 h-5 text-blue-400" /> },
     { id: 'OPENAPI_JSON', label: 'OpenAPI 3.1 Spec', icon: <Code2 className="w-5 h-5 text-purple-400" /> },
     { id: 'LEGAL_IP', label: 'Clean-Room IP', icon: <ShieldCheck className="w-5 h-5 text-teal-400" /> },
-    { id: 'DELAWARE_APA', label: '$150K Delaware APA', icon: <FileText className="w-5 h-5 text-emerald-400" /> },
+    { id: 'DELAWARE_APA', label: 'Asset Purchase Agreement (APA) Ledger', icon: <FileText className="w-5 h-5 text-emerald-400" /> },
     { id: 'ENGINE_SPEC', label: 'ENGINE_SPEC.md', icon: <FileCode className="w-5 h-5 text-rose-400" /> }
   ];
 

@@ -69,5 +69,5 @@ This certification warrants and represents that Asset **GF-T3-147** has been eng
 ---
 
 ### 5. LEGAL SIGN-OFF & IRREVOCABLE WARRANTY
-Ghost FactoryOS certifies that the deliverable package for **GF-T3-147** is clean, free of third-party infringement claims, and ready for institutional acquisition under the terms of the **Delaware Asset Purchase Agreement**.
+Ghost FactoryOS certifies that the deliverable package for **GF-T3-147** is clean, free of third-party infringement claims, and ready for institutional acquisition under the terms of the **Turnkey Software Asset Purchase Agreement**.
 `;

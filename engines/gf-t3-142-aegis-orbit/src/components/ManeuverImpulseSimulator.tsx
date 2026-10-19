@@ -332,7 +332,7 @@ export const ManeuverImpulseSimulator: React.FC<ManeuverImpulseSimulatorProps> =
         <div className="p-5 rounded-xl border border-slate-800 bg-slate-900/70 space-y-4 flex flex-col justify-between">
           <div>
             <div className="text-base font-bold font-hud text-cyan-400 border-b border-slate-800 pb-2.5">
-              3. TSIOLKOVSKY BUDGET &amp; PREDICTION
+              3. TSIOLKOVSKY THRESHOLD &amp; PREDICTION
             </div>
 
             <div className="space-y-3 text-sm font-mono mt-3.5">

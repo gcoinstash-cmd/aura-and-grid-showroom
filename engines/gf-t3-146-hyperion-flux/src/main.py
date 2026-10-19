@@ -138,10 +138,10 @@ def calibrate_dvs_sensor(request: SensorCalibrationRequest):
     "/api/v1/telemetry/p99-audit",
     response_model=TelemetryAuditResponse,
     tags=["Telemetry & Health"],
-    summary="Retrieve Real-Time P99 Latency & Compute Budget Telemetry",
+    summary="Retrieve Real-Time P99 Latency & Compute Threshold Telemetry",
 )
 def get_telemetry_audit():
     """
-    Audits compute budget consumption ensuring event processing latency remains strictly under 750 microseconds.
+    Audits compute threshold consumption ensuring event processing latency remains strictly under 750 microseconds.
     """
     return engine.get_telemetry_audit()

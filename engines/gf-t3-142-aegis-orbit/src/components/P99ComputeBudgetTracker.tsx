@@ -60,10 +60,10 @@ export const P99ComputeBudgetTracker: React.FC = () => {
           </div>
           <div>
             <h3 className="text-base sm:text-lg font-bold font-hud text-white tracking-wide">
-              P99 COMPUTE LATENCY &amp; SLA BUDGET MONITOR
+              P99 COMPUTE LATENCY &amp; SLA THRESHOLD MONITOR
             </h3>
             <p className="text-sm text-slate-300 font-mono mt-0.5">
-              Strict Deterministic SLA Budget: <span className="text-cyan-400 font-extrabold">&lt; 8.20 ms</span> per orbital step
+              Strict Deterministic SLA Threshold: <span className="text-cyan-400 font-extrabold">&lt; 8.20 ms</span> per orbital step
             </p>
           </div>
         </div>
@@ -106,10 +106,10 @@ export const P99ComputeBudgetTracker: React.FC = () => {
         </div>
       </div>
 
-      {/* Latency Budget Progress Bar */}
+      {/* Latency Threshold Progress Bar */}
       <div className="space-y-2 font-mono text-sm">
         <div className="flex justify-between text-slate-300">
-          <span className="font-semibold">P99 Budget Consumption:</span>
+          <span className="font-semibold">P99 Threshold Consumption:</span>
           <span className="text-white font-extrabold">{budgetUsedPct.toFixed(1)}% of 8.20ms limit</span>
         </div>
         <div className="w-full h-3 bg-slate-950 rounded-full overflow-hidden border border-slate-800 p-0.5">

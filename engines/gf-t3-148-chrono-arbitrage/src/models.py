@@ -33,8 +33,8 @@ class ExecutionRequest(BaseModel):
 class ExecutionResponse(BaseModel):
     dispatch_id: str = Field(..., description="Order dispatch UUID", json_schema_extra={"example": "DISP-99210-A"})
     status: str = Field(..., description="Execution status (ROUTED, FILLED, REJECTED)", json_schema_extra={"example": "FILLED"})
-    expected_profit_usd: float = Field(..., description="Expected gross profit in USD", json_schema_extra={"example": 71.00})
-    realized_profit_usd: float = Field(..., description="Realized net profit in USD post-slippage", json_schema_extra={"example": 69.85})
+    expected_profit_usd: float = Field(..., description="Expected gross yield in USD", json_schema_extra={"example": 71.00})
+    realized_profit_usd: float = Field(..., description="Realized net yield in USD post-slippage", json_schema_extra={"example": 69.85})
     total_dispatch_time_us: int = Field(..., description="Total execution dispatch time in microseconds", json_schema_extra={"example": 342})
 
 

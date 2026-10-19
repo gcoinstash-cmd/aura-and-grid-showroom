@@ -26,7 +26,7 @@ export const LatencyThroughput: React.FC<LatencyThroughputProps> = ({
         <div className="flex items-center gap-2">
           <Zap className="w-5 h-5 text-cyan-400" />
           <h2 className="text-xl font-bold text-white tracking-wide">
-            Sub-Millisecond Latency HUD <span className="text-slate-400 text-base font-medium">(Hardware Budget)</span>
+            Sub-Millisecond Latency HUD <span className="text-slate-400 text-base font-medium">(Hardware Threshold)</span>
           </h2>
         </div>
         <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export const LatencyThroughput: React.FC<LatencyThroughputProps> = ({
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {/* P99 Latency (The Sovereign Metric) */}
         <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-3 col-span-2 md:col-span-1 border-l-4 border-l-cyan-500">
-          <div className="text-xs font-bold uppercase text-slate-400">P99 Latency Budget</div>
+          <div className="text-xs font-bold uppercase text-slate-400">P99 Latency Threshold</div>
           <div className="flex items-baseline gap-1 mt-1">
             <span className={`text-3xl font-black font-mono-numbers ${isWithinSla ? 'text-cyan-400' : 'text-rose-400'}`}>
               {metrics.p99Us}
@@ -57,7 +57,7 @@ export const LatencyThroughput: React.FC<LatencyThroughputProps> = ({
               </span>
             ) : (
               <span className="text-rose-400 font-bold flex items-center gap-1">
-                <AlertTriangle className="w-3.5 h-3.5" /> Budget Breach
+                <AlertTriangle className="w-3.5 h-3.5" /> Threshold Breach
               </span>
             )}
           </div>

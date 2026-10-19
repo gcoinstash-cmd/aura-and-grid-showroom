@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  * 
  * Ghost FactoryOS GF-T3-145 (Nexus-ATS)
- * Microsecond Latency Telemetry & P99 Budget Tracker
+ * Microsecond Latency Telemetry & P99 Threshold Tracker
  * 
- * Hardware Budget: P99 < 850 microseconds (0.85 ms)
+ * Hardware Threshold: P99 < 850 microseconds (0.85 ms)
  * Hot-Path Heap Allocations: 0 Bytes (Fixed-size circular ring buffer)
  */
 
@@ -108,8 +108,8 @@ export class LatencyTelemetry {
       { bucketLabel: '< 100 µs (Ultra Fast)', minUs: 0, maxUs: 100, count: 0, percentage: 0 },
       { bucketLabel: '100 – 250 µs (Nominal)', minUs: 100, maxUs: 250, count: 0, percentage: 0 },
       { bucketLabel: '250 – 500 µs (Standard)', minUs: 250, maxUs: 500, count: 0, percentage: 0 },
-      { bucketLabel: '500 – 850 µs (Budget Cap)', minUs: 500, maxUs: 850, count: 0, percentage: 0 },
-      { bucketLabel: '> 850 µs (Budget Breach)', minUs: 850, maxUs: 99999, count: 0, percentage: 0 }
+      { bucketLabel: '500 – 850 µs (Threshold Cap)', minUs: 500, maxUs: 850, count: 0, percentage: 0 },
+      { bucketLabel: '> 850 µs (Threshold Breach)', minUs: 850, maxUs: 99999, count: 0, percentage: 0 }
     ];
 
     for (const val of sampleArray) {

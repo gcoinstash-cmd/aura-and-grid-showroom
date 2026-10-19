@@ -1,6 +1,6 @@
 /**
  * Vanguard-ECLSS: Monopoly Vault & Legal IP Compliance View
- * Unredacted Delaware Asset Purchase Agreement & Clean-Room IP Audit
+ * Unredacted Turnkey Software Asset Purchase Agreement & Clean-Room IP Audit
  * Upgraded Font Floor & High-Legibility Typography
  */
 
@@ -30,7 +30,7 @@ export const LegalVaultView: React.FC = () => {
             MONOPOLY VAULT & $140,000 USD ENTERPRISE APA
           </h2>
           <p className="text-base text-slate-300 font-medium mt-1">
-            Institutional Clean-Room Certification, unredacted Delaware Asset Purchase Agreement, and copyleft immunization.
+            Institutional Clean-Room Certification, unredacted Turnkey Software Asset Purchase Agreement, and copyleft immunization.
           </p>
         </div>
 
@@ -43,12 +43,12 @@ export const LegalVaultView: React.FC = () => {
         </button>
       </div>
 
-      {/* Transaction & Valuation Summary Cards */}
+      {/* Transaction & Specification Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono text-base">
         <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-3">
           <div className="flex items-center gap-2.5 text-amber-400 font-bold text-lg">
             <DollarSign className="w-6 h-6" />
-            <span>BUYOUT VALUATION</span>
+            <span>ASSET TRANSFER SPECIFICATION</span>
           </div>
           <div className="text-3xl font-extrabold text-white">
             $140,000.00 <span className="text-base font-normal text-slate-400">USD</span>
@@ -94,7 +94,7 @@ export const LegalVaultView: React.FC = () => {
             }`}
           >
             <FileCheck className="w-5 h-5" />
-            <span>ENTERPRISE_APA_AGREEMENT.MD ($140K BUYOUT)</span>
+            <span>ENTERPRISE_APA_AGREEMENT.MD ($140K ASSET TRANSFER)</span>
           </button>
 
           <button

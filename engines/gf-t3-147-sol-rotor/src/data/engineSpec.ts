@@ -9,7 +9,7 @@ export const ENGINE_SPEC_MD = `# MONOPOLY VAULT SPECIFICATION: GF-T3-147
 ## SOL-ROTOR: AUTONOMOUS MULTI-AGENT HEAVY-LIFT eVTOL & SWARM FLIGHT TELEMETRY ENGINE
 **Track Designation:** Track 3 (F1 Skunkworks Service Engine - 70% Design Workload Deliverable)  
 **Security Clearance:** Institutional Enterprise Vault (Monopoly Grade)  
-**Asset Buyout Anchor:** $140,000 USD (Delaware APA Executed)  
+**Asset Reference Core:** $140,000 USD (Turnkey Software Asset Purchase Agreement Executed)  
 **Date:** October 5, 2026  
 
 ---
@@ -103,15 +103,15 @@ $$U_{rep}(\\mathbf{p}_i, \\mathbf{p}_j) = \\begin{cases} \\frac{1}{2} k_{rep} \\
 
 ---
 
-## 3. REAL-TIME NONLINEAR DYNAMIC INVERSION (NDI) CONTROL BUDGET
+## 3. REAL-TIME NONLINEAR DYNAMIC INVERSION (NDI) CONTROL THRESHOLD
 
-| Computation Sub-Task | Algorithm / Model | Latency Budget (Target) | Measured P99 Latency |
+| Computation Sub-Task | Algorithm / Model | Latency Threshold (Target) | Measured P99 Latency |
 | :--- | :--- | :--- | :--- |
 | **State Estimation & EKF** | 15-State Error-State Kalman Filter | $0.80\\,\\text{ms}$ | **$0.65\\,\\text{ms}$** |
 | **BEM Aero Inflow Solver** | 8-Rotor Newton-Raphson Iterations | $1.60\\,\\text{ms}$ | **$1.42\\,\\text{ms}$** |
 | **NDI Control Law & Inversion** | Cross-coupled Inertia Matrix Inversion | $1.20\\,\\text{ms}$ | **$1.10\\,\\text{ms}$** |
 | **Actuator Quadratic Allocation** | SVD Pseudo-Inverse $\\mathbf{B}^\\dagger$ + Rate Slew | $0.90\\,\\text{ms}$ | **$0.85\\,\\text{ms}$** |
-| **TOTAL INNER-LOOP BUDGET** | Hard Real-Time Threshold | **$< 4.50\\,\\text{ms}$** | **$4.02\\,\\text{ms}$ (PASS)** |
+| **TOTAL INNER-LOOP THRESHOLD** | Hard Real-Time Threshold | **$< 4.50\\,\\text{ms}$** | **$4.02\\,\\text{ms}$ (PASS)** |
 
 ---
 
@@ -126,8 +126,8 @@ If any rotor $R_k \\in \\{1..8\\}$ fails (mechanical loss or inverter overtemper
 
 ---
 
-## 5. REVENUE & MONOPOLY COMMERCIAL SPECIFICATION
-- **Single-Unit Demo License:** $1,500.00 USD
-- **Standard APA Fleet License:** $14,500.00 USD
-- **Monopoly Vault Outright Buyout:** **$140,000.00 USD** (Includes unencumbered Delaware APA assignment, complete mathematical engine, AlloyDB schema, OpenAPI specs, and full clean-room IP audit).
+## 5. THROUGHPUT & MONOPOLY COMMERCIAL SPECIFICATION
+- **Single-Unit Sandbox Access:** $1,500.00 USD
+- **Standard APA Fleet Deployment:** $14,500.00 USD
+- **Monopoly Vault Outright Asset Transfer:** **$140,000.00 USD** (Includes unencumbered Turnkey Software Asset Purchase Agreement assignment, complete mathematical engine, AlloyDB schema, OpenAPI specs, and full clean-room IP audit).
 `;

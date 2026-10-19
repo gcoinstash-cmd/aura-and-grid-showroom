@@ -30,7 +30,7 @@ export const MasterBundleExport: React.FC = () => {
         'README.md',
         `# GHOST FACTORYOS ASSET GF-T3-147: SOL-ROTOR MASTER ARCHIVE
 Autonomous Multi-Agent Heavy-Lift eVTOL & Swarm Flight Telemetry Engine (Track 3 F1 Skunkworks)
-Purchase Price / Valuation Anchor: $140,000 USD Outright Delaware Buyout
+Purchase Price / Specification Anchor: $140,000 USD Outright Delaware Asset Transfer
 
 ## INCLUDED SPECIFICATIONS & CODE:
 1. ENGINE_SPEC_T3_SOLROTOR.md - Complete Monopoly Vault 70% Architectural Engine Blueprint

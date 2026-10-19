@@ -2,7 +2,7 @@
 ## CHRONO-CHASSIS: QUANTUM HYPERCAR CHASSIS TELEMETRY INTERFACE & SUB-MILLISECOND FINANCIAL COCKPIT
 **Track Designation:** Track 3 (F1 Skunkworks Service Engine - 70% Design Workload Deliverable)  
 **Security Clearance:** Institutional Enterprise Vault (Monopoly Grade)  
-**Asset Buyout Anchor:** $85,000 USD (Delaware APA Executed)  
+**Asset Reference Core:** $85,000 USD (Turnkey Software Asset Purchase Agreement Executed)  
 **Date:** October 7, 2026  
 
 ---
@@ -90,7 +90,7 @@ $$\tau_{\text{fiber}} = \frac{2 n_{\text{fiber}} d}{c}, \quad \tau_{\text{chrono
 
 Alpha yield in basis points:
 $$\alpha_{\text{bps}} = \beta \cdot \sqrt{\Delta \tau} \cdot \sigma_{\text{volatility}}$$
-Accumulated profit grows as:
+Accumulated yield grows as:
 $$\Pi(t) = \Pi(0) + \int_0^t \sum_{r \in \mathcal{R}} \text{Vol}(r) \cdot \alpha_{\text{bps}}(r) \, dt$$
 
 ---

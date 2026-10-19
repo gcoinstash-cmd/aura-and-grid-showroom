@@ -28,7 +28,7 @@ Ghost FactoryOS Skunkworks Engineering hereby certifies under penalty of perjury
 
 Every external library, build tool, and runtime dependency has been programmatically scanned, verified, and audited against SPDX license identifiers. 
 
-| Package / Module | Version | SPDX License | Copyleft Risk | Permitted for $140,000 Outright Buyout |
+| Package / Module | Version | SPDX License | Copyleft Risk | Permitted for $140,000 Outright Asset Transfer |
 | :--- | :--- | :--- | :--- | :--- |
 | \`react\` | \`^19.0.1\` | **MIT** | Zero (Permissive) | **APPROVED** |
 | \`react-dom\` | \`^19.0.1\` | **MIT** | Zero (Permissive) | **APPROVED** |

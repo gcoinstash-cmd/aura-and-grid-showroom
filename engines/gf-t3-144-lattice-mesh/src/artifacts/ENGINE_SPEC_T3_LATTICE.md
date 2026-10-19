@@ -35,7 +35,7 @@ Asset **GF-T3-144** establishes a zero-trust, post-quantum overlay mesh network 
 ```
 
 ### Protocol Boundaries & Performance Budgets
-- **Handshake Round-Trip Budget**: P99 $\le 3.20\text{ ms}$ over WAN edge links.
+- **Handshake Round-Trip Threshold**: P99 $\le 3.20\text{ ms}$ over WAN edge links.
 - **Key Rotation Cadence**: 120 seconds standard interval (atomic kernel `wg set peer <pubkey> preshared-key <file>` sync).
 - **Packet Loss Guarantee during Re-Key**: $0.0000\%$ packet drop via double-buffered key cache.
 
@@ -64,7 +64,7 @@ $$\hat{c}_{2i} + \hat{c}_{2i+1} X = (\hat{a}_{2i} + \hat{a}_{2i+1} X)(\hat{b}_{2
 3. Sample secret error vectors $\mathbf{s}, \mathbf{e} \sim \mathcal{CBD}_2^4$ from $\sigma$.
 4. Compute public vector:
    $$\mathbf{t} = \mathbf{A} \hat{\mathbf{s}} + \hat{\mathbf{e}} \pmod q$$
-5. Public key $\text{PK} = (\mathbf{t}, \rho)$, Secret key $\text{SK} = \hat{\mathbf{s}}$.
+Step 5: Public key $\text{PK} = (\mathbf{t}, \rho)$, Secret key $\text{SK} = \hat{\mathbf{s}}$.
 
 ### 2.4 Encapsulation
 1. Generate ephemeral randomness message $m \in \{0,1\}^{256}$.
@@ -72,7 +72,7 @@ $$\hat{c}_{2i} + \hat{c}_{2i+1} X = (\hat{a}_{2i} + \hat{a}_{2i+1} X)(\hat{b}_{2
 3. Compute ciphertext:
    $$\mathbf{u} = \text{NTT}^{-1}(\mathbf{A}^T \hat{\mathbf{r}}) + \mathbf{e}_1$$
    $$v = \text{NTT}^{-1}(\hat{\mathbf{t}}^T \hat{\mathbf{r}}) + e_2 + \text{Decompress}_q(\text{Encode}(m))$$
-4. Shared secret:
+Step 4: Shared secret:
    $$K_{\text{pqc}} = \mathcal{H}(m \parallel \mathcal{H}(\text{PK}))$$
 
 ### 2.5 Hybrid Cryptographic Key Schedule
@@ -101,6 +101,6 @@ See full JSON OpenAPI 3.1 document in `OPENAPI_SPEC.json` with endpoints:
 
 ---
 
-## 5. Clean-Room IP Audit & Legal Valuation
+## 5. Clean-Room IP Audit & Legal Specification
 - **Clean-Room Certification**: 100% independent implementation of M-LWE ring arithmetic (FIPS 203). Zero GPL/AGPL/SSPL copyleft dependencies.
-- **Enterprise APA Contract**: Pre-drafted Delaware Asset Purchase Agreement for **$145,000.00 USD** outright acquisition.
+- **Enterprise APA Contract**: Pre-drafted Turnkey Software Asset Purchase Agreement for **$145,000.00 USD** outright acquisition.

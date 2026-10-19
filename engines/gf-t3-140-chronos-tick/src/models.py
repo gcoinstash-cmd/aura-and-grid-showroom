@@ -76,7 +76,7 @@ class ChildSliceModel(BaseModel):
     realized_slippage_bps: float = Field(..., description="Realized execution slippage (basis points)")
     venue: str = Field(..., description="Assigned execution liquidity venue")
     status: str = Field(..., description="Slice execution status")
-    impact_cost_usd: float = Field(..., description="Estimated market impact cost in USD")
+    impact_cost_usd: float = Field(..., description="Estimated market impact matrix in USD")
     poisson_interval_ms: int = Field(..., description="Poisson-jittered inter-arrival interval (ms)")
 
 

@@ -62,7 +62,7 @@ export const DeploymentDashboardTab: React.FC<DeploymentDashboardTabProps> = ({ 
         monopoly_score: "10/10_READINESS",
         uptime_sla_pct: 99.999,
         cryptographic_hash: "9f83acb18b5251467f290ceeee130dfd0b80e450",
-        governing_law: "Delaware Asset Purchase Agreement",
+        governing_law: "Turnkey Software Asset Purchase Agreement",
         status: "COMPLIANCE_APPROVED"
       });
     }, 400);

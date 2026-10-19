@@ -2,7 +2,7 @@
  * Ghost FactoryOS Track 3 (F1 Skunkworks Engine)
  * Asset GF-T3-147: Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine
  * 
- * Delaware Asset Purchase Agreement (ENTERPRISE_APA_AGREEMENT.md)
+ * Turnkey Software Asset Purchase Agreement (ENTERPRISE_APA_AGREEMENT.md)
  */
 
 export const ENTERPRISE_APA_MD = `# ASSET PURCHASE AGREEMENT (APA)
@@ -46,7 +46,7 @@ The total aggregate purchase price for the Purchased Assets is **$140,000.00 USD
 Seller represents and warrants to Buyer as of the Effective Date:
 - **2.1 Ownership & Title:** Seller is the sole and exclusive lawful owner of the Purchased Assets, holding free and clear title with zero liens, security interests, pledges, or encumbrances.
 - **2.2 Clean-Room & Non-Infringement:** The Purchased Assets were developed entirely through clean-room methodologies. The software does not incorporate, link against, or trigger copyleft provisions of GPLv2, GPLv3, AGPLv3, SSPL, or any non-permissive license. The use and exploitation of the Purchased Assets will not infringe any third-party patent, copyright, trade secret, or other proprietary right.
-- **2.3 Functionality & Rigor:** The mathematical models, including Runge-Kutta 4th-order 6-DOF equations of motion, BEM inflow iterations, and NDI inner-loop control allocations, operate deterministically within the stated $< 4.5\\,\\text{ms}$ execution latency budget.
+- **2.3 Functionality & Rigor:** The mathematical models, including Runge-Kutta 4th-order 6-DOF equations of motion, BEM inflow iterations, and NDI inner-loop control allocations, operate deterministically within the stated $< 4.5\\,\\text{ms}$ execution latency threshold.
 
 ---
 

@@ -301,7 +301,7 @@ export const TelemetryHud: React.FC<TelemetryHudProps> = ({ onMetricsUpdate }) =
             {p99LatencyUs.toFixed(1)} <span className="text-xl font-normal text-slate-400">µs</span>
           </div>
           <div className="text-base text-slate-400 mt-2 flex items-center justify-between">
-            <span>Budget Ceiling: &lt; 750.0 µs</span>
+            <span>Threshold Ceiling: &lt; 750.0 µs</span>
             <span className="text-slate-300">Mean: {meanLatencyUs.toFixed(1)} µs</span>
           </div>
         </div>

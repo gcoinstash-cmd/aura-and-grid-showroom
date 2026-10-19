@@ -33,7 +33,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({ isOpen, onCl
 **Audit Date:** ${reportDate} ${reportTime}  
 **Auditor Signature Hash (SHA-256):** ${auditHash}  
 **Monopoly Score:** 10/10 MONOPOLY READY  
-**Institutional Buyout Valuation:** $125,000 USD (Delaware APA Standard)
+**Institutional Asset Transfer Specification: ** PostgreSQL 16 + RLS (Turnkey Software Asset Purchase Agreement Standard)
 
 ---
 
@@ -64,7 +64,7 @@ The Ghost FactoryOS AeroDyn-RT 1000Hz Telemetry Engine (Engine ID: GF-T3-139) ha
 ## 4. CLEAN-ROOM LEGAL & DEPENDENCY CERTIFICATION
 - **MIT / Apache-2.0 / BSD Packages:** 100% Whitelisted
 - **GPL / AGPL / SSPL Packages:** 0% (Strictly 0 Detected)
-- **Delaware APA Asset Purchase Agreement:** Drafted & Certified ($125,000 Purchase Terms)
+- **Turnkey Software Asset Purchase Agreement Asset Purchase Agreement:** Drafted & Certified (PostgreSQL 16 + RLS Purchase Terms)
 - **Governing Law:** State of Delaware, United States
 
 ---
@@ -154,9 +154,9 @@ The Ghost FactoryOS AeroDyn-RT 1000Hz Telemetry Engine (Engine ID: GF-T3-139) ha
             </div>
 
             <div>
-              <div className="text-xs text-zinc-500 font-mono uppercase">Monopoly Rating & Valuation</div>
+              <div className="text-xs text-zinc-500 font-mono uppercase">Monopoly Rating & Specification</div>
               <div className="font-extrabold text-emerald-400 text-base mt-0.5">10/10 MONOPOLY READY</div>
-              <div className="text-xs text-emerald-300 font-mono">$125,000 USD Consideration</div>
+              <div className="text-xs text-emerald-300 font-mono">PostgreSQL 16 + RLS Consideration</div>
             </div>
           </div>
 
@@ -212,7 +212,7 @@ The Ghost FactoryOS AeroDyn-RT 1000Hz Telemetry Engine (Engine ID: GF-T3-139) ha
           <div className="bg-slate-950 p-5 rounded-xl border border-zinc-800 space-y-3">
             <h4 className="font-bold text-white text-base flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>3. Clean-Room Provenance & Delaware APA Status</span>
+              <span>3. Clean-Room Provenance & Turnkey Software Asset Purchase Agreement Status</span>
             </h4>
             <p className="text-zinc-300 text-xs leading-relaxed">
               100% of software dependencies, algorithmic matrices, and architectural topologies are free of copyleft encumbrance (0% GPL/AGPL/SSPL). All code conforms to strict MIT/Apache-2.0 permissive standards.

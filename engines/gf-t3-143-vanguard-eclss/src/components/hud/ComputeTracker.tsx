@@ -29,7 +29,7 @@ export const ComputeTracker: React.FC<ComputeTrackerProps> = ({ mpc, history }) 
             MIMO-MPC DETERMINISTIC COMPUTE & LATENCY ENGINE
           </h3>
           <p className="text-base text-slate-300 font-medium mt-1">
-            Hard real-time step budget constraint: &lt;6.500 ms @ 1000 Hz loop frequency.
+            Hard real-time step threshold constraint: &lt;6.500 ms @ 1000 Hz loop frequency.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export const ComputeTracker: React.FC<ComputeTrackerProps> = ({ mpc, history }) 
           <div className="text-3xl font-extrabold text-emerald-400 mt-2">
             {mpc.lastExecutionTimeMs.toFixed(3)} <span className="text-base font-normal text-slate-400">ms</span>
           </div>
-          <div className="text-sm text-slate-400 mt-2">Budget: 6.500 ms max</div>
+          <div className="text-sm text-slate-400 mt-2">Threshold: 6.500 ms max</div>
         </div>
 
         <div className="p-5 rounded-xl bg-slate-950 border border-slate-800">
@@ -62,7 +62,7 @@ export const ComputeTracker: React.FC<ComputeTrackerProps> = ({ mpc, history }) 
           <div className="text-3xl font-extrabold text-white mt-2">
             N={mpc.horizonSteps} <span className="text-base font-normal text-slate-400">({mpc.solverIterations} iter)</span>
           </div>
-          <div className="text-sm text-slate-400 mt-2">Quadratic Cost J: {mpc.quadraticCost.toFixed(2)}</div>
+          <div className="text-sm text-slate-400 mt-2">Quadratic Matrix J: {mpc.quadraticCost.toFixed(2)}</div>
         </div>
 
         <div className="p-5 rounded-xl bg-slate-950 border border-slate-800">

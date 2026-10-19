@@ -51,7 +51,7 @@ export default function App() {
             <span>•</span>
             <span className="text-slate-300">AlloyDB: <strong className="text-amber-400">RPO = 0</strong></span>
             <span>•</span>
-            <span className="text-slate-300">Valuation: <strong className="text-emerald-300">$125,000 USD</strong></span>
+            <span className="text-slate-300">Specification: <strong className="text-emerald-300">PostgreSQL 16 + RLS</strong></span>
           </div>
         </div>
       </footer>

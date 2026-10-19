@@ -2,7 +2,7 @@
 ## VoxelTrack-Edge: 125Hz 3D Spatial Perception & Dynamic Octree Voxel Fusion Engine
 **Version:** 3.4.0-PROD-MONOPOLY  
 **Classification:** Enterprise Proprietary / Clean-Room Certified (Tier-1 Autonomous Perception)  
-**Valuation Tier:** $125,000 USD (Monopoly Vault Asset Purchase Standard)
+**Specification Tier:** PostgreSQL 16 + RLS (Monopoly Vault Asset Purchase Standard)
 
 ---
 
@@ -41,7 +41,7 @@
  +-----------------------------------------------------------------------------------------------+
  | [STAGE 3] 3D KALMAN FILTER KINEMATIC TRACKING & HUNGARIAN MATCH                               |
  | - 11-Dimensional State Vector per Tracked Object                                              |
- | - Generalized 3D Bounding Box Intersection-over-Union (GIoU-3D) Cost Matrix                   |
+ | - Generalized 3D Bounding Box Intersection-over-Union (GIoU-3D) Matrix Matrix                   |
  | - Sub-125Hz Continuous State Extrapolation & Covariance Propagation                          |
  +-----------------------------------------------------------------------------------------------+
                                                  |
@@ -90,7 +90,7 @@ $$\\mathbf{P}_{k|k} = (\\mathbf{I} - \\mathbf{K}_k \\mathbf{H}) \\mathbf{P}_{k|k
 For predicted bounding box $\\mathcal{B}_{pred}$ and detected bounding box $\\mathcal{B}_{det}$ with smallest enclosing convex polyhedron $\\mathcal{C}$:
 $$\\text{IoU}_{3D} = \\frac{\\text{Vol}(\\mathcal{B}_{pred} \\cap \\mathcal{B}_{det})}{\\text{Vol}(\\mathcal{B}_{pred} \\cup \\mathcal{B}_{det})}$$
 $$\\text{GIoU}_{3D} = \\text{IoU}_{3D} - \\frac{\\text{Vol}(\\mathcal{C} \\setminus (\\mathcal{B}_{pred} \\cup \\mathcal{B}_{det}))}{\\text{Vol}(\\mathcal{C})}$$
-Association cost matrix element:
+Association matrix matrix element:
 $$C_{ij} = 1.0 - \\text{GIoU}_{3D}(\\mathcal{B}_i, \\mathcal{B}_j) + \\lambda_{vel} \\|\\mathbf{v}_i - \\mathbf{v}_j\\|_2$$
 
 #### 2.4 Time-to-Collision (TTC) & Dynamic Safety Margin

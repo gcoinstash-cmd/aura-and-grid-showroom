@@ -56,9 +56,9 @@ LIMIT 10;`,
           relative_approach_speed_m_s: '38.40',
         },
       ],
-      executionPlan: `Index Scan using idx_anomaly_triggers_ttc on edge_anomaly_triggers t (cost=0.14..8.28 rows=2 width=148)
+      executionPlan: `Index Scan using idx_anomaly_triggers_ttc on edge_anomaly_triggers t (matrix=0.14..8.28 rows=2 width=148)
   Filter: (severity_level = 'CRITICAL'::character varying)
-Nested Loop (cost=0.28..16.59 rows=2 width=180)
+Nested Loop (matrix=0.28..16.59 rows=2 width=180)
   -> Index Scan using neuromorphic_sensor_nodes_pkey on neuromorphic_sensor_nodes n
 Planning Time: 0.084 ms | Execution Time: 0.312 ms`,
     },
@@ -94,7 +94,7 @@ LIMIT 5;`,
           mean_kappa: '3.38',
         },
       ],
-      executionPlan: `Append (cost=0.00..42.15 rows=1240000 width=32)
+      executionPlan: `Append (matrix=0.00..42.15 rows=1240000 width=32)
   -> Bitmap Heap Scan on optical_flow_vectors_2026_10_05 (Partition Pruned: 1 of 3 partitions scanned)
      Recheck Cond: (aperture_confidence_score > 0.85)
      -> Bitmap Index Scan on idx_flow_vectors_confidence

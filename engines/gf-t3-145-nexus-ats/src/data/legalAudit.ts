@@ -30,7 +30,7 @@ This audit document certifies that the source code, data architectures, mathemat
 
 All runtime and development dependencies have been audited and verified against the Ghost FactoryOS Clean-Room Whitelist:
 
-| Dependency Package | Version | Verified License | SP-DX Identifier | Commercial Buyout Safety |
+| Dependency Package | Version | Verified License | SP-DX Identifier | Commercial Asset Transfer Safety |
 | :--- | :--- | :--- | :--- | :--- |
 | \`react\` | ^19.0.1 | MIT License | MIT | 100% Permissive |
 | \`react-dom\` | ^19.0.1 | MIT License | MIT | 100% Permissive |
@@ -71,7 +71,7 @@ All runtime and development dependencies have been audited and verified against 
 
 1. The Seller warrants that it is the sole and exclusive owner of all right, title, and interest in and to **GF-T3-145**, free and clear of all liens, encumbrances, security interests, or conflicting licenses.
 2. The Seller warrants that no developer or contractor who participated in the authoring of GF-T3-145 was bound by any restrictive covenant, non-compete, or employer IP assignment agreement that would cloud title or encumber the asset.
-3. Upon execution of the Delaware Enterprise Asset Purchase Agreement, 100% of the worldwide intellectual property, patent rights, trade secrets, and source code transfer irrevocably to the Buyer.
+3. Upon execution of the Turnkey Software Asset Purchase Agreement, 100% of the worldwide intellectual property, patent rights, trade secrets, and source code transfer irrevocably to the Buyer.
 
 ---
 **Audit Signed & Certified by:**  

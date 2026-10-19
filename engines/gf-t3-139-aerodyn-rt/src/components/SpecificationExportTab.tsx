@@ -51,7 +51,7 @@ export const SpecificationExportTab: React.FC = () => {
     {
       key: 'APA_AGREEMENT',
       fileName: 'ENTERPRISE_APA_AGREEMENT.md',
-      title: 'Delaware APA Agreement ($125K)',
+      title: 'Turnkey Software Asset Purchase Agreement Agreement',
       description: 'Pre-drafted Institutional Asset Purchase Agreement specifying $125k Monopoly terms.',
       icon: Lock,
       content: SPEC_APA_AGREEMENT_MD,
@@ -129,7 +129,7 @@ export const SpecificationExportTab: React.FC = () => {
         engine_name: "Ghost FactoryOS AeroDyn-RT 1000Hz Telemetry Engine",
         track: "TRACK_3_F1_SKUNKWORKS",
         monopoly_score: "10/10_MONOPOLY_READY",
-        valuation_usd: 125000,
+        specification_index: 125000,
         checksum_sha256: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         governing_law: "State of Delaware",
         clean_room_certified: true,
@@ -172,7 +172,7 @@ export const SpecificationExportTab: React.FC = () => {
               Specification Suite & Legal Asset Package
             </h2>
             <p className="text-base text-zinc-300 mt-1.5 max-w-4xl leading-relaxed">
-              Complete deliverable bundle ready for autonomous ingestion by Google Antigravity agents. Includes EKF state equations, 100% clean-room IP audit, Delaware APA contract, AlloyDB schemas, and OpenAPI contracts.
+              Complete deliverable bundle ready for autonomous ingestion by Google Antigravity agents. Includes EKF state equations, 100% clean-room IP audit, Turnkey Software Asset Purchase Agreement contract, AlloyDB schemas, and OpenAPI contracts.
             </p>
           </div>
 

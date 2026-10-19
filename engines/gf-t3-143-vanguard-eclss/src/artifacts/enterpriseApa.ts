@@ -2,7 +2,7 @@
  * Vanguard-ECLSS: Autonomous Closed-Loop Environmental Control & Life Support System
  * Asset Code: GF-T3-143 (Ghost FactoryOS Fleet Track 3 - F1 Skunkworks Engine)
  * 
- * Delaware Asset Purchase Agreement ($140,000 USD Enterprise Transfer)
+ * Turnkey Software Asset Purchase Agreement ($140,000 USD Enterprise Transfer)
  */
 
 export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AND INTELLECTUAL PROPERTY ASSIGNMENT AGREEMENT

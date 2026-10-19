@@ -126,17 +126,17 @@ export const ArchitecturalTopologyTab: React.FC = () => {
         <div className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-950 border border-emerald-500/40 shrink-0">
           <Clock className="w-4 h-4 text-emerald-400" />
           <div className="text-xs font-mono">
-            <span className="text-slate-400">Total Latency Budget:</span>{' '}
+            <span className="text-slate-400">Total Latency Threshold:</span>{' '}
             <span className="text-emerald-300 font-bold text-sm">4.80 ms (P99.9)</span>
           </div>
         </div>
       </div>
 
-      {/* Latency Budget Breakdown Bars */}
+      {/* Latency Threshold Breakdown Bars */}
       <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4">
         <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
           <Activity className="w-4 h-4 text-emerald-400" />
-          <span>Deterministic Latency Budget Allocation (4.80 ms Total)</span>
+          <span>Deterministic Latency Threshold Allocation (4.80 ms Total)</span>
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">

@@ -76,7 +76,7 @@ export const SpecViewerTab: React.FC = () => {
       const manifest = {
         package_name: "GF-T3-140-VOXELTRACK-MONOPOLY-BUNDLE",
         asset_tier: "Track 3 Skunkworks 70% Deliverable",
-        valuation_usd: 125000,
+        specification_index: 125000,
         clean_room_score: "10.0/10.0",
         governing_law: "State of Delaware",
         checksum_engine: "SHA-256 Verified",

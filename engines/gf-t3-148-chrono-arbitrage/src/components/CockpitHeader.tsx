@@ -45,8 +45,8 @@ export const CockpitHeader: React.FC<Props> = ({
           </div>
           <span className="text-zinc-600">|</span>
           <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-amber-950/60 border border-amber-500/50 text-amber-300 font-bold">
-            <span>APA VALUATION:</span>
-            <span className="text-white">$125,000 USD</span>
+            <span>APA SPECIFICATION:</span>
+            <span className="text-white">PostgreSQL 16 + RLS</span>
           </div>
         </div>
       </div>

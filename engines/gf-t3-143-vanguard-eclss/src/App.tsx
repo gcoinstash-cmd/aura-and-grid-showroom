@@ -125,7 +125,7 @@ export default function App() {
       <footer className="border-t border-slate-900 bg-slate-950/90 py-6 text-sm font-mono text-slate-400 text-center">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-3">
           <span className="font-semibold text-slate-300">GHOST FACTORYOS · FLEET TRACK 3 (F1 SKUNKWORKS)</span>
-          <span className="text-cyan-300 font-bold">ASSET GF-T3-143 (VANGUARD-ECLSS) · MONOPOLY BUYOUT $140,000 USD</span>
+          <span className="text-cyan-300 font-bold">ASSET GF-T3-143 (VANGUARD-ECLSS) · MONOPOLY ASSET TRANSFER $140,000 USD</span>
           <span className="text-slate-400">DELAWARE CHANCERY FORUM · ZERO-RPO COMPLIANCE</span>
         </div>
       </footer>

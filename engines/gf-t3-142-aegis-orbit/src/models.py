@@ -84,7 +84,7 @@ class ManeuverOptimizationResponse(BaseModel):
 class TelemetryStreamPayload(BaseModel):
     active_satellites_count: int = Field(default=12, description="Active constellation satellites tracked")
     p99_compute_latency_ms: float = Field(default=4.85, description="Measured P99 execution cycle latency (ms)")
-    sla_budget_ms: float = Field(default=8.2, description="Contractual latency budget ceiling (ms)")
+    sla_budget_ms: float = Field(default=8.2, description="Contractual latency threshold ceiling (ms)")
     active_warnings_count: int = Field(default=2, description="Count of active CARA collision warnings")
 
 

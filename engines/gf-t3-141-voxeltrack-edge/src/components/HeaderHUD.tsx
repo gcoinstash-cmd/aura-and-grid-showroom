@@ -43,7 +43,7 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
     { id: 'spec', label: '3. SPECIFICATION & 10/10 EXPORT', icon: FileText, badge: '70% BLUEPRINT' },
     { id: 'topology', label: '4. ARCHITECTURAL TOPOLOGY', icon: Share2, badge: 'ZERO-COPY' },
     { id: 'alloydb', label: '5. ALLOYDB DDL SCHEMA', icon: Database, badge: 'POSTGIS 3D' },
-    { id: 'vault', label: '6. MONOPOLY VAULT & APA AGREEMENT', icon: ShieldCheck, badge: '$125K USD' },
+    { id: 'vault', label: '6. MONOPOLY VAULT & APA AGREEMENT', icon: ShieldCheck, badge: 'Turnkey Software Asset Purchase Agreement' },
   ];
 
   return (
@@ -80,7 +80,7 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
               <span className="tracking-wider uppercase">10/10 MONOPOLY READY</span>
             </div>
             <div className="text-xs text-zinc-400 bg-zinc-900/80 px-2.5 py-1 rounded border border-zinc-800 font-mono">
-              VALUATION: <span className="text-amber-400 font-bold">$125,000 USD</span>
+              SPECIFICATION: <span className="text-amber-400 font-bold">PostgreSQL 16 + RLS</span>
             </div>
           </div>
         </div>

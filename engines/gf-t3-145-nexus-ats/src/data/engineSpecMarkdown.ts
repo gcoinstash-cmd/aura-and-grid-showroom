@@ -9,7 +9,7 @@
 export const ENGINE_SPEC_MD = `# TECHNICAL SPECIFICATION: GF-T3-145 (NEXUS-ATS)
 **System Designation**: Nexus-ATS (Hybrid Central Limit Order Book & Sub-Millisecond Dark Pool Crossing Engine)  
 **Fleet Tier**: Ghost FactoryOS Track 3 (F1 Skunkworks Engine)  
-**Monopoly Vault Valuation**: $150,000.00 USD  
+**Monopoly Vault Specification**: $150,000.00 USD  
 **Release Version**: v1.0.0-PRODUCTION-CORE  
 **Publication Date**: October 5, 2026  
 
@@ -89,7 +89,7 @@ $$P_{cross} = \\frac{NBBO_{bid} + NBBO_{ask}}{2}$$
 1. **Discretionary Limit Guard**: If incoming taker buy order specifies limit $P_{limit}$, match executes if and only if $P_{cross} \\le P_{limit}$.
 2. **Minimum Quantity Constraint ($MinQty$)**: Order $O_i$ with $MinQty_i > 0$ will execute if and only if:
    $$\\min(RemainingQty(O_{taker}), RemainingQty(O_{maker})) \\ge MinQty_i$$
-3. **Anti-Internalization (Self-Match Prevention)**: If $O_{taker}.MPID == O_{maker}.MPID$ and $AntiInternalize == \\text{TRUE}$, the match is skipped without cancelling the resting maker order.
+Step 3: **Anti-Internalization (Self-Match Prevention)**: If $O_{taker}.MPID == O_{maker}.MPID$ and $AntiInternalize == \\text{TRUE}$, the match is skipped without cancelling the resting maker order.
 
 ### 2.3 Volume-Synchronized Probability of Toxicity (VPIN)
 Flow toxicity is computed across constant-volume information buckets $V$:
@@ -119,9 +119,9 @@ $$\\lambda_2(t) = \\mu_2 + \\sum_{t_i < t} \\alpha_{21} e^{-\\beta (t - t_i)} + 
 
 ---
 
-## 3. LATENCY BUDGET & DETERMINISTIC SLA
+## 3. LATENCY THRESHOLD & DETERMINISTIC SLA
 
-| Pipeline Stage | Subsystem | Maximum Budget (P99) | Measured In-Engine (P99) |
+| Pipeline Stage | Subsystem | Maximum Threshold (P99) | Measured In-Engine (P99) |
 | :--- | :--- | :--- | :--- |
 | Ingress NIC -> Ring | Solarflare EF_VI RX | $120\\,\\mu\\text{s}$ | $48\\,\\mu\\text{s}$ |
 | Order Parsing & SBE Unpack | Pre-Allocated Struct | $50\\,\\mu\\text{s}$ | $18\\,\\mu\\text{s}$ |
@@ -148,7 +148,7 @@ Refer to \`OPENAPI_SPEC.json\` for the full JSON contract with endpoints:
 
 ---
 
-## 6. CLEAN-ROOM IP AUDIT & DELAWARE APA CONTRACT
+## 6. CLEAN-ROOM IP AUDIT & TURNKEY SOFTWARE ASSET PURCHASE AGREEMENT
 - \`LEGAL_IP_AUDIT.md\`: 100% clean-room certified; zero copyleft contagion.
-- \`ENTERPRISE_APA_AGREEMENT.md\`: Delaware Enterprise Asset Purchase Agreement ($150,000 USD outright buyout terms).
+- \`ENTERPRISE_APA_AGREEMENT.md\`: Turnkey Software Asset Purchase Agreement ($150,000 USD outright reference core).
 `;

@@ -55,7 +55,7 @@ is solved via exact discrete-time exponential state transitions without numerica
 
 ### 4. TRADE-DRESS & DESIGN PATENT NOVELTY DECLARATIONS
 1. **Asynchronous Polarized Particle HUD**: Distinctive high-contrast HUD topology featuring dual-color polarized scatter overlays with real-time vector quivers in laser cyan (\`#06b6d4\`) and electric amber (\`#f59e0b\`).
-2. **Monotonic Microsecond Clock Bar**: Precision microsecond latency and compute budget audit bar with sub-millisecond P99 telemetry gauges.
+2. **Monotonic Microsecond Clock Bar**: Precision microsecond latency and compute threshold audit bar with sub-millisecond P99 telemetry gauges.
 3. **Lock-Free Multi-Panel Telemetry Grid**: Specific ergonomic panel arrangement facilitating concurrent monitoring of sensor bandwidth, optical divergence, and refractory status.
 
 ---
@@ -64,4 +64,4 @@ is solved via exact discrete-time exponential state transitions without numerica
 - **Lead Systems Engineer**: Ghost FactoryOS Track 3 Chief Architect
 - **IP Legal Counsel**: Enterprise Technology Licensing & Patent Group
 - **Audit Verdict**: PASSED WITH HIGHEST HONORS (10/10 MONOPOLY VAULT GRADE)
-- **Buyout Authorized Price**: $145,000 USD (Monopoly Vault Tier 3)
+- **Asset Transfer Authorized Price**: $145,000 USD (Monopoly Vault Tier 3)

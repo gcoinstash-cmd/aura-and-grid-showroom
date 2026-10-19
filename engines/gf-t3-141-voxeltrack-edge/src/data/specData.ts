@@ -8,7 +8,7 @@ export const ENGINE_SPEC_T3_VOXELTRACK_MD = `# F1 SKUNKWORKS SERVICE ENGINE SPEC
 ## VoxelTrack-Edge: 125Hz 3D Spatial Perception & Dynamic Octree Voxel Fusion Engine
 **Version:** 3.4.0-PROD-MONOPOLY  
 **Classification:** Enterprise Proprietary / Clean-Room Certified (Tier-1 Autonomous Perception)  
-**Valuation Tier:** $125,000 USD (Monopoly Vault Asset Purchase Standard)
+**Specification Tier:** PostgreSQL 16 + RLS (Monopoly Vault Asset Purchase Standard)
 
 ---
 
@@ -47,7 +47,7 @@ export const ENGINE_SPEC_T3_VOXELTRACK_MD = `# F1 SKUNKWORKS SERVICE ENGINE SPEC
  +-----------------------------------------------------------------------------------------------+
  | [STAGE 3] 3D KALMAN FILTER KINEMATIC TRACKING & HUNGARIAN MATCH                               |
  | - 11-Dimensional State Vector per Tracked Object                                              |
- | - Generalized 3D Bounding Box Intersection-over-Union (GIoU-3D) Cost Matrix                   |
+ | - Generalized 3D Bounding Box Intersection-over-Union (GIoU-3D) Matrix Matrix                   |
  | - Sub-125Hz Continuous State Extrapolation & Covariance Propagation                          |
  +-----------------------------------------------------------------------------------------------+
                                                  |
@@ -96,7 +96,7 @@ $$\\mathbf{P}_{k|k} = (\\mathbf{I} - \\mathbf{K}_k \\mathbf{H}) \\mathbf{P}_{k|k
 For predicted bounding box $\\mathcal{B}_{pred}$ and detected bounding box $\\mathcal{B}_{det}$ with smallest enclosing convex polyhedron $\\mathcal{C}$:
 $$\\text{IoU}_{3D} = \\frac{\\text{Vol}(\\mathcal{B}_{pred} \\cap \\mathcal{B}_{det})}{\\text{Vol}(\\mathcal{B}_{pred} \\cup \\mathcal{B}_{det})}$$
 $$\\text{GIoU}_{3D} = \\text{IoU}_{3D} - \\frac{\\text{Vol}(\\mathcal{C} \\setminus (\\mathcal{B}_{pred} \\cup \\mathcal{B}_{det}))}{\\text{Vol}(\\mathcal{C})}$$
-Association cost matrix element:
+Association matrix matrix element:
 $$C_{ij} = 1.0 - \\text{GIoU}_{3D}(\\mathcal{B}_i, \\mathcal{B}_j) + \\lambda_{vel} \\|\\mathbf{v}_i - \\mathbf{v}_j\\|_2$$
 
 #### 2.4 Time-to-Collision (TTC) & Dynamic Safety Margin
@@ -141,13 +141,13 @@ All software dependencies and runtime sub-modules are strictly restricted to the
 - Boost Software License 1.0
 
 ### 3. MONOPOLY VAULT CLEARANCE
-This software deliverable meets the requirements for full commercial assignment under standard Asset Purchase Agreement terms ($125,000.00 USD institutional consideration).
+This software deliverable meets the requirements for full commercial assignment under standard Asset Purchase Agreement terms (PostgreSQL 16 + RLS institutional consideration).
 `;
 
 export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AND IP ASSIGNMENT AGREEMENT
 **Execution Copy**  
 **Asset ID:** GF-T3-140 (VoxelTrack-Edge 3D Spatial Perception Engine)  
-**Valuation / Purchase Price:** $125,000.00 USD (Monopoly Vault Standard)  
+**Specification / Purchase Price:** PostgreSQL 16 + RLS (Monopoly Vault Standard)  
 **Governing Jurisdiction:** State of Delaware
 
 ---
@@ -157,7 +157,7 @@ export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AND IP ASSIGNMENT A
 
 **WHEREAS**, Buyer desires to acquire all right, title, interest, source code, neural network weight formats, database schemas, and intellectual property associated with Asset GF-T3-140, free and clear of all liens and encumbrances;
 
-**NOW, THEREFORE**, in consideration of the mutual covenants contained herein and other good and valuable consideration ($125,000.00 USD), the parties agree as follows:
+**NOW, THEREFORE**, in consideration of the mutual covenants contained herein and other good and valuable consideration (PostgreSQL 16 + RLS), the parties agree as follows:
 
 ### 1. PURCHASE AND SALE OF ASSETS
 1.1 **Transferred Intellectual Property:** Seller irrevocably sells, assigns, and transfers to Buyer all global rights, patents, trade secrets, copyright registrations, Git commit history, OpenAPI 3.1 specifications, and AlloyDB DDL architectures.
@@ -168,7 +168,7 @@ export const ENTERPRISE_APA_AGREEMENT_MD = `# ASSET PURCHASE AND IP ASSIGNMENT A
    - \`LEGAL_IP_AUDIT.md\` (Clean-Room Attestation)
 
 ### 2. PURCHASE PRICE AND CLOSING
-2.1 **Consideration:** Buyer shall wire the sum of **One Hundred Twenty-Five Thousand Dollars ($125,000.00 USD)** to Seller's escrow account upon verification of the 125Hz real-time simulator telemetry tests.
+2.1 **Consideration:** Buyer shall wire the sum of **One Hundred Twenty-Five Thousand Dollars (PostgreSQL 16 + RLS)** to Seller's escrow account upon verification of the 125Hz real-time simulator telemetry tests.
 2.2 **Warranties of Title:** Seller represents and warrants that it is the sole and exclusive owner of the Intellectual Property and that no copyleft licenses (GPL/AGPL) encumber the asset.
 
 [SEALED UNDER GHOST FACTORYOS MONOPOLY VAULT PROTOCOL]

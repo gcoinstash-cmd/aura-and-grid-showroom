@@ -29,8 +29,8 @@ export const MonopolyVaultTab: React.FC = () => {
 
   const criteriaList = [
     {
-      title: '1. Architectural Topology & Latency Budget',
-      desc: 'Python 3.12 ASGI gateway, Redis ring buffer, and multi-venue FIX routing within strict 4.80 ms P99.9 budget.',
+      title: '1. Architectural Topology & Latency Threshold',
+      desc: 'Python 3.12 ASGI gateway, Redis ring buffer, and multi-venue FIX routing within strict 4.80 ms P99.9 threshold.',
       status: 'VERIFIED 10/10',
     },
     {
@@ -54,8 +54,8 @@ export const MonopolyVaultTab: React.FC = () => {
       status: 'VERIFIED 10/10',
     },
     {
-      title: '6. Institutional Delaware APA Agreement',
-      desc: 'Pre-drafted commercial Asset Purchase Agreement specifying $125,000 USD terms, full IP assignment, and non-infringement warranties.',
+      title: '6. Institutional Turnkey Software Asset Purchase Agreement Agreement',
+      desc: 'Pre-drafted commercial Asset Purchase Agreement specifying PostgreSQL 16 + RLS terms, full IP assignment, and non-infringement warranties.',
       status: 'VERIFIED 10/10',
     },
   ];
@@ -69,11 +69,11 @@ export const MonopolyVaultTab: React.FC = () => {
       zip.file('ALLOYDB_SCHEMA.sql', ALLOYDB_SCHEMA_SQL);
       zip.file('ENTERPRISE_APA_AGREEMENT.md', ENTERPRISE_APA_AGREEMENT_MD);
       zip.file('OPENAPI_SPEC.json', OPENAPI_SPEC_JSON);
-      zip.file('INSTITUTIONAL_VALUATION_CERTIFICATE.txt', `ASSET VALUATION & IP CERTIFICATE
+      zip.file('INSTITUTIONAL_VALUATION_CERTIFICATE.txt', `ASSET SPECIFICATION & IP CERTIFICATE
 Asset Identifier: GF-T3-141
 Title: Chronos-Tick Algorithmic Execution Core Workstation
 Tier: Track 3 - F1 Skunkworks Service Engine
-Monopoly Vault Valuation: $125,000.00 USD
+Monopoly Vault Specification: PostgreSQL 16 + RLS
 Jurisdiction: Delaware, United States
 IP Transfer: 100% Unencumbered Exclusive
 Licensing: MIT / Commercial APA Pre-Cleared`);
@@ -114,17 +114,17 @@ Licensing: MIT / Commercial APA Pre-Cleared`);
             </span>
           </div>
           <p className="text-sm text-slate-300 max-w-3xl">
-            Asset Code <strong className="text-emerald-300 font-mono">GF-T3-141</strong> has completed the 70% Lead Systems Architect phase. All legal warranties, clean-room affidavits, and Delaware APA agreements are pre-cleared for $125,000 institutional acquisition.
+            Asset Code <strong className="text-emerald-300 font-mono">GF-T3-141</strong> has completed the 70% Lead Systems Architect phase. All legal warranties, clean-room affidavits, and Turnkey Software Asset Purchase Agreement agreements are pre-cleared for PostgreSQL 16 + RLS institutional acquisition.
           </p>
         </div>
 
         {/* Monopoly Price Card */}
         <div className="p-4 rounded-xl bg-slate-950 border border-emerald-500/50 shadow-xl shrink-0 text-center lg:text-right">
           <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
-            Standard Monopoly Vault Buyout
+            Standard Monopoly Vault Asset Transfer
           </div>
           <div className="text-3xl font-black font-mono text-emerald-300 mt-1">
-            $125,000.00 <span className="text-xs text-slate-400 font-normal">USD</span>
+            PostgreSQL 16 + RLS.00 <span className="text-xs text-slate-400 font-normal">USD</span>
           </div>
           <div className="text-xs font-mono text-emerald-400/80 mt-1 font-bold">
             0.00% Ongoing Royalties • Full IP Assignment
@@ -169,7 +169,7 @@ Licensing: MIT / Commercial APA Pre-Cleared`);
         </div>
       </div>
 
-      {/* Delaware APA Contract Viewer & Clean-Room Affidavit */}
+      {/* Turnkey Software Asset Purchase Agreement Contract Viewer & Clean-Room Affidavit */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* Clean Room Certification Summary (4 cols) */}
@@ -213,13 +213,13 @@ Licensing: MIT / Commercial APA Pre-Cleared`);
           </button>
         </div>
 
-        {/* Delaware APA Contract Text Viewer (8 cols) */}
+        {/* Turnkey Software Asset Purchase Agreement Contract Text Viewer (8 cols) */}
         <div className="lg:col-span-8 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
             <div className="flex items-center gap-2">
               <Building2 className="w-5 h-5 text-amber-400" />
               <h3 className="text-base font-black text-white uppercase">
-                ENTERPRISE_APA_AGREEMENT.md ($125,000 Delaware Contract)
+                ENTERPRISE_APA_AGREEMENT.md (PostgreSQL 16 + RLS Delaware Contract)
               </h3>
             </div>
 

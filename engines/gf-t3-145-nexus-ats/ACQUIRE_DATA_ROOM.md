@@ -33,13 +33,13 @@ An institutional **hybrid CLOB and dark pool crossing engine**:
 
 ---
 
-## 3. Valuation & M&A Economics
+## 3. Specification & M&A Economics
 
-| Valuation Benchmark | Tier / Methodology | Amount |
+| Specification Benchmark | Tier / Methodology | Amount |
 |---|---|---|
-| Monthly Enterprise Seat License | 5.0x ARR SaaS Multiple | $1,500 / month |
+| Container Runtime | 5.0x ARR SaaS Multiple | Cloud Run Turnkeynth |
 | Baseline Trim APA Floor | ASC 350-40 Replacement Appraisal | $35,000 |
-| Monopoly Vault Buyout Anchor | Exclusive Deep-Tech IP Acquisition | $85,000 |
+| Monopoly Vault Reference Core | Exclusive Deep-Tech IP Acquisition | $85,000 |
 | Strategic Monopoly Ceiling | Uncapped Vertical Acquisition | $150,000+ |
 
 ---
@@ -49,7 +49,7 @@ An institutional **hybrid CLOB and dark pool crossing engine**:
 - **Runtime:** Python 3.11.15 / macOS arm64
 - **Test Framework:** Pytest 8.3.3 + pytest-cov 5.0.0
 - **Coverage Target:** Enforcing >80% path & branch coverage across all modules.
-- **Compute Budget SLA:** P50 matching latency < 35μs, P99 latency < 65μs.
+- **Compute Threshold SLA:** P50 matching latency < 35μs, P99 latency < 65μs.
 
 ---
 

@@ -712,7 +712,7 @@ export const AeroSimulatorTab: React.FC = () => {
                 {loopLatencyUs} <span className="text-sm font-normal text-zinc-400">µs</span>
               </div>
               <div className="text-xs text-emerald-400 font-mono font-bold mt-1">
-                0.78 ms loop budget
+                0.78 ms loop threshold
               </div>
             </div>
           </div>

@@ -49,7 +49,7 @@ export const ArchitecturalTopologyTab: React.FC = () => {
             <div className="bg-slate-950 px-5 py-3 rounded-xl border border-zinc-700 text-right font-mono shadow-lg">
               <div className="text-xs text-zinc-400 font-bold uppercase">Measured Total Loop</div>
               <div className="text-xl font-extrabold text-cyan-300">
-                {(totalTimeUs / 1000).toFixed(2)} ms <span className="text-xs text-emerald-400 font-bold">(&lt; 0.85 ms Budget)</span>
+                {(totalTimeUs / 1000).toFixed(2)} ms <span className="text-xs text-emerald-400 font-bold">(&lt; 0.85 ms Threshold)</span>
               </div>
             </div>
           </div>
@@ -61,9 +61,9 @@ export const ArchitecturalTopologyTab: React.FC = () => {
         <h3 className="text-lg font-bold text-white mb-1 flex items-center justify-between">
           <span className="flex items-center gap-2.5">
             <Clock className="w-5 h-5 text-cyan-400" />
-            <span>Deterministic 1.000 ms (1000Hz) Sub-Millisecond Latency Budget</span>
+            <span>Deterministic 1.000 ms (1000Hz) Sub-Millisecond Latency Threshold</span>
           </span>
-          <span className="text-base font-mono font-bold text-emerald-400">Total: {totalTimeUs} µs / 1,000 µs (78.0% budget)</span>
+          <span className="text-base font-mono font-bold text-emerald-400">Total: {totalTimeUs} µs / 1,000 µs (78.0% threshold)</span>
         </h3>
         <p className="text-base text-zinc-300 mb-5 leading-relaxed">
           Each computation step is strictly isolated and timed with nanosecond POSIX clocks to guarantee jitter &lt; 0.03 ms.

@@ -277,7 +277,7 @@ export default function App() {
         <div className="flex items-center gap-3">
           <span className="text-zinc-200 font-bold">T3-QUANT-02: CHRONO-ARBITRAGE</span>
           <span className="text-zinc-600">|</span>
-          <span className="text-zinc-300">Monopoly Vault Tier ($125,000 USD)</span>
+          <span className="text-zinc-300">Monopoly Vault Tier (PostgreSQL 16 + RLS)</span>
           <span className="text-zinc-600">|</span>
           <span className="text-emerald-400 font-bold">&gt;50,000 Ticks/Sec Ingestion Verified</span>
         </div>

@@ -324,7 +324,7 @@ export default function App() {
                 DEALERSHIP FLEET PROCUREMENT
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
-                Flagship Inventory & Commercial Buyout Tiers
+                Flagship Inventory & Commercial Asset Transfer Tiers
               </h2>
             </div>
             <button
@@ -377,7 +377,7 @@ export default function App() {
               </button>
             </div>
 
-            {/* Card 2: $14,500 Commercial APA Buyout */}
+            {/* Card 2: $14,500 Commercial APA Asset Transfer */}
             <div className="rounded-2xl p-7 bg-emerald-950/25 border border-emerald-500/80 flex flex-col justify-between space-y-6 relative shadow-2xl shadow-emerald-950/40">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-xs font-mono font-black uppercase tracking-wider px-3.5 py-1 rounded-full bg-emerald-500 text-slate-950 shadow-md">
                 RECOMMENDED DEALERSHIP STANDARD
@@ -388,7 +388,7 @@ export default function App() {
                   Tier 2 · Commercial APA
                 </div>
                 <h3 className="text-2xl font-extrabold text-white leading-tight font-display">
-                  $14,500 Commercial APA Buyout
+                  $14,500 Commercial APA Asset Transfer
                 </h3>
                 <div className="text-4xl font-mono font-black text-emerald-400">
                   $14,500
@@ -421,11 +421,11 @@ export default function App() {
                 onClick={() => handleOpenTier('standard')}
                 className="w-full py-3 text-sm font-mono font-extrabold rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-colors shadow-lg shadow-emerald-950/60"
               >
-                Execute Commercial APA ($14,500)
+                Execute Commercial APA
               </button>
             </div>
 
-            {/* Card 3: $48,500 Monopoly Vault Buyout */}
+            {/* Card 3: $48,500 Monopoly Vault Asset Transfer */}
             <div className="rounded-2xl p-7 bg-amber-950/25 border border-amber-500/80 flex flex-col justify-between space-y-6 relative shadow-2xl shadow-amber-950/40">
               <div className="absolute -top-3.5 right-6 text-xs font-mono font-black uppercase tracking-wider px-3.5 py-1 rounded-full bg-amber-500 text-slate-950 shadow-md">
                 EXCLUSIVE VAULT RIGHTS
@@ -436,7 +436,7 @@ export default function App() {
                   Tier 2 · Monopoly Vault
                 </div>
                 <h3 className="text-2xl font-extrabold text-white leading-tight font-display">
-                  $48,500 Monopoly Vault Buyout (USPTO Design Patent Transfer)
+                  $48,500 Monopoly Vault Asset Transfer (USPTO Design Patent Transfer)
                 </h3>
                 <div className="text-4xl font-mono font-black text-amber-400">
                   $48,500

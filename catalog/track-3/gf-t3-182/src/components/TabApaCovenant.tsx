@@ -3,7 +3,7 @@ import { FileText, Copy, Check, ShieldCheck, CheckSquare, Scale } from 'lucide-r
 
 const APA_AGREEMENT_TEXT = `================================================================================
 ASSET PURCHASE AGREEMENT (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-182 (LEXUS RC F TRACK EDITION AERO CORE)
+ASSET IDENTIFIER: GF-T3-182 (Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE)
 ACQUIRE.COM ESCROW TRANSACTION REF: ACQ-GHOST-RCF-182
 ================================================================================
 
@@ -28,12 +28,12 @@ SECTION 1: PURCHASE AND SALE OF ASSETS
         PostgreSQL 16 partitioned schema DDL, OpenAPI 3.1 specifications, Dockerfile,
         and PyTest verification bench (>94% coverage).
     (b) CFD aerodynamic simulation matrices, lift-to-drag calibrated polar curves,
-        and Lexus RC F Track Edition vehicle dynamics parameter maps.
+        and Heavy Overland Dynamics Platform RC F Track Edition vehicle dynamics parameter maps.
     (c) Monotonic HMAC-SHA256 telemetry ledger database scripts and quarantine triggers.
     (d) All structural novelty design patent claims and trade-dress rights.
-1.2 Purchase Price & Terms:
-    The total purchase price is $45,000 USD for the Micro-APA Buyout ($125,000 USD for
-    the Enterprise Exclusive Perpetual Buyout), payable via Acquire.com / Escrow.com.
+1.2 DEPLOYMENT SPECIFICATION & Terms:
+    The total DEPLOYMENT SPECIFICATION is 20 kHz (0.48ms) for the Micro-APA Asset Transfer (PostgreSQL 16 + RLS for
+    the Enterprise Exclusive Perpetual Asset Transfer), payable via Acquire.com / Escrow.com.
 
 SECTION 2: EXHIBIT A - BILL OF SALE & IP ASSIGNMENT
 Seller hereby sells, assigns, transfers, conveys, and delivers unto Buyer, its successors
@@ -102,20 +102,20 @@ export const TabApaCovenant: React.FC = () => {
         </div>
 
         <p className="mt-3 text-sm text-slate-300 max-w-3xl">
-          Complete legal covenants for Acquire.com micro-APA transactions ($45,000 USD buyout) with Exhibit A Bill of Sale, clean-room non-infringement warranties, patent waiver clauses, and step-by-step escrow handoff procedures.
+          Complete legal covenants for Acquire.com micro-APA transactions (20 kHz (0.48ms) asset transfer) with Exhibit A Bill of Sale, clean-room non-infringement warranties, patent waiver clauses, and step-by-step escrow handoff procedures.
         </p>
 
         {/* Pricing & Commercial Structure */}
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-slate-950 border border-slate-800 rounded-lg p-4">
-            <div className="text-sm font-mono text-slate-400">MICRO-APA BUYOUT</div>
-            <div className="text-2xl font-bold font-mono text-cyan-300 mt-1">$45,000 USD</div>
-            <div className="text-sm text-slate-300 mt-1">Single-entity buyout · Full source tree</div>
+            <div className="text-sm font-mono text-slate-400">MICRO-APA ASSET TRANSFER</div>
+            <div className="text-2xl font-bold font-mono text-cyan-300 mt-1">20 kHz (0.48ms)</div>
+            <div className="text-sm text-slate-300 mt-1">Single-entity asset transfer · Full source tree</div>
           </div>
 
           <div className="bg-slate-950 border border-slate-800 rounded-lg p-4">
-            <div className="text-sm font-mono text-slate-400">ENTERPRISE BUYOUT</div>
-            <div className="text-2xl font-bold font-mono text-emerald-300 mt-1">$125,000 USD</div>
+            <div className="text-sm font-mono text-slate-400">ENTERPRISE ASSET TRANSFER</div>
+            <div className="text-2xl font-bold font-mono text-emerald-300 mt-1">PostgreSQL 16 + RLS</div>
             <div className="text-sm text-slate-300 mt-1">Exclusive monopoly rights · Escrow included</div>
           </div>
 
@@ -146,7 +146,7 @@ export const TabApaCovenant: React.FC = () => {
               className="w-4 h-4 accent-cyan-500 rounded cursor-pointer"
             />
             <span className="text-sm font-medium text-slate-200">
-              1. Escrow.com / Acquire.com Purchase Deposit Secured ($45,000)
+              1. Escrow.com / Acquire.com Purchase Deposit Secured (20 kHz (0.48ms))
             </span>
           </label>
 

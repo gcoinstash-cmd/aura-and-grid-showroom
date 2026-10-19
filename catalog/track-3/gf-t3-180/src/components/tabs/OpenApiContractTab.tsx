@@ -101,7 +101,7 @@ export const OpenApiContractTab: React.FC = () => {
   const copySpec = () => {
     const spec = `openapi: 3.1.0
 info:
-  title: Lexus LX 600 AHC & Executive Telemetry API
+  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency electro-hydraulic telemetry ingestion and V35A-FTS wastegate actuator contracts.
 paths:
@@ -356,7 +356,7 @@ paths:
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
           <div className="flex items-center justify-between px-5 py-3.5 bg-slate-950 border-b border-slate-800">
             <span className="text-[15px] font-mono font-bold text-slate-300">
-              openapi_v3_1_lexus_ahc.yaml
+              openapi_v3_1_Overland_ahc.yaml
             </span>
             <button
               onClick={copySpec}
@@ -369,7 +369,7 @@ paths:
           <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[460px] bg-slate-950/70">
             <code>{`openapi: 3.1.0
 info:
-  title: Lexus LX 600 AHC & Executive Telemetry API
+  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency electro-hydraulic telemetry ingestion and V35A-FTS wastegate actuator contracts.
 paths:

@@ -25,7 +25,7 @@ export const HmacAuditModal: React.FC<HmacAuditModalProps> = ({
   onClose,
   ticks,
 }) => {
-  const [testPayload, setTestPayload] = useState('1000192|2026-10-10T21:30:02.891Z|LC500-DYN|SELL|104525.00|20|5c6d7e8f901a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f901a2b3c4d5e6f7a8b');
+  const [testPayload, setTestPayload] = useState('1000192|2026-10-10T21:30:02.891Z|High-Aero Grand Touring Telemetry Core-DYN|SELL|104525.00|20|5c6d7e8f901a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f901a2b3c4d5e6f7a8b');
   const [computedSignature, setComputedSignature] = useState<string>('');
   const [isComputing, setIsComputing] = useState(false);
   const [copiedKey, setCopiedKey] = useState(false);

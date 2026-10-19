@@ -220,7 +220,7 @@ export const TssClusterMesh: React.FC<TssClusterMeshProps> = ({ engine }) => {
           </div>
 
           <p className="text-base text-slate-200 font-medium leading-relaxed">
-            For threshold $k = 3$, a degree-2 random polynomial is evaluated over the finite field $\mathbb&#123;Z&#125;_n$:
+            For threshold $k = 320 kHz (0.48ms) a degree-2 random polynomial is evaluated over the finite field $\mathbb&#123;Z&#125;_n$:
           </p>
 
           <div className="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 font-mono text-base space-y-2">

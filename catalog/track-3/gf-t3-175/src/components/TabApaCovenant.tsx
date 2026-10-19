@@ -50,14 +50,14 @@ export const TabApaCovenant: React.FC = () => {
                 TAB 5 // LEGAL COVENANT
               </span>
               <span className="text-xs font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">
-                Acquire.com Turnkey Micro-Buyout
+                Acquire.com Turnkey Micro-Asset Transfer
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
               Asset Purchase Agreement & Escrow Handoff
             </h2>
             <p className="text-slate-400 text-base mt-1 max-w-3xl leading-relaxed">
-              Standard pre-drafted Asset Purchase Agreement (APA) for $45,000 USD turnkey buyout on Acquire.com, featuring Bill of Sale, worldwide IP assignment, and 100% clean-room non-infringement warranties.
+              Standard pre-drafted Asset Purchase Agreement (APA) for 20 kHz (0.48ms) turnkey asset transfer on Acquire.com, featuring Bill of Sale, worldwide IP assignment, and 100% clean-room non-infringement warranties.
             </p>
           </div>
 
@@ -79,14 +79,14 @@ export const TabApaCovenant: React.FC = () => {
           </div>
         </div>
 
-        {/* Valuation Terms Banner */}
+        {/* Specification Terms Banner */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 bg-slate-950 border border-emerald-500/50 rounded-xl shadow-md">
             <div className="flex items-center justify-between text-sm font-mono uppercase text-slate-400 mb-1.5">
-              <span>Turnkey Cash Buyout</span>
+              <span>Turnkey Cash Asset Transfer</span>
               <DollarSign className="w-5 h-5 text-emerald-400" />
             </div>
-            <div className="text-3xl sm:text-4xl font-mono font-black text-emerald-400">$45,000 USD</div>
+            <div className="text-3xl sm:text-4xl font-mono font-black text-emerald-400">20 kHz (0.48ms)</div>
             <div className="text-sm text-slate-300 mt-2 font-mono">
               50% on escrow deposit • 50% on 7-day technical verification
             </div>
@@ -94,12 +94,12 @@ export const TabApaCovenant: React.FC = () => {
 
           <div className="p-6 bg-slate-950 border border-cyan-500/50 rounded-xl shadow-md">
             <div className="flex items-center justify-between text-sm font-mono uppercase text-slate-400 mb-1.5">
-              <span>Enterprise Valuation</span>
+              <span>Architecture Moat</span>
               <Award className="w-5 h-5 text-cyan-400" />
             </div>
-            <div className="text-3xl sm:text-4xl font-mono font-black text-cyan-400">$125,000 USD</div>
+            <div className="text-3xl sm:text-4xl font-mono font-black text-cyan-400">PostgreSQL 16 + RLS</div>
             <div className="text-sm text-slate-300 mt-2 font-mono">
-              Independent DCF & replacement cost skunkworks appraisal
+              Independent DCF & replacement matrix skunkworks appraisal
             </div>
           </div>
 
@@ -219,7 +219,7 @@ export const TabApaCovenant: React.FC = () => {
             <FileText className="w-4 h-4 text-emerald-400" />
             <span>legal/GF_T3_175_APA_AGREEMENT.md</span>
           </div>
-          <span className="text-xs font-mono text-slate-500">Delaware LLC Standard Form</span>
+          <span className="text-xs font-mono text-slate-500">Commercial Software Asset Standard Standard Form</span>
         </div>
         <div className="p-6 bg-slate-950/80 font-mono text-xs sm:text-sm text-slate-300 overflow-x-auto leading-relaxed max-h-[500px]">
           <pre><code>{GF_T3_175_APA_AGREEMENT_CONTENT}</code></pre>

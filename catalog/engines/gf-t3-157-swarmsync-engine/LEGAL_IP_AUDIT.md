@@ -1,6 +1,6 @@
 # LEGAL_IP_AUDIT.md — CLEAN-ROOM CODE & INTELLECTUAL PROPERTY CERTIFICATION
 ## Asset Tag: GF-T3-157 // SwarmSync Engine
-**Valuation Anchor:** $125,000 USD (Standalone Asset Purchase Agreement)  
+**Specification Anchor:** 20 kHz (0.48ms) (Standalone Asset Purchase Agreement)  
 **Governing Jurisdiction:** State of Delaware, USA  
 **Audit Status:** PASSED (100% Clean-Room Permissive / Zero Copyleft)
 

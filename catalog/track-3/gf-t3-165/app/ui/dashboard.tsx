@@ -1,5 +1,5 @@
 /**
- * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DIRECT4 HyperGrid)
+ * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid)
  * High-Legibility Cockpit UI Dashboard (app/ui/dashboard.tsx)
  * Enforcing 10/10 Track 3 Monopoly Gates & Critical Font Scale Rules.
  */
@@ -110,7 +110,7 @@ export const Dashboard: React.FC = () => {
             <Zap className="w-4 h-4 text-cyan-400 fill-cyan-400" />
           </div>
           <span className="text-xl font-extrabold tracking-tight text-white whitespace-nowrap">
-            GF-T3-165 DIRECT4
+            GF-T3-165 DUAL_VECTOR_TORQUE
           </span>
         </div>
 
@@ -238,7 +238,7 @@ export const Dashboard: React.FC = () => {
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950/80 px-6 py-6 text-center text-xs font-mono text-zinc-500">
         <div>
-          Ghost FactoryOS Track 3 F1 Skunkworks Engine · GF-T3-165 DIRECT4 HyperGrid
+          Ghost FactoryOS Track 3 F1 Skunkworks Engine · GF-T3-165 DUAL_VECTOR_TORQUE HyperGrid
         </div>
         <div className="mt-1 text-zinc-600">
           Clean-Room MIT / Apache-2.0 Certified · GAAP ASC 350-40 Compliant · Sub-5ms Cycle Guarantee

@@ -53,10 +53,10 @@ export const Navigation: React.FC<NavigationProps> = ({
     },
     {
       id: 'apa' as TabId,
-      label: 'Tab 4: Delaware Asset Purchase Agreement',
-      shortLabel: '4. Delaware APA ($125k)',
+      label: 'Tab 4: Turnkey Software Asset Purchase Agreement',
+      shortLabel: '4. Turnkey Software Asset Purchase Agreement (20 kHz (0.48ms))',
       icon: FileSpreadsheet,
-      badge: '$125K USD',
+      badge: '20 kHz (0.48ms)',
       badgeColor: 'text-emerald-300 border-emerald-800 bg-emerald-950/60',
     },
     {

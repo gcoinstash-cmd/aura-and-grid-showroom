@@ -1,7 +1,7 @@
-# GF-T3-167: LEXUS LC 500 DYNAMIC CORE (v1.0.0-PROD)
+# GF-T3-167: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core DYNAMIC CORE (v1.0.0-PROD)
 ## INSTITUTIONAL MASTER SERVICE SPECIFICATION & TURNKEY MICRO-APA BLUEPRINT
-**Target Platform:** Acquire.com Micro-APA Buyout Vault  
-**Valuation Baseline:** Micro-APA Buyout: $45,000 USD | Enterprise Monroney Anchor: $125,000 USD  
+**Target Platform:** Production Service Engine Vault  
+**Specification Baseline:** Micro-APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Monroney Anchor: PostgreSQL 16 + RLS  
 **Clean-Room Certification:** 100% Permissive MIT Whitelist / 0% Copyleft (Zero GPL/AGPL)  
 **Deterministic Latency SLA:** p50 < 0.65ms | p99 < 1.20ms | Lock-Free C-Struct Ring Buffer  
 **Throughput Target:** 250,000+ ops/sec Zero-Allocation Matching  
@@ -70,7 +70,7 @@ typedef struct __attribute__((aligned(64))) {
     uint64_t timestamp_ns;       // CLOCK_MONOTONIC_RAW nanoseconds
     uint64_t order_id;           // Unique 64-bit client order key
     uint32_t trader_id;          // Compact 32-bit participant identifier
-    uint32_t instrument_id;      // 0x0167 (LC 500 Dynamic Core)
+    uint32_t instrument_id;      // 0x0167 (High-Aero Grand Touring Telemetry Core Dynamic Core)
     uint32_t price_fixed;        // Scaled decimal (price * 10,000)
     uint32_t quantity;           // Unsigned contract size
     uint8_t  side;               // 0 = BUY (BID), 1 = SELL (ASK)
@@ -151,7 +151,7 @@ CREATE SEQUENCE seq_engine_monotonic
 CREATE TABLE engine_tick_ledger (
     sequence_id     BIGINT NOT NULL DEFAULT nextval('seq_engine_monotonic'),
     created_at      TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp(),
-    symbol          VARCHAR(16) NOT NULL DEFAULT 'LC500-DYN',
+    symbol          VARCHAR(16) NOT NULL DEFAULT 'High-Aero Grand Touring Telemetry Core-DYN',
     side            VARCHAR(4) NOT NULL CHECK (side IN ('BUY', 'SELL')),
     price           NUMERIC(14, 4) NOT NULL CHECK (price > 0),
     quantity        INTEGER NOT NULL CHECK (quantity > 0),
@@ -209,7 +209,7 @@ openapi: 3.1.0
 info:
   title: GF-T3-167 Dynamic Core Engine API
   version: 1.0.0-PROD
-  description: Low-latency matching engine and HMAC tick ledger interface for Lexus LC 500 Dynamic Core.
+  description: Low-latency matching engine and HMAC tick ledger interface for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core.
 servers:
   - url: https://engine.ghostfactoryos.internal/api/v1
     description: Production Internal Cloud Run Service
@@ -263,7 +263,7 @@ paths:
         - name: symbol
           in: query
           required: false
-          schema: { type: string, default: "LC500-DYN" }
+          schema: { type: string, default: "High-Aero Grand Touring Telemetry Core-DYN" }
       responses:
         '200':
           description: Snapshot of Top 20 Bids and Asks
@@ -300,8 +300,8 @@ paths:
 
 ### 6.1 Transaction Summary
 - **Asset ID:** GF-T3-167
-- **Model:** Lexus LC 500 Dynamic Core v1.0.0-PROD
-- **Purchase Price:** $45,000 USD (Micro-APA Buyout via Escrow.com / Acquire.com Escrow)
+- **Model:** Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - **IP Assignment:** 100% Worldwide, Perpetual, Exclusive, Free & Clear of Liens
 - **Clean-Room Warranty:** Seller warrants zero inclusion of GPL/copyleft code and confirms clean-room implementation.
 - **Escrow Handover:** Dual-Factor Cryptographic Signatures (Seller Architect + Buyer Escrow Officer) trigger automated code repository transfer, container registry tokens, and database encryption keys.

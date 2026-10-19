@@ -17,7 +17,7 @@ interface WsFrame {
 }
 
 export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ currentRpm }) => {
-  const [selectedMode, setSelectedMode] = useState<'Normal' | 'Sport' | 'Sport S+'>('Sport S+');
+  const [selectedMode, setSelectedMode] = useState<'Normal' | 'Sport' | 'High-Frequency Compute Mode'>('High-Frequency Compute Mode');
   const [testThrottle, setTestThrottle] = useState(78);
   const [testRpm, setTestRpm] = useState(currentRpm || 4800);
   const [isSending, setIsSending] = useState(false);
@@ -104,7 +104,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ currentR
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-193 Lexus IS 500 Performance Telemetry API
+  title: GF-T3-193 Heavy Overland Dynamics Platform IS 500 Performance Telemetry API
   description: High-frequency telemetry ingestion, acoustic intake valve management, and Torsen LSD control protocol.
   version: 1.0.0-PROD
   license:
@@ -138,7 +138,7 @@ paths:
 
   /engine/mode:
     post:
-      summary: Dispatch Sport S+ drive mode and throttle mapping
+      summary: Dispatch High-Frequency Compute Mode drive mode and throttle mapping
       requestBody:
         required: true
         content:
@@ -149,7 +149,7 @@ paths:
               properties:
                 mode:
                   type: string
-                  enum: [Normal, Sport, Sport S+, Custom]
+                  enum: [Normal, Sport, High-Frequency Compute Mode, Custom]
                 throttle_map:
                   type: string
                   enum: [LINEAR, AGGRESSIVE_PROGRESSIVE, TRACK_HELMHOLTZ]
@@ -231,7 +231,7 @@ components:
           <span>OpenAPI 3.1 Telemetry & Protocol Contract</span>
         </h2>
         <p className="text-base text-slate-400 mt-1">
-          Formal REST endpoints and 200 Hz WebSocket streaming contracts for 2UR-GSE Mass Airflow (MAF), intake pressure pulses, wheel speed differentials, and Sport S+ throttle mapping.
+          Formal REST endpoints and 200 Hz WebSocket streaming contracts for 2UR-GSE Mass Airflow (MAF), intake pressure pulses, wheel speed differentials, and High-Frequency Compute Mode throttle mapping.
         </p>
       </div>
 
@@ -256,7 +256,7 @@ components:
                   Vehicle Drive Mode Setting:
                 </label>
                 <div className="grid grid-cols-3 gap-2">
-                  {(['Normal', 'Sport', 'Sport S+'] as const).map((mode) => (
+                  {(['Normal', 'Sport', 'High-Frequency Compute Mode'] as const).map((mode) => (
                     <button
                       key={mode}
                       onClick={() => setSelectedMode(mode)}

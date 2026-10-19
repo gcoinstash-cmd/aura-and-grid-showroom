@@ -36,12 +36,12 @@ export const ApaCovenantTab: React.FC = () => {
               Acquire.com Turnkey Micro-APA Legal Covenant
             </h2>
             <p className="text-slate-400 text-base leading-relaxed">
-              Delaware Asset Purchase Agreement, Exhibit IP assignment schedule, 0% copyleft clean-room warranty, and Escrow.com closing disbursement milestones.
+              Turnkey Software Asset Purchase Agreement, Exhibit IP assignment schedule, 0% copyleft clean-room warranty, and Escrow.com closing disbursement milestones.
             </p>
           </div>
           <div className="flex items-center gap-2 shrink-0">
             <span className="text-xs font-mono px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-lg font-bold">
-              Delaware Jurisdiction
+              Commercial Software Asset Standard
             </span>
           </div>
         </div>
@@ -53,16 +53,16 @@ export const ApaCovenantTab: React.FC = () => {
         <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
           <h3 className="text-xl font-bold text-white flex items-center gap-2">
             <DollarSign className="w-5 h-5 text-emerald-400" />
-            APA Buyout Structure
+            APA Asset Transfer Structure
           </h3>
 
           <div className="space-y-3 font-mono">
             <div className="p-3.5 bg-slate-950 rounded-lg border border-slate-800 flex justify-between items-center">
               <div>
-                <span className="text-slate-400 text-xs block">STANDARD TURNKEY BUYOUT</span>
+                <span className="text-slate-400 text-xs block">STANDARD TURNKEY ASSET TRANSFER</span>
                 <span className="text-white text-sm font-semibold">Micro-Acquisition License</span>
               </div>
-              <span className="text-2xl font-black text-white">$45,000 USD</span>
+              <span className="text-2xl font-black text-white">20 kHz (0.48ms)</span>
             </div>
 
             <div className="p-3.5 bg-slate-950 rounded-lg border border-amber-500/30 flex justify-between items-center">
@@ -70,7 +70,7 @@ export const ApaCovenantTab: React.FC = () => {
                 <span className="text-amber-400 text-xs block">INSTITUTIONAL ENTERPRISE VAULT</span>
                 <span className="text-white text-sm font-semibold">Perpetual Global Monopoly</span>
               </div>
-              <span className="text-2xl font-black text-amber-400">$125,000 USD</span>
+              <span className="text-2xl font-black text-amber-400">PostgreSQL 16 + RLS</span>
             </div>
           </div>
 
@@ -198,27 +198,27 @@ export const ApaCovenantTab: React.FC = () => {
 };
 
 const apaAgreementLegalText = `# ASSET PURCHASE AGREEMENT: GF-T3-199
-**ASSET CODENAME:** GF-T3-199 (Lexus RX 500h F SPORT Performance Core)
-**JURISDICTION:** State of Delaware, United States
+**ASSET CODENAME:** GF-T3-199 (Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core)
+**JURISDICTION:** Standard Commercial Jurisdiction, United States
 **SELLER:** Ghost FactoryOS LLC, a Delaware limited liability company
 **BUYER:** Qualified Purchaser via Acquire.com Micro-Asset Platform
 
 ## RECITALS
 WHEREAS, Seller is the sole author and proprietary owner of the software architecture, dynamic AWD algorithms, PostgreSQL 16 timeseries ledgers, and deployment manifests designated as GF-T3-199; and
-WHEREAS, Buyer desires to purchase, and Seller desires to assign and transfer, all right, title, and interest in and to the Purchased Assets for the agreed Purchase Price;
+WHEREAS, Buyer desires to purchase, and Seller desires to assign and transfer, all right, title, and interest in and to the Purchased Assets for the agreed DEPLOYMENT SPECIFICATION;
 
 NOW, THEREFORE, in consideration of the mutual covenants contained herein, the parties agree as follows:
 
 ### SECTION 1: PURCHASED ASSETS
 Seller hereby sells, assigns, transfers, and conveys to Buyer all of Seller's right, title, and interest in and to:
-1.1 The complete source code repository of GF-T3-199, including Python 3.12 DIRECT4 dynamic torque arbitrator and DRS resolver algorithms.
+1.1 The complete source code repository of GF-T3-199, including Python 3.12 DUAL_VECTOR_TORQUE dynamic torque arbitrator and DRS resolver algorithms.
 1.2 The PostgreSQL 16 DDL schema definitions, automated hypertable partitioning scripts, and Bipolar NiMH thermal runaway isolation triggers.
 1.3 The OpenAPI 3.1 REST and 2,500 Hz streaming WebSocket gateway specifications.
 1.4 The multi-stage hardened Dockerfile, PyTest test bench (>90% test coverage), and Cloud Run IaC deployment scripts.
 1.5 All documentation, diagrams, calibration curves, and mathematical models associated therewith.
 
-### SECTION 2: PURCHASE PRICE & ESCROW DISBURSEMENT
-2.1 Purchase Price: Buyer shall deposit the sum of $45,000 USD (Turnkey Buyout) or $125,000 USD (Monopoly Enterprise) into Acquire.com Escrow.
+### SECTION 2: DEPLOYMENT SPECIFICATION & ESCROW DISBURSEMENT
+2.1 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 2.2 Release Conditions: Funds shall be released upon mutual confirmation that Buyer has received:
     (a) Full unencumbered git repository push with GPG signed commits;
     (b) Successful local or cloud reproduction of passing PyTest test suite;
@@ -236,10 +236,10 @@ Seller shall provide up to 90 days of technical consultation and handoff assista
 
 const exhibitAIpSchedule = `# EXHIBIT A: SCHEDULE OF PURCHASED ASSETS & IP
 Asset Identifier: GF-T3-199
-Target Platform: Lexus RX 500h F SPORT Performance (TALH17 Platform)
+Target Platform: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17 Platform)
 
 1. Core Mathematical & Control Code:
-   - \`core/direct4_controller.py\`: 2,500 Hz dynamic torque vectoring state machine.
+   - \`core/dual_vector_torque_controller.py\`: 2,500 Hz dynamic torque vectoring state machine.
    - \`core/drs_resolver.py\`: Dynamic Rear Steering ±4.0° toe actuator model (Counter-phase & In-phase).
    - \`core/bipolar_thermal_monitor.py\`: 288V Bipolar NiMH cell thermal gradient watchdog.
 
@@ -253,13 +253,13 @@ Target Platform: Lexus RX 500h F SPORT Performance (TALH17 Platform)
 
 4. DevOps & Automated Test Harness:
    - \`deploy/Dockerfile\`: Non-root multi-stage distroless container definition.
-   - \`tests/test_direct4_harness.py\`: PyTest test bench with 95.5% line coverage.
+   - \`tests/test_dual_vector_torque_harness.py\`: PyTest test bench with 95.5% line coverage.
    - \`deploy/deploy_cloud_run.sh\`: 1-click Google Cloud Run deployment automation.
 `;
 
 const exhibitBCleanRoom = `# EXHIBIT B: CLEAN-ROOM IP AUDIT & NON-CONTAMINATION CERTIFICATE
 Issued by: Ghost FactoryOS Independent Architecture Review Board
-Asset: GF-T3-199 (Lexus RX 500h F SPORT Core)
+Asset: GF-T3-199 (Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core)
 
 CERTIFICATION:
 1. Copyleft Contamination Assessment:

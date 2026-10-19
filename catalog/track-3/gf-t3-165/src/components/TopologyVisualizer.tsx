@@ -18,8 +18,7 @@ export const TopologyVisualizer: React.FC<TopologyVisualizerProps> = ({
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   // Graph nodes representation for tokens
-  const tokenCoords: Record<string, { x: number; y: number; label: string; color: string }> = {
-    USDC: { x: 120, y: 220, label: 'USDC (Base)', color: '#38bdf8' },
+  const tokenCoords: Record<string, { x: number; y: number; label: string; color: string }> = {Deterministic Telemetry VerifiedC: { x: 120, y: 220, label: 'USDC (Base)', color: '#38bdf8' },
     WETH: { x: 380, y: 90, label: 'WETH (Front MG2)', color: '#818cf8' },
     WBTC: { x: 640, y: 220, label: 'WBTC (Rear eAxle)', color: '#f59e0b' },
   };
@@ -28,7 +27,7 @@ export const TopologyVisualizer: React.FC<TopologyVisualizerProps> = ({
     UNISWAP_V3: { label: 'Uniswap v3', border: 'border-pink-500/40', bg: 'bg-pink-950/20' },
     SUSHISWAP: { label: 'Sushiswap', border: 'border-blue-500/40', bg: 'bg-blue-950/20' },
     CURVE_CRYPTO: { label: 'Curve Crypto', border: 'border-amber-500/40', bg: 'bg-amber-950/20' },
-    DIRECT4_EAXLE: { label: 'DIRECT4 eAxle', border: 'border-cyan-400/60', bg: 'bg-cyan-950/30' },
+    DUAL_VECTOR_TORQUE_EAXLE: { label: 'DUAL_VECTOR_TORQUE eAxle', border: 'border-cyan-400/60', bg: 'bg-cyan-950/30' },
   };
 
   return (
@@ -54,10 +53,10 @@ export const TopologyVisualizer: React.FC<TopologyVisualizerProps> = ({
           </div>
         </div>
 
-        {/* Live DIRECT4 torque indicator */}
+        {/* Live DUAL_VECTOR_TORQUE torque indicator */}
         <div className="flex items-center gap-4 bg-slate-950/80 border border-slate-800 px-4 py-2 rounded-xl">
           <div className="text-right">
-            <div className="text-xs text-zinc-400 uppercase font-mono tracking-wider">DIRECT4 Vector</div>
+            <div className="text-xs text-zinc-400 uppercase font-mono tracking-wider">DUAL_VECTOR_TORQUE Vector</div>
             <div className="text-base font-bold font-mono text-cyan-400">
               {activeCycle ? `${Math.round((1 - activeCycle.rear_torque_bias) * 100)}% F : ${Math.round(activeCycle.rear_torque_bias * 100)}% R` : '70% F : 30% R'}
             </div>
@@ -142,7 +141,7 @@ export const TopologyVisualizer: React.FC<TopologyVisualizerProps> = ({
           <g transform="translate(380, 275)">
             <rect x="-65" y="-14" width="130" height="28" rx="6" fill="#032b30" stroke="#06b6d4" strokeWidth="1.5" />
             <text x="0" y="4" textAnchor="middle" fill="#22d3ee" fontSize="11" fontFamily="JetBrains Mono" fontWeight="700">
-              DIRECT4 eAxle 15bp
+              DUAL_VECTOR_TORQUE eAxle 15bp
             </text>
           </g>
 

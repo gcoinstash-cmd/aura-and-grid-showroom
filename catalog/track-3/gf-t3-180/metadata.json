@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-180 Executive Core (export) ",
-  "description": "Turnkey micro-APA deliverable cockpit for Lexus LX 600 Ultra Luxury Executive Core featuring 4-Wheel AHC electro-hydraulic suspension damping, V35A-FTS twin-turbo wastegate management, and PostgreSQL 16 HMAC ledger.",
+  "description": "Turnkey micro-APA deliverable cockpit for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core featuring 4-Wheel AHC electro-hydraulic suspension damping, V35A-FTS twin-turbo wastegate management, and PostgreSQL 16 HMAC ledger.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

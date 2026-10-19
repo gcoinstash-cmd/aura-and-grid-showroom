@@ -2,7 +2,7 @@
 ## Asset Tag: GF-T3-156 // Codename: AeroKinetic Engine
 **Supervising Entity:** GhostFactoryOS IP & M&A Diligence Division  
 **Classification:** Institutional Diligence Report (Clean-Room Verified)  
-**Valuation Benchmark:** $125,000 Cash Buyout / Monopoly Vault Tier  
+**Specification Benchmark:** 20 kHz (0.48ms) Cash Asset Transfer / Monopoly Vault Tier  
 
 ---
 

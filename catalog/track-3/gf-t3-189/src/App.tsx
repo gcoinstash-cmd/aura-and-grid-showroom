@@ -78,7 +78,7 @@ export default function App() {
   const handleSimulateAero = () => {
     if (isSimulating) return;
     setIsSimulating(true);
-    showToast('Aero Dynamic Simulation Started: Simulating high-speed crosswind burst on LC 500...', 'info');
+    showToast('Aero Dynamic Simulation Started: Simulating high-speed crosswind burst on High-Aero Grand Touring Telemetry Core...', 'info');
 
     let step = 0;
     const initialSpeed = telemetry.speedMph;
@@ -346,12 +346,12 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono font-bold text-slate-200">GF-T3-189</span>
             <span>·</span>
-            <span>Lexus LC 500 Convertible Structural Aero Core</span>
+            <span>Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core</span>
             <span>·</span>
             <span className="text-emerald-400 font-mono">Turnkey Micro-APA Asset</span>
           </div>
           <div className="flex items-center gap-4 text-sm font-mono">
-            <span>Delaware LLC Escrow Approved</span>
+            <span>Commercial Software Asset Standard Escrow Approved</span>
             <span>·</span>
             <span className="text-amber-400">Acquire.com Verified Listing</span>
           </div>

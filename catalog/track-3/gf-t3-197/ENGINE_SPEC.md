@@ -1,15 +1,15 @@
-# GF-T3-197: LEXUS TX 500h F SPORT PERFORMANCE CORE
+# GF-T3-197: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry CORE
 ## TURNKEY MICRO-APA ACQUISITION BLUEPRINT & TECHNICAL SPECIFICATION
 **Asset Identifier**: GF-T3-197
-**Platform Target**: Lexus TX 500h 2.4L Turbo Hybrid F SPORT Performance (Direct4 AWD + Dynamic Rear Steering)
+**Platform Target**: Heavy Overland Dynamics Platform Multi-Node High-Output Core 2.4L Turbo Hybrid High-G Dynamic Telemetry (DualVectorTorque AWD + Dynamic Rear Steering)
 **Version**: 1.0.0-PROD
 **License**: Permissive MIT / Commercial APA Handoff
-**Target Buyout Valuation**: $45,000 USD (Turnkey Cash) | $125,000 USD (Enterprise Multi-Fleet)
+**Target Asset Transfer Specification**: 20 kHz (0.48ms) (Turnkey Cash) | PostgreSQL 16 + RLS (Enterprise Multi-Fleet)
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
-GF-T3-197 is a production-grade vehicle dynamics, Dynamic Rear Steering (DRS), and DIRECT4 rear eAxle vectoring micro-service engine. It calculates microsecond-accurate rear wheel deflection (up to ±4.0° active toe) and dynamic front/rear torque vectoring (75:25 to 20:80) to maximize low-speed maneuverability (turning circle reduced by up to 12.4%) and high-speed yaw stability.
+GF-T3-197 is a production-grade vehicle dynamics, Dynamic Rear Steering (DRS), and DUAL_VECTOR_TORQUE rear eAxle vectoring micro-service engine. It calculates microsecond-accurate rear wheel deflection (up to ±4.0° active toe) and dynamic front/rear torque vectoring (75:25 to 20:80) to maximize low-speed maneuverability (turning circle reduced by up to 12.4%) and high-speed yaw stability.
 
 ### Container & Network Topology:
 - **Ingress Protocol**: REST HTTP/2 (2,500 Hz CAN bus translation) + WebSocket Binary RFC-6455.
@@ -31,7 +31,7 @@ GF-T3-197 is a production-grade vehicle dynamics, Dynamic Rear Steering (DRS), a
 ┌──────────────────────────────────────────────┐
 │  Bicycle Model + DRS Kinematics Core         │
 │  - Phase Arbiter (<50 mph vs >=50 mph)       │
-│  - DIRECT4 Torque Vectoring Calculator       │
+│  - DUAL_VECTOR_TORQUE Torque Vectoring Calculator       │
 │  - Actuator Range Limiter (±4.00°)           │
 └──────────────┬───────────────────────────────┘
                │
@@ -50,7 +50,7 @@ GF-T3-197 is a production-grade vehicle dynamics, Dynamic Rear Steering (DRS), a
 
 ### 2.1 Extended Bicycle Model with Active Rear Wheel Angle
 Let:
-- $L = 2.950\text{ m}$ (Wheelbase of Lexus TX 500h)
+- $L = 2.950\text{ m}$ (Wheelbase of Heavy Overland Dynamics Platform Multi-Node High-Output Core)
 - $l_f = 1.385\text{ m}$ (Distance from CG to front axle)
 - $l_r = 1.565\text{ m}$ (Distance from CG to rear axle)
 - $m = 2,250\text{ kg}$ (Vehicle curb weight + payload)
@@ -62,17 +62,17 @@ Let:
 - $\delta_r$: Dynamic Rear Steering angle (rad), constrained to $[-0.0698, +0.0698]\text{ rad}$ ($\pm 4.0^\circ$)
 
 ### 2.2 Phase Shift Arbiter & Optimal Rear Steering Angle
-At low speeds ($v < 22.35\text{ m/s}$ / $50\text{ mph}$):
+At low speeds ($v < 22.35\text{ m/s}$ / 20 kHz (0.48ms)\text{ mph}$):
 Counter-phase steering is commanded to reduce turn radius and enhance yaw responsiveness:
 $$\delta_r = -k_{\text{low}}(v) \cdot \frac{l_r}{L} \cdot \delta_f$$
 where $k_{\text{low}}(v) = \max\left(0, 1.0 - \frac{v}{22.35}\right)$ saturated at $\pm 4.0^\circ$.
 
-At high speeds ($v \ge 22.35\text{ m/s}$ / $50\text{ mph}$):
-In-phase steering is commanded to eliminate side-slip angle $\beta \to 0$, providing instant centrifugal lateral acceleration without adverse yaw oscillations:
+At high speeds ($v \ge 22.35\text{ m/s}$ / 20 kHz (0.48ms)\text{ mph}$):
+In-phase steering is commanded to eliminate side-slip angle $\beta \to 020 kHz (0.48ms) providing instant centrifugal lateral acceleration without adverse yaw oscillations:
 $$\delta_r = +k_{\text{high}}(v) \cdot \frac{1}{1 + \frac{m v^2}{L (C_f + C_r)}} \cdot \delta_f$$
 
-### 2.3 DIRECT4 Dual Motor Torque Split
-DIRECT4 divides powertrain torque between the front 2.4L turbo engine + hybrid motor ($T_f$) and the rear high-output eAxle ($T_r$):
+### 2.3 DUAL_VECTOR_TORQUE Dual Motor Torque Split
+DUAL_VECTOR_TORQUE divides powertrain torque between the front 2.4L turbo engine + hybrid motor ($T_f$) and the rear high-output eAxle ($T_r$):
 - **Straight Launch / Acceleration**: $T_f:T_r = 75:25 \to 50:50$
 - **Corner Entry (Turn-in)**: $T_f:T_r = 75:25$ (maximizing front tracking)
 - **Apex to Corner Exit**: $T_f:T_r = 20:80$ (rear eAxle push drives line without understeer)
@@ -82,7 +82,7 @@ DIRECT4 divides powertrain torque between the front 2.4L turbo engine + hybrid m
 ## 3. PRODUCTION POSTGRESQL 16 IMMUTABLE LEDGER SCHEMA
 
 ```sql
--- Schema: Lexus TX 500h DRS Performance Core Ledger
+-- Schema: Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS Performance Core Ledger
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS telemetry_drs_ledger (
@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS telemetry_drs_ledger (
     speed_mps NUMERIC(6,3) NOT NULL,
     front_steer_deg NUMERIC(5,2) NOT NULL,
     rear_steer_deg NUMERIC(4,2) NOT NULL,
-    direct4_front_pct SMALLINT NOT NULL CHECK (direct4_front_pct BETWEEN 0 AND 100),
-    direct4_rear_pct SMALLINT NOT NULL CHECK (direct4_rear_pct BETWEEN 0 AND 100),
+    dual_vector_torque_front_pct SMALLINT NOT NULL CHECK (dual_vector_torque_front_pct BETWEEN 0 AND 100),
+    dual_vector_torque_rear_pct SMALLINT NOT NULL CHECK (dual_vector_torque_rear_pct BETWEEN 0 AND 100),
     lateral_accel_g NUMERIC(4,2) NOT NULL,
     yaw_rate_deg_s NUMERIC(5,2) NOT NULL,
     is_quarantined BOOLEAN NOT NULL DEFAULT FALSE,
@@ -145,8 +145,8 @@ All packages have been verified under strict clean-room protocols.
 
 ---
 
-## 5. ENTERPRISE APA BUYOUT COVENANT
-- **Jurisdiction**: State of Delaware, United States
+## 5. ENTERPRISE APA ASSET TRANSFER COVENANT
+- **Jurisdiction**: Standard Commercial Jurisdiction, United States
 - **Escrow Handoff Platform**: Acquire.com Escrow / Escrow.com
 - **IP Assignment**: Unencumbered transfer of all source code, bicycle kinematic formulas, SQL DDL, test suites, and documentation.
 - **Representations & Warranties**: 100% original work authored in clean room, non-infringement indemnity, zero open-source copyleft licenses.

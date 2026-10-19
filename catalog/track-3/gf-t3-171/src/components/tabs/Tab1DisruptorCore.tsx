@@ -102,7 +102,7 @@ export const Tab1DisruptorCore: React.FC<Tab1Props> = ({
   };
 
   const cythonCode = `# dist_disruptor.pyx
-# Lexus IS 500 F SPORT V8 2UR-GSE Telemetry Ingest Engine
+# Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry V8 2UR-GSE Telemetry Ingest Engine
 # Lock-Free LMAX Disruptor with Power-of-Two Bitwise Modulo & Cache Padding
 # License: MIT Permissive (Clean-Room Certified)
 
@@ -128,7 +128,7 @@ cdef struct V8TelemetrySlot:
     uint64_t crc64_checksum      # 8 bytes
     char _cache_line_pad[16]     # 16 bytes -> 64 bytes total struct
 
-cdef class LexusV8Disruptor:
+cdef class OverlandV8Disruptor:
     cdef V8TelemetrySlot* _ring_buffer
     cdef volatile int64_t _cursor
     cdef char _pad_cursor[56]          # 56 bytes padding to prevent false sharing
@@ -198,7 +198,7 @@ class V8TelemetryRecord:
     cam_advance_deg: float = 0.0
     manifold_kpa: float = 0.0
 
-class PureLexusDisruptor:
+class PureOverlandDisruptor:
     def __init__(self):
         # Pre-allocate array to eliminate dynamic heap allocations
         self.buffer = [V8TelemetryRecord() for _ in range(64)] # Visual window
@@ -225,12 +225,12 @@ class PureLexusDisruptor:
         record.cam_advance_deg = vvt
         return record`;
 
-  const cheaderCode = `/* lexus_v8_disruptor.h
+  const cheaderCode = `/* Overland_v8_disruptor.h
  * C-Struct Memory Layout & CPU Cache Line Boundary
  * Strict 64-byte alignment eliminates L1/L2 False Sharing
  */
-#ifndef LEXUS_V8_DISRUPTOR_H
-#define LEXUS_V8_DISRUPTOR_H
+#ifndef Overland_V8_DISRUPTOR_H
+#define Overland_V8_DISRUPTOR_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -260,7 +260,7 @@ typedef struct CACHELINE_ALIGNED {
     uint8_t _padding[56];        // 56 bytes pad prevents false sharing with adjacent cursor
 } SequenceBarrierCursor;
 
-#endif /* LEXUS_V8_DISRUPTOR_H */`;
+#endif /* Overland_V8_DISRUPTOR_H */`;
 
   const selectedSlot = slots[selectedSlotIndex] || slots[0];
 
@@ -275,7 +275,7 @@ typedef struct CACHELINE_ALIGNED {
           Deterministic Sub-250ns Lock-Free Ring Buffer
         </h2>
         <p className="text-base text-slate-300 max-w-4xl">
-          Engineered to capture continuous high-frequency telemetry from the Lexus IS 500 V8 engine. Uses power-of-two modulo masking (<code>seq &amp; 0x000FFFFF</code>), cache-line padded sequence barriers to eliminate false sharing, and zero-allocation execution loops.
+          Engineered to capture continuous high-frequency telemetry from the Heavy Overland Dynamics Platform IS 500 V8 engine. Uses power-of-two modulo masking (<code>seq &amp; 0x000FFFFF</code>), cache-line padded sequence barriers to eliminate false sharing, and zero-allocation execution loops.
         </p>
       </div>
 
@@ -442,7 +442,7 @@ typedef struct CACHELINE_ALIGNED {
           </div>
           <h4 className="text-xl font-bold text-white">Power-of-Two Modulo Masking</h4>
           <p className="text-sm text-slate-300">
-            Eliminates high-cost CPU division instructions (15-40 clock cycles) in favor of a single-cycle bitwise AND operation (0.25 ns).
+            Eliminates high-matrix CPU division instructions (15-40 clock cycles) in favor of a single-cycle bitwise AND operation (0.25 ns).
           </p>
           <div className="bg-slate-950 p-4 rounded-lg font-mono text-sm text-cyan-300 border border-slate-800/80">
             Index = Sequence &amp; (Capacity - 1)<br />

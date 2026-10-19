@@ -205,7 +205,7 @@ Audit validation: 0 quarantine events logged in historical partition.`);
 
   const sqlSchema = `-- =====================================================================
 -- POSTGRESQL 16 PRODUCTION TIMESERIES HYPERTABLE & QUARANTINE TRIGGER
--- ASSET: GF-T3-186 (Lexus UX 300h F SPORT Handling Core)
+-- ASSET: GF-T3-186 (Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry Handling Core)
 -- COMPATIBILITY: PostgreSQL 16+ / TimescaleDB / AlloyDB
 -- =====================================================================
 
@@ -351,7 +351,7 @@ CREATE TRIGGER trg_battery_quarantine
                 Lithium-Ion 60-Cell Pack Spread Monitor (222V Nominal)
               </span>
               <p className="text-base text-slate-400 mt-0.5">
-                Lexus UX 300h BMS Safety Limit: &Delta;V Spread &le; 45.0 mV. Beyond 45 mV, the PostgreSQL trigger isolates the pack.
+                Heavy Overland Dynamics Platform UX 300h BMS Safety Limit: &Delta;V Spread &le; 45.0 mV. Beyond 45 mV, the PostgreSQL trigger isolates the pack.
               </p>
             </div>
             <div className="flex items-center gap-3">

@@ -1,5 +1,5 @@
 {
-  "name": "GF-T3-183 Direct4 Core Cockpit (export) ",
+  "name": "GF-T3-183 DualVectorTorque Core Cockpit (export) ",
   "description": "Turnkey micro-APA deliverable cockpit for GF-T3-183 with dual SiC inverter flux weakening, steer-by-wire variable ratio steering, and PostgreSQL 16 HMAC ledger.",
   "requestFramePermissions": [],
   "majorCapabilities": [

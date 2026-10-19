@@ -35,4 +35,4 @@ The UI telemetry layout—specifically the 18px rem floor, 4-tier high-legibilit
 ### 4. IP AUDITOR SIGN-OFF
 - **Lead Systems Architect**: Ghost FactoryOS F1 Skunkworks
 - **Audit Stamp**: `GF-AUDIT-2026-T3-162-PASSED`
-- **Valuation Tier**: $95,000 Monopoly Vault Grade
+- **Specification Tier**: 20 kHz (0.48ms) Monopoly Vault Grade

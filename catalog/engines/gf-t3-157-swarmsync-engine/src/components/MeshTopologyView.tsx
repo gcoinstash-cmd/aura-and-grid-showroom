@@ -170,7 +170,7 @@ export const MeshTopologyView: React.FC<MeshTopologyViewProps> = ({ sim, telemet
             <div className="text-xl sm:text-2xl font-mono font-black text-cyan-300 mt-1">
               {sim.config.commRadius}m RF
             </div>
-            <div className="text-xs sm:text-sm text-slate-400 mt-0.5">Sub-GHz / 5.8 GHz link budget</div>
+            <div className="text-xs sm:text-sm text-slate-400 mt-0.5">Sub-GHz / 5.8 GHz link threshold</div>
           </div>
           <div className="bg-[#0e1628] border border-slate-800 p-4 rounded-xl">
             <div className="text-sm sm:text-base font-mono text-slate-400 uppercase font-bold">Graph Diameter</div>

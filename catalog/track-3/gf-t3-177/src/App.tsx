@@ -256,7 +256,7 @@ export default function App() {
           <span>•</span>
           <span>Ghost FactoryOS Chief Systems Architecture</span>
           <span>•</span>
-          <span className="text-amber-400 font-medium">Lexus LC 500 Convertible Grand Touring</span>
+          <span className="text-amber-400 font-medium">Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring</span>
         </div>
         <div className="flex items-center gap-4 text-base font-mono">
           <span className="text-emerald-400">100% Permissive MIT</span>

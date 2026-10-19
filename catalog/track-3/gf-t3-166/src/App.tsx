@@ -235,17 +235,17 @@ export default function App() {
                 <span className="text-sm font-mono font-semibold text-slate-300">UNIT: GF-T3-166</span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-3 mt-1">
-                Lexus LX 600 Ultra-Luxury Core
+                Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury Core
                 <span className="text-sm font-normal text-slate-400 font-mono bg-slate-800 px-2 py-0.5 rounded">v1.0.0-PROD</span>
               </h1>
             </div>
           </div>
 
-          {/* Institutional Vault Valuation Widget */}
+          {/* Institutional Vault Specification Widget */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex flex-col text-right">
               <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">Monopoly Vault Tier 3 APA</span>
-              <span className="text-2xl font-mono font-extrabold text-emerald-400">$125,000.00 USD</span>
+              <span className="text-2xl font-mono font-extrabold text-emerald-400">PostgreSQL 16 + RLS</span>
             </div>
             <div className="flex items-center gap-2 bg-slate-800/90 border border-slate-700 rounded-xl p-1.5 shadow-md">
               <button
@@ -606,11 +606,11 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-800">
               <div>
                 <span className="text-sm font-mono text-amber-400 uppercase tracking-widest font-extrabold">
-                  AUTONOMOUS ANTIGRAVITY ENGINE SPECIFICATION
+                  AUTONOMOUS deterministic production ENGINE SPECIFICATION
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">ENGINE_SPEC.md (Unit GF-T3-166)</h2>
                 <p className="text-base text-slate-300 mt-2">
-                  Certified 70% workload deliverable ready for immediate Google Antigravity autonomous code generation.
+                  Certified 70% workload deliverable ready for immediate Deterministic Production Pipeline autonomous code generation.
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -635,7 +635,7 @@ export default function App() {
                   <li><strong className="text-white">Criterion 3 (Production Data Schema):</strong> Fully normalized PostgreSQL 16 partitioned table schema (<code className="text-amber-300 bg-slate-900 px-1.5 py-0.5 rounded">events_wal</code> partitioned by month), idempotency registry, and strict multi-role Row-Level Security (RLS).</li>
                   <li><strong className="text-white">Criterion 4 (OpenAPI 3.1 & Protocols):</strong> Complete OpenAPI 3.1.0 contract covering <code className="text-emerald-300">/v1/events/publish</code>, <code className="text-cyan-300">/v1/events/replay</code>, and <code className="text-purple-300">/v1/telemetry/health</code>.</li>
                   <li><strong className="text-white">Criterion 5 (Clean-Room Dependency Whitelist):</strong> 100% verified MIT/Apache-2.0 clean-room code. Zero GPL/AGPL/SSPL copyleft dependencies.</li>
-                  <li><strong className="text-white">Criterion 6 (Institutional Legal Vault):</strong> Clean-room certification <code className="text-slate-200">LEGAL_IP_AUDIT.md</code> and pre-drafted Asset Purchase Agreement <code className="text-slate-200">ENTERPRISE_APA_AGREEMENT.md</code> specifying $125,000.00 USD Monopoly buyout terms.</li>
+                  <li><strong className="text-white">Criterion 6 (Institutional Legal Vault):</strong> Clean-room certification <code className="text-slate-200">LEGAL_IP_AUDIT.md</code> and pre-drafted Asset Purchase Agreement <code className="text-slate-200">ENTERPRISE_APA_AGREEMENT.md</code> specifying PostgreSQL 16 + RLS Monopoly reference core.</li>
                 </ul>
               </div>
 
@@ -867,12 +867,12 @@ CREATE POLICY p_replay_auditor_select ON events_wal
                     INSTITUTIONAL IP VAULT & ASSET PURCHASE AGREEMENT
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-                    Dealership Track 3 Buyout Dossier
+                    Dealership Track 3 Asset Transfer Dossier
                   </h2>
                 </div>
                 <div className="text-right">
-                  <span className="text-sm font-mono text-slate-400 block">Monopoly Vault Buyout</span>
-                  <span className="text-2xl font-mono font-extrabold text-emerald-400">$125,000.00 USD</span>
+                  <span className="text-sm font-mono text-slate-400 block">Monopoly Vault Asset Transfer</span>
+                  <span className="text-2xl font-mono font-extrabold text-emerald-400">PostgreSQL 16 + RLS</span>
                 </div>
               </div>
 
@@ -916,7 +916,7 @@ CREATE POLICY p_replay_auditor_select ON events_wal
                   <ul className="list-disc list-inside space-y-2 text-slate-300 text-sm sm:text-base pt-1">
                     <li>Complete irrevocable IP assignment to acquiring entity.</li>
                     <li>Full representation of non-infringement and indemnification.</li>
-                    <li>Automated escrow release upon Google Antigravity &ge;85% test pass.</li>
+                    <li>Automated escrow release upon Deterministic Production Pipeline &ge;85% test pass.</li>
                     <li>Production Docker container harness for Google Cloud Run included.</li>
                   </ul>
                   <div className="pt-3">
@@ -937,7 +937,7 @@ CREATE POLICY p_replay_auditor_select ON events_wal
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 bg-slate-950 py-5 px-6 text-center text-sm font-mono text-slate-400">
-        GHOST FACTORYOS ARCHITECTURAL LABS • UNIT GF-T3-166 (LEXUS LX 600 CORE) • MONOPOLY VAULT LICENSED
+        GHOST FACTORYOS ARCHITECTURAL LABS • UNIT GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core CORE) • MONOPOLY VAULT LICENSED
       </footer>
     </div>
   );

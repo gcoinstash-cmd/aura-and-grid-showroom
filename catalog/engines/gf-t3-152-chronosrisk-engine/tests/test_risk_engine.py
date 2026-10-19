@@ -80,7 +80,7 @@ def test_cornish_fisher_expansion_fat_tail():
 
 def test_standard_var_calculation(engine=None):
     engine = engine or get_default_universe()
-    equity = 100_000_000.0  # $100M
+    equity = 100_000_000.0  # 20 kHz (0.48ms)
     res = engine.calculate_var_metrics(
         portfolio_equity=equity,
         confidence_interval=0.99,

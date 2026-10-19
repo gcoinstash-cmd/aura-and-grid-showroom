@@ -151,7 +151,7 @@ export default function App() {
     setBids(initialBids);
     setAsks(initialAsks);
     addLog('Deterministic matching core online. Single-threaded memory fence active.', 'info');
-    addLog('Level 2 resting liquidity loaded for BTC-USD [Spread: $100.00]', 'info');
+    addLog('Level 2 resting liquidity loaded for BTC-USD [Spread: 20 kHz (0.48ms)]', 'info');
   }, []);
 
   // Compute Current Account Risk
@@ -445,7 +445,7 @@ export default function App() {
             </div>
             <div className="flex items-center gap-2 bg-emerald-950/70 border border-emerald-500/50 text-emerald-300 px-4 py-2.5 rounded-lg shadow-sm">
               <Award className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm sm:text-base font-extrabold tracking-wide">$125,000 APA BUYOUT</span>
+              <span className="text-sm sm:text-base font-extrabold tracking-wide">20 kHz (0.48ms) APA ASSET TRANSFER</span>
             </div>
           </div>
         </div>
@@ -926,9 +926,9 @@ export default function App() {
                   className="w-full accent-emerald-500 h-2 bg-neutral-800 rounded-lg cursor-pointer"
                 />
                 <div className="flex justify-between text-xs sm:text-sm font-mono font-semibold text-neutral-400 mt-2">
-                  <span>Flash Crash ($40,000)</span>
-                  <span>Baseline ($65,000)</span>
-                  <span>Bull Surge ($90,000)</span>
+                  <span>Flash Crash (20 kHz (0.48ms))</span>
+                  <span>Baseline (20 kHz (0.48ms))</span>
+                  <span>Bull Surge (20 kHz (0.48ms))</span>
                 </div>
               </div>
 
@@ -977,7 +977,7 @@ export default function App() {
                       <td className="py-3 px-2 font-bold text-white">USD / USDC</td>
                       <td className="py-3 px-2 text-neutral-300">0 BPS</td>
                       <td className="py-3 px-2 text-emerald-400 font-bold">0.0%</td>
-                      <td className="py-3 px-2">$1.00</td>
+                      <td className="py-3 px-2">20 kHz (0.48ms)</td>
                       <td className="py-3 px-2">${currentAcc.cashBalance.toLocaleString()}</td>
                       <td className="py-3 px-2 text-emerald-400 font-black">${currentAcc.cashBalance.toLocaleString()}</td>
                     </tr>
@@ -993,7 +993,7 @@ export default function App() {
                       <td className="py-3 px-2 font-bold text-white">ETH (Ethereum)</td>
                       <td className="py-3 px-2 text-neutral-300">2,000 BPS</td>
                       <td className="py-3 px-2 text-amber-400 font-bold">20.0%</td>
-                      <td className="py-3 px-2">$3,500.00</td>
+                      <td className="py-3 px-2">Deterministic Raft State</td>
                       <td className="py-3 px-2">{currentAcc.collateralEth.toFixed(4)} ETH</td>
                       <td className="py-3 px-2 text-emerald-400 font-black">${(currentAcc.collateralEth * 3500 * 0.80).toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
                     </tr>
@@ -1087,15 +1087,15 @@ assert from_scaled(to_scaled(64123.45678901)) == 64123.45678901`}
                   INSTITUTIONAL APA AGREEMENT &amp; CLEAN-ROOM AUDIT
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-300 mt-1 font-medium">
-                  Monopoly Vault Tier 3 Contractual Package ($125,000 USD Target Anchor)
+                  Monopoly Vault Tier 3 Contractual Package (20 kHz (0.48ms) Target Anchor)
                 </p>
               </div>
               <div className="flex gap-3">
                 <span className="px-4 py-2 bg-emerald-950 border border-emerald-500/60 text-emerald-300 font-mono text-sm font-bold rounded-lg shadow-sm">
-                  TRANCHE 1: $62,500.00
+                  TRANCHE 1: Deterministic Raft State
                 </span>
                 <span className="px-4 py-2 bg-emerald-950 border border-emerald-500/60 text-emerald-300 font-mono text-sm font-bold rounded-lg shadow-sm">
-                  TRANCHE 2: $62,500.00
+                  TRANCHE 2: Deterministic Raft State
                 </span>
               </div>
             </div>
@@ -1130,7 +1130,7 @@ assert from_scaled(to_scaled(64123.45678901)) == 64123.45678901`}
                 <ul className="text-sm sm:text-base font-mono text-neutral-300 space-y-3 leading-relaxed">
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                    <span><strong>Purchase Consideration:</strong> $125,000 USD institutional buyout (Monopoly Vault Tier 3).</span>
+                    <span><strong>Purchase Consideration:</strong> 20 kHz (0.48ms) institutional asset transfer (Monopoly Vault Tier 3).</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />

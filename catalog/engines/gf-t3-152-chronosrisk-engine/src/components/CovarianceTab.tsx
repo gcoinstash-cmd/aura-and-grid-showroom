@@ -198,7 +198,7 @@ export const CovarianceTab: React.FC<CovarianceTabProps> = ({
                 <th className="py-3 px-4">Asset</th>
                 <th className="py-3 px-4">Allocation Weight</th>
                 <th className="py-3 px-4">Marginal VaR (MVaR)</th>
-                <th className="py-3 px-4">Component VaR ($)</th>
+                <th className="py-3 px-4">Component VaR (UNITS)</th>
                 <th className="py-3 px-4 text-right">Risk Contribution</th>
               </tr>
             </thead>

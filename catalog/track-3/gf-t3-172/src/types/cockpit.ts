@@ -17,7 +17,7 @@ export interface SwarmNode {
   signatureVerified: boolean;
 }
 
-export interface Direct4Telemetry {
+export interface DualVectorTorqueTelemetry {
   speedKmh: number;
   throttlePct: number;
   steeringAngleDeg: number;
@@ -44,7 +44,7 @@ export interface EpochRecord {
   status: 'COMMITTED_FINAL' | 'QUARANTINED';
   leafHashes: {
     telemetry: string;
-    direct4Vector: string;
+    dual_vector_torqueVector: string;
     steerByWire: string;
     quorumSignatures: string;
   };

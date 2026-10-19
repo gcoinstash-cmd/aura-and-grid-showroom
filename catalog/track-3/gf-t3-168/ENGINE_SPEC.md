@@ -1,12 +1,12 @@
-# GF-T3-168: LEXUS RX 500h F SPORT DYNAMIC PERFORMANCE CORE
+# GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
 ## MASTER ARCHITECTURAL & LEGAL VAULT BLUEPRINT (TRACK 3 F1 SKUNKWORKS DELIVERABLE)
 
 - **Asset Identifier**: GF-T3-168
-- **Platform Reference**: Lexus RX 500h F SPORT Performance AWD (Direct4 + Dynamic Rear Steering)
+- **Platform Reference**: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry AWD (DualVectorTorque + Dynamic Rear Steering)
 - **Asset Version**: v1.0.0-PROD
 - **Turnkey Target**: Acquire.com Micro-APA Escrow Vault
-- **Micro-APA Buyout Anchor**: $45,000 USD
-- **Enterprise Valuation**: $125,000 USD
+- **Micro-APA Reference Core**: 20 kHz (0.48ms)
+- **Architecture Moat**: PostgreSQL 16 + RLS
 - **Licensing Tier**: 100% Permissive MIT (Clean-Room Provenance Certified)
 
 ---
@@ -16,7 +16,7 @@
 ### 1.1 Ingestion & Processing Topology
 The GF-T3-168 Dynamic Performance Core executes continuous sensor fusion across three asynchronous telemetry planes:
 1. **High-Frequency Inertial Plane (1,000 Hz)**: 9-DOF IMU (accelerometer, gyroscope, magnetometer) sampled over SPI/CAN-FD via microsecond interrupt queues.
-2. **Wheel Dynamics & Powertrain Plane (100 Hz)**: 4-wheel active wheel speed transducers, Dynamic Rear Steering (DRS) actuator rack angle (±4°), and DIRECT4 front/rear eAxle torque command telemetry.
+2. **Wheel Dynamics & Powertrain Plane (100 Hz)**: 4-wheel active wheel speed transducers, Dynamic Rear Steering (DRS) actuator rack angle (±4°), and DUAL_VECTOR_TORQUE front/rear eAxle torque command telemetry.
 3. **High-Precision Localization Plane (20 Hz)**: Multi-band GNSS RTK receiver (GPS L1/L5, Galileo E1/E5a) with RTK-Fixed centimetre-level carrier-phase differential positioning.
 
 ```
@@ -69,11 +69,11 @@ At each 1 ms prediction step ($dt = 0.001$ s):
 1. **Specific Force Transformation**:
    $$\mathbf{f}^n = C_b^n (\tilde{\mathbf{f}}^b - \mathbf{b}_a)$$
    $$\mathbf{a}^n = \mathbf{f}^n + \begin{bmatrix} 0 & 0 & g \end{bmatrix}^T$$
-2. **State Propagation**:
+Step 2: **State Propagation**:
    $$\mathbf{p}_{k+1} = \mathbf{p}_k + \mathbf{v}_k \Delta t + \frac{1}{2} \mathbf{a}^n (\Delta t)^2$$
    $$\mathbf{v}_{k+1} = \mathbf{v}_k + \mathbf{a}^n \Delta t$$
    $$\boldsymbol{\psi}_{k+1} = \boldsymbol{\psi}_k + E(\boldsymbol{\psi}_k)(\tilde{\boldsymbol{\omega}}^b - \mathbf{b}_g) \Delta t$$
-3. **Joseph Form Covariance Update**:
+Step 3: **Joseph Form Covariance Update**:
    To prevent numerical degradation and negative eigenvalues in floating-point roundoff:
    $$P_{k|k} = (I - K_k H_k) P_{k|k-1} (I - K_k H_k)^T + K_k R_k K_k^T$$
 
@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS vehicle_telemetry_ticks (
     wheel_speed_rl_kmh NUMERIC(6,2) NOT NULL,
     wheel_speed_rr_kmh NUMERIC(6,2) NOT NULL,
     drs_angle_deg NUMERIC(4,2) NOT NULL DEFAULT 0.00,
-    direct4_front_torque_nm NUMERIC(7,1) NOT NULL,
-    direct4_rear_torque_nm  NUMERIC(7,1) NOT NULL,
+    dual_vector_torque_front_torque_nm NUMERIC(7,1) NOT NULL,
+    dual_vector_torque_rear_torque_nm  NUMERIC(7,1) NOT NULL,
     prev_tick_hash CHAR(64) NOT NULL,
     tick_hash CHAR(64) NOT NULL,
     hmac_sha256_sig CHAR(64) NOT NULL,
@@ -148,12 +148,12 @@ SELECT create_hypertable('vehicle_telemetry_ticks', 'time', chunk_time_interval 
 ### 6.1 Transaction Summary
 - **Buyer**: Designated Acquiring Entity via Acquire.com Escrow
 - **Seller**: Ghost FactoryOS Systems Architecture Consortium
-- **Purchased Asset**: GF-T3-168 Lexus RX 500h F SPORT Dynamic Performance Core
-- **Cash Purchase Price**: $45,000 USD (Micro-APA Buyout) / $125,000 USD (Full Institutional Assignment)
+- **Purchased Asset**: GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
+- **Cash DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (Micro-APA Asset Transfer) / PostgreSQL 16 + RLS (Full Institutional Assignment)
 - **Escrow Facilitator**: Escrow.com / Acquire.com Escrow Services
 
 ### 6.2 Schedule of Purchased Assets
-1. **Algorithmic Engine**: Complete source code for 15-State Extended Kalman Filter, DRS kinematic decoupler, and DIRECT4 torque estimation.
+1. **Algorithmic Engine**: Complete source code for 15-State Extended Kalman Filter, DRS kinematic decoupler, and DUAL_VECTOR_TORQUE torque estimation.
 2. **Database Blueprints**: TimescaleDB schemas, continuous aggregation definitions, and cryptographic sealing triggers.
 3. **Deployment Harness**: Hardened multi-stage Dockerfile, PyTest test bench (>88% verified coverage), and 1-click Google Cloud Run deployment scripts.
 4. **Intellectual Property**: Irrevocable, perpetual, worldwide assignment of copyright, design patent rights, and technical documentation.

@@ -14,7 +14,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 }) => {
   return (
     <div className="relative w-full bg-slate-900 border-b border-slate-800 text-slate-100">
-      {/* Top Monroney Header Bar */}
+      {/* Top Telemetry Header Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           
@@ -25,7 +25,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
                 Asset ID: GF-T3-175
               </span>
               <span className="font-mono text-sm sm:text-base font-semibold bg-slate-800 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg">
-                Model: Lexus UX 300h Urban Edge Core v1.0.0-PROD
+                Model: Heavy Overland Dynamics Platform UX 300h Urban Edge Core v1.0.0-PROD
               </span>
               <span className="inline-flex items-center gap-2 text-sm sm:text-base font-mono font-medium text-emerald-400 bg-emerald-950/70 border border-emerald-800/70 px-3.5 py-1.5 rounded-lg">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -34,7 +34,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white flex items-center gap-3 pt-1">
-              <span>Lexus UX 300h Urban Edge Core</span>
+              <span>Heavy Overland Dynamics Platform UX 300h Urban Edge Core</span>
             </h1>
 
             <p className="text-slate-300 text-base sm:text-lg max-w-4xl leading-relaxed pt-1">
@@ -44,13 +44,13 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             {/* Badges Row with Expanded 15px+ typography and padding */}
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <div className="flex items-center gap-3 bg-gradient-to-r from-emerald-950/90 to-slate-900 border border-emerald-500/60 px-5 py-3 rounded-xl shadow-md">
-                <span className="text-base font-semibold text-slate-200">Micro-APA Buyout:</span>
-                <span className="text-lg sm:text-xl font-mono font-black text-emerald-400">$45,000 USD</span>
+                <span className="text-base font-semibold text-slate-200">Micro-APA Asset Transfer:</span>
+                <span className="text-lg sm:text-xl font-mono font-black text-emerald-400">20 kHz (0.48ms)</span>
               </div>
 
               <div className="flex items-center gap-3 bg-slate-950 border border-slate-700 px-5 py-3 rounded-xl shadow-md">
-                <span className="text-base font-semibold text-slate-200">Enterprise Valuation:</span>
-                <span className="text-lg sm:text-xl font-mono font-black text-cyan-400">$125,000 USD</span>
+                <span className="text-base font-semibold text-slate-200">Architecture Moat:</span>
+                <span className="text-lg sm:text-xl font-mono font-black text-cyan-400">PostgreSQL 16 + RLS</span>
               </div>
 
               <div className="flex items-center gap-3 bg-slate-950 border border-slate-700 px-5 py-3 rounded-xl shadow-md">

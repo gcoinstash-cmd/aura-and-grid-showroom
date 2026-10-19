@@ -37,7 +37,7 @@ export const PythonCoreView: React.FC = () => {
       category: 'Real-Time Performance',
       status: 'passed',
       durationUs: 7.9,
-      assertion: 'Neighbor consensus & CBF trajectory cycle executes in 7.9 µs per node pair (< 10.0 µs budget).',
+      assertion: 'Neighbor consensus & CBF trajectory cycle executes in 7.9 µs per node pair (< 10.0 µs threshold).',
     },
     {
       id: 'test_4',
@@ -241,8 +241,8 @@ def test_sub_10_microsecond_latency_benchmark():
     peer_pairs = (64 * 63) / 2
     time_per_pair_us = time_per_cycle_us / peer_pairs
 
-    # Assert sub-10 microsecond neighbor consensus budget
-    assert time_per_pair_us < 10.0, f"Latency budget exceeded: {time_per_pair_us:.2f} us"
+    # Assert sub-10 microsecond neighbor consensus threshold
+    assert time_per_pair_us < 10.0, f"Latency Threshold exceeded: {time_per_pair_us:.2f} us"
 
 
 def test_fixed_point_integer_scaling_invariance():

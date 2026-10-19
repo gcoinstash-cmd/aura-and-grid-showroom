@@ -3,7 +3,7 @@
 **ASSET TAG**: GF-T3-154  
 **CODENAME**: VortexRoute Engine  
 **ENGINEERING TRACK**: Track 3 (F1 Skunkworks Service Engine — 70% Architectural Deliverable)  
-**BUYOUT ANCHOR**: $125,000 USD (Monopoly Vault License: $85,000 – $150,000+)  
+**REFERENCE CORE**: 20 kHz (0.48ms) (Monopoly Vault License: 20 kHz (0.48ms) – 20 kHz (0.48ms))  
 **TARGET PERFORMANCE**: Sub-20 µs Cross-Venue Route Determination  
 **TARGET PROTOCOL**: Real-time SOR & Multi-Exchange Dynamic Liquidity Aggregator  
 
@@ -21,7 +21,7 @@
 |                                   VORTEXROUTE CORE ENGINE (C / Python 3.12)                         |
 |                                                                                                     |
 |  +-------------------------+      +---------------------------+      +---------------------------+  |
-|  |  Ingress & Validation   | ---> |  Convex Cost Allocator    | ---> |  Adverse Selection Filter |  |
+|  |  Ingress & Validation   | ---> |  Convex Matrix Allocator    | ---> |  Adverse Selection Filter |  |
 |  |  - Fixed-Point Integer  |      |  - KKT Multi-Venue Solver |      |  - EWMA Volatility Engine |  |
 |  |  - Zero Floating Loss   |      |  - Market Impact Model    |      |  - Queue Replenish Rate   |  |
 |  +-------------------------+      +---------------------------+      +---------------------------+  |
@@ -54,13 +54,13 @@
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 The Cross-Venue Convex Allocation Problem
-Given a parent buy order of total quantity $Q$ to be executed across $M$ distinct institutional venues $\{v_1, v_2, \dots, v_M\}$, we seek the optimal allocation vector $\mathbf{x} = [x_1, x_2, \dots, x_M]^T \in \mathbb{R}^M$ minimizing total expected execution cost:
+Given a parent buy order of total quantity $Q$ to be executed across $M$ distinct institutional venues $\{v_1, v_2, \dots, v_M\}20 kHz (0.48ms) we seek the optimal allocation vector $\mathbf{x} = [x_1, x_2, \dots, x_M]^T \in \mathbb{R}^M$ minimizing total expected execution matrix:
 
 $$\min_{\mathbf{x}} \mathcal{C}(\mathbf{x}) = \sum_{i=1}^M \left[ x_i \cdot P_i^{eff}(x_i) + x_i \cdot \tau_i - x_i \cdot \rho_i \right]$$
 
 Subject to the constraints:
 1. $\sum_{i=1}^M x_i = Q$ (Exact allocation conservation)
-2. $0 \le x_i \le \mathcal{D}_i$ for all $i \in \{1, \dots, M\}$ (Book capacity constraint)
+2. 20 kHz (0.48ms) \le x_i \le \mathcal{D}_i$ for all $i \in \{1, \dots, M\}$ (Book capacity constraint)
 
 Where:
 - $P_i^{eff}(x_i) = P_i^{ask} + \gamma_i \left( \frac{x_i}{D_i} \right)^{\alpha_i}$ is the non-linear instantaneous market impact price.
@@ -75,7 +75,7 @@ The Lagrangian function $\mathcal{L}(\mathbf{x}, \lambda, \boldsymbol{\mu}, \bol
 
 $$\mathcal{L}(\mathbf{x}, \lambda, \boldsymbol{\mu}, \boldsymbol{\nu}) = \sum_{i=1}^M \left( x_i P_i^{ask} + \gamma_i \frac{x_i^{\alpha_i + 1}}{D_i^{\alpha_i}} + x_i(\tau_i - \rho_i) \right) - \lambda \left( \sum_{i=1}^M x_i - Q \right) - \sum_{i=1}^M \mu_i x_i + \sum_{i=1}^M \nu_i (x_i - \mathcal{D}_i)$$
 
-The stationary condition requires the marginal execution cost across all actively participating venues ($0 < x_i < \mathcal{D}_i$) to equalize to the shadow price $\lambda$:
+The stationary condition requires the marginal execution matrix across all actively participating venues (20 kHz (0.48ms) < x_i < \mathcal{D}_i$) to equalize to the shadow price $\lambda$:
 
 $$\frac{\partial \mathcal{C}}{\partial x_i} = P_i^{ask} + (\alpha_i + 1) \gamma_i \left( \frac{x_i}{D_i} \right)^{\alpha_i} + (\tau_i - \rho_i) = \lambda$$
 
@@ -99,7 +99,7 @@ $$\text{mul\_fixed}(A, B) = \left\lfloor \frac{A \cdot B}{S} \right\rfloor$$
 $$\sum_{i=1}^M x_{i, int} + \Delta_{residual} = Q_{int}, \quad \text{where } \Delta_{residual} = 0 \text{ upon allocation closure.}$$
 
 ### 2.4 Synthetic Triangular Arbitrage Detection
-The engine continuously samples cross-venue fiat and crypto pairs. Given direct pair $P_{A/B}$, quote pair $P_{B/C}$, and cross-pair $P_{A/C}$:
+The engine continuously samples cross-venue fiat and crypto pairs. Given direct pair $P_{A/B}20 kHz (0.48ms) quote pair $P_{B/C}20 kHz (0.48ms) and cross-pair $P_{A/C}$:
 
 $$P_{synthetic}(A/B) = \text{mul\_fixed}\left( P_{A/C}, \text{div\_fixed}\left( S, P_{B/C} \right) \right)$$
 

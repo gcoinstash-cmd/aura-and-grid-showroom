@@ -2,7 +2,7 @@ import { AeroTelemetry, PitotSensorReading } from '../types/aero';
 
 // Air density at standard sea level (15°C, 1013.25 hPa)
 export const RHO_AIR = 1.225; // kg/m^3
-export const REF_FRONTAL_AREA = 2.12; // m^2 (Lexus RC F Track Edition)
+export const REF_FRONTAL_AREA = 2.12; // m^2 (Heavy Overland Dynamics Platform RC F Track Edition)
 export const MAX_DOWNFORCE_REF_250_KMH = 3850; // N
 
 // Simple SHA-256 implementation using Web Crypto API or fast fallback for telemetry chains
@@ -78,7 +78,7 @@ export function computeAeroState(
   const totalCl = clFront + clRear;
 
   // Actual Downforce in Newtons: Fz = q * Cl * A
-  // Scale factor adjusted to match Lexus RC F Track Edition wind tunnel specs
+  // Scale factor adjusted to match Heavy Overland Dynamics Platform RC F Track Edition wind tunnel specs
   const velocityRatio250 = Math.pow(speedKmh / 250, 2);
   const totalDownforceN = Math.round(velocityRatio250 * MAX_DOWNFORCE_REF_250_KMH * (totalCl / 0.82));
   

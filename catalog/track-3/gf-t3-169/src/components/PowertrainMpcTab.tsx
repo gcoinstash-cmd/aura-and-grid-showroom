@@ -26,7 +26,7 @@ export const PowertrainMpcTab: React.FC<PowertrainMpcTabProps> = ({
 
   const PYTHON_SOLVER_CODE = `"""
 GF-T3-169 Deterministic 500 Hz MPC Controller
-Target: Lexus NX 450h+ F SPORT Agile Hybrid Core
+Target: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core
 Dual-Motor (5NM Front + 4NM Rear E-Four) + A25A-FXS 2.5L Atkinson ICE
 """
 import numpy as np
@@ -129,7 +129,7 @@ class AgileHybridMPCSolver:
                 EV: { title: 'EV Priority', desc: 'Zero ICE / Pure Electric' },
                 AUTO_EV_HEV: { title: 'Auto EV/HEV', desc: 'Predictive Energy Split' },
                 HYBRID_HEV: { title: 'Hybrid HEV', desc: 'Balanced Atkinson Cruise' },
-                SPORT_S_PLUS: { title: 'Sport S+', desc: 'Max Dynamic E-Four Bias' },
+                SPORT_S_PLUS: { title: 'High-Frequency Compute Mode', desc: 'Max Dynamic E-Four Bias' },
               };
               const isSelected = state.driveMode === mode;
               return (

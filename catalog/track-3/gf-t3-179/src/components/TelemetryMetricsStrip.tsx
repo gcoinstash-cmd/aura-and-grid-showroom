@@ -29,11 +29,11 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({
   return (
     <section className="relative w-full mb-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Card 1: DIRECT4 Vectoring Loop */}
+        {/* Card 1: DUAL_VECTOR_TORQUE Vectoring Loop */}
         <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 shadow-lg hover:border-slate-700 transition-colors">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[15px] font-medium text-slate-400">
-              DIRECT4 Vectoring Loop
+              DUAL_VECTOR_TORQUE Vectoring Loop
             </span>
             <span className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400">
               <Activity className="w-4 h-4 animate-pulse" />
@@ -135,7 +135,7 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({
           </div>
           <div className="flex items-center justify-between text-[15px] text-slate-400 font-mono">
             <span>Permissive (MIT)</span>
-            <span className="text-slate-500">Delaware APA Ready</span>
+            <span className="text-slate-500">Turnkey Software Asset Purchase Agreement Ready</span>
           </div>
         </div>
       </div>

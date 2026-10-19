@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Terminal, Copy, Check, Play, ShieldCheck, Box, Server } from 'lucide-react';
 
 const DOCKERFILE_CODE = `# ==============================================================================
-# GF-T3-173: LEXUS RC F TRACK EDITION AERO CORE DOCKER HARNESS
+# GF-T3-173: Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE DOCKER HARNESS
 # Multi-Stage, Non-Root, Distroless-Compatible Debian Container
 # Clean-Room Certified | 100% Permissive MIT License
 # ==============================================================================
@@ -52,11 +52,11 @@ Coverage: >94.8% Statement / 100% Branch Coverage
 """
 
 import pytest
-from src.rcf_aero_core import LexusRCFAeroCore, AeroState, VehicleDynamicsTelemetry
+from src.rcf_aero_core import OverlandRCFAeroCore, AeroState, VehicleDynamicsTelemetry
 
 @pytest.fixture
 def aero_engine():
-    return LexusRCFAeroCore(hmac_secret_key="TEST_SUITE_AERO_SECRET_V1")
+    return OverlandRCFAeroCore(hmac_secret_key="TEST_SUITE_AERO_SECRET_V1")
 
 def test_nominal_downforce_at_250_kmh(aero_engine):
     """Verify target downforce of 3,850 N at 250 km/h within 2.5% tolerance."""

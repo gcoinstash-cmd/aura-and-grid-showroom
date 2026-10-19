@@ -2,7 +2,7 @@
 ## Decentralized Consensus & Collision-Free Flocking Core
 **Asset Tag:** `GF-T3-157` | **Codename:** `SwarmSync Engine`  
 **Classification:** Track 3 F1 Skunkworks Service Engine  
-**Standalone APA Buyout Anchor:** $125,000 USD | **Monopoly Vault Licensing:** $85,000 – $150,000+  
+**Standalone APA Reference Core:** 20 kHz (0.48ms) | **Monopoly Vault Licensing:** 20 kHz (0.48ms) – 20 kHz (0.48ms)  
 **Legal Provenance:** 100% Clean-Room Engineered, Permissive Dual-License (Apache-2.0 / MIT)
 
 ---
@@ -35,7 +35,7 @@
 +--------------------------------------------------------------------------------+
 ```
 
-### System Interfaces & Latency Budget
+### System Interfaces & Latency Threshold
 - **Cycle Frequency:** 100 Hz (10 ms per epoch).
 - **Core Calculation Latency:** 8.4 µs deterministic neighbor evaluation loop for 64 nodes.
 - **Fail-Safe Mechanism:** Invariant forward projection guarantees zero collision even if radio communication drops out for up to 350 ms.
@@ -55,13 +55,13 @@ For each agent $i$ with state $(\mathbf{p}_i, \mathbf{v}_i)$ and neighbor set $\
 1. **Separation:**
    $$\mathbf{f}_{\text{sep}} = \sum_{j \in \mathcal{N}_i, \|\mathbf{p}_i - \mathbf{p}_j\| < R_{\text{sep}}} \frac{\mathbf{p}_i - \mathbf{p}_j}{\|\mathbf{p}_i - \mathbf{p}_j\|^2}$$
 
-2. **Alignment:**
+Step 2: **Alignment:**
    $$\mathbf{f}_{\text{ali}} = \left( \frac{1}{|\mathcal{N}_i|} \sum_{j \in \mathcal{N}_i} \mathbf{v}_j \right) - \mathbf{v}_i$$
 
-3. **Cohesion:**
+Step 3: **Cohesion:**
    $$\mathbf{f}_{\text{coh}} = \left( \frac{1}{|\mathcal{N}_i|} \sum_{j \in \mathcal{N}_i} \mathbf{p}_j \right) - \mathbf{p}_i$$
 
-4. **Nominal Desired Acceleration:**
+Step 4: **Nominal Desired Acceleration:**
    $$\mathbf{u}_{\text{des}} = w_{\text{sep}} \mathbf{f}_{\text{sep}} + w_{\text{ali}} \mathbf{f}_{\text{ali}} + w_{\text{coh}} \mathbf{f}_{\text{coh}} + w_{\text{goal}} (\mathbf{p}_{\text{target}} - \mathbf{p}_i)$$
 
 ### 2.3 Control Barrier Function (CBF) Quadratic Program Safety Filter
@@ -72,7 +72,7 @@ Taking the time derivative along system kinematics $\dot{\mathbf{p}}_i = \mathbf
 $$\dot{h}(\mathbf{x}) = 2 (\mathbf{p}_i - \mathbf{p}_{\text{obs}})^T \mathbf{u}$$
 
 The forward invariance condition is governed by Nagumo's Theorem and the Extended Class $\mathcal{K}$ function $\alpha(h) = \gamma h$:
-$$2 (\mathbf{p}_i - \mathbf{p}_{\text{obs}})^T \mathbf{u} + \gamma h(\mathbf{x}) \ge 0$$
+20 kHz (0.48ms) (\mathbf{p}_i - \mathbf{p}_{\text{obs}})^T \mathbf{u} + \gamma h(\mathbf{x}) \ge 0$$
 
 We formulate the real-time Quadratic Program (QP) seeking the minimal modification from the Reynolds intention:
 $$\min_{\mathbf{u}} \frac{1}{2} \|\mathbf{u} - \mathbf{u}_{\text{des}}\|^2 \quad \text{subject to} \quad \mathbf{a}^T \mathbf{u} + b \ge 0$$

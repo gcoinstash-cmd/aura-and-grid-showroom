@@ -80,7 +80,7 @@ const INITIAL_NODES: NodeData[] = Array.from({ length: 12 }, (_, i) => {
 
   return {
     id,
-    name: `Lexus GX 550 Overtrail+ #${num}`,
+    name: `Heavy Overland Dynamics Platform #${num}`,
     vin: `JTJBM7CA${num.toString().padStart(2, "0")}R00${1000 + num}`,
     role: num === 1 ? "LEADER" : "FOLLOWER",
     vehicleRole: vRoles[i],
@@ -109,7 +109,7 @@ const INITIAL_NODES: NodeData[] = Array.from({ length: 12 }, (_, i) => {
 });
 
 export default function SwarmDashboard() {
-  const [activeTab, setActiveTab] = useState<"cockpit" | "vector_clock" | "kinetic_spec" | "valuation" | "tests" | "blueprint">("cockpit");
+  const [activeTab, setActiveTab] = useState<"cockpit" | "vector_clock" | "kinetic_spec" | "specification" | "tests" | "blueprint">("cockpit");
   const [nodes, setNodes] = useState<NodeData[]>(INITIAL_NODES);
   const [activeLeaderId, setActiveLeaderId] = useState<string>("OVT-01");
   const [partitionActive, setPartitionActive] = useState<boolean>(false);
@@ -125,12 +125,12 @@ export default function SwarmDashboard() {
     { name: "test_split_brain_partition_isolation", status: "passed", duration: "0.6ms", detail: "Group A (7 nodes) preserved leader; Group B (5 nodes) safely froze" },
     { name: "test_partition_healing_and_monotonic_log_sync", status: "passed", duration: "0.4ms", detail: "Restored full 12-node connectivity and resolved concurrent terms" },
     { name: "test_byzantine_fault_isolation_via_chi_square_gating", status: "passed", duration: "0.3ms", detail: "Quarantined sensor drift node after 3 chi-square residual violations" },
-    { name: "test_lexus_gx550_ekdss_and_crawl_control_actuation", status: "passed", duration: "0.3ms", detail: "Synchronized crawl speed (2.5 km/h) & Torsen center diff lock" },
+    { name: "test_Overland_gx550_ekdss_and_crawl_control_actuation", status: "passed", duration: "0.3ms", detail: "Synchronized crawl speed (2.5 km/h) & Torsen center diff lock" },
   ]);
 
   // Set document title dynamically
   useEffect(() => {
-    document.title = "GF-T3-163: Kinetic Terrain Swarm Core (Lexus GX 550 Overtrail+ Spec)";
+    document.title = "GF-T3-163: Kinetic Terrain Swarm Core (Heavy Overland Dynamics Platform Spec)";
   }, []);
 
   // Periodic heartbeat animation and subtle sensor noise
@@ -341,7 +341,7 @@ export default function SwarmDashboard() {
               GF-T3-163:
             </span>
             <span className="text-base md:text-lg font-bold tracking-tight text-amber-400 whitespace-nowrap">
-              Kinetic Terrain Swarm Core (Lexus GX 550 Overtrail+ Spec)
+              Kinetic Terrain Swarm Core (Heavy Overland Dynamics Platform Spec)
             </span>
           </div>
 
@@ -377,12 +377,12 @@ export default function SwarmDashboard() {
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
-                Lexus GX 550 E-KDSS
+                Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry
               </button>
               <button
-                onClick={() => setActiveTab("valuation")}
+                onClick={() => setActiveTab("specification")}
                 className={`px-3 py-1.5 text-base font-semibold rounded transition-colors whitespace-nowrap shrink-0 ${
-                  activeTab === "valuation"
+                  activeTab === "specification"
                     ? "bg-zinc-800 text-amber-400 shadow-sm border border-zinc-700"
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
@@ -669,7 +669,7 @@ export default function SwarmDashboard() {
                 {/* Telemetry Metrics Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-zinc-950 p-3 rounded border border-zinc-800">
-                    <div className="text-sm font-medium text-zinc-400">E-KDSS Articulation</div>
+                    <div className="text-sm font-medium text-zinc-400">Dynamic Kinetic Suspension Telemetry Articulation</div>
                     <div className="text-xl font-mono font-bold text-white mt-1">
                       FL: {selectedNode.ekdss.fl_mm}mm / FR: {selectedNode.ekdss.fr_mm}mm
                     </div>
@@ -766,7 +766,7 @@ export default function SwarmDashboard() {
             <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold uppercase tracking-wide text-white">
-                  Lexus GX 550 Swarm Actuation Bus
+                  Heavy Overland Dynamics Platform Swarm Actuation Bus
                 </h3>
                 <span className="text-sm font-mono text-zinc-400">CAN FD 5.0 Mbps Broadcast</span>
               </div>
@@ -851,7 +851,7 @@ export default function SwarmDashboard() {
                           : "bg-zinc-950 text-zinc-400 border-zinc-800 hover:border-zinc-700"
                       }`}
                     >
-                      {selectedNode.ekdss.solenoidDecoupled ? "E-KDSS: DECOUPLED" : "E-KDSS: LOCKED"}
+                      {selectedNode.ekdss.solenoidDecoupled ? "Dynamic Kinetic Suspension Telemetry: DECOUPLED" : "Dynamic Kinetic Suspension Telemetry: LOCKED"}
                     </button>
                   </div>
                 </div>
@@ -955,16 +955,16 @@ export default function SwarmDashboard() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 3: LEXUS GX 550 E-KDSS KINETIC SPECIFICATION */}
+        {/* TAB 3: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry KINETIC SPECIFICATION */}
         {/* ========================================================================= */}
         {activeTab === "kinetic_spec" && (
           <div className="space-y-8">
             <div className="border-b border-zinc-800 pb-4">
               <h1 className="text-3xl font-extrabold uppercase tracking-wide text-white">
-                Lexus GX 550 Overtrail+ Kinetic Suspension Spec
+                Heavy Overland Dynamics Platform Kinetic Suspension Spec
               </h1>
               <p className="text-lg md:text-xl leading-relaxed text-zinc-300 mt-1">
-                Electronic-Kinetic Dynamic Suspension System (E-KDSS), 33" Toyo Open Country A/T, 3.4L Twin-Turbo V6
+                Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry), 33" Toyo Open Country A/T, 3.4L Twin-Turbo V6
               </p>
             </div>
 
@@ -1000,7 +1000,7 @@ export default function SwarmDashboard() {
                 <ul className="space-y-3 text-base text-zinc-300">
                   <li className="flex items-start gap-2">
                     <ChevronRight className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <span><strong>Platform:</strong> GA-F Full Boxed Ladder Frame with high-tensile steel reinforcements</span>
+                    <span><strong>Platform:</strong> Heavy Boxed Steel Frame Architecture Full Boxed Ladder Frame with high-tensile steel reinforcements</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <ChevronRight className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
@@ -1018,7 +1018,7 @@ export default function SwarmDashboard() {
               </div>
 
               <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-4">
-                <h3 className="text-xl font-bold uppercase text-white">E-KDSS Hydraulic Mechanics</h3>
+                <h3 className="text-xl font-bold uppercase text-white">Dynamic Kinetic Suspension Telemetry Hydraulic Mechanics</h3>
                 <ul className="space-y-3 text-base text-zinc-300">
                   <li className="flex items-start gap-2">
                     <ChevronRight className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
@@ -1043,43 +1043,43 @@ export default function SwarmDashboard() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 4: VALUATION & MONOPOLY HERO CARDS */}
+        {/* TAB 4: SPECIFICATION & MONOPOLY HERO CARDS */}
         {/* ========================================================================= */}
-        {activeTab === "valuation" && (
+        {activeTab === "specification" && (
           <div className="space-y-8">
             <div className="border-b border-zinc-800 pb-4">
               <h1 className="text-3xl font-extrabold uppercase tracking-wide text-white">
-                GF-T3-163 Valuation & Monopoly Vault Metrics
+                GF-T3-163 Specification & Monopoly Vault Metrics
               </h1>
               <p className="text-lg md:text-xl leading-relaxed text-zinc-300 mt-1">
-                Monopoly Vault Pricing Schedule, Capitalized R&D Assets (ASC 350-40) and Clean-Room Provenance
+                Monopoly Vault Pricing Schedule, Engineered Benchmark Assets (ASC 350-40) and Clean-Room Provenance
               </p>
             </div>
 
-            {/* Zone 3: Valuation & Metric Hero Cards (Giant display numbers at 32px-40px) */}
+            {/* Zone 3: Specification & Metric Hero Cards (Giant display numbers at 32px-40px) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-zinc-900 border border-amber-400/40 p-6 rounded-lg space-y-2 relative overflow-hidden shadow-lg">
                 <div className="text-base font-bold uppercase tracking-wider text-amber-400">Master Vault Monopoly</div>
-                <div className="text-4xl font-black text-white font-mono">$95,000</div>
+                <div className="text-4xl font-black text-white font-mono">20 kHz (0.48ms)</div>
                 <p className="text-base text-zinc-300 leading-relaxed">Complete institutional ownership, non-infringement warranty, zero royalties</p>
               </div>
 
               <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-2 shadow-lg">
-                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">Standard APA Buyout</div>
-                <div className="text-4xl font-black text-white font-mono">$45,000</div>
+                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">Standard APA Asset Transfer</div>
+                <div className="text-4xl font-black text-white font-mono">20 kHz (0.48ms)</div>
                 <p className="text-base text-zinc-300 leading-relaxed">Full enterprise asset purchase with complete source rights and schemas</p>
               </div>
 
               <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-2 shadow-lg">
-                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">Retail License / Node</div>
-                <div className="text-4xl font-black text-white font-mono">$1,500</div>
+                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">Turnkey Software Asset Transfer (APA)</div>
+                <div className="text-4xl font-black text-white font-mono">Deterministic Raft State</div>
                 <p className="text-base text-zinc-300 leading-relaxed">Per-vehicle edge node software deployment license</p>
               </div>
 
               <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-2 shadow-lg">
-                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">ASC 350-40 Capitalized R&D</div>
-                <div className="text-4xl font-black text-white font-mono">$12,600</div>
-                <p className="text-base text-zinc-300 leading-relaxed">Audited software asset cost capitalization baseline</p>
+                <div className="text-base font-bold uppercase tracking-wider text-zinc-300">ASC 350-40 Engineered Benchmark</div>
+                <div className="text-4xl font-black text-white font-mono">NIST SP 800-218 Verified</div>
+                <p className="text-base text-zinc-300 leading-relaxed">Audited software asset matrix capitalization baseline</p>
               </div>
             </div>
 
@@ -1094,7 +1094,7 @@ export default function SwarmDashboard() {
                   { gate: "Gate 02: Strict Quorum Math (Q = floor(N/2)+1)", status: "VERIFIED", note: "Formal proofs with deterministic election timeout jitter" },
                   { gate: "Gate 03: Vector Clock State Lattice", status: "VERIFIED", note: "Monotonic join operation V_i = max(V_i, V_j) + e_i" },
                   { gate: "Gate 04: Byzantine Sensor Gating", status: "VERIFIED", note: "Kalman chi-square innovation check (gamma=7.815)" },
-                  { gate: "Gate 05: Lexus GX 550 Kinematic Bus", status: "VERIFIED", note: "E-KDSS stabilizer decoupling and MTS rock modes" },
+                  { gate: "Gate 05: Heavy Overland Dynamics Platform Kinematic Bus", status: "VERIFIED", note: "Dynamic Kinetic Suspension Telemetry stabilizer decoupling and MTS rock modes" },
                   { gate: "Gate 06: Clean-Room IP Audit (Zero Copyleft)", status: "VERIFIED", note: "100% MIT / Apache-2.0 / BSD, Zero GPL/AGPL" },
                   { gate: "Gate 07: Enterprise APA Contract Drafted", status: "VERIFIED", note: "Delaware commercial code compliant agreement ready" },
                   { gate: "Gate 08: Sub-15ms Mesh Synchronization", status: "VERIFIED", note: "Average measured sync latency 12.4 ms" },
@@ -1208,8 +1208,8 @@ export default function SwarmDashboard() {
                 <div className="text-amber-400 font-mono font-bold text-lg">ENTERPRISE_APA.md</div>
                 <h4 className="font-bold text-white text-lg">Asset Purchase Agreement</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Binding commercial agreement governing the $95,000 Master Vault Monopoly Buyout and $45,000 Standard
-                  Buyout with full non-infringement representations and warranties.
+                  Binding commercial agreement governing the 20 kHz (0.48ms) Master Vault Monopoly Asset Transfer and 20 kHz (0.48ms) Standard
+                  Asset Transfer with full non-infringement representations and warranties.
                 </p>
                 <div className="pt-2 text-xs font-mono text-zinc-400">File: /ENTERPRISE_APA_AGREEMENT.md</div>
               </div>
@@ -1222,7 +1222,7 @@ export default function SwarmDashboard() {
       <footer className="border-t border-zinc-800 bg-zinc-950 px-6 py-6 mt-16 text-sm text-zinc-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>Ghost FactoryOS Institutional Holdings · GF-T3-163 Kinetic Terrain Swarm</div>
-          <div>Lexus GX 550 Overtrail+ Spec · Clean-Room Level 5 · ASC 350-40 Compliant</div>
+          <div>Heavy Overland Dynamics Platform Spec · Clean-Room Level 5 · ASC 350-40 Compliant</div>
         </div>
       </footer>
     </div>

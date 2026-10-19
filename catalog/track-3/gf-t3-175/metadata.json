@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-175 Cockpit Urban Edge Core (export) ",
-  "description": "Turnkey micro-APA buyout asset cockpit for Acquire.com featuring 500 Hz deterministic SOC/SOH battery compute engine, PostgreSQL 16 ledger, and OpenAPI 3.1 contracts.",
+  "description": "Turnkey micro-APA asset transfer asset cockpit for Acquire.com featuring 500 Hz deterministic SOC/SOH battery compute engine, PostgreSQL 16 ledger, and OpenAPI 3.1 contracts.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

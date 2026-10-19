@@ -101,8 +101,8 @@ export const SuspensionCoreTab: React.FC<SuspensionCoreTabProps> = ({
 
   const copyCode = () => {
     const code = `"""
-Lexus LX 600 Ultra Luxury Executive Core - AHC & Wastegate Control Loop
-File: lexus_lx600_ahc_core.py
+Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+File: Overland_lx600_ahc_core.py
 License: MIT Permissive
 Author: Ghost FactoryOS Lead Systems Architects
 """
@@ -131,7 +131,7 @@ class CornerHydraulicState:
     flow_rate_lpm: float
     is_quarantined: bool
 
-class LexusLX600ExecutiveEngine:
+class OverlandLX600ExecutiveEngine:
     def __init__(self):
         self.mode = RideHeightMode.NORMAL
         self.target_heights = {"FL": 0.0, "FR": 0.0, "RL": 0.0, "RR": 0.0}
@@ -197,7 +197,7 @@ class LexusLX600ExecutiveEngine:
               { id: 'LOW', label: 'Low / Ingress', sub: '-1.2 in (-30mm)' },
               { id: 'NORMAL', label: 'Normal Core', sub: '0.0 in (Baseline)' },
               { id: 'COMFORT', label: 'Ultra Luxury', sub: '+0.4 in (+10mm)' },
-              { id: 'SPORT_PLUS', label: 'Sport S+', sub: '-0.8 in (Stiff)' },
+              { id: 'SPORT_PLUS', label: 'High-Frequency Compute Mode', sub: '-0.8 in (Stiff)' },
               { id: 'HIGH1', label: 'High 1 Trail', sub: '+1.2 in (+30mm)' },
               { id: 'HIGH2', label: 'High 2 Apex', sub: '+2.8 in (+71mm)' },
               { id: 'ROCK', label: 'Rock Crawl', sub: '+2.4 in Articulate' },
@@ -408,7 +408,7 @@ class LexusLX600ExecutiveEngine:
               <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
             </div>
             <span className="text-[15px] font-mono font-bold text-slate-300 ml-2">
-              lexus_lx600_ahc_core.py (Pure Python 3.12 Standard Library)
+              Overland_lx600_ahc_core.py (Pure Python 3.12 Standard Library)
             </span>
           </div>
           <button
@@ -420,8 +420,8 @@ class LexusLX600ExecutiveEngine:
           </button>
         </div>
         <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[380px] bg-slate-950/70">
-          <code>{`# Lexus LX 600 Ultra Luxury Executive Core - AHC & Wastegate Control Loop
-# File: lexus_lx600_ahc_core.py
+          <code>{`# Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+# File: Overland_lx600_ahc_core.py
 # License: MIT Permissive | Clean-Room Certified
 # Zero external runtime dependencies
 
@@ -449,7 +449,7 @@ class CornerHydraulicState:
     flow_rate_lpm: float
     is_quarantined: bool
 
-class LexusLX600ExecutiveEngine:
+class OverlandLX600ExecutiveEngine:
     def __init__(self):
         self.mode = RideHeightMode.NORMAL
         self.target_heights = {"FL": 0.0, "FR": 0.0, "RL": 0.0, "RR": 0.0}

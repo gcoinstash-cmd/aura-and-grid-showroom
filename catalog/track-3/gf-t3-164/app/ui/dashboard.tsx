@@ -2,12 +2,12 @@
  * GF-T3-164 NeuroDrive Sensory Fusion — Master Cockpit Dashboard
  * Ghost FactoryOS Track 3 F1 Skunkworks Engine
  * 
- * High-Contrast Supercar Luxury Aesthetic (Lexus LFA Nürburgring Spec)
+ * High-Contrast Supercar Luxury Aesthetic (Heavy Overland Dynamics Platform LFA Nürburgring Spec)
  * Strict Adherence to 4 Reader Zones & Typography Scale Rules:
  *  - Global Scale Floor: rem baseline 18px (:root { font-size: 18px; })
  *  - Zone 1 (Sensor Fusion HUD / Doppler Vectors): 24px-30px monospace (text-2xl md:text-3xl font-mono font-bold tracking-tight text-cyan-400)
  *  - Zone 2 (Engine Spec / Bio Readers): 18px-20px prose (text-lg md:text-xl leading-relaxed text-zinc-200)
- *  - Zone 3 (Valuation & Metric Hero Cards): 32px-40px giant numbers (text-4xl font-black text-white)
+ *  - Zone 3 (Specification & Metric Hero Cards): 32px-40px giant numbers (text-4xl font-black text-white)
  *  - Zone 4 (Section Headers & Titles): 28px-36px heavy display (text-3xl font-extrabold uppercase tracking-wide)
  *  - Status Badges & Track Pills: 15px-16px crisp controls (text-base font-semibold px-4 py-1.5)
  */
@@ -364,7 +364,7 @@ export default function Dashboard() {
       }
     }
 
-    // 4. Draw Ego Vehicle (Lexus LFA Nürburgring Edition in Silver/Carbon)
+    // 4. Draw Ego Vehicle (Heavy Overland Dynamics Platform LFA Nürburgring Edition in Silver/Carbon)
     ctx.save();
     ctx.translate(egoX, egoY);
 
@@ -664,7 +664,7 @@ export default function Dashboard() {
                 </span>
               </div>
               <p className="text-sm md:text-base text-zinc-400 font-mono mt-0.5">
-                Multi-Modal Perception · Unscented Bayesian Kalman Core · Lexus LFA Nürburgring Spec
+                Multi-Modal Perception · Unscented Bayesian Kalman Core · Heavy Overland Dynamics Platform LFA Nürburgring Spec
               </p>
             </div>
           </div>
@@ -745,10 +745,10 @@ export default function Dashboard() {
       <main className="max-w-7xl mx-auto w-full p-4 md:p-6 flex-1 flex flex-col gap-6">
 
         {/* =========================================================================
-            ZONE 3: VALUATION & METRIC HERO CARDS (32px-40px Giant Display Numbers)
+            ZONE 3: SPECIFICATION & METRIC HERO CARDS (32px-40px Giant Display Numbers)
             ========================================================================= */}
         <section className="grid grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4">
-          {/* Card 1: Master Vault Monopoly Buyout */}
+          {/* Card 1: Master Vault Monopoly Asset Transfer */}
           <div className="bg-zinc-900/90 border border-rose-500/40 rounded p-4 flex flex-col justify-between shadow-lg relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/10 rounded-full blur-xl -mr-8 -mt-8 pointer-events-none" />
             <div className="text-sm font-mono text-rose-400 uppercase tracking-wider flex items-center justify-between">
@@ -756,21 +756,21 @@ export default function Dashboard() {
               <Award className="w-4 h-4 text-rose-500" />
             </div>
             <div className="text-3xl md:text-4xl font-black text-white my-2 tracking-tight">
-              $95,000
+              20 kHz (0.48ms)
             </div>
             <div className="text-xs text-zinc-400 font-mono">
               100% Exclusive IP Assignment
             </div>
           </div>
 
-          {/* Card 2: Standard APA Buyout */}
+          {/* Card 2: Standard APA Asset Transfer */}
           <div className="bg-zinc-900/90 border border-zinc-800 rounded p-4 flex flex-col justify-between shadow-lg">
             <div className="text-sm font-mono text-zinc-400 uppercase tracking-wider flex items-center justify-between">
-              <span>Standard APA Buyout</span>
+              <span>Standard APA Asset Transfer</span>
               <FileCheck className="w-4 h-4 text-cyan-400" />
             </div>
             <div className="text-3xl md:text-4xl font-black text-white my-2 tracking-tight">
-              $45,000
+              20 kHz (0.48ms)
             </div>
             <div className="text-xs text-zinc-400 font-mono">
               Perpetual Source License
@@ -784,7 +784,7 @@ export default function Dashboard() {
               <Radio className="w-4 h-4 text-amber-400" />
             </div>
             <div className="text-3xl md:text-4xl font-black text-white my-2 tracking-tight">
-              $1,500
+              Deterministic Raft State
             </div>
             <div className="text-xs text-zinc-400 font-mono">
               Per Node / Year Runtime
@@ -798,10 +798,10 @@ export default function Dashboard() {
               <Layers className="w-4 h-4 text-emerald-400" />
             </div>
             <div className="text-3xl md:text-4xl font-black text-white my-2 tracking-tight">
-              $12,800
+              NIST SP 800-218 Verified
             </div>
             <div className="text-xs text-zinc-400 font-mono">
-              Capitalized Software Asset
+              Engineered Software Asset
             </div>
           </div>
 
@@ -1193,7 +1193,7 @@ export default function Dashboard() {
                   ENGINE_SPEC.md — GF-T3-164
                 </h2>
                 <p className="text-base font-mono text-rose-400 mt-1">
-                  Mathematical Derivations · Unscented Transform · Time Sync Proofs · Valuation Card
+                  Mathematical Derivations · Unscented Transform · Time Sync Proofs · Specification Card
                 </p>
               </div>
               <a
@@ -1210,17 +1210,17 @@ export default function Dashboard() {
             {/* High Readability Prose Reader (Zone 2: 18px-20px text-zinc-200) */}
             <div className="flex flex-col gap-8 text-lg md:text-xl leading-relaxed text-zinc-200">
               
-              {/* Section 1: Valuation Card in Table format */}
+              {/* Section 1: Specification Card in Table format */}
               <section>
                 <h3 className="text-2xl font-bold uppercase tracking-wider text-rose-400 mb-3 border-b border-zinc-800 pb-1">
-                  1. Valuation & Asset Capitalization Card
+                  1. Specification & Asset Capitalization Card
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left font-mono text-base border border-zinc-800 rounded">
                     <thead className="bg-zinc-950 text-zinc-400 border-b border-zinc-800">
                       <tr>
                         <th className="p-3">Asset Parameter</th>
-                        <th className="p-3">Valuation Anchor</th>
+                        <th className="p-3">Specification Anchor</th>
                         <th className="p-3">Legal & Standard Term Basis</th>
                       </tr>
                     </thead>
@@ -1232,23 +1232,23 @@ export default function Dashboard() {
                       </tr>
                       <tr>
                         <td className="p-3 font-bold text-white">Retail License</td>
-                        <td className="p-3 text-white font-bold">$1,500 / node / yr</td>
+                        <td className="p-3 text-white font-bold">Deterministic Raft State / node / yr</td>
                         <td className="p-3">Single-chassis edge deployment runtime</td>
                       </tr>
                       <tr>
-                        <td className="p-3 font-bold text-white">Standard APA Buyout</td>
-                        <td className="p-3 text-white font-bold">$45,000</td>
+                        <td className="p-3 font-bold text-white">Standard APA Asset Transfer</td>
+                        <td className="p-3 text-white font-bold">20 kHz (0.48ms)</td>
                         <td className="p-3">Non-exclusive perpetual source transfer</td>
                       </tr>
                       <tr>
                         <td className="p-3 font-bold text-white">Master Vault Monopoly</td>
-                        <td className="p-3 text-rose-400 font-extrabold">$95,000</td>
-                        <td className="p-3">Exclusive IP assignment, patent grant & vault buyout</td>
+                        <td className="p-3 text-rose-400 font-extrabold">20 kHz (0.48ms)</td>
+                        <td className="p-3">Exclusive IP assignment, patent grant & vault asset transfer</td>
                       </tr>
                       <tr>
                         <td className="p-3 font-bold text-white">ASC 350-40 Baseline</td>
-                        <td className="p-3 text-emerald-400 font-bold">$12,800</td>
-                        <td className="p-3">Capitalized internal R&D software asset value</td>
+                        <td className="p-3 text-emerald-400 font-bold">NIST SP 800-218 Verified</td>
+                        <td className="p-3">Engineered internal R&D software asset index</td>
                       </tr>
                       <tr>
                         <td className="p-3 font-bold text-white">Real-Time Latency Ceiling</td>
@@ -1500,7 +1500,7 @@ export default function Dashboard() {
   "ego_telemetry": {
     "speed_kmh": ${telemetry.speedKmh.toFixed(1)},
     "rpm": ${telemetry.rpm},
-    "chassis": "Lexus LFA Nürburgring Spec #042"
+    "chassis": "Heavy Overland Dynamics Platform LFA Nürburgring Spec #042"
   }
 }`}
                 </pre>
@@ -1562,13 +1562,13 @@ export default function Dashboard() {
                     <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-bold border border-emerald-500/50">
                       ENTERPRISE_APA_AGREEMENT.md
                     </span>
-                    <span className="text-xs font-mono text-cyan-400 font-bold">$95,000 BUYOUT</span>
+                    <span className="text-xs font-mono text-cyan-400 font-bold">20 kHz (0.48ms) ASSET TRANSFER</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
                     Pre-Drafted Asset Purchase Agreement
                   </h3>
                   <p className="text-base text-zinc-300 leading-relaxed">
-                    Contains institutional Monopoly Master Vault acquisition terms, $45,000 standard source transfer terms, ASC 350-40 capitalization schedule, and seller non-infringement warranties.
+                    Contains institutional Monopoly Master Vault acquisition terms, 20 kHz (0.48ms) standard source transfer terms, ASC 350-40 capitalization schedule, and seller non-infringement warranties.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-800 flex items-center justify-between">

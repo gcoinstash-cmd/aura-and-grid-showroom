@@ -25,9 +25,9 @@ tests/test_failover.py::test_primary_canfd_bus_a_health PASSED          [ 42%]
 tests/test_failover.py::test_instantaneous_bus_b_failover PASSED        [ 50%]
 tests/test_failover.py::test_zero_torque_drop_during_cutover PASSED      [ 57%]
 tests/test_failover.py::test_dual_bus_blackout_raises_asil_d PASSED     [ 64%]
-tests/test_direct4.py::test_standstill_launch_split PASSED             [ 71%]
-tests/test_direct4.py::test_high_g_cornering_apex_split PASSED          [ 78%]
-tests/test_direct4.py::test_corner_exit_rear_bias_vector PASSED         [ 85%]
+tests/test_dual_vector_torque.py::test_standstill_launch_split PASSED             [ 71%]
+tests/test_dual_vector_torque.py::test_high_g_cornering_apex_split PASSED          [ 78%]
+tests/test_dual_vector_torque.py::test_corner_exit_rear_bias_vector PASSED         [ 85%]
 tests/test_ledger.py::test_hmac_sha256_monotonic_chain PASSED          [ 92%]
 tests/test_ledger.py::test_divergence_sentinel_quarantine PASSED        [100%]
 
@@ -35,7 +35,7 @@ tests/test_ledger.py::test_divergence_sentinel_quarantine PASSED        [100%]
 Name                     Stmts   Miss  Cover
 --------------------------------------------
 rz450e_sbw/core.py          54      0   100%
-rz450e_sbw/direct4.py       38      1    97%
+rz450e_sbw/dual_vector_torque.py       38      1    97%
 rz450e_sbw/ledger.py        42      2    95%
 rz450e_sbw/failover.py      26      0   100%
 --------------------------------------------
@@ -127,7 +127,7 @@ CMD ["uvicorn", "rz450e_sbw.main:app", "--host", "0.0.0.0", "--port", "8080"]`);
           <pre className="bg-slate-900 p-4 rounded-lg font-mono text-xs text-slate-200 overflow-x-auto min-h-[140px] leading-relaxed">
             {testOutput || (
               <span className="text-slate-500">
-                Click "Run PyTest Bench" above to simulate running the complete ASIL-D dual CAN-FD failover and DIRECT4 vectoring test suite.
+                Click "Run PyTest Bench" above to simulate running the complete ASIL-D dual CAN-FD failover and DUAL_VECTOR_TORQUE vectoring test suite.
               </span>
             )}
           </pre>
@@ -213,7 +213,7 @@ CMD ["uvicorn", "rz450e_sbw.main:app", "--host", "0.0.0.0", "--port", "8080"]`}
                 Zero-Cold-Start Ingestion Architecture
               </div>
               <p className="text-slate-400">
-                Minimum instance count pinned to 1 guarantees sub-millisecond response latency for connected Lexus CAN-FD telemetry proxies.
+                Minimum instance count pinned to 1 guarantees sub-millisecond response latency for connected Heavy Overland Dynamics Platform CAN-FD telemetry proxies.
               </p>
             </div>
           </div>

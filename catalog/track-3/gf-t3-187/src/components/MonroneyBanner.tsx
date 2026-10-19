@@ -35,7 +35,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus ES 300h Ultra Luxury Core
+        Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with swing-valve shock damping, Atkinson-cycle regenerative energy arbitration, and PostgreSQL 16 HMAC ledger.
@@ -77,14 +77,14 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-300 font-mono tabular-nums">
         <span>
-          Buyout: <strong className="text-amber-400 font-bold">$45,000 USD</strong>
+          Execution: <strong className="text-amber-400 font-mono font-bold">20 kHz</strong>
         </span>
         <span className="text-slate-600" aria-hidden="true">|</span>
         <span>
-          Enterprise: <strong className="text-emerald-400 font-bold">$125,000 USD</strong>
+          Moat: <strong className="text-emerald-400 font-mono font-bold">PostgreSQL 16</strong>
         </span>
         <span className="text-slate-600" aria-hidden="true">|</span>
         <span className="text-slate-200 font-semibold">MIT Permissive</span>

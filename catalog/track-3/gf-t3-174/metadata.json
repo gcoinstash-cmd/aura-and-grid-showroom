@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-174 Steer-by-Wire Precision Core (export) ",
-  "description": "Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174) — Turnkey Micro-APA Buyout Cockpit with dual-channel redundancy, deterministic sub-millisecond actuation, and ISO 26262 ASIL-D consensus engine.",
+  "description": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174) — Turnkey Micro-APA Asset Transfer Cockpit with dual-channel redundancy, deterministic sub-millisecond actuation, and ISO 26262 ASIL-D consensus engine.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

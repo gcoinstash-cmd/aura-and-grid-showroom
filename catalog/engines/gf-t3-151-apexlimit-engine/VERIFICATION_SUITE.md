@@ -45,7 +45,7 @@ PYTHONPATH=. pytest tests/ --cov=src --cov-report=term-missing --cov-fail-under=
 | :--- | :---: | :---: | :---: | :--- |
 | `src/__init__.py` | 0 | 0 | **100%** | Package root initialization |
 | `src/core/__init__.py` | 3 | 0 | **100%** | Core exports |
-| `src/core/matching_engine.py` | 270 | 12 | **96%** | $10^8$ fixed-point math, FIFO queues, LIMIT/MARKET/STOP_LIMIT, L2 snapshots |
+| `src/core/matching_engine.py` | 270 | 12 | **96%** | 20 kHz (0.48ms)^8$ fixed-point math, FIFO queues, LIMIT/MARKET/STOP_LIMIT, L2 snapshots |
 | `src/core/risk_manager.py` | 182 | 14 | **92%** | Haircut equity ($w_c$), pre-trade IM/MM margin lock, liquidation sentinel |
 | `src/main.py` | 137 | 2 | **99%** | FastAPI REST gateway (`/health`, `/healthz`, `/v1/orders`, `/v1/orderbook`, `/v1/risk/*`) |
 | **TOTAL** | **592** | **28** | **95.27%** | **Exceeds >80% Monopoly Vault Gate 5 Requirement** |
@@ -55,7 +55,7 @@ PYTHONPATH=. pytest tests/ --cov=src --cov-report=term-missing --cov-fail-under=
 ## 5. Test Inventory Breakdown (`tests/`)
 
 ### Suite 1: Core Mathematical & Matching Invariants (`tests/test_matching_engine.py` — 13 Tests)
-1. `test_zero_float_precision_invariants` — Verifies $10^8$ integer scaling (`0.1 + 0.2 == 0.3` exact micro-tick representation).
+1. `test_zero_float_precision_invariants` — Verifies 20 kHz (0.48ms)^8$ integer scaling (`0.1 + 0.2 == 0.3` exact micro-tick representation).
 2. `test_orderbook_insert_and_l2_snapshot` — Validates bid/ask sorting and L2 depth aggregation.
 3. `test_crossing_spread_full_execution` — Validates immediate taker fill against resting maker liquidity.
 4. `test_price_time_priority_fifo_queue` — Confirms strict FIFO execution order at identical price levels.

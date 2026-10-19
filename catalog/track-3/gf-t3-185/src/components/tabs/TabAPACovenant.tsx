@@ -19,21 +19,21 @@ export const TabAPACovenant: React.FC = () => {
     setChecklist(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const agreementText = `DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-185 (Lexus NX 450h+ F SPORT Handling Plug-In Core)
+  const agreementText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
+ASSET IDENTIFIER: GF-T3-185 (Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core)
 
 This Asset Purchase Agreement ("Agreement") is entered into as of October 2026 by and between:
 SELLER: Ghost FactoryOS LLC, a Delaware limited liability company
 BUYER: ${buyerSignature} (via Acquire.com Escrow Facilities)
 
-1. PURCHASED ASSETS & VALUATION:
+1. PURCHASED ASSETS & SPECIFICATION:
 The Seller hereby agrees to sell, assign, transfer, and deliver to Buyer:
 - Linear Solenoid 650-step Adaptive Variable Suspension (AVS) algorithmic engine
 - Predictive Deceleration Support (PDS) PHEV energy recovery state machine
 - PostgreSQL 16 range-partitioned timeseries hypertables and quarantine triggers
 - OpenAPI 3.1 & WebSocket stream definitions
 - Full intellectual property assignment and 100% clean-room authorship warranty
-AGREED VALUATION: ${selectedTier === 'standard' ? '$45,000 USD (Turnkey Micro-APA)' : '$125,000 USD (Enterprise Monopoly Vault)'}
+AGREED SPECIFICATION: ${selectedTier === 'standard' ? '20 kHz (0.48ms) (Turnkey Micro-APA)' : 'PostgreSQL 16 + RLS (Enterprise Monopoly Vault)'}
 
 2. NON-INFRINGEMENT & ZERO-COPYLEFT WARRANTY:
 Seller warrants and covenants that:
@@ -62,7 +62,7 @@ Funds held in Acquire.com escrow shall be released immediately upon delivery of:
           <Scale className="w-5 h-5 text-amber-400" />
           <div>
             <h2 className="text-xl font-bold text-white tracking-tight">
-              Acquire.com Delaware Asset Purchase Agreement (APA)
+              Acquire.com Turnkey Software Asset Purchase Agreement (APA)
             </h2>
             <p className="text-xs text-slate-400">
               Institutional legal covenants, Bill of Sale, and clean-room escrow handoff checklist for GF-T3-185
@@ -79,7 +79,7 @@ Funds held in Acquire.com escrow shall be released immediately upon delivery of:
         </button>
       </div>
 
-      {/* Tier Valuation Selector */}
+      {/* Tier Specification Selector */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div
           onClick={() => setSelectedTier('standard')}
@@ -90,8 +90,8 @@ Funds held in Acquire.com escrow shall be released immediately upon delivery of:
           }`}
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold font-mono text-amber-400">TURNKEY MICRO-BUYOUT</span>
-            <span className="text-2xl font-black font-mono text-emerald-400">$45,000 USD</span>
+            <span className="text-xs font-bold font-mono text-amber-400">TURNKEY MICRO-ASSET TRANSFER</span>
+            <span className="text-2xl font-black font-mono text-emerald-400">20 kHz (0.48ms)</span>
           </div>
           <p className="text-xs text-slate-300 leading-relaxed mb-3">
             Single-operator turnkey micro-APA deployment. Includes complete codebase, PostgreSQL schema, OpenAPI gateway, and perpetual MIT assignment.
@@ -109,10 +109,10 @@ Funds held in Acquire.com escrow shall be released immediately upon delivery of:
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-bold font-mono text-cyan-400">ENTERPRISE MONOPOLY VAULT</span>
-            <span className="text-2xl font-black font-mono text-amber-400">$125,000 USD</span>
+            <span className="text-2xl font-black font-mono text-amber-400">PostgreSQL 16 + RLS</span>
           </div>
           <p className="text-xs text-slate-300 leading-relaxed mb-3">
-            Full enterprise buyout with unlimited white-label exclusivity, trade-dress defense patents, perpetual OEM sublicensing rights, and warranty indemnification.
+            Full enterprise asset transfer with unlimited white-label exclusivity, trade-dress defense patents, perpetual OEM sublicensing rights, and warranty indemnification.
           </p>
           <div className="text-xs text-slate-500 font-mono">Institutional Tier 1 Dealership Fleet Asset</div>
         </div>
@@ -133,7 +133,7 @@ Funds held in Acquire.com escrow shall be released immediately upon delivery of:
               { key: 'codeAudit', label: '100% Clean-Room Authoring Certification', desc: 'Zero code scraped; certified author logs' },
               { key: 'noCopyleft', label: '0% Copyleft License Verification', desc: 'No GPL/AGPL/SSPL in recursive tree' },
               { key: 'shaVerification', label: 'Cryptographic SHA-256 Commit Manifest', desc: 'Hash: 4f98...e281 verified by escrow' },
-              { key: 'delawareEntity', label: 'Delaware LLC Intellectual Property Assignment', desc: 'Good standing with Delaware Sec of State' },
+              { key: 'delawareEntity', label: 'Commercial Software Asset Standard Intellectual Property Assignment', desc: 'Good standing with Delaware Sec of State' },
               { key: 'domainTransfer', label: 'API Gateway Subdomain & Cloud Run Vault', desc: 'Automated transfer of telemetry endpoint' },
               { key: 'escrowSignoff', label: 'Acquire.com Escrow Mutual Release', desc: 'Click to authorize final disbursement' },
             ].map(({ key, label, desc }) => {

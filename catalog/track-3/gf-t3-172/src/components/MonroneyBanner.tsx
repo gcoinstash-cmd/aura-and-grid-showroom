@@ -40,28 +40,28 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
             <div className="flex items-baseline gap-3">
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-                Lexus TX 500h F SPORT Performance Core
+                Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core
               </h1>
               <span className="font-mono text-slate-400 text-sm font-semibold">
                 v1.0.0-PROD
               </span>
             </div>
             <p className="text-slate-400 text-sm max-w-3xl leading-relaxed">
-              Deterministic 3f+1 BFT HotStuff consensus coordinating distributed steer-by-wire and DIRECT4 dual-axle torque split for the T24A-FTS hybrid powertrain.
+              Deterministic 3f+1 BFT HotStuff consensus coordinating distributed steer-by-wire and DUAL_VECTOR_TORQUE dual-axle torque split for the T24A-FTS hybrid powertrain.
             </p>
           </div>
 
           {/* Monroney Badges */}
           <div className="flex flex-wrap items-center gap-3">
             <div className="bg-slate-900 border border-emerald-500/40 rounded-lg p-3 min-w-[170px] shadow-sm">
-              <div className="text-slate-400 text-sm font-medium">Micro-APA Buyout</div>
-              <div className="text-2xl font-bold text-emerald-400 font-mono">$45,000 USD</div>
+              <div className="text-slate-400 text-sm font-medium">Micro-APA Asset Transfer</div>
+              <div className="text-2xl font-bold text-emerald-400 font-mono">20 kHz (0.48ms)</div>
               <div className="text-emerald-300/80 text-sm font-mono">Immediate Escrow Closing</div>
             </div>
 
             <div className="bg-slate-900 border border-cyan-500/30 rounded-lg p-3 min-w-[170px] shadow-sm">
-              <div className="text-slate-400 text-sm font-medium">Enterprise Valuation</div>
-              <div className="text-2xl font-bold text-cyan-300 font-mono">$125,000 USD</div>
+              <div className="text-slate-400 text-sm font-medium">Architecture Moat</div>
+              <div className="text-2xl font-bold text-cyan-300 font-mono">PostgreSQL 16 + RLS</div>
               <div className="text-cyan-300/80 text-sm font-mono">Monopoly Vault Tier</div>
             </div>
 

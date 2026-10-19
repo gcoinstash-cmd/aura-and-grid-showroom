@@ -41,10 +41,10 @@ export const SuspensionDiagram: React.FC<SuspensionDiagramProps> = ({
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-            E-KDSS Kinetic Hydraulic Suspension Architecture
+            Dynamic Kinetic Suspension Telemetry Kinetic Hydraulic Suspension Architecture
           </h2>
           <p className="text-xs text-slate-400">
-            GA-F Chassis Bi-directional Cross-Interlinked Double-Acting Cylinders & Accumulator Circuit
+            Heavy Boxed Steel Frame Architecture Chassis Bi-directional Cross-Interlinked Double-Acting Cylinders & Accumulator Circuit
           </p>
         </div>
 
@@ -104,14 +104,14 @@ export const SuspensionDiagram: React.FC<SuspensionDiagramProps> = ({
             <line x1="675" y1="40" x2="675" y2="320" />
           </g>
 
-          {/* Central Ladder Chassis Rails (GA-F Steel Box Frame) */}
+          {/* Central Ladder Chassis Rails (Heavy Boxed Steel Frame Architecture Steel Box Frame) */}
           <rect x="220" y="90" width="460" height="18" rx="4" fill="url(#chassisGrad)" stroke="#475569" strokeWidth="1.5" />
           <rect x="220" y="250" width="460" height="18" rx="4" fill="url(#chassisGrad)" stroke="#475569" strokeWidth="1.5" />
           <rect x="360" y="108" width="16" height="142" rx="2" fill="#334155" opacity="0.7" />
           <rect x="520" y="108" width="16" height="142" rx="2" fill="#334155" opacity="0.7" />
 
           <text x="450" y="185" textAnchor="middle" fill="#64748b" className="text-xs font-mono font-bold tracking-widest">
-            GA-F FULL BOXED FRAME
+            Heavy Boxed Steel Frame Architecture FULL BOXED FRAME
           </text>
 
           {/* Hydraulic Cross-Piping Lines */}
@@ -137,7 +137,7 @@ export const SuspensionDiagram: React.FC<SuspensionDiagramProps> = ({
             filter={isBypassOpen ? 'url(#glowCyan)' : undefined}
           />
 
-          {/* FRONT SUSPENSION (Left: Double Wishbone + E-KDSS Hydraulic Cylinder) */}
+          {/* FRONT SUSPENSION (Left: Double Wishbone + Dynamic Kinetic Suspension Telemetry Hydraulic Cylinder) */}
           {/* Front Stabilizer Bar */}
           <path
             d={`M 140 ${80 - flOffset} Q 190 90, 240 100 T 240 258 Q 190 268, 140 ${278 - frOffset}`}
@@ -164,7 +164,7 @@ export const SuspensionDiagram: React.FC<SuspensionDiagramProps> = ({
             <text x="22" y="24" fill="#64748b" className="text-xs font-mono">Rigid Link</text>
           </g>
 
-          {/* REAR SUSPENSION (Multi-Link Rigid Axle with Inverted E-KDSS Cylinder) */}
+          {/* REAR SUSPENSION (Multi-Link Rigid Axle with Inverted Dynamic Kinetic Suspension Telemetry Cylinder) */}
           {/* Rear Solid Axle Bar */}
           <line
             x1="760"

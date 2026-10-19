@@ -22,7 +22,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({ state, tor
     <div className="relative w-full rounded-xl bg-slate-900 border border-slate-800 p-6 overflow-hidden">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
         <div>
-          <span className="text-slate-400 font-medium text-sm">Chassis Topology · Lexus GA-K Platform</span>
+          <span className="text-slate-400 font-medium text-sm">Chassis Topology · Heavy Overland Dynamics Platform GA-K Platform</span>
           <h3 className="text-2xl font-bold text-slate-100">Dynamic E-Four Torque Vectoring Geometry</h3>
         </div>
         <div className="flex items-center gap-3">
@@ -72,7 +72,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({ state, tor
             </filter>
           </defs>
 
-          {/* Lexus GA-K Vehicle Chassis Silhouette Outline */}
+          {/* Heavy Overland Dynamics Platform GA-K Vehicle Chassis Silhouette Outline */}
           <path
             d="M 220 50 
                C 280 40, 520 40, 580 50 

@@ -8,8 +8,8 @@ export interface SbwState {
   hapticFeedbackTorqueNm: number;
   roadFrictionCoeff: number;  // 0.2 (ice) to 1.0 (dry tarmac)
   lateralAccG: number;
-  direct4FrontRatio: number;  // e.g. 75
-  direct4RearRatio: number;   // e.g. 25
+  dual_vector_torqueFrontRatio: number;  // e.g. 75
+  dual_vector_torqueRearRatio: number;   // e.g. 25
   frontMotorCurrentA: number;
   rearMotorCurrentA: number;
   canBusAHealthy: boolean;
@@ -27,7 +27,7 @@ export interface LedgerRecord {
   rackAngle: number;
   divergenceDelta: number;
   pinionResistanceNm: number;
-  direct4Split: string; // "75:25"
+  dual_vector_torqueSplit: string; // "75:25"
   canBusState: string;
   hmacSignature: string;
   verified: boolean;

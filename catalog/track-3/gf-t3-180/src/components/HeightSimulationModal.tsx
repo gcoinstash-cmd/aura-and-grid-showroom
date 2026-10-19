@@ -36,7 +36,7 @@ export const HeightSimulationModal: React.FC<HeightSimulationModalProps> = ({
     { id: 'LOW', name: 'Low / Ingress', delta: '-1.2″ (-30mm)', desc: 'Hydraulic accumulator return line vented for luxury curb egress' },
     { id: 'NORMAL', name: 'Normal Core', delta: '0.0″ (0mm)', desc: 'Standard 8.3-inch running ground clearance baseline' },
     { id: 'COMFORT', name: 'Ultra Luxury Executive', delta: '+0.4″ (+10mm)', desc: 'Soft damping step 3, cross-linked float calibration' },
-    { id: 'SPORT_PLUS', name: 'Sport S+ Dynamic', delta: '-0.8″ (-20mm)', desc: 'Firm damping step 15, aerodynamic anti-pitch stance' },
+    { id: 'SPORT_PLUS', name: 'High-Frequency Compute Mode Dynamic', delta: '-0.8″ (-20mm)', desc: 'Firm damping step 15, aerodynamic anti-pitch stance' },
     { id: 'HIGH1', name: 'High 1 Rough Trail', delta: '+1.2″ (+30mm)', desc: 'Intermediate articulation for graded terrain up to 30 MPH' },
     { id: 'HIGH2', name: 'High 2 Apex Obstacle', delta: '+2.8″ (+71mm)', desc: 'Maximum 11.1-inch obstacle clearance with full pump boost' },
     { id: 'ROCK', name: 'Rock Crawl Articulate', delta: '+2.4″ (+61mm)', desc: 'Cross-axle valve decoupling for maximum wheel travel' },
@@ -56,7 +56,7 @@ export const HeightSimulationModal: React.FC<HeightSimulationModalProps> = ({
                 AHC Electro-Hydraulic Height Simulation Bench
               </h3>
               <p className="text-[15px] text-slate-400">
-                Lexus 4-Wheel Active Height Control displacement &amp; accumulator calibration
+                Heavy Overland Dynamics Platform 4-Wheel Active Height Control displacement &amp; accumulator calibration
               </p>
             </div>
           </div>

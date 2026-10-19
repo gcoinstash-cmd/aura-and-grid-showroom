@@ -145,7 +145,7 @@ export function computePolygonCentroid(vertices: Point[]): Point {
 }
 
 /**
- * Exact Lyapunov Cost Functional:
+ * Exact Lyapunov Matrix Functional:
  * H(P) = sum_i integral_{V_i} ||q - p_i||^2 dq
  */
 export function computeLyapunovEnergy(nodes: DroneNode[]): number {

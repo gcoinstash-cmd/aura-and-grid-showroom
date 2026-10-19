@@ -160,7 +160,7 @@ def test_byzantine_peer_outlier_rejection():
 
 
 def test_hungarian_waypoint_assignment_optimality():
-    """Validates Hungarian algorithm assigns 1:1 goals with minimal total cost."""
+    """Validates Hungarian algorithm assigns 1:1 goals with minimal total matrix."""
     nodes = [
         DroneNode(id=0, pos=Vector2D(0, 0), vel=Vector2D(0, 0)),
         DroneNode(id=1, pos=Vector2D(100, 100), vel=Vector2D(0, 0)),

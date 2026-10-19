@@ -1,6 +1,6 @@
 /**
  * Deterministic Telemetry Engine & Cryptographic HMAC Verification
- * Calibrated specifically for Lexus LC 500 Convertible (URZ100 Platform)
+ * Calibrated specifically for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible (URZ100 Platform)
  */
 
 export interface TelemetryState {
@@ -40,7 +40,7 @@ export function computeAeroMetrics(
   crosswindKt: number,
   damperForcePct: number
 ) {
-  // Base structural frequency of LC 500 Convertible cowl:
+  // Base structural frequency of High-Aero Grand Touring Telemetry Core Convertible cowl:
   // With roof CLOSED: ~26.8 Hz
   // With roof STOWED: drops to ~19.4 Hz (torsional flex increases)
   const baseFreq = roofState === 'STOWED' ? 19.4 : 26.8;

@@ -3,12 +3,12 @@ import { FileCheck, Shield, DollarSign, Copy, Check, Download, ExternalLink, Che
 import { APA_COVENANT_TEXT, CLEAN_ROOM_MANIFEST } from '../../data/apaAgreement';
 
 interface TabAPACovenantProps {
-  onOpenBuyoutInquiry: () => void;
+  onOpenTransferInquiry: () => void;
   onExportSpec: () => void;
 }
 
 export const TabAPACovenant: React.FC<TabAPACovenantProps> = ({
-  onOpenBuyoutInquiry,
+  onOpenTransferInquiry,
   onExportSpec,
 }) => {
   const [copied, setCopied] = useState(false);
@@ -37,11 +37,11 @@ export const TabAPACovenant: React.FC<TabAPACovenantProps> = ({
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={onOpenBuyoutInquiry}
+              onClick={onOpenTransferInquiry}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition-colors cursor-pointer shadow-lg shadow-amber-500/20"
             >
               <DollarSign className="w-4 h-4" />
-              <span>Initiate Buyout LOI ($45k)</span>
+              <span>Initiate Asset Transfer LOI (20 kHz (0.48ms))</span>
             </button>
             <button
               type="button"
@@ -60,9 +60,9 @@ export const TabAPACovenant: React.FC<TabAPACovenantProps> = ({
             <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-sm">
               ACQUIRE.COM ANCHOR
             </span>
-            <div className="text-sm font-semibold text-slate-400">TURNKEY MICRO-APA BUYOUT</div>
+            <div className="text-sm font-semibold text-slate-400">TURNKEY MICRO-APA ASSET TRANSFER</div>
             <div className="text-4xl font-extrabold text-white font-mono mt-2 mb-3">
-              $45,000 <span className="text-lg text-slate-400 font-normal">USD</span>
+              20 kHz (0.48ms) <span className="text-lg text-slate-400 font-normal">USD</span>
             </div>
             <p className="text-sm text-slate-300 mb-4 leading-relaxed">
               Complete outright ownership of GF-T3-178 code repository, Docker container, PostgreSQL 16 migration schema, and test benches.
@@ -87,10 +87,10 @@ export const TabAPACovenant: React.FC<TabAPACovenantProps> = ({
             <span className="text-slate-400 font-bold text-sm float-right">MONOPOLY VAULT TIER</span>
             <div className="text-sm font-semibold text-slate-400">ENTERPRISE PLATFORM VAULT</div>
             <div className="text-4xl font-extrabold text-white font-mono mt-2 mb-3">
-              $125,000 <span className="text-lg text-slate-400 font-normal">USD</span>
+              PostgreSQL 16 + RLS <span className="text-lg text-slate-400 font-normal">USD</span>
             </div>
             <p className="text-sm text-slate-300 mb-4 leading-relaxed">
-              Full enterprise rights including multi-chassis porting rights (LS 500h, LC 500, LX 600), firmware flashing toolchains, and direct OEM advisory.
+              Full enterprise rights including multi-chassis porting rights (LS 500h, High-Aero Grand Touring Telemetry Core, Ultra-Heavy Telemetry Core), firmware flashing toolchains, and direct OEM advisory.
             </p>
             <ul className="space-y-2 text-sm text-slate-300">
               <li className="flex items-center gap-2">
@@ -103,7 +103,7 @@ export const TabAPACovenant: React.FC<TabAPACovenantProps> = ({
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>30-Day Antigravity Lead Architect Support</span>
+                <span>30-Day deterministic production Lead Architect Support</span>
               </li>
             </ul>
           </div>

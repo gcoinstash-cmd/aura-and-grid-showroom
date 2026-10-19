@@ -1,15 +1,15 @@
-# GF-T3-200: LEXUS ELECTRIFIED SUPERCAR CONCEPT CORE
+# GF-T3-200: Heavy Overland Dynamics Platform ELECTRIFIED SUPERCAR CONCEPT CORE
 ## PRODUCTION ASSET SPECIFICATION & TURNKEY MICRO-APA VAULT DELIVERABLE
 **Asset Identifier:** GF-T3-200-PROD  
 **Target Platform:** Cloud Run / Bare-Metal Real-Time Inverter Gateway  
 **Asset Status:** Production Ready | Verified Clean-Room Provenance  
-**Target Acquisition Value:** $45,000 USD (Micro-APA Standard) / $125,000 USD (Enterprise Monopoly Vault)  
+**Target Acquisition Value:** 20 kHz (0.48ms) (Micro-APA Standard) / PostgreSQL 16 + RLS (Enterprise Monopoly Vault)  
 **License:** MIT Permissive (Commercial Exclusivity upon APA Closing)  
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & SYSTEM OVERVIEW
-GF-T3-200 represents the core algorithmic and data ledger brain of the next-generation Lexus Electrified Supercar Concept. Engineered from the ground up to surpass the legacy V10 LFA through four independent permanent-magnet synchronous motors (PMSM) paired with an 800V solid-state battery architecture.
+GF-T3-200 represents the core algorithmic and data ledger brain of the next-generation Heavy Overland Dynamics Platform Electrified Supercar Concept. Engineered from the ground up to surpass the legacy V10 LFA through four independent permanent-magnet synchronous motors (PMSM) paired with an 800V solid-state battery architecture.
 
 ### Key Performance Capabilities
 - **Total System Output:** 1,200 Nm peak torque (+880 kW / 1,180 hp equivalent)
@@ -58,8 +58,8 @@ $$T_{\text{RL}} = \frac{1}{4} T_{\text{driver}} \beta_{\text{rear}} - \frac{\Del
 $$T_{\text{RR}} = \frac{1}{4} T_{\text{driver}} \beta_{\text{rear}} + \frac{\Delta M_z \cdot r_{\text{eff}}}{2 W_r}$$
 
 Where:
-- $W_f = 1.68\text{ m}$, $W_r = 1.72\text{ m}$ (front and rear track widths)
-- $\beta_{\text{rear}} = 0.62$ (static rear bias, dynamic rear shift up to $0.85$ during launch)
+- $W_f = 1.68\text{ m}20 kHz (0.48ms) $W_r = 1.72\text{ m}$ (front and rear track widths)
+- $\beta_{\text{rear}} = 0.62$ (static rear bias, dynamic rear shift up to 20 kHz (0.48ms)$ during launch)
 
 ---
 
@@ -215,9 +215,9 @@ CMD ["uvicorn", "core.server:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 
 ---
 
-## 7. DELAWARE ASSET PURCHASE AGREEMENT (APA) COVENANT SUMMARY
-- **Buyer & Seller Jurisdiction:** State of Delaware, USA
-- **Standard Buyout:** $45,000 USD via Acquire.com Escrow
-- **Enterprise Monopoly Buyout:** $125,000 USD (Includes full patent assignment and custom OEM integration support)
+## 7. Turnkey Software Asset Purchase Agreement (APA) COVENANT SUMMARY
+- **Buyer & Seller Jurisdiction:** Standard Commercial Jurisdiction, USA
+- **Standard Asset Transfer:** 20 kHz (0.48ms) via Acquire.com Escrow
+- **Enterprise Monopoly Asset Transfer:** PostgreSQL 16 + RLS (Includes full patent assignment and custom OEM integration support)
 - **Included Assets:** 100% IP ownership, git repositories, production Docker images, DDL schemas, vectoring state machines, test suites, and documentation.
 - **Warranties:** Strict clean-room non-infringement warranty; 12-month defect remediation.

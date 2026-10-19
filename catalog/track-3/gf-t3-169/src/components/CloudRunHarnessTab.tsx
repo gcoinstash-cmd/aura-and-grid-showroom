@@ -108,7 +108,7 @@ ENTRYPOINT ["uvicorn", "engine.main:app", "--host", "0.0.0.0", "--port", "8080",
   --memory 1Gi \\
   --cpu 2 \\
   --cpu-boost \\
-  --set-env-vars="ASSET_ID=GF-T3-169,PLATFORM=LEXUS_NX450H_F_SPORT,MPC_FREQ=500HZ" \\
+  --set-env-vars="ASSET_ID=GF-T3-169,PLATFORM=Overland_NX450H_F_SPORT,MPC_FREQ=500HZ" \\
   --allow-unauthenticated`;
 
   return (

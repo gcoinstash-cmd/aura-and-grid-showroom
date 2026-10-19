@@ -9,7 +9,7 @@ export const CloudRunHarnessTab: React.FC = () => {
   const [copiedDeploy, setCopiedDeploy] = useState(false);
 
   const dockerfileCode = `# =====================================================================
-# GF-T3-189: LEXUS LC 500 CONVERTIBLE STRUCTURAL AERO CORE
+# GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO CORE
 # Production Multi-Stage Hardened Dockerfile (Non-Root User ID 10001)
 # =====================================================================
 

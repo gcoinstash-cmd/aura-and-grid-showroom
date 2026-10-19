@@ -1,12 +1,12 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
  * PostgreSQL 16 Partitioned Actuation Ledger DDL & Audit Triggers
  */
 
 export const POSTGRES_LEDGER_SQL = `-- ============================================================================
--- LEXUS RZ 450e STEER-BY-WIRE CRYPTOGRAPHIC ACTUATION LEDGER SCHEMA
+-- Heavy Overland Dynamics Platform RZ 450e STEER-BY-WIRE CRYPTOGRAPHIC ACTUATION LEDGER SCHEMA
 -- Target Database: PostgreSQL 16+ / AlloyDB Enterprise Edition
 -- Compliance: ISO 26262 Part 8 Section 11 (Traceability & Immutable Audit)
 -- Partition Strategy: Monthly Range Partitioning on recorded_at

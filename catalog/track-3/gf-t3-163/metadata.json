@@ -1,6 +1,6 @@
 {
   "name": "Ghost FactoryOS GF-T3-163 — Kinetic Terrain Swarm",
-  "description": "Distributed Multi-Agent Consensus and Kinetic Terrain Autonomy Swarm for Lexus GX 550 Overtrail+ Edge Nodes",
+  "description": "Distributed Multi-Agent Consensus and Kinetic Terrain Autonomy Swarm for Heavy Overland Dynamics Platform Edge Nodes",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

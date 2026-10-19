@@ -112,7 +112,7 @@ export const DrsAcousticCoreTab: React.FC<DrsAcousticCoreTabProps> = ({
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-neutral-800">
                 <div>
                   <h2 className="text-3xl font-extrabold text-white">
-                    Lexus LC 500 GA-L Chassis Dynamics
+                    Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GA-L Chassis Dynamics
                   </h2>
                   <p className="text-base text-neutral-300">
                     Live dynamic rear steering phase and acoustic valve position
@@ -157,7 +157,7 @@ export const DrsAcousticCoreTab: React.FC<DrsAcousticCoreTabProps> = ({
                   {/* Vehicle Body Shadow */}
                   <rect x="75" y="55" width="350" height="170" rx="40" fill="#000000" opacity="0.6" />
 
-                  {/* Lexus LC 500 Convertible Chassis Outline */}
+                  {/* Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Chassis Outline */}
                   <rect x="80" y="50" width="340" height="180" rx="35" fill="url(#chassisGrad)" stroke="#475569" strokeWidth="2.5" />
                   
                   {/* Convertible Open Cabin Area */}

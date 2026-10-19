@@ -22,7 +22,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-181
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          IS 500 F SPORT CORE
+          IS 500 High-G Dynamic Telemetry CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -31,7 +31,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus IS 500 F SPORT Performance Core
+        Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
         Turnkey micro-APA deliverable with 2UR-GSE 5.0L V8 throttle mapping, Torsen LSD thermal viscosity monitoring, and PostgreSQL 16 HMAC ledger.
@@ -67,14 +67,14 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <span className="text-slate-300">
-          <strong className="text-white font-semibold">Buyout:</strong> $45,000 USD
+          <strong className="text-white font-semibold">Asset Transfer:</strong> 20 kHz (0.48ms)
         </span>
         <span className="text-slate-600">|</span>
         <span className="text-slate-300">
-          <strong className="text-white font-semibold">Enterprise:</strong> $125,000 USD
+          <strong className="text-white font-semibold">Enterprise:</strong> PostgreSQL 16 + RLS
         </span>
         <span className="text-slate-600">|</span>
         <span className="text-emerald-400 font-mono font-medium">MIT Permissive</span>

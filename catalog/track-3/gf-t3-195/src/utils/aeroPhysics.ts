@@ -1,5 +1,5 @@
 /**
- * GF-T3-195 Lexus LC 500 Inspiration Series Carbon Aero Core
+ * GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core
  * Mathematical Engine & Cryptographic HMAC-SHA256 Ledger
  * Clean-room certified under MIT Permissive License
  */
@@ -44,7 +44,7 @@ const OSWALD_EFFICIENCY = 0.88;
 const STROUHAL_NUMBER = 0.21;
 
 // Pseudo-crypto SHA-256 HMAC for client-side deterministic verification
-export async function computeHmacSha256(message: string, secretKey = 'LC500_CARBON_AERO_ROOT_KEY_2026'): Promise<string> {
+export async function computeHmacSha256(message: string, secretKey = 'High-Aero Grand Touring Telemetry Core_CARBON_AERO_ROOT_KEY_2026'): Promise<string> {
   const enc = new TextEncoder();
   try {
     const key = await crypto.subtle.importKey(
@@ -73,7 +73,7 @@ export function calculateAeroState(params: AeroParameters, nonce: number): Omit<
   const speedMs = (params.speedKmh * 1000) / 3600;
   const q = 0.5 * RHO * speedMs * speedMs; // dynamic pressure in Pa
 
-  // Base coefficients for Lexus LC 500 Inspiration Series fixed carbon swan-neck wing & underbody diffusers
+  // Base coefficients for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series fixed carbon swan-neck wing & underbody diffusers
   const aoaRad = (params.wingAoaDeg * Math.PI) / 180;
   const cl0 = 0.42;
   const clAlpha = 3.65; // per radian
@@ -82,7 +82,7 @@ export function calculateAeroState(params: AeroParameters, nonce: number): Omit<
   const cL = (cl0 + clAlpha * aoaRad) * groundFactor;
 
   // Induced drag + form drag
-  const cd0 = 0.298; // base Lexus LC 500 drag coeff
+  const cd0 = 0.298; // base Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core drag coeff
   const cdInduced = (cL * cL) / (Math.PI * OSWALD_EFFICIENCY * ASPECT_RATIO);
   const yawRad = (Math.abs(params.yawSlipDeg) * Math.PI) / 180;
   const cdYaw = 0.08 * Math.sin(yawRad); // crosswind induced drag

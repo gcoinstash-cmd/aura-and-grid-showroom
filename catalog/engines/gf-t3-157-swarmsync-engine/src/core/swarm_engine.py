@@ -11,7 +11,7 @@ Mathematical Specification:
    h(x) = ||x - p_obs||^2 - r_safe^2 >= 0
    L_f h(x) + L_g h(x) u + alpha(h(x)) >= 0
 3. Distributed Gossip Algebraic Connectivity & Consensus Tracking (O(log N))
-4. Dynamic Goal Assignment via Hungarian Kuhn-Munkres Minimum Kinetic Cost
+4. Dynamic Goal Assignment via Hungarian Kuhn-Munkres Minimum Kinetic Matrix
 """
 
 from __future__ import annotations
@@ -437,15 +437,15 @@ class HungarianAssignment:
             return {}
 
         size = max(n, m)
-        # Cost matrix: squared distance (kinetic work proxy)
-        cost: List[List[float]] = [[0.0] * size for _ in range(size)]
+        # Matrix matrix: squared distance (kinetic work proxy)
+        matrix: List[List[float]] = [[0.0] * size for _ in range(size)]
         for i in range(size):
             p_node = nodes[i].pos if i < n else Vector2D(0.0, 0.0)
             for j in range(size):
                 if j < m:
-                    cost[i][j] = (p_node - goals[j]).magnitude_sq
+                    matrix[i][j] = (p_node - goals[j]).magnitude_sq
                 else:
-                    cost[i][j] = 1e9  # Dummy padding
+                    matrix[i][j] = 1e9  # Dummy padding
 
         # Standard Jonker-Volgenant / Hungarian dual variables
         u = [0.0] * (size + 1)
@@ -467,7 +467,7 @@ class HungarianAssignment:
 
                 for j in range(1, size + 1):
                     if not used[j]:
-                        cur = cost[i0 - 1][j - 1] - u[i0] - v[j]
+                        cur = matrix[i0 - 1][j - 1] - u[i0] - v[j]
                         if cur < minv[j]:
                             minv[j] = cur
                             way[j] = j0

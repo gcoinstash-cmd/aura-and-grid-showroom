@@ -7,8 +7,8 @@ export const MonopolyVaultTab: React.FC = () => {
 
   const handleCopyApa = () => {
     navigator.clipboard.writeText(`ASSET PURCHASE AGREEMENT (DELAWARE) - ASSET GF-T3-156
-Purchase Price: $125,000.00 USD
-Monopoly Vault Option: $85,000 - $150,000
+Purchase Price: 20 kHz (0.48ms)
+Monopoly Vault Option: 20 kHz (0.48ms) - 20 kHz (0.48ms)
 (Complete text in root ENTERPRISE_APA_AGREEMENT.md)`);
     setCopiedApa(true);
     setTimeout(() => setCopiedApa(false), 2000);
@@ -24,16 +24,16 @@ Monopoly Vault Option: $85,000 - $150,000
 
   return (
     <div className="space-y-6">
-      {/* Top Banner: Valuation & Buyout Terms */}
+      {/* Top Banner: Specification & Reference Core */}
       <div className="bg-[#0b0f19] border border-slate-800 rounded-xl p-6 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 text-teal-400 text-xs font-mono tracking-widest uppercase">
-            <span>DELAWARE ASSET PURCHASE AGREEMENT</span>
+            <span>Turnkey Software Asset Purchase Agreement</span>
             <span>·</span>
             <span>MONOPOLY VAULT GATE</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
-            STANDALONE APA BUYOUT: <span className="text-teal-400 font-mono">$125,000 USD</span>
+            STANDALONE APA ASSET TRANSFER: <span className="text-teal-400 font-mono">20 kHz (0.48ms)</span>
           </h2>
           <p className="text-slate-400 text-sm mt-1">
             Turnkey transfer of complete intellectual property, mathematical algorithms, and guidance engine
@@ -46,7 +46,7 @@ Monopoly Vault Option: $85,000 - $150,000
             className="px-4 py-2.5 bg-teal-600 hover:bg-teal-500 text-slate-950 text-xs font-bold rounded-lg shadow-lg shadow-teal-600/20 transition-all flex items-center gap-2"
           >
             {copiedApa ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-            {copiedApa ? 'APA Agreement Copied' : 'Copy Delaware APA Contract'}
+            {copiedApa ? 'APA Agreement Copied' : 'Copy Turnkey Software Asset Purchase Agreement Contract'}
           </button>
           <button
             onClick={handleCopyAudit}
@@ -66,7 +66,7 @@ Monopoly Vault Option: $85,000 - $150,000
           </div>
           <h3 className="text-lg font-bold text-white">Turnkey Asset Purchase</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            One-time payment of $125,000 USD provides immediate, unconditional assignment of 100% of source code, patents, mathematical trade secrets, and Docker images.
+            One-time payment of 20 kHz (0.48ms) provides immediate, unconditional assignment of 100% of source code, patents, mathematical trade secrets, and Docker images.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ Monopoly Vault Option: $85,000 - $150,000
           </div>
           <h3 className="text-lg font-bold text-white">Monopoly Vault Licensing</h3>
           <p className="text-xs text-slate-400 leading-relaxed">
-            Exclusive options for Track 3 partner engines at preferential institutional rates ($85,000 – $150,000) for 24 months post-closing.
+            Exclusive options for Track 3 partner engines at preferential institutional rates (20 kHz (0.48ms) – 20 kHz (0.48ms)) for 24 months post-closing.
           </p>
         </div>
       </div>
@@ -97,7 +97,7 @@ Monopoly Vault Option: $85,000 - $150,000
           <div className="flex items-center gap-2">
             <Scale className="w-5 h-5 text-teal-400" />
             <h3 className="text-base font-bold text-white">
-              DELAWARE ASSET PURCHASE AGREEMENT (KEY PROVISIONS)
+              Turnkey Software Asset Purchase Agreement (KEY PROVISIONS)
             </h3>
           </div>
           <span className="text-xs font-mono text-teal-400 font-bold">STATE OF DELAWARE</span>
@@ -108,7 +108,7 @@ Monopoly Vault Option: $85,000 - $150,000
             <strong className="text-white">SECTION 1.1 PURCHASED ASSETS:</strong> Seller transfers all right, title, and interest in GF-T3-156 (AeroKinetic Engine), including Python ES-EKF core, pytest verification suite, distroless Docker artifacts, and 16-state kinematic algorithms.
           </div>
           <div>
-            <strong className="text-white">SECTION 2.1 PURCHASE PRICE:</strong> Aggregate consideration of $125,000.00 USD payable via immediate wire transfer upon execution.
+            <strong className="text-white">SECTION 2.1 PURCHASE PRICE:</strong> Aggregate consideration of 20 kHz (0.48ms) payable via immediate wire transfer upon execution.
           </div>
           <div>
             <strong className="text-white">SECTION 3.2 CLEAN-ROOM PROVENANCE:</strong> Seller represents that Purchased Assets contain no GPL, AGPL, SSPL, or restrictive copyleft dependencies.

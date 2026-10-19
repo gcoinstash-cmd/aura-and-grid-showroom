@@ -1,14 +1,14 @@
-# GF-T3-173: LEXUS RC F TRACK EDITION AERO CORE
+# GF-T3-173: Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE
 ## Turnkey Active Aerodynamics Engine & Telemetry Ledger Specification
 **Asset ID:** GF-T3-173 | **Revision:** v1.0.0-PROD | **License:** 100% Permissive MIT  
-**Micro-APA Buyout Price:** $45,000 USD | **Enterprise Valuation:** $125,000 USD  
+**Micro-APA Reference Core:** 20 kHz (0.48ms) | **Architecture Moat:** PostgreSQL 16 + RLS  
 **Acquire.com Escrow Listing Reference:** ACQ-GHOST-RCF-173  
 
 ---
 
 ### 1. EXECUTIVE SUMMARY & ASSET ARCHITECTURE
 
-The GF-T3-173 Aero Core is an enterprise-grade, deterministic active aerodynamic control system and cryptographic telemetry ledger engineered specifically for the Lexus RC F Track Edition performance platform. It delivers real-time dual-flap articulated aerodynamic torque vectoring, dynamic downforce balance orchestration up to 3,850 N @ 250 km/h, emergency high-speed airbrake actuation, and continuous HMAC-SHA256 sensor chain verification.
+The GF-T3-173 Aero Core is an enterprise-grade, deterministic active aerodynamic control system and cryptographic telemetry ledger engineered specifically for the Heavy Overland Dynamics Platform RC F Track Edition performance platform. It delivers real-time dual-flap articulated aerodynamic torque vectoring, dynamic downforce balance orchestration up to 3,850 N @ 250 km/h, emergency high-speed airbrake actuation, and continuous HMAC-SHA256 sensor chain verification.
 
 #### Architectural Topology
 - **Edge Layer:** Embedded real-time dual CAN-FD / Ethernet Pitot pressure bus running an invariant 1,000 Hz control loop.
@@ -29,7 +29,7 @@ $$F_x(t) = q(t) \cdot A_{\text{ref}} \cdot \left[ C_{D,0} + C_{D,\text{induced}}
 
 Where:
 - $\rho_{\text{air}} = 1.225 \text{ kg/m}^3$ (ISO standard sea-level air density)
-- $A_{\text{ref}} = 2.12 \text{ m}^2$ (Lexus RC F Track Edition reference frontal area)
+- $A_{\text{ref}} = 2.12 \text{ m}^2$ (Heavy Overland Dynamics Platform RC F Track Edition reference frontal area)
 - $C_{D,0} = 0.340$ (Base aerodynamic parasitic drag coefficient)
 
 #### 2.2 Dual-Flap Aerodynamic Yaw Torque Vectoring
@@ -46,9 +46,9 @@ $$M_x^{\text{aero}} = \Delta F_z^{\text{aero}} \cdot \frac{b_{\text{wing}}}{2}$$
 
 #### 2.3 Emergency Airbrake Deployment State Transition
 When longitudinal deceleration exceeds $-0.75\text{G}$ at speeds $v > 100\text{ km/h}$:
-- Actuator pitch rate commands slew to $+35.0^{\circ}$ at maximum servo slew rate ($120^{\circ}/\text{sec}$).
-- Total drag coefficient spikes from $0.34 \to 0.72$, generating up to $2,840\text{ N}$ of aerodynamic retarding force at $240\text{ km/h}$.
-- Rear axle normal force increases instantaneously by $+1,450\text{ N}$, preventing high-speed trail-braking rear-axle lift and pitch dive.
+- Actuator pitch rate commands slew to $+35.0^{\circ}$ at maximum servo slew rate (20 kHz (0.48ms)^{\circ}/\text{sec}$).
+- Total drag coefficient spikes from 20 kHz (0.48ms) \to 0.7220 kHz (0.48ms) generating up to 20 kHz (0.48ms)\text{ N}$ of aerodynamic retarding force at 20 kHz (0.48ms)\text{ km/h}$.
+- Rear axle normal force increases instantaneously by $+1,450\text{ N}20 kHz (0.48ms) preventing high-speed trail-braking rear-axle lift and pitch dive.
 
 ---
 
@@ -161,7 +161,7 @@ FOR EACH ROW EXECUTE FUNCTION verify_aero_telemetry_chain();
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-173 Lexus RC F Track Edition Aero Core API
+  title: GF-T3-173 Heavy Overland Dynamics Platform RC F Track Edition Aero Core API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion, active downforce control loop, and cryptographic ledger verification.
 paths:
@@ -335,7 +335,7 @@ def test_cornering_torque_vectoring_asymmetry(engine):
 
 ### 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (APA) COVENANTS
 
-- **Purchase Price:** $45,000 USD (Micro-APA Buyout) / $125,000 USD (Enterprise Exclusive Buyout)
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - **Escrow Facilitator:** Acquire.com Escrow / Escrow.com Automotive IP Custody
 - **Transferred Intellectual Property:**
   1. Complete Git repository commit history including all source code, Python modules, and documentation.

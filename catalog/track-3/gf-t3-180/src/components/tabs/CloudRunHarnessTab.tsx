@@ -166,7 +166,7 @@ gcloud run deploy lx600-executive-core \\
             {isRunningTests ? (
               <div className="text-amber-400 flex items-center gap-2 py-4">
                 <RefreshCw className="w-4 h-4 animate-spin" />
-                <span>Spinning test runners: pytest -v --cov=lexus_lx600_ahc_core --cov-report=term-missing...</span>
+                <span>Spinning test runners: pytest -v --cov=Overland_lx600_ahc_core --cov-report=term-missing...</span>
               </div>
             ) : testsCompleted ? (
               <div className="space-y-1">
@@ -182,7 +182,7 @@ gcloud run deploy lx600-executive-core \\
                 <div className="text-emerald-400">tests/test_ahc_core.py::test_nitrogen_accumulator_recharge_cycle PASSED [100%]</div>
                 <div className="text-slate-400 pt-2">---------- coverage: platform linux, python 3.12.8 -----------</div>
                 <div className="text-slate-300">Name                             Stmts   Miss  Cover   Missing</div>
-                <div className="text-slate-300">lexus_lx600_ahc_core.py            210      7    96.4%   48, 112-114</div>
+                <div className="text-slate-300">Overland_lx600_ahc_core.py            210      7    96.4%   48, 112-114</div>
                 <div className="text-emerald-400 font-bold pt-2">
                   ======================== 42 passed in 1.48s ========================
                 </div>

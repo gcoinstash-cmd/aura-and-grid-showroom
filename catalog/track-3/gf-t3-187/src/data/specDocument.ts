@@ -1,5 +1,5 @@
 export const PYTHON_SWING_VALVE_CODE = `"""
-GF-T3-187: Lexus ES 300h Ultra Luxury Core
+GF-T3-187: Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core
 Module: swing_valve_atkinson_core.py
 Runtime: Python 3.12+ | Zero Copyleft | MIT Permissive Clean-Room Implementation
 Description:
@@ -58,7 +58,7 @@ class DualPassageSwingValveEngine:
     Deterministic 2,500 Hz Dual-Passage Swing-Valve Hydraulic State Machine
     coupled with A25A-FXS 2.5L Atkinson-Cycle Regenerative Energy Arbitrator.
     """
-    hmac_secret: bytes = b"GF-T3-187-LEXUS-ES300H-ULTRA-LUXURY-HMAC-KEY"
+    hmac_secret: bytes = b"GF-T3-187-Heavy Overland Dynamics Platform-ES300H-ULTRA-LUXURY-HMAC-KEY"
     monotonic_nonce: int = 1_000_000
     prev_hmac: str = "0" * 64
     last_reversal_pos_m: float = 0.0
@@ -229,7 +229,7 @@ class DualPassageSwingValveEngine:
 `;
 
 export const POSTGRES_16_SCHEMA_SQL = `-- ============================================================================
--- GF-T3-187: LEXUS ES 300h ULTRA LUXURY CORE — POSTGRESQL 16 HMAC LEDGER DDL
+-- GF-T3-187: Heavy Overland Dynamics Platform ES 300h ULTRA LUXURY CORE — POSTGRESQL 16 HMAC LEDGER DDL
 -- Features:
 --   1. Declarative Range Partitioned Timeseries Hypertable (2,500 Hz Telemetry)
 --   2. Monotonic Nonce Sequence Enforcement (#1,000,000+ Zero Collision)
@@ -332,7 +332,7 @@ BEGIN
     v_computed_hmac := encode(
         hmac(
             v_canonical_payload::BYTEA,
-            'GF-T3-187-LEXUS-ES300H-ULTRA-LUXURY-HMAC-KEY'::BYTEA,
+            'GF-T3-187-Heavy Overland Dynamics Platform-ES300H-ULTRA-LUXURY-HMAC-KEY'::BYTEA,
             'sha256'
         ),
         'hex'
@@ -377,7 +377,7 @@ CREATE TRIGGER trg_swing_valve_hmac_seal_guard
 
 export const OPENAPI_31_YAML = `openapi: 3.1.0
 info:
-  title: GF-T3-187 Lexus ES 300h Ultra Luxury Core Telemetry & Arbitration API
+  title: GF-T3-187 Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core Telemetry & Arbitration API
   version: 1.0.0-PROD
   summary: 2,500 Hz Dual-Passage Swing-Valve Hydraulic Damping & A25A-FXS Atkinson Regenerative Arbitration Contract
   license:
@@ -627,7 +627,7 @@ RUN python -m venv /opt/venv && \\
 # ----------------------------------------------------------------------------
 FROM python:3.12.7-slim-bookworm AS runtime
 
-LABEL org.opencontainers.image.title="GF-T3-187 Lexus ES 300h Ultra Luxury Core" \\
+LABEL org.opencontainers.image.title="GF-T3-187 Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core" \\
       org.opencontainers.image.version="1.0.0-PROD" \\
       org.opencontainers.image.licenses="MIT"
 
@@ -742,10 +742,10 @@ def test_hmac_sha256_chain_continuity():
 export function buildCompleteExportMarkdown(): string {
   return `# GF_T3_187_SPEC.md — MASTER TECHNICAL & LEGAL VAULT SPECIFICATION
 **Asset ID:** \`GF-T3-187\`
-**Designation:** Lexus ES 300h Ultra Luxury Core (Swing-Valve Shock Damping & A25A-FXS Atkinson Regenerative Arbitrator)
+**Designation:** Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core (Swing-Valve Shock Damping & A25A-FXS Atkinson Regenerative Arbitrator)
 **Version:** \`v1.0.0-PROD\`
-**Acquire.com Standard Micro-APA Buyout:** \`$45,000 USD\`
-**Enterprise Monopoly Vault Buyout:** \`$125,000 USD\`
+**Acquire.com Standard Micro-APA Asset Transfer:** \`20 kHz (0.48ms)\`
+**Enterprise Monopoly Vault Asset Transfer:** \`PostgreSQL 16 + RLS\`
 **License & IP Status:** \`MIT Permissive | 0% Copyleft | 100% Clean-Room Certified\`
 
 ---
@@ -804,10 +804,10 @@ gcloud run deploy gf-t3-187-es300h-core \\
 
 ## 6. ACQUIRE.COM DELAWARE MICRO-APA COVENANT & BILL OF SALE
 - **Seller:** Ghost FactoryOS Institutional Fleet Division
-- **Asset:** \`GF-T3-187 (Lexus ES 300h Ultra Luxury Core)\`
-- **Standard APA Buyout:** \`$45,000.00 USD\` (Full IP assignment + non-exclusive core reusable primitives)
-- **Enterprise Monopoly Vault Buyout:** \`$125,000.00 USD\` (100% exclusive worldwide title, immediate vault retirement, and clean-room warranty indemnification)
-- **Governing Law:** State of Delaware, Court of Chancery
+- **Asset:** \`GF-T3-187 (Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core)\`
+- **Standard APA Asset Transfer:** \`Delaware Institutional Covenants\` (Full IP assignment + non-exclusive core reusable primitives)
+- **Enterprise Monopoly Vault Asset Transfer:** \`PostgreSQL 16 + RLS\` (100% exclusive worldwide title, immediate vault retirement, and clean-room warranty indemnification)
+- **Governing Law:** Standard Commercial Jurisdiction, Court of Chancery
 - **Clean-Room Warranty:** Warranted 100% free of GPL, AGPL, LGPL, or SSPL copyleft dependencies.
 `;
 }

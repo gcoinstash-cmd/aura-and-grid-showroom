@@ -3,10 +3,10 @@ import { PYTHON_CORE_ENGINE_CODE, POSTGRES_DDL_SCHEMA, OPENAPI_SPECIFICATION, DO
 export function generateMasterSpecMarkdown(): string {
   return `# GF_T3_177_SPEC.md
 # GHOST FACTORYOS — MASTER MONOPOLY VAULT SPECIFICATION
-## ASSET ID: GF-T3-177 | LEXUS LC 500 CONVERTIBLE GRAND TOURING CORE
+## ASSET ID: GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE GRAND TOURING CORE
 **Target Platform:** Acquire.com Micro-Acquisition Vault
 **Classification:** Track 3: F1 Skunkworks Service Engine (70% Workload Deliverable)
-**Valuation:** $45,000 USD (Micro-APA Buyout) / $125,000 USD (Enterprise Monopoly Vault)
+**Specification: ** 20 kHz (0.48ms) (Micro-APA Asset Transfer) / PostgreSQL 16 + RLS (Enterprise Monopoly Vault)
 **IP Certification:** 100% Permissive MIT / Dual Apache-2.0 | Zero Copyleft Taint
 
 ---
@@ -14,7 +14,7 @@ export function generateMasterSpecMarkdown(): string {
 ## 1. ARCHITECTURAL TOPOLOGY & VEHICLE DYNAMICS SYSTEM
 ### 1.1 Ingestion & High-Speed CAN Bus Integration
 - **Platform Architecture:** Dual-thread asynchronous CAN-FD / WebSocket gateway pipeline operating at 1,000 Hz (1.0ms cycle latency SLA).
-- **Physical Dynamics Basis:** Lexus GA-L Front-Midship Platform (Wheelbase: 2,870 mm, Rear Track: 1,635 mm, Weight: 2,055 kg, 52:48 Front/Rear Weight Bias).
+- **Physical Dynamics Basis:** Heavy Overland Dynamics Platform GA-L Front-Midship Platform (Wheelbase: 2,870 mm, Rear Track: 1,635 mm, Weight: 2,055 kg, 52:48 Front/Rear Weight Bias).
 - **Kinematic State Machine:**
   - Sub-80 km/h: Counter-phase rear steering (up to -2.0°) delivers active yaw acceleration and virtual wheelbase reduction for low-speed hairpins and urban maneuvering.
   - Phase Transition Deadband: 80.0 km/h ± 2.5 km/h Schmitt-trigger hysteresis eliminates hunting during highway transitions.
@@ -32,8 +32,8 @@ The neutral steer reference yaw rate $r_{target}$ is derived from the linear 2-D
 $$r_{target} = \\frac{v}{L + K_{us} v^2} \\cdot \\delta_f$$
 Where:
 - $v$ = Instantaneous longitudinal velocity ($m/s$)
-- $L$ = Wheelbase ($2.870\\,m$)
-- $K_{us}$ = Linear understeer gradient ($0.0022\\,rad/(m/s^2)$)
+- $L$ = Wheelbase (20 kHz (0.48ms)\\,m$)
+- $K_{us}$ = Linear understeer gradient (20 kHz (0.48ms)\\,rad/(m/s^2)$)
 - $\\delta_f$ = Effective front wheel steering angle ($rad$)
 
 Closed-loop dynamic rear steering angle $\\delta_r$:

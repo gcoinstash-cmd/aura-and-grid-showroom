@@ -9,7 +9,7 @@ export const EngineSpecTab: React.FC = () => {
     const specText = `# ENGINE SPECIFICATION: AEROKINETIC ENGINE (GF-T3-156)
 Asset Identifier: GF-T3-156
 Classification: Autonomous Guidance / 6-DoF ES-EKF Core
-Valuation Anchor: $125,000 Standalone APA Buyout
+Specification Anchor: 20 kHz (0.48ms) Standalone APA Asset Transfer
 Latency Target: Sub-15 µs
 ... (Complete ENGINE_SPEC.md available in root workspace)`;
     navigator.clipboard.writeText(specText);

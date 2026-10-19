@@ -77,7 +77,7 @@ export const TelemetryCards: React.FC<TelemetryCardsProps> = ({
             </div>
             <div className="flex justify-between items-center">
               <span className="text-neutral-400 font-medium">Front / Rear Bypass:</span>
-              <span className="font-mono font-bold text-amber-400">Active E-KDSS</span>
+              <span className="font-mono font-bold text-amber-400">Active Dynamic Kinetic Suspension Telemetry</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-neutral-400 font-medium">Ground Clearance:</span>

@@ -67,7 +67,7 @@ export const TabAcousticTorsen: React.FC<TabAcousticTorsenProps> = ({
   const powerHp = Math.round((rpm * totalEngineTorqueNm) / 7127);
 
   const pythonCode = `"""
-Lexus IS 500 F SPORT (2UR-GSE 5.0L V8) Dual-Stage Acoustic & Torsen LSD Core
+Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8) Dual-Stage Acoustic & Torsen LSD Core
 Target: Python 3.12 Strict Typing | Ghost FactoryOS Track 3 Engine Spec
 License: MIT Permissive | Clean-Room Certified
 """
@@ -233,7 +233,7 @@ class UR2GSEAcousticTorsenController:
             />
             <div className="flex justify-between text-xs font-mono text-slate-500 mt-1.5">
               <span>0% Off-gas</span>
-              <span>Sport S+ Non-Linear Profile</span>
+              <span>High-Frequency Compute Mode Non-Linear Profile</span>
               <span>100% W.O.T.</span>
             </div>
           </div>
@@ -446,7 +446,7 @@ class UR2GSEAcousticTorsenController:
               Production Python 3.12 Engine Source Code
             </h3>
             <p className="text-sm text-slate-400">
-              is500_acoustic_torsen_core.py — Autonomous Antigravity execution artifact
+              is500_acoustic_torsen_core.py — Autonomous deterministic production execution artifact
             </p>
           </div>
           <button

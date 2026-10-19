@@ -89,7 +89,7 @@ export const TabEkdssCore: React.FC<TabEkdssCoreProps> = ({
 
   // Python 3.12 Reference implementation
   const pythonEngineCode = `"""
-GF-T3-188: LEXUS GX 550 OVERTRAIL+ E-KDSS & CRAWL CONTROL ARBITRATION ENGINE
+GF-T3-188: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL ARBITRATION ENGINE
 Zero-placeholder production Python 3.12 reference implementation.
 Frequency: 2,000 Hz real-time deterministic loop.
 """
@@ -140,7 +140,7 @@ class EkdssTelemetryOutput:
 
 class EkdssStateController:
     """
-    Electronic Kinetic Dynamic Suspension System (E-KDSS) State Machine.
+    Electronic Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry) State Machine.
     Controls hydraulic cylinder bypass solenoid valves connecting front and rear
     stabilizer bars across nitrogen gas-charged accumulators.
     """
@@ -314,7 +314,7 @@ class CrawlControlArbitrator:
           <div>
             <h2 className="text-3xl font-extrabold text-white flex items-center gap-3">
               <span className="w-3.5 h-3.5 rounded-full bg-amber-400"></span>
-              E-KDSS & Crawl Control Core Engine
+              Dynamic Kinetic Suspension Telemetry & Crawl Control Core Engine
             </h2>
             <p className="text-sm text-slate-400 mt-1">
               Deterministic 2,000 Hz closed-loop suspension stabilizer bar disconnect and 5-stage closed-loop crawl arbitration
@@ -524,7 +524,7 @@ class CrawlControlArbitrator:
                   <option value="SAND">SAND (Slip Allowed)</option>
                   <option value="MUD">MUD (High Momentum)</option>
                   <option value="DEEP_SNOW">DEEP SNOW</option>
-                  <option value="ROCK">ROCK (E-KDSS Max Articulation)</option>
+                  <option value="ROCK">ROCK (Dynamic Kinetic Suspension Telemetry Max Articulation)</option>
                 </select>
               </div>
             </div>
@@ -629,7 +629,7 @@ class CrawlControlArbitrator:
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
-                GA-F Kinetic Suspension Schematic
+                Heavy Boxed Steel Frame Architecture Kinetic Suspension Schematic
               </button>
               <button
                 onClick={() => setActiveCodeTab('python_code')}
@@ -671,7 +671,7 @@ class CrawlControlArbitrator:
               {/* State Machine Logic Diagnostics */}
               <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-xs font-mono space-y-2">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                  <span className="text-slate-400">E-KDSS Solenoid Arbitration State:</span>
+                  <span className="text-slate-400">Dynamic Kinetic Suspension Telemetry Solenoid Arbitration State:</span>
                   <span
                     className={`font-bold px-2 py-0.5 rounded ${
                       isBypassOpen

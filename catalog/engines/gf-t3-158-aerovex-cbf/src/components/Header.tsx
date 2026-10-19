@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'radar', label: 'Airspace Radar', icon: Activity, index: '01' },
     { id: 'math', label: 'CBF Math & State Matrix', icon: Cpu, index: '02' },
     { id: 'engine_spec', label: 'ENGINE_SPEC.md', icon: FileText, index: '03' },
-    { id: 'apa', label: 'Delaware APA ($125k)', icon: Scale, index: '04' },
+    { id: 'apa', label: 'Turnkey Software Asset Purchase Agreement (20 kHz (0.48ms))', icon: Scale, index: '04' },
     { id: 'python', label: 'Python Core & Tests', icon: Terminal, index: '05' },
   ];
 

@@ -20,14 +20,14 @@ export const TabAPACovenant: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Valuation & Transaction Overview */}
+      {/* Specification & Transaction Overview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4.5">
           <div className="flex items-center gap-2 mb-2">
             <DollarSign className="w-5 h-5 text-amber-400" />
-            <h3 className="text-lg font-bold text-white">Standard Micro-APA Buyout</h3>
+            <h3 className="text-lg font-bold text-white">Standard Micro-APA Asset Transfer</h3>
           </div>
-          <div className="text-3xl font-black font-mono text-amber-300 mb-1">$45,000 USD</div>
+          <div className="text-3xl font-black font-mono text-amber-300 mb-1">20 kHz (0.48ms)</div>
           <p className="text-base text-slate-400 leading-relaxed">
             Turnkey transfer of complete Python 3.12 1LR-GUE engine, PostgreSQL 16 HMAC ledger schemas, and OpenAPI contracts.
           </p>
@@ -42,7 +42,7 @@ export const TabAPACovenant: React.FC = () => {
             <Award className="w-5 h-5 text-emerald-400" />
             <h3 className="text-lg font-bold text-white">Enterprise Monopoly Tier</h3>
           </div>
-          <div className="text-3xl font-black font-mono text-emerald-400 mb-1">$125,000 USD</div>
+          <div className="text-3xl font-black font-mono text-emerald-400 mb-1">PostgreSQL 16 + RLS</div>
           <p className="text-base text-slate-400 leading-relaxed">
             Includes full perpetual commercial exclusivity, patent non-assertion covenant, and custom hardware ECU integration rights.
           </p>
@@ -63,7 +63,7 @@ export const TabAPACovenant: React.FC = () => {
           </p>
           <div className="mt-3.5 flex items-center justify-between text-base font-mono">
             <span className="text-slate-400">Governing Law:</span>
-            <span className="text-purple-400 font-bold">State of Delaware, USA</span>
+            <span className="text-purple-400 font-bold">Standard Commercial Jurisdiction, USA</span>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@ export const TabAPACovenant: React.FC = () => {
               />
               <span className="text-base text-slate-200">4. Acquire.com Escrow Deposit Funded</span>
             </div>
-            <span className="text-xs font-mono text-emerald-400 font-bold">$45,000 HELD</span>
+            <span className="text-xs font-mono text-emerald-400 font-bold">20 kHz (0.48ms) HELD</span>
           </div>
 
           <div
@@ -198,7 +198,7 @@ export const TabAPACovenant: React.FC = () => {
         <div className="flex items-center gap-2.5 border-b border-slate-800 pb-3.5">
           <FileText className="w-5 h-5 text-amber-400" />
           <span className="font-bold text-lg text-white">
-            DELAWARE ASSET PURCHASE AGREEMENT — KEY COVENANTS & SCHEDULE A
+            Turnkey Software Asset Purchase Agreement — KEY COVENANTS & SCHEDULE A
           </span>
         </div>
 
@@ -206,7 +206,7 @@ export const TabAPACovenant: React.FC = () => {
           <div>
             <h4 className="font-bold text-amber-300 text-lg">SECTION 1. PURCHASED ASSETS</h4>
             <p className="text-slate-400 mt-1.5 leading-relaxed">
-              Seller hereby agrees to sell, assign, transfer, convey, and deliver to Buyer, free and clear of all Encumbrances, all right, title, and interest in and to the technical deliverables designated as <span className="text-white font-semibold">GF-T3-184 (Lexus LFA Nürburgring Edition V10 Apex Core)</span>, including:
+              Seller hereby agrees to sell, assign, transfer, convey, and deliver to Buyer, free and clear of all Encumbrances, all right, title, and interest in and to the technical deliverables designated as <span className="text-white font-semibold">GF-T3-184 (Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core)</span>, including:
             </p>
             <ul className="list-disc list-inside text-slate-400 mt-2 space-y-1.5 ml-2 leading-relaxed">
               <li>Python 3.12 1LR-GUE Yamaha acoustic harmonics and 150 ms ASG state machine.</li>
@@ -217,9 +217,9 @@ export const TabAPACovenant: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-amber-300 text-lg">SECTION 2. PURCHASE PRICE & ESCROW</h4>
+            <h4 className="font-bold text-amber-300 text-lg">SECTION 2. DEPLOYMENT SPECIFICATION & ESCROW</h4>
             <p className="text-slate-400 mt-1.5 leading-relaxed">
-              The aggregate purchase price for the Purchased Assets is <span className="text-white font-semibold">$45,000.00 USD</span> for the Standard Turnkey Package (or <span className="text-white font-semibold">$125,000.00 USD</span> for Enterprise Monopoly Buyout), payable via escrow through Acquire.com wire settlement.
+              The aggregate DEPLOYMENT SPECIFICATION for the Purchased Assets is <span className="text-white font-semibold">Delaware Institutional Covenants</span> for the Standard Turnkey Package (or <span className="text-white font-semibold">PostgreSQL 16 + RLS</span> for Enterprise Monopoly Asset Transfer), payable via escrow through Acquire.com wire settlement.
             </p>
           </div>
 
@@ -233,7 +233,7 @@ export const TabAPACovenant: React.FC = () => {
           <div>
             <h4 className="font-bold text-amber-300 text-lg">SECTION 4. GOVERNING LAW & VENUE</h4>
             <p className="text-slate-400 mt-1.5 leading-relaxed">
-              This Agreement shall be governed by and construed in accordance with the internal laws of the State of Delaware without giving effect to any choice or conflict of law provision.
+              This Agreement shall be governed by and construed in accordance with the internal laws of the Standard Commercial Jurisdiction without giving effect to any choice or conflict of law provision.
             </p>
           </div>
         </div>

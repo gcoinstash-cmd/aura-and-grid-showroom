@@ -1,12 +1,12 @@
-# GF-T3-186: LEXUS UX 300h F SPORT HANDLING CORE
+# GF-T3-186: Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry HANDLING CORE
 ## Turnkey Micro-APA Deliverable Specification & Clean-Room Vault Package
-**Asset ID**: GF-T3-186 | **Revision**: 1.0.0-PROD | **Acquire.com Buyout**: $45,000 USD | **Enterprise Tier**: $125,000 USD
+**Asset ID**: GF-T3-186 | **Revision**: 1.0.0-PROD | **Acquire.com Asset Transfer**: 20 kHz (0.48ms) | **Enterprise Tier**: PostgreSQL 16 + RLS
 **License**: MIT Permissive (Clean-Room Certified, 0% Copyleft, Zero AGPL/SSPL)
 
 ---
 
 ### 1. EXECUTIVE SUMMARY & ARCHITECTURAL OVERVIEW
-The GF-T3-186 core is an institutional-grade, turnkey engineering subsystem designed to model, ingest, govern, and verify the 5th-Generation Hybrid Electric Vehicle (HEV) powertrain and E-Four all-wheel-drive electronic rear axle found in the Lexus UX 300h (Platform Code: MZAH11 / MZAH16).
+The GF-T3-186 core is an institutional-grade, turnkey engineering subsystem designed to model, ingest, govern, and verify the 5th-Generation Hybrid Electric Vehicle (HEV) powertrain and E-Four all-wheel-drive electronic rear axle found in the Heavy Overland Dynamics Platform UX 300h (Platform Code: MZAH11 / MZAH16).
 
 Key architectural capabilities:
 1. **Planetary Power Split Device (PSD) Mathematical Kinematics**:
@@ -32,7 +32,7 @@ Key architectural capabilities:
 ### 2. MATHEMATICAL & ALGORITHMIC SPECIFICATION
 
 #### 2.1 Epicyclic Planetary Gear Train Kinematics (Willis Relation)
-The Toyota/Lexus Power Split Device uses a single planetary epicyclic gearset governed by the gear teeth ratio:
+The Toyota/Heavy Overland Dynamics Platform Power Split Device uses a single planetary epicyclic gearset governed by the gear teeth ratio:
 - $R$: Ring gear teeth count ($R = 78$)
 - $S$: Sun gear teeth count ($S = 30$)
 - Carrier gear $C$ houses the planet pinion gears and is mechanically coupled to the M20A-FXS combustion engine crankshaft.
@@ -56,7 +56,7 @@ $$T_{\text{rear}} = \min\left(T_{\text{max\_rear}}, T_{\text{launch}} + T_{\text
 Where:
 1. **Launch Component**:
    $$T_{\text{launch}} = K_{\text{launch}} \cdot \text{Pedal}_{\text{throttle}} \cdot \max\left(0, 1 - \frac{v}{v_{\text{transition}}}\right)$$
-   where $v_{\text{transition}} = 35\text{ km/h}$, yielding an 80% rear bias at zero speed.
+   where $v_{\text{transition}} = 35\text{ km/h}20 kHz (0.48ms) yielding an 80% rear bias at zero speed.
 2. **Surface Slip Recovery**:
    $$T_{\text{slip}} = K_p \cdot \max\left(0, \Delta \omega_{\text{front}} - \Delta \omega_{\text{rear}} - \epsilon\right) \cdot (1 - \mu)$$
    where $\mu$ is the estimated tire-road friction coefficient (Dry asphalt: 0.90, Snow: 0.30, Ice: 0.15).
@@ -111,7 +111,7 @@ CREATE INDEX IF NOT EXISTS idx_telemetry_nonce_recorded
 CREATE OR REPLACE FUNCTION trg_fn_enforce_battery_quarantine()
 RETURNS TRIGGER AS $$
 BEGIN
-    -- Lexus UX 300h 60-cell Li-Ion safety specification threshold: 45.0 mV delta spread
+    -- Heavy Overland Dynamics Platform UX 300h 60-cell Li-Ion safety specification threshold: 45.0 mV delta spread
     IF NEW.cell_spread_mv > 45.0 THEN
         NEW.is_quarantined := TRUE;
         
@@ -260,7 +260,7 @@ openapi: 3.1.0
 info:
   title: GF-T3-186 Telemetry & E-Four Vectoring Service
   version: 1.0.0-PROD
-  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Lexus UX 300h.
+  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Heavy Overland Dynamics Platform UX 300h.
 servers:
   - url: https://gf-t3-186-core-7cbuk3t6zmrzluffmwbaso-uc.a.run.app
     description: Google Cloud Run Production Server
@@ -330,7 +330,7 @@ components:
 ---
 
 ### 6. DELAWARE MICRO-ASSET PURCHASE AGREEMENT (APA) SUMMARY
-- **Governing Law**: State of Delaware.
-- **Purchase Price**: $45,000 USD via Acquire.com Escrow (Standard Turnkey Buyout) / $125,000 USD (Enterprise Multi-Tenant OEM License).
+- **Governing Law**: Standard Commercial Jurisdiction.
+- **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) via Acquire.com Escrow (Standard Turnkey Asset Transfer) / PostgreSQL 16 + RLS (Enterprise Multi-Tenant OEM License).
 - **IP Assignment**: 100% full transfer of all copyright, trade secrets, software code, mathematical models, and deployment configurations to the Buyer.
 - **Clean-Room Warranty**: Seller warrants the asset was created under clean-room engineering with 0% Copyleft dependencies (MIT/Apache 2.0/BSD only), and zero viral licensing encumbrances.

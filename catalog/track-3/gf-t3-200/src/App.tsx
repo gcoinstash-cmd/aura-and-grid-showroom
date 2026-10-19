@@ -134,7 +134,7 @@ export default function App() {
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <span className="font-mono text-white font-bold">GF-T3-200-PROD</span>
             <span className="hidden sm:inline text-slate-700">|</span>
-            <span className="text-slate-400">Lexus Electrified Supercar Concept Core</span>
+            <span className="text-slate-400">Heavy Overland Dynamics Platform Electrified Supercar Concept Core</span>
             <span className="hidden sm:inline text-slate-700">|</span>
             <span className="text-emerald-400 font-mono">Delaware Clean-Room Verified</span>
           </div>
@@ -148,7 +148,7 @@ export default function App() {
               Download GF_T3_200_SPEC.md
             </button>
             <span className="text-slate-700">|</span>
-            <span className="text-slate-400">Delaware Court of Chancery Jurisdiction</span>
+            <span className="text-slate-400">Standard Commercial Jurisdiction Jurisdiction</span>
           </div>
         </div>
       </footer>

@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-199
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          RX 500h DIRECT4 CORE
+          Dual-Vector Performance Core DUAL_VECTOR_TORQUE CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -29,10 +29,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1 font-display">
-        Lexus RX 500h F SPORT Performance Core
+        Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
-        Turnkey micro-APA deliverable with DIRECT4 dynamic torque split, Dynamic Rear Steering (DRS), bipolar NiMH inverter telemetry, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA deliverable with DUAL_VECTOR_TORQUE dynamic torque split, Dynamic Rear Steering (DRS), bipolar NiMH inverter telemetry, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* c) Action Buttons (STRICT SINGLE HORIZONTAL ROW, NEVER VERTICALLY STACKED) */}
@@ -43,7 +43,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs h-8 px-2.5 rounded-lg inline-flex items-center gap-1 shrink-0 transition-colors cursor-pointer"
         >
           <Play className="w-3.5 h-3.5 fill-current" />
-          <span>Simulate DIRECT4</span>
+          <span>Simulate DUAL_VECTOR_TORQUE</span>
         </button>
 
         <button
@@ -65,17 +65,17 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400">
         <div className="inline-flex items-center gap-1 font-mono">
           <DollarSign className="w-3.5 h-3.5 text-amber-400" />
-          <span className="text-slate-300">Buyout:</span>
-          <span className="text-white font-bold">$45,000 USD</span>
+          <span className="text-slate-300">Asset Transfer:</span>
+          <span className="text-white font-bold">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-600">|</span>
         <div className="inline-flex items-center gap-1 font-mono">
           <span className="text-slate-300">Enterprise:</span>
-          <span className="text-amber-400 font-bold">$125,000 USD</span>
+          <span className="text-amber-400 font-bold">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-600">|</span>
         <div className="inline-flex items-center gap-1 font-mono">

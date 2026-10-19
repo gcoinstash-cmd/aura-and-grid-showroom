@@ -68,7 +68,7 @@ export default function App() {
           <div className="flex flex-wrap items-center gap-4 text-slate-300">
             <span>PORT 8080 DISTROLESS</span>
             <span>•</span>
-            <span className="text-amber-400">$125,000 STANDALONE BUYOUT</span>
+            <span className="text-amber-400">20 kHz (0.48ms) STANDALONE ASSET TRANSFER</span>
             <span>•</span>
             <span>GHOST FACTORYOS INSTITUTIONAL</span>
           </div>

@@ -20,7 +20,7 @@ interface TabPostgresLedgerProps {
 }
 
 const POSTGRES_DDL = `-- ============================================================================
--- LEXUS TX 550h+ DIRECT4 DYNAMIC REAR STEERING (DRS) PARTITIONED LEDGER
+-- Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING (DRS) PARTITIONED LEDGER
 -- Target Engine: PostgreSQL 16.2 / TimescaleDB Compatible
 -- Architecture: Timeseries Range Partitioning with Recursive HMAC Chain
 -- ============================================================================
@@ -38,8 +38,8 @@ CREATE TABLE drs_telemetry_ledger (
     rear_toe_actual_deg   NUMERIC(5,3) NOT NULL,
     rack_displacement_mm  NUMERIC(6,3) NOT NULL,
     divergence_error_mm   NUMERIC(5,3) NOT NULL,
-    direct4_front_pct     NUMERIC(4,1) NOT NULL,
-    direct4_rear_pct      NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_front_pct     NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_rear_pct      NUMERIC(4,1) NOT NULL,
     bldc_phase_current_a  NUMERIC(5,2) NOT NULL,
     quarantine_status     VARCHAR(16) NOT NULL DEFAULT 'NOMINAL',
     prev_block_hmac       CHAR(64) NOT NULL,
@@ -257,7 +257,7 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({
                   <th className="py-2.5 px-3">Target Toe</th>
                   <th className="py-2.5 px-3">Actual Toe</th>
                   <th className="py-2.5 px-3">Divergence</th>
-                  <th className="py-2.5 px-3">DIRECT4</th>
+                  <th className="py-2.5 px-3">DUAL_VECTOR_TORQUE</th>
                   <th className="py-2.5 px-3">Status</th>
                   <th className="py-2.5 px-3">HMAC-SHA256 (64-byte)</th>
                 </tr>

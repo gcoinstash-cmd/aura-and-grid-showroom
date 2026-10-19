@@ -36,7 +36,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-179
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-xs font-mono font-semibold px-2.5 py-1 rounded inline-flex w-auto whitespace-nowrap">
-          LEXUS TX 550h+ DIRECT4 CORE
+          Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold px-2.5 py-1 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -45,10 +45,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus TX 550h+ Luxury Plug-in Core
+        Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
-        Turnkey micro-APA deliverable with DIRECT4 100:0–20:80 dynamic e-Axle torque vectoring, 18.1 kWh PHEV energy arbitration, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA deliverable with DUAL_VECTOR_TORQUE 100:0–20:80 dynamic e-Axle torque vectoring, 18.1 kWh PHEV energy arbitration, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* c) Action Buttons (STRICTLY HORIZONTAL, ZERO FULL-WIDTH STACKING, ZERO ORPHANING) */}
@@ -59,7 +59,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs h-8 px-3 rounded-lg inline-flex items-center gap-1.5 shrink-0 cursor-pointer transition-colors whitespace-nowrap shadow-sm"
         >
           <Gauge className="w-3.5 h-3.5" />
-          <span>Simulate DIRECT4 Bias</span>
+          <span>Simulate DUAL_VECTOR_TORQUE Bias</span>
         </button>
 
         <button
@@ -81,16 +81,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
         <div className="inline-flex items-center gap-1">
-          <span className="text-slate-500">Buyout:</span>
-          <span className="text-emerald-400 font-bold">$45,000 USD</span>
+          <span className="text-slate-500">Asset Transfer:</span>
+          <span className="text-emerald-400 font-bold">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="inline-flex items-center gap-1">
           <span className="text-slate-500">Enterprise:</span>
-          <span className="text-cyan-400 font-bold">$125,000 USD</span>
+          <span className="text-cyan-400 font-bold">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="inline-flex items-center gap-1">

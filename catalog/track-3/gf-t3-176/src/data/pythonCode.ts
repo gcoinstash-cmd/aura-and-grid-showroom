@@ -1,5 +1,5 @@
 export const EKDSS_PYTHON_CODE = `"""
-GF-T3-176: Lexus GX 550 Overtrail+ Terrain Core Engine
+GF-T3-176: Heavy Overland Dynamics Platform Terrain Core Engine
 Module: ekdss_terrain_core.py
 License: MIT Permissive / Clean-Room Certified
 Python Version: 3.12+
@@ -97,7 +97,7 @@ class ExtendedKalmanAttitudeFilter:
 
 class EkdssStabilizerStateMachine:
     """
-    Electronic Kinetic Dynamic Suspension System (E-KDSS) Dynamic Decoupling Controller.
+    Electronic Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry) Dynamic Decoupling Controller.
     Modulates hydraulic stabilizer cylinder bypass valves within <= 4.2 ms.
     """
     def __init__(self):
@@ -202,7 +202,7 @@ class TorsenDifferentialEngine:
                 "53:47 (REAR SLIP BIAS)"
             )
         else:
-            # Nominal Lexus GX 550 Full-Time 4WD split
+            # Nominal Heavy Overland Dynamics Platform Full-Time 4WD split
             return (
                 input_torque_nm * 0.40,
                 input_torque_nm * 0.60,
@@ -236,6 +236,6 @@ if __name__ == "__main__":
         crawl_control_active=True,
         manual_rear_lock_req=False
     )
-    print(f"E-KDSS Mode: {mode.name} | Stiffness: {stiffness} Nm/rad | Decoupled: F={f_dec}, R={r_dec}")
+    print(f"Dynamic Kinetic Suspension Telemetry Mode: {mode.name} | Stiffness: {stiffness} Nm/rad | Decoupled: F={f_dec}, R={r_dec}")
     print(f"Torque Split: {ratio} | Front: {t_f} Nm, Rear: {t_r} Nm | State: {diff_state.name}")
 `;

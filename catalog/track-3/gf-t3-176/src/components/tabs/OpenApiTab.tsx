@@ -116,7 +116,7 @@ export const OpenApiTab: React.FC = () => {
           OpenAPI 3.1 & WebSocket Streaming Contract
         </h2>
         <p className="mt-2 text-[16px] text-neutral-400 max-w-4xl leading-relaxed">
-          Zero-copy REST schemas for 6-axis IMU pitch/roll ingestion, Crawl Control speed setpoints, and 100 Hz binary/JSON WebSocket telemetry broadcast. Cleanly documented for Antigravity automated code generation.
+          Zero-copy REST schemas for 6-axis IMU pitch/roll ingestion, Crawl Control speed setpoints, and 100 Hz binary/JSON WebSocket telemetry broadcast. Cleanly documented for deterministic production automated code generation.
         </p>
       </div>
 

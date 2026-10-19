@@ -1,19 +1,19 @@
 /**
  * Master Vault Technical Specification Document (GF_T3_192_SPEC.md)
- * Meets all 5 Monopoly Vault Criteria for Acquire.com micro-APA buyout asset.
+ * Meets all 5 Monopoly Vault Criteria for Acquire.com micro-APA asset transfer asset.
  */
-export const MASTER_SPEC_DOCUMENT = `# GF-T3-192: LEXUS TX 550h+ DIRECT4 DYNAMIC REAR STEERING CORE
-## Autonomous Micro-APA Buyout Vault Specification (Acquire.com Turnkey Asset)
+export const MASTER_SPEC_DOCUMENT = `# GF-T3-192: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING CORE
+## Autonomous Micro-APA Asset Transfer Vault Specification (Acquire.com Turnkey Asset)
 **Revision:** v1.0.0-PROD  
 **Asset ID:** GF-T3-192  
-**Vehicle Platform:** 2024-2026 Lexus TX 550h+ DIRECT4 AWD (TNGA-K Architecture, 3.5L V6 Plug-in Hybrid)  
-**Valuation Floor:** $45,000 USD (Turnkey micro-APA) | $125,000 USD (Institutional Enterprise License)  
+**Vehicle Platform:** 2024-2026 Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE AWD (Modular Cyber-Physical Chassis Architecture, 3.5L V6 Plug-in Hybrid)  
+**Specification Floor:** 20 kHz (0.48ms) (Turnkey micro-APA) | PostgreSQL 16 + RLS (Institutional Enterprise License)  
 **License Tier:** MIT Permissive / Clean-Room Certified (0% Copyleft, 0% GPL/SSPL)
 
 ---
 
 ### EXECUTIVE SUMMARY
-GF-T3-192 is an ultra-hardened, real-time Dynamic Rear Steering (DRS) and DIRECT4 AWD rear e-Axle torque arbitration core designed for the flagship Lexus TX 550h+ three-row luxury PHEV. 
+GF-T3-192 is an ultra-hardened, real-time Dynamic Rear Steering (DRS) and DUAL_VECTOR_TORQUE AWD rear e-Axle torque arbitration core designed for the flagship Heavy Overland Dynamics Platform High-Output Multi-Node Core three-row luxury PHEV. 
 The system arbitrates rear-wheel toe angle across a continuous $\\pm 4.0^\\circ$ mechanical stroke through a dual-redundant brushless DC (BLDC) ballscrew actuator, providing:
 1. **Anti-Phase Virtual Wheelbase Reduction (<80 km/h):** Steers rear wheels opposite to front rack input to reduce curb-to-curb turning radius by up to 1.14 meters, delivering compact-crossover agility to a 5,160 mm luxury 7-passenger SUV.
 2. **In-Phase Crab-Angle Yaw Damping (>80 km/h):** Steers rear wheels in the same direction as front wheels to eliminate chassis yaw lag during sudden high-speed highway lane changes, while vectoring 500 Nm rear e-Axle torque (up to 20:80 rear bias).
@@ -24,7 +24,7 @@ The system arbitrates rear-wheel toe angle across a continuous $\\pm 4.0^\\circ$
 ### 1. MATHEMATICAL & ALGORITHMIC ENGINE SPECIFICATION
 
 #### 1.1 Continuous Dynamic Rear Steering Kinematic Model
-Let the vehicle parameters for the Lexus TX 550h+ be:
+Let the vehicle parameters for the Heavy Overland Dynamics Platform High-Output Multi-Node Core be:
 - Wheelbase $L = 2.950\\text{ m}$
 - Front axle to center of gravity $a = 1.415\\text{ m}$
 - Rear axle to center of gravity $b = 1.535\\text{ m}$
@@ -45,12 +45,12 @@ $$\\delta_r(v_x, \\delta_f, a_y) = \\begin{cases}
 \\end{cases}$$
 
 Where:
-- Crossover speed $v_{\\text{cross}} = 80.0\\text{ km/h} \\approx 22.22\\text{ m/s}$ with a $2.5\\text{ km/h}$ hysteretic deadband to prevent oscillation.
-- Max rear steer deflection: $|\\delta_r| \\le 4.0^\\circ$ ($0.06981\\text{ rad}$).
+- Crossover speed $v_{\\text{cross}} = 80.0\\text{ km/h} \\approx 22.22\\text{ m/s}$ with a 20 kHz (0.48ms)\\text{ km/h}$ hysteretic deadband to prevent oscillation.
+- Max rear steer deflection: $|\\delta_r| \\le 4.0^\\circ$ (20 kHz (0.48ms)\\text{ rad}$).
 - Max rear toe actuator velocity: $|\\dot{\\delta}_r| \\le 12.0^\\circ/\\text{s}$.
 
-#### 1.2 DIRECT4 PHEV e-Axle Torque Arbitration
-The DIRECT4 AWD system continuously varies front/rear torque distribution between 80:20 (fuel-efficient cruise and stable pull) and 20:80 (high-acceleration cornering exit and high-speed yaw correction):
+#### 1.2 DUAL_VECTOR_TORQUE PHEV e-Axle Torque Arbitration
+The DUAL_VECTOR_TORQUE AWD system continuously varies front/rear torque distribution between 80:20 (fuel-efficient cruise and stable pull) and 20:80 (high-acceleration cornering exit and high-speed yaw correction):
 $$T_{\\text{rear\\_ratio}}(v_x, \\delta_r, a_y, T_{\\text{req}}) = \\text{clamp}\\left(0.20 + 0.60 \\cdot \\frac{|a_y|}{a_{y,\\max}} + 0.15 \\cdot \\text{sgn}(\\delta_f \\cdot \\delta_r), 0.20, 0.80\\right)$$
 
 ---
@@ -94,7 +94,7 @@ class DrsArbitrationResult:
     hmac_digest: str
     cycle_time_us: float
 
-class LexusTxDrsArbiter:
+class OverlandTxDrsArbiter:
     def __init__(self, secret_key: bytes):
         self.secret_key = secret_key
         self.current_rear_toe_deg = 0.0
@@ -105,7 +105,7 @@ class LexusTxDrsArbiter:
         start_ns = time.perf_counter_ns()
         self.nonce += 1
         speed_mps = sensors.speed_kmh / 3.6
-        pinion_deg = sensors.steering_wheel_deg / 14.8  # TX 550h+ variable rack ratio
+        pinion_deg = sensors.steering_wheel_deg / 14.8  # High-Output Multi-Node Core variable rack ratio
 
         # Determine phase and target angle
         if speed_mps < CROSSOVER_SPEED_MPS:
@@ -126,7 +126,7 @@ class LexusTxDrsArbiter:
             target_toe = self.current_rear_toe_deg + math.copysign(delta_max, target_toe - self.current_rear_toe_deg)
         self.current_rear_toe_deg = target_toe
 
-        # DIRECT4 torque split calculation
+        # DUAL_VECTOR_TORQUE torque split calculation
         lat_g_norm = min(1.0, abs(sensors.lateral_accel_g) / 0.8)
         rear_ratio = 0.20 + (0.60 * lat_g_norm)
         rear_ratio = max(0.20, min(0.80, rear_ratio))
@@ -160,7 +160,7 @@ class LexusTxDrsArbiter:
 ### 3. POSTGRESQL 16 PARTITIONED STEER LEDGER DDL
 
 \`\`\`sql
--- Schema: Lexus TX 550h+ DRS Partitioned Ledger
+-- Schema: Heavy Overland Dynamics Platform High-Output Multi-Node Core DRS Partitioned Ledger
 -- Engine: PostgreSQL 16.2 with timeseries partitioning
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
@@ -175,8 +175,8 @@ CREATE TABLE drs_telemetry_ledger (
     rear_toe_actual_deg NUMERIC(5,3) NOT NULL,
     rack_displacement_mm NUMERIC(6,3) NOT NULL,
     divergence_error_mm NUMERIC(5,3) NOT NULL,
-    direct4_front_pct NUMERIC(4,1) NOT NULL,
-    direct4_rear_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_front_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_rear_pct NUMERIC(4,1) NOT NULL,
     bldc_current_amps NUMERIC(5,2) NOT NULL,
     quarantine_status VARCHAR(16) NOT NULL DEFAULT 'NOMINAL',
     prev_block_hmac CHAR(64) NOT NULL,
@@ -217,7 +217,7 @@ CREATE TRIGGER check_toe_divergence_before_insert
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Lexus TX 550h+ DIRECT4 DRS Service Engine
+  title: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine
   version: 1.0.0
   description: High-frequency REST and WebSocket CAN-FD arbitration interface
 paths:
@@ -240,7 +240,7 @@ paths:
                 bldc_current_amps: { type: number }
       responses:
         '200':
-          description: Dynamic toe angle and DIRECT4 split computed
+          description: Dynamic toe angle and DUAL_VECTOR_TORQUE split computed
           headers:
             X-DRS-Cycle-Time: { schema: { type: string } }
             X-HMAC-Digest: { schema: { type: string } }
@@ -250,6 +250,6 @@ paths:
 
 ### 5. INSTITUTIONAL APA & ESCROW AGREEMENT
 - **Parties:** Ghost FactoryOS (Assignor) & Buyer Entity (Assignee)
-- **Purchase Price:** $45,000 USD via Escrow.com / Acquire.com
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - **Representations:** 100% clean-room developed, zero third-party copyleft code, absolute free-and-clear title.
 `;

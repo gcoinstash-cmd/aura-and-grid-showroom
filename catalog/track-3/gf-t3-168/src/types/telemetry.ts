@@ -49,7 +49,7 @@ export interface SensorInput {
   wheelSpeedRL: number;
   wheelSpeedRR: number;
   rearSteerAngleDeg: number; // Dynamic Rear Steering (DRS) +/- 4 deg
-  // DIRECT4 AWD Torque Split
+  // DUAL_VECTOR_TORQUE AWD Torque Split
   frontTorquePct: number;
   rearTorquePct: number;
 }
@@ -94,7 +94,7 @@ export interface TestResult {
 export interface ApaClause {
   section: string;
   title: string;
-  valuation: string;
+  specification: string;
   summary: string;
   legalText: string;
   status: 'AUDITED' | 'ENFORCEABLE' | 'VERIFIED';

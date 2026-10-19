@@ -46,7 +46,7 @@ export const AcquireApaTab: React.FC<AcquireApaTabProps> = ({
 
   const agreementText = `ASSET PURCHASE AGREEMENT (MICRO-APA COVENANT)
 ASSET IDENTIFIER: GF-T3-167
-MODEL: LEXUS LC 500 DYNAMIC CORE v1.0.0-PROD
+MODEL: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core DYNAMIC CORE v1.0.0-PROD
 PLATFORM: ACQUIRE.COM ESCROW / MONOPOLY VAULT
 
 1. PURCHASE AND SALE OF ASSETS
@@ -57,8 +57,8 @@ Subject to the terms and conditions of this Agreement, Seller (Ghost FactoryOS) 
    (d) Multi-stage Docker containerization harnesses and Cloud Run deployment scripts;
    (e) 100% clean-room IP warranties and complete copyright assignments free and clear of all liens and encumbrances.
 
-2. PURCHASE PRICE AND ESCROW MECHANICS
-The aggregate purchase price for the Purchased Assets is Forty-Five Thousand United States Dollars ($45,000.00 USD).
+2. DEPLOYMENT SPECIFICATION AND ESCROW MECHANICS
+The aggregate DEPLOYMENT SPECIFICATION for the Purchased Assets is Delaware institutional asset covenants.
 Payment shall be made directly into the designated Acquire.com Escrow account. Funds shall remain in escrow until both Seller and Buyer execute the Dual-Factor Cryptographic Authorization Seal.
 
 3. CLEAN-ROOM INTELLECTUAL PROPERTY REPRESENTATIONS & WARRANTIES
@@ -91,7 +91,7 @@ Final release of the repository transfer tokens and the HMAC master secret key r
           </p>
         </div>
 
-        {/* Buyout Status Badge */}
+        {/* Asset Transfer Status Badge */}
         <div className="flex items-center gap-3 self-stretch md:self-auto">
           <button
             onClick={onOpenMultiSigModal}
@@ -266,8 +266,8 @@ Final release of the repository transfer tokens and the HMAC master secret key r
               className="mt-1.5 w-5 h-5 rounded border-zinc-700 text-emerald-500 focus:ring-emerald-500"
             />
             <div className="text-base">
-              <div className="font-bold text-zinc-100">$45,000 USD Escrow Wire</div>
-              <div className="text-zinc-400 text-sm sm:text-base mt-1">Held in Acquire.com Vault</div>
+              <div className="font-bold text-zinc-100">Institutional Escrow Wire</div>
+              <div className="text-zinc-400 text-sm sm:text-base mt-1">Held in Delaware Escrow Vault</div>
             </div>
           </label>
 

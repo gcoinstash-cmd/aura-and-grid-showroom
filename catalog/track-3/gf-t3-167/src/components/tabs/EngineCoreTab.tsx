@@ -44,7 +44,7 @@ export const EngineCoreTab: React.FC<EngineCoreTabProps> = ({
   const [orderType, setOrderType] = useState<OrderType>('LIMIT');
   const [priceInput, setPriceInput] = useState<string>('104525.00');
   const [qtyInput, setQtyInput] = useState<string>('10');
-  const [traderIdInput, setTraderIdInput] = useState<string>('TRD-LC500-DESK1');
+  const [traderIdInput, setTraderIdInput] = useState<string>('TRD-High-Aero Grand Touring Telemetry Core-DESK1');
   const [codeViewTab, setCodeViewTab] = useState<'C_STRUCT' | 'PYTHON_ENGINE'>('C_STRUCT');
   const [copiedCode, setCopiedCode] = useState(false);
 
@@ -89,7 +89,7 @@ typedef struct __attribute__((aligned(64))) {
     uint64_t timestamp_ns;       // CLOCK_MONOTONIC_RAW (nanosecond resolution)
     uint64_t order_id;           // Unique 64-bit client order key
     uint32_t trader_id;          // Compact 32-bit participant identifier
-    uint32_t instrument_id;      // 0x0167 (Lexus LC 500 Dynamic Core)
+    uint32_t instrument_id;      // 0x0167 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core)
     uint32_t price_fixed;        // Scaled fixed-point price (price * 10,000)
     uint32_t quantity;           // Unsigned contract size
     uint8_t  side;               // 0 = BUY, 1 = SELL
@@ -143,7 +143,7 @@ class OrderStruct(ctypes.Structure):
     ]
 
 class L2DynamicCoreEngine:
-    def __init__(self, instrument_symbol: str = "LC500-DYN"):
+    def __init__(self, instrument_symbol: str = "High-Aero Grand Touring Telemetry Core-DYN"):
         self.symbol = instrument_symbol
         self.monotonic_sequence = 1_000_000
         self.bids: dict[int, list[OrderStruct]] = {}  # Price (fixed) -> FIFO queue
@@ -200,7 +200,7 @@ class L2DynamicCoreEngine:
             <div className="flex items-center gap-2.5">
               <Layers className="w-5 h-5 text-amber-400" />
               <h3 className="font-mono text-base sm:text-lg font-bold text-white uppercase tracking-wider">
-                L2 Depth Ladder // LC500-DYN
+                L2 Depth Ladder // High-Aero Grand Touring Telemetry Core-DYN
               </h3>
             </div>
             <span className="text-xs sm:text-sm font-mono font-bold text-zinc-200 bg-zinc-950 px-3 py-1 rounded-lg border border-zinc-700">

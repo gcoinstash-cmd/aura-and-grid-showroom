@@ -172,7 +172,7 @@ export default function App() {
           <EngineSpecView />
         </div>
 
-        {/* Tab 4: Delaware Asset Purchase Agreement */}
+        {/* Tab 4: Turnkey Software Asset Purchase Agreement */}
         <div
           id="tab-panel-apa"
           role="tabpanel"

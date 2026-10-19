@@ -1,5 +1,5 @@
 export const POSTGRES_TERRAIN_LEDGER_SQL = `-- =====================================================================
--- GF-T3-176: Lexus GX 550 Overtrail+ Terrain Core
+-- GF-T3-176: Heavy Overland Dynamics Platform Terrain Core
 -- Enterprise Partitioned Timeseries Ledger & HMAC-SHA256 Cryptographic Chain
 -- Target Engine: PostgreSQL 16.x (Zero External Extensions Required)
 -- License: MIT Permissive / Clean-Room Audited
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS terrain_telemetry_partitioned (
     rl_stroke_in NUMERIC(5, 2) NOT NULL,
     rr_stroke_in NUMERIC(5, 2) NOT NULL,
 
-    -- E-KDSS Hydraulic Valve States
+    -- Dynamic Kinetic Suspension Telemetry Hydraulic Valve States
     front_stabilizer_decoupled BOOLEAN NOT NULL DEFAULT FALSE,
     rear_stabilizer_decoupled BOOLEAN NOT NULL DEFAULT FALSE,
     hydraulic_pressure_front_mpa NUMERIC(5, 2) NOT NULL DEFAULT 14.20,
@@ -135,7 +135,7 @@ BEGIN
             142.50,
             88.20,
             TRUE,
-            'E-KDSS Decouple Latch Desync: Cross-axle articulation > 7.0 inches while valves locked',
+            'Dynamic Kinetic Suspension Telemetry Decouple Latch Desync: Cross-axle articulation > 7.0 inches while valves locked',
             encode(sha256(concat(NEW.sequence_id, ':', NEW.current_block_hash)::bytea), 'hex')
         );
     END IF;

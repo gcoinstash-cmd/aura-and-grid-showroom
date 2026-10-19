@@ -1,6 +1,6 @@
 /**
- * GF-T3-195 Lexus LC 500 Inspiration Series Carbon Aero Core Cockpit
- * Turnkey micro-APA buyout asset for Acquire.com
+ * GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core Cockpit
+ * Turnkey micro-APA asset transfer asset for Acquire.com
  * Hardened Non-Breaking Header Protocol & High-Legibility Typography
  */
 
@@ -276,7 +276,7 @@ export default function App() {
             </div>
             <div>
               <div className="font-bold text-white">Ghost FactoryOS Architecture Core</div>
-              <div className="text-[14px]">Asset GF-T3-195 • Lexus LC 500 Inspiration Series Carbon Aero Core</div>
+              <div className="text-[14px]">Asset GF-T3-195 • Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core</div>
             </div>
           </div>
 

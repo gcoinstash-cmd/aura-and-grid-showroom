@@ -44,7 +44,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
         {/* b) Title & Description */}
         <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-          Lexus LFA Nürburgring Edition V10 Core
+          Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Core
         </h1>
         <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
           Turnkey micro-APA deliverable with 1LR-GUE 9,000 RPM acoustic surge mapping, ASG automated sequential shift dynamics, and PostgreSQL 16 HMAC ledger.
@@ -80,16 +80,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           </button>
         </div>
 
-        {/* d) Valuation & Audit Strip */}
+        {/* d) Specification & Audit Strip */}
         <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
           <div className="flex items-center gap-1 text-slate-200">
-            <span className="text-slate-400 font-sans">Buyout:</span>
-            <span className="font-bold text-amber-400">$45,000 USD</span>
+            <span className="text-slate-400 font-sans">Asset Transfer:</span>
+            <span className="font-bold text-amber-400">20 kHz (0.48ms)</span>
           </div>
           <span className="text-slate-700">|</span>
           <div className="flex items-center gap-1 text-slate-200">
             <span className="text-slate-400 font-sans">Enterprise:</span>
-            <span className="font-bold text-emerald-400">$125,000 USD</span>
+            <span className="font-bold text-emerald-400">PostgreSQL 16 + RLS</span>
           </div>
           <span className="text-slate-700">|</span>
           <div className="flex items-center gap-1 text-slate-300">

@@ -28,10 +28,10 @@ export const CloudRunHarnessTab: React.FC = () => {
       desc: 'DRS ±4° virtual wheelbase slip compensation matrix',
     },
     {
-      name: 'tests/test_ekf_core.py::test_direct4_torque_split_boundary_conditions',
+      name: 'tests/test_ekf_core.py::test_dual_vector_torque_torque_split_boundary_conditions',
       duration: '26ms',
       status: 'PASSED',
-      desc: 'DIRECT4 70:30 front to 20:80 rear torque envelope',
+      desc: 'DUAL_VECTOR_TORQUE 70:30 front to 20:80 rear torque envelope',
     },
     {
       name: 'tests/test_ekf_core.py::test_monte_carlo_covariance_trace_contract',

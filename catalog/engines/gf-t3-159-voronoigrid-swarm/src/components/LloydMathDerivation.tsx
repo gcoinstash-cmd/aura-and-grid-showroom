@@ -259,7 +259,7 @@ export const LloydMathDerivation: React.FC<LloydMathDerivationProps> = ({
           </div>
         </div>
 
-        {/* Card 2: Continuous Coverage Cost Functional */}
+        {/* Card 2: Continuous Coverage Matrix Functional */}
         <div className="p-5 rounded-xl border border-slate-800 bg-slate-900/80 flex flex-col gap-3">
           <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
             <span className="text-xs font-mono font-bold text-emerald-400">LEMMA 2</span>

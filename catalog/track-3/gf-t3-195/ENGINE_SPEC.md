@@ -1,20 +1,20 @@
-# GF-T3-195: LEXUS LC 500 INSPIRATION SERIES CARBON AERO CORE
-## TURNKEY MICRO-APA BUYOUT SPECIFICATION (ACQUIRE.COM MONOPOLY VAULT)
+# GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core INSPIRATION SERIES CARBON AERO CORE
+## TURNKEY MICRO-APA ASSET TRANSFER SPECIFICATION (ACQUIRE.COM MONOPOLY VAULT)
 
 **Document Release**: v1.0.0-PROD  
 **Asset ID**: GF-T3-195  
-**Chassis Base**: Lexus LC 500 Coupe (URZ100 / 5.0L 2UR-GSE V8)  
+**Chassis Base**: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Coupe (URZ100 / 5.0L 2UR-GSE V8)  
 **Track Classification**: Track 3 (F1 Skunkworks Service Engine - 70% Workload Deliverable)  
-**Micro-Buyout Target**: $45,000 USD (All-Cash Wire)  
-**Enterprise Monopoly Vault Target**: $125,000 USD  
+**Micro-Reference Core**: 20 kHz (0.48ms) (All-Cash Wire)  
+**Enterprise Monopoly Vault Target**: PostgreSQL 16 + RLS  
 **Licensing & Legal Status**: MIT Permissive / 100% Clean-Room Provenance (0% Copyleft)  
-**Jurisdiction**: State of Delaware, United States  
+**Jurisdiction**: Standard Commercial Jurisdiction, United States  
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & ASSET SYNOPSIS
 
-GF-T3-195 is an industrial-grade aerodynamic telemetry, state estimation, and cryptographic ledger engine purpose-engineered for high-downforce grand tourers, modeled against the fixed carbon swan-neck wing and underbody vortex management architecture of the Lexus LC 500 Inspiration Series. 
+GF-T3-195 is an industrial-grade aerodynamic telemetry, state estimation, and cryptographic ledger engine purpose-engineered for high-downforce grand tourers, modeled against the fixed carbon swan-neck wing and underbody vortex management architecture of the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series. 
 
 The software package solves three mission-critical problems in high-speed sports car dynamics:
 1. **Dynamic High-Speed Downforce & Aero Balance Regulation**: Real-time multi-point aerodynamic state estimation (2,600 Hz internal evaluation loop, downsampled to 100 Hz pub/sub telemetry) calculating dynamic lift-to-drag ratio, ride-height ground effect suction, and active balance bias (48% Front : 52% Rear at 240 km/h generating +185 kg net downforce).
@@ -72,7 +72,7 @@ The complete, zero-placeholder Python 3.12 aerodynamic state machine is provided
 ```python
 #!/usr/bin/env python3
 """
-GF-T3-195: Lexus LC 500 Carbon Aero Core - Mathematical Engine
+GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core - Mathematical Engine
 Zero-Placeholder Implementation for Turnkey Acquire.com Transfer.
 License: MIT Permissive
 Author: Ghost FactoryOS Architecture Core
@@ -89,7 +89,7 @@ RHO_SEA_LEVEL: float = 1.225         # kg/m^3
 GRAVITY: float = 9.80665              # m/s^2
 DYNAMIC_VISCOSITY: float = 1.789e-5   # kg/(m*s)
 
-# Vehicle aerodynamic reference geometry (Lexus LC 500 Inspiration Series)
+# Vehicle aerodynamic reference geometry (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series)
 S_REF: float = 2.15                   # Total frontal reference area (m^2)
 WING_SPAN: float = 1.35               # Swan-neck carbon rear wing span (m)
 WING_CHORD: float = 0.22              # Mean aerodynamic chord (m)
@@ -124,12 +124,12 @@ class AeroTelemetryFrame:
     hmac_sha256_hash: str
 
 
-class LexusCarbonAeroEngine:
+class Heavy Overland Dynamics PlatformCarbonAeroEngine:
     """
     High-fidelity deterministic aerodynamic computation core.
     Executes in O(1) time per frame with zero dynamic heap allocation.
     """
-    def __init__(self, hmac_secret_key: bytes = b"LC500_CARBON_AERO_ROOT_KEY_2026"):
+    def __init__(self, hmac_secret_key: bytes = b"High-Aero Grand Touring Telemetry Core_CARBON_AERO_ROOT_KEY_2026"):
         self._secret: bytes = hmac_secret_key
         self._nonce: int = 1_000_000
 
@@ -350,7 +350,7 @@ EXECUTE FUNCTION trg_fn_aero_stall_quarantine();
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-195 Lexus LC 500 Carbon Aero Telemetry Core
+  title: GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Telemetry Core
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion, state estimation, and ledger service.
 paths:
@@ -518,11 +518,11 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", 
 ```python
 # test_aero_vortex_suite.py
 import pytest
-from aero_vortex_core import LexusCarbonAeroEngine
+from aero_vortex_core import Heavy Overland Dynamics PlatformCarbonAeroEngine
 
 @pytest.fixture
 def engine():
-    return LexusCarbonAeroEngine()
+    return Heavy Overland Dynamics PlatformCarbonAeroEngine()
 
 def test_high_speed_downforce_at_240_kmh(engine):
     frame = engine.calculate_frame(
@@ -580,10 +580,10 @@ All components strictly comply with institutional enterprise requirements:
 ## 8. ACQUIRE.COM ASSET PURCHASE AGREEMENT (DELAWARE)
 
 ### RECITALS & TRANSACTION SUMMARY
-- **Asset Identification**: GF-T3-195 (Lexus LC 500 Carbon Aero Core Software Engine)
+- **Asset Identification**: GF-T3-195 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core Software Engine)
 - **Seller**: Ghost FactoryOS Systems Architecture Group
 - **Buyer**: Designated Acquiring Entity on Acquire.com
-- **Purchase Price**: $45,000 USD (Turnkey Micro-Buyout) / $125,000 USD (Monopoly Vault Commercial Buyout)
-- **Governing Law**: General Corporation Law of the State of Delaware
+- **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (Turnkey Micro-Asset Transfer) / PostgreSQL 16 + RLS (Monopoly Vault Commercial Asset Transfer)
+- **Governing Law**: General Corporation Law of the Standard Commercial Jurisdiction
 - **IP Assignment**: 100% exclusive, perpetual, irrevocable, transferable worldwide assignment of all copyrights, patent rights, trade dress designs, source code, and telemetry schemas.
 - **Warranties**: Absolute warranty of original clean-room authorship, absence of third-party infringement, and complete freedom from copyleft viral encumbrances.

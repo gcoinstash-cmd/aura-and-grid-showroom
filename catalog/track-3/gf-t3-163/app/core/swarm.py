@@ -1,7 +1,7 @@
 """
 Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-163 (Kinetic Terrain Swarm)
 Core Module: Distributed Raft/Gossip Consensus, Vector Clock Lattice & Byzantine Isolation
-Vertical: Edge AI Swarms & Rugged Mesh Autonomy (Lexus GX 550 Overtrail+ Spec)
+Vertical: Edge AI Swarms & Rugged Mesh Autonomy (Heavy Overland Dynamics Platform Spec)
 License: Apache-2.0 / MIT Clean-Room Permissive
 """
 
@@ -42,7 +42,7 @@ class TerrainMode(str, enum.Enum):
 
 @dataclass
 class EKDSSArticulation:
-    """Electronic-Kinetic Dynamic Suspension System (Lexus GX 550 Overtrail+ Spec)"""
+    """Electronic-Kinetic Dynamic Suspension System (Heavy Overland Dynamics Platform Spec)"""
     fl_stroke_mm: float = 320.0  # 0 to 640mm total travel
     fr_stroke_mm: float = 315.0
     rl_stroke_mm: float = 330.0
@@ -309,7 +309,7 @@ class SwarmNode:
         if ack_count >= majority_needed:
             self.commit_index = entry.index
             self.last_applied = entry.index
-            # Apply side effects (e.g. E-KDSS suspension or MTS mode change)
+            # Apply side effects (e.g. Dynamic Kinetic Suspension Telemetry suspension or MTS mode change)
             self._apply_command(entry)
             return entry
         return None
@@ -326,7 +326,7 @@ class SwarmNode:
         return True
 
     def _apply_command(self, entry: LogEntry):
-        """Applies committed command to Lexus GX 550 Overtrail+ vehicle actuators"""
+        """Applies committed command to Heavy Overland Dynamics Platform vehicle actuators"""
         if entry.command == "MTS_MODE_CHANGE":
             mode_str = entry.payload.get("mode", "ROCK")
             try:
@@ -355,7 +355,7 @@ class SwarmCluster:
         self._initialize_12_node_convoy()
 
     def _initialize_12_node_convoy(self):
-        """Constructs 12 rugged edge nodes tailored to Lexus GX 550 Overtrail+ spec"""
+        """Constructs 12 rugged edge nodes tailored to Heavy Overland Dynamics Platform spec"""
         roles_distribution = [
             (VehicleRole.LEAD_RECON, 2),       # OVT-01, OVT-02
             (VehicleRole.DYNAMIC_ANCHOR, 6),   # OVT-03 through OVT-08

@@ -24,7 +24,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-192
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          TX 550h+ DRS CORE
+          High-Output Multi-Node Core DRS CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -33,10 +33,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus TX 550h+ DIRECT4 DRS Core
+        Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
-        Turnkey micro-APA deliverable with Dynamic Rear Steering crab-angle arbitration, DIRECT4 PHEV e-Axle vectoring, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA deliverable with Dynamic Rear Steering crab-angle arbitration, DUAL_VECTOR_TORQUE PHEV e-Axle vectoring, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* c) Action Buttons (STRICT SINGLE HORIZONTAL ROW, NEVER VERTICALLY STACKED) */}
@@ -90,14 +90,14 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <span className="text-slate-300 font-medium">
-          Buyout: <strong className="text-white font-bold font-mono">$45,000 USD</strong>
+          Execution: <strong className="text-amber-400 font-mono font-bold">20 kHz</strong>
         </span>
         <span className="text-slate-600 font-bold" aria-hidden="true">|</span>
         <span className="text-slate-300 font-medium">
-          Enterprise: <strong className="text-emerald-400 font-bold font-mono">$125,000 USD</strong>
+          Moat: <strong className="text-emerald-400 font-mono font-bold">PostgreSQL 16</strong>
         </span>
         <span className="text-slate-600 font-bold" aria-hidden="true">|</span>
         <span className="text-slate-300 font-medium">

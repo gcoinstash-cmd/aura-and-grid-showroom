@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
  * Steer-by-Wire Simulation Scenario Modal
  */
 

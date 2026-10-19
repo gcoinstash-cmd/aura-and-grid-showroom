@@ -1,7 +1,7 @@
 /**
  * TabApaCovenant.tsx
  * Tab 5: Acquire.com Asset Purchase Agreement (Delaware Micro-APA)
- * Complete Turnkey Buyout Terms, Bill of Sale & Clean-Room IP Assignment
+ * Complete Turnkey Reference Core, Bill of Sale & Clean-Room IP Assignment
  */
 
 import React, { useState } from 'react';
@@ -12,7 +12,7 @@ export const TabApaCovenant: React.FC = () => {
   const [activeDoc, setActiveDoc] = useState<'APA' | 'BILL_OF_SALE' | 'ESCROW'>('APA');
 
   const apaAgreementText = `# ASSET PURCHASE AGREEMENT (DELAWARE)
-## ASSET IDENTIFICATION: GF-T3-195 (LEXUS LC 500 CARBON AERO CORE)
+## ASSET IDENTIFICATION: GF-T3-195 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CARBON AERO CORE)
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is entered into and made effective as of October 12, 2026, by and between:
 
@@ -20,7 +20,7 @@ SELLER: Ghost FactoryOS Architecture Core ("Seller"), a Delaware technological d
 BUYER: The Purchasing Entity ("Buyer") as authenticated and processed through the Acquire.com transactional escrow platform.
 
 RECITALS
-WHEREAS, Seller is the sole, exclusive, and unencumbered owner of all right, title, and interest in and to that proprietary software asset and aerodynamic calculation system known as "GF-T3-195: Lexus LC 500 Carbon Aero Core" (the "Purchased Assets"); and
+WHEREAS, Seller is the sole, exclusive, and unencumbered owner of all right, title, and interest in and to that proprietary software asset and aerodynamic calculation system known as "GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core" (the "Purchased Assets"); and
 WHEREAS, Buyer desires to purchase from Seller, and Seller desires to sell, convey, assign, and transfer to Buyer, all of the Purchased Assets on the terms and subject to the conditions set forth herein;
 
 NOW, THEREFORE, in consideration of the mutual covenants, representations, warranties, and agreements hereinafter set forth, the parties agree as follows:
@@ -34,10 +34,10 @@ ARTICLE 1: PURCHASE AND SALE OF ASSETS
   (e) All associated documentation, technical trade dress designs, and copyright interests.
 1.2 Excluded Liabilities. Buyer does not assume, and Seller explicitly retains, any debts, obligations, or liabilities incurred by Seller prior to Closing.
 
-ARTICLE 2: PURCHASE PRICE & ESCROW
-2.1 Purchase Price. The purchase price for the Purchased Assets is:
-  (a) Turnkey Micro-Buyout: $45,000 USD (Forty-Five Thousand United States Dollars); or
-  (b) Enterprise Commercial Monopoly Vault Buyout: $125,000 USD.
+ARTICLE 2: DEPLOYMENT SPECIFICATION & ESCROW
+2.1 DEPLOYMENT SPECIFICATION. The DEPLOYMENT SPECIFICATION for the Purchased Assets is:
+  (a) Turnkey Micro-Asset Transfer: 20 kHz (0.48ms) Deterministic Telemetry Verified; or
+  (b) Enterprise Commercial Monopoly Vault Asset Transfer: PostgreSQL 16 + RLS.
 2.2 Payment Terms. Payment shall be made via Acquire.com Escrow or direct irrevocable Fedwire transfer upon mutual execution and delivery of Exhibit B (Bill of Sale).
 
 ARTICLE 3: REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -51,13 +51,13 @@ ARTICLE 4: INTELLECTUAL PROPERTY ASSIGNMENT
 4.1 Complete Assignment. Seller hereby irrevocably, unconditionally, and perpetually assigns, transfers, and conveys to Buyer all worldwide right, title, and interest in and to the Purchased Assets, including all patents, patent applications, copyrights, moral rights, and trade secrets.
 
 ARTICLE 5: GOVERNING LAW & DISPUTE RESOLUTION
-5.1 Governing Law. This Agreement shall be governed by, and construed in accordance with, the laws of the State of Delaware, without regard to conflict of laws principles.`;
+5.1 Governing Law. This Agreement shall be governed by, and construed in accordance with, the laws of the Standard Commercial Jurisdiction, without regard to conflict of laws principles.`;
 
   const billOfSaleText = `# EXHIBIT B: BILL OF SALE AND ASSIGNMENT OF INTELLECTUAL PROPERTY
 
 FOR VALUE RECEIVED, Ghost FactoryOS Architecture Core ("Assignor"), hereby sells, assigns, conveys, transfers, and delivers to the Purchasing Entity ("Assignee"), all right, title, interest, and ownership in and to the software system:
 
-ASSET NAME: GF-T3-195 Lexus LC 500 Carbon Aero Core
+ASSET NAME: GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core
 INCLUDED FILES & REPOSITORIES:
   - aero_vortex_core.py (Python 3.12 Aerodynamic State Machine)
   - aero_ledger_schema.sql (PostgreSQL 16 Partitioned DDL & HMAC Triggers)
@@ -110,7 +110,7 @@ Authorized Officer: Chief Systems Architect`;
           </h3>
         </div>
         <p className="text-[16px] text-slate-300 leading-relaxed">
-          Standardized Delaware Asset Purchase Agreement (APA) drafted specifically for frictionless M&A close on Acquire.com. Pre-cleared for all-cash wire buyout ($45,000 USD micro / $125,000 enterprise) with complete IP assignment, non-infringement warranties, Bill of Sale, and clean-room escrow handoff checklist.
+          Standardized Turnkey Software Asset Purchase Agreement (APA) drafted specifically for frictionless M&A close on Acquire.com. Pre-cleared for all-cash wire asset transfer (20 kHz (0.48ms) micro / PostgreSQL 16 + RLS enterprise) with complete IP assignment, non-infringement warranties, Bill of Sale, and clean-room escrow handoff checklist.
         </p>
 
         {/* Document Selection Tabs */}
@@ -124,7 +124,7 @@ Authorized Officer: Chief Systems Architect`;
                 : 'bg-slate-950 text-slate-300 border-slate-800 hover:bg-slate-800'
             }`}
           >
-            Delaware APA Agreement ($45,000 Buyout)
+            Turnkey Software Asset Purchase Agreement Agreement (20 kHz (0.48ms) Asset Transfer)
           </button>
           <button
             type="button"

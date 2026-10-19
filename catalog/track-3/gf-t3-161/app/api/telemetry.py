@@ -196,7 +196,7 @@ if HAS_FASTAPI:
     app = FastAPI(
         title="GF-T3-161 ChronoVector Autonomous Guidance Engine",
         version="4.1.0",
-        description="Lexus Digital Dealership F1 Skunkworks Telemetry Engine with 6-DoF EKF State Estimation",
+        description="Heavy Overland Dynamics Platform Digital Dealership F1 Skunkworks Telemetry Engine with 6-DoF EKF State Estimation",
         openapi_url="/api/v1/openapi.json",
         docs_url="/api/v1/docs",
     )

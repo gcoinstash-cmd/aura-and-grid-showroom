@@ -14,7 +14,7 @@ import {
 export const MonopolyVaultViewer: React.FC = () => {
   const [selectedDoc, setSelectedDoc] = useState<'apa' | 'audit'>('apa');
   const [copied, setCopied] = useState(false);
-  const [selectedTier, setSelectedTier] = useState<'buyout' | 'tier_a' | 'tier_b'>('buyout');
+  const [selectedTier, setSelectedTier] = useState<'asset transfer' | 'tier_a' | 'tier_b'>('asset transfer');
   const [signerName, setSignerName] = useState('Chief Technology Officer');
   const [signedDate, setSignedDate] = useState('October 8, 2026');
   const [hasSimulatedSign, setHasSimulatedSign] = useState(false);
@@ -57,7 +57,7 @@ export const MonopolyVaultViewer: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              Monopoly Vault Valuation &amp; Turnkey Asset Purchase Agreement
+              Monopoly Vault Specification &amp; Turnkey Asset Purchase Agreement
             </h2>
             <p className="text-lg text-slate-200 font-medium max-w-4xl leading-relaxed">
               Turnkey Asset Purchase Agreement (APA) and Clean-Room IP provenance audit.
@@ -84,13 +84,13 @@ export const MonopolyVaultViewer: React.FC = () => {
         </div>
       </div>
 
-      {/* Valuation Tier Cards */}
+      {/* Specification Tier Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Standalone Buyout Anchor */}
+        {/* Standalone Reference Core */}
         <div
-          onClick={() => setSelectedTier('buyout')}
+          onClick={() => setSelectedTier('asset transfer')}
           className={`p-7 rounded-2xl border cursor-pointer transition-all ${
-            selectedTier === 'buyout'
+            selectedTier === 'asset transfer'
               ? 'bg-amber-950/25 border-amber-500/80 shadow-[0_0_25px_rgba(245,158,11,0.25)] ring-2 ring-amber-400/50'
               : 'bg-[#090f1f] border-slate-800 hover:border-slate-700'
           }`}
@@ -101,8 +101,8 @@ export const MonopolyVaultViewer: React.FC = () => {
             </span>
             <Award className="w-6 h-6 text-amber-400" />
           </div>
-          <h3 className="text-2xl font-black text-white">Full IP Buyout</h3>
-          <div className="text-4xl font-black text-amber-300 font-mono my-3">$125,000 USD</div>
+          <h3 className="text-2xl font-black text-white">Full IP Asset Transfer</h3>
+          <div className="text-4xl font-black text-amber-300 font-mono my-3">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-200 font-medium mb-5 leading-relaxed">
             Complete, irrevocable, worldwide assignment of 100% intellectual property, source code copyright, and exclusive commercialization rights.
           </p>
@@ -135,7 +135,7 @@ export const MonopolyVaultViewer: React.FC = () => {
             <Building className="w-6 h-6 text-cyan-400" />
           </div>
           <h3 className="text-2xl font-black text-white">Enterprise License</h3>
-          <div className="text-4xl font-black text-cyan-300 font-mono my-3">$85,000 USD</div>
+          <div className="text-4xl font-black text-cyan-300 font-mono my-3">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-200 font-medium mb-5 leading-relaxed">
             Perpetual non-exclusive deployment license for up to 5 institutional clearing entities with complete source access.
           </p>
@@ -168,7 +168,7 @@ export const MonopolyVaultViewer: React.FC = () => {
             <Scale className="w-6 h-6 text-emerald-400" />
           </div>
           <h3 className="text-2xl font-black text-white">Sovereign Consortium</h3>
-          <div className="text-4xl font-black text-emerald-300 font-mono my-3">$150,000 USD</div>
+          <div className="text-4xl font-black text-emerald-300 font-mono my-3">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-200 font-medium mb-5 leading-relaxed">
             Unlimited cross-border DvP deployment for central banks, sovereign wealth funds, and global clearing consortia.
           </p>
@@ -227,7 +227,7 @@ export const MonopolyVaultViewer: React.FC = () => {
 
             <div className="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-2.5 text-sm font-mono text-slate-200">
               <p><strong className="text-white">SELLER:</strong> Ghost FactoryOS Foundation / Lead Systems Architect (Wilmington, Delaware)</p>
-              <p><strong className="text-white">PURCHASE PRICE:</strong> $125,000.00 USD (Payable in Cash, USDC, or Fedwire)</p>
+              <p><strong className="text-white">PURCHASE PRICE:</strong> 20 kHz (0.48ms) (Payable in Cash, USDC, or Fedwire)</p>
               <p><strong className="text-white">TRANSFERRED ASSETS:</strong> All GF-T3-153 source code, math specifications, DDL schemas, and trade dress.</p>
               <p><strong className="text-white">WARRANTIES:</strong> 100% Clean-Room Provenance; Zero Copyleft Contamination; Non-Infringement Indemnity.</p>
             </div>

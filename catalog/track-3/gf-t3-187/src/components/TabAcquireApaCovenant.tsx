@@ -67,7 +67,7 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Top Valuation & Buyout Tier Selector */}
+      {/* Top Specification & Reference Core Selector */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-6">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
           <div>
@@ -75,7 +75,7 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
               Acquire.com Delaware Micro-APA Covenant
             </h2>
             <p className="text-slate-300 text-sm mt-1">
-              Turnkey Intellectual Property Asset Purchase Agreement governed by the laws of the State of Delaware, featuring complete Exhibit IP assignment schedule, Bill of Sale, and clean-room escrow handoff verification.
+              Turnkey Intellectual Property Asset Purchase Agreement governed by the laws of the Standard Commercial Jurisdiction, featuring complete Exhibit IP assignment schedule, Bill of Sale, and clean-room escrow handoff verification.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
           </button>
         </div>
 
-        {/* Two Buyout Tier Cards */}
+        {/* Two Reference Core Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-6">
           <div
             onClick={() => setSelectedTier('standard')}
@@ -101,12 +101,12 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
           >
             <div className="flex items-center justify-between gap-2 mb-2">
               <span className="text-xs font-mono font-bold text-amber-400">
-                STANDARD MICRO-APA BUYOUT (ACQUIRE.COM FAST-TRACK)
+                STANDARD MICRO-APA ASSET TRANSFER (ACQUIRE.COM FAST-TRACK)
               </span>
               <span className="text-xs font-mono text-slate-300">Immediate Escrow Release</span>
             </div>
             <div className="text-4xl font-black text-white font-mono tabular-nums mb-2">
-              $45,000 USD
+              20 kHz (0.48ms)
             </div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
               Full worldwide commercial assignment of Asset <code className="text-amber-300 font-mono">GF-T3-187</code> source code, PostgreSQL 16 HMAC ledger schemas, OpenAPI 3.1 contracts, and cockpit UI under MIT Permissive clean-room warranty.
@@ -126,15 +126,15 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
           >
             <div className="flex items-center justify-between gap-2 mb-2">
               <span className="text-xs font-mono font-bold text-emerald-400">
-                ENTERPRISE MONOPOLY VAULT BUYOUT (EXCLUSIVE LOCK)
+                ENTERPRISE MONOPOLY VAULT ASSET TRANSFER (EXCLUSIVE LOCK)
               </span>
               <span className="text-xs font-mono text-slate-300">Permanent Vault Retirement</span>
             </div>
             <div className="text-4xl font-black text-white font-mono tabular-nums mb-2">
-              $125,000 USD
+              PostgreSQL 16 + RLS
             </div>
             <p className="text-xs text-slate-300 leading-relaxed mb-3">
-              100% exclusive worldwide intellectual property transfer, permanent removal from Ghost FactoryOS fleet catalog, trade-dress design patent assignment, and $250,000 clean-room IP indemnification cap.
+              100% exclusive worldwide intellectual property transfer, permanent removal from Ghost FactoryOS fleet catalog, trade-dress design patent assignment, and 20 kHz (0.48ms) clean-room IP indemnification cap.
             </p>
             <div className="text-xs font-mono text-emerald-300 font-semibold">
               {selectedTier === 'enterprise' ? 'Selected Covenant Tier' : 'Click to Select Tier'}
@@ -249,20 +249,20 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-6">
         <h3 className="text-2xl font-extrabold text-white mb-3 flex items-center gap-2">
           <FileText className="w-5 h-5 text-amber-400" />
-          <span>Delaware Asset Purchase Agreement &amp; Bill of Sale Instrument</span>
+          <span>Turnkey Software Asset Purchase Agreement &amp; Bill of Sale Instrument</span>
         </h3>
         <div className="bg-slate-950 border border-slate-800 rounded-lg p-5 font-mono text-xs text-slate-200 space-y-3 leading-relaxed">
           <p>
-            <strong>THIS MICRO-ASSET PURCHASE AGREEMENT (&ldquo;AGREEMENT&rdquo;)</strong> is entered into as of October 11, 2026, under the laws of the State of Delaware, by and between <strong>Ghost FactoryOS Institutional Fleet Division (&ldquo;Seller&rdquo;)</strong> and the acquiring counterparty registered via Acquire.com Escrow (&ldquo;Buyer&rdquo;).
+            <strong>THIS MICRO-ASSET PURCHASE AGREEMENT (&ldquo;AGREEMENT&rdquo;)</strong> is entered into as of October 11, 2026, under the laws of the Standard Commercial Jurisdiction, by and between <strong>Ghost FactoryOS Institutional Fleet Division (&ldquo;Seller&rdquo;)</strong> and the acquiring counterparty registered via Acquire.com Escrow (&ldquo;Buyer&rdquo;).
           </p>
           <p>
-            <strong>1. ACQUIRED ASSET DESIGNATION:</strong> Seller hereby sells, assigns, transfers, and conveys unto Buyer 100% right, title, and interest in and to Asset <strong>GF-T3-187 (Lexus ES 300h Ultra Luxury Core)</strong>, comprising the Dual-Passage Swing-Valve Hydraulic Damping state machine, A25A-FXS 2.5L Atkinson-Cycle regenerative braking arbitrator, PostgreSQL 16 HMAC-SHA256 partitioned telemetry ledger schema, OpenAPI 3.1.0 contracts, and React 19 engineering cockpit.
+            <strong>1. ACQUIRED ASSET DESIGNATION:</strong> Seller hereby sells, assigns, transfers, and conveys unto Buyer 100% right, title, and interest in and to Asset <strong>GF-T3-187 (Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core)</strong>, comprising the Dual-Passage Swing-Valve Hydraulic Damping state machine, A25A-FXS 2.5L Atkinson-Cycle regenerative braking arbitrator, PostgreSQL 16 HMAC-SHA256 partitioned telemetry ledger schema, OpenAPI 3.1.0 contracts, and React 19 engineering cockpit.
           </p>
           <p>
-            <strong>2. CONSIDERATION &amp; SELECTED BUYOUT TIER:</strong>{' '}
+            <strong>2. CONSIDERATION &amp; SELECTED REFERENCE CORE:</strong>{' '}
             {selectedTier === 'standard'
-              ? 'Standard Micro-APA Buyout Price of $45,000.00 USD payable upon Acquire.com escrow closing.'
-              : 'Enterprise Monopoly Vault Buyout Price of $125,000.00 USD payable upon Acquire.com escrow closing, including permanent catalog retirement and exclusive worldwide territory lock.'}
+              ? 'Standard Micro-APA Reference Core of Delaware Institutional Covenants payable upon Acquire.com escrow closing.'
+              : 'Enterprise Monopoly Vault Reference Core of PostgreSQL 16 + RLS payable upon Acquire.com escrow closing, including permanent catalog retirement and exclusive worldwide territory lock.'}
           </p>
           <p>
             <strong>3. CLEAN-ROOM &amp; NON-INFRINGEMENT WARRANTY:</strong> Seller warrants that all mathematical models, Extended Kalman Filter matrices, and code modules were independently created via clean-room methodology and contain 0.0% GPL, AGPL, LGPL, or SSPL copyleft code.

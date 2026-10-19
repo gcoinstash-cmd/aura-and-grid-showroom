@@ -1,6 +1,6 @@
 {
   "name": "ChronosRisk Engine // GF-T3-152 (export) ",
-  "description": "Real-Time Portfolio Value-at-Risk (VaR), Expected Shortfall (CVaR), and Historical Shock Simulation Core under the 70/30 Protocol.",
+  "description": "Real-Time Portfolio Index-at-Risk (VaR), Expected Shortfall (CVaR), and Historical Shock Simulation Core under the 70/30 Protocol.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

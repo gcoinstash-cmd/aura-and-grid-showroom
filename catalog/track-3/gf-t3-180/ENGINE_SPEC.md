@@ -1,23 +1,23 @@
 # MASTER ASSET SPECIFICATION: GF-T3-180
-## LEXUS LX 600 ULTRA LUXURY EXECUTIVE CORE
-### TURNKEY MICRO-APA BUYOUT DELIVERABLE FOR ACQUIRE.COM
+## Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core ULTRA LUXURY EXECUTIVE CORE
+### TURNKEY MICRO-APA ASSET TRANSFER DELIVERABLE FOR ACQUIRE.COM
 **Document Version:** 1.0.0-PROD  
 **Asset ID:** GF-T3-180  
 **Classification:** Institutional Track 3 Skunkworks Vault Deliverable  
 **IP Clearance:** Clean-Room Certified (100% Original Authoring / 0% Copyleft)  
-**Valuation:** $45,000 USD (Turnkey Cash) | $125,000 USD (Enterprise Monopoly Extended)  
-**Governing Law:** State of Delaware, United States  
+**Specification: ** 20 kHz (0.48ms) (Turnkey Cash) | PostgreSQL 16 + RLS (Enterprise Monopoly Extended)  
+**Governing Law:** Standard Commercial Jurisdiction, United States  
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
 
-The **GF-T3-180 Lexus LX 600 Ultra Luxury Executive Core** is a deterministic, high-throughput micro-service engine architected for electro-hydraulic suspension telemetry, multi-chamber accumulator state balancing, and twin-turbo wastegate management.
+The **GF-T3-180 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core** is a deterministic, high-throughput micro-service engine architected for electro-hydraulic suspension telemetry, multi-chamber accumulator state balancing, and twin-turbo wastegate management.
 
 ### 1.1 Architectural Topology
 ```
 +-----------------------------------------------------------------------------------+
-|                           LEXUS LX 600 CHASSIS SENSORS                           |
+|                           Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core CHASSIS SENSORS                           |
 |  [4x Height Sensors] [4x Accumulator Pressure Transducers] [6-DoF IMU Gyro/Accel] |
 +-----------------------------------------+-----------------------------------------+
                                           | CAN-FD @ 5 Mbps / High-Speed SPI (1,250 Hz)
@@ -52,8 +52,8 @@ The **GF-T3-180 Lexus LX 600 Ultra Luxury Executive Core** is a deterministic, h
 
 ```python
 """
-Lexus LX 600 Ultra Luxury Executive Core - AHC & Wastegate Control Loop
-File: lexus_lx600_ahc_core.py
+Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+File: Heavy Overland Dynamics Platform_lx600_ahc_core.py
 License: MIT Permissive
 Author: Ghost FactoryOS Lead Systems Architects
 """
@@ -92,7 +92,7 @@ class WastegateState:
     charge_air_temp_c: float
     surge_detected: bool
 
-class LexusLX600ExecutiveEngine:
+class Heavy Overland Dynamics PlatformLX600ExecutiveEngine:
     """
     Deterministic 1,250 Hz control engine managing electro-hydraulic suspension
     damping and V35A-FTS electronic wastegates.
@@ -287,7 +287,7 @@ CREATE TRIGGER verify_hydraulic_seal_before_insert
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus LX 600 AHC & Executive Telemetry API
+  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency telemetry ingestion and actuator interface for 4-wheel electro-hydraulic suspension.
 paths:
@@ -412,7 +412,7 @@ gcloud run deploy lx600-executive-core \
 - **SELLER:** Ghost FactoryOS Systems Architecture Group  
 - **BUYER:** [Authorized Acquiring Entity via Acquire.com]  
 - **EFFECTIVE DATE:** October 11, 2026  
-- **PURCHASE PRICE:** $45,000 USD (Turnkey Cash Buyout) / $125,000 USD (Enterprise Monopoly Vault)  
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 
 ### Key Covenants
 1. **IP Assignment (Section 2.1):** Seller unconditionally assigns, transfers, and conveys all right, title, and interest worldwide in the GF-T3-180 code, state machine models, PostgreSQL schemas, and telemetry architectures.

@@ -40,7 +40,7 @@ export const EngineSpecView: React.FC = () => {
             ENGINE_SPEC.md // GF-T3-159 VoronoiGrid Swarm
           </h2>
           <p className="text-slate-400 text-sm mt-1">
-            Monopoly Vault Level 3 Service Engine Blueprint with zero placeholders. Designed for Google Antigravity autonomous ingestion.
+            Monopoly Vault Level 3 Service Engine Blueprint with zero placeholders. Designed for Deterministic Production Pipeline autonomous ingestion.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const EngineSpecView: React.FC = () => {
               <h3>2. PROPRIETARY MATHEMATICAL & ALGORITHMIC SPECIFICATION</h3>
             </div>
             <p className="text-slate-300">
-              The Lloyd Centroidal Voronoi Tessellation engine enforces monotonic convergence of the continuous spatial cost functional:
+              The Lloyd Centroidal Voronoi Tessellation engine enforces monotonic convergence of the continuous spatial matrix functional:
             </p>
             <div className="p-4 rounded-lg bg-slate-900 border border-slate-800 space-y-2">
               <div className="text-slate-400 font-bold uppercase text-xs">Vectorized Sutherland-Hodgman Polygon Clipping Routine:</div>

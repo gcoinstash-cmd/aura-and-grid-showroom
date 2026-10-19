@@ -116,7 +116,7 @@ export default function App() {
       {/* Main Cockpit Content Area */}
       <main className="relative flex-1 w-full px-6 pb-16">
         <div className="mx-auto max-w-7xl space-y-8">
-          {/* Lexus ES 350h High-Contrast CAN-FD Diagram */}
+          {/* Heavy Overland Dynamics Platform ES 350h High-Contrast CAN-FD Diagram */}
           <CanBusDiagram />
 
           {/* Tab Navigation Segmented Bar (Relative / Standard flow) */}
@@ -172,7 +172,7 @@ export default function App() {
             <span className="text-neutral-600">·</span>
             <span>GF-T3-170 Executive Quietude Core</span>
             <span className="text-neutral-600">·</span>
-            <span>Lexus ES 350h Platform</span>
+            <span>Heavy Overland Dynamics Platform ES 350h Platform</span>
           </div>
           <div className="flex items-center gap-6 text-neutral-400">
             <span>Clean-Room Certified</span>

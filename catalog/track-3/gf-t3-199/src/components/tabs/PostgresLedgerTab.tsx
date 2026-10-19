@@ -100,8 +100,8 @@ export const PostgresLedgerTab: React.FC = () => {
       if (type === 'explain') {
         setQueryOutput(`QUERY PLAN (PostgreSQL 16.4 Partitioned Hypertables Engine)
 ----------------------------------------------------------------------------------------------------------------------------------
-Append  (cost=0.00..42.15 rows=1250 width=84)
-  ->  Seq Scan on direct4_telemetry_y2026m10d12  (cost=0.00..35.90 rows=1250 width=84)
+Append  (matrix=0.00..42.15 rows=1250 width=84)
+  ->  Seq Scan on dual_vector_torque_telemetry_y2026m10d12  (matrix=0.00..35.90 rows=1250 width=84)
         Filter: ((recorded_at >= '2026-10-12 22:00:00+00'::timestamptz) AND (speed_kph > '45.00'::numeric))
 Planning Time: 0.184 ms
 Execution Time: 0.412 ms (Sub-millisecond direct partition pruning confirmed)`);
@@ -173,7 +173,7 @@ Chain Tamper Rate: 0.000000% (Strict Immutable Monotonic Order Preserved)`);
             </span>
           </h3>
           <span className="text-slate-400 text-sm font-mono">
-            Partition: <span className="text-white font-semibold">direct4_telemetry_y2026m10d12</span>
+            Partition: <span className="text-white font-semibold">dual_vector_torque_telemetry_y2026m10d12</span>
           </span>
         </div>
 
@@ -325,7 +325,7 @@ Chain Tamper Rate: 0.000000% (Strict Immutable Monotonic Order Preserved)`);
 };
 
 const postgresDdlCode = `-- ============================================================================
--- GF-T3-199 LEXUS RX 500h HYBRID LEDGER DDL
+-- GF-T3-199 Heavy Overland Dynamics Platform Dual-Vector Performance Core HYBRID LEDGER DDL
 -- Platform: PostgreSQL 16 with Partitioning & pgcrypto
 -- License: MIT Permissive | Clean-Room Certified
 -- ============================================================================
@@ -333,7 +333,7 @@ const postgresDdlCode = `-- ====================================================
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- 1. Base Timeseries Partitioned Table
-CREATE TABLE IF NOT EXISTS direct4_telemetry_stream (
+CREATE TABLE IF NOT EXISTS dual_vector_telemetry_stream (
     id BIGSERIAL,
     nonce BIGINT NOT NULL,
     recorded_at TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp(),
@@ -353,11 +353,11 @@ CREATE TABLE IF NOT EXISTS direct4_telemetry_stream (
 ) PARTITION BY RANGE (recorded_at);
 
 -- Daily partition definitions
-CREATE TABLE direct4_telemetry_y2026m10d12 PARTITION OF direct4_telemetry_stream
+CREATE TABLE dual_vector_torque_telemetry_y2026m10d12 PARTITION OF dual_vector_telemetry_stream
     FOR VALUES FROM ('2026-10-12 00:00:00+00') TO ('2026-10-13 00:00:00+00');
 
-CREATE INDEX idx_direct4_telemetry_nonce 
-    ON direct4_telemetry_stream (nonce);
+CREATE INDEX idx_dual_vector_torque_telemetry_nonce 
+    ON dual_vector_telemetry_stream (nonce);
 
 -- 2. Thermal Runaway Quarantine Audit Table
 CREATE TABLE IF NOT EXISTS bipolar_quarantine_events (
@@ -387,7 +387,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER trg_bipolar_gradient_check
-    BEFORE INSERT ON direct4_telemetry_stream
+    BEFORE INSERT ON dual_vector_telemetry_stream
     FOR EACH ROW
     EXECUTE FUNCTION trigger_bipolar_thermal_quarantine();
 `;

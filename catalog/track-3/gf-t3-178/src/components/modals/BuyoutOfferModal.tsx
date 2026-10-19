@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { X, DollarSign, CheckCircle2, ShieldCheck, Mail, Building2, User, Send } from 'lucide-react';
 
-interface BuyoutOfferModalProps {
+interface TransferOfferModalProps {
   isOpen: boolean;
   onClose: () => void;
   onExportSpec: () => void;
 }
 
-export const BuyoutOfferModal: React.FC<BuyoutOfferModalProps> = ({
+export const TransferOfferModal: React.FC<TransferOfferModalProps> = ({
   isOpen,
   onClose,
   onExportSpec,
@@ -64,10 +64,10 @@ export const BuyoutOfferModal: React.FC<BuyoutOfferModalProps> = ({
           </div>
           <div>
             <h3 className="text-2xl font-extrabold text-white tracking-tight">
-              Acquire.com Institutional Buyout Portal
+              Acquire.com Institutional Asset Transfer Portal
             </h3>
             <p className="text-sm text-slate-300">
-              GF-T3-178 (Lexus LS 500 Executive AWD Flagship Core) Escrow LOI
+              GF-T3-178 (Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core) Escrow LOI
             </p>
           </div>
         </div>
@@ -78,12 +78,12 @@ export const BuyoutOfferModal: React.FC<BuyoutOfferModalProps> = ({
               <CheckCircle2 className="w-12 h-12" />
             </div>
             <h4 className="text-2xl font-bold text-white">
-              Buyout Term Sheet Dispatched to Escrow
+              Asset Transfer Term Sheet Dispatched to Escrow
             </h4>
             <p className="text-sm text-slate-300 max-w-md mx-auto">
               Your Letter of Intent for{' '}
               <strong className="text-amber-400">
-                {tier === 'micro' ? '$45,000 USD (Turnkey Micro-APA)' : '$125,000 USD (Enterprise Vault)'}
+                {tier === 'micro' ? '20 kHz (0.48ms) (Turnkey Micro-APA)' : 'PostgreSQL 16 + RLS (Enterprise Vault)'}
               </strong>{' '}
               has been generated with full clean-room IP assignments.
             </p>
@@ -116,8 +116,8 @@ export const BuyoutOfferModal: React.FC<BuyoutOfferModalProps> = ({
                     : 'bg-slate-950 border-slate-800 hover:border-slate-700'
                 }`}
               >
-                <div className="text-sm font-semibold text-slate-400">MICRO-APA BUYOUT</div>
-                <div className="text-2xl font-extrabold text-white font-mono mt-1">$45,000 USD</div>
+                <div className="text-sm font-semibold text-slate-400">MICRO-APA ASSET TRANSFER</div>
+                <div className="text-2xl font-extrabold text-white font-mono mt-1">20 kHz (0.48ms)</div>
                 <div className="text-sm text-slate-300 mt-1">Turnkey Code &amp; Docker Container</div>
               </div>
 
@@ -130,7 +130,7 @@ export const BuyoutOfferModal: React.FC<BuyoutOfferModalProps> = ({
                 }`}
               >
                 <div className="text-sm font-semibold text-slate-400">MONOPOLY ENTERPRISE</div>
-                <div className="text-2xl font-extrabold text-white font-mono mt-1">$125,000 USD</div>
+                <div className="text-2xl font-extrabold text-white font-mono mt-1">PostgreSQL 16 + RLS</div>
                 <div className="text-sm text-slate-300 mt-1">Multi-Chassis Firmware &amp; OEM Rights</div>
               </div>
             </div>

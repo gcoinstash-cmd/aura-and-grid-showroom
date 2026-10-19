@@ -93,7 +93,7 @@ export const TabFxLMSCore: React.FC<TabFxLMSCoreProps> = ({ telemetry, setTeleme
               FxLMS Acoustic Inversion & Twin-Turbo Boost Regulator
             </h2>
             <p className="mt-1 text-sm text-slate-300">
-              Real-time secondary-path transfer function estimation $\hat&#123;S&#125;(z)$ injecting inverted anti-phase acoustics into cabin Mark Levinson speakers.
+              Real-time secondary-path transfer function estimation $\hat&#123;S&#125;(z)$ injecting inverted anti-phase acoustics into cabin Acoustic Noise-Inversion Transducer speakers.
             </p>
           </div>
 

@@ -174,7 +174,7 @@ export const TimescaleLedgerTab: React.FC<TimescaleLedgerTabProps> = ({
                     <th className="py-3 px-4 font-bold">Timestamp</th>
                     <th className="py-3 px-4 font-bold">IMU Tick / State Hash</th>
                     <th className="py-3 px-4 font-bold">4-Wheel Speeds [FL,FR,RL,RR]</th>
-                    <th className="py-3 px-4 font-bold">DIRECT4 TQ</th>
+                    <th className="py-3 px-4 font-bold">DUAL_VECTOR_TORQUE TQ</th>
                     <th className="py-3 px-4 font-bold">SHA-256 Digest</th>
                     <th className="py-3 px-4 font-bold">Status</th>
                   </tr>

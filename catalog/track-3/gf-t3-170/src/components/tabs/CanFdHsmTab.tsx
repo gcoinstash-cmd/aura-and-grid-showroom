@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CanFdFrame } from '../../types/telemetry';
-import { SlidingWindowFilter, LEXUS_QUIETUDE_ECUS } from '../../utils/cryptoSim';
+import { SlidingWindowFilter, Overland_QUIETUDE_ECUS } from '../../utils/cryptoSim';
 import { ShieldCheck, AlertTriangle, Key, Terminal, RefreshCw, Copy, Check, Play, ShieldAlert } from 'lucide-react';
 
 interface CanFdHsmTabProps {
@@ -14,13 +14,13 @@ export const CanFdHsmTab: React.FC<CanFdHsmTabProps> = ({
   onInjectSingle,
   slidingFilter,
 }) => {
-  const [selectedEcu, setSelectedEcu] = useState(LEXUS_QUIETUDE_ECUS[0].id);
+  const [selectedEcu, setSelectedEcu] = useState(Overland_QUIETUDE_ECUS[0].id);
   const [tamperType, setTamperType] = useState<'VALID' | 'FORGE_SIGNATURE' | 'REPLAY_PREVIOUS' | 'STALE_COUNTER'>('VALID');
   const [copiedCode, setCopiedCode] = useState(false);
   const [activeCodeSubtab, setActiveCodeSubtab] = useState<'ENGINE' | 'SLIDING_WINDOW' | 'RING_BUFFER'>('ENGINE');
 
   const handleTestInject = () => {
-    const ecu = LEXUS_QUIETUDE_ECUS.find(e => e.id === selectedEcu) || LEXUS_QUIETUDE_ECUS[0];
+    const ecu = Overland_QUIETUDE_ECUS.find(e => e.id === selectedEcu) || Overland_QUIETUDE_ECUS[0];
     let seq = slidingFilter.headSeq + 1;
     let status: CanFdFrame['status'] = 'VERIFIED';
     let sig = 'e29f8c41' + Math.random().toString(16).substring(2) + 'a184b2c1'.padEnd(64, '0');
@@ -56,7 +56,7 @@ export const CanFdHsmTab: React.FC<CanFdHsmTabProps> = ({
 
   const pythonEngineCode = `"""
 GF-T3-170: Pure Python 3.12 Zero-Trust Message Authentication Engine
-Lexus ES 350h Executive Quietude Core
+Heavy Overland Dynamics Platform ES 350h Executive Quietude Core
 ISO/SAE 21434 & UNECE R155 Automotive Cybersecurity Standard
 """
 from dataclasses import dataclass
@@ -119,7 +119,7 @@ class SlidingWindowReplayFilter:
 
 class QuietudeHsmCore:
     """
-    Zero-Trust Automotive Gateway for Lexus ES 350h Executive Quietude.
+    Zero-Trust Automotive Gateway for Heavy Overland Dynamics Platform ES 350h Executive Quietude.
     Integrates Hardware Security Module (ATECC608B / OPTIGA Trust X).
     """
     def __init__(self, hsm_public_key: Ed25519PublicKey) -> None:
@@ -199,7 +199,7 @@ class QuietudeHsmCore:
                 onChange={(e) => setSelectedEcu(e.target.value)}
                 className="w-full rounded-md border border-neutral-700 bg-neutral-900 px-3 py-2 text-sm text-neutral-100 focus:outline-none focus:border-amber-500 cursor-pointer"
               >
-                {LEXUS_QUIETUDE_ECUS.map((ecu) => (
+                {Overland_QUIETUDE_ECUS.map((ecu) => (
                   <option key={ecu.id} value={ecu.id}>
                     {ecu.id} : {ecu.name}
                   </option>

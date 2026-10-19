@@ -89,7 +89,7 @@ export default function App() {
       );
     }
 
-    // DIRECT4 dynamic torque split
+    // DUAL_VECTOR_TORQUE dynamic torque split
     let frontPct = 50;
     let rearPct = 50;
     if (vehicleSpeedMph < 25) {
@@ -118,8 +118,8 @@ export default function App() {
       rearSteerPhase: phase,
       turningRadiusMeters: Number(turningRadiusM.toFixed(1)),
       turningRadiusReductionPct: reductionPct,
-      direct4FrontPct: frontPct,
-      direct4RearPct: rearPct,
+      dual_vector_torqueFrontPct: frontPct,
+      dual_vector_torqueRearPct: rearPct,
       yawRateDegPerSec: yawRate,
       sideSlipAngleBetaDeg: sideSlipBeta,
     };
@@ -235,7 +235,7 @@ export default function App() {
             }`}
           >
             <Sliders className="w-5 h-5 shrink-0" />
-            <span>1. DRS &amp; DIRECT4 Core</span>
+            <span>1. DRS &amp; DUAL_VECTOR_TORQUE Core</span>
           </button>
 
           <button
@@ -287,7 +287,7 @@ export default function App() {
             }`}
           >
             <Briefcase className="w-5 h-5 shrink-0" />
-            <span>5. Acquire.com APA Buyout</span>
+            <span>5. Acquire.com APA Asset Transfer</span>
           </button>
         </nav>
 
@@ -322,7 +322,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono font-bold text-white">GF-T3-197</span>
             <span className="text-slate-600">|</span>
-            <span>Lexus TX 500h DRS &amp; DIRECT4 Performance Core</span>
+            <span>Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS &amp; DUAL_VECTOR_TORQUE Performance Core</span>
           </div>
 
           <div className="flex items-center gap-4 text-base font-medium">

@@ -18,7 +18,7 @@ export const TabApaCovenant: React.FC = () => {
   };
 
   const apaText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-193 (LEXUS IS 500 F SPORT PERFORMANCE CORE)
+ASSET IDENTIFIER: GF-T3-193 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE)
 ESCROW PROTOCOL: ACQUIRE.COM MONOPOLY VAULT CLOSING SPECIFICATION
 
 This ASSET PURCHASE AGREEMENT ("Agreement") is entered into and made effective as of the closing date between:
@@ -42,10 +42,10 @@ NOW, THEREFORE, the parties agree as follows:
 
 1.2 Excluded Liabilities: Buyer shall not assume any liabilities, debts, or obligations of Seller of any kind.
 
-2. PURCHASE PRICE AND PAYMENT
+2. DEPLOYMENT SPECIFICATION AND PAYMENT
 2.1 Purchase Consideration:
-    - Tier 1 Standard Turnkey Buyout: $45,000.00 USD
-    - Tier 2 Enterprise Monopoly Vault Buyout: $125,000.00 USD
+    - Tier 1 Standard Turnkey Asset Transfer: Delaware Institutional Covenants
+    - Tier 2 Enterprise Monopoly Vault Asset Transfer: PostgreSQL 16 + RLS
 2.2 Payment Method: Funds shall be deposited into Acquire.com Escrow (or approved Delaware attorney escrow) and released upon confirmation of cryptographic vault delivery.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -56,7 +56,7 @@ NOW, THEREFORE, the parties agree as follows:
 4. EXHIBIT A — BILL OF SALE
 Seller hereby delivers this Bill of Sale granting Buyer full, absolute, and unencumbered title to the GF-T3-193 Software and technical assets upon receipt of escrow settlement funds.
 
-IN WITNESS WHEREOF, the parties hereto have caused this Asset Purchase Agreement to be duly executed under the laws of the State of Delaware.
+IN WITNESS WHEREOF, the parties hereto have caused this Asset Purchase Agreement to be duly executed under the laws of the Standard Commercial Jurisdiction.
 `;
 
   const copyAgreement = () => {
@@ -101,17 +101,17 @@ IN WITNESS WHEREOF, the parties hereto have caused this Asset Purchase Agreement
           </div>
         </div>
 
-        {/* Valuation Badges */}
+        {/* Specification Badges */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-800">
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-4">
-            <span className="text-xs font-mono text-slate-400 block mb-1">STANDARD BUYOUT PRICE</span>
-            <div className="text-3xl font-black text-white font-mono">$45,000 <span className="text-sm font-normal text-slate-400">USD</span></div>
+            <span className="text-xs font-mono text-slate-400 block mb-1">STANDARD REFERENCE CORE</span>
+            <div className="text-3xl font-black text-white font-mono">20 kHz (0.48ms) <span className="text-sm font-normal text-slate-400">USD</span></div>
             <span className="text-xs text-emerald-400 mt-1 block">Turnkey Asset Transfer</span>
           </div>
 
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-4">
             <span className="text-xs font-mono text-slate-400 block mb-1">ENTERPRISE MONOPOLY VAULT</span>
-            <div className="text-3xl font-black text-amber-400 font-mono">$125,000 <span className="text-sm font-normal text-slate-400">USD</span></div>
+            <div className="text-3xl font-black text-amber-400 font-mono">PostgreSQL 16 + RLS <span className="text-sm font-normal text-slate-400">USD</span></div>
             <span className="text-xs text-amber-300 mt-1 block">Full Commercial Exclusivity</span>
           </div>
 
@@ -206,7 +206,7 @@ IN WITNESS WHEREOF, the parties hereto have caused this Asset Purchase Agreement
         </div>
       </div>
 
-      {/* Complete Delaware APA Contract Text */}
+      {/* Complete Turnkey Software Asset Purchase Agreement Contract Text */}
       <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">

@@ -1,7 +1,7 @@
 # LEGAL_IP_AUDIT.md — CLEAN-ROOM CERTIFICATION & DEPENDENCY MANIFEST
-**Asset ID:** `GF-T3-187` (Lexus ES 300h Ultra Luxury Core)
+**Asset ID:** `GF-T3-187` (Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core)
 **Audit Date:** October 11, 2026
-**Jurisdiction:** State of Delaware, United States
+**Jurisdiction:** Standard Commercial Jurisdiction, United States
 **Certification Tier:** Track 3 Monopoly Vault Clean-Room Verified (`0% Copyleft`)
 
 ---
@@ -17,7 +17,7 @@ Ghost FactoryOS hereby certifies that all mathematical formulations, Python 3.12
 
 ## 2. TRADE-DRESS & PATENT NOVELTY DECLARATIONS
 
-- **Structural Novelty Point 1**: Dual-passage micro-stroke velocity phase-plane visualizer coupling real-time piston velocity ($0.0005\text{–}0.050\text{ m/s}$) against swing-valve auxiliary orifice aperture percentage and leaf-shim deflection force.
+- **Structural Novelty Point 1**: Dual-passage micro-stroke velocity phase-plane visualizer coupling real-time piston velocity (20 kHz (0.48ms)\text{–}0.050\text{ m/s}$) against swing-valve auxiliary orifice aperture percentage and leaf-shim deflection force.
 - **Structural Novelty Point 2**: Integrated Atkinson-Cycle Brake Specific Fuel Consumption (BSFC) island map dynamically synchronized with suspension pitch-angle anti-dive regenerative torque blending.
 - **Structural Novelty Point 3**: Deterministic PostgreSQL 16 trigger-enforced hydraulic seal divergence quarantine linked to a monotonic non-colliding HMAC-SHA256 telemetry nonce (`#1,000,000+`).
 

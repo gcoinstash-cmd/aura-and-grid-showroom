@@ -1,12 +1,12 @@
 export const PYTHON_EKF_CODE = `"""
-GF-T3-168: LEXUS RX 500h F SPORT DYNAMIC PERFORMANCE CORE
+GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
 EXTENDED KALMAN FILTER SENSOR FUSION ENGINE (PYTHON 3.12)
 Clean-room algorithmic implementation fusing 9-DOF IMU, 20Hz GPS RTK,
 and 100Hz 4-wheel pulse telemetry with Dynamic Rear Steering (DRS)
-and DIRECT4 e-Axle torque distribution observer.
+and DUAL_VECTOR_TORQUE e-Axle torque distribution observer.
 
 License: MIT (100% Permissive clean-room provenance)
-Valuation Anchor: $45,000 USD Micro-APA / $125,000 USD Institutional
+Specification Anchor: 20 kHz Execution Loop / PostgreSQL 16 + RLS Institutional
 """
 
 from dataclasses import dataclass
@@ -35,12 +35,12 @@ class WheelTelemetry:
     timestamp_ns: int
     speeds_mps: np.ndarray     # [FL, FR, RL, RR] linear speed at tire radius
     drs_angle_rad: float       # Dynamic Rear Steering angle (-4 deg to +4 deg in rad)
-    direct4_front_nm: float    # Front transverse electric motor torque (Nm)
-    direct4_rear_nm: float     # Rear e-Axle electric motor torque (Nm)
+    dual_vector_torque_front_nm: float    # Front transverse electric motor torque (Nm)
+    dual_vector_torque_rear_nm: float     # Rear e-Axle electric motor torque (Nm)
 
-class LexusDynamicEKF:
+class OverlandDynamicEKF:
     """
-    15-State Error-State / Full Extended Kalman Filter for Lexus RX 500h DIRECT4:
+    15-State Error-State / Full Extended Kalman Filter for Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE:
     State Vector x = [
         p_x, p_y, p_z,          # Position in NED (m)                [0:3]
         v_x, v_y, v_z,          # Velocity in NED (m/s)              [3:6]
@@ -248,7 +248,7 @@ class LexusDynamicEKF:
 `;
 
 export const SQL_TIMESCALEDB_CODE = `-- ====================================================================
--- GF-T3-168: LEXUS RX 500h F SPORT DYNAMIC CORE - TIMESCALE SQL LEDGER
+-- GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC CORE - TIMESCALE SQL LEDGER
 -- PostgreSQL 16 + TimescaleDB Enterprise Time-Series Ledger
 -- Features: Hypertables, Immutable Append-Only Ledger Triggers,
 --           HMAC-SHA256 Cryptographic Integrity, Continuous Rollups.
@@ -287,9 +287,9 @@ CREATE TABLE IF NOT EXISTS vehicle_telemetry_ticks (
     wheel_speed_rr_kmh NUMERIC(6,2) NOT NULL,
     drs_angle_deg NUMERIC(4,2) NOT NULL DEFAULT 0.00,
     
-    -- DIRECT4 Electronic Torque Distribution (Nm)
-    direct4_front_torque_nm NUMERIC(7,1) NOT NULL,
-    direct4_rear_torque_nm  NUMERIC(7,1) NOT NULL,
+    -- DUAL_VECTOR_TORQUE Electronic Torque Distribution (Nm)
+    dual_vector_torque_front_torque_nm NUMERIC(7,1) NOT NULL,
+    dual_vector_torque_rear_torque_nm  NUMERIC(7,1) NOT NULL,
 
     -- Cryptographic Monotonic Chain Fields
     prev_tick_hash CHAR(64) NOT NULL,
@@ -325,8 +325,8 @@ BEGIN
                       NEW.imu_accel_z::text || '|' ||
                       NEW.imu_gyro_z::text || '|' ||
                       NEW.wheel_speed_fl_kmh::text || '|' ||
-                      NEW.direct4_front_torque_nm::text || '|' ||
-                      NEW.direct4_rear_torque_nm::text || '|' ||
+                      NEW.dual_vector_torque_front_torque_nm::text || '|' ||
+                      NEW.dual_vector_torque_rear_torque_nm::text || '|' ||
                       NEW.prev_tick_hash;
 
     -- Compute SHA-256 Digest
@@ -382,8 +382,8 @@ SELECT
     AVG(imu_accel_z) AS avg_az,
     AVG(imu_gyro_z)  AS avg_yaw_rate,
     AVG(0.25 * (wheel_speed_fl_kmh + wheel_speed_fr_kmh + wheel_speed_rl_kmh + wheel_speed_rr_kmh)) AS vehicle_speed_kmh,
-    AVG(direct4_front_torque_nm) AS avg_front_torque_nm,
-    AVG(direct4_rear_torque_nm)  AS avg_rear_torque_nm,
+    AVG(dual_vector_torque_front_torque_nm) AS avg_front_torque_nm,
+    AVG(dual_vector_torque_rear_torque_nm)  AS avg_rear_torque_nm,
     COUNT(*) AS sample_count
 FROM vehicle_telemetry_ticks
 GROUP BY bucket, vehicle_vin
@@ -397,7 +397,7 @@ SELECT add_continuous_aggregate_policy('telemetry_100ms_rollup',
 
 export const OPENAPI_SPEC_YAML = `openapi: 3.1.0
 info:
-  title: GF-T3-168 Lexus RX 500h F SPORT Dynamic Telemetry Core API
+  title: GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Telemetry Core API
   description: High-throughput 1,000 Hz real-time EKF state estimation, raw sensor ingestion, and cryptographic hash chain verification engine.
   version: 1.0.0-PROD
   license:
@@ -442,7 +442,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "LEXUS-RX500H-2026-FSPORT-01"
+            example: "Heavy Overland Dynamics Platform-Dual-Vector Performance Core-2026-FSPORT-01"
       responses:
         '200':
           description: Current estimated state vector and filter health
@@ -509,7 +509,7 @@ components:
 
     SensorSample:
       type: object
-      required: [dt_offset_us, accel_mps2, gyro_rads, wheel_speeds_kmh, drs_angle_deg, direct4_torque_nm]
+      required: [dt_offset_us, accel_mps2, gyro_rads, wheel_speeds_kmh, drs_angle_deg, dual_vector_torque_torque_nm]
       properties:
         dt_offset_us:
           type: integer
@@ -531,7 +531,7 @@ components:
           maxItems: 4
         drs_angle_deg:
           type: number
-        direct4_torque_nm:
+        dual_vector_torque_torque_nm:
           type: array
           items: { type: number }
           minItems: 2
@@ -635,12 +635,12 @@ Chi-square innovation consistency testing, and DRS torque validation.
 
 import pytest
 import numpy as np
-from src.ekf_core import LexusDynamicEKF, IMUReading, GPSRTKReading, WheelTelemetry
+from src.ekf_core import OverlandDynamicEKF, IMUReading, GPSRTKReading, WheelTelemetry
 
 @pytest.fixture
 def ekf_instance():
     """Initializes calibrated EKF instance at 1,000 Hz cycle."""
-    return LexusDynamicEKF(dt=0.001)
+    return OverlandDynamicEKF(dt=0.001)
 
 def test_ekf_stationary_convergence(ekf_instance):
     """
@@ -683,28 +683,28 @@ def test_dynamic_rear_steering_kinematic_coupling(ekf_instance):
         timestamp_ns=2000,
         speeds_mps=np.array([25.0, 25.0, 25.0, 25.0]),
         drs_angle_rad=np.radians(2.5),
-        direct4_front_nm=300.0,
-        direct4_rear_nm=450.0
+        dual_vector_torque_front_nm=300.0,
+        dual_vector_torque_rear_nm=450.0
     )
     residual = ekf_instance.update_wheel_odometry(wheel)
     assert residual.shape == (2,)
     assert np.all(np.isfinite(residual))
 
-def test_direct4_torque_split_boundary_conditions(ekf_instance):
+def test_dual_vector_torque_torque_split_boundary_conditions(ekf_instance):
     """
-    Verifies DIRECT4 torque boundaries (70:30 front bias to 20:80 rear bias).
+    Verifies DUAL_VECTOR_TORQUE torque boundaries (70:30 front bias to 20:80 rear bias).
     """
     front_torque = 150.0
     rear_torque = 600.0
     total = front_torque + rear_torque
     rear_ratio = rear_torque / total
-    assert 0.20 <= rear_ratio <= 0.85, "Torque distribution must observe Lexus DIRECT4 limits"
+    assert 0.20 <= rear_ratio <= 0.85, "Torque distribution must observe Heavy Overland Dynamics Platform DUAL_VECTOR_TORQUE limits"
 `;
 
 export const GCLOUD_DEPLOY_SCRIPT = `#!/usr/bin/env bash
 # ====================================================================
 # GF-T3-168: 1-CLICK PRODUCTION GOOGLE CLOUD RUN DEPLOYMENT HARNESS
-# Deploys the Lexus RX 500h EKF Dynamic Telemetry Core to Google Cloud Run
+# Deploys the Heavy Overland Dynamics Platform Dual-Vector Performance Core EKF Dynamic Telemetry Core to Google Cloud Run
 # with auto-scaling, HTTP/2 streaming, and Cloud SQL connection proxy.
 # ====================================================================
 
@@ -712,7 +712,7 @@ set -euo pipefail
 
 PROJECT_ID="\${GCP_PROJECT_ID:-ghost-factoryos-vault}"
 REGION="\${GCP_REGION:-us-central1}"
-SERVICE_NAME="gf-t3-168-lexus-dynamic-core"
+SERVICE_NAME="gf-t3-168-Heavy Overland Dynamics Platform-dynamic-core"
 IMAGE_TAG="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:v1.0.0-PROD"
 
 echo "===================================================================="

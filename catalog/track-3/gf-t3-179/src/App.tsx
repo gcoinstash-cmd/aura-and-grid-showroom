@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MonroneyBanner } from './components/MonroneyBanner';
 import { TelemetryMetricsStrip } from './components/TelemetryMetricsStrip';
-import { TabDirect4EnergyCore } from './components/tabs/TabDirect4EnergyCore';
+import { TabDualVectorTorqueEnergyCore } from './components/tabs/TabDualVectorTorqueEnergyCore';
 import { TabPostgresLedger } from './components/tabs/TabPostgresLedger';
 import { TabOpenApiContract } from './components/tabs/TabOpenApiContract';
 import { TabCloudRunHarness } from './components/tabs/TabCloudRunHarness';
@@ -45,7 +45,7 @@ export default function App() {
   };
 
   const handleUpdateBias = (front: number, rear: number) => {
-    setBiasRatio({ front, rear });
+    setBiasRatio((prev) => prev.front === front && prev.rear === rear ? prev : { front, rear });
   };
 
   return (
@@ -78,7 +78,7 @@ export default function App() {
               }`}
             >
               <Cpu className="w-4 h-4" />
-              <span>DIRECT4 & PHEV Core</span>
+              <span>DUAL_VECTOR_TORQUE & PHEV Core</span>
             </button>
 
             <button
@@ -138,7 +138,7 @@ export default function App() {
         {/* Tab Content Panes */}
         <div className="relative w-full">
           {activeTab === 'TAB1' && (
-            <TabDirect4EnergyCore
+            <TabDualVectorTorqueEnergyCore
               onUpdateBias={handleUpdateBias}
               triggerSweepSignal={sweepSignal}
             />
@@ -163,7 +163,7 @@ export default function App() {
             <span className="text-slate-300">GF-T3-179 Master Engine</span>
           </div>
           <div className="text-center sm:text-right text-slate-500">
-            Delaware Escrow Protocol · 100% Clean-Room Certified · Turnkey Acquire.com Buyout ($45,000 USD)
+            Delaware Escrow Protocol · 100% Clean-Room Certified · Turnkey Acquire.com Asset Transfer (20 kHz (0.48ms))
           </div>
         </div>
       </footer>

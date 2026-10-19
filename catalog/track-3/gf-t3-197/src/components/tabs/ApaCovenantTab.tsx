@@ -5,8 +5,7 @@
 
 import React, { useState } from 'react';
 import {
-  FileSignature,
-  DollarSign,
+  FileSignature,Deterministic Telemetry Verifiedign,
   Download,
   ShieldCheck,
   Check,
@@ -22,9 +21,9 @@ export const ApaCovenantTab: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState<'TURNKEY' | 'ENTERPRISE'>('TURNKEY');
 
   const apaLegalText = `ASSET PURCHASE AGREEMENT (MICRO-APA)
-JURISDICTION: STATE OF DELAWARE, USA
-TARGET ASSET: GF-T3-197 (Lexus TX 500h F SPORT Performance Core)
-BUYOUT VALUATION: ${selectedPlan === 'TURNKEY' ? '$45,000 USD (Turnkey Micro-APA)' : '$125,000 USD (Enterprise Fleet APA)'}
+JURISDICTION: Standard Commercial Jurisdiction, USA
+TARGET ASSET: GF-T3-197 (Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core)
+ASSET TRANSFER SPECIFICATION: ${selectedPlan === 'TURNKEY' ? '20 kHz (0.48ms) (Turnkey Micro-APA)' : 'PostgreSQL 16 + RLS (Enterprise Fleet APA)'}
 ESCROW PLATFORM: Acquire.com Escrow / Escrow.com Automotive IP Protocol
 
 1. ASSET TRANSFER & EXHIBIT A SCHEDULE:
@@ -67,7 +66,7 @@ Seller expressly warrants:
         <div>
           <h2 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <Briefcase className="w-8 h-8 text-amber-400" />
-            Acquire.com APA Covenant &amp; Valuation
+            Acquire.com APA Covenant &amp; Specification
           </h2>
           <p className="text-base text-slate-400 mt-1">
             Pre-drafted Delaware micro-Asset Purchase Agreement (APA), Exhibit A IP assignment schedule, and escrow closing checklist.
@@ -101,8 +100,8 @@ Seller expressly warrants:
               }`}
             >
               <div className="flex items-center justify-between mb-1">
-                <span className="font-bold text-white text-base">Turnkey Micro-APA Buyout</span>
-                <span className="text-2xl font-black text-amber-400 font-mono">$45,000 USD</span>
+                <span className="font-bold text-white text-base">Turnkey Micro-APA Asset Transfer</span>
+                <span className="text-2xl font-black text-amber-400 font-mono">20 kHz (0.48ms)</span>
               </div>
               <p className="text-base text-slate-400">
                 Single-dealership or private fleet perpetual exclusive ownership. Includes full Git repo handoff, Cloud Run container, and PostgreSQL ledger.
@@ -120,7 +119,7 @@ Seller expressly warrants:
             >
               <div className="flex items-center justify-between mb-1">
                 <span className="font-bold text-white text-base">Enterprise Monopoly Vault</span>
-                <span className="text-2xl font-black text-purple-400 font-mono">$125,000 USD</span>
+                <span className="text-2xl font-black text-purple-400 font-mono">PostgreSQL 16 + RLS</span>
               </div>
               <p className="text-base text-slate-400">
                 Unlimited enterprise multi-fleet OEM deployment, trade-dress IP assignment, patent defensibility declarations, and 30-day architect support.

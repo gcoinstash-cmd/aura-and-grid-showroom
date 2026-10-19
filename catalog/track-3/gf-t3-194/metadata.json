@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-194 (export) ",
-  "description": "Turnkey micro-APA buyout asset for Acquire.com with 4-wheel Active Height Control (AHC), multi-terrain hydraulic spring rate switching, and PostgreSQL 16 HMAC ledger.",
+  "description": "Turnkey micro-APA asset transfer asset for Acquire.com with 4-wheel Active Height Control (AHC), multi-terrain hydraulic spring rate switching, and PostgreSQL 16 HMAC ledger.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

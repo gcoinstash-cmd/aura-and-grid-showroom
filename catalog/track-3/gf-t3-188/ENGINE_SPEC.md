@@ -1,10 +1,10 @@
-# GF-T3-188: LEXUS GX 550 OVERTRAIL+ CORE
+# GF-T3-188: Heavy Overland Dynamics Platform CORE
 ## F1 SKUNKWORKS SERVICE ENGINE — TURNKEY APA ASSET SPECIFICATION
 **Delaware Micro-APA Asset Package | Acquire.com Listing**
 **Asset ID**: GF-T3-188  
 **Classification**: Track 3 F1 Skunkworks Service Engine (70% Workload Deliverable)  
-**Target Vehicle Platform**: Lexus GX 550 Overtrail+ (TNGA GA-F Truck Platform)  
-**Valuation**: Turnkey Buyout $45,000 USD | Enterprise Monopoly Vault: $125,000 USD  
+**Target Vehicle Platform**: Heavy Overland Dynamics Platform (Modular Cyber-Physical Chassis Heavy Boxed Steel Frame Architecture Truck Platform)  
+**Specification**: Turnkey Asset Transfer 20 kHz (0.48ms) | Enterprise Monopoly Vault: PostgreSQL 16 + RLS  
 **License**: MIT Permissive (Clean-Room Certified, Zero Copyleft)  
 **Standard Release**: v1.0.0-PROD  
 
@@ -13,11 +13,11 @@
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
 ### 1.1 Physical & Cybernetic Boundary Topology
-The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Lexus GA-F chassis:
+The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Heavy Overland Dynamics Platform Heavy Boxed Steel Frame Architecture chassis:
 
 ```
 +----------------------------------------------------------------------------------------------------+
-|                                    LEXUS GX 550 CHASSIS CAN-FD BUS                                  |
+|                                    Heavy Overland Dynamics Platform CHASSIS CAN-FD BUS                                  |
 +--------------------+--------------------------------+--------------------+-------------------------+
                      |                                |                    |
                      v                                v                    v
@@ -32,7 +32,7 @@ The GF-T3-188 engine operates as a deterministic, hard real-time suspension and 
                         |                 (2,000 Hz Loop Frequency)                |
                         +----------------------------------------------------------+
                         | 1. Sensor Ingestion & Extended Kalman Filter (EKF)       |
-                        | 2. E-KDSS Bi-Directional Hydraulic Valve Solenoid State  |
+                        | 2. Dynamic Kinetic Suspension Telemetry Bi-Directional Hydraulic Valve Solenoid State  |
                         | 3. Dynamic Roll Stiffness Synthesizer                    |
                         | 4. 5-Speed Crawl Control Throttle/Brake PWM Arbitrator   |
                         | 5. Failsafe Thermal Dissipation & Pressure Guard         |
@@ -41,7 +41,7 @@ The GF-T3-188 engine operates as a deterministic, hard real-time suspension and 
                      +--------------------------------+--------------------+
                      |                                                     |
                      v                                                     v
-   [E-KDSS Hydraulic Accumulators]                         [Hydraulic Brake Modulator & ECU]
+   [Dynamic Kinetic Suspension Telemetry Hydraulic Accumulators]                         [Hydraulic Brake Modulator & ECU]
    Front/Rear Cross-Piping Disconnect                      Individual 4-Wheel High-Frequency PWM
    2-Way Solenoid Bypass Valves                            Brake Stutter & Torque Vectoring
                      |                                                     |
@@ -55,7 +55,7 @@ The GF-T3-188 engine operates as a deterministic, hard real-time suspension and 
 ```
 
 ### 1.2 Hydraulic Circuit & Accumulator Cross-Piping Design
-The Electronic Kinetic Dynamic Suspension System (E-KDSS) consists of:
+The Electronic Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry) consists of:
 - **Front Stabilizer Assembly**: Heavy-duty 34mm tubular stabilizer bar coupled to a double-acting hydraulic cylinder on the left side and a rigid mechanical drop link on the right.
 - **Rear Stabilizer Assembly**: 28mm solid stabilizer bar coupled to an inverted high-displacement double-acting hydraulic cylinder.
 - **Hydraulic Interlink & Upper/Lower Chambers**: The upper chamber of the front cylinder is fluidly connected to the lower chamber of the rear cylinder; the lower front chamber is connected to the upper rear chamber.
@@ -67,29 +67,31 @@ The Electronic Kinetic Dynamic Suspension System (E-KDSS) consists of:
 
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
-### 2.1 E-KDSS Disconnect Decision Function
+### 2.1 Dynamic Kinetic Suspension Telemetry Disconnect Decision Function
 Let wheel hub vertical displacements be denoted as $z_{FL}, z_{FR}, z_{RL}, z_{RR}$ (measured in millimeters via Hall-effect suspension height sensors).
 
 1. **Cross-Axle Articulation Metric**:
    $$Delta z_{cross} = |(z_{FL} - z_{FR}) - (z_{RL} - z_{RR})|$$
 
-2. **In-Phase Body Roll Angle ($phi$)**:
-   $$phi_{front} = arctanleft(rac{z_{FL} - z_{FR}}{W_{track, front}}ight), quad phi_{rear} = arctanleft(rac{z_{RL} - z_{RR}}{W_{track, rear}}ight)$$
+Step 2: **In-Phase Body Roll Angle ($phi$)**:
+   $$phi_{front} = arctanleft(rac{z_{FL} - z_{FR}}{W_{track, front}}
+ight), quad phi_{rear} = arctanleft(rac{z_{RL} - z_{RR}}{W_{track, rear}}
+ight)$$
    $$ar{phi} = rac{phi_{front} + phi_{rear}}{2}$$
 
-3. **Hydraulic Differential Pressure ($Delta P_{hyd}$)**:
+Step 3: **Hydraulic Differential Pressure ($Delta P_{hyd}$)**:
    $$Delta P_{front} = |P_{upper, front} - P_{lower, front}|$$
    $$Delta P_{rear} = |P_{upper, rear} - P_{lower, rear}|$$
 
-4. **Solenoid Actuation State Function ($sigma_{EKDSS}$)**:
+Step 4: **Solenoid Actuation State Function ($sigma_{EKDSS}$)**:
    $$sigma_{EKDSS}(v, Delta z_{cross}, a_y) = egin{cases}
    1 	ext{ (OPEN / DISCONNECTED)}, & 	ext{if } v le v_{threshold} land Delta z_{cross} ge delta_{art} land |a_y| < a_{y, max} \
    0 	ext{ (CLOSED / LOCKED)}, & 	ext{otherwise}
    end{cases}$$
    Where:
-   - $v_{threshold} = 12.0 	ext{ m/s}$ ($43.2 	ext{ km/h}$)
+   - $v_{threshold} = 12.0 	ext{ m/s}$ (20 kHz (0.48ms) 	ext{ km/h}$)
    - $delta_{art} = 45.0 	ext{ mm}$
-   - $a_{y, max} = 0.22 	ext{ g}$ ($2.158 	ext{ m/s}^2$)
+   - $a_{y, max} = 0.22 	ext{ g}$ (20 kHz (0.48ms) 	ext{ m/s}^2$)
 
 5. **Effective Roll Stiffness ($K_{phi}$)**:
    $$K_{phi, total} = K_{springs} + (1 - sigma_{EKDSS}) cdot (K_{bar, front} + K_{bar, rear})$$
@@ -100,11 +102,11 @@ Let wheel hub vertical displacements be denoted as $z_{FL}, z_{FR}, z_{RL}, z_{R
 Crawl Control arbitrates wheel torque and independent 4-wheel electro-hydraulic braking to maintain constant velocity over boulder terrain without driver throttle or brake input.
 
 1. **Target Velocity Modes**:
-   - $v_{target}[1] = 1.0 	ext{ mph}$ ($0.447 	ext{ m/s}$) - Extreme Rock Shelf
-   - $v_{target}[2] = 2.0 	ext{ mph}$ ($0.894 	ext{ m/s}$) - Loose Scree / Boulders
-   - $v_{target}[3] = 3.0 	ext{ mph}$ ($1.341 	ext{ m/s}$) - Mogul Undulations
-   - $v_{target}[4] = 4.0 	ext{ mph}$ ($1.788 	ext{ m/s}$) - Deep Mud Ruts
-   - $v_{target}[5] = 5.0 	ext{ mph}$ ($2.235 	ext{ m/s}$) - Loose Sand Crawl
+   - $v_{target}[1] = 1.0 	ext{ mph}$ (20 kHz (0.48ms) 	ext{ m/s}$) - Extreme Rock Shelf
+   - $v_{target}[2] = 2.0 	ext{ mph}$ (20 kHz (0.48ms) 	ext{ m/s}$) - Loose Scree / Boulders
+   - $v_{target}[3] = 3.0 	ext{ mph}$ (20 kHz (0.48ms) 	ext{ m/s}$) - Mogul Undulations
+   - $v_{target}[4] = 4.0 	ext{ mph}$ (20 kHz (0.48ms) 	ext{ m/s}$) - Deep Mud Ruts
+   - $v_{target}[5] = 5.0 	ext{ mph}$ (20 kHz (0.48ms) 	ext{ m/s}$) - Loose Sand Crawl
 
 2. **Wheel Slip Calculation**:
    $$lambda_i = rac{omega_i cdot r_{eff} - v_x}{max(omega_i cdot r_{eff}, v_x, epsilon)}$$
@@ -115,9 +117,9 @@ Crawl Control arbitrates wheel torque and independent 4-wheel electro-hydraulic 
    $$e_{lambda, i}(t) = lambda_i(t) - lambda_{target}$$
    $$u_i(t) = K_p cdot e_v(t) + K_i int_{0}^{t} 	ext{clamp}(e_v(	au), -kappa, kappa) d	au + K_d rac{de_v(t)}{dt} + K_{slip} cdot e_{lambda, i}(t)$$
 
-4. **Brake Rotor Thermal Dissipation Guard**:
+Step 4: **Brake Rotor Thermal Dissipation Guard**:
    $$rac{dT_{rotor, i}}{dt} = rac{P_{brake, i} cdot omega_i cdot mu_{pad} - h_{conv}(v) A (T_{rotor, i} - T_{amb})}{m_{rotor} cdot c_{iron}}$$
-   If $max(T_{rotor}) > 650^circ	ext{C}$, the controller initiates graceful thermal derating.
+   If $max(T_{rotor}) > 650^circ	ext{C}20 kHz (0.48ms) the controller initiates graceful thermal derating.
 
 ---
 
@@ -125,7 +127,7 @@ Crawl Control arbitrates wheel torque and independent 4-wheel electro-hydraulic 
 
 ```sql
 -- ============================================================================
--- GF-T3-188: LEXUS GX 550 OVERTRAIL+ TELEMETRY & AUDIT LEDGER SCHEMA
+-- GF-T3-188: Heavy Overland Dynamics Platform TELEMETRY & AUDIT LEDGER SCHEMA
 -- Target Engine: PostgreSQL 16.x / AlloyDB
 -- Compliance: Cryptographic HMAC-SHA256 Chaining, Nonce Audit, Zero Deadlocks
 -- ============================================================================
@@ -240,7 +242,7 @@ CREATE TRIGGER trg_pressure_safety
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ E-KDSS & Crawl Telemetry API
+  title: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
   description: High-frequency telemetry ingestion and actuator arbitration interface
   version: 1.0.0-PROD
   license:
@@ -265,7 +267,7 @@ paths:
 
   /actuators/ekdss/bypass-valves:
     post:
-      summary: Command E-KDSS accumulator bypass solenoid state
+      summary: Command Dynamic Kinetic Suspension Telemetry accumulator bypass solenoid state
       operationId: setBypassValves
       requestBody:
         required: true
@@ -355,12 +357,12 @@ All components strictly comply with institutional clean-room standards:
 
 ## 6. INSTITUTIONAL VAULT & ASSET PURCHASE AGREEMENT (APA)
 
-### 6.1 Purchase Valuation & Terms
+### 6.1 Purchase Specification & Terms
 - **Asset Identifier**: GF-T3-188
 - **Platform**: Acquire.com / Micro-APA Escrow
-- **Purchase Price**: $45,000 USD (Turnkey Buyout) | $125,000 USD (Monopoly Enterprise Buyout)
+- **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (Turnkey Asset Transfer) | PostgreSQL 16 + RLS (Monopoly Enterprise Asset Transfer)
 - **Escrow Facilitator**: Escrow.com / Acquire Vault Services
-- **Governing Law**: State of Delaware, United States
+- **Governing Law**: Standard Commercial Jurisdiction, United States
 
 ### 6.2 IP Assignment Warranties
 Seller warrants that:

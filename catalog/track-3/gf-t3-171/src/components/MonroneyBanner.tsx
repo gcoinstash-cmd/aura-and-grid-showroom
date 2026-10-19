@@ -30,22 +30,22 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               <span className="text-emerald-400">TURNKEY ACQUIRE.COM ASSET</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Lexus IS 500 F SPORT Dynamic Core v1.0.0-PROD
+              Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Dynamic Core v1.0.0-PROD
             </h1>
             <p className="text-base text-slate-300 max-w-3xl">
               Deterministic, sub-250ns HFT telemetry ingest &amp; execution engine calibrated for the 5.0L 2UR-GSE Quad-Cam 32V V8 powertrain (472 hp @ 7,100 RPM).
             </p>
           </div>
 
-          {/* Pricing & Valuation Metadata (Clean unboxed/structural layout, min 14px floor) */}
+          {/* Pricing & Specification Metadata (Clean unboxed/structural layout, min 14px floor) */}
           <div className="flex flex-wrap items-center gap-3">
             <div className="bg-slate-900 border border-cyan-500/30 rounded-lg px-4 py-2.5">
-              <span className="text-sm text-slate-400 block font-medium">Micro-APA Buyout</span>
-              <span className="text-xl font-bold font-mono text-cyan-300">$45,000 USD</span>
+              <span className="text-sm text-slate-400 block font-medium">Micro-APA Asset Transfer</span>
+              <span className="text-xl font-bold font-mono text-cyan-300">20 kHz (0.48ms)</span>
             </div>
             <div className="bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5">
-              <span className="text-sm text-slate-400 block font-medium">Enterprise Valuation</span>
-              <span className="text-xl font-bold font-mono text-slate-200">$125,000 USD</span>
+              <span className="text-sm text-slate-400 block font-medium">Architecture Moat</span>
+              <span className="text-xl font-bold font-mono text-slate-200">PostgreSQL 16 + RLS</span>
             </div>
             <div className="bg-slate-900 border border-emerald-500/30 rounded-lg px-4 py-2.5">
               <span className="text-sm text-slate-400 block font-medium">License / Legal Audit</span>

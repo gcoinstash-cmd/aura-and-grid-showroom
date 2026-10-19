@@ -31,19 +31,19 @@ export const Header: React.FC<HeaderProps> = ({ currentLatencyUs }) => {
 
         {/* 4 Telemetry Badges - Responsive Auto-Wrapping Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full xl:max-w-3xl">
-          {/* Badge 1: Buyout Anchor */}
+          {/* Badge 1: Reference Core */}
           <div className="w-full min-w-0 overflow-hidden flex items-center gap-2.5 sm:gap-3 p-3 sm:p-4 rounded-xl bg-amber-950/40 border border-amber-500/50 shadow-md">
             <DollarSign className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0" />
             <div className="min-w-0 flex-1">
               <div className="text-xs sm:text-sm font-black tracking-wider uppercase text-amber-400 truncate">
-                Anchor Valuation
+                Anchor Specification
               </div>
               <div className="flex items-baseline gap-1.5 truncate">
                 <span className="text-base sm:text-lg md:text-xl font-black text-amber-300 font-mono tracking-tight truncate">
-                  $125,000
+                  20 kHz (0.48ms)
                 </span>
                 <span className="text-xs sm:text-sm font-bold text-amber-400/90 shrink-0">
-                  APA BUYOUT
+                  APA ASSET TRANSFER
                 </span>
               </div>
             </div>

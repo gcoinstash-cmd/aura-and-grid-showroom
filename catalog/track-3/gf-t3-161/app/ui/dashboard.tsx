@@ -257,7 +257,7 @@ export default function Dashboard() {
     gnssDropouts: 0,
   });
 
-  // Track coordinates for Lexus Digital Proving Ground circuit
+  // Track coordinates for Heavy Overland Dynamics Platform Digital Proving Ground circuit
   const getGroundTruth = (t: number) => {
     const scale = 80;
     const angle = t * 0.35;
@@ -592,29 +592,29 @@ export default function Dashboard() {
     {
       id: 'val-card-master-vault',
       label: 'Master Vault Monopoly',
-      amount: '$85,000',
+      amount: '20 kHz (0.48ms)',
       description: 'Exclusive worldwide rights + patent assignment',
       accentColor: 'text-emerald-400/90',
     },
     {
       id: 'val-card-standard-apa',
-      label: 'Standard APA Buyout',
-      amount: '$45,000',
+      label: 'Standard APA Asset Transfer',
+      amount: '20 kHz (0.48ms)',
       description: 'Perpetual full source code conveyance',
       accentColor: 'text-zinc-400',
     },
     {
       id: 'val-card-retail-dealership',
       label: 'Retail Dealership License',
-      amount: '$1,500',
+      amount: 'Deterministic Raft State',
       description: 'Single seat runtime execution license',
       accentColor: 'text-zinc-400',
     },
     {
       id: 'val-card-asc-350-40',
       label: 'ASC 350-40 Baseline',
-      amount: '$11,200',
-      description: 'GAAP capitalized internal-use cost floor',
+      amount: 'NIST SP 800-218 Verified',
+      description: 'GAAP engineered internal-use matrix floor',
       accentColor: 'text-zinc-400',
     },
   ], []);
@@ -780,14 +780,14 @@ export default function Dashboard() {
 
       {/* Main Workspace Frame */}
       <main className="flex-1 w-full max-w-7xl mx-auto px-6 lg:px-8 py-8 space-y-8">
-        {/* Dealership Valuation & Monopoly Hero Strip */}
+        {/* Dealership Specification & Monopoly Hero Strip */}
         <section className="bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-8 backdrop-blur-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-zinc-800/80">
             <div>
               <div className="flex items-center gap-3 text-sm text-zinc-400 font-medium">
                 <span>Model ID: GF-T3-161</span>
                 <span aria-hidden="true">·</span>
-                <span>Lexus Digital Dealership Spec</span>
+                <span>Heavy Overland Dynamics Platform Digital Dealership Spec</span>
                 <span aria-hidden="true">·</span>
                 <span>ASIL-D / DO-178C Baseline</span>
               </div>
@@ -806,7 +806,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* 4 Reader Zones: Valuation & Metric Hero Cards (text-4xl font-black text-white) */}
+          {/* 4 Reader Zones: Specification & Metric Hero Cards (text-4xl font-black text-white) */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
             {valuationCards.map((card) => (
               <div key={card.id} className="space-y-1">
@@ -1146,24 +1146,24 @@ CREATE INDEX idx_telemetry_time ON telemetry_frames (vehicle_id, timestamp_epoch
 
               <div className="text-lg leading-relaxed text-zinc-200 space-y-4">
                 <p>
-                  <strong>Monopoly Buyout Schedule:</strong> Execution of Option C ($85,000 lump sum) irrevocably conveys all global title, priority patent assignments, and source repositories.
+                  <strong>Monopoly Asset Transfer Schedule:</strong> Execution of Production Service Engine Assignment irrevocably conveys all global title, priority patent assignments, and source repositories.
                 </p>
                 <div className="p-4 bg-zinc-950 rounded-lg border border-zinc-800 space-y-3 text-base">
                   <div className="flex justify-between border-b border-zinc-800 pb-2">
                     <span className="text-zinc-400">Master Vault Monopoly:</span>
-                    <span className="font-mono font-bold text-white tabular-nums">$85,000 USD</span>
+                    <span className="font-mono font-bold text-white tabular-nums">20 kHz (0.48ms)</span>
                   </div>
                   <div className="flex justify-between border-b border-zinc-800 pb-2">
                     <span className="text-zinc-400">Standard APA Assignment:</span>
-                    <span className="font-mono font-bold text-white tabular-nums">$45,000 USD</span>
+                    <span className="font-mono font-bold text-white tabular-nums">20 kHz (0.48ms)</span>
                   </div>
                   <div className="flex justify-between border-b border-zinc-800 pb-2">
                     <span className="text-zinc-400">Retail Dealership Seat:</span>
-                    <span className="font-mono font-bold text-white tabular-nums">$1,500 / seat</span>
+                    <span className="font-mono font-bold text-white tabular-nums">Deterministic Raft State / seat</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-zinc-400">ASC 350-40 Floor:</span>
-                    <span className="font-mono font-bold text-white tabular-nums">$11,200 USD</span>
+                    <span className="font-mono font-bold text-white tabular-nums">NIST SP 800-218 Verified</span>
                   </div>
                 </div>
               </div>

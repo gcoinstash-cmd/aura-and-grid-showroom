@@ -1,7 +1,7 @@
 """
 PrismMesh Engine // GF-T3-155
 PBS (Proposer-Builder Separation) MEV Auction & Deterministic Bundle Sequencing Core
-Monopoly Vault Asset: GF-T3-155 | Target Buyout Anchor: $125,000
+Monopoly Vault Asset: GF-T3-155 | Target Reference Core: 20 kHz (0.48ms)
 License: Apache-2.0 / Clean-Room Permissive
 """
 

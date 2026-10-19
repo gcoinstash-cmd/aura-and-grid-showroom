@@ -28,7 +28,7 @@ export const AcquireApaTab: React.FC = () => {
     setIsSigned(true);
     setEscrowChecklist(prev => ({ ...prev, ipAssignmentExecuted: true }));
 
-    // Trigger celebratory confetti for buyout execution
+    // Trigger celebratory confetti for asset transfer execution
     try {
       confetti({
         particleCount: 80,
@@ -41,21 +41,21 @@ export const AcquireApaTab: React.FC = () => {
     }
   };
 
-  const apaLegalText = `DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-181 (LEXUS IS 500 F SPORT PERFORMANCE CORE)
+  const apaLegalText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
+ASSET IDENTIFIER: GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE)
 PLATFORM: ACQUIRE.COM MASTER VAULT DIRECTORY
 
 This Asset Purchase Agreement ("Agreement") is entered into as of October 11, 2026, by and between Ghost FactoryOS Skunkworks ("Seller"), and ${buyerName || '[Purchaser Entity]'} ("Purchaser").
 
 RECITALS
-WHEREAS, Seller has independently architected and authored that certain proprietary software asset known as "GF-T3-181 (Lexus IS 500 F SPORT Performance Core)" consisting of pure Python 3.12 throttle mapping algorithms, Torsen Type-B LSD thermodynamic monitoring models, partitioned PostgreSQL 16 cryptographic ledger schemas, OpenAPI 3.1 contracts, and production Cloud Run harnesses (collectively, the "Purchased Assets");
+WHEREAS, Seller has independently architected and authored that certain proprietary software asset known as "GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core)" consisting of pure Python 3.12 throttle mapping algorithms, Torsen Type-B LSD thermodynamic monitoring models, partitioned PostgreSQL 16 cryptographic ledger schemas, OpenAPI 3.1 contracts, and production Cloud Run harnesses (collectively, the "Purchased Assets");
 WHEREAS, Seller desires to sell, and Purchaser desires to acquire, all right, title, and interest in and to the Purchased Assets pursuant to the terms and conditions herein.
 
 NOW, THEREFORE, for good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the parties agree as follows:
 
 1. PURCHASE AND SALE OF ASSETS
 1.1 Purchased Assets: Seller hereby sells, assigns, transfers, and conveys to Purchaser all right, title, and interest in the Purchased Assets, including all intellectual property rights, copyrights, trade secrets, algorithms, and documentation.
-1.2 Purchase Price: The agreed purchase price is Forty-Five Thousand United States Dollars ($45,000.00 USD) for standard turnkey acquisition, or One Hundred Twenty-Five Thousand United States Dollars ($125,000.00 USD) under Monopoly Vault Enterprise terms.
+1.2 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 1.3 Escrow Release: Payment shall be disbursed via Acquire.com / Escrow.com upon successful completion of the Clean-Room Verification Handoff.
 
 2. CLEAN-ROOM REPRESENTATIONS AND WARRANTIES
@@ -64,7 +64,7 @@ NOW, THEREFORE, for good and valuable consideration, the receipt and sufficiency
 2.3 Non-Infringement: Seller warrants that the operation of the Purchased Assets does not infringe any third-party patent, copyright, or intellectual property right.
 
 3. GOVERNING LAW AND JURISDICTION
-This Agreement shall be governed by, and construed in accordance with, the laws of the State of Delaware, without giving effect to any principles of conflicts of law.
+This Agreement shall be governed by, and construed in accordance with, the laws of the Standard Commercial Jurisdiction, without giving effect to any principles of conflicts of law.
 
 IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first above written.`;
 
@@ -104,21 +104,21 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left: Escrow Handoff Checklist & Purchase Parameters */}
         <div className="lg:col-span-5 space-y-5">
-          {/* Buyout Economics Box */}
+          {/* Asset Transfer Economics Box */}
           <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 space-y-4">
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
               <Award className="w-4 h-4 text-amber-400" />
-              Acquisition Economics & Valuation
+              Acquisition Economics & Specification
             </h3>
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
                 <span className="text-[11px] font-mono text-slate-400 block">Turnkey Micro-APA</span>
-                <span className="text-xl font-bold font-mono text-emerald-400">$45,000 USD</span>
+                <span className="text-xl font-bold font-mono text-emerald-400">20 kHz (0.48ms)</span>
                 <span className="text-[11px] text-slate-400 block mt-0.5">Immediate Asset Escrow</span>
               </div>
               <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
                 <span className="text-[11px] font-mono text-slate-400 block">Monopoly Enterprise</span>
-                <span className="text-xl font-bold font-mono text-amber-400">$125,000 USD</span>
+                <span className="text-xl font-bold font-mono text-amber-400">PostgreSQL 16 + RLS</span>
                 <span className="text-[11px] text-slate-400 block mt-0.5">Full Commercial Exclusivity</span>
               </div>
             </div>
@@ -242,7 +242,7 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
               <FileText className="w-4 h-4 text-slate-400" />
               Delaware Micro-APA Legal Agreement (Exhibits A &amp; B)
             </h3>
-            <span className="text-xs font-mono text-slate-400">State of Delaware</span>
+            <span className="text-xs font-mono text-slate-400">Standard Commercial Jurisdiction</span>
           </div>
 
           <pre className="bg-slate-950 p-4 rounded-lg border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto max-h-[580px] leading-relaxed whitespace-pre-wrap">

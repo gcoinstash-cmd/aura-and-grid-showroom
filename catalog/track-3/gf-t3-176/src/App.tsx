@@ -61,7 +61,7 @@ export default function App() {
           {[
             {
               id: 'EKDSS_CORE',
-              label: '1. E-KDSS & Differential Core',
+              label: '1. Dynamic Kinetic Suspension Telemetry & Differential Core',
               icon: Sliders,
               subtext: 'Python 3.12 State Machine',
             },
@@ -87,7 +87,7 @@ export default function App() {
               id: 'APA_COVENANT',
               label: '5. Acquire.com APA Covenant',
               icon: ShieldCheck,
-              subtext: '$45k Buyout & Escrow Schedule',
+              subtext: '20 kHz (0.48ms) Asset Transfer & Escrow Schedule',
             },
           ].map((tab) => {
             const Icon = tab.icon;

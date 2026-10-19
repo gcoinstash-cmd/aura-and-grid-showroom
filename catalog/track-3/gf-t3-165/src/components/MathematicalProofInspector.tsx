@@ -77,7 +77,7 @@ export const MathematicalProofInspector: React.FC = () => {
             </h3>
             <div className="text-lg md:text-xl leading-relaxed text-zinc-200 space-y-2 bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
               <p>
-                {'The net profit objective function is Π(s) = x_out(s) - s = (α · s)/(β + s) - s. Setting first derivative dΠ/ds = 0:'}
+                {'The net yield objective function is Π(s) = x_out(s) - s = (α · s)/(β + s) - s. Setting first derivative dΠ/ds = 0:'}
               </p>
               <div className="font-mono text-cyan-300 bg-slate-900 p-2.5 rounded-lg text-base">
                 {'dΠ/ds = (α · β) / (β + s)² - 1 = 0  ⟹  s* = √(α · β) - β'}
@@ -214,7 +214,7 @@ export const MathematicalProofInspector: React.FC = () => {
                 <span className="text-xl font-bold text-cyan-400">${sStar.toFixed(2)}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-xs uppercase text-zinc-400">{'Net Profit Π*:'}</span>
+                <span className="text-xs uppercase text-zinc-400">{'Net Yield Π*:'}</span>
                 <span className="text-xl font-bold text-emerald-400">+${netProfit.toFixed(2)}</span>
               </div>
             </div>

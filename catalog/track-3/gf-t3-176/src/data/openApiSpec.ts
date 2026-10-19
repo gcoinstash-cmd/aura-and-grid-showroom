@@ -1,6 +1,6 @@
 export const OPENAPI_SPEC_YAML = `openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ Terrain Core Telemetry Contract
+  title: Heavy Overland Dynamics Platform Terrain Core Telemetry Contract
   version: 1.0.0-PROD
   description: >
     Zero-copy, deterministic telemetry ingestion & active suspension control
@@ -163,7 +163,7 @@ components:
 export const OPENAPI_SPEC_JSON = JSON.stringify({
   openapi: "3.1.0",
   info: {
-    title: "Lexus GX 550 Overtrail+ Terrain Core Telemetry Contract",
+    title: "Heavy Overland Dynamics Platform Terrain Core Telemetry Contract",
     version: "1.0.0-PROD",
     description: "Zero-copy, deterministic telemetry ingestion & active suspension control contract for Ghost FactoryOS / Acquire.com Turnkey Asset GF-T3-176.",
     license: { name: "MIT Permissive", url: "https://opensource.org/licenses/MIT" }

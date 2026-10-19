@@ -11,8 +11,8 @@ export interface PowertrainState {
   rearRpm: number;
   frontInverterTempC: number;
   rearInverterTempC: number;
-  direct4SplitFront: number; // e.g. 60
-  direct4SplitRear: number; // e.g. 40
+  dual_vector_torqueSplitFront: number; // e.g. 60
+  dual_vector_torqueSplitRear: number; // e.g. 40
   steeringRatio: number; // e.g. 4.5:1 to 12.0:1
   roadWheelAngleDeg: number; // -35 to +35 deg
   fluxWeakeningActive: boolean;

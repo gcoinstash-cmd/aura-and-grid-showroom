@@ -31,7 +31,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus RZ 450e Direct4 Dual-Motor Electric Core
+        Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
         Turnkey micro-APA deliverable with dual SiC inverter flux weakening, steer-by-wire variable ratio steering, and PostgreSQL 16 HMAC ledger.
@@ -43,10 +43,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           type="button"
           onClick={onSimulate}
           className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs h-8 px-2.5 rounded-lg inline-flex items-center gap-1 shrink-0 cursor-pointer transition-colors shadow-sm active:scale-98"
-          title="Trigger dynamic Direct4 simulation iteration"
+          title="Trigger dynamic DualVectorTorque simulation iteration"
         >
           <Play className={`w-3.5 h-3.5 ${isSimulating ? 'animate-spin' : ''}`} />
-          <span className="whitespace-nowrap">Simulate Direct4</span>
+          <span className="whitespace-nowrap">Simulate DualVectorTorque</span>
         </button>
 
         <button
@@ -70,14 +70,14 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400">
         <span className="text-slate-300">
-          <strong className="text-amber-400 font-medium">Buyout:</strong> $45,000 USD
+          <strong className="text-amber-400 font-medium">Asset Transfer:</strong> 20 kHz (0.48ms)
         </span>
         <span className="text-slate-600" aria-hidden="true">|</span>
         <span className="text-slate-300">
-          <strong className="text-emerald-400 font-medium">Enterprise:</strong> $125,000 USD
+          <strong className="text-emerald-400 font-medium">Enterprise:</strong> PostgreSQL 16 + RLS
         </span>
         <span className="text-slate-600" aria-hidden="true">|</span>
         <span className="text-slate-300 font-mono">MIT Permissive</span>

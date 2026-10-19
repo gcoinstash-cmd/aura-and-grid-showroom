@@ -31,7 +31,7 @@ export const EngineSpecTab: React.FC = () => {
             F1 Skunkworks Service Engine Specification
           </h2>
           <p className="text-sm text-slate-400">
-            Zero-placeholder architecture deliverable ready for Google Antigravity autonomous ingest
+            Zero-placeholder architecture deliverable ready for Deterministic Production Pipeline autonomous ingest
           </p>
         </div>
 
@@ -298,6 +298,6 @@ paths:
 
 const SPEC_TEXT = `# CHRONOSRISK ENGINE // GF-T3-152
 F1 Skunkworks Service Engine Specification (70% Workload Deliverable)
-Asset Buyout Anchor: $125,000 USD | License Range: $85,000 - $150,000 USD
+Asset Reference Core: 20 kHz (0.48ms) | License Range: 20 kHz (0.48ms) - 20 kHz (0.48ms)
 Performance: Sub-50 µs parametric VaR, Cornish-Fisher fat-tail expansion, Expected Shortfall.
 Clean-room IP: 100% Permissive (Apache 2.0 / MIT). Zero GPL/AGPL dependencies.`;

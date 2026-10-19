@@ -9,7 +9,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 4.88,
     divergenceDelta: 0.04,
     pinionResistanceNm: 2.14,
-    direct4Split: "75:25",
+    dual_vector_torqueSplit: "75:25",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "9a7f311c8901df4b423188d01f8e91cb319d67710c55ea9120e74b330e71ba02",
     verified: true
@@ -22,7 +22,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 4.36,
     divergenceDelta: 0.03,
     pinionResistanceNm: 2.05,
-    direct4Split: "75:25",
+    dual_vector_torqueSplit: "75:25",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "e812d4a5c0934f82811a0c476839d332ba119c80d540fba109e4401a719c8511",
     verified: true
@@ -35,7 +35,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 2.92,
     divergenceDelta: 0.02,
     pinionResistanceNm: 1.88,
-    direct4Split: "65:35",
+    dual_vector_torqueSplit: "65:35",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "4f6789a012bcde34567890abcdef1234567890abcdef1234567890abcdef1234",
     verified: true
@@ -48,7 +48,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 1.38,
     divergenceDelta: 0.01,
     pinionResistanceNm: 1.45,
-    direct4Split: "55:45",
+    dual_vector_torqueSplit: "55:45",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "8b1928374650aefc12349081726354abcedf890123456789abcdef0123456789",
     verified: true
@@ -61,7 +61,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 0.0,
     divergenceDelta: 0.00,
     pinionResistanceNm: 0.85,
-    direct4Split: "50:50",
+    dual_vector_torqueSplit: "50:50",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
     verified: true
@@ -74,7 +74,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: -1.78,
     divergenceDelta: 0.02,
     pinionResistanceNm: 1.55,
-    direct4Split: "75:25",
+    dual_vector_torqueSplit: "75:25",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "7890abcdef1234567890abcdef1234567890abcdef1234567890abcdef123456",
     verified: true
@@ -87,7 +87,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: -4.02,
     divergenceDelta: 0.03,
     pinionResistanceNm: 2.10,
-    direct4Split: "75:25",
+    dual_vector_torqueSplit: "75:25",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
     verified: true
@@ -100,7 +100,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: -7.50,
     divergenceDelta: 0.05,
     pinionResistanceNm: 2.80,
-    direct4Split: "50:50",
+    dual_vector_torqueSplit: "50:50",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234",
     verified: true
@@ -113,7 +113,7 @@ export const INITIAL_LEDGER_RECORDS: LedgerRecord[] = [
     rackAngle: 0.0,
     divergenceDelta: 0.00,
     pinionResistanceNm: 0.50,
-    direct4Split: "60:40",
+    dual_vector_torqueSplit: "60:40",
     canBusState: "BUS_A (Healthy)",
     hmacSignature: "c0ffeebabe123456789abcdef0123456789abcdef0123456789abcdef01234567",
     verified: true

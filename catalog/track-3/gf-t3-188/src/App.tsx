@@ -89,7 +89,7 @@ export default function App() {
     return initBlocks;
   });
 
-  // Calculate E-KDSS Disconnect Conditions:
+  // Calculate Dynamic Kinetic Suspension Telemetry Disconnect Conditions:
   // Speed <= 26.8 mph (12 m/s), Cross-axle articulation >= 2.5 deg (~45mm travel)
   const isBypassOpen = speedMph <= 26.8 && Math.abs(articulationAngleDeg) >= 2.5;
   const frontValve: 'OPEN' | 'CLOSED' = isBypassOpen ? 'OPEN' : 'CLOSED';
@@ -192,7 +192,7 @@ export default function App() {
     setCenterDiffLocked(true);
     setTerrainMode('ROCK');
     setIsSimulating(true);
-    showToast('Switched to E-KDSS Core: Rock Crawl Boulder Simulation engaged');
+    showToast('Switched to Dynamic Kinetic Suspension Telemetry Core: Rock Crawl Boulder Simulation engaged');
   };
 
   const handleVerifyHash = () => {
@@ -263,7 +263,7 @@ export default function App() {
 
   // Navigation tab definitions
   const tabs = [
-    { id: 0, label: '1. E-KDSS & Crawl Core', icon: Sliders },
+    { id: 0, label: '1. Dynamic Kinetic Suspension Telemetry & Crawl Core', icon: Sliders },
     { id: 1, label: '2. Postgres Ledger', icon: Database },
     { id: 2, label: '3. OpenAPI 3.1 Spec', icon: FileText },
     { id: 3, label: '4. Cloud Run Harness', icon: Cloud },
@@ -375,16 +375,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="text-slate-400 font-semibold">GF-T3-188 LEXUS GX 550 OVERTRAIL+ CORE</span>
+            <span className="text-slate-400 font-semibold">GF-T3-188 Heavy Overland Dynamics Platform CORE</span>
             <span className="text-slate-600">/</span>
-            <span>GA-F PLATFORM ARCHITECTURE</span>
+            <span>Heavy Boxed Steel Frame Architecture PLATFORM ARCHITECTURE</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>Delaware Micro-APA Asset</span>
             <span className="text-slate-600">/</span>
             <span>Clean-Room Certified</span>
             <span className="text-slate-600">/</span>
-            <span className="text-amber-400 font-bold">$45,000 USD Turnkey Buyout</span>
+            <span className="text-amber-400 font-bold">20 kHz (0.48ms) Turnkey Asset Transfer</span>
           </div>
         </div>
       </footer>

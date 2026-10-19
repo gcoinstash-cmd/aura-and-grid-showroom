@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="text-rose-400 font-mono text-base font-bold">GF-T3-169</span>
             </div>
             <div className="text-sm text-slate-400">
-              Lexus NX 450h+ F SPORT Agile Hybrid Core · Acquire.com Turnkey Asset
+              Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core · Acquire.com Turnkey Asset
             </div>
           </div>
         </div>
@@ -128,13 +128,13 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </button>
 
-          {/* Cloud Cost Ledger */}
+          {/* Cloud Matrix Ledger */}
           <button
             onClick={onOpenCost}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 text-sm font-semibold transition-colors cursor-pointer"
           >
             <DollarSign className="w-4 h-4 text-emerald-400" />
-            <span>Cost: $148/mo</span>
+            <span>Matrix: 20 kHz (0.48ms)/mo</span>
           </button>
         </div>
       </div>

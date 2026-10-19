@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-178
         </span>
         <span className="inline-flex items-center px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono text-xs font-semibold whitespace-nowrap">
-          LEXUS LS 500 AWD CORE
+          Heavy Overland Dynamics Platform LS 500 AWD CORE
         </span>
         <span className="inline-flex items-center px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold whitespace-nowrap">
           v1.0.0-PROD
@@ -29,10 +29,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* 2. Main Title */}
       <h1 className="text-xl md:text-2xl font-black text-white tracking-tight mb-1">
-        Lexus LS 500 Executive AWD Flagship Core
+        Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4 leading-relaxed">
-        Turnkey micro-APA buyout deliverable with 2,000 Hz FxLMS acoustic noise cancellation, twin-turbo V35A-FTS wastegate regulation, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA asset transfer deliverable with 2,000 Hz FxLMS acoustic noise cancellation, twin-turbo V35A-FTS wastegate regulation, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* 3. Action Buttons Row (Strictly Inline-Flex & Compact) */}
@@ -60,13 +60,13 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* 4. Compact Valuation Bar */}
+      {/* 4. Compact Specification Bar */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <div className="inline-flex items-center gap-1 text-slate-400">
-          Buyout: <span className="font-bold text-amber-400">$45,000 USD</span>
+          Asset Transfer: <span className="font-bold text-amber-400">20 kHz (0.48ms)</span>
         </div>
         <div className="inline-flex items-center gap-1 text-slate-400">
-          Vault: <span className="font-bold text-white">$125,000 USD</span>
+          Vault: <span className="font-bold text-white">PostgreSQL 16 + RLS</span>
         </div>
         <span className="inline-flex items-center px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">
           MIT Permissive

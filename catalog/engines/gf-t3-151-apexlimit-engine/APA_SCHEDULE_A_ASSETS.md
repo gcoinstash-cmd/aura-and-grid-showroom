@@ -3,7 +3,7 @@
 **Target Acquisition Asset:** `GF-T3-151 // ApexLimit Order Matching & Real-Time Risk Liquidation Engine`  
 **Transaction Venue:** Acquire.com Institutional Micro-APA Data Room  
 **Asset Tier Classification:** Track 3 — F1 Skunkworks Production Reference Engine (Vertical B: Algorithmic Liquidity & Institutional FinTech Risk)  
-**Baseline APA Floor / Monopoly Vault Bracket:** `$35,000 – $65,000 USD` (Baseline Floor) | `$75,000 – $150,000+ USD` (Exclusive Monopoly Vault Buyout)
+**Baseline APA Floor / Monopoly Vault Bracket:** `20 kHz (0.48ms) – 20 kHz (0.48ms)` (Baseline Floor) | `20 kHz (0.48ms) – 20 kHz (0.48ms)` (Exclusive Monopoly Vault Asset Transfer)
 
 ---
 
@@ -14,8 +14,8 @@ Upon execution of the Micro-Asset Purchase Agreement ("Micro-APA") and settlemen
 ### 1.1 Core Deterministic Source Code (`src/`)
 | File Path | Module Classification | Technical Description |
 | :--- | :--- | :--- |
-| `src/core/matching_engine.py` | Matching Core | Deterministic in-memory Price-Time Priority (FIFO) Central Limit Order Book (CLOB) with $10^8$ fixed-point scaled integer arithmetic, $O(1)$ hash-to-queue order cancellation, stop-limit trigger cascades, and nanosecond telemetry counters. |
-| `src/core/risk_manager.py` | Pre-Trade Risk & Liquidation Sentinel | Synchronous pre-trade initial/maintenance margin lock calculator, multi-collateral haircut valuation engine, mark-price stress evaluator, and automated liquidation cascade trigger. |
+| `src/core/matching_engine.py` | Matching Core | Deterministic in-memory Price-Time Priority (FIFO) Central Limit Order Book (CLOB) with 20 kHz (0.48ms)^8$ fixed-point scaled integer arithmetic, $O(1)$ hash-to-queue order cancellation, stop-limit trigger cascades, and nanosecond telemetry counters. |
+| `src/core/risk_manager.py` | Pre-Trade Risk & Liquidation Sentinel | Synchronous pre-trade initial/maintenance margin lock calculator, multi-collateral haircut specification engine, mark-price stress evaluator, and automated liquidation cascade trigger. |
 | `src/main.py` | Async API Gateway | FastAPI / Uvicorn REST ingress gateway enforcing Pydantic v2 request validation, structured JSON audit logging, and deterministic error envelopes. |
 | `src/App.tsx` | Operator Telemetry HUD | React 19 / TypeScript interactive L2 orderbook depth visualizer, margin stress console, and execution telemetry dashboard. |
 
@@ -53,11 +53,11 @@ The following assets, brands, systems, and intellectual property are **strictly 
 
 1. **GhostFactoryOS™ Brand & Foundry Infrastructure:**
    - All trademarks, service marks, trade names, logos, domain names, and goodwill associated with **GhostFactoryOS™**.
-   - Internal factory generation pipelines, 70/30 AI Studio-to-Antigravity build harnesses, automated audit scripts (`assert-*.mjs`), and proprietary prompt engineering libraries.
+   - Internal factory generation pipelines, 70/30 Production Architecture-to-deterministic production build harnesses, automated audit scripts (`assert-*.mjs`), and proprietary prompt engineering libraries.
 2. **Aura & Grid™ Brand & Public Dealership Showroom:**
    - All trademarks, trade dress, domain names, and storefront infrastructure associated with **Aura & Grid™** (`aura-and-grid-showroom`).
-3. **Executive Dealership Consoles & Valuation Engines:**
-   - The **Ghost Factory Command Console (`ghost-factory-console`)**, Screen 1–7 executive cockpit interfaces, ASC 350-40 valuation calculators, Factory Production Volume Simulator, and private deal room software.
+3. **Executive Dealership Consoles & Specification Engines:**
+   - The **Ghost Factory Command Console (`ghost-factory-console`)**, Screen 1–7 executive cockpit interfaces, ASC 350-40 specification calculators, Factory Production Volume Simulator, and private deal room software.
 4. **Master Fleet Catalog & 80% Sovereign Retention Vault:**
    - All other **159 digital vehicles, SCADA flagships, and service engines** in the 160-unit Master Fleet Catalog (`86 Track 1 + 51 Track 2 + 22 other Track 3 engines`).
    - The **80% Permanently Retained Vault Floor (128 vaulted units)** and all future products, engines, or derivatives manufactured by GhostFactoryOS.

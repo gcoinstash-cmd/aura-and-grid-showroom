@@ -64,7 +64,7 @@ CREATE SEQUENCE IF NOT EXISTS seq_engine_monotonic
 CREATE TABLE IF NOT EXISTS engine_tick_ledger (
     sequence_id     BIGINT NOT NULL DEFAULT nextval('seq_engine_monotonic'),
     created_at      TIMESTAMPTZ NOT NULL DEFAULT clock_timestamp(),
-    symbol          VARCHAR(16) NOT NULL DEFAULT 'LC500-DYN',
+    symbol          VARCHAR(16) NOT NULL DEFAULT 'High-Aero Grand Touring Telemetry Core-DYN',
     side            VARCHAR(4) NOT NULL CHECK (side IN ('BUY', 'SELL')),
     price           NUMERIC(14, 4) NOT NULL CHECK (price > 0),
     quantity        INTEGER NOT NULL CHECK (quantity > 0),

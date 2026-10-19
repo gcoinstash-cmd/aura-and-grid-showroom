@@ -62,7 +62,7 @@ export const EngineSpecViewer: React.FC = () => {
               ENGINE_SPEC.md — Technical Architecture &amp; Monopolistic Gates
             </h2>
             <p className="text-lg text-slate-200 font-medium max-w-4xl leading-relaxed">
-              Complete specification satisfying all 5 Monopoly Vault Criteria. Structured for immediate autonomous ingestion by Google Antigravity agents.
+              Complete specification satisfying all 5 Monopoly Vault Criteria. Structured for immediate autonomous ingestion by Deterministic Production Pipeline agents.
             </p>
           </div>
 

@@ -18,16 +18,16 @@ import {
 } from 'lucide-react';
 import { MonroneyBanner } from './components/MonroneyBanner';
 import { TelemetryCards } from './components/TelemetryCards';
-import { TabBftDirect4 } from './components/tabs/TabBftDirect4';
+import { TabBftDualVectorTorque } from './components/tabs/TabBftDualVectorTorque';
 import { TabPostgresLedger } from './components/tabs/TabPostgresLedger';
 import { TabOpenApiContract } from './components/tabs/TabOpenApiContract';
 import { TabCloudRunHarness } from './components/tabs/TabCloudRunHarness';
 import { TabApaCovenant } from './components/tabs/TabApaCovenant';
-import { SwarmNode, Direct4Telemetry, ConsensusPhase } from './types/cockpit';
+import { SwarmNode, DualVectorTorqueTelemetry, ConsensusPhase } from './types/cockpit';
 import { GF_T3_172_SPEC_CONTENT } from './data/specDocument';
 
 type TabId =
-  | 'bft_direct4'
+  | 'bft_dual_vector_torque'
   | 'postgres_ledger'
   | 'openapi_contract'
   | 'cloud_run_harness'
@@ -81,7 +81,7 @@ const INITIAL_NODES: SwarmNode[] = [
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('bft_direct4');
+  const [activeTab, setActiveTab] = useState<TabId>('bft_dual_vector_torque');
   const [isSimulating, setIsSimulating] = useState(false);
   const [currentPhase, setCurrentPhase] = useState<ConsensusPhase>('DECIDE');
   const [activeEpoch, setActiveEpoch] = useState<number>(1048580);
@@ -92,8 +92,8 @@ export default function App() {
   const [nodes, setNodes] = useState<SwarmNode[]>(INITIAL_NODES);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Chassis & DIRECT4 Physics State
-  const [direct4, setDirect4] = useState<Direct4Telemetry>({
+  // Chassis & DUAL_VECTOR_TORQUE Physics State
+  const [dual_vector_torque, setDualVectorTorque] = useState<DualVectorTorqueTelemetry>({
     speedKmh: 80,
     throttlePct: 45,
     steeringAngleDeg: 12,
@@ -106,8 +106,8 @@ export default function App() {
     torqueVectorMode: 'TURN_IN_TRACTION',
   });
 
-  // Calculate DIRECT4 split whenever chassis inputs change
-  const recomputeDirect4 = useCallback(
+  // Calculate DUAL_VECTOR_TORQUE split whenever chassis inputs change
+  const recomputeDualVectorTorque = useCallback(
     (speed: number, throttle: number, steer: number, latG: number) => {
       // Base cruising split: 70:30
       // Heavy throttle shifts up to 40% to rear (down to 20:80)
@@ -118,7 +118,7 @@ export default function App() {
       let rear = 100 - front;
 
       // Mode detection
-      let mode: Direct4Telemetry['torqueVectorMode'] = 'CRUISE_EFFICIENCY';
+      let mode: DualVectorTorqueTelemetry['torqueVectorMode'] = 'CRUISE_EFFICIENCY';
       if (throttle > 70) {
         mode = 'EXIT_LAUNCH';
       } else if (Math.abs(steer) > 10 && Math.abs(latG) > 0.4) {
@@ -143,10 +143,10 @@ export default function App() {
     []
   );
 
-  const handleUpdateDirect4 = (updated: Partial<Direct4Telemetry>) => {
-    setDirect4((prev) => {
+  const handleUpdateDualVectorTorque = (updated: Partial<DualVectorTorqueTelemetry>) => {
+    setDualVectorTorque((prev) => {
       const merged = { ...prev, ...updated };
-      const computed = recomputeDirect4(
+      const computed = recomputeDualVectorTorque(
         merged.speedKmh,
         merged.throttlePct,
         merged.steeringAngleDeg,
@@ -275,7 +275,7 @@ export default function App() {
         currentPhase={currentPhase}
         activeEpoch={activeEpoch}
         commitLatencyMs={commitLatencyMs}
-        direct4={direct4}
+        dual_vector_torque={dual_vector_torque}
         merkleRoot={merkleRoot}
         activeNodesCount={activeNodesCount}
       />
@@ -284,15 +284,15 @@ export default function App() {
       <nav className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 mb-6">
         <div className="flex border-b border-slate-800 space-x-1 sm:space-x-3 overflow-x-auto pb-1">
           <button
-            onClick={() => setActiveTab('bft_direct4')}
+            onClick={() => setActiveTab('bft_dual_vector_torque')}
             className={`flex items-center gap-2 px-4 py-3 rounded-t-lg font-medium text-sm transition shrink-0 ${
-              activeTab === 'bft_direct4'
+              activeTab === 'bft_dual_vector_torque'
                 ? 'bg-slate-900 text-cyan-300 border-t-2 border-cyan-500 border-x border-slate-800'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/40'
             }`}
           >
             <Cpu className="w-4 h-4 text-cyan-400" />
-            1. BFT Consensus & DIRECT4 Engine
+            1. BFT Consensus & DUAL_VECTOR_TORQUE Engine
           </button>
 
           <button
@@ -347,12 +347,12 @@ export default function App() {
 
       {/* Tab Content Body (Relative/Static flow) */}
       <main className="relative flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        {activeTab === 'bft_direct4' && (
-          <TabBftDirect4
+        {activeTab === 'bft_dual_vector_torque' && (
+          <TabBftDualVectorTorque
             nodes={nodes}
             onToggleByzantine={toggleByzantine}
-            direct4={direct4}
-            onUpdateDirect4={handleUpdateDirect4}
+            dual_vector_torque={dual_vector_torque}
+            onUpdateDualVectorTorque={handleUpdateDualVectorTorque}
             currentPhase={currentPhase}
             isSimulating={isSimulating}
             onToggleSimulating={handleSimulateConsensus}
@@ -378,14 +378,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
           <div className="flex items-center gap-2">
             <span className="text-white font-bold">GF-T3-172</span>
-            <span>• Lexus TX 500h F SPORT Performance Core</span>
+            <span>• Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core</span>
             <span className="text-emerald-400 font-semibold">[MIT LICENSED]</span>
           </div>
 
           <div className="flex items-center gap-4 text-sm">
-            <span>Buyout: $45,000 USD</span>
+            <span>Asset Transfer: 20 kHz (0.48ms)</span>
             <span>•</span>
-            <span>Enterprise: $125,000 USD</span>
+            <span>Enterprise: PostgreSQL 16 + RLS</span>
             <span>•</span>
             <button
               onClick={handleExportSpec}

@@ -1,6 +1,6 @@
 export type DrsPhaseMode = 'ANTI_PHASE_TURNING' | 'IN_PHASE_STABILIZATION' | 'NEUTRAL_ZERO_OFFSET' | 'CRAB_LANE_CHANGE';
 
-export type Direct4Mode = 'AUTO_VECTORING' | 'SPORT_DYNAMIC' | 'TRAIL_SNOW' | 'ECO_HIGHWAY';
+export type DualVectorTorqueMode = 'AUTO_VECTORING' | 'SPORT_DYNAMIC' | 'TRAIL_SNOW' | 'ECO_HIGHWAY';
 
 export interface DrsPhysicsState {
   vehicleSpeedKmh: number;
@@ -8,8 +8,8 @@ export interface DrsPhysicsState {
   frontWheelAngleDeg: number;
   rearWheelAngleDeg: number;
   phaseMode: DrsPhaseMode;
-  direct4FrontRatio: number;
-  direct4RearRatio: number;
+  dual_vector_torqueFrontRatio: number;
+  dual_vector_torqueRearRatio: number;
   lateralAccelG: number;
   yawRateDegSec: number;
   turningRadiusMeters: number;

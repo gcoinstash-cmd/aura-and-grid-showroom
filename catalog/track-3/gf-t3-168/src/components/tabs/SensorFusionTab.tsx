@@ -250,7 +250,7 @@ export const SensorFusionTab: React.FC<SensorFusionTabProps> = ({
                   }}
                   className="px-3 py-1.5 text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-mono font-medium transition-colors border border-slate-700"
                 >
-                  F SPORT Slalom Run
+                  High-G Dynamic Telemetry Slalom Run
                 </button>
                 <button
                   onClick={() => {

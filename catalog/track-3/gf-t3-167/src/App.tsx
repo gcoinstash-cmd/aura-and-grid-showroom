@@ -158,7 +158,7 @@ export default function App() {
         const rawMsg = formatTickMessage({
           sequenceId: nextSeq,
           timestamp,
-          symbol: 'LC500-DYN',
+          symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
           side,
           price,
           quantity,
@@ -170,7 +170,7 @@ export default function App() {
         const newTick: TradeTick = {
           sequenceId: nextSeq,
           timestamp,
-          symbol: 'LC500-DYN',
+          symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
           side,
           price,
           quantity,
@@ -226,7 +226,7 @@ export default function App() {
     const rawMsg = formatTickMessage({
       sequenceId: nextSeq,
       timestamp,
-      symbol: 'LC500-DYN',
+      symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
       side: orderInput.side,
       price: orderInput.price,
       quantity: orderInput.quantity,
@@ -238,7 +238,7 @@ export default function App() {
     const newTick: TradeTick = {
       sequenceId: nextSeq,
       timestamp,
-      symbol: 'LC500-DYN',
+      symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
       side: orderInput.side,
       price: orderInput.price,
       quantity: orderInput.quantity,
@@ -295,7 +295,7 @@ export default function App() {
       id: 'notif_' + Date.now(),
       timestamp,
       title: `Order Executed #${nextSeq}`,
-      message: `${orderInput.side} ${orderInput.quantity}x LC500-DYN @ $${orderInput.price.toFixed(2)} matched.`,
+      message: `${orderInput.side} ${orderInput.quantity}x High-Aero Grand Touring Telemetry Core-DYN @ $${orderInput.price.toFixed(2)} matched.`,
       level: 'success',
       read: false,
     };
@@ -384,7 +384,7 @@ export default function App() {
       category: 'APA_ESCROW',
       actor: `${role} Keyholder`,
       action: `Cryptographic Signature Applied: ${keyHash}`,
-      details: `Dual-factor authorization signed for Acquire.com Micro-APA Buyout ($45,000 USD).`,
+      details: `Dual-factor authorization signed for Production Service Engine Deployment.`,
       hash: keyHash,
       status: 'VERIFIED',
     };
@@ -409,7 +409,7 @@ export default function App() {
     { id: 'tab_sql', label: '2. SQL Tick Vault', icon: Database, badge: 'PostgreSQL 16 HMAC' },
     { id: 'tab_openapi', label: '3. OpenAPI 3.1 Contract', icon: Globe, badge: 'REST / WebSocket' },
     { id: 'tab_cloudrun', label: '4. Turnkey Cloud Run Harness', icon: Cloud, badge: '94.2% PyTest' },
-    { id: 'tab_apa', label: '5. Acquire.com APA Covenant', icon: FileText, badge: '$45,000 Buyout' },
+    { id: 'tab_apa', label: '5. Acquire.com APA Covenant', icon: FileText, badge: 'Clean-Room IP' },
   ];
 
   return (
@@ -513,7 +513,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-3 font-semibold text-zinc-300">
             <span className="w-3 h-3 rounded-full bg-emerald-400"></span>
-            <span>GF-T3-167 // LEXUS LC 500 DYNAMIC CORE v1.0.0-PROD</span>
+            <span>GF-T3-167 // Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core DYNAMIC CORE v1.0.0-PROD</span>
             <span className="text-zinc-600">|</span>
             <span className="text-zinc-400">ACQUIRE.COM MONOPOLY VAULT</span>
           </div>

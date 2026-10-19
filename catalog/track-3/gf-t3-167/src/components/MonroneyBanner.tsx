@@ -124,10 +124,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </div>
       </div>
 
-      {/* Main Monroney Header Bar with Scaled-Up Big Typography */}
+      {/* Main Telemetry Header Bar with Scaled-Up Big Typography */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-7">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          {/* Asset Identification & Monroney Title */}
+          {/* Asset Identification & Architecture Title */}
           <div>
             <div className="flex flex-wrap items-center gap-2.5 mb-2">
               <span className="bg-amber-500/15 text-amber-300 border border-amber-500/40 text-sm font-mono font-bold px-3 py-1 rounded-lg tracking-wider shadow-sm">
@@ -143,7 +143,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
             <div className="flex flex-wrap items-center gap-3 mt-1">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Lexus LC 500 Dynamic Core
+                Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core
               </h1>
               <span className="text-xs sm:text-sm font-mono font-bold text-amber-400 bg-zinc-900 px-2.5 py-1 rounded-lg border border-zinc-700 shadow-sm">
                 v1.0.0-PROD
@@ -155,26 +155,26 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             </p>
           </div>
 
-          {/* Pricing Badges */}
+          {/* Technical Architecture Badges */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-            {/* Micro-APA Buyout Badge */}
+            {/* Runtime Execution Badge */}
             <div className="bg-emerald-950/50 border border-emerald-500/40 rounded-xl p-3.5 sm:p-4 px-5 flex flex-col justify-center shadow-lg shadow-emerald-950/20">
               <div className="text-xs sm:text-sm font-mono font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                Acquire.com Micro-APA Buyout
+                Runtime Execution
               </div>
               <div className="text-2xl sm:text-3xl font-black font-mono text-emerald-300 mt-1">
-                $45,000 <span className="text-xs sm:text-sm font-bold text-emerald-400">USD</span>
+                20 kHz <span className="text-xs sm:text-sm font-bold text-emerald-400">Sub-ms</span>
               </div>
             </div>
 
-            {/* Enterprise Valuation Anchor */}
+            {/* Architecture Moat Badge */}
             <div className="bg-zinc-900 border border-zinc-700 rounded-xl p-3.5 sm:p-4 px-5 flex flex-col justify-center shadow-lg">
               <div className="text-xs sm:text-sm font-mono font-semibold text-zinc-400 uppercase tracking-wider">
-                Enterprise Valuation Anchor
+                Architecture Moat
               </div>
               <div className="text-2xl sm:text-3xl font-black font-mono text-zinc-200 mt-1">
-                $125,000 <span className="text-xs sm:text-sm font-normal text-zinc-400">USD</span>
+                PostgreSQL 16 <span className="text-xs sm:text-sm font-normal text-zinc-400">+ RLS</span>
               </div>
             </div>
           </div>

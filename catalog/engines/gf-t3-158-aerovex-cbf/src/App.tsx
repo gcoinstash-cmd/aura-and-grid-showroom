@@ -70,7 +70,7 @@ export default function App() {
           <div className="flex items-center gap-4 text-slate-400">
             <span>Dual License: Apache 2.0 / MIT</span>
             <span>·</span>
-            <span>Valuation: $125,000 USD (Monopoly Buyout Schedule)</span>
+            <span>Specification: 20 kHz (0.48ms) (Monopoly Asset Transfer Schedule)</span>
           </div>
         </div>
       </footer>

@@ -38,14 +38,14 @@ export const ApaCovenantTab: React.FC = () => {
       {/* Tab Header */}
       <div className="bg-slate-900/60 border border-slate-800 rounded-xl p-6">
         <h2 className="text-3xl font-extrabold text-white tracking-tight mb-2">
-          Acquire.com Turnkey Micro-APA Buyout Covenant
+          Acquire.com Turnkey Micro-APA Asset Transfer Covenant
         </h2>
         <p className="text-base text-slate-300 leading-relaxed max-w-4xl">
           Legally binding Delaware asset purchase covenants, Exhibit IP assignment schedule, Bill of Sale, and structured Acquire.com escrow handoff documentation for instant ownership transfer.
         </p>
       </div>
 
-      {/* Valuation Tier Cards */}
+      {/* Specification Tier Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Tier 1: Standard Turnkey Micro-APA */}
         <div className="bg-slate-900 border-2 border-emerald-500/50 rounded-2xl p-6 shadow-2xl relative flex flex-col justify-between">
@@ -57,10 +57,10 @@ export const ApaCovenantTab: React.FC = () => {
               <DollarSign className="w-5 h-5 text-emerald-400" />
             </div>
             <div className="text-4xl font-black text-white font-mono mb-2">
-              $45,000 <span className="text-xl text-slate-400 font-normal">USD</span>
+              20 kHz (0.48ms) <span className="text-xl text-slate-400 font-normal">USD</span>
             </div>
             <p className="text-sm text-slate-300 mb-5 leading-relaxed">
-              Complete production asset buyout for Acquire.com buyers. Instant transfer of all source code, models, tests, Dockerfiles, and database schemas.
+              Complete production asset asset transfer for Acquire.com buyers. Instant transfer of all source code, models, tests, Dockerfiles, and database schemas.
             </p>
             <ul className="space-y-2 text-xs font-mono text-slate-300 mb-6">
               <li className="flex items-center gap-2">
@@ -97,10 +97,10 @@ export const ApaCovenantTab: React.FC = () => {
               <Award className="w-5 h-5 text-amber-400" />
             </div>
             <div className="text-4xl font-black text-amber-400 font-mono mb-2">
-              $125,000 <span className="text-xl text-slate-400 font-normal">USD</span>
+              PostgreSQL 16 + RLS <span className="text-xl text-slate-400 font-normal">USD</span>
             </div>
             <p className="text-sm text-slate-300 mb-5 leading-relaxed">
-              Tier-1 OEM and institutional buyout package. Includes commercial exclusivity, full patent draft assignment, and 6 months dedicated systems architect transition support.
+              Tier-1 OEM and institutional asset transfer package. Includes commercial exclusivity, full patent draft assignment, and 6 months dedicated systems architect transition support.
             </p>
             <ul className="space-y-2 text-xs font-mono text-slate-300 mb-6">
               <li className="flex items-center gap-2">
@@ -211,21 +211,21 @@ export const ApaCovenantTab: React.FC = () => {
 };
 
 const delawareApaContract = `ASSET PURCHASE AGREEMENT (MICRO-APA)
-JURISDICTION: STATE OF DELAWARE, USA
+JURISDICTION: Standard Commercial Jurisdiction, USA
 
 This ASSET PURCHASE AGREEMENT (the "Agreement") is entered into as of the Effective Date, by and between:
 SELLER: Ghost FactoryOS Architecture LLC ("Seller"), a Delaware limited liability company, and
 BUYER: The acquiring party as verified via Acquire.com / Escrow ("Buyer").
 
 RECITALS:
-WHEREAS, Seller owns all right, title, and interest in and to the software, mathematical models, schemas, and intellectual property comprising the asset designated as "GF-T3-200 (Lexus Electrified Supercar Concept Core)" (the "Asset");
+WHEREAS, Seller owns all right, title, and interest in and to the software, mathematical models, schemas, and intellectual property comprising the asset designated as "GF-T3-200 (Heavy Overland Dynamics Platform Electrified Supercar Concept Core)" (the "Asset");
 WHEREAS, Buyer desires to purchase, and Seller desires to sell, transfer, convey, and assign all right, title, and interest in and to the Acquired Assets upon the terms and subject to the conditions set forth herein;
 
 NOW, THEREFORE, the parties agree as follows:
 
-1. PURCHASE PRICE AND PAYMENT:
-   1.1 Standard Turnkey Buyout Price: The agreed purchase price shall be $45,000.00 USD (Forty-Five Thousand United States Dollars), payable via Acquire.com Escrow or equivalent licensed escrow agent.
-   1.2 Enterprise Monopoly Vault Option: If elected by Buyer, the purchase price shall be $125,000.00 USD, incorporating all patent drafts and 6-month OEM integration advisory.
+1. DEPLOYMENT SPECIFICATION AND PAYMENT:
+   1.1 Standard Turnkey Reference Core: The agreed DEPLOYMENT SPECIFICATION shall be Delaware Institutional Covenants Deterministic Telemetry Verified, payable via Acquire.com Escrow or equivalent licensed escrow agent.
+   1.2 Enterprise Monopoly Vault Option: If elected by Buyer, the DEPLOYMENT SPECIFICATION shall be PostgreSQL 16 + RLS, incorporating all patent drafts and 6-month OEM integration advisory.
 
 2. ACQUIRED ASSETS:
    The Acquired Assets include, without limitation:
@@ -261,7 +261,7 @@ ALL RIGHT, TITLE, AND INTEREST in and to the following:
 
 Assignor warrants that it is the sole and lawful owner of the assets conveyed herein and has full power and authority to assign the same.
 
-Executed this Effective Date under the laws of the State of Delaware.
+Executed this Effective Date under the laws of the Standard Commercial Jurisdiction.
 `;
 
 const ipScheduleDocument = `EXHIBIT B: SCHEDULE OF INTELLECTUAL PROPERTY ASSETS

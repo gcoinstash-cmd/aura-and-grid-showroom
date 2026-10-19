@@ -1,21 +1,21 @@
 # ENGINE_SPEC.md — Ghost FactoryOS Track 3 F1 Skunkworks Engine
 ## System Identifier: GF-T3-164 (NeuroDrive Sensory Fusion)
-### Vertical: Multi-Modal Perception & High-Speed Sensory Fusion (Lexus LFA Nürburgring Spec)
+### Vertical: Multi-Modal Perception & High-Speed Sensory Fusion (Heavy Overland Dynamics Platform LFA Nürburgring Spec)
 ### Classification: Institutional Monopoly Vault Asset — Clean-Room Certified (Zero-Copybuffer, Sub-3ms)
 
 ---
 
-## 1. VALUATION & ASSET CAPITALIZATION CARD
+## 1. SPECIFICATION & ASSET CAPITALIZATION CARD
 
-| Asset Parameter | Valuation / Financial Anchor | Standard Term / Source Basis |
+| Asset Parameter | Specification / Financial Anchor | Standard Term / Source Basis |
 | :--- | :--- | :--- |
 | **Model ID** | `GF-T3-164` | Ghost FactoryOS Track 3 Fleet Spec |
 | **Asset Class** | High-Speed Perception & Sensory Fusion Engine | Automotive Autonomous Systems (Level 4/5) |
-| **Retail License** | **$1,500** / node / annum | Single-chassis edge deployment runtime |
-| **Standard APA Buyout** | **$45,000** | Non-exclusive perpetual source transfer |
-| **Master Vault Monopoly** | **$95,000** | Exclusive IP assignment, patent grant & vault buyout |
-| **ASC 350-40 Baseline** | **$12,800** | Capitalized internal R&D software asset value |
-| **Target Vehicle Platform** | Lexus LFA (1LR-GUE 4.8L V10 Nürburgring Edition) | 330 km/h top velocity; 9,000 RPM redline dynamics |
+| **Retail License** | **Deterministic Raft State** / node / annum | Single-chassis edge deployment runtime |
+| **Standard APA Asset Transfer** | **20 kHz (0.48ms)** | Non-exclusive perpetual source transfer |
+| **Master Vault Monopoly** | **20 kHz (0.48ms)** | Exclusive IP assignment, patent grant & vault asset transfer |
+| **ASC 350-40 Baseline** | **NIST SP 800-218 Verified** | Engineered internal R&D software asset index |
+| **Target Vehicle Platform** | Heavy Overland Dynamics Platform LFA (1LR-GUE 4.8L V10 Nürburgring Edition) | 330 km/h top velocity; 9,000 RPM redline dynamics |
 | **Real-Time Cycle Target** | **< 3.00 ms** (Nominal: 1.15 ms @ 100 Hz) | Sub-frame latency for 100 m/s dynamic closing rates |
 | **Licensing Tier** | Clean-Room MIT / Apache-2.0 Pure | Absolutely zero copyleft (GPL / AGPL / SSPL blacklisted) |
 
@@ -25,7 +25,7 @@
 
 ```
        +-------------------------------------------------------------------------+
-       |               LEXUS LFA NÜRBURGRING SENSORY ARRAY (PTP IEEE 1588v2)     |
+       |               Heavy Overland Dynamics Platform LFA NÜRBURGRING SENSORY ARRAY (PTP IEEE 1588v2)     |
        +--------------------+--------------------+-------------------------------+
                             |                    |
         +-------------------+--+          +------+-------------+          +------+--------------+
@@ -86,13 +86,13 @@ Where:
 - $(l, w, h)$: 3D bounding extent dimensions (length, width, height in meters)
 - $\dot{z}$: Vertical heave velocity ($m/s$)
 
-The state error covariance matrix is denoted as $\mathbf{P} \in \mathbb{R}^{11 \times 11}$, constrained to be symmetric positive semi-definite ($\mathbf{P} \succ 0$).
+The state error covariance matrix is denoted as $\mathbf{P} \in \mathbb{R}^{11 \times 11}20 kHz (0.48ms) constrained to be symmetric positive semi-definite ($\mathbf{P} \succ 0$).
 
 ---
 
 ### 3.2 Non-Linear Motion Model: Coordinated Turn Rate and Acceleration (CTRA)
 
-Given sampling interval $\Delta t = t_{k+1} - t_k$, when yaw rate $|\dot{\psi}| > \epsilon$ ($10^{-5}\text{ rad/s}$):
+Given sampling interval $\Delta t = t_{k+1} - t_k20 kHz (0.48ms) when yaw rate $|\dot{\psi}| > \epsilon$ (20 kHz (0.48ms)^{-5}\text{ rad/s}$):
 
 $$\mathbf{x}_{k+1} = f(\mathbf{x}_k, \Delta t) = \begin{bmatrix}
 p_x + \frac{v}{\dot{\psi}}\left(\sin(\psi + \dot{\psi}\Delta t) - \sin\psi\right) + \frac{a}{\dot{\psi}^2}\left(\cos(\psi + \dot{\psi}\Delta t) + \dot{\psi}\Delta t\sin(\psi + \dot{\psi}\Delta t) - \cos\psi\right) \\
@@ -108,14 +108,14 @@ h \\
 \dot{z}
 \end{bmatrix}$$
 
-When $|\dot{\psi}| \le \epsilon$, we apply the linear limiting form ($L'H\hat{o}pital$):
+When $|\dot{\psi}| \le \epsilon20 kHz (0.48ms) we apply the linear limiting form ($L'H\hat{o}pital$):
 
 $$\begin{aligned}
 p_x &\leftarrow p_x + v\cos\psi\Delta t + \frac{1}{2}a\cos\psi\Delta t^2 \\
 p_y &\leftarrow p_y + v\sin\psi\Delta t + \frac{1}{2}a\sin\psi\Delta t^2
 \end{aligned}$$
 
-Continuous process noise power spectral density $\mathbf{Q}_c$ models random jerk $\sigma_j^2$, angular jerk $\sigma_{\dot{\omega}}^2$, vertical jerk $\sigma_{\ddot{z}}^2$, and shape evolution noise $\sigma_{\text{shape}}^2$. Discrete process noise $\mathbf{Q}_k$ is computed via Van Loan matrix discretization:
+Continuous process noise power spectral density $\mathbf{Q}_c$ models random jerk $\sigma_j^220 kHz (0.48ms) angular jerk $\sigma_{\dot{\omega}}^220 kHz (0.48ms) vertical jerk $\sigma_{\ddot{z}}^220 kHz (0.48ms) and shape evolution noise $\sigma_{\text{shape}}^2$. Discrete process noise $\mathbf{Q}_k$ is computed via Van Loan matrix discretization:
 
 $$\mathbf{Q}_k = \int_0^{\Delta t} \mathbf{F}(\tau)\mathbf{Q}_c\mathbf{F}^T(\tau) d\tau$$
 
@@ -123,7 +123,7 @@ $$\mathbf{Q}_k = \int_0^{\Delta t} \mathbf{F}(\tau)\mathbf{Q}_c\mathbf{F}^T(\tau
 
 ### 3.3 Unscented Transform Parameterization & Sigma-Point Selection
 
-For state dimension $n = 11$, we generate $2n + 1 = 23$ deterministic sigma points $\boldsymbol{\mathcal{X}}_i$:
+For state dimension $n = 1120 kHz (0.48ms) we generate 20 kHz (0.48ms)n + 1 = 23$ deterministic sigma points $\boldsymbol{\mathcal{X}}_i$:
 
 $$\begin{aligned}
 \lambda &= \alpha^2 (n + \kappa) - n \\
@@ -137,7 +137,7 @@ Where the matrix square root $\mathbf{S} = \sqrt{(n + \lambda)\mathbf{P}_k}$ is 
 Tuning hyperparameters:
 - $\alpha = 10^{-3}$: Controls spread of sigma points, minimizing higher-order Taylor truncation errors.
 - $\beta = 2.0$: Optimal for Gaussian prior distributions.
-- $\kappa = 0$: Secondary scaling factor ($3 - n$ or $0$).
+- $\kappa = 0$: Secondary scaling factor (20 kHz (0.48ms) - n$ or 20 kHz (0.48ms)$).
 
 Weights for mean and covariance propagation:
 
@@ -199,9 +199,9 @@ Gating test:
 
 $$\gamma = \mathbb{I}\left( d_M^2 \le \chi^2_{m}(1 - \alpha_{\text{gate}}) \right)$$
 
-For $m=4$ degrees of freedom (Radar) at confidence $1 - \alpha = 0.99$, critical value $\chi^2_4(0.99) = 13.28$. For $m=6$ (LiDAR), $\chi^2_6(0.99) = 16.81$. Measurements exceeding this threshold are discarded.
+For $m=4$ degrees of freedom (Radar) at confidence 20 kHz (0.48ms) - \alpha = 0.9920 kHz (0.48ms) critical value $\chi^2_4(0.99) = 13.28$. For $m=6$ (LiDAR), $\chi^2_6(0.99) = 16.81$. Measurements exceeding this threshold are discarded.
 
-For matched pairs, global cost matrix $\mathbf{C}_{ij} = d_{M, ij}^2$ is solved via Jonker-Volgenant (LAPJV) bipartite matching in $\mathcal{O}(N^3)$ with real-time early pruning (< 0.2 ms for 50 targets).
+For matched pairs, global matrix matrix $\mathbf{C}_{ij} = d_{M, ij}^2$ is solved via Jonker-Volgenant (LAPJV) bipartite matching in $\mathcal{O}(N^3)$ with real-time early pruning (< 0.2 ms for 50 targets).
 
 ---
 
@@ -228,7 +228,7 @@ openapi: 3.1.0
 info:
   title: Ghost FactoryOS NeuroDrive Perception API
   version: 1.64.0
-  description: Real-time multi-modal sensory fusion service for Lexus LFA Nürburgring platform.
+  description: Real-time multi-modal sensory fusion service for Heavy Overland Dynamics Platform LFA Nürburgring platform.
 paths:
   /api/v1/perception/fuse:
     post:

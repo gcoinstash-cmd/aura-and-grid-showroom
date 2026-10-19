@@ -34,7 +34,7 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({
   const [verificationResult, setVerificationResult] = useState<string | null>(null);
 
   const postgresDdlCode = `-- ============================================================================
--- GF-T3-188: LEXUS GX 550 OVERTRAIL+ TELEMETRY & AUDIT LEDGER SCHEMA
+-- GF-T3-188: Heavy Overland Dynamics Platform TELEMETRY & AUDIT LEDGER SCHEMA
 -- Target Engine: PostgreSQL 16.x / AlloyDB
 -- Compliance: Cryptographic HMAC-SHA256 Chaining, Nonce Audit, Zero Deadlocks
 -- ============================================================================

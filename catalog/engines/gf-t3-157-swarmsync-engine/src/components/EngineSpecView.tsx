@@ -111,7 +111,7 @@ components:
               ENGINE_SPEC.md — GF-T3-157
             </h2>
             <p className="text-base sm:text-lg text-slate-300 font-medium mt-1 leading-relaxed">
-              Zero-placeholder architectural specification satisfying all 5 Monopoly Vault Criteria for Google Antigravity ingestion.
+              Zero-placeholder architectural specification satisfying all 5 Monopoly Vault Criteria for Deterministic Production Pipeline ingestion.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ components:
                 floating-point drift across mixed architectures.
               </li>
               <li>
-                <strong>Deterministic Real-Time Budget:</strong> Sub-10 microsecond neighbor consensus and trajectory synthesis
+                <strong>Deterministic Real-Time Threshold:</strong> Sub-10 microsecond neighbor consensus and trajectory synthesis
                 guarantees 100 Hz control loop closure with 9.8 ms headroom for sensor fusion.
               </li>
               <li>

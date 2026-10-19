@@ -15,9 +15,9 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-      {/* Card 1: DIRECT4 Inverter Loop */}
+      {/* Card 1: DUAL_VECTOR_TORQUE Inverter Loop */}
       <div 
-        onClick={() => onSelectTab('direct4')}
+        onClick={() => onSelectTab('dual_vector_torque')}
         className="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-xl p-5 cursor-pointer transition-all hover:bg-slate-850 shadow-md group"
       >
         <div className="flex items-center justify-between mb-2">
@@ -43,7 +43,7 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({
 
       {/* Card 2: Rear Dynamic Steer */}
       <div 
-        onClick={() => onSelectTab('direct4')}
+        onClick={() => onSelectTab('dual_vector_torque')}
         className="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-xl p-5 cursor-pointer transition-all hover:bg-slate-850 shadow-md group"
       >
         <div className="flex items-center justify-between mb-2">

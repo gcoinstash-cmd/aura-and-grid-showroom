@@ -124,9 +124,9 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({ te
         <div className="mt-3.5 flex items-center justify-between text-base font-mono text-slate-400">
           <span className="text-purple-300 flex items-center gap-1.5 font-medium">
             <Flame className="w-4 h-4 text-purple-400" />
-            Monopoly Buyout
+            Monopoly Asset Transfer
           </span>
-          <span className="text-white font-bold">$45,000</span>
+          <span className="text-white font-bold">20 kHz (0.48ms)</span>
         </div>
       </div>
     </div>

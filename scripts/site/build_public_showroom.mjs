@@ -645,15 +645,10 @@ const showroomHtml = `<!DOCTYPE html>
             Interactive 3D Chassis Dyno &amp; <span class="cyan-gradient-text">Direct APA Title Configurator.</span>
           </h1>
         </div>
-        <div class="max-w-md font-mono shrink-0">
-          <div class="px-4 py-3 rounded-xl bg-[#111724] border border-emerald-500/40 shadow-[0_0_20px_-5px_rgba(16,185,129,0.2)]">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-emerald-400 font-extrabold text-xs uppercase tracking-wider">TITLE ASSIGNMENT GATEWAY</span>
-            </div>
-            <p class="text-slate-300 text-xs leading-relaxed font-sans">
-              100% Clean-Room Title Transfer via pure Asset Purchase Agreement (APA). Zero copyleft liabilities, escrow-backed repo delivery.
-            </p>
+        <div class="flex flex-wrap items-center gap-3 font-mono text-sm">
+          <div class="px-4 py-2.5 rounded-xl bg-[#111724] border border-cyan-500/30 shadow-[0_0_20px_-5px_rgba(0,240,255,0.2)]">
+            <span class="text-slate-300 block text-xs">COLLECTION ALLOCATION</span>
+            <span class="text-cyan-300 font-bold text-sm">200 Synced Chassis // Pure APA Title Transfer</span>
           </div>
         </div>
       </div>
@@ -1022,7 +1017,7 @@ ${renderedCardsHtml}
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="text-sm font-mono uppercase tracking-widest text-cyan-400 mb-2">DETERMINISTIC ARCHITECTURE &amp; CLEAN-ROOM IP</div>
-        <h2 class="text-3xl font-bold tracking-tight text-white mb-3">Zero-Copyleft IP, &gt;80% Pytest Verification &amp; 80% Sovereign Retention Floor</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-white mb-3">Zero-Copyleft IP, &gt;80% Pytest Verification &amp; Pure APA Title Governance</h2>
         <p class="text-slate-300 text-base leading-relaxed">
           Synchronized with GhostFactoryOS v1.6.0 &amp; v3.1-APA. Every asset is engineered on permissive open-source packages (MIT / Apache 2.0) with PostgreSQL 16 Row Level Security schemas for direct Asset Purchase Agreement (APA) transfer.
         </p>
@@ -1113,7 +1108,7 @@ ${renderedCardsHtml}
       <h3 class="text-2xl font-bold text-white mb-4">Aura &amp; Grid Pure APA Governance Disclosures</h3>
       <div id="tabContent-apa" class="space-y-3 text-base text-slate-200 leading-relaxed">
         <p>• <strong>Pure APA Allocation Model:</strong> Private asset-specific allocation for Track 1 (Lean Tuner), Track 2 (Hypercar Flagship), and Track 3 (Skunkworks Engine). All acquisitions proceed via pure Asset Purchase Agreement (APA) title assignments.</p>
-        <p>• <strong>80% Sovereign Retention Floor:</strong> At least 80% of the collection remains permanently vaulted. Every micro-APA transfers one defined asset schedule and strictly excludes GhostFactoryOS, Aura &amp; Grid brands, and shared foundry IP.</p>
+        <p>• <strong>Collection Allocation Policy:</strong> Defined asset schedules transferred via pure Asset Purchase Agreement (APA). GhostFactoryOS core infrastructure, Aura &amp; Grid brand, and shared foundry IP remain permanently protected.</p>
         <p>• <strong>Product Truth:</strong> All prototypes utilize sample/simulated data unless verified through Track 3 Working Service Engine deployment.</p>
       </div>
       <div class="mt-6 flex justify-end">
@@ -1136,7 +1131,7 @@ ${renderedCardsHtml}
         <div class="flex justify-between"><span class="text-slate-300">Allocation Status:</span> <span class="text-amber-300 font-bold" id="flagshipModalTrackPrice">PRIVATE ALLOCATION // APA SPEC READY</span></div>
         <div class="flex justify-between"><span class="text-slate-300">Clean-Room IP Stack:</span> <span class="text-emerald-400 font-bold">Zero-Copyleft (MIT / Apache 2.0)</span></div>
         <div class="flex justify-between"><span class="text-slate-300">Compliance Gate:</span> <span class="text-white font-bold">NIST SP 800-218 SSDF v1.1</span></div>
-        <div class="flex justify-between"><span class="text-slate-300">Sovereign Retention Floor:</span> <span class="text-cyan-300 font-bold">80% Fleet Locked</span></div>
+        <div class="flex justify-between"><span class="text-slate-300">Collection Allocation:</span> <span class="text-cyan-300 font-bold">Pure APA Title Transfer</span></div>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 text-sm">

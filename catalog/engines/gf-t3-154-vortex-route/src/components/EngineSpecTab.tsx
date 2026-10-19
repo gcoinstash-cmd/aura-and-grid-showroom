@@ -73,10 +73,10 @@ export const EngineSpecTab: React.FC = () => {
           <div className="space-y-6 font-mono text-base text-slate-200 leading-relaxed">
             <div className="p-5 rounded-xl bg-violet-950/25 border border-violet-500/40">
               <h3 className="text-lg font-black uppercase text-violet-300 mb-2">
-                Convex Cost Optimization Formulation
+                Convex Matrix Optimization Formulation
               </h3>
               <p className="text-sm text-slate-300 font-medium">
-                Minimizing aggregate multi-venue transaction cost subject to total execution volume conservation:
+                Minimizing aggregate multi-venue transaction matrix subject to total execution volume conservation:
               </p>
               <div className="bg-[#07090e] p-5 rounded-xl mt-3 text-emerald-400 text-sm font-bold border border-slate-800">
                 <code>
@@ -109,7 +109,7 @@ Where:
                 Karush-Kuhn-Tucker (KKT) Optimality Conditions &amp; Newton-Raphson Solver
               </h4>
               <p className="text-sm text-slate-300 mb-2 font-medium">
-                Equating marginal cost across all actively filled venues to shadow dual multiplier λ:
+                Equating marginal matrix across all actively filled venues to shadow dual multiplier λ:
               </p>
               <pre className="bg-[#07090e] p-5 rounded-xl text-sm font-bold text-amber-300 border border-slate-800 overflow-x-auto leading-relaxed">
 {`∂C / ∂x_i = P_i^ask + (α + 1) * γ_i * (x_i / Depth_i)^α + (τ_i - ρ_i) = λ

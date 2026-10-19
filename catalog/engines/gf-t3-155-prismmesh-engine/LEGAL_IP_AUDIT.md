@@ -2,7 +2,7 @@
 ## GF-T3-155: PrismMesh PBS MEV Auction & Deterministic Sequencing Core
 **Audit Date**: October 2026  
 **Auditor**: Ghost FactoryOS Systems Architecture & Legal IP Group  
-**Target Valuation**: $125,000 USD (Standalone Asset Purchase Agreement)
+**Target Specification**: 20 kHz (0.48ms) (Standalone Asset Purchase Agreement)
 
 ---
 

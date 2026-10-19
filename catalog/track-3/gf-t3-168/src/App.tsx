@@ -194,7 +194,7 @@ export default function App() {
 
       setSensorInput((prev) => {
         const speed = p.speedKmh + (Math.random() - 0.5) * 0.8;
-        // DIRECT4 torque split: shifts rearward during cornering
+        // DUAL_VECTOR_TORQUE torque split: shifts rearward during cornering
         const cornerFactor = Math.min(Math.abs(p.yawRateDeg) / 25, 1);
         const rearRatio = Math.round(50 + cornerFactor * 25);
         const frontRatio = 100 - rearRatio;
@@ -412,7 +412,7 @@ export default function App() {
 
       {/* MAIN COCKPIT WORKSPACE */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-6 py-6 sm:px-8 space-y-8">
-        {/* Interactive Lexus RX 500h F SPORT DIRECT4 Chassis HUD */}
+        {/* Interactive Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Chassis HUD */}
         <ChassisVisualizer
           ekfState={ekfState}
           sensorInput={sensorInput}
@@ -531,7 +531,7 @@ export default function App() {
             <span className="text-emerald-400 font-semibold">Clean-Room Certified MIT</span>
           </div>
           <div>
-            Acquire.com Turnkey Micro-APA Deposit & Escrow Vault Ready ($45,000 USD)
+            Acquire.com Turnkey Micro-APA Deposit & Escrow Vault Ready (20 kHz (0.48ms))
           </div>
         </div>
       </footer>

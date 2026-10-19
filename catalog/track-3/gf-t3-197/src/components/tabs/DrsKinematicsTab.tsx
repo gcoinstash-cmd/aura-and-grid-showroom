@@ -83,7 +83,7 @@ export const DrsKinematicsTab: React.FC<DrsKinematicsTabProps> = ({
   };
 
   const pythonCode = `"""
-Lexus TX 500h F SPORT Performance Core - Dynamic Rear Steering (DRS) & DIRECT4 Kinematics
+Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core - Dynamic Rear Steering (DRS) & DUAL_VECTOR_TORQUE Kinematics
 Asset ID: GF-T3-197
 Python 3.12 Production Engine
 
@@ -97,7 +97,7 @@ import math
 
 @dataclass(frozen=True)
 class VehicleParameters:
-    wheelbase_m: float = 2.950          # Lexus TX 500h wheelbase (m)
+    wheelbase_m: float = 2.950          # Heavy Overland Dynamics Platform Multi-Node High-Output Core wheelbase (m)
     dist_cg_to_front_m: float = 1.385   # l_f
     dist_cg_to_rear_m: float = 1.565    # l_r
     curb_weight_kg: float = 2250.0      # Kerb mass (kg)
@@ -140,7 +140,7 @@ class DrsKinematicsEngine:
         
         radius_reduction_pct = max(0.0, ((standard_radius_m - turning_radius_m) / standard_radius_m) * 100.0)
 
-        # DIRECT4 Dynamic Torque Vectoring (Front 2.4T Hybrid : Rear eAxle)
+        # DUAL_VECTOR_TORQUE Dynamic Torque Vectoring (Front 2.4T Hybrid : Rear eAxle)
         if speed_mph < 25.0:
             # Launch / Low speed traction
             front_pct, rear_pct = 75, 25
@@ -158,8 +158,8 @@ class DrsKinematicsEngine:
             "phase": phase,
             "turning_radius_m": round(turning_radius_m, 2),
             "radius_reduction_pct": round(radius_reduction_pct, 1),
-            "direct4_front_pct": front_pct,
-            "direct4_rear_pct": rear_pct,
+            "dual_vector_torque_front_pct": front_pct,
+            "dual_vector_torque_rear_pct": rear_pct,
             "status": "NOMINAL"
         }
 
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     res_high = engine.calculate_steering(speed_mph=75.0, steering_wheel_deg=60.0)
     assert res_high["phase"] == "IN_PHASE"
     assert res_high["delta_rear_deg"] > 0.0
-    assert res_high["direct4_rear_pct"] == 80
+    assert res_high["dual_vector_torque_rear_pct"] == 80
     
     print("GF-T3-197 DRS KINEMATICS ENGINE: ALL SANITY CONSTRAINTS PASSED.")
 `;
@@ -196,10 +196,10 @@ if __name__ == "__main__":
         <div>
           <h2 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
             <Sliders className="w-8 h-8 text-amber-400" />
-            DRS & DIRECT4 Vectoring Core
+            DRS & DUAL_VECTOR_TORQUE Vectoring Core
           </h2>
           <p className="text-base text-slate-400 mt-1">
-            Dynamic Rear Steering (±4.0° toe actuator) and DIRECT4 high-output rear eAxle vectoring model.
+            Dynamic Rear Steering (±4.0° toe actuator) and DUAL_VECTOR_TORQUE high-output rear eAxle vectoring model.
           </p>
         </div>
 
@@ -386,7 +386,7 @@ if __name__ == "__main__":
                         : 'bg-slate-800 text-slate-400 border-slate-700 hover:text-white'
                     }`}
                   >
-                    {mode === 'NORMAL' ? 'Normal' : mode === 'SPORT_PLUS' ? 'Sport S+' : 'Track DRS'}
+                    {mode === 'NORMAL' ? 'Normal' : mode === 'SPORT_PLUS' ? 'High-Frequency Compute Mode' : 'Track DRS'}
                   </button>
                 ))}
               </div>
@@ -400,7 +400,7 @@ if __name__ == "__main__":
               <div className="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
                 <span className="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
                   <Navigation2 className="w-5 h-5 text-cyan-400" />
-                  Lexus TX 500h Active Chassis Plane (Wheelbase: 2,950 mm)
+                  Heavy Overland Dynamics Platform Multi-Node High-Output Core Active Chassis Plane (Wheelbase: 2,950 mm)
                 </span>
                 <span className="text-base font-mono text-slate-400">
                   Scale: 1:35 Dynamic
@@ -431,7 +431,7 @@ if __name__ == "__main__":
                     strokeDasharray="4 4"
                   />
 
-                  {/* Vehicle Body Outline (Lexus TX Profile from Top) */}
+                  {/* Vehicle Body Outline (Heavy Overland Dynamics Platform TX Profile from Top) */}
                   <rect
                     x="110"
                     y="60"
@@ -469,7 +469,7 @@ if __name__ == "__main__":
                     textAnchor="middle"
                     fontFamily="monospace"
                   >
-                    TX 500h DIRECT4
+                    Multi-Node High-Output Core DUAL_VECTOR_TORQUE
                   </text>
 
                   {/* Center of Gravity (CG) marker */}
@@ -583,27 +583,27 @@ if __name__ == "__main__":
                 </div>
               </div>
 
-              {/* DIRECT4 Dynamic Torque Vectoring Bar */}
+              {/* DUAL_VECTOR_TORQUE Dynamic Torque Vectoring Bar */}
               <div className="mt-5 space-y-2">
                 <div className="flex justify-between items-center text-base">
                   <span className="font-bold text-slate-200 flex items-center gap-2">
                     <Zap className="w-5 h-5 text-amber-400" />
-                    DIRECT4 Dynamic Torque Distribution
+                    DUAL_VECTOR_TORQUE Dynamic Torque Distribution
                   </span>
                   <span className="font-mono font-bold text-white text-base">
-                    {state.direct4FrontPct}% Front 2.4T Hybrid / {state.direct4RearPct}% Rear eAxle
+                    {state.dual_vector_torqueFrontPct}% Front 2.4T Hybrid / {state.dual_vector_torqueRearPct}% Rear eAxle
                   </span>
                 </div>
                 <div className="w-full h-4 bg-slate-800 rounded-full overflow-hidden flex p-0.5 border border-slate-700">
                   <div
                     className="h-full bg-cyan-500 rounded-l-full transition-all duration-300"
-                    style={{ width: `${state.direct4FrontPct}%` }}
-                    title={`Front Axle: ${state.direct4FrontPct}%`}
+                    style={{ width: `${state.dual_vector_torqueFrontPct}%` }}
+                    title={`Front Axle: ${state.dual_vector_torqueFrontPct}%`}
                   ></div>
                   <div
                     className="h-full bg-amber-500 rounded-r-full transition-all duration-300"
-                    style={{ width: `${state.direct4RearPct}%` }}
-                    title={`Rear eAxle: ${state.direct4RearPct}%`}
+                    style={{ width: `${state.dual_vector_torqueRearPct}%` }}
+                    title={`Rear eAxle: ${state.dual_vector_torqueRearPct}%`}
                   ></div>
                 </div>
                 <div className="flex justify-between text-base text-slate-400 font-mono">

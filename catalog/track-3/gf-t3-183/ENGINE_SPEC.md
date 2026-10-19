@@ -1,17 +1,17 @@
-# GF-T3-183: LEXUS RZ 450e DIRECT4 DUAL-MOTOR ELECTRIC CORE
+# GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DUAL_VECTOR_TORQUE DUAL-MOTOR ELECTRIC CORE
 ## Institutional Micro-APA Technical & Legal Blueprints (Acquire.com Turnkey Deliverable)
 **System Asset ID:** GF-T3-183  
-**Classification:** Lexus RZ 450e Direct4 Dual-Motor Electric Core & Steer-by-Wire Controller  
+**Classification:** Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core & Steer-by-Wire Controller  
 **Author:** Lead Systems Architect — Ghost FactoryOS  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
-**Valuation:** Cash Buyout: $45,000 USD | Enterprise License: $125,000 USD  
+**Specification: ** Cash Asset Transfer: 20 kHz (0.48ms) | Enterprise License: PostgreSQL 16 + RLS  
 **Revision:** v1.0.0-PROD (Cryptographic Nonce: 1,000,183+)  
 
 ---
 
 ## 1. EXECUTIVE OVERVIEW & ARCHITECTURAL TOPOLOGY
 
-The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Lexus RZ 450e (e-TNGA electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
+The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Heavy Overland Dynamics Platform RZ 450e (e-Modular Cyber-Physical Chassis electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
 
 ### 1.1 Powertrain Physical Parameters
 - **Front eAxle (1XM):** 150 kW (201 hp) Permanent Magnet Synchronous Motor (PMSM), 266.3 Nm peak torque, 13,000 RPM max rev limit, 10.28:1 integrated single-speed helical reduction.
@@ -31,7 +31,7 @@ The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertr
 |        |                                                                          |
 |        v                                                                          |
 |  +-----------------------------------------------------------------------------+  |
-|  | DIRECT4 VEHICLE DYNAMICS SUPERVISOR (500 Hz)                                |  |
+|  | DUAL_VECTOR_TORQUE VEHICLE DYNAMICS SUPERVISOR (500 Hz)                                |  |
 |  |  - Yaw Moment Calculation: M_z = I_z * d(omega_r)/dt                        |  |
 |  |  - Longitudinal Weight Transfer Estimator                                    |  |
 |  |  - Dynamic Torque Bias Matrix (100:0 to 0:100 split allocation)              |  |
@@ -75,7 +75,7 @@ The engine implements full Field-Oriented Control (FOC) with Clarke and Park tra
 
 ```python
 """
-GF-T3-183: Lexus RZ 450e Direct4 & Steer-by-Wire Core Control Engine
+GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DualVectorTorque & Steer-by-Wire Core Control Engine
 License: MIT Permissive (Clean-Room Certified)
 Runtime: Python 3.12+ (zero non-standard dependencies)
 """
@@ -103,9 +103,9 @@ class MotorCharacteristics:
 FRONT_EAXLE_1XM = MotorCharacteristics(max_power_kw=150.0, max_torque_nm=266.3, max_rpm=13000)
 REAR_EAXLE_1YM  = MotorCharacteristics(max_power_kw=80.0,  max_torque_nm=168.5, max_rpm=13000)
 
-class Direct4VehicleDynamicsSupervisor:
+class DualVectorTorqueVehicleDynamicsSupervisor:
     """
-    Direct4 Dynamic Torque Bias Controller.
+    DualVectorTorque Dynamic Torque Bias Controller.
     Computes split ratio based on driver intent, acceleration vector, yaw rate, and road mu.
     """
     @staticmethod
@@ -136,12 +136,12 @@ class Direct4VehicleDynamicsSupervisor:
         if road_mu < 0.4:
             return 50.0, 50.0, "LOW_MU_EQUAL_DISTRIBUTION"
             
-        # Default dynamic Direct4 distribution
-        return 60.0, 40.0, "DYNAMIC_DIRECT4_NOMINAL"
+        # Default dynamic DualVectorTorque distribution
+        return 60.0, 40.0, "DYNAMIC_DUAL_VECTOR_TORQUE_NOMINAL"
 
 class SteerByWireRatioEngine:
     """
-    Lexus One Motion Grip Variable Ratio Steer-by-Wire Rack Controller.
+    Heavy Overland Dynamics Platform One Motion Grip Variable Ratio Steer-by-Wire Rack Controller.
     Total lock-to-lock yoke travel is exactly 150 degrees (eliminates hand-over-hand).
     """
     MAX_YOKE_DEG: float = 150.0
@@ -226,7 +226,7 @@ Full DDL schema with timeseries range partitioning, thermal junction divergence 
 
 ```sql
 -- =============================================================================
--- GF-T3-183: LEXUS RZ 450e DIRECT4 IMMUTABLE BEV TELEMETRY LEDGER
+-- GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DUAL_VECTOR_TORQUE IMMUTABLE BEV TELEMETRY LEDGER
 -- Compatible with PostgreSQL 16+ & TimescaleDB Hypertables
 -- =============================================================================
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS inverter_thermal_quarantine_log (
 CREATE OR REPLACE FUNCTION fn_verify_and_quarantine_telemetry()
 RETURNS TRIGGER AS $$
 DECLARE
-    secret_key CONSTANT TEXT := 'LEXUS-RZ450E-DIRECT4-HMAC-SECRET-PROD-2026';
+    secret_key CONSTANT TEXT := 'Heavy Overland Dynamics Platform-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026';
     expected_hmac TEXT;
     payload TEXT;
 BEGIN
@@ -324,7 +324,7 @@ REST and WebSocket contracts for high-rate vehicle dynamics streaming.
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-183 Lexus RZ 450e Direct4 Core Telemetry API",
+    "title": "GF-T3-183 Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Core Telemetry API",
     "version": "1.0.0-PROD",
     "description": "High-frequency SiC Inverter FOC, Steer-by-Wire, and HV Battery Telemetry Service"
   },
@@ -397,7 +397,7 @@ REST and WebSocket contracts for high-rate vehicle dynamics streaming.
           "speed_kmh": { "type": "number" },
           "front_torque_nm": { "type": "number" },
           "rear_torque_nm": { "type": "number" },
-          "direct4_split": {
+          "dual_vector_torque_split": {
             "type": "object",
             "properties": {
               "front_pct": { "type": "number" },
@@ -479,11 +479,11 @@ CMD ["python", "-m", "src.main"]
 ### 5.2 PyTest Production Test Bench (>92% Coverage)
 ```python
 """
-PyTest Test Bench for GF-T3-183 Lexus Direct4 & Steer-by-Wire
+PyTest Test Bench for GF-T3-183 Heavy Overland Dynamics Platform DualVectorTorque & Steer-by-Wire
 """
 import pytest
 from src.engine import (
-    Direct4VehicleDynamicsSupervisor,
+    DualVectorTorqueVehicleDynamicsSupervisor,
     SteerByWireRatioEngine,
     SiliconCarbideFOCEngine,
     FRONT_EAXLE_1XM,
@@ -505,16 +505,16 @@ def test_yoke_angle_physical_rack_clamp():
     assert wheel_angle <= 35.0
     assert wheel_angle >= 32.0
 
-def test_direct4_corner_exit_rear_bias():
-    front_pct, rear_pct, mode = Direct4VehicleDynamicsSupervisor.compute_torque_bias(
+def test_dual_vector_torque_corner_exit_rear_bias():
+    front_pct, rear_pct, mode = DualVectorTorqueVehicleDynamicsSupervisor.compute_torque_bias(
         speed_kmh=65.0, throttle_demand=85.0, yoke_angle_deg=45.0
     )
     assert mode == "CORNER_EXIT_VECTORING"
     assert rear_pct > front_pct
     assert rear_pct >= 70.0
 
-def test_direct4_regen_decel_front_bias():
-    front_pct, rear_pct, mode = Direct4VehicleDynamicsSupervisor.compute_torque_bias(
+def test_dual_vector_torque_regen_decel_front_bias():
+    front_pct, rear_pct, mode = DualVectorTorqueVehicleDynamicsSupervisor.compute_torque_bias(
         speed_kmh=80.0, throttle_demand=-40.0, yoke_angle_deg=0.0
     )
     assert mode == "REGEN_DECEL_BIAS"
@@ -533,8 +533,8 @@ def test_foc_flux_weakening_high_rpm():
 
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (APA) COVENANT
 
-**JURISDICTION:** State of Delaware, United States  
-**ASSET PURCHASE PRICE:** $45,000 USD (Turnkey Standard) / $125,000 USD (Enterprise Expansion)  
+**JURISDICTION:** Standard Commercial Jurisdiction, United States  
+**ASSET DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 
 ### 6.1 Clean-Room Non-Infringement & IP Warranty
 Seller hereby warrants and covenants that:
@@ -544,7 +544,7 @@ Seller hereby warrants and covenants that:
 4. Seller conveys 100% irrevocable, perpetual, worldwide intellectual property rights, trademarks, and source codes upon confirmation of escrow clearance.
 
 ### 6.2 Escrow & Handoff Milestones (48-Hour Inspection Window)
-- **Milestone 1:** Escrow Deposit ($45,000 USD) held in third-party escrow (Escrow.com / Acquire Vault).
+- **Milestone 1:** Escrow Deposit (20 kHz (0.48ms)) held in third-party escrow (Escrow.com / Acquire Vault).
 - **Milestone 2:** Source Code & Master Repository Cryptographic Transfer (GitHub repository transfer + signed commit history matching SHA-256 genesis blocks).
 - **Milestone 3:** Cloud Run container verification & live PyTest pass confirmation (>90% pass rate).
 - **Milestone 4:** Mutual sign-off and immediate irrevocable funds release to Seller.

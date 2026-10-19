@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-167 Cockpit Dynamic Core (export) ",
-  "description": "Turnkey Micro-APA Buyout Cockpit & F1 Skunkworks Engine for Acquire.com featuring lock-free matching, PostgreSQL 16 HMAC audit ledger, and OpenAPI 3.1 specification.",
+  "description": "Turnkey Micro-APA Asset Transfer Cockpit & F1 Skunkworks Engine for Acquire.com featuring lock-free matching, PostgreSQL 16 HMAC audit ledger, and OpenAPI 3.1 specification.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

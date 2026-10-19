@@ -5,11 +5,11 @@ import { ApiTestResult } from '../../types/telemetry';
 const OPENAPI_SPEC = {
   openapi: "3.1.0",
   info: {
-    title: "Lexus TX 550h+ DIRECT4 DRS Service Engine API",
+    title: "Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine API",
     version: "1.0.0-PROD",
-    description: "Real-time CAN-FD Dynamic Rear Steering arbitration and DIRECT4 e-Axle torque distribution service",
+    description: "Real-time CAN-FD Dynamic Rear Steering arbitration and DUAL_VECTOR_TORQUE e-Axle torque distribution service",
     contact: {
-      name: "Ghost FactoryOS Antigravity Systems",
+      name: "Ghost FactoryOS deterministic production Systems",
       url: "https://acquire.com"
     },
     license: {
@@ -68,8 +68,8 @@ const OPENAPI_SPEC = {
                     front_wheel_angle_deg: { type: "number" },
                     target_rear_toe_deg: { type: "number" },
                     phase_mode: { type: "string" },
-                    direct4_front_pct: { type: "number" },
-                    direct4_rear_pct: { type: "number" },
+                    dual_vector_torque_front_pct: { type: "number" },
+                    dual_vector_torque_rear_pct: { type: "number" },
                     turning_radius_m: { type: "number" },
                     quarantine_active: { type: "boolean" },
                     block_hmac: { type: "string" }
@@ -191,8 +191,8 @@ export const TabOpenApiContract: React.FC = () => {
               front_wheel_angle_deg: 3.04,
               target_rear_toe_deg: isHighSpeed ? 0.62 : -0.84,
               phase_mode: isHighSpeed ? "IN_PHASE_STABILIZATION" : "ANTI_PHASE_TURNING",
-              direct4_front_pct: 42.0,
-              direct4_rear_pct: 58.0,
+              dual_vector_torque_front_pct: 42.0,
+              dual_vector_torque_rear_pct: 58.0,
               turning_radius_m: isHighSpeed ? 72.4 : 5.28,
               rack_linear_displacement_mm: isHighSpeed ? 2.635 : -3.57,
               divergence_error_mm: 0.012,

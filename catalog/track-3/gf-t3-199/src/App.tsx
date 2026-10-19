@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MonroneyBanner } from './components/MonroneyBanner';
 import { TelemetryMetricsStrip } from './components/TelemetryMetricsStrip';
-import { Direct4SimulationTab } from './components/tabs/Direct4SimulationTab';
+import { DualVectorTorqueSimulationTab } from './components/tabs/DualVectorTorqueSimulationTab';
 import { PostgresLedgerTab } from './components/tabs/PostgresLedgerTab';
 import { OpenApiContractTab } from './components/tabs/OpenApiContractTab';
 import { CloudRunHarnessTab } from './components/tabs/CloudRunHarnessTab';
@@ -12,7 +12,7 @@ import { TelemetryState } from './types/telemetry';
 import { Sliders, Database, Globe, Cloud, Scale } from 'lucide-react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'direct4' | 'ledger' | 'openapi' | 'cloudrun' | 'covenant'>('direct4');
+  const [activeTab, setActiveTab] = useState<'dual_vector_torque' | 'ledger' | 'openapi' | 'cloudrun' | 'covenant'>('dual_vector_torque');
   const [isHashModalOpen, setIsHashModalOpen] = useState(false);
 
   // Live telemetry state
@@ -57,8 +57,8 @@ export default function App() {
     }));
   };
 
-  const handleSimulateDirect4 = () => {
-    setActiveTab('direct4');
+  const handleSimulateDualVectorTorque = () => {
+    setActiveTab('dual_vector_torque');
     // Set an exciting corner-exit catapult state
     handleUpdateTelemetry({
       speedMph: 52,
@@ -76,7 +76,7 @@ export default function App() {
   };
 
   const tabs = [
-    { id: 'direct4', label: '1. DIRECT4 & DRS Performance Core', icon: Sliders },
+    { id: 'dual_vector_torque', label: '1. DUAL_VECTOR_TORQUE & DRS Performance Core', icon: Sliders },
     { id: 'ledger', label: '2. PostgreSQL 16 Hybrid Ledger', icon: Database },
     { id: 'openapi', label: '3. OpenAPI 3.1 Telemetry Contract', icon: Globe },
     { id: 'cloudrun', label: '4. Turnkey Cloud Run Harness', icon: Cloud },
@@ -104,7 +104,7 @@ export default function App() {
 
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline-flex text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 rounded">
-              Acquire.com Turnkey Buyout Ready
+              Acquire.com Turnkey Asset Transfer Ready
             </span>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
         {/* 1. Bulletproof MonroneyBanner Layout */}
         <MonroneyBanner
-          onSimulate={handleSimulateDirect4}
+          onSimulate={handleSimulateDualVectorTorque}
           onVerifyHash={() => setIsHashModalOpen(true)}
           onExportSpec={downloadSpecMarkdown}
         />
@@ -152,8 +152,8 @@ export default function App() {
 
         {/* 4. Tab Content Body */}
         <div className="min-h-[500px]">
-          {activeTab === 'direct4' && (
-            <Direct4SimulationTab
+          {activeTab === 'dual_vector_torque' && (
+            <DualVectorTorqueSimulationTab
               telemetry={telemetry}
               onUpdateTelemetry={handleUpdateTelemetry}
             />

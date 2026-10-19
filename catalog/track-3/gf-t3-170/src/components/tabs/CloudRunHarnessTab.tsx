@@ -106,7 +106,7 @@ export const CloudRunHarnessTab: React.FC = () => {
 
   const dockerfileCode = `# ==============================================================================
 # GF-T3-170: Non-Root Multi-Stage Dockerfile (Python 3.12 Distroless)
-# Lexus ES 350h Executive Quietude Zero-Trust Ingestion Gateway
+# Heavy Overland Dynamics Platform ES 350h Executive Quietude Zero-Trust Ingestion Gateway
 # ==============================================================================
 
 # STAGE 1: Builder

@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-192 (export) ",
-  "description": "Turnkey micro-APA buyout asset for Acquire.com featuring Lexus TX 550h+ Dynamic Rear Steering arbitration, DIRECT4 torque vectoring, and PostgreSQL 16 HMAC ledger.",
+  "description": "Turnkey micro-APA asset transfer asset for Acquire.com featuring Heavy Overland Dynamics Platform High-Output Multi-Node Core Dynamic Rear Steering arbitration, DUAL_VECTOR_TORQUE torque vectoring, and PostgreSQL 16 HMAC ledger.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

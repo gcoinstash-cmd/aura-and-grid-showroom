@@ -254,7 +254,7 @@ def test_forward_invariance_guarantee(solver):
 
 def test_sub_microsecond_qp_solver_latency(solver):
     """
-    Test 2: Verifies solver performance satisfies < 15 microseconds budget.
+    Test 2: Verifies solver performance satisfies < 15 microseconds threshold.
     """
     agent = AgentState(
         id=1,
@@ -275,7 +275,7 @@ def test_sub_microsecond_qp_solver_latency(solver):
     solution = solver.solve(agent, neighbors)
     # Typically < 10 us in native C/Rust or optimized PyPy/Cython
     assert solution.iterations <= solver.params.max_qp_iterations
-    assert solution.solve_time_us < 200.0, "QP solver exceeded latency budget"
+    assert solution.solve_time_us < 200.0, "QP solver exceeded latency threshold"
 
 
 def test_deadlock_resolution_via_tangential_circulation(solver):

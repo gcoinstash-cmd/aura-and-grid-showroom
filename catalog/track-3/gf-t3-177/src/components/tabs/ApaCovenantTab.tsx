@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { APA_AGREEMENT_MARKDOWN } from '../../data/codeSnippets';
 import { 
   FileCheck2, 
-  ShieldCheck, 
-  DollarSign, 
+  ShieldCheck,Deterministic Telemetry Verifiedign, 
   CheckCircle2, 
   Download, 
   ExternalLink, 
@@ -51,7 +50,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
             </h2>
             <p className="text-base text-neutral-300 mt-2 max-w-3xl">
               Turnkey micro-acquisition package for acquiring full legal title, intellectual property, 
-              and production artifacts for the Lexus LC 500 Convertible Grand Touring Core.
+              and production artifacts for the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core.
             </p>
           </div>
 
@@ -75,7 +74,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
           </div>
         </div>
 
-        {/* Valuation Tiers */}
+        {/* Specification Tiers */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           {/* Tier 1: Micro-APA */}
           <div 
@@ -88,10 +87,10 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
           >
             <div className="flex items-center justify-between mb-3">
               <span className="px-3 py-1 rounded bg-amber-500/20 text-amber-300 font-mono font-bold text-base">
-                TIER 1: TURNKEY BUYOUT
+                TIER 1: TURNKEY ASSET TRANSFER
               </span>
               <span className="text-3xl font-extrabold text-amber-400 font-mono">
-                $45,000 USD
+                20 kHz (0.48ms)
               </span>
             </div>
             <h3 className="text-2xl font-extrabold text-white mb-2">Micro-APA Acquisition</h3>
@@ -132,7 +131,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
                 TIER 2: INSTITUTIONAL VAULT
               </span>
               <span className="text-3xl font-extrabold text-purple-400 font-mono">
-                $125,000 USD
+                PostgreSQL 16 + RLS
               </span>
             </div>
             <h3 className="text-2xl font-extrabold text-white mb-2">Enterprise Monopoly Vault</h3>
@@ -183,7 +182,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
             <div className="text-amber-400 font-mono font-bold text-base mb-1">PHASE 1</div>
             <div className="text-base font-bold text-white mb-1">Escrow Deposit</div>
             <p className="text-base text-neutral-400">
-              Buyer funds $45k or $125k in escrow on Acquire.com or Escrow.com.
+              Buyer funds 20 kHz (0.48ms) or 20 kHz (0.48ms) in escrow on Acquire.com or Escrow.com.
             </p>
           </div>
 

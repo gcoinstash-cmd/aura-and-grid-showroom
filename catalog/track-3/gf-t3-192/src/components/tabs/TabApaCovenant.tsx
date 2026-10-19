@@ -14,8 +14,8 @@ export const TabApaCovenant: React.FC = () => {
   const handleDownloadApa = () => {
     const text = `# ASSET PURCHASE AGREEMENT (MICRO-APA)
 ASSET IDENTIFIER: GF-T3-192
-ASSET NAME: Lexus TX 550h+ DIRECT4 Dynamic Rear Steering Core
-ACQUIRE.COM LISTING VALUATION: $45,000 USD (Standard Turnkey micro-APA) / $125,000 USD (Enterprise Multi-Fleet)
+ASSET NAME: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Dynamic Rear Steering Core
+ACQUIRE.COM LISTING SPECIFICATION: 20 kHz (0.48ms) (Standard Turnkey micro-APA) / PostgreSQL 16 + RLS (Enterprise Multi-Fleet)
 BUYER ENTITY: ${buyerEntity}
 BUYER AUTHORIZED SIGNER: ${buyerSigner}
 DATE OF EXECUTION: ${new Date().toISOString()}
@@ -23,7 +23,7 @@ DATE OF EXECUTION: ${new Date().toISOString()}
 1. PURCHASED ASSETS:
 The Seller hereby irrevocably sells, assigns, and transfers to Buyer all right, title, and interest in:
 - Pure Python 3.12 DRS arbitration state machine (anti-phase / in-phase crossover)
-- DIRECT4 AWD 3.5L V6 PHEV e-Axle torque distribution matrix
+- DUAL_VECTOR_TORQUE AWD 3.5L V6 PHEV e-Axle torque distribution matrix
 - PostgreSQL 16 partitioned timeseries schema with divergence quarantine triggers
 - Recursive HMAC-SHA256 CAN-FD ledger verification chain
 - Multi-stage hardened distroless container harness & PyTest test benches (98.4% coverage)
@@ -89,17 +89,17 @@ ${buyerEntity}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
           <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Standard Turnkey micro-APA</span>
-          <div className="text-3xl font-black text-white font-mono mt-1">$45,000 USD</div>
+          <div className="text-3xl font-black text-white font-mono mt-1">20 kHz (0.48ms)</div>
           <p className="text-xs text-slate-300 mt-2">
             Includes full source code, PostgreSQL schema, Docker harness, 30 days Escrow warranty.
           </p>
         </div>
 
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-4">
-          <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Enterprise Multi-Fleet License</span>
-          <div className="text-3xl font-black text-emerald-400 font-mono mt-1">$125,000 USD</div>
+          <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Enterprise Multi-Fleet Deployment</span>
+          <div className="text-3xl font-black text-emerald-400 font-mono mt-1">PostgreSQL 16 + RLS</div>
           <p className="text-xs text-slate-300 mt-2">
-            Includes unlimited commercial vehicle deployments across Lexus TX/RX and Toyota Crown platforms.
+            Includes unlimited commercial vehicle deployments across Heavy Overland Dynamics Platform TX/RX and Toyota Crown platforms.
           </p>
         </div>
 

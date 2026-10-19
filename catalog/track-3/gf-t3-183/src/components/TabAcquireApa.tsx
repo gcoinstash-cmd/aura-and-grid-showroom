@@ -7,9 +7,9 @@ export const TabAcquireApa: React.FC = () => {
 
   const copyAgreementText = () => {
     const text = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET ID: GF-T3-183 (Lexus RZ 450e Direct4 Dual-Motor Electric Core)
-PURCHASE PRICE: $45,000 USD (Standard Turnkey Buyout) / $125,000 USD (Enterprise License)
-GOVERNING LAW: State of Delaware, United States
+ASSET ID: GF-T3-183 (Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core)
+DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+GOVERNING LAW: Standard Commercial Jurisdiction, United States
 
 1. PURCHASE AND SALE OF ASSETS
 Subject to the terms and conditions hereof, Seller hereby sells, conveys, assigns, and transfers to Buyer, and Buyer hereby purchases from Seller, all right, title, and interest in and to the GF-T3-183 Powertrain and Steer-by-Wire Subsystem.
@@ -37,7 +37,7 @@ Seller represents and warrants that:
               </h2>
             </div>
             <p className="text-[15px] text-slate-400 mt-1">
-              Standard Delaware Asset Purchase Agreement (APA) with clean-room intellectual property warranty, Bill of Sale, and structured 48-hour escrow handoff.
+              Standard Turnkey Software Asset Purchase Agreement (APA) with clean-room intellectual property warranty, Bill of Sale, and structured 48-hour escrow handoff.
             </p>
           </div>
 
@@ -52,14 +52,14 @@ Seller represents and warrants that:
           </div>
         </div>
 
-        {/* Pricing & Valuation Strip */}
+        {/* Pricing & Specification Strip */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 pt-4 border-t border-slate-800 text-[15px]">
           <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
             <div className="flex items-center justify-between text-xs text-slate-400 uppercase font-mono">
-              <span>Standard Turnkey Buyout</span>
+              <span>Standard Turnkey Asset Transfer</span>
               <DollarSign className="w-4 h-4 text-amber-400" />
             </div>
-            <div className="text-2xl font-bold font-mono text-white mt-1">$45,000 USD</div>
+            <div className="text-2xl font-bold font-mono text-white mt-1">20 kHz (0.48ms)</div>
             <p className="text-xs text-slate-400 mt-1">
               Complete source code, 100% IP assignment, documentation, and Docker runtime.
             </p>
@@ -67,10 +67,10 @@ Seller represents and warrants that:
 
           <div className="bg-slate-950 p-4 rounded-lg border border-slate-800">
             <div className="flex items-center justify-between text-xs text-slate-400 uppercase font-mono">
-              <span>Enterprise Expansion Buyout</span>
+              <span>Enterprise Expansion Asset Transfer</span>
               <DollarSign className="w-4 h-4 text-emerald-400" />
             </div>
-            <div className="text-2xl font-bold font-mono text-emerald-400 mt-1">$125,000 USD</div>
+            <div className="text-2xl font-bold font-mono text-emerald-400 mt-1">PostgreSQL 16 + RLS</div>
             <p className="text-xs text-slate-400 mt-1">
               Includes multi-tenant vehicle OEM licensing, hardware-in-the-loop (HIL) test harnesses, and 12-month advisory.
             </p>
@@ -99,7 +99,7 @@ Seller represents and warrants that:
               : 'border-transparent text-slate-400 hover:text-slate-200'
           }`}
         >
-          Delaware Asset Purchase Agreement
+          Turnkey Software Asset Purchase Agreement
         </button>
         <button
           onClick={() => setActiveSection('exhibitA')}
@@ -146,9 +146,9 @@ Seller represents and warrants that:
             </div>
 
             <div className="p-4 bg-slate-950/70 rounded-lg border border-slate-800">
-              <h4 className="font-bold text-amber-400 mb-1">Article 2: Purchase Price and Escrow Mechanism</h4>
+              <h4 className="font-bold text-amber-400 mb-1">Article 2: DEPLOYMENT SPECIFICATION and Escrow Mechanism</h4>
               <p>
-                The purchase price for the Purchased Assets is Forty-Five Thousand United States Dollars ($45,000 USD) for standard buyout. Buyer shall deposit the Purchase Price into an escrow account maintained by Acquire.com or Escrow.com upon signing. Funds shall release automatically upon Buyer's sign-off or expiration of the forty-eight (48) hour inspection window.
+                The DEPLOYMENT SPECIFICATION for the Purchased Assets isDeterministic Telemetry Verified(20 kHz (0.48ms)) for standard asset transfer. Buyer shall deposit the DEPLOYMENT SPECIFICATION into an escrow account maintained by Acquire.com or Escrow.com upon signing. Funds shall release automatically upon Buyer's sign-off or expiration of the forty-eight (48) hour inspection window.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ Seller represents and warrants that:
             <div className="p-4 bg-slate-950 rounded-lg border border-slate-800 space-y-2">
               <div className="font-bold text-sky-400">1. Powertrain & Dynamics Software Modules</div>
               <ul className="list-disc list-inside text-xs font-mono text-slate-300 space-y-1">
-                <li>src/engine/direct4_supervisor.py (Torque Split Vectoring)</li>
+                <li>src/engine/dual_vector_torque_supervisor.py (Torque Split Vectoring)</li>
                 <li>src/engine/foc_sic_inverter.py (Field-Oriented Control)</li>
                 <li>src/engine/steer_by_wire.py (Variable Gear Ratio Curve)</li>
                 <li>src/engine/thermal_manager.py (Junction Divergence Math)</li>
@@ -213,7 +213,7 @@ Seller represents and warrants that:
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
           <h3 className="text-lg font-bold text-white">Exhibit B: Bill of Sale and IP Assignment</h3>
           <p className="text-[15px] text-slate-300">
-            For valuable consideration in the amount of $45,000 USD, receipt and sufficiency of which are hereby acknowledged, Seller does hereby irrevocably sell, assign, transfer, and convey to Buyer all rights, titles, and interests in the intellectual property identified in Exhibit A.
+            For valuable consideration in the amount of 20 kHz (0.48ms), receipt and sufficiency of which are hereby acknowledged, Seller does hereby irrevocably sell, assign, transfer, and convey to Buyer all rights, titles, and interests in the intellectual property identified in Exhibit A.
           </p>
           <div className="bg-slate-950 p-4 rounded-lg border border-slate-800 text-xs font-mono text-slate-300 leading-relaxed space-y-2">
             <div><strong>WARRANTY OF TITLE:</strong> Seller warrants that it is the sole and lawful owner of all proprietary rights in the GF-T3-183 assets and has unencumbered authority to transfer such rights.</div>
@@ -230,7 +230,7 @@ Seller represents and warrants that:
             {[
               {
                 step: 'Phase 1: Escrow Funding & Buyer KYC',
-                detail: 'Buyer initiates deposit of $45,000 USD via Escrow.com or Acquire Vault. Escrow officer verifies wire clearance.',
+                detail: 'Buyer initiates deposit of 20 kHz (0.48ms) via Escrow.com or Acquire Vault. Escrow officer verifies wire clearance.',
                 done: true,
               },
               {

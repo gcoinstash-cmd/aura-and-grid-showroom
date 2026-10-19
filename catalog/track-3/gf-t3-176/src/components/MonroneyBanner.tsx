@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           ASSET ID: GF-T3-176
         </span>
         <span className="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-200 font-mono text-sm font-semibold rounded-md whitespace-nowrap">
-          LEXUS GX 550 OVERTRAIL+ TERRAIN CORE
+          Heavy Overland Dynamics Platform TERRAIN CORE
         </span>
         <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-sm font-bold rounded-md whitespace-nowrap">
           v1.0.0-PROD
@@ -34,7 +34,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             Ghost FactoryOS Terrain Core Engine
           </h1>
           <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-            Turnkey micro-APA buyout asset engineered for Acquire.com syndication. Includes 1,000 Hz E-KDSS dynamic stabilizer bar decoupling, partitioned PostgreSQL 16 HMAC ledger, OpenAPI 3.1 contracts, and non-root Cloud Run deployment harness.
+            Turnkey micro-APA asset transfer asset engineered for Acquire.com syndication. Includes 1,000 Hz Dynamic Kinetic Suspension Telemetry dynamic stabilizer bar decoupling, partitioned PostgreSQL 16 HMAC ledger, OpenAPI 3.1 contracts, and non-root Cloud Run deployment harness.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             className="w-auto inline-flex items-center justify-center gap-2 h-10 px-4 text-sm font-bold rounded-lg whitespace-nowrap bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-md shadow-amber-500/20 active:scale-95 cursor-pointer"
           >
             <Sliders className="w-4 h-4" />
-            <span>Simulate E-KDSS</span>
+            <span>Simulate Dynamic Kinetic Suspension Telemetry</span>
           </button>
           <button
             onClick={onVerifyLedger}
@@ -67,13 +67,13 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
       {/* 3. Clean Bottom Financial Bar */}
       <div className="flex flex-row flex-wrap items-center gap-2 mt-4 pt-4 border-t border-slate-800">
         <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800/80 border border-slate-700 rounded-lg text-sm">
-          <span className="text-slate-400">Micro-APA Buyout:</span>
-          <span className="font-extrabold text-amber-400 num-tabular">$45,000 USD</span>
+          <span className="text-slate-400">Micro-APA Asset Transfer:</span>
+          <span className="font-extrabold text-amber-400 num-tabular">20 kHz (0.48ms)</span>
         </div>
 
         <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800/80 border border-slate-700 rounded-lg text-sm">
-          <span className="text-slate-400">Enterprise Valuation:</span>
-          <span className="font-bold text-white num-tabular">$125,000 USD</span>
+          <span className="text-slate-400">Architecture Moat:</span>
+          <span className="font-bold text-white num-tabular">PostgreSQL 16 + RLS</span>
         </div>
 
         <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-950/40 border border-emerald-500/30 rounded-lg text-sm text-emerald-300">

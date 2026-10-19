@@ -3,8 +3,8 @@
 **Classification:** Tier-3 F1 Skunkworks Service Engine (Ghost FactoryOS Sovereign Asset)  
 **License Baseline:** MIT / Apache 2.0 Permissive Clean Room (Strict Copyleft Blacklist Enforced)  
 **Target Ingestion Platform:** Google Antigravity Autonomous Scaffolding Agent (70% Architecture / 30% Assembly)  
-**Valuation Benchmark:** $125,000 Institutional Monopoly Vault Replacement Benchmark  
-**Primary Pre-Revenue Turnkey Acquisition Price:** $19,500 Direct Asset Purchase (Turnkey Commercial License & IP Transfer via Acquire.com)  
+**Specification Benchmark:** PostgreSQL 16 + RLS Institutional Monopoly Vault Replacement Benchmark  
+**Primary Pre-Throughput Turnkey Acquisition Price:** $19,500 Direct Asset Purchase (Turnkey Commercial License & IP Transfer via Acquire.com)  
 
 ---
 

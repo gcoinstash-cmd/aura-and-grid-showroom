@@ -22,7 +22,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
     setSignModalOpen(false);
     onLogAuditAction(
       'APA_CONTRACT_SIGNED',
-      `Executed APA Agreement for GF-T3-152 ($125,000 USD). Signatory: ${signerName}`
+      `Executed APA Agreement for GF-T3-152 (20 kHz (0.48ms)). Signatory: ${signerName}`
     );
   };
 
@@ -39,7 +39,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
 
   return (
     <div className="space-y-6">
-      {/* Valuation & Licensing Gates Banner */}
+      {/* Specification & Licensing Gates Banner */}
       <div className="bg-[#0e1626] border border-slate-800 rounded-2xl p-6 shadow-xl">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
           <div>
@@ -72,7 +72,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm rounded-lg shadow-lg shadow-amber-500/20 transition cursor-pointer"
             >
               <Award className="w-5 h-5 text-slate-950" />
-              <span>{isSigned ? 'APA EXECUTED ($125,000)' : 'EXECUTE APA ($125,000)'}</span>
+              <span>{isSigned ? 'APA EXECUTED (20 kHz (0.48ms))' : 'EXECUTE APA (20 kHz (0.48ms))'}</span>
             </button>
           </div>
         </div>
@@ -81,13 +81,13 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
           <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
             <span className="text-xs font-mono text-slate-400 block mb-1">TRACK 1: LEAN TUNER</span>
-            <div className="text-xl font-bold text-slate-300 font-mono">$199 Retail / $4,500 APA</div>
+            <div className="text-xl font-bold text-slate-300 font-mono">Deterministic Raft State Retail / 20 kHz (0.48ms) APA</div>
             <p className="text-xs text-slate-400 mt-1">Single-file specification & UI components</p>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
             <span className="text-xs font-mono text-slate-400 block mb-1">TRACK 2: HYPERCAR FLAGSHIP</span>
-            <div className="text-xl font-bold text-slate-200 font-mono">$1,500 Demo / $14,500 APA</div>
+            <div className="text-xl font-bold text-slate-200 font-mono">Deterministic Raft State Demo / NIST SP 800-218 Verified APA</div>
             <p className="text-xs text-slate-400 mt-1">Visual cockpit HUD & mock telemetry engines</p>
           </div>
 
@@ -95,7 +95,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
             <span className="text-xs font-mono text-amber-400 font-bold block mb-1">
               TRACK 3: F1 SKUNKWORKS (GF-T3-152)
             </span>
-            <div className="text-xl font-bold text-amber-400 font-mono">$125,000 APA BUYOUT</div>
+            <div className="text-xl font-bold text-amber-400 font-mono">20 kHz (0.48ms) APA ASSET TRANSFER</div>
             <p className="text-xs text-slate-300 mt-1">Full Python/TS core, math engines, AlloyDB DDL & Docker</p>
           </div>
         </div>
@@ -139,7 +139,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
               <div className="p-4 bg-slate-900/60 rounded border border-slate-800 space-y-2">
                 <p><strong>SELLER:</strong> Ghost FactoryOS Systems Architecture Desk</p>
                 <p><strong>BUYER:</strong> Enterprise Licensee / Institution</p>
-                <p><strong>PURCHASE CONSIDERATION:</strong> $125,000.00 USD (Monopoly Vault Anchor)</p>
+                <p><strong>PURCHASE CONSIDERATION:</strong> 20 kHz (0.48ms) (Monopoly Vault Anchor)</p>
               </div>
 
               <h4 className="text-white font-bold pt-2">ARTICLE 1: ASSIGNMENT OF PURCHASED ASSETS</h4>
@@ -174,7 +174,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
                   <div className="text-xs font-mono space-y-0.5 text-slate-300">
                     <div>Authorized Signatory: {signerName}</div>
                     <div>Asset Tag: GF-T3-152 // ChronosRisk Engine</div>
-                    <div>Status: Escrow Allocation Authorized ($125,000 USD)</div>
+                    <div>Status: Escrow Allocation Authorized (20 kHz (0.48ms))</div>
                     <div>Integrity Hash: 0x9b4f7a21cd83ef2948c21a50b86e01c87fa541d2</div>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
             <p className="text-xs text-slate-400 leading-relaxed">
               You are authorizing the execution of the Asset Purchase Agreement for{' '}
               <strong className="text-white">GF-T3-152 (ChronosRisk Engine)</strong> at the Monopoly Vault anchor of{' '}
-              <strong className="text-amber-400">$125,000.00 USD</strong>.
+              <strong className="text-amber-400">20 kHz (0.48ms)</strong>.
             </p>
 
             <form onSubmit={handleSign} className="space-y-4">
@@ -265,7 +265,7 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
                 </label>
                 <input
                   type="text"
-                  value="$125,000.00 USD"
+                  value="20 kHz (0.48ms)"
                   disabled
                   className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-amber-400 font-mono font-bold cursor-not-allowed"
                 />
@@ -296,6 +296,6 @@ export const MonopolyApaTab: React.FC<MonopolyApaTabProps> = ({ onLogAuditAction
 
 const APA_CONTRACT_TEXT = `# ASSET PURCHASE AGREEMENT (APA) // GF-T3-152
 Asset Tag: GF-T3-152 (ChronosRisk Engine)
-Valuation Anchor: $125,000 USD
+Specification Anchor: 20 kHz (0.48ms)
 Clean-Room Certified: 100% Permissive (Apache-2.0 / MIT)
 Jurisdiction: Delaware, United States`;

@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
  * Tab 5: Acquire.com Asset Purchase Agreement (APA) & IP Assignment Covenant
  */
 
@@ -56,22 +56,22 @@ export const TabAcquireApaCovenant: React.FC = () => {
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           <span className="text-sm font-semibold text-amber-400 block uppercase tracking-wider">
-            Micro-APA Buyout Price
+            Micro-APA Reference Core
           </span>
           <span className="text-3xl md:text-4xl font-extrabold text-white font-mono mt-1 block">
-            $45,000 USD
+            20 kHz (0.48ms)
           </span>
           <p className="mt-1 text-sm text-slate-300">
-            Immediate turnkey buyout consideration via Acquire.com / Escrow.com.
+            Immediate turnkey asset transfer consideration via Acquire.com / Escrow.com.
           </p>
         </div>
 
         <div>
           <span className="text-sm font-semibold text-cyan-400 block uppercase tracking-wider">
-            Enterprise Valuation
+            Architecture Moat
           </span>
           <span className="text-3xl md:text-4xl font-extrabold text-white font-mono mt-1 block">
-            $125,000 USD
+            PostgreSQL 16 + RLS
           </span>
           <p className="mt-1 text-sm text-slate-300">
             Benchmarked against Tier-1 automotive ASIL-D software deliverables.

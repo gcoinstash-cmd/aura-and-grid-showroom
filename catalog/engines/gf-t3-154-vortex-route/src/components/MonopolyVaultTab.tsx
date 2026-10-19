@@ -4,10 +4,10 @@ import { ShieldCheck, DollarSign, FileCheck, Copy, Check, Download, Landmark, Aw
 export const MonopolyVaultTab: React.FC = () => {
   const [copiedAgreement, setCopiedAgreement] = useState(false);
   const [copiedAudit, setCopiedAudit] = useState(false);
-  const [selectedTier, setSelectedTier] = useState<'BUYOUT' | 'SEAT' | 'CONSORTIUM'>('BUYOUT');
+  const [selectedTier, setSelectedTier] = useState<'ASSET TRANSFER' | 'SEAT' | 'CONSORTIUM'>('ASSET TRANSFER');
 
   const copyAgreement = () => {
-    navigator.clipboard.writeText(`ENTERPRISE_APA_AGREEMENT.md - GF-T3-154 Buyout Anchor: $125,000 USD`);
+    navigator.clipboard.writeText(`ENTERPRISE_APA_AGREEMENT.md - GF-T3-154 Reference Core: 20 kHz (0.48ms)`);
     setCopiedAgreement(true);
     setTimeout(() => setCopiedAgreement(false), 2000);
   };
@@ -26,11 +26,11 @@ export const MonopolyVaultTab: React.FC = () => {
           <div className="flex items-center gap-2.5">
             <Landmark className="w-7 h-7 text-amber-400" />
             <h2 className="text-2xl font-black tracking-tight text-white uppercase font-mono">
-              Monopoly Vault // Turnkey Asset Purchase Agreement (Delaware LLC)
+              Monopoly Vault // Turnkey Asset Purchase Agreement (Commercial Software Asset Standard)
             </h2>
           </div>
           <p className="text-sm font-semibold text-slate-300 mt-1">
-            Pre-drafted, institutional-grade M&amp;A contract and clean-room IP audit for immediate asset buyout
+            Pre-drafted, institutional-grade M&amp;A contract and clean-room IP audit for immediate asset asset transfer
           </p>
         </div>
 
@@ -71,32 +71,32 @@ export const MonopolyVaultTab: React.FC = () => {
               NON-EXCLUSIVE
             </span>
           </div>
-          <div className="text-3xl font-black font-mono text-white mb-2">$85,000 USD</div>
+          <div className="text-3xl font-black font-mono text-white mb-2">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-300 font-medium leading-relaxed">
             Perpetual single hedge fund deployment license. Unlimited trade flow, Docker container delivery, and 1 year security patches.
           </p>
         </div>
 
-        {/* Tier 2: Institutional Buyout Anchor */}
+        {/* Tier 2: Institutional Reference Core */}
         <div
-          onClick={() => setSelectedTier('BUYOUT')}
+          onClick={() => setSelectedTier('ASSET TRANSFER')}
           className={`cursor-pointer bg-[#0d121f] rounded-xl p-6 border transition-all ${
-            selectedTier === 'BUYOUT'
+            selectedTier === 'ASSET TRANSFER'
               ? 'border-amber-500 bg-amber-950/25 shadow-xl shadow-amber-600/25 ring-2 ring-amber-500'
               : 'border-slate-800 hover:border-slate-700'
           }`}
         >
           <div className="flex justify-between items-start mb-3">
             <span className="text-sm font-black uppercase tracking-wider text-amber-400 font-mono flex items-center gap-1.5">
-              <Award className="w-4 h-4" /> Standalone Buyout Anchor
+              <Award className="w-4 h-4" /> Standalone Reference Core
             </span>
             <span className="text-xs font-black px-2.5 py-1 rounded bg-amber-900/70 text-amber-300 border border-amber-600/70">
               FULL IP ASSIGNMENT
             </span>
           </div>
-          <div className="text-4xl font-black font-mono text-amber-300 mb-2">$125,000 USD</div>
+          <div className="text-4xl font-black font-mono text-amber-300 mb-2">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-200 font-medium leading-relaxed">
-            Complete irreversible IP acquisition under Delaware APA. 100% exclusive source rights, trade secrets, and non-infringement indemnity.
+            Complete irreversible IP acquisition under Turnkey Software Asset Purchase Agreement. 100% exclusive source rights, trade secrets, and non-infringement indemnity.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export const MonopolyVaultTab: React.FC = () => {
               UNLIMITED RESALE
             </span>
           </div>
-          <div className="text-3xl font-black font-mono text-white mb-2">$150,000+ USD</div>
+          <div className="text-3xl font-black font-mono text-white mb-2">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-300 font-medium leading-relaxed">
             Global multi-venue white-label license, sub-licensing distribution rights, and co-location kernel optimization modules.
           </p>
@@ -132,7 +132,7 @@ export const MonopolyVaultTab: React.FC = () => {
             Executed Agreement Summary &amp; Legal Verification
           </h3>
           <p className="text-sm text-slate-300 mt-1">
-            Governing Delaware Asset Purchase Agreement clauses for GF-T3-154
+            Governing Turnkey Software Asset Purchase Agreement clauses for GF-T3-154
           </p>
         </div>
 
@@ -240,7 +240,7 @@ export const MonopolyVaultTab: React.FC = () => {
           </div>
           <div className="text-right">
             <div className="text-base font-mono font-black text-amber-400">
-              VALUATION: $125,000.00 USD
+              SPECIFICATION: 20 kHz (0.48ms)
             </div>
             <div className="text-xs font-mono text-slate-300 font-medium">
               Escrow Settlement: Fedwire / USDC

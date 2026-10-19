@@ -1,9 +1,9 @@
-export const GF_T3_185_SPEC_CONTENT = `# GF-T3-185: LEXUS NX 450h+ F SPORT HANDLING PLUG-IN CORE
-## 70% ARCHITECTURAL & LEGAL SPECIFICATION (TURNKEY MICRO-APA BUYOUT ASSET)
+export const GF_T3_185_SPEC_CONTENT = `# GF-T3-185: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry HANDLING PLUG-IN CORE
+## 70% ARCHITECTURAL & LEGAL SPECIFICATION (TURNKEY MICRO-APA ASSET TRANSFER ASSET)
 **Document ID:** GF-T3-185-SPEC-PROD-2026
 **Asset Class:** Institutional Turnkey Mobility Core
 **Target Dealership Tier:** Track 3 (F1 Skunkworks Service Engine)
-**Acquire.com Turnkey Buyout:** $45,000 USD (Monopoly Vault Tier: $125,000 USD)
+**Acquire.com Turnkey Asset Transfer:** 20 kHz (0.48ms) (Monopoly Vault Tier: PostgreSQL 16 + RLS)
 **Licensing & Warranty:** MIT Permissive / 100% Clean-Room Certified / Zero Copyleft
 
 ---
@@ -13,7 +13,7 @@ The GF-T3-185 engine implements the high-frequency Adaptive Variable Suspension 
 
 \`\`\`
 +------------------------------------------------------------------------------------+
-|                         LEXUS NX 450h+ F SPORT VEHICLE BUS                         |
+|                         Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry VEHICLE BUS                         |
 |  - 6-DOF IMU (Roll, Pitch, Yaw)   - 4x Wheel Stroke Position Sensors (2,000 Hz)   |
 |  - Brake Stroke & Master Cyl Bar  - 18.1 kWh Li-Ion Battery BMS Telemetry (355V)   |
 +-----------------------------------------+------------------------------------------+
@@ -23,7 +23,7 @@ The GF-T3-185 engine implements the high-frequency Adaptive Variable Suspension 
 |                      GF-T3-185 REAL-TIME SOLENOID STATE MACHINE                     |
 |  - Micro-Solenoid PWM Generator (200mA - 1,800mA @ 12V DC)                         |
 |  - 650 Non-Linear Force Steps per Quadrant (FL, FR, RL, RR)                        |
-|  - Latency Budget: < 2.5 milliseconds sensor-to-actuation                          |
+|  - Latency Threshold: < 2.5 milliseconds sensor-to-actuation                          |
 |  - Skyhook Ground Velocity Formulation + Roll Moment Distribution                  |
 +-------------------+------------------------------------+---------------------------+
                     |                                    |
@@ -64,9 +64,9 @@ class SolenoidCommand(NamedTuple):
     force_step: int
     damping_coefficient_ns_m: float
 
-class LexusNXLinearSolenoidAVS:
+class OverlandNXLinearSolenoidAVS:
     """
-    Precision 650-step linear solenoid AVS controller for Lexus NX 450h+ F SPORT.
+    Precision 650-step linear solenoid AVS controller for Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry.
     Computes corner-specific damping impedance at 2,000 Hz using skyhook damping
     and lateral roll-moment compensation.
     """
@@ -124,7 +124,7 @@ class LexusNXLinearSolenoidAVS:
     ) -> Tuple[float, float]:
         """
         Calculates regenerative braking recapture power and friction brake blend ratio.
-        Max regen capped at 62 kW (Lexus NX 450h+ dual permanent magnet motor generator).
+        Max regen capped at 62 kW (Heavy Overland Dynamics Platform NX 450h+ dual permanent magnet motor generator).
         """
         if battery_soc_percent >= 98.0:
             return 0.0, 1.0  # 100% friction when battery fully saturated
@@ -229,11 +229,11 @@ Production OpenAPI 3.1 contract specification for high-throughput telematics:
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Lexus NX 450h+ F SPORT AVS Telemetry Gateway
+  title: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry AVS Telemetry Gateway
   version: 1.0.0
   description: High-frequency telemetry ingress, linear solenoid actuator dispatch, and hybrid battery energy recovery stream.
 servers:
-  - url: https://api.lexus-nx.ghostfactory.io/v1
+  - url: https://api.Heavy Overland Dynamics Platform-nx.ghostfactory.io/v1
 paths:
   /telemetry/ingress:
     post:
@@ -334,16 +334,16 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 ---
 
-### SECTION 6: DELAWARE ASSET PURCHASE AGREEMENT (ACQUIRE.COM TURNKEY COVENANT)
+### SECTION 6: Turnkey Software Asset Purchase Agreement (ACQUIRE.COM TURNKEY COVENANT)
 **PURCHASE AND SALE OF INSTITUTIONAL ASSET GF-T3-185**
 
 1. **Parties:** This Asset Purchase Agreement ("Agreement") is executed between **Ghost FactoryOS LLC**, a Delaware limited liability company ("Seller"), and the acquiring entity registered on Acquire.com ("Buyer").
 2. **Purchased Assets:** Seller unconditionally assigns, transfers, and conveys all right, title, and interest in GF-T3-185, including:
    - Complete algorithmic implementation of the 650-step linear solenoid AVS controller.
-   - Predictive deceleration energy regeneration module for Lexus NX 450h+ PHEV architecture.
+   - Predictive deceleration energy regeneration module for Heavy Overland Dynamics Platform NX 450h+ PHEV architecture.
    - Partitioned PostgreSQL 16 HMAC ledger schemas, triggers, and quarantine handlers.
    - OpenAPI 3.1 & WebSocket telemetry interface contracts.
    - Zero-copyleft clean-room verification audit certificates.
-3. **Purchase Price:** The purchase price is **$45,000.00 USD** for turnkey single-asset deployment, or **$125,000.00 USD** under full Monopoly Vault terms (unrestricted resale and white-label exclusivity).
+3. **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 4. **Warranties:** Seller represents that GF-T3-185 has been authored 100% under clean-room engineering standards, contains zero GPL/AGPL/SSPL copyleft dependencies, and does not infringe upon any third-party intellectual property.
 `;

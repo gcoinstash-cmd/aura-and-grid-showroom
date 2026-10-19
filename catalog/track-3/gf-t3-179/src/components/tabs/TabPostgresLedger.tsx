@@ -15,7 +15,7 @@ export const TabPostgresLedger: React.FC = () => {
   const [frontTorque, setFrontTorque] = useState<number>(245.5);
   const [rearTorque, setRearTorque] = useState<number>(155.0);
   const [throttle, setThrottle] = useState<number>(0.75);
-  const [secretKey, setSecretKey] = useState<string>('LEXUS_TX550H_DIRECT4_SECURE_KEY_2026');
+  const [secretKey, setSecretKey] = useState<string>('Overland_TX550H_DUAL_VECTOR_TORQUE_SECURE_KEY_2026');
   
   // Tamper / Quarantine simulation
   const [isTampered, setIsTampered] = useState<boolean>(false);
@@ -272,7 +272,7 @@ export const TabPostgresLedger: React.FC = () => {
 
             {verificationStatus === 'QUARANTINED' && (
               <div className="mt-3 p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 text-[15px]">
-                <strong>TRIGGER TRIP LOG:</strong> Stored procedure <code className="text-white">fn_quarantine_torque_divergence()</code> intercepted rear torque of {rearTorque} Nm (Physical Hardware Ceiling: 169.0 Nm). Row automatically written to <code className="text-white">direct4_quarantine_violations</code> table.
+                <strong>TRIGGER TRIP LOG:</strong> Stored procedure <code className="text-white">fn_quarantine_torque_divergence()</code> intercepted rear torque of {rearTorque} Nm (Physical Hardware Ceiling: 169.0 Nm). Row automatically written to <code className="text-white">dual_vector_torque_quarantine_violations</code> table.
               </div>
             )}
           </div>
@@ -284,7 +284,7 @@ export const TabPostgresLedger: React.FC = () => {
         <div className="bg-slate-950 px-5 py-3.5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 font-mono font-bold text-[15px]">direct4_postgres16_schema.sql</span>
+            <span className="text-emerald-400 font-mono font-bold text-[15px]">dual_vector_torque_postgres16_schema.sql</span>
             <span className="text-slate-500">·</span>
             <span className="text-slate-400 text-[15px]">Production Timeseries DDL + Quarantine Triggers</span>
           </div>

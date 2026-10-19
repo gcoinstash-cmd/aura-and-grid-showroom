@@ -3,7 +3,7 @@
 **Target Asset:** GF-T3-151 // ApexLimit Engine (F1 Skunkworks Track 3 Reference Engine)  
 **Lead Systems Architect:** Ghost Factory OS Skunkworks  
 **Audit Standard:** Strict Permissive (Zero Copyleft, Clean-Room Provenance)  
-**Valuation Tier:** Ghost Factory Monopoly Vault Tier 3 ($125,000 USD APA Target)  
+**Specification Tier:** Ghost Factory Monopoly Vault Tier 3 (20 kHz (0.48ms) APA Target)  
 
 ---
 
@@ -20,7 +20,7 @@ The undersigned Lead Systems Architect hereby certifies under penalty of perjury
 
 All direct and transitive runtime dependencies have been validated against standard SPDX identifiers:
 
-| Package Name | Specified Version | SPDX License ID | Copyleft Check | Safe for Enterprise Buyout |
+| Package Name | Specified Version | SPDX License ID | Copyleft Check | Safe for Enterprise Asset Transfer |
 | :--- | :--- | :--- | :--- | :--- |
 | `fastapi` | `>=0.115.0` | `MIT` | PASS (Zero Copyleft) | YES |
 | `pydantic` | `>=2.9.0` | `MIT` | PASS (Zero Copyleft) | YES |
@@ -50,7 +50,7 @@ The ApexLimit Engine features three proprietary structural innovations designed 
 ---
 
 ## 4. IP TRANSFER & WARRANTY AFFIDAVIT
-Upon execution of the corresponding Asset Purchase Agreement and receipt of the negotiated consideration ($75,000–$150,000 USD), 100% of the worldwide rights, title, copyright, trade secrets, and patentable subject matter in GF-T3-151 shall transfer to the Purchaser free and clear of all liens, encumbrances, and third-party claims.
+Upon execution of the corresponding Asset Purchase Agreement and receipt of the negotiated consideration (20 kHz (0.48ms)–20 kHz (0.48ms)), 100% of the worldwide rights, title, copyright, trade secrets, and patentable subject matter in GF-T3-151 shall transfer to the Purchaser free and clear of all liens, encumbrances, and third-party claims.
 
 *Certified by:*  
 **Ghost Factory OS Skunkworks Systems Architecture Board**  

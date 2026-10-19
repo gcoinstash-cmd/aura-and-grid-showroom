@@ -147,7 +147,7 @@ export const OpenApiTab: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-198 Lexus LFA V10 Telematics Core API
+  title: GF-T3-198 Heavy Overland Dynamics Platform LFA V10 Telematics Core API
   version: 1.0.0-PROD
   description: High-throughput 100 Hz telematics ingress, acoustic harmonics, and ASG telemetry.
   contact:

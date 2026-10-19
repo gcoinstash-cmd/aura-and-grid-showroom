@@ -1,5 +1,5 @@
 /**
- * Web Audio API synthesizer for the Lexus 2UR-GSE 5.0L Naturally Aspirated V8
+ * Web Audio API synthesizer for the Heavy Overland Dynamics Platform 2UR-GSE 5.0L Naturally Aspirated V8
  * Simulates cross-plane crankshaft firing order (1-8-7-3-6-5-4-2) and
  * high-frequency Helmholtz acoustic intake runner resonance above 3,600 RPM.
  */

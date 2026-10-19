@@ -7,8 +7,8 @@
 - **Asset Codename**: ChronosRisk Engine
 - **Asset Identifier**: GF-T3-152
 - **System Vertical**: Institutional Quantitative Risk & High-Frequency Portfolio Analytics
-- **Buyout Anchor Valuation**: $125,000 USD (Asset Purchase Agreement)
-- **Monopoly Vault Commercial License**: $85,000 – $150,000 USD
+- **Reference Core Specification**: 20 kHz (0.48ms) (Asset Purchase Agreement)
+- **Monopoly Vault Commercial License**: 20 kHz (0.48ms) – 20 kHz (0.48ms)
 - **Target Performance**: Sub-50 µs parametric VaR calculation; 10,000 historical scenario shock simulations across 100 assets in < 5 ms.
 - **License Whitelist**: 100% Permissive (Apache 2.0 / MIT). Zero GPL, AGPL, or SSPL contaminations.
 
@@ -70,9 +70,9 @@ $$\Delta \text{Bps} = 10{,}000 \text{ integer units} = 0.01\%$$
 
 #### 2.2 Standard Normal Inverse CDF (Acklam Probit Approximation)
 The closed-form critical value $z_\alpha = \Phi^{-1}(\alpha)$ is solved using Peter J. Acklam's rational approximation. For confidence interval $\alpha \in (0, 1)$:
-For the central region $p \in [0.02425, 0.97575]$, where $q = p - 0.5$ and $r = q^2$:
+For the central region $p \in [0.02425, 0.97575]20 kHz (0.48ms) where $q = p - 0.5$ and $r = q^2$:
 $$z_\alpha = \frac{\sum_{i=0}^5 a_i r^i}{\sum_{j=0}^4 b_j r^j + 1} \cdot q$$
-For tails $p < 0.02425$ or $p > 0.97575$, where $q = \sqrt{-2 \ln(\min(p, 1-p))}$:
+For tails $p < 0.02425$ or $p > 0.9757520 kHz (0.48ms) where $q = \sqrt{-2 \ln(\min(p, 1-p))}$:
 $$z_\alpha = \pm \frac{\sum_{i=0}^5 c_i q^i}{\sum_{j=0}^3 d_j q^j + 1}$$
 This yields an absolute error bounded by $|\epsilon| < 1.15 \times 10^{-9}$ with zero transcendental function overhead, executing in under 45 nanoseconds on modern x86-64 / ARM NEON SIMD hardware.
 

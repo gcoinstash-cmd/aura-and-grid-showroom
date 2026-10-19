@@ -45,7 +45,7 @@ export const TabOpenApiContract: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ E-KDSS & Crawl Telemetry API
+  title: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
   description: High-frequency deterministic telemetry ingestion and actuator arbitration interface
   version: 1.0.0-PROD
   license:
@@ -70,7 +70,7 @@ paths:
 
   /actuators/ekdss/bypass-valves:
     post:
-      summary: Command E-KDSS accumulator bypass solenoid state
+      summary: Command Dynamic Kinetic Suspension Telemetry accumulator bypass solenoid state
       operationId: setBypassValves
       requestBody:
         required: true
@@ -256,7 +256,7 @@ components:
               OpenAPI 3.1 & Protocol Specification
             </h2>
             <p className="text-sm text-slate-400 mt-1">
-              Deterministic REST & High-Frequency WebSocket Protocols for GA-F Wheel Height Sensors and Hydraulic Actuators
+              Deterministic REST & High-Frequency WebSocket Protocols for Heavy Boxed Steel Frame Architecture Wheel Height Sensors and Hydraulic Actuators
             </p>
           </div>
 

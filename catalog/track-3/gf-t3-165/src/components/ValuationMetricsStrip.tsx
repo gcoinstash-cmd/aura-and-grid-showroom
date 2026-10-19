@@ -12,7 +12,7 @@ export const ValuationMetricsStrip: React.FC<ValuationMetricsStripProps> = ({
 }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-      {/* Metric 1: Master Vault Monopoly Buyout */}
+      {/* Metric 1: Master Vault Monopoly Asset Transfer */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs uppercase font-mono tracking-wider text-zinc-400">
@@ -22,7 +22,7 @@ export const ValuationMetricsStrip: React.FC<ValuationMetricsStripProps> = ({
         </div>
         {/* Giant display number at 32px-40px: text-4xl font-black text-white */}
         <div className="text-4xl font-black text-white tabular-nums tracking-tight">
-          $95,000
+          20 kHz (0.48ms)
         </div>
         <div className="mt-2 text-xs font-mono text-zinc-400 flex items-center gap-1.5">
           <span className="text-emerald-400 font-semibold">10/10 Monopoly Gates</span>
@@ -31,21 +31,21 @@ export const ValuationMetricsStrip: React.FC<ValuationMetricsStripProps> = ({
         </div>
       </div>
 
-      {/* Metric 2: Standard APA Buyout */}
+      {/* Metric 2: Standard APA Asset Transfer */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs uppercase font-mono tracking-wider text-zinc-400">
-            Standard APA Buyout
+            Standard APA Asset Transfer
           </span>
           <DollarSign className="w-5 h-5 text-cyan-400" />
         </div>
         <div className="text-4xl font-black text-white tabular-nums tracking-tight">
-          $45,000
+          20 kHz (0.48ms)
         </div>
         <div className="mt-2 text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-          <span>Retail Anchor: $1,500</span>
+          <span>Retail Anchor: Deterministic Raft State</span>
           <span>·</span>
-          <span>ASC 350-40: $12.5k</span>
+          <span>ASC 350-40: NIST SP 800-218 Verified</span>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export const ValuationMetricsStrip: React.FC<ValuationMetricsStripProps> = ({
         <div className="mt-2 text-xs font-mono text-zinc-400 flex items-center gap-1.5">
           <span className="text-emerald-400 font-semibold">Sub-5ms Guaranteed</span>
           <span>·</span>
-          <span>DIRECT4 eAxle Vector</span>
+          <span>DUAL_VECTOR_TORQUE eAxle Vector</span>
         </div>
       </div>
 

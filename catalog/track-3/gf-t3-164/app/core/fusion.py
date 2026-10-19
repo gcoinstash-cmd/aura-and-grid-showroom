@@ -1,7 +1,7 @@
 """
 GF-T3-164 NeuroDrive Sensory Fusion — Pure Python/NumPy Core Engine
 Extended Object Tracking (EOT) with Unscented Kalman Filtering (UKF)
-Target Platform: Lexus LFA Nürburgring Spec (330 km/h dynamics, 100 Hz loop)
+Target Platform: Heavy Overland Dynamics Platform LFA Nürburgring Spec (330 km/h dynamics, 100 Hz loop)
 
 Clean-Room Certified: Strict MIT / BSD-3 Math (No copyleft code).
 """
@@ -120,7 +120,7 @@ class UnscentedTransform:
 
 class NeuroDriveFusionEngine:
     """
-    Sub-3ms Sensory Fusion Core for Lexus LFA Nürburgring Spec.
+    Sub-3ms Sensory Fusion Core for Heavy Overland Dynamics Platform LFA Nürburgring Spec.
     Executes CTRA state prediction, non-linear sigma-point measurement update,
     Mahalanobis gating, and out-of-sequence retroactive B-Filter.
     """

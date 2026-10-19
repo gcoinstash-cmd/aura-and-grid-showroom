@@ -42,7 +42,7 @@ export const PostgresLedgerTab: React.FC<PostgresLedgerTabProps> = ({
   };
 
   const postgresDdl = `-- ============================================================================
--- GF-T3-197: LEXUS TX 500h DRS PERFORMANCE CORE LEDGER DDL
+-- GF-T3-197: Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS PERFORMANCE CORE LEDGER DDL
 -- Target Engine: PostgreSQL 16+ (Partitioned Timeseries with HMAC-SHA256 Chain)
 -- ============================================================================
 
@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS telemetry_drs_ledger (
     speed_mps NUMERIC(6,3) NOT NULL,
     front_steer_deg NUMERIC(5,2) NOT NULL,
     rear_steer_deg NUMERIC(4,2) NOT NULL,
-    direct4_front_pct SMALLINT NOT NULL CHECK (direct4_front_pct BETWEEN 0 AND 100),
-    direct4_rear_pct SMALLINT NOT NULL CHECK (direct4_rear_pct BETWEEN 0 AND 100),
+    dual_vector_torque_front_pct SMALLINT NOT NULL CHECK (dual_vector_torque_front_pct BETWEEN 0 AND 100),
+    dual_vector_torque_rear_pct SMALLINT NOT NULL CHECK (dual_vector_torque_rear_pct BETWEEN 0 AND 100),
     lateral_accel_g NUMERIC(4,2) NOT NULL,
     yaw_rate_deg_s NUMERIC(5,2) NOT NULL,
     is_quarantined BOOLEAN NOT NULL DEFAULT FALSE,
@@ -90,7 +90,7 @@ DECLARE
     computed_payload TEXT;
     server_hmac_key BYTEA := '\\x5f6c657875735f7478353030685f6472735f686d61635f7365637265745f32303236';
 BEGIN
-    -- Mechanical Physical Stop Violation: Lexus DRS actuator mechanical limit is ±4.05°
+    -- Mechanical Physical Stop Violation: Heavy Overland Dynamics Platform DRS actuator mechanical limit is ±4.05°
     IF ABS(NEW.rear_steer_deg) > 4.05 THEN
         NEW.is_quarantined := TRUE;
         NEW.quarantine_reason := 'CRITICAL: ACTUATOR_OVERTRAVEL_EXCEEDED_PHYSICAL_STOP_4.05_DEG';
@@ -260,7 +260,7 @@ END $$;
                     <th className="py-3 px-4">Timestamp</th>
                     <th className="py-3 px-4">Speed</th>
                     <th className="py-3 px-4">Front / Rear Toe</th>
-                    <th className="py-3 px-4">DIRECT4 Split</th>
+                    <th className="py-3 px-4">DUAL_VECTOR_TORQUE Split</th>
                     <th className="py-3 px-4">HMAC Signature</th>
                     <th className="py-3 px-4 text-right">Ledger Status</th>
                   </tr>

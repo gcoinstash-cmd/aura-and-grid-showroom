@@ -20,8 +20,8 @@ configfile: pyproject.toml
 plugins: asyncio-0.24.0, cov-5.0.0
 collected 5 items
 
-tests/test_direct4_high_g_trail_braking.py::test_trail_brake_front_anti_dive PASSED [ 20%]
-tests/test_direct4_high_g_trail_braking.py::test_catapult_exit_20_80_split PASSED  [ 40%]
+tests/test_dual_vector_torque_high_g_trail_braking.py::test_trail_brake_front_anti_dive PASSED [ 20%]
+tests/test_dual_vector_torque_high_g_trail_braking.py::test_catapult_exit_20_80_split PASSED  [ 40%]
 tests/test_drs_step_loss_fallback.py::test_drs_actuator_step_loss_neutralize PASSED [ 60%]
 tests/test_bipolar_thermal_gradient.py::test_thermal_gradient_quarantine_trigger PASSED [ 80%]
 tests/test_hmac_ledger.py::test_monotonic_nonce_sha256_continuity PASSED         [100%]
@@ -29,7 +29,7 @@ tests/test_hmac_ledger.py::test_monotonic_nonce_sha256_continuity PASSED        
 ---------- coverage: platform linux, python 3.12.5 -----------
 Name                               Stmts   Miss  Cover   Missing
 ----------------------------------------------------------------
-core/direct4_controller.py            68      2    97%   42-43
+core/dual_vector_torque_controller.py            68      2    97%   42-43
 core/drs_resolver.py                  34      1    97%   28
 core/bipolar_thermal_monitor.py       42      2    95%   35-36
 core/hmac_ledger_engine.py            55      4    93%   51-54
@@ -132,7 +132,7 @@ TOTAL                                199      9    95.5%
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              test_direct4_harness.py
+              test_dual_vector_torque_harness.py
             </button>
             <button
               onClick={() => setActiveCodeTab('gcloud')}
@@ -211,7 +211,7 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 `;
 
 const pytestContent = `import pytest
-from core.direct4_controller import Direct4Controller, VehicleState
+from core.dual_vector_torque_controller import DualVectorTorqueController, VehicleState
 
 def test_trail_brake_front_anti_dive():
     """Verify that heavy braking forces front torque bias to reduce chassis pitch."""
@@ -223,7 +223,7 @@ def test_trail_brake_front_anti_dive():
         yaw_rate_deg_s=-8.2,
         lat_g=-0.65
     )
-    cmd = Direct4Controller.compute(state)
+    cmd = DualVectorTorqueController.compute(state)
     assert cmd.front_ratio == 0.60, "Front regenerative braking must equal 60% anti-dive"
     assert cmd.rear_ratio == 0.40
 
@@ -237,7 +237,7 @@ def test_catapult_exit_20_80_split():
         yaw_rate_deg_s=6.5,
         lat_g=0.55
     )
-    cmd = Direct4Controller.compute(state)
+    cmd = DualVectorTorqueController.compute(state)
     assert cmd.rear_ratio >= 0.70, "Catapult exit must demand high rear torque"
     assert cmd.rear_torque_nm <= 169.0, "Must never exceed 169 Nm physical e-Axle ceiling"
 
@@ -251,7 +251,7 @@ def test_drs_counter_phase_at_low_speed():
         yaw_rate_deg_s=4.0,
         lat_g=0.3
     )
-    cmd = Direct4Controller.compute(state)
+    cmd = DualVectorTorqueController.compute(state)
     assert cmd.drs_angle_deg < 0, "Rear steer must be negative (counter-phase)"
     assert abs(cmd.drs_angle_deg) <= 4.0
 `;
@@ -262,7 +262,7 @@ const gcloudDeployContent = `#!/usr/bin/env bash
 # ==============================================================================
 set -euo pipefail
 
-PROJECT_ID="\${GCP_PROJECT_ID:-ghost-factory-rx500h}"
+PROJECT_ID="\${GCP_PROJECT_ID:-ghost-factory-Dual-Vector Performance Core}"
 REGION="us-central1"
 SERVICE_NAME="gf-t3-199-performance-core"
 IMAGE_TAG="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:v1.0.0-PROD"

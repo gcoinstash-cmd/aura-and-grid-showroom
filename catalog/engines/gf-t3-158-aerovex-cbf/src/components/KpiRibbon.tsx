@@ -13,12 +13,12 @@ export const KpiRibbon: React.FC<KpiRibbonProps> = ({ currentLatencyUs = 7.8 }) 
         <div className="bg-slate-950/80 border border-slate-800 rounded-lg p-4 flex flex-col justify-between hover:border-slate-700 transition-colors">
           <div className="flex items-center justify-between gap-2 mb-2">
             <span className="text-xs uppercase font-mono tracking-wider text-slate-400">
-              Delaware APA Buyout Baseline
+              Turnkey Software Asset Purchase Agreement Reference Core
             </span>
             <DollarSign className="w-4 h-4 text-emerald-400 shrink-0" />
           </div>
           <div className="text-2xl lg:text-3xl font-mono font-bold text-slate-100 tracking-tight">
-            $125,000 USD
+            20 kHz (0.48ms)
           </div>
           <p className="mt-1.5 text-xs text-slate-400 font-sans">
             Turnkey M&A Transfer · 100% IP Assignment

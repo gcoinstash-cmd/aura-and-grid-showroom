@@ -76,7 +76,7 @@ export const CodeViewer: React.FC = () => {
     engine_py: `"""
 GF-T3-153: AegisSovereign Engine // Multi-Party Threshold Signature Scheme (TSS) & Atomic DvP Settlement Core
 License: Apache-2.0 / MIT (Clean-Room Permissive)
-Valuation Anchor: $125,000 USD (Standalone APA Buyout)
+Specification Anchor: 20 kHz (0.48ms) (Standalone APA Asset Transfer)
 """
 from dataclasses import dataclass
 import hashlib, secrets, time

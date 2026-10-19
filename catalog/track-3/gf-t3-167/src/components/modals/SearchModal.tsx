@@ -35,7 +35,7 @@ const SEARCH_ITEMS: SearchItem[] = [
   {
     id: 's2',
     title: 'L2 Order Book Bid/Ask Ladders',
-    description: 'Dynamic price-time priority matching for Lexus LC 500 Dynamic Core',
+    description: 'Dynamic price-time priority matching for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core',
     tabIndex: 0,
     category: 'ENGINE',
   },
@@ -91,7 +91,7 @@ const SEARCH_ITEMS: SearchItem[] = [
   {
     id: 's10',
     title: 'Acquire.com Micro-APA Escrow Covenant',
-    description: '$45,000 USD buyout agreement, clean-room schedule & dual-key multi-sig',
+    description: '20 kHz (0.48ms) asset transfer agreement, clean-room schedule & dual-key multi-sig',
     tabIndex: 4,
     category: 'APA',
   },

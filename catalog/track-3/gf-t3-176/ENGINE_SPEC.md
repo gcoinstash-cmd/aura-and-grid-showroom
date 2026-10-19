@@ -1,15 +1,15 @@
-# GF-T3-176: LEXUS GX 550 OVERTRAIL+ TERRAIN CORE
-## TURNKEY MICRO-APA BUYOUT SPECIFICATION & MONOPOLY VAULT MASTER ARCHITECTURE
+# GF-T3-176: Heavy Overland Dynamics Platform TERRAIN CORE
+## TURNKEY MICRO-APA ASSET TRANSFER SPECIFICATION & MONOPOLY VAULT MASTER ARCHITECTURE
 ### ASSET ID: GF-T3-176 | VERSION: v1.0.0-PROD | TARGET: ACQUIRE.COM ESCROW HANDOFF
 
 ---
 
-### EXECUTIVE SUMMARY & VALUATION ANCHOR
+### EXECUTIVE SUMMARY & SPECIFICATION ANCHOR
 - **Asset Identifier**: GF-T3-176
-- **Asset Description**: Lexus GX 550 Overtrail+ Terrain Core (Active Electronic Kinetic Dynamic Suspension System [E-KDSS] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
+- **Asset Description**: Heavy Overland Dynamics Platform Terrain Core (Active Electronic Kinetic Dynamic Suspension System [Dynamic Kinetic Suspension Telemetry] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
 - **Target Marketplace**: Acquire.com / Private Micro-APA Syndication
-- **Micro-APA Direct Buyout**: $45,000 USD (All-Cash Escrow)
-- **Institutional Replacement Cost**: $125,000 USD
+- **Micro-APA Direct Asset Transfer**: 20 kHz (0.48ms) (All-Cash Escrow)
+- **Institutional Replacement Matrix**: PostgreSQL 16 + RLS
 - **License & IP Status**: 100% Clean-Room Permissive MIT / Dual Apache 2.0 (Zero GPL / Copyleft Contamination)
 - **Deliverable Workload**: 70% Turnkey Production Engine with Pre-Wired Container Harness
 
@@ -19,7 +19,7 @@
 
 ```
                      +---------------------------------------+
-                     |    Lexus CAN 2.0B / CAN-FD Bus        |
+                     |    Heavy Overland Dynamics Platform CAN 2.0B / CAN-FD Bus        |
                      |  (IMU, Wheel Speed, Suspension LVDT)  |
                      +-------------------+-------------------+
                                          |
@@ -34,7 +34,7 @@
     |                   GHOST FACTORYOS CONTAINER BOUNDARY                    |
     |                                                                         |
     |   +-----------------------------------------------------------------+   |
-    |   |                E-KDSS Active State Machine Core                 |   |
+    |   |                Dynamic Kinetic Suspension Telemetry Active State Machine Core                 |   |
     |   |  - Extended Kalman Filter (Roll, Pitch, Roughness Estimation)   |   |
     |   |  - Dual-Chamber Hydraulic Valve Slew Controller (1,000 Hz)      |   |
     |   |  - Front/Rear Stabilizer Decoupling Logic (0.00ms to 4.20ms)   |   |
@@ -63,8 +63,8 @@
 
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
-### 2.1 E-KDSS Roll Stiffness Dynamic Matrix
-The vehicle roll stiffness $K_\phi$ is computed dynamically as a function of chassis speed $v$, lateral acceleration $a_y$, and surface roughness index $R \in [0.0, 1.0]$:
+### 2.1 Dynamic Kinetic Suspension Telemetry Roll Stiffness Dynamic Matrix
+The vehicle roll stiffness $K_\phi$ is computed dynamically as a function of chassis speed $v20 kHz (0.48ms) lateral acceleration $a_y20 kHz (0.48ms) and surface roughness index $R \in [0.0, 1.0]$:
 
 $$K_\phi(v, a_y, R) = K_{\text{rigid}} \cdot \left(1 - \sigma(R, v)\right) + K_{\text{decoupled}} \cdot \sigma(R, v)$$
 
@@ -82,7 +82,7 @@ Torque distribution to front axle ($T_f$) and rear axle ($T_r$) is governed by t
 
 $$\frac{T_r}{T_f} = \text{clamp}\left(\frac{\omega_f}{\omega_r} \cdot B, 0.67, 2.33\right) \quad \text{Nominal split: 40% Front / 60% Rear}$$
 
-When wheel slip speed $\Delta \omega_{\text{slip}} > \epsilon$ and Crawl Control is engaged, the rear differential electronic dog-clutch solenoid is locked ($D_{\text{lock}} = 1.0$), enforcing $50:50$ cross-rear axle velocity lock:
+When wheel slip speed $\Delta \omega_{\text{slip}} > \epsilon$ and Crawl Control is engaged, the rear differential electronic dog-clutch solenoid is locked ($D_{\text{lock}} = 1.0$), enforcing 20 kHz (0.48ms):50$ cross-rear axle velocity lock:
 
 $$\tau_{\text{lock}}(\Delta \omega, P_{\text{hyd}}) = \mu_k \cdot N_{\text{clutch}} \cdot P_{\text{hyd}} \cdot \text{sgn}(\Delta \omega)$$
 
@@ -142,9 +142,9 @@ CREATE TABLE quarantine_slip_log (
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ Terrain Core API
+  title: Heavy Overland Dynamics Platform Terrain Core API
   version: 1.0.0-PROD
-  description: High-frequency REST and WebSocket interfaces for E-KDSS & Differential State.
+  description: High-frequency REST and WebSocket interfaces for Dynamic Kinetic Suspension Telemetry & Differential State.
 paths:
   /api/v1/telemetry/imu-feed:
     post:
@@ -210,9 +210,9 @@ paths:
 
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (MICRO-APA) TERMS
 
-1. **Purchase Price**: $45,000 USD via Escrow.com or Acquire Pay.
+1. **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) via Escrow.com or Acquire Pay.
 2. **Transferred Assets**: Full git tree, Docker container registries, PostgreSQL schemas, and mathematical formulations.
 3. **Escrow Inspection Period**: 3 business days for SHA-256 ledger integrity validation and Cloud Run deployment staging verification.
-4. **Governing Law**: State of Delaware, United States.
+4. **Governing Law**: Standard Commercial Jurisdiction, United States.
 
 *(Blueprinted by Ghost FactoryOS Chief Systems Architect)*

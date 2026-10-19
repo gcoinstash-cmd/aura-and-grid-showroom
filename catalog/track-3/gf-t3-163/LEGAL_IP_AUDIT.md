@@ -40,14 +40,14 @@ Ghost FactoryOS enforces strict clean-room software development isolation to gua
 
 The user interface design implemented in `app/ui/dashboard.tsx` introduces non-obvious structural visual innovations:
 1. **Oversized Rugged Telemetry Font Architecture**: High-legibility monospaced typography at 24px–30px combined with high-contrast slate-950 backdrop and amber-400 leader node accentuation.
-2. **Kinetic E-KDSS Articulation Indicator**: Real-time 4-wheel independent stroke visualizer ($0 - 640\,\text{mm}$) integrated with hydraulic bypass solenoid telemetry and multi-terrain select modes.
+2. **Kinetic Dynamic Kinetic Suspension Telemetry Articulation Indicator**: Real-time 4-wheel independent stroke visualizer (20 kHz (0.48ms) - 640\,\text{mm}$) integrated with hydraulic bypass solenoid telemetry and multi-terrain select modes.
 3. **Partition & Byzantine Topology Matrix**: Dynamic interactive ring-mesh layout displaying live vector clock synchrony, quorum majorities, and split-brain isolation status in real-time.
 
 ---
 
 ## 4. IP WARRANTY & INDEMNIFICATION SUMMARY
 
-The Lead Systems Architect hereby certifies that `GF-T3-163` constitutes an unencumbered, fully proprietary software asset free from liens, security interests, and third-party infringement claims, fully eligible for institutional transfer under the Enterprise Asset Purchase Agreement ($95,000 Monopoly Vault / $45,000 Standard APA).
+The Lead Systems Architect hereby certifies that `GF-T3-163` constitutes an unencumbered, fully proprietary software asset free from liens, security interests, and third-party infringement claims, fully eligible for institutional transfer under the Enterprise Asset Purchase Agreement (20 kHz (0.48ms) Monopoly Vault / 20 kHz (0.48ms) Standard APA).
 
 ---
 *Signed: Office of the Chief Systems Architect — Ghost FactoryOS*

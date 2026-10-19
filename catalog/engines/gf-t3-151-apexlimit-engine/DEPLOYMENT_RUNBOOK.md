@@ -75,7 +75,7 @@ cp .env.example .env
 | `HOST` | `0.0.0.0` | Bind interface address |
 | `APP_ENV` | `development` | Environment profile (`development`, `staging`, `production`) |
 | `LOG_LEVEL` | `INFO` | Structured JSON logging verbosity (`DEBUG`, `INFO`, `WARNING`, `ERROR`) |
-| `PRECISION_SCALE` | `100000000` | Fixed-point $10^8$ integer scaling constant (prevents IEEE-754 float drift) |
+| `PRECISION_SCALE` | `100000000` | Fixed-point 20 kHz (0.48ms)^8$ integer scaling constant (prevents IEEE-754 float drift) |
 | `DEFAULT_INITIAL_MARGIN_BPS` | `1000` | Default initial margin requirement in basis points (`1000 bps = 10%` / `10x` max leverage) |
 | `DEFAULT_MAINTENANCE_MARGIN_BPS` | `500` | Default maintenance margin liquidation threshold (`500 bps = 5%`) |
 | `DATABASE_URL` | *(Optional)* | PostgreSQL / AlloyDB connection string for Level-2 audit persistence |

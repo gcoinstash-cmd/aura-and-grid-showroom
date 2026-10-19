@@ -1,5 +1,5 @@
 export const PYTHON_CORE_ENGINE_CODE = `"""
-GF-T3-177 | Lexus LC 500 Convertible Grand Touring Core
+GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 Proprietary Dynamic Rear Steering (DRS) & Bimodal Acoustic Exhaust Engine
 Clean-Room Certified | Python 3.12 Production Implementation
 License: Permissive MIT
@@ -21,11 +21,11 @@ class ConvertibleTopStatus(Enum):
 
 @dataclass(frozen=True)
 class VehicleDynamicsConfig:
-    wheelbase_m: float = 2.870               # Lexus LC 500 GA-L platform wheelbase (m)
+    wheelbase_m: float = 2.870               # Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GA-L platform wheelbase (m)
     track_width_rear_m: float = 1.635        # Rear track width (m)
-    curb_weight_kg: float = 2055.0           # LC 500 Convertible curb weight (kg)
+    curb_weight_kg: float = 2055.0           # High-Aero Grand Touring Telemetry Core Convertible curb weight (kg)
     steering_ratio_front: float = 13.6       # Variable gear ratio center baseline
-    max_rear_steer_deg: float = 2.0          # Lexus Dynamic Handling (LDH) rear actuator limit (±2.0°)
+    max_rear_steer_deg: float = 2.0          # Heavy Overland Dynamics Platform Dynamic Handling (LDH) rear actuator limit (±2.0°)
     transition_speed_kph: float = 80.0       # Phase inversion threshold (80.0 km/h)
     phase_hysteresis_kph: float = 2.5        # Anti-hunting transition deadband (±2.5 km/h)
     understeer_gradient_rad_g: float = 0.0022 # K_us linear understeer gradient (rad/(m/s^2))
@@ -55,7 +55,7 @@ class ActuatorOutput:
     acoustic_pressure_db: float
     v8_firing_order_hz: float
 
-class LC500GrandTouringCore:
+class High-Aero Grand Touring Telemetry CoreGrandTouringCore:
     def __init__(self, config: VehicleDynamicsConfig = VehicleDynamicsConfig()):
         self.config = config
         self._last_phase: RearSteeringPhase = RearSteeringPhase.COUNTER_PHASE
@@ -188,7 +188,7 @@ class LC500GrandTouringCore:
 `;
 
 export const POSTGRES_DDL_SCHEMA = `-- =========================================================================
--- GF-T3-177 | Lexus LC 500 Convertible Grand Touring Core
+-- GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 -- Cryptographic Touring Ledger & Partitioned Timeseries Schema
 -- PostgreSQL 16 Production DDL with HMAC-SHA256 Continuous Audit
 -- License: Permissive MIT | 0% Copyleft Clean-Room
@@ -201,7 +201,7 @@ CREATE TYPE drs_phase_enum AS ENUM ('COUNTER_PHASE', 'NEUTRAL', 'IN_PHASE');
 CREATE TYPE top_status_enum AS ENUM ('STOWED', 'DEPLOYED');
 
 -- 1. Base Timeseries Hypertable for High-Frequency Ingestion (1,000 Hz)
-CREATE TABLE IF NOT EXISTS lc500_telemetry_partitioned (
+CREATE TABLE IF NOT EXISTS High-Aero Grand Touring Telemetry Core_telemetry_partitioned (
     record_id           BIGSERIAL,
     block_index         BIGINT NOT NULL,
     timestamp_utc       TIMESTAMPTZ NOT NULL,
@@ -223,15 +223,15 @@ CREATE TABLE IF NOT EXISTS lc500_telemetry_partitioned (
 ) PARTITION BY RANGE (timestamp_utc);
 
 -- Monthly partition slices for zero-vacuum timeseries rolling retention
-CREATE TABLE IF NOT EXISTS lc500_telemetry_y2026m10 PARTITION OF lc500_telemetry_partitioned
+CREATE TABLE IF NOT EXISTS High-Aero Grand Touring Telemetry Core_telemetry_y2026m10 PARTITION OF High-Aero Grand Touring Telemetry Core_telemetry_partitioned
     FOR VALUES FROM ('2026-10-01 00:00:00+00') TO ('2026-11-01 00:00:00+00');
-CREATE TABLE IF NOT EXISTS lc500_telemetry_y2026m11 PARTITION OF lc500_telemetry_partitioned
+CREATE TABLE IF NOT EXISTS High-Aero Grand Touring Telemetry Core_telemetry_y2026m11 PARTITION OF High-Aero Grand Touring Telemetry Core_telemetry_partitioned
     FOR VALUES FROM ('2026-11-01 00:00:00+00') TO ('2026-12-01 00:00:00+00');
 
 -- High performance indexing: BRIN for sequential time, B-tree for hash verification
-CREATE INDEX IF NOT EXISTS idx_lc500_ts_brin ON lc500_telemetry_partitioned USING BRIN (timestamp_utc);
-CREATE INDEX IF NOT EXISTS idx_lc500_block_index ON lc500_telemetry_partitioned (block_index);
-CREATE UNIQUE INDEX IF NOT EXISTS idx_lc500_hash_unique ON lc500_telemetry_y2026m10 (block_hmac_sha256);
+CREATE INDEX IF NOT EXISTS idx_High-Aero Grand Touring Telemetry Core_ts_brin ON High-Aero Grand Touring Telemetry Core_telemetry_partitioned USING BRIN (timestamp_utc);
+CREATE INDEX IF NOT EXISTS idx_High-Aero Grand Touring Telemetry Core_block_index ON High-Aero Grand Touring Telemetry Core_telemetry_partitioned (block_index);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_High-Aero Grand Touring Telemetry Core_hash_unique ON High-Aero Grand Touring Telemetry Core_telemetry_y2026m10 (block_hmac_sha256);
 
 -- 2. Steering Rack Divergence Quarantine Log
 -- Captures mechanical deviations or sensor discrepancies exceeding safety envelope
@@ -279,18 +279,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS trg_audit_steering_rack ON lc500_telemetry_partitioned;
+DROP TRIGGER IF EXISTS trg_audit_steering_rack ON High-Aero Grand Touring Telemetry Core_telemetry_partitioned;
 CREATE TRIGGER trg_audit_steering_rack
-BEFORE INSERT ON lc500_telemetry_partitioned
+BEFORE INSERT ON High-Aero Grand Touring Telemetry Core_telemetry_partitioned
 FOR EACH ROW EXECUTE FUNCTION audit_steering_rack_envelope();
 `;
 
 export const OPENAPI_SPECIFICATION = `openapi: 3.1.0
 info:
-  title: GF-T3-177 Lexus LC 500 Grand Touring Core Telemetry API
+  title: GF-T3-177 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Grand Touring Core Telemetry API
   version: 1.0.0-PROD
   description: >
-    Zero-dependency high-throughput REST and WebSocket contracts for Lexus LC 500
+    Zero-dependency high-throughput REST and WebSocket contracts for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core
     Convertible Dynamic Rear Steering (DRS) and active acoustic flap control.
   license:
     name: MIT License
@@ -496,7 +496,7 @@ Target: >90% Branch Coverage & Strict Sub-1ms Latency SLA Verification
 import pytest
 import time
 from src.core.drs_engine import (
-    LC500GrandTouringCore,
+    High-Aero Grand Touring Telemetry CoreGrandTouringCore,
     VehicleDynamicsConfig,
     TelemetryFrame,
     RearSteeringPhase,
@@ -511,7 +511,7 @@ def core_engine():
         phase_hysteresis_kph=2.5,
         max_rear_steer_deg=2.0
     )
-    return LC500GrandTouringCore(config=config)
+    return High-Aero Grand Touring Telemetry CoreGrandTouringCore(config=config)
 
 def test_counter_phase_sub_80kph(core_engine):
     """Verify sub-80 km/h turning invokes counter-phase steering for agility."""
@@ -599,12 +599,12 @@ def test_latency_loop_under_1ms(core_engine):
 `;
 
 export const APA_AGREEMENT_MARKDOWN = `# ASSET PURCHASE AGREEMENT (APA)
-**Asset Identifier:** GF-T3-177 | Lexus LC 500 Convertible Grand Touring Core
+**Asset Identifier:** GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 **Transaction Platform:** Acquire.com Micro-Acquisition Vault
 **Seller:** Ghost FactoryOS Systems Architecture Corp.
 **Buyer:** Verified Institutional Acquirer / Private Equity Buyer
 **Effective Date:** October 11, 2026
-**Purchase Consideration:** $45,000 USD (Micro-APA Buyout Option) / $125,000 USD (Institutional Enterprise Tier)
+**Purchase Consideration:** 20 kHz (0.48ms) (Micro-APA Asset Transfer Option) / PostgreSQL 16 + RLS (Institutional Enterprise Tier)
 
 ---
 
@@ -629,8 +629,8 @@ NOW, THEREFORE, in consideration of the mutual covenants, representations, warra
 
 ---
 
-### SECTION 2: PURCHASE PRICE & ESCROW MECHANISM
-2.1 **Consideration.** The total purchase consideration shall be **$45,000.00 USD** for standard turnkey buyout or **$125,000.00 USD** for exclusive Monopoly Vault rights.
+### SECTION 2: DEPLOYMENT SPECIFICATION & ESCROW MECHANISM
+2.1 **Consideration.** The total purchase consideration shall be **Delaware Institutional Covenants** for standard turnkey asset transfer or **PostgreSQL 16 + RLS** for exclusive Monopoly Vault rights.
 2.2 **Escrow Mechanics.** Settlement shall occur through Acquire.com Escrow or Escrow.com:
   - Phase 1: Buyer deposits 100% purchase consideration into escrow.
   - Phase 2: Seller delivers complete git repository credentials, cryptographically signed release tags, and unredacted master vault documentation.
@@ -643,7 +643,7 @@ NOW, THEREFORE, in consideration of the mutual covenants, representations, warra
 3.1 **Clean-Room Certification.** Seller warrants and covenants that:
   (a) 100% of code lines were authored without the inclusion of copyleft, GPL, AGPL, or SSPL-licensed dependencies.
   (b) All third-party libraries utilize standard permissive MIT, BSD-3-Clause, or Apache 2.0 open-source licenses.
-  (c) No proprietary Lexus/Toyota trade secret reverse-engineering was performed; all vehicle dynamics equations originate from published kinematic bicycle models and academic SAE vehicle dynamics formulations.
+  (c) No proprietary Heavy Overland Dynamics Platform/Toyota trade secret reverse-engineering was performed; all vehicle dynamics equations originate from published kinematic bicycle models and academic SAE vehicle dynamics formulations.
   (d) The Acquired Assets do not infringe, misappropriate, or violate any valid patent, copyright, or trademark of any third party.
 
 ---

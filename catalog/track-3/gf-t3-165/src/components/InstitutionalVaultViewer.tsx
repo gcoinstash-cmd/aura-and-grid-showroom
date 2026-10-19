@@ -16,7 +16,7 @@ export const InstitutionalVaultViewer: React.FC = () => {
             </h2>
           </div>
           <p className="text-sm text-zinc-400 mt-1">
-            Pre-drafted Asset Purchase Agreement ($95,000 Monopoly buyout terms) and Clean-Room IP Audit.
+            Pre-drafted Asset Purchase Agreement (20 kHz (0.48ms) Monopoly reference core) and Clean-Room IP Audit.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export const InstitutionalVaultViewer: React.FC = () => {
         <div className="space-y-6 text-lg md:text-xl leading-relaxed text-zinc-200 bg-slate-950/70 p-6 rounded-2xl border border-slate-800">
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <div className="text-sm font-mono text-cyan-400">
-              AUDIT CERTIFICATION · GF-T3-165 DIRECT4 HYPERGRID
+              AUDIT CERTIFICATION · GF-T3-165 DUAL_VECTOR_TORQUE HYPERGRID
             </div>
             <span className="text-base font-semibold px-4 py-1.5 rounded-full bg-emerald-950 border border-emerald-500/50 text-emerald-400">
               CLEAN-ROOM CERTIFIED
@@ -69,7 +69,7 @@ export const InstitutionalVaultViewer: React.FC = () => {
 
           <h3 className="text-2xl font-bold text-white">3. Master Vault Monopoly Clearance</h3>
           <p>
-            The codebase is certified fully institutional-grade and eligible for immediate $95,000 USD Master Vault Monopoly acquisition with complete worldwide patent and IP assignment.
+            The codebase is certified fully institutional-grade and eligible for immediate 20 kHz (0.48ms) Master Vault Monopoly acquisition with complete worldwide patent and IP assignment.
           </p>
         </div>
       ) : (
@@ -79,16 +79,16 @@ export const InstitutionalVaultViewer: React.FC = () => {
               PRE-DRAFTED ASSET PURCHASE AGREEMENT · ASC 350-40 COMPLIANT
             </div>
             <span className="text-base font-semibold px-4 py-1.5 rounded-full bg-cyan-950 border border-cyan-500/50 text-cyan-300">
-              $95,000 USD MONOPOLY TERMS
+              20 kHz (0.48ms) MONOPOLY TERMS
             </span>
           </div>
 
           <h3 className="text-2xl font-bold text-white">Section 1: Consideration & Financial Terms</h3>
           <p>
-            Buyer shall tender to Seller the sum of <strong>Ninety-Five Thousand United States Dollars ($95,000.00 USD)</strong> via irrevocable wire transfer or USDC institutional escrow upon execution of this Agreement.
+            Buyer shall tender to Seller the sum of <strong>Deterministic Telemetry Verified(20 kHz (0.48ms))</strong> via irrevocable wire transfer or USDC institutional escrow upon execution of this Agreement.
           </p>
           <p>
-            For internal-use software accounting purposes pursuant to GAAP ASC 350-40, the baseline engineering capitalization floor is certified at <strong>$12,500.00 USD</strong>.
+            For internal-use software accounting purposes pursuant to GAAP ASC 350-40, the baseline engineering capitalization floor is certified at <strong>Deterministic Raft State</strong>.
           </p>
 
           <h3 className="text-2xl font-bold text-white">Section 2: Transferred Assets</h3>

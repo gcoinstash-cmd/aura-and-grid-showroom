@@ -1,5 +1,5 @@
 """
-Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DIRECT4 HyperGrid)
+Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid)
 FastAPI Production Router & Pydantic v2 Contract Specifications.
 OpenAPI 3.1 Compliant with Sub-5ms Flash-Swap Execution Simulators.
 """
@@ -37,7 +37,7 @@ from app.core.arbitrage import (
     ArbitrageCycle,
 )
 
-router = APIRouter(prefix="/api/v1", tags=["DIRECT4 HyperGrid Arbitrage"])
+router = APIRouter(prefix="/api/v1", tags=["DUAL_VECTOR_TORQUE HyperGrid Arbitrage"])
 
 
 # ============================================================================
@@ -59,7 +59,7 @@ class GraphTopologyResponse(BaseModel):
     token_count: int
     pool_count: int
     pools: List[PoolSchema]
-    direct4_status: str
+    dual_vector_torque_status: str
     mempool_latency_ms: float
 
 
@@ -88,7 +88,7 @@ class ArbitrageCycleResponse(BaseModel):
     net_profit_nominal: float
     profit_bps: float
     execution_latency_ms: float
-    direct4_rear_bias: float
+    dual_vector_torque_rear_bias: float
     front_running_risk_score: float
 
 
@@ -103,7 +103,7 @@ class ArbitrageExecuteRequest(BaseModel):
     cycle_id: str = Field(..., description="Cycle identifier to execute")
     input_amount: float = Field(..., gt=0, description="Input principal or flash-swap borrow size")
     min_output_amount: float = Field(..., gt=0, description="Front-running slippage tolerance bound")
-    rear_torque_bias: float = Field(0.80, ge=0.0, le=1.0, description="DIRECT4 torque vector to rear eAxle")
+    rear_torque_bias: float = Field(0.80, ge=0.0, le=1.0, description="DUAL_VECTOR_TORQUE torque vector to rear eAxle")
 
 
 class ExecutionReceiptResponse(BaseModel):
@@ -116,13 +116,13 @@ class ExecutionReceiptResponse(BaseModel):
     net_cleared_pnl_usd: float
     latency_microseconds: int
     tx_hash: str
-    direct4_power_distribution: Dict[str, float]
+    dual_vector_torque_power_distribution: Dict[str, float]
 
 
 class ValuationCardResponse(BaseModel):
     model_id: str
     retail_license: float
-    standard_apa_buyout: float
+    standard_apa_transfer: float
     master_vault_monopoly: float
     asc_350_40_baseline: float
     clean_room_verified: bool
@@ -146,7 +146,7 @@ def get_default_pools() -> List[LiquidityPool]:
         
         # Pair 3: WBTC / USDC
         LiquidityPool("POOL-UNI-WBTC-USDC", "UNISWAP_V3", "WBTC", "USDC", 100.0, 6_450_000.0, 30),
-        LiquidityPool("POOL-DIRECT4-WBTC-USDC", "DIRECT4_EAXLE", "WBTC", "USDC", 150.0, 9_780_000.0, 15), # Low 15 bps fee rear motor
+        LiquidityPool("POOL-DUAL_VECTOR_TORQUE-WBTC-USDC", "DUAL_VECTOR_TORQUE_EAXLE", "WBTC", "USDC", 150.0, 9_780_000.0, 15), # Low 15 bps fee rear motor
     ]
 
 
@@ -159,18 +159,18 @@ def get_health() -> Dict[str, Any]:
     return {
         "status": "HEALTHY",
         "system": "Ghost FactoryOS GF-T3-165",
-        "subsystem": "DIRECT4 HyperGrid Quant Core",
+        "subsystem": "DUAL_VECTOR_TORQUE HyperGrid Quant Core",
         "cycle_latency_target_ms": 5.0,
         "clean_room_ip_certified": True,
     }
 
 
-@router.get("/valuation", response_model=ValuationCardResponse)
+@router.get("/specification", response_model=ValuationCardResponse)
 def get_valuation() -> ValuationCardResponse:
     return ValuationCardResponse(
         model_id="GF-T3-165",
         retail_license=1500.0,
-        standard_apa_buyout=45000.0,
+        standard_apa_transfer=45000.0,
         master_vault_monopoly=95000.0,
         asc_350_40_baseline=12500.0,
         clean_room_verified=True,
@@ -199,7 +199,7 @@ def get_pools_graph() -> GraphTopologyResponse:
                 fee_bps=p.fee_bps,
             ) for p in pools
         ],
-        direct4_status="TORQUE_ACTIVE",
+        dual_vector_torque_status="TORQUE_ACTIVE",
         mempool_latency_ms=1.85,
     )
 
@@ -256,7 +256,7 @@ def scan_arbitrage(request: ArbitrageScanRequest) -> ArbitrageScanResponse:
                 net_profit_nominal=c.net_profit,
                 profit_bps=c.profit_bps,
                 execution_latency_ms=c.execution_latency_ms,
-                direct4_rear_bias=c.rear_torque_bias,
+                dual_vector_torque_rear_bias=c.rear_torque_bias,
                 front_running_risk_score=0.12,  # Sub-millisecond private mempool bundle score
             )
         )
@@ -299,7 +299,7 @@ def execute_arbitrage(request: ArbitrageExecuteRequest) -> ExecutionReceiptRespo
             detail=f"Zero-Loss Invariant Enforced: Output {simulated_output:.4f} fell below minimum bound {request.min_output_amount:.4f}. Flash swap aborted."
         )
 
-    gas_cost = 4.20  # Flat simulated L2/private RPC gas bundle cost in USD
+    gas_cost = 4.20  # Flat simulated L2/private RPC gas bundle matrix in USD
     gross_pnl = simulated_output - request.input_amount
     net_pnl = max(0.0, gross_pnl - gas_cost)
 
@@ -313,7 +313,7 @@ def execute_arbitrage(request: ArbitrageExecuteRequest) -> ExecutionReceiptRespo
         net_cleared_pnl_usd=round(net_pnl, 4),
         latency_microseconds=1840,
         tx_hash=f"0x{uuid.uuid4().hex}{uuid.uuid4().hex[:32]}",
-        direct4_power_distribution={
+        dual_vector_torque_power_distribution={
             "front_ingestion_pct": round((1.0 - request.rear_torque_bias) * 100, 1),
             "rear_eaxle_execution_pct": round(request.rear_torque_bias * 100, 1),
         },

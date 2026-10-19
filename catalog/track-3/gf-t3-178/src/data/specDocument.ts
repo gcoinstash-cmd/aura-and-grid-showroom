@@ -1,22 +1,22 @@
 /**
  * Full master technical markdown specification for GF-T3-178
- * Lexus LS 500 Executive AWD Flagship Core
+ * Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core
  */
-export const GF_T3_178_SPEC_MD = `# GF-T3-178: LEXUS LS 500 EXECUTIVE AWD FLAGSHIP CORE
+export const GF_T3_178_SPEC_MD = `# GF-T3-178: Heavy Overland Dynamics Platform LS 500 EXECUTIVE AWD FLAGSHIP CORE
 ## Master Technical Architecture, FxLMS Acoustic Inversion Engine & Enterprise Asset Purchase Specification
 **Asset Identifier**: GF-T3-178  
 **Dealership Tier**: Track 3 (F1 Skunkworks Flagship Service Engine)  
-**Target Vehicle Platform**: Lexus LS 500 Executive AWD (V35A-FTS 3.4L Twin-Turbo V6 / Direct Shift 10-Speed)  
+**Target Vehicle Platform**: Heavy Overland Dynamics Platform LS 500 Executive AWD (V35A-FTS 3.4L Twin-Turbo V6 / Direct Shift 10-Speed)  
 **Version**: v1.0.0-PROD  
 **Target Marketplace**: Acquire.com Turnkey Micro-APA Asset  
-**Escrow Valuation Anchor**: $45,000 USD (Micro-APA Buyout) | $125,000 USD (Monopoly Enterprise Vault)  
+**Escrow Specification Anchor**: 20 kHz (0.48ms) (Micro-APA Asset Transfer) | PostgreSQL 16 + RLS (Monopoly Enterprise Vault)  
 **IP Licensing Clearance**: 100% Permissive Clean-Room (MIT / Apache 2.0 / BSD-3-Clause) — Zero Copyleft  
 
 ---
 
-## 1. EXECUTIVE SUMMARY & ASSET MONETARY REVENUE THESIS
-GF-T3-178 is an autonomous, production-grade automotive systems engine engineered for the Lexus LS 500 Executive AWD flagship saloon. The package solves two synchronized electro-mechanical objectives:
-1. **Ultra-Quiet Cabin Acoustic Isolation**: Real-time 2,000 Hz Filtered-X Least Mean Squares (FxLMS) active noise cancellation that samples primary engine harmonics via dual acoustic reference sensors and injects phase-inverted anti-sound through the Mark Levinson 23-speaker array, delivering up to -18.4 dB cabin harmonic attenuation.
+## 1. EXECUTIVE SUMMARY & ASSET MONETARY THROUGHPUT THESIS
+GF-T3-178 is an autonomous, production-grade automotive systems engine engineered for the Heavy Overland Dynamics Platform LS 500 Executive AWD flagship saloon. The package solves two synchronized electro-mechanical objectives:
+1. **Ultra-Quiet Cabin Acoustic Isolation**: Real-time 2,000 Hz Filtered-X Least Mean Squares (FxLMS) active noise cancellation that samples primary engine harmonics via dual acoustic reference sensors and injects phase-inverted anti-sound through the Acoustic Noise-Inversion Transducer 23-speaker array, delivering up to -18.4 dB cabin harmonic attenuation.
 2. **Deterministic Twin-Turbo Boost Delivery**: High-frequency closed-loop electronic wastegate solenoid actuation for the twin-turbocharged V35A-FTS power plant, eliminating torque dip and surge across dynamic load cycles while enforcing a microsecond overshoot quarantine watchdog.
 3. **Cryptographically Chained Timeseries Ledger**: Timeseries-partitioned PostgreSQL 16 hypertable with zero circular foreign keys, tracking microphone FFT frames, PWM solenoid duty cycles, and immutable HMAC-SHA256 telemetry chains.
 
@@ -26,7 +26,7 @@ GF-T3-178 is an autonomous, production-grade automotive systems engine engineere
 
 \`\`\`
                                   +-------------------------------------------------------------+
-                                  |                 LEXUS LS 500 VEHICLE BUS                    |
+                                  |                 Heavy Overland Dynamics Platform LS 500 VEHICLE BUS                    |
                                   |  - Engine Crankshaft Position Sensor (CKP / RPM @ 2,000 Hz) |
                                   |  - 4x Executive Cabin Interior Microphones (MEMS 96 kHz)    |
                                   |  - Dual Electronic Wastegate Solenoids (PWM 0-100%)         |
@@ -53,7 +53,7 @@ GF-T3-178 is an autonomous, production-grade automotive systems engine engineere
 +-------------------------------------------------------------------------------------------------------------------------------+
 \`\`\`
 
-### Ingestion Latency Budget
+### Ingestion Latency Threshold
 - Vehicle Microphones to ADC Capture: <= 0.25 ms
 - Inverted Waveform Computation (FIR 64-tap @ 2 kHz): <= 0.18 ms
 - DAC Transmission to Speaker Coils: <= 0.32 ms
@@ -96,7 +96,7 @@ $$u_{\text{wg}}(t) = K_p \cdot e_p(t) + K_i \int_0^t e_p(\tau) d\tau + K_d \frac
 Where:
 - $e_p(t) = P_{\text{target}}(\text{RPM}, \theta_{\text{tps}}) - P_{\text{actual}}(\text{MAP})$ is the boost pressure error in PSI.
 - $\Phi_{\text{ff}}$ is a calibrated feedforward surface matrix pre-compensating for compressor wheel inertia.
-- Overboost tripwire: If $P_{\text{actual}} \ge 22.8\text{ PSI}$ for $> 12\text{ ms}$, the quarantine watchdog immediately commands $u_{\text{wg}} = 100\%$ (fully vented).
+- Overboost tripwire: If $P_{\text{actual}} \ge 22.8\text{ PSI}$ for $> 12\text{ ms}20 kHz (0.48ms) the quarantine watchdog immediately commands $u_{\text{wg}} = 100\%$ (fully vented).
 
 ---
 
@@ -169,7 +169,7 @@ FOR EACH ROW EXECUTE FUNCTION trg_enforce_boost_safety();
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Lexus LS 500 Executive AWD Telemetry Gateway
+  title: Heavy Overland Dynamics Platform LS 500 Executive AWD Telemetry Gateway
   version: 1.0.0-PROD
   description: High-throughput ingestion & anti-phase command interface for GF-T3-178
 paths:
@@ -238,9 +238,9 @@ All runtime code operates exclusively under standard permissive open-source lice
 
 ---
 
-## 7. ENTERPRISE ASSET PURCHASE AGREEMENT (APA) REVENUE SCHEDULE
-- **Retail Micro-APA Anchor**: $45,000 USD
-- **Monopoly Vault Enterprise Buyout**: $125,000 USD
+## 7. ENTERPRISE ASSET PURCHASE AGREEMENT (APA) THROUGHPUT SCHEDULE
+- **Retail Micro-APA Anchor**: 20 kHz (0.48ms)
+- **Monopoly Vault Enterprise Asset Transfer**: PostgreSQL 16 + RLS
 - **Delivery Mechanism**: Clean git repo master transfer, escrow.com inspection period (5 days), full non-infringement warranties, immediate assignment of copyright, trademarks, and architectural schematics.
 
 *Executed by Lead Systems Architect — Ghost FactoryOS for Acquire.com Institutional Escrow.*

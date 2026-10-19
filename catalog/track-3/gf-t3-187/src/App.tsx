@@ -395,7 +395,7 @@ export default function App() {
     { id: 'postgres-ledger', label: '2. Postgres Hybrid Ledger', badge: 'PG 16 HMAC' },
     { id: 'openapi-contract', label: '3. OpenAPI 3.1 Telemetry Contract', badge: 'REST/WSS' },
     { id: 'cloud-run', label: '4. Turnkey Cloud Run Harness', badge: '96.4% COV' },
-    { id: 'acquire-apa', label: '5. Acquire.com APA Covenant', badge: '$45K / $125K' },
+    { id: 'acquire-apa', label: '5. Acquire.com APA Covenant', badge: 'APA Covenant' },
   ];
 
   return (
@@ -499,10 +499,10 @@ export default function App() {
         {/* Quiet Institutional Footer */}
         <footer className="mt-12 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400 font-mono">
           <div>
-            GF-T3-187 · Lexus ES 300h Ultra Luxury Core · Turnkey Acquire.com Micro-APA Deliverable
+            GF-T3-187 · Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core · Turnkey Acquire.com Micro-APA Deliverable
           </div>
           <div className="flex items-center gap-3">
-            <span>Delaware Governing Law</span>
+            <span>Commercial Software Asset Standard</span>
             <span aria-hidden="true">·</span>
             <span>MIT Permissive Clean-Room</span>
           </div>

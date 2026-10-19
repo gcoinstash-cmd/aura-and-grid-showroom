@@ -21,7 +21,7 @@ export const Tab2PostgresLedger: React.FC<Tab2PostgresLedgerProps> = ({
     const matchesSearch =
       r.nonce.toString().includes(searchTerm) ||
       r.hmacSignature.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      r.direct4Split.includes(searchTerm);
+      r.dual_vector_torqueSplit.includes(searchTerm);
     if (filterQuarantined) {
       return matchesSearch && r.divergenceDelta > 0.40;
     }
@@ -38,7 +38,7 @@ export const Tab2PostgresLedger: React.FC<Tab2PostgresLedgerProps> = ({
       rackAngle: 5.17,
       divergenceDelta: 0.62, // Greater than ASIL-D limit of 0.40 deg!
       pinionResistanceNm: 4.85,
-      direct4Split: "75:25",
+      dual_vector_torqueSplit: "75:25",
       canBusState: "BUS_B (Quarantine Triggered)",
       hmacSignature: "fa8819273c661e892d77443190abce109988112233445566778899aabbccdde0",
       verified: true
@@ -47,7 +47,7 @@ export const Tab2PostgresLedger: React.FC<Tab2PostgresLedgerProps> = ({
   };
 
   const handleCopySql = () => {
-    navigator.clipboard.writeText(`-- GF-T3-196: Lexus RZ 450e Steer-by-Wire & DIRECT4 PostgreSQL 16 Schema
+    navigator.clipboard.writeText(`-- GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE PostgreSQL 16 Schema
 CREATE TABLE steer_telemetry_partitioned (
     record_id UUID DEFAULT gen_random_uuid(),
     nonce BIGINT NOT NULL,
@@ -58,8 +58,8 @@ CREATE TABLE steer_telemetry_partitioned (
     actual_pinion_angle_deg NUMERIC(6,3) NOT NULL,
     actuator_divergence_delta NUMERIC(6,3) GENERATED ALWAYS AS (abs(target_rack_angle_deg - actual_pinion_angle_deg)) STORED,
     pinion_resistance_nm NUMERIC(6,2) NOT NULL,
-    direct4_front_pct NUMERIC(4,1) NOT NULL,
-    direct4_rear_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_front_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_rear_pct NUMERIC(4,1) NOT NULL,
     active_can_bus VARCHAR(10) NOT NULL,
     record_hmac_sha256 CHAR(64) NOT NULL,
     is_quarantined BOOLEAN NOT NULL DEFAULT FALSE,
@@ -153,7 +153,7 @@ $$ LANGUAGE plpgsql;`);
                 <th className="py-3 px-4">Yoke / Rack</th>
                 <th className="py-3 px-4">Divergence Δ</th>
                 <th className="py-3 px-4">Pinion (Nm)</th>
-                <th className="py-3 px-4">DIRECT4</th>
+                <th className="py-3 px-4">DUAL_VECTOR_TORQUE</th>
                 <th className="py-3 px-4">Bus State</th>
                 <th className="py-3 px-4">HMAC-SHA256</th>
                 <th className="py-3 px-4">Status</th>
@@ -189,7 +189,7 @@ $$ LANGUAGE plpgsql;`);
                       </span>
                     </td>
                     <td className="py-3 px-4 text-slate-300">{r.pinionResistanceNm}</td>
-                    <td className="py-3 px-4 text-emerald-400 font-bold">{r.direct4Split}</td>
+                    <td className="py-3 px-4 text-emerald-400 font-bold">{r.dual_vector_torqueSplit}</td>
                     <td className="py-3 px-4 text-xs text-slate-300">{r.canBusState}</td>
                     <td className="py-3 px-4 text-xs text-slate-400">
                       <span title={r.hmacSignature}>
@@ -240,7 +240,7 @@ $$ LANGUAGE plpgsql;`);
         </div>
 
         <pre className="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto text-sm text-slate-300 font-mono leading-relaxed">
-{`-- GF-T3-196: Lexus RZ 450e Steer-by-Wire & DIRECT4 High-Frequency Telemetry Ledger
+{`-- GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE High-Frequency Telemetry Ledger
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE steer_telemetry_partitioned (
@@ -254,8 +254,8 @@ CREATE TABLE steer_telemetry_partitioned (
     actual_pinion_angle_deg NUMERIC(6,3) NOT NULL,
     actuator_divergence_delta NUMERIC(6,3) GENERATED ALWAYS AS (abs(target_rack_angle_deg - actual_pinion_angle_deg)) STORED,
     pinion_resistance_nm NUMERIC(6,2) NOT NULL,
-    direct4_front_pct NUMERIC(4,1) NOT NULL,
-    direct4_rear_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_front_pct NUMERIC(4,1) NOT NULL,
+    dual_vector_torque_rear_pct NUMERIC(4,1) NOT NULL,
     active_can_bus VARCHAR(10) NOT NULL CHECK (active_can_bus IN ('BUS_A', 'BUS_B')),
     record_hmac_sha256 CHAR(64) NOT NULL,
     is_quarantined BOOLEAN NOT NULL DEFAULT FALSE,

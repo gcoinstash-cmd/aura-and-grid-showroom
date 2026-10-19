@@ -44,20 +44,20 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
               GF-T3-169 Turnkey Micro-APA Covenant
             </h3>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-              Legally binding turnkey micro-acquisition framework for the Lexus NX 450h+ F SPORT Agile Hybrid Core powertrain controller and telemetry engine.
+              Legally binding turnkey micro-acquisition framework for the Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core powertrain controller and telemetry engine.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center w-full sm:w-auto">
               <div className="text-slate-400 text-sm">Purchase Consideration</div>
-              <div className="text-3xl font-extrabold text-emerald-400 font-mono">$45,000 USD</div>
+              <div className="text-3xl font-extrabold text-emerald-400 font-mono">20 kHz (0.48ms)</div>
               <div className="text-slate-500 text-sm">Escrow.com Wire Lock</div>
             </div>
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center w-full sm:w-auto">
-              <div className="text-slate-400 text-sm">Enterprise Valuation</div>
-              <div className="text-3xl font-extrabold text-blue-400 font-mono">$125,000 USD</div>
-              <div className="text-slate-500 text-sm">Asset Basis Valuation</div>
+              <div className="text-slate-400 text-sm">Architecture Moat</div>
+              <div className="text-3xl font-extrabold text-blue-400 font-mono">PostgreSQL 16 + RLS</div>
+              <div className="text-slate-500 text-sm">Asset Basis Specification</div>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
               ) : (
                 <>
                   <Lock className="w-5 h-5" />
-                  <span>Execute Escrow Release ($45,000 USD)</span>
+                  <span>Execute Escrow Release (20 kHz (0.48ms))</span>
                 </>
               )}
             </button>
@@ -181,7 +181,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
             <li>Absolute transfer of title free and clear of all liens</li>
             <li>Non-solicitation and non-disparagement covenants</li>
             <li>Warranties survive closing for 24 months</li>
-            <li>Governing Law: State of Delaware (Chancery Court)</li>
+            <li>Governing Law: Standard Commercial Jurisdiction (Chancery Court)</li>
             <li>Dispute Resolution: Expedited AAA Commercial Arbitration</li>
           </ul>
         </div>

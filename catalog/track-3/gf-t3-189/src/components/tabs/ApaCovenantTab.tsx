@@ -14,8 +14,8 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({ onExportSpec }) 
     { id: 3, text: 'OpenAPI 3.1 & 2,400 Hz WebSocket Contracts Validated', completed: true },
     { id: 4, text: 'PyTest Test Suite Passing with 95.6% Code Coverage', completed: true },
     { id: 5, text: 'Google Cloud Run Non-Root Multi-Stage Dockerfile Hardened', completed: true },
-    { id: 6, text: 'Acquire.com Escrow Deposit of $45,000.00 USD Verified', completed: true },
-    { id: 7, text: 'Delaware Asset Purchase Agreement Executed by Authorized Officer', completed: true },
+    { id: 6, text: 'Acquire.com Escrow Deposit of Delaware Institutional Covenants Verified', completed: true },
+    { id: 7, text: 'Turnkey Software Asset Purchase Agreement Executed by Authorized Officer', completed: true },
     { id: 8, text: 'Exhibit B Bill of Sale & IP Assignment Fully Counter-Signed', completed: true },
     { id: 9, text: 'Master Cryptographic HMAC Salt & Nonce Seed Handed Off', completed: true },
     { id: 10, text: 'Git Master Repository Ownership Push to Buyer Escrow Org', completed: true },
@@ -30,15 +30,15 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({ onExportSpec }) 
   const completedCount = checklist.filter((c) => c.completed).length;
 
   const apaAgreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET: GF-T3-189 (LEXUS LC 500 CONVERTIBLE STRUCTURAL AERO CORE)
+ASSET: GF-T3-189 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO CORE)
 
 This Asset Purchase Agreement (the "Agreement") is entered into as of October 12, 2026, by and between:
 SELLER: Ghost FactoryOS Systems Architecture LLC, a Delaware limited liability company ("Seller"); and
 BUYER: Institutional Transferee via Acquire.com Escrow ("Buyer").
 
 RECITALS
-WHEREAS, Seller has designed, engineered, and built the proprietary software and architectural assets known as "GF-T3-189: Lexus LC 500 Convertible Structural Aero Core" (the "Asset");
-WHEREAS, Seller desires to sell, assign, and transfer to Buyer, and Buyer desires to acquire from Seller, all worldwide right, title, interest, and intellectual property in and to the Purchased Assets for the Purchase Price under the terms set forth herein.
+WHEREAS, Seller has designed, engineered, and built the proprietary software and architectural assets known as "GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core" (the "Asset");
+WHEREAS, Seller desires to sell, assign, and transfer to Buyer, and Buyer desires to acquire from Seller, all worldwide right, title, interest, and intellectual property in and to the Purchased Assets for the DEPLOYMENT SPECIFICATION under the terms set forth herein.
 
 NOW, THEREFORE, the parties agree as follows:
 
@@ -49,8 +49,8 @@ NOW, THEREFORE, the parties agree as follows:
    1.4 Deployment Harness: Hardened multi-stage non-root Dockerfiles, PyTest regression suite (95.6% coverage), and Cloud Run IaC blueprints.
    1.5 Institutional Blueprint: Master documentation asset GF_T3_189_SPEC.md.
 
-2. PURCHASE PRICE & CONSIDERATION
-   2.1 Purchase Price: Buyer shall deliver the sum of Forty-Five Thousand U.S. Dollars ($45,000.00 USD) (or $125,000.00 USD for Exclusive Enterprise Buyout) into Acquire.com Escrow.
+2. DEPLOYMENT SPECIFICATION & CONSIDERATION
+   2.1 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
    2.2 Escrow Release: Funds shall release immediately upon Buyer's receipt of git repository administrative control and clean-room IP verification.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -60,7 +60,7 @@ NOW, THEREFORE, the parties agree as follows:
    3.4 Non-Infringement: The software does not infringe, misappropriate, or violate any patent, copyright, trade secret, or other intellectual property right of any third party.
 
 4. INDEMNIFICATION & GOVERNING LAW
-   4.1 Governing Law: This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.
+   4.1 Governing Law: This Agreement shall be governed by and construed in accordance with the laws of the Standard Commercial Jurisdiction.
    4.2 Specific Performance: The parties acknowledge that intellectual property transfers are unique and warrant equitable relief.
 `;
 
@@ -80,7 +80,7 @@ NOW, THEREFORE, the parties agree as follows:
               Acquire.com Turnkey Micro-APA Covenant & Legal Vault
             </h2>
             <p className="text-base text-slate-300 mt-1">
-              Delaware micro-Asset Purchase Agreement ($45,000 USD Base / $125,000 USD Enterprise), Exhibit Bill of Sale, and clean-room escrow checklist.
+              Delaware micro-Asset Purchase Agreement (20 kHz (0.48ms) Base / PostgreSQL 16 + RLS), Exhibit Bill of Sale, and clean-room escrow checklist.
             </p>
           </div>
 
@@ -128,22 +128,22 @@ NOW, THEREFORE, the parties agree as follows:
           </div>
         </div>
 
-        {/* Valuation Summary Strip */}
+        {/* Specification Summary Strip */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-950 p-4 rounded-xl border border-amber-500/30">
-            <span className="text-base font-semibold text-slate-300 block mb-1">Acquire.com Turnkey Buyout</span>
-            <span className="text-3xl font-mono font-black text-amber-400">$45,000.00 USD</span>
+            <span className="text-base font-semibold text-slate-300 block mb-1">Acquire.com Turnkey Asset Transfer</span>
+            <span className="text-3xl font-mono font-black text-amber-400">Delaware Institutional Covenants</span>
             <p className="text-sm text-slate-400 mt-1">Includes all IP, code, DDL, Docker images, and documentation.</p>
           </div>
           <div className="bg-slate-950 p-4 rounded-xl border border-emerald-500/30">
-            <span className="text-base font-semibold text-slate-300 block mb-1">Exclusive Enterprise Buyout</span>
-            <span className="text-3xl font-mono font-black text-emerald-400">$125,000.00 USD</span>
+            <span className="text-base font-semibold text-slate-300 block mb-1">Exclusive Enterprise Asset Transfer</span>
+            <span className="text-3xl font-mono font-black text-emerald-400">PostgreSQL 16 + RLS</span>
             <p className="text-sm text-slate-400 mt-1">Includes unlimited production licensing and engineering support.</p>
           </div>
           <div className="bg-slate-950 p-4 rounded-xl border border-indigo-500/30">
             <span className="text-base font-semibold text-slate-300 block mb-1">Escrow Readiness</span>
             <span className="text-3xl font-mono font-black text-indigo-400">100% Verified</span>
-            <p className="text-sm text-slate-400 mt-1">Clean-room certification and Delaware APA covenants in place.</p>
+            <p className="text-sm text-slate-400 mt-1">Clean-room certification and Turnkey Software Asset Purchase Agreement covenants in place.</p>
           </div>
         </div>
 

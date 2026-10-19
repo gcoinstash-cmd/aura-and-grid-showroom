@@ -14,8 +14,8 @@ export interface KinematicsState {
   rearSteerPhase: 'COUNTER_PHASE' | 'NEUTRAL' | 'IN_PHASE';
   turningRadiusMeters: number;
   turningRadiusReductionPct: number;
-  direct4FrontPct: number;
-  direct4RearPct: number;
+  dual_vector_torqueFrontPct: number;
+  dual_vector_torqueRearPct: number;
   yawRateDegPerSec: number;
   sideSlipAngleBetaDeg: number;
 }

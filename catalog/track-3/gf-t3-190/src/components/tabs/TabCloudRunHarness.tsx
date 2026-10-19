@@ -65,7 +65,7 @@ HEALTHCHECK --interval=10s --timeout=3s --retries=3 \\
 CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]`;
 
   const gcloudDeployCommand = `gcloud run deploy gf-t3-190-core \\
-  --image gcr.io/lexus-electrified/gf-t3-190:v1.0.0-prod \\
+  --image gcr.io/Heavy Overland Dynamics Platform-electrified/gf-t3-190:v1.0.0-prod \\
   --platform managed \\
   --region us-central1 \\
   --cpu 4 \\

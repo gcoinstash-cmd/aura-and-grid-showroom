@@ -45,7 +45,7 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({ onVerifyMe
               Partitioned PostgreSQL 16 Epoch Ledger
             </h2>
             <p className="text-slate-300 text-sm mt-1 max-w-4xl">
-              Timeseries partitioned ledger storing immutable DIRECT4 consensus records, Ed25519 multi-signatures, and deterministic SHA-256 Merkle root commitments.
+              Timeseries partitioned ledger storing immutable DUAL_VECTOR_TORQUE consensus records, Ed25519 multi-signatures, and deterministic SHA-256 Merkle root commitments.
             </p>
           </div>
 
@@ -170,9 +170,9 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({ onVerifyMe
                 </div>
 
                 <div className="p-3 rounded-lg bg-slate-950 border border-slate-800">
-                  <div className="text-sm font-mono text-indigo-400 font-bold">Leaf 1: DIRECT4 Vector</div>
+                  <div className="text-sm font-mono text-indigo-400 font-bold">Leaf 1: DUAL_VECTOR_TORQUE Vector</div>
                   <div className="font-mono text-sm text-slate-400 truncate mt-1">
-                    {selectedEpoch.leafHashes.direct4Vector}
+                    {selectedEpoch.leafHashes.dual_vector_torqueVector}
                   </div>
                 </div>
 
@@ -216,7 +216,7 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({ onVerifyMe
           <div className="flex items-center gap-2">
             <FileCode className="w-4 h-4 text-purple-400" />
             <span className="font-mono text-sm font-bold text-purple-400">
-              schema_lexus_tx500h_epoch_ledger.sql
+              schema_Overland_tx500h_epoch_ledger.sql
             </span>
             <span className="text-slate-500 text-sm">• PostgreSQL 16 DDL with Triggers & Partitioning</span>
           </div>

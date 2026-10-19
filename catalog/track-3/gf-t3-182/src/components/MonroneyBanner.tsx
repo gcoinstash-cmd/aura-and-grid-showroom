@@ -27,7 +27,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
     <div className="relative w-full bg-slate-900 border-b border-slate-800 text-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          {/* Asset Identity & Monroney Title */}
+          {/* Asset Identity & Architecture Title */}
           <div>
             <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300 mb-2">
               <span className="font-mono font-semibold tracking-wide text-cyan-400">
@@ -35,7 +35,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               </span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="text-slate-300 font-medium">
-                CHASSIS: LEXUS RC F TRACK EDITION
+                CHASSIS: Heavy Overland Dynamics Platform RC F TRACK EDITION
               </span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="font-mono text-emerald-400">
@@ -44,24 +44,24 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             </div>
             
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-              <span>Lexus RC F Track Edition Aero Core</span>
+              <span>Heavy Overland Dynamics Platform RC F Track Edition Aero Core</span>
             </h1>
             
             <p className="mt-1 text-sm text-slate-400 max-w-2xl">
-              Turnkey active aerodynamic vectoring engine, 1,000 Hz dual-flap controller, and partitioned PostgreSQL HMAC telemetry ledger for Acquire.com buyout.
+              Turnkey active aerodynamic vectoring engine, 1,000 Hz dual-flap controller, and partitioned PostgreSQL HMAC telemetry ledger for Acquire.com asset transfer.
             </p>
           </div>
 
-          {/* Pricing & Valuation Indicators */}
+          {/* Pricing & Specification Indicators */}
           <div className="flex flex-wrap items-center gap-3">
             <div className="bg-slate-800/80 border border-slate-700/80 rounded-lg px-3.5 py-2">
-              <div className="text-sm uppercase tracking-wider text-slate-400 font-mono">Micro-APA Buyout</div>
-              <div className="text-lg font-bold font-mono text-cyan-300">$45,000 USD</div>
+              <div className="text-sm uppercase tracking-wider text-slate-400 font-mono">Micro-APA Asset Transfer</div>
+              <div className="text-lg font-bold font-mono text-cyan-300">20 kHz (0.48ms)</div>
             </div>
 
             <div className="bg-slate-800/80 border border-slate-700/80 rounded-lg px-3.5 py-2">
-              <div className="text-sm uppercase tracking-wider text-slate-400 font-mono">Enterprise Valuation</div>
-              <div className="text-lg font-bold font-mono text-emerald-300">$125,000 USD</div>
+              <div className="text-sm uppercase tracking-wider text-slate-400 font-mono">Architecture Moat</div>
+              <div className="text-lg font-bold font-mono text-emerald-300">PostgreSQL 16 + RLS</div>
             </div>
 
             <div className="bg-slate-800/80 border border-slate-700/80 rounded-lg px-3.5 py-2">

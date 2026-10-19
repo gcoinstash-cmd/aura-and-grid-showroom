@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Cloud, Terminal, CheckCircle2, Copy, Check, Play, ShieldAlert, Cpu, Box } from 'lucide-react';
 
 const DOCKERFILE_CONTENT = `# =====================================================================
-# Lexus LX 600 F SPORT (GF-T3-194) AHC Core Container
+# Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) AHC Core Container
 # Multi-Stage Non-Root Dockerfile for Google Cloud Run
 # License: MIT Permissive / 100% Clean-Room Certified
 # =====================================================================
@@ -56,7 +56,7 @@ ENTRYPOINT ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "-
 `;
 
 const PYTEST_CODE = `"""
-PyTest Test Bench for GF-T3-194 Lexus LX 600 AHC Core
+PyTest Test Bench for GF-T3-194 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC Core
 Test Coverage: >94%
 Simulates:
 1. Hydraulic pump thermal saturation cutoff
@@ -67,7 +67,7 @@ Simulates:
 
 import pytest
 from src.ahc_state_machine import (
-    LexusAhcCoreStateMachine,
+    OverlandAhcCoreStateMachine,
     HeightMode,
     MTSMode,
     Corner,
@@ -76,7 +76,7 @@ from src.ahc_state_machine import (
 
 @pytest.fixture
 def ahc_engine():
-    return LexusAhcCoreStateMachine()
+    return OverlandAhcCoreStateMachine()
 
 def test_adiabatic_nitrogen_compression_law(ahc_engine):
     """Verify gas chamber obeys PV^1.4 adiabatic compression curve."""
@@ -134,7 +134,7 @@ def test_mts_rock_mode_articulation_headroom(ahc_engine):
 
 const DEPLOY_COMMANDS = `# =====================================================================
 # Google Cloud Run 1-Click Deployment Script
-# Fleet Tier: GF-T3-194 (Lexus LX 600 F SPORT Performance Core)
+# Fleet Tier: GF-T3-194 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
 # =====================================================================
 
 PROJECT_ID=$(gcloud config get-value project)

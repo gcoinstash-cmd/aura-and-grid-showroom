@@ -1,5 +1,5 @@
 """
-Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DIRECT4 HyperGrid)
+Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid)
 Automated Proof Suite: CPMM Invariants, Bellman-Ford Convergence, and Slippage Bounds.
 Coverage Target: >= 80% (Mathematical Precision and Zero-Loss Trade Invariants).
 """
@@ -22,7 +22,7 @@ from app.core.arbitrage import (
 )
 
 
-class TestDIRECT4ArbitrageEngine(unittest.TestCase):
+class TestDUAL_VECTOR_TORQUEArbitrageEngine(unittest.TestCase):
     def setUp(self):
         """Configure standard test pools with known synthetic price spreads."""
         # Pool A: 1 WETH = 3,000 USDC
@@ -80,7 +80,7 @@ class TestDIRECT4ArbitrageEngine(unittest.TestCase):
         self.assertLess(eff_rate_large, eff_rate_small)
 
     def test_two_pool_spatial_arbitrage_closed_form(self):
-        """Verify closed-form optimal swap size s* maximizes net profit Pi(s)."""
+        """Verify closed-form optimal swap size s* maximizes net yield Pi(s)."""
         # Inject WETH at Uniswap (cheaper WETH) and sell at Sushiswap (higher USDC/WETH)
         s_star, exp_out, net_profit = calculate_optimal_swap_size_2pool(
             self.pool_uni_usdc_weth,
@@ -89,7 +89,7 @@ class TestDIRECT4ArbitrageEngine(unittest.TestCase):
         )
 
         self.assertGreater(s_star, 0.0, "Optimal swap size must be strictly positive")
-        self.assertGreater(net_profit, 0.0, "Net profit must be positive for 2% spread")
+        self.assertGreater(net_profit, 0.0, "Net yield must be positive for 2% spread")
 
         # Numerical perturbation check: Pi(s* - delta) < Pi(s*) and Pi(s* + delta) < Pi(s*)
         delta = s_star * 0.05
@@ -106,11 +106,11 @@ class TestDIRECT4ArbitrageEngine(unittest.TestCase):
             - (s_star + delta)
         )
 
-        self.assertGreater(net_profit, profit_left, "s* must yield higher profit than s* - delta")
-        self.assertGreater(net_profit, profit_right, "s* must yield higher profit than s* + delta")
+        self.assertGreater(net_profit, profit_left, "s* must yield higher yield than s* - delta")
+        self.assertGreater(net_profit, profit_right, "s* must yield higher yield than s* + delta")
 
     def test_zero_loss_cancellation_invariant(self):
-        """Ensure trade cancels (s* == 0, profit == 0) when fee drag exceeds spread."""
+        """Ensure trade cancels (s* == 0, yield == 0) when fee drag exceeds spread."""
         # Identical pools: zero spread -> fee drag prevents profitable arbitrage
         identical_pool = LiquidityPool(
             pool_id="UNI_2_USDC_WETH",
@@ -129,7 +129,7 @@ class TestDIRECT4ArbitrageEngine(unittest.TestCase):
         )
 
         self.assertEqual(s_star, 0.0, "Optimal size must be 0 when fees exceed disparity")
-        self.assertEqual(net_profit, 0.0, "Net profit must be 0 for zero-spread pools")
+        self.assertEqual(net_profit, 0.0, "Net yield must be 0 for zero-spread pools")
 
     def test_triangular_arbitrage_negative_cycle_detection(self):
         """Test 3-hop cycle (USDC -> WETH -> WBTC -> USDC) detection via Bellman-Ford."""
@@ -153,12 +153,12 @@ class TestDIRECT4ArbitrageEngine(unittest.TestCase):
         )
         pool_wbtc_usdc = LiquidityPool(
             pool_id="P3_WBTC_USDC",
-            venue_id="DIRECT4_EAXLE",
+            venue_id="DUAL_VECTOR_TORQUE_EAXLE",
             token_a="WBTC",
             token_b="USDC",
             reserve_a=100.0,
             reserve_b=6_300_000.0,  # 63,000 USDC/WBTC (profitable 5% spread)
-            fee_bps=15,  # Low fee DIRECT4 rear motor
+            fee_bps=15,  # Low fee DUAL_VECTOR_TORQUE rear motor
         )
 
         engine = BellmanFordArbitrageEngine([pool_usdc_weth, pool_weth_wbtc, pool_wbtc_usdc])

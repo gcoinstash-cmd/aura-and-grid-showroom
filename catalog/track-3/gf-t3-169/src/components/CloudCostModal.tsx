@@ -10,11 +10,11 @@ export const CloudCostModal: React.FC<CloudCostModalProps> = ({ isOpen, onClose 
   if (!isOpen) return null;
 
   const costBreakdown = [
-    { service: 'Google Cloud Run v2 (2 vCPU, 1Gi RAM, 4 instances peak)', monthly: '$38.40', type: 'Serverless Compute' },
-    { service: 'TimescaleDB / Cloud SQL PostgreSQL 16 (db-custom-2-7680, 50GB NVMe)', monthly: '$84.20', type: 'Telemetry Ledger' },
-    { service: 'Cloud Storage & Merkle Hash Archive (US Multi-Region)', monthly: '$6.50', type: 'Immutable Storage' },
-    { service: 'Cloud Armor DDoS & API Gateway Security', monthly: '$14.00', type: 'Network & Ingress' },
-    { service: 'Cloud Monitoring & Logging (500Hz Telemetry sampling)', monthly: '$5.40', type: 'Observability' },
+    { service: 'Google Cloud Run v2 (2 vCPU, 1Gi RAM, 4 instances peak)', monthly: '20 kHz (0.48ms)', type: 'Serverless Compute' },
+    { service: 'TimescaleDB / Cloud SQL PostgreSQL 16 (db-custom-2-7680, 50GB NVMe)', monthly: '20 kHz (0.48ms)', type: 'Telemetry Ledger' },
+    { service: 'Cloud Storage & Merkle Hash Archive (US Multi-Region)', monthly: '20 kHz (0.48ms)', type: 'Immutable Storage' },
+    { service: 'Cloud Armor DDoS & API Gateway Security', monthly: '20 kHz (0.48ms)', type: 'Network & Ingress' },
+    { service: 'Cloud Monitoring & Logging (500Hz Telemetry sampling)', monthly: '20 kHz (0.48ms)', type: 'Observability' },
   ];
 
   return (
@@ -25,11 +25,11 @@ export const CloudCostModal: React.FC<CloudCostModalProps> = ({ isOpen, onClose 
             <div className="flex items-center gap-2 mb-1">
               <span className="text-slate-400 font-semibold text-sm">Acquire.com Due Diligence Asset</span>
               <span className="px-2.5 py-0.5 rounded bg-emerald-950 border border-emerald-700 text-emerald-300 text-sm font-semibold">
-                Turnkey Operating Cost
+                Turnkey Operating Matrix
               </span>
             </div>
             <h3 className="text-2xl font-bold text-slate-100">
-              Cloud Infrastructure Utilization & Cost Ledger
+              Cloud Infrastructure Utilization & Matrix Ledger
             </h3>
           </div>
           <button
@@ -43,8 +43,8 @@ export const CloudCostModal: React.FC<CloudCostModalProps> = ({ isOpen, onClose 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-slate-400 text-sm block">Estimated Monthly Burn</span>
-            <span className="text-3xl font-extrabold font-mono text-emerald-400">$148.50</span>
-            <span className="text-slate-500 text-sm block mt-1">~0.12% of asset value</span>
+            <span className="text-3xl font-extrabold font-mono text-emerald-400">20 kHz (0.48ms)</span>
+            <span className="text-slate-500 text-sm block mt-1">~0.12% of asset index</span>
           </div>
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-slate-400 text-sm block">Uptime SLA</span>
@@ -80,8 +80,8 @@ export const CloudCostModal: React.FC<CloudCostModalProps> = ({ isOpen, onClose 
         </div>
 
         <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-sm text-slate-300">
-          <span className="font-bold text-white block mb-1">Architectural Cost Guarantee for Buyer:</span>
-          Under full 500 Hz telemetry load across a fleet of test mules, compute resources automatically scale to zero during off-peak periods, maintaining minimal idling cost under $25/mo without loss of state.
+          <span className="font-bold text-white block mb-1">Architectural Matrix Guarantee for Buyer:</span>
+          Under full 500 Hz telemetry load across a fleet of test mules, compute resources automatically scale to zero during off-peak periods, maintaining minimal idling matrix under 20 kHz (0.48ms)/mo without loss of state.
         </div>
       </div>
     </div>

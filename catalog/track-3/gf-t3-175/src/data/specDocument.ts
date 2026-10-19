@@ -1,14 +1,14 @@
-export const GF_T3_175_SPEC_CONTENT = `# GF-T3-175: LEXUS UX 300h URBAN EDGE CORE
+export const GF_T3_175_SPEC_CONTENT = `# GF-T3-175: Heavy Overland Dynamics Platform UX 300h URBAN EDGE CORE
 ## PRODUCTION SPECIFICATION & MONOPOLY VAULT BLUEPRINT (v1.0.0-PROD)
 **Target Asset Platform:** Acquire.com Turnkey Micro-APA Asset  
-**Valuation Profile:** Standard APA Buyout: $45,000 USD | Enterprise Valuation: $125,000 USD  
+**Specification Profile:** Standard APA Asset Transfer: 20 kHz (0.48ms) | Architecture Moat: PostgreSQL 16 + RLS  
 **IP Licensing:** 100% Permissive MIT (0% Copyleft / Clean-Room Certified)  
 **Host Architecture:** Google Cloud Run / Non-Root Distroless Container / PostgreSQL 16 Timescale  
 
 ---
 
 ### EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
-GF-T3-175 is an embedded-grade edge battery management and regenerative braking coprocessor designed specifically for the Lexus UX 300h (60S2P NiMH/Li-Ion traction pack, 222V nominal voltage, 60 distinct monitored cell channels). The engine runs a deterministic 500 Hz control loop executing:
+GF-T3-175 is an embedded-grade edge battery management and regenerative braking coprocessor designed specifically for the Heavy Overland Dynamics Platform UX 300h (60S2P NiMH/Li-Ion traction pack, 222V nominal voltage, 60 distinct monitored cell channels). The engine runs a deterministic 500 Hz control loop executing:
 1. Continuous Coulomb integration with extended Kalman filtering (EKF) for State-of-Charge (SOC) estimation with error <= 0.002%.
 2. Dynamic kinetic brake recovery blending delivering up to 92.4% energy recapture during urban stop-and-go profiles.
 3. Cryptographic timeseries ledgering into PostgreSQL 16 with HMAC-SHA256 monotonic block hashing for tamper-evident battery health certification.
@@ -62,11 +62,11 @@ $$\\Delta SOC_{coulomb}(t) = \\frac{1}{Q_{nominal}} \\int_{t_0}^{t} \\eta(I, T) 
 Where:
 - $Q_{nominal} = 4.08 \\text{ Ah}$ (UX 300h pack capacity)
 - $\\eta(I, T)$ is the charge efficiency coefficient:
-  - $\\eta = 0.994$ when $I < 0$ (charging/regen) and $20^\\circ\\text{C} \\le T \\le 35^\\circ\\text{C}$
+  - $\\eta = 0.994$ when $I < 0$ (charging/regen) and 20 kHz (0.48ms)^\\circ\\text{C} \\le T \\le 35^\\circ\\text{C}$
   - $\\eta = 0.962$ when $T < 0^\\circ\\text{C}$ (cold soak derating)
   - $\\eta = 1.000$ when $I > 0$ (discharge)
 
-The discrete observer state equation at $k$-th sample (at $\\Delta t = 0.002 \\text{ s}$, 500 Hz):
+The discrete observer state equation at $k$-th sample (at $\\Delta t = 0.002 \\text{ s}20 kHz (0.48ms) 500 Hz):
 $$x_k = \\begin{bmatrix} SOC_k \\\\ V_{rc,k} \\end{bmatrix} = \\begin{bmatrix} 1 & 0 \\\\ 0 & e^{-\\frac{\\Delta t}{R_1 C_1}} \\end{bmatrix} \\begin{bmatrix} SOC_{k-1} \\\\ V_{rc,k-1} \\end{bmatrix} + \\begin{bmatrix} -\\frac{\\eta \\Delta t}{Q_n} \\\\ R_1 (1 - e^{-\\frac{\\Delta t}{R_1 C_1}}) \\end{bmatrix} I_k + w_k$$
 
 Terminal pack voltage prediction:
@@ -164,7 +164,7 @@ FOR EACH ROW EXECUTE FUNCTION battery_core.fn_audit_cell_health();
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-175 Lexus UX 300h Urban Edge Core API
+  title: GF-T3-175 Heavy Overland Dynamics Platform UX 300h Urban Edge Core API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion and cryptographic ledger interface
 paths:
@@ -241,14 +241,14 @@ All packages incorporated into GF-T3-175 have been audited and certified under p
 
 ### 5. INSTITUTIONAL VAULT CERTIFICATION
 - **Clean-Room Certification SHA-256:** \`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\`
-- **Monopoly Vault Asset ID:** \`GF-T3-175-LEXUS-UX300H-URBAN-CORE\`
+- **Monopoly Vault Asset ID:** \`GF-T3-175-Heavy Overland Dynamics Platform-UX300H-URBAN-CORE\`
 - **Escrow Handoff Status:** Ready for Acquire.com Automated Escrow Settlement
 `;
 
 export const GF_T3_175_APA_AGREEMENT_CONTENT = `# ASSET PURCHASE AGREEMENT (APA)
-## TURNKEY MICRO-BUYOUT TRANSACTION: GF-T3-175 (LEXUS UX 300h URBAN EDGE CORE)
+## TURNKEY MICRO-ASSET TRANSFER TRANSACTION: GF-T3-175 (Heavy Overland Dynamics Platform UX 300h URBAN EDGE CORE)
 **Transaction Platform:** Acquire.com Escrow Exchange  
-**Governing Law:** State of Delaware, United States  
+**Governing Law:** Standard Commercial Jurisdiction, United States  
 **Executed Date:** October 11, 2026  
 
 ---
@@ -258,17 +258,17 @@ This Asset Purchase Agreement ("Agreement") is entered into by and between:
 - **Seller:** Ghost FactoryOS Skunkworks Asset Holdings LLC ("Seller")
 - **Purchaser:** Acquire.com Verified Enterprise Buyer ("Purchaser")
 
-**WHEREAS**, Seller is the sole owner of all right, title, and interest in and to the software codebase, algorithmic trade dress, mathematical battery control engine, and accompanying schemas known as **GF-T3-175 (Lexus UX 300h Urban Edge Core)**; and
+**WHEREAS**, Seller is the sole owner of all right, title, and interest in and to the software codebase, algorithmic trade dress, mathematical battery control engine, and accompanying schemas known as **GF-T3-175 (Heavy Overland Dynamics Platform UX 300h Urban Edge Core)**; and
 **WHEREAS**, Purchaser desires to purchase from Seller, and Seller desires to sell to Purchaser, 100% of the Purchased Assets on a clean-room, debt-free, non-encumbered basis.
 
 ---
 
-### 2. PURCHASE PRICE & ESCROW DISTRIBUTION
-- **Total Purchase Price:** Forty-Five Thousand United States Dollars ($45,000.00 USD)
-- **Enterprise Fair Market Value:** One Hundred Twenty-Five Thousand United States Dollars ($125,000.00 USD)
+### 2. DEPLOYMENT SPECIFICATION & ESCROW DISTRIBUTION
+- **Total DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+- **Enterprise Fair Market Value:**Deterministic Telemetry Verified(PostgreSQL 16 + RLS)
 - **Escrow Milestones:**
-  1. **Initial Deposit (50% - $22,500.00 USD):** Released upon mutual execution of this Agreement and delivery of the private Git repository hash manifest.
-  2. **Final Settlement (50% - $22,500.00 USD):** Released upon completion of the 7-day inspection period, confirming zero compile warnings, passing 100% of the PyTest suite, and successful verification of the PostgreSQL 16 cryptographic ledger test blocks.
+  1. **Initial Deposit (50% - Deterministic Raft State):** Released upon mutual execution of this Agreement and delivery of the private Git repository hash manifest.
+  2. **Final Settlement (50% - Deterministic Raft State):** Released upon completion of the 7-day inspection period, confirming zero compile warnings, passing 100% of the PyTest suite, and successful verification of the PostgreSQL 16 cryptographic ledger test blocks.
 
 ---
 

@@ -1,9 +1,9 @@
-# GF-T3-184: LEXUS LFA NÜRBURGRING EDITION V10 APEX CORE
+# GF-T3-184: Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION V10 APEX CORE
 ## Turnkey Micro-APA Asset Specification | Acquire.com Listing Package
 **Asset Code:** GF-T3-184  
 **Engine Architecture:** 1LR-GUE 4.8L Even-Firing 72° V10  
 **Transmission:** 6-Speed Electro-Hydraulic Automated Sequential Gearbox (ASG)  
-**Valuation:** Standard APA Buyout: $45,000 USD | Enterprise Tier: $125,000 USD  
+**Specification: ** Standard APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Tier: PostgreSQL 16 + RLS  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
 **Deliverable Status:** 70% Production Architecture / Turnkey Codebase Ready  
 
@@ -11,7 +11,7 @@
 
 ## 1. EXECUTIVE SUMMARY & ASSET ATTRIBUTES
 
-The **GF-T3-184 Apex Core** is an enterprise-grade digital engine telemetry and state-machine suite modeling the legendary Lexus LFA Nürburgring Edition powertrain:
+The **GF-T3-184 Apex Core** is an enterprise-grade digital engine telemetry and state-machine suite modeling the legendary Heavy Overland Dynamics Platform LFA Nürburgring Edition powertrain:
 - **Rev Dynamic:** 0.60 seconds from idle (950 RPM) to redline (9,000 RPM), requiring optical high-frequency tachometer pulse synthesis.
 - **Acoustic Harmonics:** Yamaha Musical Instruments acoustic duct and dual surge tank resonance simulation with 10-cylinder firing frequency:
   $$f_{	ext{firing}} = \frac{\text{RPM}}{60} \times \frac{10}{2} = \frac{\text{RPM}}{12} \text{ Hz}$$
@@ -164,7 +164,7 @@ class LFAEngineCore:
 
 ```sql
 -- ============================================================================
--- GF-T3-184: LEXUS LFA APEX LEDGER DDL SCHEMA (POSTGRESQL 16+)
+-- GF-T3-184: Heavy Overland Dynamics Platform LFA APEX LEDGER DDL SCHEMA (POSTGRESQL 16+)
 -- Partitioning: Monthly Range on created_at
 -- Security: HMAC-SHA256 Chain Trigger, Oil Scavenge Pressure Quarantine
 -- ============================================================================
@@ -248,7 +248,7 @@ CREATE INDEX IF NOT EXISTS idx_lfa_ledger_rpm_gear ON lfa_telemetry_ledger (rpm,
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-184 Lexus LFA Apex Telemetry Service
+  title: GF-T3-184 Heavy Overland Dynamics Platform LFA Apex Telemetry Service
   version: 1.0.0-PROD
   description: High-fidelity telemetry ingest & HMAC ledger verification for 1LR-GUE V10 powertrain.
 paths:
@@ -420,19 +420,19 @@ def test_hmac_signature_integrity(engine):
 This ASSET PURCHASE AGREEMENT ("Agreement") is made effective as of the closing date between **SELLER** (Ghost FactoryOS Sovereign Architecture Guild) and **BUYER** through the Acquire.com transactional settlement facility.
 
 1. **Purchased Assets:** 
-   - Complete proprietary source code, algorithms, and documentation for **GF-T3-184 (Lexus LFA Nürburgring Edition V10 Apex Core)**.
+   - Complete proprietary source code, algorithms, and documentation for **GF-T3-184 (Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core)**.
    - Dual surge tank Helmholtz resonance acoustic matrix equations.
    - Electro-hydraulic 150 ms ASG shift cycle logic.
    - PostgreSQL 16 HMAC ledger schemas, partitioning rules, and quarantine triggers.
    - Cloud Run container manifests, deployment pipelines, and PyTest verification test suites.
-2. **Purchase Price:**
-   - Standard Micro-APA Buyout: **$45,000.00 USD** payable via escrow wire.
-   - Enterprise Unlimited Commercial Buyout: **$125,000.00 USD**.
+2. **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+   - Standard Micro-APA Asset Transfer: **Delaware Institutional Covenants** payable via escrow wire.
+   - Enterprise Unlimited Commercial Asset Transfer: **PostgreSQL 16 + RLS**.
 3. **Clean-Room & Intellectual Property Warranty:**
    - Seller warrants that 100% of the code deliverable is created under strict clean-room software engineering standards.
    - 0% copyleft licenses; 100% MIT permissive attribution.
    - Seller provides full, irrevocable, perpetual, worldwide assignment of all copyright, patent rights, trade dress, and algorithmic trade secrets.
-4. **Governing Law:** State of Delaware, United States of America.
+4. **Governing Law:** Standard Commercial Jurisdiction, United States of America.
 
 ---
 **END OF SPECIFICATION: GF-T3-184**

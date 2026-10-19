@@ -55,7 +55,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
       {/* Deal Metrics & Escrow Checklist */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Deal Valuation Overview */}
+        {/* Deal Specification Overview */}
         <div className="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-sm flex flex-col justify-between">
           <div>
             <h3 className="text-xl font-bold text-white pb-3 border-b border-slate-800">
@@ -64,9 +64,9 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
             <div className="space-y-4 mt-4">
               <div className="p-4 rounded-xl bg-slate-950 border border-emerald-500/30">
-                <span className="text-slate-400 text-sm font-mono">Agreed Purchase Price:</span>
+                <span className="text-slate-400 text-sm font-mono">Agreed DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL</span>
                 <div className="text-3xl font-extrabold text-emerald-400 font-mono mt-0.5">
-                  $45,000.00 USD
+                  Delaware Institutional Covenants
                 </div>
                 <div className="text-sm font-mono text-emerald-300/80 mt-1">
                   100% All-Cash Escrow Deposit
@@ -88,7 +88,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-400">Liabilities Transferred:</span>
-                  <span className="text-emerald-400 font-bold">Zero ($0.00)</span>
+                  <span className="text-emerald-400 font-bold">Zero (20 kHz (0.48ms))</span>
                 </div>
               </div>
             </div>

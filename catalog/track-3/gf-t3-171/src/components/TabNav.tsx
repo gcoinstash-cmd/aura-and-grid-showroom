@@ -41,7 +41,7 @@ export const TabNav: React.FC<TabNavProps> = ({ activeTab, onSelectTab }) => {
       label: 'Acquire.com APA Covenant',
       shortLabel: 'APA Covenant',
       icon: FileText,
-      subtext: '$45k Micro-Buyout Terms, Bill of Sale, Escrow',
+      subtext: '20 kHz (0.48ms) Micro-Reference Core, Bill of Sale, Escrow',
     },
   ];
 

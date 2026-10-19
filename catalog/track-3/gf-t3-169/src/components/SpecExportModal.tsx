@@ -49,7 +49,7 @@ export const SpecExportModal: React.FC<SpecExportModalProps> = ({
         {/* Toolbar */}
         <div className="flex items-center justify-between gap-4 mb-4">
           <span className="text-sm text-slate-400">
-            Complete zero-placeholder markdown specification for Google Antigravity autonomous code generation.
+            Complete zero-placeholder markdown specification for Deterministic Production Pipeline autonomous code generation.
           </span>
           <div className="flex items-center gap-3">
             <button

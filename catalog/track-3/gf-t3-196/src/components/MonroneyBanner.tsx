@@ -33,10 +33,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus RZ 450e Steer-by-Wire DIRECT4 Core
+        Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
-        Turnkey micro-APA deliverable with One-Motion Grip steer-by-wire ratio adaptation, dual e-Axle DIRECT4 torque vectoring, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA deliverable with One-Motion Grip steer-by-wire ratio adaptation, dual e-Axle DUAL_VECTOR_TORQUE torque vectoring, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* c) Action Buttons (STRICT SINGLE HORIZONTAL ROW, NEVER VERTICALLY STACKED) */}
@@ -72,16 +72,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <div className="text-slate-300 font-medium flex items-center gap-1.5">
-          <span className="text-slate-500 font-mono">Buyout:</span>
-          <span className="font-bold text-amber-300 font-mono">$45,000 USD</span>
+          <span className="text-slate-500 font-mono">Asset Transfer:</span>
+          <span className="font-bold text-amber-300 font-mono">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-700 hidden sm:inline">|</span>
         <div className="text-slate-300 font-medium flex items-center gap-1.5">
           <span className="text-slate-500 font-mono">Enterprise:</span>
-          <span className="font-bold text-emerald-400 font-mono">$125,000 USD</span>
+          <span className="font-bold text-emerald-400 font-mono">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-700 hidden sm:inline">|</span>
         <div className="text-slate-300 font-medium flex items-center gap-1.5">

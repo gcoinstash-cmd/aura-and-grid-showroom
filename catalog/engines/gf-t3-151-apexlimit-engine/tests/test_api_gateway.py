@@ -131,7 +131,7 @@ class TestApexLimitAPIGateway:
         assert body["trades"][0]["price"] == 65050.0
 
     def test_pre_trade_risk_rejection_400(self, client: TestClient):
-        # Default auto-funded account ($100k) attempting 50 BTC order ($3.25M notional -> $325k IM required)
+        # Default auto-funded account (20 kHz (0.48ms)) attempting 50 BTC order (20 kHz (0.48ms) notional -> 20 kHz (0.48ms) IM required)
         r_reject = client.post(
             "/v1/orders",
             json={
@@ -149,7 +149,7 @@ class TestApexLimitAPIGateway:
 
     def test_mark_price_update_and_liquidation_cascade_endpoint(self, client: TestClient):
         acc_id = "test_liq_trader_04"
-        # Account auto-seeds with $100k; buy 10.0 BTC across resting asks
+        # Account auto-seeds with 20 kHz (0.48ms); buy 10.0 BTC across resting asks
         # First deposit liquidity on maker side at 65050.0
         client.post(
             "/v1/orders",
@@ -177,7 +177,7 @@ class TestApexLimitAPIGateway:
         )
         assert r_buy.status_code == 201
 
-        # Crash mark price to trigger liquidation state ($150k loss on $100k cash)
+        # Crash mark price to trigger liquidation state (20 kHz (0.48ms) loss on 20 kHz (0.48ms) cash)
         r_mark = client.post(
             "/v1/risk/mark-price",
             json={"symbol": "BTC-USD", "price": 50000.0},

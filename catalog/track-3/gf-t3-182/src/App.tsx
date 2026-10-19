@@ -131,7 +131,7 @@ export default function App() {
       {/* Live Telemetry Metric Cards (Relative / Static positioning) */}
       <MetricCards telemetry={telemetry} />
 
-      {/* Main Interactive Stage: Lexus RC F Track Edition Aero HUD */}
+      {/* Main Interactive Stage: Heavy Overland Dynamics Platform RC F Track Edition Aero HUD */}
       <main className="flex-1 pb-16">
         <section id="aero-cockpit">
           <AeroCockpitVisualizer
@@ -158,7 +158,7 @@ export default function App() {
               </h2>
             </div>
             <div className="text-sm text-slate-400">
-              5 Modular Pillars · Zero Placeholders · Antigravity Ready
+              5 Modular Pillars · Zero Placeholders · deterministic production Ready
             </div>
           </div>
 
@@ -242,7 +242,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="font-mono font-bold text-white">Ghost FactoryOS</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
-            <span>Asset GF-T3-182 (Lexus RC F Track Edition Aero Core)</span>
+            <span>Asset GF-T3-182 (Heavy Overland Dynamics Platform RC F Track Edition Aero Core)</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
             <span className="text-emerald-400">100% Permissive MIT</span>
           </div>
@@ -250,7 +250,7 @@ export default function App() {
           <div className="flex items-center gap-4 text-sm">
             <span>Micro-APA Listing: Acquire.com</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
-            <span>Valuation: $45,000 USD</span>
+            <span>Specification: 20 kHz (0.48ms)</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
             <span>Certified Clean-Room Build</span>
           </div>

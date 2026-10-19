@@ -15,7 +15,7 @@ export const TabCloudRunHarness: React.FC = () => {
   // Deploy configuration state
   const [projectId, setProjectId] = useState<string>('ghost-factory-os-prod');
   const [region, setRegion] = useState<string>('us-central1');
-  const [serviceName, setServiceName] = useState<string>('gf-t3-179-direct4-core');
+  const [serviceName, setServiceName] = useState<string>('gf-t3-179-dual_vector_torque-core');
 
   // Interactive Test Bench Runner State
   const [isRunningTests, setIsRunningTests] = useState<boolean>(false);
@@ -31,7 +31,7 @@ export const TabCloudRunHarness: React.FC = () => {
   --cpu 2 \\
   --min-instances 1 \\
   --max-instances 10 \\
-  --set-env-vars="DIRECT4_LOOP_HZ=1000,BATTERY_CAPACITY_KWH=18.1,DB_POOL_MAX=20" \\
+  --set-env-vars="DUAL_VECTOR_TORQUE_LOOP_HZ=1000,BATTERY_CAPACITY_KWH=18.1,DB_POOL_MAX=20" \\
   --project ${projectId}`;
 
   const handleRunPytest = () => {
@@ -49,17 +49,17 @@ configfile: pyproject.toml
 testpaths: tests
 collected 5 items
 
-tests/test_direct4_core.py::test_direct4_highway_cruise_front_bias PASSED   [ 20%]
-tests/test_direct4_core.py::test_direct4_full_throttle_launch_rear_bias PASSED [ 40%]
-tests/test_direct4_core.py::test_direct4_battery_thermal_throttling PASSED [ 60%]
-tests/test_direct4_core.py::test_direct4_low_friction_snow_stability PASSED [ 80%]
-tests/test_direct4_core.py::test_hmac_signature_collision_and_determinism PASSED [100%]
+tests/test_dual_vector_torque_core.py::test_dual_vector_torque_highway_cruise_front_bias PASSED   [ 20%]
+tests/test_dual_vector_torque_core.py::test_dual_vector_torque_full_throttle_launch_rear_bias PASSED [ 40%]
+tests/test_dual_vector_torque_core.py::test_dual_vector_torque_battery_thermal_throttling PASSED [ 60%]
+tests/test_dual_vector_torque_core.py::test_dual_vector_torque_low_friction_snow_stability PASSED [ 80%]
+tests/test_dual_vector_torque_core.py::test_hmac_signature_collision_and_determinism PASSED [100%]
 
 ---------- coverage: platform linux, python 3.12.2 -----------
 Name                                      Stmts   Miss  Cover
 -------------------------------------------------------------
-src/direct4_energy_arbitrator.py            112      4    96%
-tests/test_direct4_core.py                   68      0   100%
+src/dual_vector_torque_energy_arbitrator.py            112      4    96%
+tests/test_dual_vector_torque_core.py                   68      0   100%
 -------------------------------------------------------------
 TOTAL                                       180      4    97%
 
@@ -228,7 +228,7 @@ TOTAL                                       180      4    97%
         {/* PyTest Suite Viewer */}
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
           <div className="bg-slate-950 px-5 py-3.5 border-b border-slate-800 flex items-center justify-between">
-            <span className="text-emerald-400 font-mono font-bold text-[15px]">test_direct4_core.py</span>
+            <span className="text-emerald-400 font-mono font-bold text-[15px]">test_dual_vector_torque_core.py</span>
             <button
               onClick={handleCopyPytest}
               type="button"

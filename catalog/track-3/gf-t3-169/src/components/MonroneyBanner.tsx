@@ -24,7 +24,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               ASSET ID: GF-T3-169
             </span>
             <span className="text-slate-400">·</span>
-            <span className="text-slate-300 font-semibold">Lexus NX 450h+ F SPORT Agile Core</span>
+            <span className="text-slate-300 font-semibold">Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Core</span>
             <span className="text-slate-400">·</span>
             <span className="text-emerald-400 font-mono font-semibold">v1.0.0-PROD</span>
           </div>
@@ -40,11 +40,11 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               className="cursor-pointer group flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-950/70 border border-emerald-600/80 text-emerald-300 text-sm font-semibold hover:bg-emerald-900/80 transition-colors"
             >
               <Zap className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-              <span>Micro-APA Buyout: $45,000 USD</span>
+              <span>Micro-APA Asset Transfer: 20 kHz (0.48ms)</span>
             </div>
 
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-blue-950/70 border border-blue-600/80 text-blue-300 text-sm font-semibold">
-              <span>Enterprise Valuation: $125,000 USD</span>
+              <span>Architecture Moat: PostgreSQL 16 + RLS</span>
             </div>
 
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-purple-950/70 border border-purple-600/80 text-purple-300 text-sm font-semibold">

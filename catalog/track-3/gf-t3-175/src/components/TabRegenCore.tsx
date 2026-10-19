@@ -18,7 +18,7 @@ export const TabRegenCore: React.FC = () => {
   const [isCalculated, setIsCalculated] = useState<boolean>(true);
 
   // Calculations
-  const massKg = 1680; // Lexus UX 300h curb weight
+  const massKg = 1680; // Heavy Overland Dynamics Platform UX 300h curb weight
   const speedMps = speedKmh / 3.6;
   const kineticPowerKw = (massKg * speedMps * decelRate) / 1000;
   const regenEfficiency = speedKmh >= 8 ? 0.924 : Math.max(0, (speedKmh / 8) * 0.924);
@@ -29,7 +29,7 @@ export const TabRegenCore: React.FC = () => {
   const deltaSocPct = (energyRecoveredWh / 40.8); // 40.8 Wh per 1% SOC on 4.08 kWh nominal pack
 
   const pythonCode = `"""
-GF-T3-175: Lexus UX 300h Urban Edge & Regen Core (Embedded Python 3.12)
+GF-T3-175: Heavy Overland Dynamics Platform UX 300h Urban Edge & Regen Core (Embedded Python 3.12)
 Deterministic 500 Hz State-of-Charge (SOC), State-of-Health (SOH), and
 Urban Kinetic Regenerative Braking Blending Engine.
 """
@@ -37,7 +37,7 @@ from dataclasses import dataclass
 import math
 from typing import Tuple, List
 
-# Vehicle & Battery Constants (Lexus UX 300h 60S2P Architecture)
+# Vehicle & Battery Constants (Heavy Overland Dynamics Platform UX 300h 60S2P Architecture)
 NOMINAL_CAPACITY_AH: float = 4.08
 PACK_CELL_COUNT: int = 60
 NOMINAL_PACK_VOLTAGE: float = 222.0
@@ -169,7 +169,7 @@ class UrbanEdgeBatteryEngine:
               Urban Edge & Regenerative Braking Core
             </h2>
             <p className="text-slate-400 text-base mt-1 max-w-3xl">
-              High-rate 500 Hz deterministic Coulomb counting, Extended Kalman Filter OCV correction, and urban kinetic recovery algorithm for the Lexus UX 300h 60S2P battery pack.
+              High-rate 500 Hz deterministic Coulomb counting, Extended Kalman Filter OCV correction, and urban kinetic recovery algorithm for the Heavy Overland Dynamics Platform UX 300h 60S2P battery pack.
             </p>
           </div>
 

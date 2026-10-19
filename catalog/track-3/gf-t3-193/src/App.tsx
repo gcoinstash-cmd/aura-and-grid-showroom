@@ -378,7 +378,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono text-slate-400">GF-T3-193</span>
             <span aria-hidden="true">·</span>
-            <span>Lexus IS 500 F SPORT Performance Core</span>
+            <span>Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core</span>
             <span aria-hidden="true">·</span>
             <span>Turnkey Micro-APA Deliverable</span>
           </div>

@@ -130,7 +130,7 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({
 
   const OPENAPI_SPEC = `openapi: 3.1.0
 info:
-  title: GF-T3-169 Lexus NX 450h+ Agile Powertrain Core API
+  title: GF-T3-169 Heavy Overland Dynamics Platform NX 450h+ Agile Powertrain Core API
   version: 1.0.0-PROD
   description: High-frequency deterministic 500Hz MPC torque vectoring and BMS contract.
 servers:

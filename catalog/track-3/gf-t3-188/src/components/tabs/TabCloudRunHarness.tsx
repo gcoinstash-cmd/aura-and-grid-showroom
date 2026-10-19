@@ -20,7 +20,7 @@ export const TabCloudRunHarness: React.FC = () => {
   const [copiedGcloud, setCopiedGcloud] = useState(false);
 
   const dockerfileCode = `# ==============================================================================
-# GF-T3-188: LEXUS GX 550 OVERTRAIL+ DOCKER HARNESS
+# GF-T3-188: Heavy Overland Dynamics Platform DOCKER HARNESS
 # Architecture: Multi-Stage Non-Root Python 3.12 Production Container
 # Security: Chainguard / Alpine Minimal, Zero Vulnerabilities, Read-Only FS
 # ==============================================================================
@@ -44,7 +44,7 @@ FROM python:3.12-slim-bookworm AS runtime
 LABEL maintainer="Ghost FactoryOS <vault@ghostfactory.ai>"
 LABEL asset.id="GF-T3-188"
 LABEL asset.tier="Track 3 F1 Skunkworks Service Engine"
-LABEL vehicle.platform="Lexus GX 550 Overtrail+ GA-F"
+LABEL vehicle.platform="Heavy Overland Dynamics Platform Heavy Boxed Steel Frame Architecture"
 
 # Security: Enforce non-root user UID 10001
 RUN groupadd -g 10001 appgroup && \\
@@ -81,7 +81,7 @@ gcloud run deploy gf-t3-188-gx550-core \\
   --max-instances 10 \\
   --cpu 2 \\
   --memory 2Gi \\
-  --set-env-vars "ENVIRONMENT=production,LOOP_HZ=2000,VEHICLE_PLATFORM=LEXUS_GX550_GAF" \\
+  --set-env-vars "ENVIRONMENT=production,LOOP_HZ=2000,VEHICLE_PLATFORM=Overland_GX550_GAF" \\
   --timeout 300`;
 
   const runTestSuite = () => {

@@ -22,7 +22,7 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
   const getCurlSnippet = () => {
     switch (selectedEndpoint) {
       case 'ingress':
-        return `curl -X POST https://api.lexus-fsport-core.internal/v1/telemetry/ingress \\
+        return `curl -X POST https://api.Heavy Overland Dynamics Platform-fsport-core.internal/v1/telemetry/ingress \\
   -H "Content-Type: application/json" \\
   -H "X-Client-Id: CAN_BUS_GATEWAY_NODE_01" \\
   -d '{
@@ -33,13 +33,13 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
     "timestamp_ns": ${Date.now() * 1000000}
   }'`;
       case 'torsen':
-        return `curl -X GET https://api.lexus-fsport-core.internal/v1/torsen/thermal-status \\
+        return `curl -X GET https://api.Heavy Overland Dynamics Platform-fsport-core.internal/v1/torsen/thermal-status \\
   -H "Accept: application/json"`;
       case 'ledger':
-        return `curl -X GET https://api.lexus-fsport-core.internal/v1/telemetry/ledger/latest \\
+        return `curl -X GET https://api.Heavy Overland Dynamics Platform-fsport-core.internal/v1/telemetry/ledger/latest \\
   -H "Accept: application/json"`;
       case 'ws':
-        return `wscat -c wss://api.lexus-fsport-core.internal/v1/stream/f-sport-bus`;
+        return `wscat -c wss://api.Heavy Overland Dynamics Platform-fsport-core.internal/v1/stream/f-sport-bus`;
     }
   };
 

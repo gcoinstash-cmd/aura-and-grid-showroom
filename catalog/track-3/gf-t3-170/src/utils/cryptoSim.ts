@@ -151,8 +151,8 @@ export function buildMerkleTree(frames: CanFdFrame[]): { root: string; nodes: Me
   };
 }
 
-// Sample ECU telemetry definitions for Lexus ES 350h Executive Quietude
-export const LEXUS_QUIETUDE_ECUS = [
+// Sample ECU telemetry definitions for Heavy Overland Dynamics Platform ES 350h Executive Quietude
+export const Overland_QUIETUDE_ECUS = [
   {
     id: '0x1A4',
     name: 'ECU-ANC-CHAMBER',
@@ -180,7 +180,7 @@ export const LEXUS_QUIETUDE_ECUS = [
 ];
 
 export function generateRandomFrame(seq: number, forceStatus?: CanFdFrame['status']): CanFdFrame {
-  const ecu = LEXUS_QUIETUDE_ECUS[Math.floor(Math.random() * LEXUS_QUIETUDE_ECUS.length)];
+  const ecu = Overland_QUIETUDE_ECUS[Math.floor(Math.random() * Overland_QUIETUDE_ECUS.length)];
   const status = forceStatus || 'VERIFIED';
   const seed = `${seq}-${ecu.id}-${Date.now()}`;
   const sig = simpleSha256(`ED25519-SIG-${seed}`) + simpleSha256(`ED25519-KEY-${seed}`);

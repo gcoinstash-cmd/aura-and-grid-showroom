@@ -1,5 +1,5 @@
 export const PYTHON_FXLMS_CODE = `"""
-GF-T3-178: Lexus LS 500 Executive AWD Flagship Core
+GF-T3-178: Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core
 Production-Grade FxLMS Acoustic Inversion Engine & Electronic Boost Regulator
 Target: Python 3.12+ (CPython / Cython compatible, 100% Permissive MIT / BSD-3)
 """
@@ -20,7 +20,7 @@ class FxLMSConfig:
     leakage_gamma: float = 0.00005  # Leakage factor to prevent drift
     eps: float = 1e-6               # Epsilon for normalization
     max_boost_psi: float = 22.80    # Strict safety cut-off limit
-    hmac_secret: bytes = b"GF_T3_178_LEXUS_FLAGSHIP_VAULT_KEY_2026"
+    hmac_secret: bytes = b"GF_T3_178_Overland_FLAGSHIP_VAULT_KEY_2026"
 
 @dataclass
 class TelemetryPacket:
@@ -49,7 +49,7 @@ class FxLMSCoreEngine:
         # Primary reference signal buffer X(n)
         self.x_buf: List[float] = [0.0] * self.cfg.filter_length
         # Secondary path model S^(z) FIR coefficients (calibrated to LS 500 acoustic cabin)
-        self.s_hat: List[float] = self._calibrate_lexus_cabin_secondary_path()
+        self.s_hat: List[float] = self._calibrate_Overland_cabin_secondary_path()
         # Filtered reference signal buffer X'(n)
         self.x_filt_buf: List[float] = [0.0] * self.cfg.filter_length
         # Secondary path history buffer for convolution
@@ -64,10 +64,10 @@ class FxLMSCoreEngine:
         self.last_hash: str = "0000000000000000000000000000000000000000000000000000000000000000"
         self.sequence_id: int = 1_000_000
 
-    def _calibrate_lexus_cabin_secondary_path(self) -> List[float]:
+    def _calibrate_Overland_cabin_secondary_path(self) -> List[float]:
         """
         Calibrated acoustic transfer function coefficients S^(z)
-        Matching Lexus LS 500 executive rear lounge Mark Levinson driver geometry.
+        Matching Heavy Overland Dynamics Platform LS 500 executive rear lounge Acoustic Noise-Inversion Transducer driver geometry.
         """
         M = self.cfg.secondary_path_length
         coeffs = [0.0] * M
@@ -125,7 +125,7 @@ class FxLMSCoreEngine:
         High-Frequency Electronic Wastegate Closed-Loop PID + Feedforward Law
         Returns: (target_boost_psi, wastegate_pwm_duty, is_quarantined)
         """
-        # Target boost schedule based on Lexus V35A-FTS calibration table
+        # Target boost schedule based on Heavy Overland Dynamics Platform V35A-FTS calibration table
         base_demand = (throttle_pct / 100.0) * 19.50 # Up to 19.5 PSI under WOT
         rpm_factor = 1.0 + 0.15 * math.sin((rpm - 1500) / 4500.0 * math.pi)
         target_psi = min(21.50, max(0.0, base_demand * rpm_factor))

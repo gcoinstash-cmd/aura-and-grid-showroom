@@ -1,19 +1,19 @@
-# GF-T3-179: LEXUS TX 550h+ LUXURY PLUG-IN CORE
-## Antigravity Turnkey Master Specification (70% Workload Deliverable)
+# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core LUXURY PLUG-IN CORE
+## deterministic production Turnkey Master Specification (70% Workload Deliverable)
 **Platform:** Ghost FactoryOS Institutional Dealership Fleet  
-**Asset Valuation:** $45,000 USD (Micro-APA Turnkey) / $125,000 USD (Enterprise Vault)  
-**Target Vehicle:** Lexus TX 550h+ DIRECT4 Luxury Plug-in Hybrid  
+**Asset Specification: ** 20 kHz (0.48ms) (Micro-APA Turnkey) / PostgreSQL 16 + RLS (Enterprise Vault)  
+**Target Vehicle:** Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Luxury Plug-in Hybrid  
 **Architecture Track:** Track 3 (F1 Skunkworks Service Engine)  
 **License:** Permissive MIT (Clean-Room Certified / 0% Copyleft)  
 
 ---
 
 ### 1. ARCHITECTURAL TOPOLOGY & OVERVIEW
-The Lexus TX 550h+ Luxury Plug-in Core integrates a dual-energy architecture combining:
+The Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core integrates a dual-energy architecture combining:
 - **Combustion & Front Hybrid Transaxle**: 3.5L V6 (2GR-FXS) coupled to electric motor-generator (MG2) delivering up to 350 Nm of front mechanical torque.
 - **Rear High-Output e-Axle**: Dedicated high-efficiency rear motor delivering up to 169 Nm directly to rear wheels without a mechanical driveshaft.
 - **High-Voltage PHEV Energy Storage**: 18.1 kWh 355V lithium-ion battery pack with dedicated liquid glycol cooling loops.
-- **DIRECT4 Vectoring Cycle**: 1,000 Hz real-time control loop dynamically vectoring torque between 100:0 (pure front efficiency) and 20:80 (high-traction rear launch bias).
+- **DUAL_VECTOR_TORQUE Vectoring Cycle**: 1,000 Hz real-time control loop dynamically vectoring torque between 100:0 (pure front efficiency) and 20:80 (high-traction rear launch bias).
 - **Immutable Audit Ledger**: PostgreSQL 16 partitioned timeseries hypertable with HMAC-SHA256 signature chains and automatic motor divergence quarantine triggers.
 
 ---
@@ -21,7 +21,7 @@ The Lexus TX 550h+ Luxury Plug-in Core integrates a dual-energy architecture com
 ### 2. PROPRIETARY ALGORITHMIC ENGINE (PYTHON 3.12)
 ```python
 """
-GF-T3-179: Lexus TX 550h+ DIRECT4 e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
+GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
 Target Architecture: Pure Python 3.12 (Zero-dependency standard library / high-performance float math)
 License: MIT Permissive (Clean-Room Certified)
 """
@@ -33,7 +33,7 @@ import hashlib
 from dataclasses import dataclass
 from typing import Tuple, Dict, Any, Optional
 
-# Powertrain Constants: Lexus TX 550h+ (Luxury Plug-in Hybrid AWD)
+# Powertrain Constants: Heavy Overland Dynamics Platform High-Output Multi-Node Core (Luxury Plug-in Hybrid AWD)
 V6_MAX_POWER_KW = 193.0       # 3.5L V6 2GR-FXS combustion engine (~259 hp)
 V6_MAX_TORQUE_NM = 350.0      # Front transaxle coupled
 FRONT_MG_MAX_TORQUE_NM = 270.0 # Front Electric Motor-Generator (MG2)
@@ -59,7 +59,7 @@ class VehicleDynamicsInput:
     wheel_speeds_radps: Tuple[float, float, float, float] # FL, FR, RL, RR
 
 @dataclass(frozen=True)
-class Direct4TorqueDistribution:
+class DualVectorTorqueTorqueDistribution:
     cycle_id: int
     timestamp_ns: int
     front_torque_nm: float
@@ -74,15 +74,15 @@ class Direct4TorqueDistribution:
     quarantine_flag: bool
     hmac_signature: str
 
-class LexusTX550hDirect4Arbitrator:
+class Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator:
     """
-    Sub-millisecond 1,000 Hz DIRECT4 Dynamic Torque Vectoring Core.
+    Sub-millisecond 1,000 Hz DUAL_VECTOR_TORQUE Dynamic Torque Vectoring Core.
     Arbitrates between Front Transaxle (V6 + Front MG) and Rear e-Axle
-    within legal Lexus TX 550h+ mechanical constraints: 100:0 to 20:80.
+    within legal Heavy Overland Dynamics Platform High-Output Multi-Node Core mechanical constraints: 100:0 to 20:80.
     """
-    def __init__(self, hmac_secret_key: bytes = b"LEXUS_TX550H_DIRECT4_SECURE_KEY_2026"):
+    def __init__(self, hmac_secret_key: bytes = b"Heavy Overland Dynamics Platform_TX550H_DUAL_VECTOR_TORQUE_SECURE_KEY_2026"):
         self.hmac_secret_key = hmac_secret_key
-        self.wheelbase_m = 2.950  # Lexus TX wheelbase in meters
+        self.wheelbase_m = 2.950  # Heavy Overland Dynamics Platform TX wheelbase in meters
         self.track_width_m = 1.700 # Rear track width in meters
         self.mass_kg = 2445.0      # Curb weight in kg
         self.sequence_nonce = 1000000
@@ -114,7 +114,7 @@ class LexusTX550hDirect4Arbitrator:
 
         return min(1.0, max(0.10, soc_factor * temp_factor))
 
-    def arbitrate_torque(self, inputs: VehicleDynamicsInput) -> Direct4TorqueDistribution:
+    def arbitrate_torque(self, inputs: VehicleDynamicsInput) -> DualVectorTorqueTorqueDistribution:
         """
         Executes single 1.00 ms arbitration tick.
         Determines dynamic front-rear torque split between 100:0 and 20:80.
@@ -126,7 +126,7 @@ class LexusTX550hDirect4Arbitrator:
         total_requested_torque = inputs.throttle_demand * TOTAL_SYSTEM_TORQUE_NM * derate
 
         # 2. Longitudinal Acceleration & Launch Bias
-        # From standstill/low-speed launch with high throttle, DIRECT4 commands up to 20:80 rear bias
+        # From standstill/low-speed launch with high throttle, DUAL_VECTOR_TORQUE commands up to 20:80 rear bias
         speed_factor = max(0.0, min(1.0, (inputs.velocity_mps - 5.0) / 25.0))
         throttle_intensity = inputs.throttle_demand
 
@@ -162,7 +162,7 @@ class LexusTX550hDirect4Arbitrator:
         # Blend with road friction: on low mu, force toward 50:50 (0.50)
         blended_rear_ratio = (raw_rear_ratio * mu_weight) + (0.50 * (1.0 - mu_weight))
 
-        # Enforce strict mechanical and firmware DIRECT4 boundaries [20% to 80% rear]
+        # Enforce strict mechanical and firmware DUAL_VECTOR_TORQUE boundaries [20% to 80% rear]
         # or pure highway cruise [0% rear = 100:0 front]
         if inputs.throttle_demand < 0.08 and inputs.velocity_mps > 18.0 and abs(inputs.steering_angle_rad) < 0.03:
             final_rear_ratio = 0.0  # 100:0 Front Cruise
@@ -196,7 +196,7 @@ class LexusTX550hDirect4Arbitrator:
         payload = f"{self.sequence_nonce}|{inputs.timestamp_ns}|{front_torque:.2f}|{rear_torque:.2f}|{derate:.3f}|{quarantine}".encode('utf-8')
         sig = hmac.new(self.hmac_secret_key, payload, hashlib.sha256).hexdigest()
 
-        return Direct4TorqueDistribution(
+        return DualVectorTorqueTorqueDistribution(
             cycle_id=self.sequence_nonce,
             timestamp_ns=inputs.timestamp_ns,
             front_torque_nm=round(front_torque, 2),
@@ -219,7 +219,7 @@ class LexusTX550hDirect4Arbitrator:
 ### 3. PRODUCTION POSTGRESQL 16 PARTITIONED SCHEMA
 ```sql
 -- =========================================================================
--- GF-T3-179: LEXUS TX 550h+ DIRECT4 IMMUTABLE TELEMETRY LEDGER SCHEMA
+-- GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE IMMUTABLE TELEMETRY LEDGER SCHEMA
 -- Target Database: PostgreSQL 16 / AlloyDB
 -- Features: Partitioned Daily Timeseries Hypertables, Torque Divergence
 --           Quarantine Triggers, and Cryptographic HMAC-SHA256 Chains
@@ -230,7 +230,7 @@ class LexusTX550hDirect4Arbitrator:
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- 1. Partitioned Timeseries Telemetry Ledger Table (Range Partitioned by UTC Day)
-CREATE TABLE IF NOT EXISTS direct4_telemetry_ledger (
+CREATE TABLE IF NOT EXISTS dual_vector_torque_telemetry_ledger (
     telemetry_id BIGSERIAL,
     vehicle_vin VARCHAR(17) NOT NULL DEFAULT '4T2B4DEK7RW000179',
     timestamp_utc TIMESTAMPTZ NOT NULL,
@@ -251,31 +251,31 @@ CREATE TABLE IF NOT EXISTS direct4_telemetry_ledger (
     hmac_signature VARCHAR(64) NOT NULL,
     is_quarantined BOOLEAN NOT NULL DEFAULT FALSE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT pk_direct4_telemetry PRIMARY KEY (timestamp_utc, monotonic_nonce)
+    CONSTRAINT pk_dual_vector_torque_telemetry PRIMARY KEY (timestamp_utc, monotonic_nonce)
 ) PARTITION BY RANGE (timestamp_utc);
 
 -- Create Initial Daily Partitions
-CREATE TABLE IF NOT EXISTS direct4_telemetry_y2026_m10_d11
-    PARTITION OF direct4_telemetry_ledger
+CREATE TABLE IF NOT EXISTS dual_vector_torque_telemetry_y2026_m10_d11
+    PARTITION OF dual_vector_torque_telemetry_ledger
     FOR VALUES FROM ('2026-10-11 00:00:00+00') TO ('2026-10-12 00:00:00+00');
 
-CREATE TABLE IF NOT EXISTS direct4_telemetry_y2026_m10_d12
-    PARTITION OF direct4_telemetry_ledger
+CREATE TABLE IF NOT EXISTS dual_vector_torque_telemetry_y2026_m10_d12
+    PARTITION OF dual_vector_torque_telemetry_ledger
     FOR VALUES FROM ('2026-10-12 00:00:00+00') TO ('2026-10-13 00:00:00+00');
 
 -- 2. High-Performance Indices for 1,000 Hz Ingestion and Audit Queries
 CREATE INDEX IF NOT EXISTS idx_telemetry_nonce 
-    ON direct4_telemetry_ledger (monotonic_nonce);
+    ON dual_vector_torque_telemetry_ledger (monotonic_nonce);
 
 CREATE INDEX IF NOT EXISTS idx_telemetry_vin_time 
-    ON direct4_telemetry_ledger (vehicle_vin, timestamp_utc DESC);
+    ON dual_vector_torque_telemetry_ledger (vehicle_vin, timestamp_utc DESC);
 
 -- Block-Range Index (BRIN) for massive timeseries compression
 CREATE INDEX IF NOT EXISTS idx_telemetry_timestamp_brin 
-    ON direct4_telemetry_ledger USING BRIN (timestamp_utc);
+    ON dual_vector_torque_telemetry_ledger USING BRIN (timestamp_utc);
 
 -- 3. Dedicated Quarantine Table for Divergent e-Axle Events
-CREATE TABLE IF NOT EXISTS direct4_quarantine_violations (
+CREATE TABLE IF NOT EXISTS dual_vector_torque_quarantine_violations (
     quarantine_id BIGSERIAL PRIMARY KEY,
     monotonic_nonce BIGINT NOT NULL,
     timestamp_utc TIMESTAMPTZ NOT NULL,
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS direct4_quarantine_violations (
 );
 
 -- 4. Cryptographic Blockchain-Style Audit Ledger Chain
-CREATE TABLE IF NOT EXISTS direct4_ledger_merkle_blocks (
+CREATE TABLE IF NOT EXISTS dual_vector_torque_ledger_merkle_blocks (
     block_number BIGSERIAL PRIMARY KEY,
     block_start_nonce BIGINT NOT NULL,
     block_end_nonce BIGINT NOT NULL,
@@ -311,7 +311,7 @@ BEGIN
         v_divergence := NEW.rear_torque_nm - v_max_eaxle_limit;
         NEW.is_quarantined := TRUE;
 
-        INSERT INTO direct4_quarantine_violations (
+        INSERT INTO dual_vector_torque_quarantine_violations (
             monotonic_nonce,
             timestamp_utc,
             front_torque_nm,
@@ -338,7 +338,7 @@ BEGIN
     -- Strict check on invalid torque split boundaries (must satisfy 100:0 or between 20:80 and 80:20)
     IF NEW.rear_bias_pct > 80.01 THEN
         NEW.is_quarantined := TRUE;
-        INSERT INTO direct4_quarantine_violations (
+        INSERT INTO dual_vector_torque_quarantine_violations (
             monotonic_nonce,
             timestamp_utc,
             front_torque_nm,
@@ -362,7 +362,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE TRIGGER trg_check_torque_divergence
-    BEFORE INSERT ON direct4_telemetry_ledger
+    BEFORE INSERT ON dual_vector_torque_telemetry_ledger
     FOR EACH ROW
     EXECUTE FUNCTION fn_quarantine_torque_divergence();
 
@@ -374,13 +374,13 @@ CREATE OR REPLACE TRIGGER trg_check_torque_divergence
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-179 Lexus TX 550h+ DIRECT4 Telemetry & Dispatch API
+  title: GF-T3-179 Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Telemetry & Dispatch API
   version: 1.0.0-PROD
   description: >
     Production-grade REST and WebSocket telemetry ingestion protocol for
-    Lexus TX 550h+ Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
+    Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
 servers:
-  - url: https://telemetry.direct4-tx550h.internal/api/v1
+  - url: https://telemetry.dual_vector_torque-tx550h.internal/api/v1
     description: Production Cloud Run Internal Mesh
 paths:
   /telemetry/wheelspeed:
@@ -395,7 +395,7 @@ paths:
               $ref: '#/components/schemas/WheelSpeedIngestRequest'
       responses:
         '200':
-          description: Ingested and dispatched to DIRECT4 arbitration loop
+          description: Ingested and dispatched to DUAL_VECTOR_TORQUE arbitration loop
           content:
             application/json:
               schema:
@@ -591,7 +591,7 @@ components:
 #### Multi-Stage Dockerfile
 ```dockerfile
 # =========================================================================
-# GF-T3-179: Lexus TX 550h+ DIRECT4 Core - Multi-Stage Non-Root Dockerfile
+# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Core - Multi-Stage Non-Root Dockerfile
 # Base Image: Python 3.12-slim (Debian Bookworm)
 # Security: Non-Root Execution (UID 10001), Read-Only FS, Zero Copyleft
 # =========================================================================
@@ -614,7 +614,7 @@ FROM python:3.12-slim AS production
 
 LABEL maintainer="Ghost FactoryOS <vault@acquire.ghostfactoryos.internal>"
 LABEL asset.id="GF-T3-179"
-LABEL asset.name="Lexus TX 550h+ Luxury Plug-in Core"
+LABEL asset.name="Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"
 LABEL license="MIT Permissive"
 
 # Create unprivileged service user
@@ -649,14 +649,14 @@ ENTRYPOINT ["python3", "-m", "src.main"]
 ```python
 """
 GF-T3-179: PyTest Test Bench (>90% Coverage Target)
-Validates DIRECT4 Dynamic e-Axle Vectoring, 18.1 kWh PHEV Thermal Throttling,
+Validates DUAL_VECTOR_TORQUE Dynamic e-Axle Vectoring, 18.1 kWh PHEV Thermal Throttling,
 PostgreSQL Divergence Triggers, and Monotonic HMAC-SHA256 Ledger Integrity.
 """
 
 import pytest
 import time
-from src.direct4_energy_arbitrator import (
-    LexusTX550hDirect4Arbitrator,
+from src.dual_vector_torque_energy_arbitrator import (
+    Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator,
     VehicleDynamicsInput,
     TOTAL_SYSTEM_TORQUE_NM,
     REAR_EAXLE_MAX_TORQUE_NM
@@ -664,9 +664,9 @@ from src.direct4_energy_arbitrator import (
 
 @pytest.fixture
 def arbitrator():
-    return LexusTX550hDirect4Arbitrator()
+    return Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator()
 
-def test_direct4_highway_cruise_front_bias(arbitrator):
+def test_dual_vector_torque_highway_cruise_front_bias(arbitrator):
     """Test 1: Steady 65 mph highway cruise must lock to 100:0 Front Bias for efficiency."""
     inputs = VehicleDynamicsInput(
         timestamp_ns=time.time_ns(),
@@ -688,7 +688,7 @@ def test_direct4_highway_cruise_front_bias(arbitrator):
     assert result.rear_torque_nm == 0.0
     assert not result.quarantine_flag
 
-def test_direct4_full_throttle_launch_rear_bias(arbitrator):
+def test_dual_vector_torque_full_throttle_launch_rear_bias(arbitrator):
     """Test 2: Full-throttle launch from standstill must vector to 20:80 Rear Bias."""
     inputs = VehicleDynamicsInput(
         timestamp_ns=time.time_ns(),
@@ -711,7 +711,7 @@ def test_direct4_full_throttle_launch_rear_bias(arbitrator):
     assert result.front_ratio_pct <= 35.0
     assert len(result.hmac_signature) == 64
 
-def test_direct4_battery_thermal_throttling(arbitrator):
+def test_dual_vector_torque_battery_thermal_throttling(arbitrator):
     """Test 3: Battery temperature exceeding 52°C must invoke progressive thermal derate."""
     inputs_hot = VehicleDynamicsInput(
         timestamp_ns=time.time_ns(),
@@ -731,7 +731,7 @@ def test_direct4_battery_thermal_throttling(arbitrator):
     assert result_hot.thermal_derate_factor < 0.80
     assert (result_hot.front_torque_nm + result_hot.rear_torque_nm) < TOTAL_SYSTEM_TORQUE_NM
 
-def test_direct4_low_friction_snow_stability(arbitrator):
+def test_dual_vector_torque_low_friction_snow_stability(arbitrator):
     """Test 4: Low surface friction (mu=0.20 snow/ice) must force 50:50 equal torque split."""
     inputs_snow = VehicleDynamicsInput(
         timestamp_ns=time.time_ns(),
@@ -781,16 +781,16 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 
 ### 6. INSTITUTIONAL APA AGREEMENT & EXHIBITS
 # INSTITUTIONAL ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-**ASSET IDENTIFIER:** GF-T3-179 (Lexus TX 550h+ Luxury Plug-in Core)  
-**PURCHASE PRICE:** $45,000.00 USD (Turnkey Micro-APA Buyout) / $125,000.00 USD (Enterprise Monopoly Vault)  
-**GOVERNING LAW:** State of Delaware, United States of America  
+**ASSET IDENTIFIER:** GF-T3-179 (Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core)  
+**DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+**GOVERNING LAW:** Standard Commercial Jurisdiction, United States of America  
 **PLATFORM ESCROW:** Acquire.com / Escrow.com Integrated Protocol  
 
 ---
 
 ### RECITALS
-**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Lexus TX 550h+ Luxury Plug-in Core"), including:
-1. Sub-millisecond DIRECT4 100:0 to 20:80 dynamic e-Axle torque vectoring engine (Python 3.12);
+**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"), including:
+1. Sub-millisecond DUAL_VECTOR_TORQUE 100:0 to 20:80 dynamic e-Axle torque vectoring engine (Python 3.12);
 2. 18.1 kWh PHEV energy arbitration and cell thermal state management models;
 3. Partitioned PostgreSQL 16 timeseries hypertable schema with divergence triggers and cryptographic HMAC-SHA256 signature chains;
 4. OpenAPI 3.1 & WebSocket telemetry specifications; and
@@ -811,8 +811,8 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 
 ---
 
-### ARTICLE II: PURCHASE PRICE & ESCROW DISBURSEMENT
-**Section 2.1: Consideration.** Buyer shall deposit the sum of **Forty-Five Thousand United States Dollars ($45,000.00 USD)** into third-party escrow (Acquire.com Escrow Services).
+### ARTICLE II: DEPLOYMENT SPECIFICATION & ESCROW DISBURSEMENT
+**Section 2.1: Consideration.** Buyer shall deposit the sum of **Delaware institutional asset covenants** into third-party escrow (Acquire.com Escrow Services).
 **Section 2.2: Escrow Inspection Period.** Buyer shall have forty-eight (48) hours from digital asset handoff to verify:
 - (i) Execution of the automated PyTest test suite with $ge 90%$ assertion passing rate;
 - (ii) Compilation of the multi-stage Docker container image with zero CVE critical vulnerabilities;
@@ -829,11 +829,11 @@ Upon positive verification or lapse of 48 hours without written dispute, Escrow 
 ---
 
 ### EXHIBIT A: SCHEDULE OF TRANSFERRED ASSETS
-1. `src/direct4_energy_arbitrator.py` (Pure Python 3.12 Engine)
+1. `src/dual_vector_torque_energy_arbitrator.py` (Pure Python 3.12 Engine)
 2. `src/db/postgres_schema.sql` (PostgreSQL 16 Partitioned DDL)
 3. `spec/openapi_v31_contract.yaml` (OpenAPI 3.1 & WebSocket Spec)
 4. `deploy/Dockerfile` & `deploy/cloudrun_deploy.sh` (Cloud Run Harness)
-5. `tests/test_direct4_core.py` (PyTest Test Bench)
+5. `tests/test_dual_vector_torque_core.py` (PyTest Test Bench)
 6. `GF_T3_179_SPEC.md` (Master Technical Vault Specification)
 
 ---

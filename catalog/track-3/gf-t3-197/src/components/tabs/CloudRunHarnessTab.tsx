@@ -60,8 +60,8 @@ export const CloudRunHarnessTab: React.FC = () => {
     },
     {
       id: 'TC-05',
-      name: 'test_direct4_eaxle_rear_bias_apex_acceleration',
-      description: 'Ensures DIRECT4 transitions from 50:50 to 20:80 rear eAxle split under corner apex acceleration.',
+      name: 'test_dual_vector_torque_eaxle_rear_bias_apex_acceleration',
+      description: 'Ensures DUAL_VECTOR_TORQUE transitions from 50:50 to 20:80 rear eAxle split under corner apex acceleration.',
       category: 'KINEMATICS',
       status: 'PASS',
       durationMs: 12,
@@ -86,7 +86,7 @@ export const CloudRunHarnessTab: React.FC = () => {
   };
 
   const dockerfileContent = `# ==============================================================================
-# GF-T3-197: Lexus TX 500h DRS Performance Core - Production Dockerfile
+# GF-T3-197: Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS Performance Core - Production Dockerfile
 # Base: Python 3.12-slim | Non-root hardened container
 # ==============================================================================
 
@@ -137,7 +137,7 @@ ENTRYPOINT ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "-
 
 set -euo pipefail
 
-PROJECT_ID="\${GCP_PROJECT_ID:-lexus-drs-production}"
+PROJECT_ID="\${GCP_PROJECT_ID:-Heavy Overland Dynamics Platform-drs-production}"
 SERVICE_NAME="gf-t3-197-drs-core"
 REGION="us-central1"
 IMAGE="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:1.0.0-PROD"

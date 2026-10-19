@@ -28,8 +28,8 @@ export default function App() {
     frontWheelAngleDeg: 8.11,
     rearWheelAngleDeg: -1.24,
     phaseMode: 'ANTI_PHASE_TURNING',
-    direct4FrontRatio: 58.0,
-    direct4RearRatio: 42.0,
+    dual_vector_torqueFrontRatio: 58.0,
+    dual_vector_torqueRearRatio: 42.0,
     lateralAccelG: 0.32,
     yawRateDegSec: 5.4,
     turningRadiusMeters: 6.8,
@@ -68,7 +68,7 @@ export default function App() {
       // Hard clamp mechanical ±4.0°
       targetRear = Math.max(-4.0, Math.min(4.0, targetRear));
 
-      // DIRECT4 AWD Torque Vectoring
+      // DUAL_VECTOR_TORQUE AWD Torque Vectoring
       const absLat = Math.min(1.0, Math.abs(latG) / 0.8);
       let rearPct = 20.0 + 60.0 * absLat;
       if (phase === 'IN_PHASE_STABILIZATION') {
@@ -97,8 +97,8 @@ export default function App() {
         frontWheelAngleDeg: parseFloat(frontAngle.toFixed(2)),
         rearWheelAngleDeg: parseFloat((fault ? 0.0 : targetRear).toFixed(2)),
         phaseMode: phase,
-        direct4FrontRatio: parseFloat(frontPct.toFixed(1)),
-        direct4RearRatio: parseFloat(rearPct.toFixed(1)),
+        dual_vector_torqueFrontRatio: parseFloat(frontPct.toFixed(1)),
+        dual_vector_torqueRearRatio: parseFloat(rearPct.toFixed(1)),
         lateralAccelG: latG,
         yawRateDegSec: parseFloat(((Math.abs(frontAngle) * speedKmh) / 72.0).toFixed(1)),
         turningRadiusMeters: parseFloat(radiusM.toFixed(1)),
@@ -178,7 +178,7 @@ export default function App() {
             rearToeTargetDeg: targetToe,
             rearToeActualDeg: isFaultInjected ? 0.0 : targetToe,
             divergenceMm: parseFloat(divergence.toFixed(3)),
-            frontRearSplit: `${physicsState.direct4FrontRatio.toFixed(0)}:${physicsState.direct4RearRatio.toFixed(0)}`,
+            frontRearSplit: `${physicsState.dual_vector_torqueFrontRatio.toFixed(0)}:${physicsState.dual_vector_torqueRearRatio.toFixed(0)}`,
             status,
             prevHmac: prevHash,
             currentHmac: newHash,
@@ -264,7 +264,7 @@ export default function App() {
             <span>ACQUIRE.COM MONOPOLY VAULT</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline">TNGA-K PLATFORM: LEXUS TX 550h+</span>
+            <span className="hidden sm:inline">Modular Cyber-Physical Chassis PLATFORM: Heavy Overland Dynamics Platform High-Output Multi-Node Core</span>
             <span className="text-emerald-400 font-bold">SHA-256 LEDGER ACTIVE</span>
           </div>
         </div>
@@ -302,7 +302,7 @@ export default function App() {
               }`}
             >
               <Car className="w-5 h-5" />
-              <span>1. DRS Yaw & DIRECT4 Core</span>
+              <span>1. DRS Yaw & DUAL_VECTOR_TORQUE Core</span>
             </button>
 
             <button
@@ -395,10 +395,10 @@ export default function App() {
       <footer className="mt-auto border-t border-slate-900 bg-slate-950/80 py-4 px-6 text-xs text-slate-400 font-mono">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>
-            GF-T3-192 · Lexus TX 550h+ DIRECT4 DRS Core Cockpit · v1.0.0-PROD
+            GF-T3-192 · Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Core Cockpit · v1.0.0-PROD
           </div>
           <div className="text-slate-400">
-            Delaware Governing Law · Acquire.com Turnkey Escrow Deliverable · Clean-Room Certified
+            Commercial Software Asset Standard · Acquire.com Turnkey Escrow Deliverable · Clean-Room Certified
           </div>
         </div>
       </footer>

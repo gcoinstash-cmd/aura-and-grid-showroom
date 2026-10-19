@@ -155,7 +155,7 @@ def handle_post_sync(request: SyncRequestModel) -> SyncResponseModel:
 def handle_get_topology() -> Dict[str, Any]:
     """
     GET /api/v1/swarm/topology
-    Returns real-time mesh topology, vehicle E-KDSS telemetry, and quorum health.
+    Returns real-time mesh topology, vehicle Dynamic Kinetic Suspension Telemetry telemetry, and quorum health.
     """
     return cluster_instance.get_topology_snapshot()
 

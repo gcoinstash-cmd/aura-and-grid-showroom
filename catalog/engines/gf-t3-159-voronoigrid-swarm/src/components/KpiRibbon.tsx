@@ -19,13 +19,13 @@ export const KpiRibbon: React.FC<KpiRibbonProps> = ({
 
   const cards = [
     {
-      id: 'kpi-buyout',
-      title: 'Delaware APA Buyout Baseline',
-      value: '$125,000 USD',
+      id: 'kpi-asset transfer',
+      title: 'Turnkey Software Asset Purchase Agreement Reference Core',
+      value: '20 kHz (0.48ms)',
       detail: 'Monopoly Vault Turnkey M&A Transfer',
       icon: DollarSign,
       accent: 'border-cyan-500/40 text-cyan-400 bg-cyan-950/20',
-      badge: 'FIXED VALUATION',
+      badge: 'FIXED SPECIFICATION',
       badgeColor: 'text-cyan-300 border-cyan-800 bg-cyan-950/50',
     },
     {

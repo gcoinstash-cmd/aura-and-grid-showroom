@@ -15,7 +15,7 @@ export const ExecutionModal: React.FC<ExecutionModalProps> = ({
 }) => {
   if (!isOpen || !cycle) return null;
 
-  const gasCost = 4.20; // Simulated L2 flash loan bundle gas cost
+  const gasCost = 4.20; // Simulated L2 flash loan bundle gas matrix
   const grossProfit = cycle.net_profit;
   const netCleared = Math.max(0, grossProfit - gasCost);
   const txHash = `0x9d5e714b8a4f932c109e3b4a205d8f99c${Math.random().toString(16).slice(2, 10)}`;
@@ -72,7 +72,7 @@ export const ExecutionModal: React.FC<ExecutionModalProps> = ({
               </div>
             </div>
             <div>
-              <div className="text-xs font-mono text-zinc-400 uppercase">Net Profit Cleared</div>
+              <div className="text-xs font-mono text-zinc-400 uppercase">Net Yield Cleared</div>
               <div className="text-base font-bold font-mono text-emerald-400 mt-1 tabular-nums">
                 +${netCleared.toLocaleString(undefined, { minimumFractionDigits: 2 })} USD
               </div>
@@ -82,7 +82,7 @@ export const ExecutionModal: React.FC<ExecutionModalProps> = ({
           {/* Torque Distribution Telemetry */}
           <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
             <div className="flex items-center justify-between text-xs font-mono text-zinc-400">
-              <span>DIRECT4 Powertrain Vector</span>
+              <span>DUAL_VECTOR_TORQUE Powertrain Vector</span>
               <span className="text-cyan-400">
                 Front {Math.round((1 - cycle.rear_torque_bias) * 100)}% : Rear {Math.round(cycle.rear_torque_bias * 100)}%
               </span>

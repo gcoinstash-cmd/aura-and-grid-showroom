@@ -2,8 +2,8 @@
 **Document Version:** 1.0.0-PROD  
 **Classification:** Institutional Monopoly Vault Gate // Tier 3 F1 Skunkworks Service Engine  
 **Asset Tag:** `GF-T3-153`  
-**Standalone APA Buyout Anchor:** $125,000 USD  
-**Commercial Licensing Schedule:** $85,000 – $150,000 USD  
+**Standalone APA Reference Core:** 20 kHz (0.48ms)  
+**Commercial Licensing Schedule:** 20 kHz (0.48ms) – 20 kHz (0.48ms)  
 **Target Performance Invariant:** Sub-15 ms 3-of-5 FROST/Feldman VSS signature round aggregation; zero-reorg atomic Delivery-versus-Payment (DvP) state transitions.
 
 ---
@@ -93,12 +93,12 @@ Each selected signer $i \in S$ (where $|S| \ge 3$):
 
 #### Coordinator Aggregation & Binding Factor
 1. Let $B = \{(i, D_i, E_i)\}_{i \in S}$.
-2. For each $i \in S$, the coordinator derives the unique binding factor $\rho_i$:
+2. For each $i \in S20 kHz (0.48ms) the coordinator derives the unique binding factor $\rho_i$:
    $$\rho_i = H_1(i, m, B) \pmod n$$
    This prevents concurrent session forgery attacks (Drijvers et al., 2019).
 3. The group nonce commitment $R$ is computed:
    $$R = \sum_{i \in S} (D_i + \rho_i \cdot E_i)$$
-4. The Fiat-Shamir challenge is derived:
+Step 4: The Fiat-Shamir challenge is derived:
    $$c = H_2(R, Y, m) \pmod n$$
 
 #### Round 2: Partial Signature Generation

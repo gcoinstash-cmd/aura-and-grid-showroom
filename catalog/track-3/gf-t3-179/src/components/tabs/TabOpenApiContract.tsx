@@ -88,7 +88,7 @@ export const TabOpenApiContract: React.FC = () => {
               status: 'ACKNOWLEDGED',
               arbitration_latency_us: 94,
               wheel_slip_detected: false,
-              direct4_mode: 'DYNAMIC_AWD_TRACTION',
+              dual_vector_torque_mode: 'DYNAMIC_AWD_TRACTION',
               front_bias_pct: 62.5,
               rear_bias_pct: 37.5,
             },
@@ -286,7 +286,7 @@ export const TabOpenApiContract: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Radio className="w-5 h-5 text-indigo-400" />
                 <span className="text-[15px] font-mono text-white font-semibold">
-                  wss://telemetry.lexus-tx550h.direct4/v1/stream
+                  wss://telemetry.Heavy Overland Dynamics Platform-tx550h.dual_vector_torque/v1/stream
                 </span>
               </div>
               <button

@@ -96,11 +96,11 @@ export default function App() {
     csv += `Cornish-Fisher Mode,${enableCornishFisher ? 'Active' : 'Off'}\n\n`;
 
     csv += `SUMMARY METRICS\n`;
-    csv += `Parametric VaR ($),${riskResult.parametricVaRAmount.toFixed(2)}\n`;
+    csv += `Parametric VaR (UNITS),${riskResult.parametricVaRAmount.toFixed(2)}\n`;
     csv += `Parametric VaR (%),${(riskResult.parametricVaRPercent * 100).toFixed(4)}%\n`;
-    csv += `Cornish-Fisher VaR ($),${riskResult.cornishFisherVaRAmount.toFixed(2)}\n`;
+    csv += `Cornish-Fisher VaR (UNITS),${riskResult.cornishFisherVaRAmount.toFixed(2)}\n`;
     csv += `Cornish-Fisher VaR (%),${(riskResult.cornishFisherVaRPercent * 100).toFixed(4)}%\n`;
-    csv += `Expected Shortfall ($),${riskResult.expectedShortfallAmount.toFixed(2)}\n`;
+    csv += `Expected Shortfall (UNITS),${riskResult.expectedShortfallAmount.toFixed(2)}\n`;
     csv += `Expected Shortfall (%),${(riskResult.expectedShortfallPercent * 100).toFixed(4)}%\n`;
     csv += `Daily Volatility (%),${(riskResult.portfolioDailyVol * 100).toFixed(4)}%\n`;
     csv += `Annualized Volatility (%),${(riskResult.portfolioAnnualVol * 100).toFixed(4)}%\n`;
@@ -110,14 +110,14 @@ export default function App() {
     csv += `Fixed-Point Integer Units,${riskResult.fixedPointVaRUnits.toString()}\n\n`;
 
     csv += `ASSET POSITIONS & COMPONENT VAR DECOMPOSITION\n`;
-    csv += `Symbol,Name,Weight,Annual Vol,Skewness,Kurtosis,MVaR,Component VaR ($),Risk Contrib (%)\n`;
+    csv += `Symbol,Name,Weight,Annual Vol,Skewness,Kurtosis,MVaR,Component VaR (UNITS),Risk Contrib (%)\n`;
     riskResult.componentVaR.forEach((c) => {
       const a = assets.find((x) => x.symbol === c.symbol);
       csv += `${c.symbol},${a?.name ?? ''},${(c.weight * 100).toFixed(2)}%,${((a?.annualVol ?? 0) * 100).toFixed(1)}%,${a?.skewness ?? 0},${a?.excessKurtosis ?? 0},${(c.marginalVaR * 100).toFixed(3)}%,$${c.componentVaRAmount.toFixed(2)},${c.percentContribution.toFixed(2)}%\n`;
     });
 
     csv += `\nHISTORICAL STRESS SCENARIOS\n`;
-    csv += `Scenario Name,Year,Drawdown (%),Drawdown ($),Liquidity Cost ($),Total Loss ($),Tail Multiplier\n`;
+    csv += `Scenario Name,Year,Drawdown (%),Drawdown (UNITS),Liquidity Matrix (UNITS),Total Loss (UNITS),Tail Multiplier\n`;
     HISTORICAL_SHOCKS.forEach((sc) => {
       const res = simulateHistoricalShock(sc, assets, portfolioEquity, riskResult);
       csv += `"${sc.name}",${sc.year},${(res.portfolioDrawdownPercent * 100).toFixed(2)}%,$${res.portfolioDrawdownAmount.toFixed(2)},$${res.liquidityPenaltyAmount.toFixed(2)},$${res.totalLossAmount.toFixed(2)},${res.tailLossMultiplier.toFixed(2)}x\n`;
@@ -206,7 +206,7 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4 text-slate-500">
-            <span>Valuation Anchor: $125,000 USD</span>
+            <span>Specification Anchor: 20 kHz (0.48ms)</span>
             <span>·</span>
             <span>License: Apache 2.0 / MIT Whitelisted</span>
             <span>·</span>

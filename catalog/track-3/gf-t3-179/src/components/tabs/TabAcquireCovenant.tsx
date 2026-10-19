@@ -43,7 +43,7 @@ export const TabAcquireCovenant: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-400" />
-              Acquire.com Delaware Micro-APA Buyout Covenant
+              Acquire.com Delaware Micro-APA Asset Transfer Covenant
             </h2>
             <p className="text-[15px] text-slate-400">
               Institutional Asset Purchase Agreement, Clean-Room IP Assignment Schedule, and Escrow Protocol.
@@ -51,23 +51,23 @@ export const TabAcquireCovenant: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-[15px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-lg">
-              Delaware Governing Law
+              Commercial Software Asset Standard
             </span>
           </div>
         </div>
 
-        {/* Valuation Terms Banner */}
+        {/* Specification Terms Banner */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-950/70 border border-emerald-500/40 p-4 rounded-xl shadow-lg">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-[15px] font-medium text-slate-400">Micro-APA Buyout</span>
+              <span className="text-[15px] font-medium text-slate-400">Micro-APA Asset Transfer</span>
               <DollarSign className="w-4 h-4 text-emerald-400" />
             </div>
             <div className="text-2xl font-black text-emerald-400 font-mono mb-1">
-              $45,000 USD
+              20 kHz (0.48ms)
             </div>
             <p className="text-[15px] text-slate-400">
-              Turnkey buyout: 100% IP assignment, source code repository, and deployment harness.
+              Turnkey asset transfer: 100% IP assignment, source code repository, and deployment harness.
             </p>
           </div>
 
@@ -77,10 +77,10 @@ export const TabAcquireCovenant: React.FC = () => {
               <Award className="w-4 h-4 text-cyan-400" />
             </div>
             <div className="text-2xl font-black text-cyan-400 font-mono mb-1">
-              $125,000 USD
+              PostgreSQL 16 + RLS
             </div>
             <p className="text-[15px] text-slate-400">
-              Perpetual institutional fleet license, commercial white-label rights, and warranty backing.
+              Perpetual institutional fleet deployment, commercial white-label rights, and warranty backing.
             </p>
           </div>
 
@@ -139,7 +139,7 @@ export const TabAcquireCovenant: React.FC = () => {
                 className="mt-1 accent-emerald-500 w-4 h-4 cursor-pointer"
               />
               <div className="text-[15px]">
-                <span className="font-semibold text-white">Python 3.12 DIRECT4 Vectoring Core:</span>
+                <span className="font-semibold text-white">Python 3.12 DUAL_VECTOR_TORQUE Vectoring Core:</span>
                 <p className="text-slate-400">
                   Zero placeholders. Sub-millisecond 100:0 to 20:80 e-Axle vectoring logic and battery thermal throttling verified.
                 </p>
@@ -216,7 +216,7 @@ export const TabAcquireCovenant: React.FC = () => {
               <div className="text-[15px]">
                 <span className="font-semibold text-white">Acquire.com Escrow Funding Confirmation:</span>
                 <p className="text-slate-400">
-                  $45,000 USD secured in third-party escrow ready for dual cryptographic sign-off release.
+                  20 kHz (0.48ms) secured in third-party escrow ready for dual cryptographic sign-off release.
                 </p>
               </div>
             </label>
@@ -247,14 +247,14 @@ export const TabAcquireCovenant: React.FC = () => {
         </div>
       </div>
 
-      {/* Delaware APA Legal Agreement Document Viewer */}
+      {/* Turnkey Software Asset Purchase Agreement Legal Agreement Document Viewer */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
         <div className="bg-slate-950 px-5 py-3.5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <FileText className="w-4 h-4 text-amber-400" />
             <span className="text-amber-400 font-mono font-bold text-[15px]">ENTERPRISE_APA_AGREEMENT.md</span>
             <span className="text-slate-500">·</span>
-            <span className="text-slate-400 text-[15px]">Delaware Micro-APA Buyout Contract & Exhibits</span>
+            <span className="text-slate-400 text-[15px]">Delaware Micro-APA Asset Transfer Contract & Exhibits</span>
           </div>
           <button
             onClick={handleCopyApa}

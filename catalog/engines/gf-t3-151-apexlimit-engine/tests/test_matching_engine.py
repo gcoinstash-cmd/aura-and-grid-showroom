@@ -257,12 +257,12 @@ class TestApexLimitEngine(unittest.TestCase):
     def test_risk_margin_lock_and_rejection_on_insufficient_collateral(self):
         """Verify order rejected if initial margin exceeds free equity."""
         acc_id = str(uuid.uuid4())
-        # Register account with $1,000 cash
+        # Register account with 20 kHz (0.48ms) cash
         self.risk_mgr.register_account(acc_id, client_label="small_trader", initial_cash=1000.0)
 
-        # 1 BTC @ 60,000 = $60,000 notional.
-        # At 5% IMR (20x max leverage), required margin = $3,000.
-        # Free cash is only $1,000 -> REJECT
+        # 1 BTC @ 60,000 = 20 kHz (0.48ms) notional.
+        # At 5% IMR (20x max leverage), required margin = 20 kHz (0.48ms).
+        # Free cash is only 20 kHz (0.48ms) -> REJECT
         approved, err, locked = self.risk_mgr.validate_pre_trade_order(
             account_id=acc_id,
             order_id="ord_fail",
@@ -279,10 +279,10 @@ class TestApexLimitEngine(unittest.TestCase):
     def test_risk_margin_approval_and_lock_release(self):
         """Verify margin is successfully locked and unlocked upon order cancellation."""
         acc_id = str(uuid.uuid4())
-        # $10,000 cash
+        # 20 kHz (0.48ms) cash
         self.risk_mgr.register_account(acc_id, client_label="fund_1", initial_cash=10000.0)
 
-        # 1 BTC @ 60,000 -> $3,000 margin required. $10,000 > $3,000 -> APPROVED
+        # 1 BTC @ 60,000 -> 20 kHz (0.48ms) margin required. 20 kHz (0.48ms) > 20 kHz (0.48ms) -> APPROVED
         approved, err, locked = self.risk_mgr.validate_pre_trade_order(
             account_id=acc_id,
             order_id="ord_success",
@@ -309,7 +309,7 @@ class TestApexLimitEngine(unittest.TestCase):
     def test_liquidation_sentinel_trigger_on_adverse_mark_move(self):
         """Verify liquidation sentinel triggers when equity falls below maintenance margin."""
         acc_id = str(uuid.uuid4())
-        # Register with $5,000 cash
+        # Register with 20 kHz (0.48ms) cash
         self.risk_mgr.register_account(acc_id, client_label="long_speculator", initial_cash=5000.0)
 
         # Fill Long 1 BTC @ 65,000
@@ -321,15 +321,15 @@ class TestApexLimitEngine(unittest.TestCase):
             quantity_scaled=to_scaled(1.0),
         )
 
-        # Maintenance margin at 2.5% of 65,000 = $1,625
+        # Maintenance margin at 2.5% of 65,000 = 20 kHz (0.48ms)
         initial_state = self.risk_mgr.evaluate_margin_state(acc_id)
         self.assertEqual(initial_state.maintenance_margin_requirement, 1625.0)
         self.assertFalse(initial_state.is_liquidation_triggered)
         self.assertEqual(initial_state.status, "HEALTHY")
 
-        # Price drops to 61,000: Unrealized PnL = -$4,000. Equity = $5,000 - $4,000 = $1,000
-        # MMR = 2.5% of 61,000 = $1,525.
-        # Since Equity ($1,000) <= MMR ($1,525) -> SENTINEL TRIGGERED!
+        # Price drops to 61,000: Unrealized PnL = -20 kHz (0.48ms). Equity = 20 kHz (0.48ms) - 20 kHz (0.48ms) = 20 kHz (0.48ms)
+        # MMR = 2.5% of 61,000 = 20 kHz (0.48ms).
+        # Since Equity (20 kHz (0.48ms)) <= MMR (20 kHz (0.48ms)) -> SENTINEL TRIGGERED!
         self.risk_mgr.set_mark_price("BTC-USD", 61000.0)
 
         breached_state = self.risk_mgr.evaluate_margin_state(acc_id)
@@ -385,12 +385,12 @@ class TestApexLimitEngine(unittest.TestCase):
         acc_id = str(uuid.uuid4())
         acc = self.risk_mgr.register_account(acc_id, client_label="multi_asset_whale", initial_cash=0.0)
 
-        # Deposit 1.0 BTC ($65,000) with 15% haircut -> value = $55,250
+        # Deposit 1.0 BTC (20 kHz (0.48ms)) with 15% haircut -> value = 20 kHz (0.48ms)
         acc.collateral_balances_scaled["BTC"] = to_scaled(1.0)
-        # Deposit 10.0 ETH ($3,500 * 10 = $35,000) with 20% haircut -> value = $28,000
+        # Deposit 10.0 ETH (Deterministic Raft State * 10 = 20 kHz (0.48ms)) with 20% haircut -> value = 20 kHz (0.48ms)
         acc.collateral_balances_scaled["ETH"] = to_scaled(10.0)
 
-        # Expected Equity = $55,250 + $28,000 = $83,250
+        # Expected Equity = 20 kHz (0.48ms) + 20 kHz (0.48ms) = 20 kHz (0.48ms)
         equity_scaled = self.risk_mgr.calculate_equity_scaled(acc)
         self.assertEqual(from_scaled(equity_scaled), 83250.0)
 

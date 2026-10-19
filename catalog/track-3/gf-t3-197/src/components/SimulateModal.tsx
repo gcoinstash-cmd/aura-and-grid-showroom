@@ -42,7 +42,7 @@ export const SimulateModal: React.FC<SimulateModalProps> = ({
         </div>
 
         <p className="text-base text-slate-300 leading-relaxed">
-          Select a test profile to compute dynamic rear toe deflection (±4.0°) and DIRECT4 torque distribution across the active chassis:
+          Select a test profile to compute dynamic rear toe deflection (±4.0°) and DUAL_VECTOR_TORQUE torque distribution across the active chassis:
         </p>
 
         <div className="space-y-3">

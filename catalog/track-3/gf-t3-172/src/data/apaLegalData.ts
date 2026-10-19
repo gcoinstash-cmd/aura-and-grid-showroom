@@ -17,27 +17,26 @@ BUYER:   The Purchasing Entity / Micro-PE Consortium ("Buyer"), via Acquire.com.
 
 WHEREAS, Seller owns all right, title, and proprietary intellectual property
 interest in and to the production software asset designated as:
-"GF-T3-172: Lexus TX 500h F SPORT Performance Core (v1.0.0-PROD)"
+"GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core (v1.0.0-PROD)"
 (the "Purchased Asset"); and
 
 WHEREAS, Buyer desires to purchase from Seller, and Seller desires to sell and
 assign to Buyer, all of Seller's right, title, interest, and source code in and to
-the Purchased Asset for the agreed purchase price of FORTY-FIVE THOUSAND DOLLARS
-($45,000.00 USD), upon the covenants and warranties set forth herein.
+the Purchased Asset for the agreed DEPLOYMENT SPECIFICATION ofDeterministic Telemetry Verified(Delaware Institutional Covenants), upon the covenants and warranties set forth herein.
 
 NOW, THEREFORE, the parties agree as follows:
 
 1. PURCHASED ASSETS & SCHEDULE
 Seller hereby sells, assigns, conveys, transfers, and delivers to Buyer:
 (a) The complete Git repository, version histories, branches, and release tags;
-(b) The HotStuff BFT distributed consensus engine & DIRECT4 torque vectoring algorithms;
+(b) The HotStuff BFT distributed consensus engine & DUAL_VECTOR_TORQUE torque vectoring algorithms;
 (c) The partitioned PostgreSQL 16 schema, triggers, and Merkle tree validation routines;
 (d) The OpenAPI 3.1 specification, client SDK generators, and WebSocket telemetry contracts;
 (e) The multi-stage Docker container configs, PyTest suites, and Cloud Run scripts;
 (f) All copyrights, trade secrets, moral rights, and patentable trade-dress designs.
 
-2. PURCHASE PRICE & ESCROW MECHANISM
-The total consideration shall be Forty-Five Thousand United States Dollars ($45,000.00 USD),
+2. DEPLOYMENT SPECIFICATION & ESCROW MECHANISM
+The total consideration shall be Delaware institutional asset covenants,
 payable into Escrow.com or Acquire Escrow. Funds shall be released to Seller upon Buyer's
 receipt and cryptographic verification of the transfer manifest within forty-eight (48) hours.
 
@@ -48,7 +47,7 @@ Seller expressly warrants and represents that:
 (b) Free of Encumbrances: The Purchased Asset is free and clear of all liens,
     claims, security interests, pledges, or third-party royalty covenants.
 (c) Non-Infringement: The implementation does not violate or infringe upon any patent,
-    trademark, copyright, or trade secret of Toyota Motor Corporation, Lexus, or any third party.
+    trademark, copyright, or trade secret of Toyota Motor Corporation, Heavy Overland Dynamics Platform, or any third party.
 
 4. POST-CLOSING TRANSITION & HANDOFF
 Within twenty-four (24) hours of Escrow confirmation, Seller shall deliver:
@@ -70,7 +69,7 @@ export const DEPENDENCY_WHITELIST = [
 ];
 
 export const ESCROW_CHECKLIST_ITEMS = [
-  { id: 'item-1', label: 'Escrow.com inspection deposit ($45,000 USD secured in escrow account)', defaultChecked: true },
+  { id: 'item-1', label: 'Escrow.com inspection deposit (20 kHz (0.48ms) secured in escrow account)', defaultChecked: true },
   { id: 'item-2', label: 'Primary GitHub repository full administrator transfer without forks', defaultChecked: true },
   { id: 'item-3', label: 'Cryptographic commit SHA-256 hash match against master ledger', defaultChecked: true },
   { id: 'item-4', label: 'Clean-room license scan zero copyleft (0% GPL / 0% AGPL) audit certificate', defaultChecked: true },

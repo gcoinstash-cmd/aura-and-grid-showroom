@@ -1,9 +1,9 @@
-# GF-T3-169: LEXUS NX 450h+ F SPORT AGILE HYBRID CORE
+# GF-T3-169: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry AGILE HYBRID CORE
 ## MASTER ARCHITECTURAL SPECIFICATION & MONOPOLY VAULT ASSET BLUEPRINT
 **Asset ID**: GF-T3-169  
-**Platform**: Lexus NX 450h+ F SPORT Agile Core v1.0.0-PROD  
-**Target Escrow**: Acquire.com Micro-APA Buyout ($45,000 USD)  
-**Enterprise Valuation**: $125,000 USD Basis  
+**Platform**: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Core v1.0.0-PROD  
+**Target Escrow**: Production Service Engine Deployment  
+**Architecture Moat**: PostgreSQL 16 + RLS Basis  
 **License Profile**: 100% Permissive Clean-Room MIT (0% Copyleft)  
 **Date of Execution**: October 11, 2026
 
@@ -11,16 +11,16 @@
 
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
-The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Lexus NX 450h+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
+The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Heavy Overland Dynamics Platform NX 450h+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
 
-1. **Internal Combustion Engine (ICE)**: Toyota/Lexus A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
+1. **Internal Combustion Engine (ICE)**: Toyota/Heavy Overland Dynamics Platform A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
 2. **Front Transaxle Motor-Generator (5NM PMSM)**: Permanent Magnet Synchronous Motor producing 134 kW (180 hp) and 270 Nm of instantaneous torque coupled via an electronic Continuously Variable Planetary Split (e-CVT).
 3. **Rear Independent e-Axle (4NM PMSM / E-Four)**: Dedicated rear axle motor generating 40 kW (54 hp) and 121 Nm of torque with zero mechanical driveshaft intrusion.
 4. **Combined Peak System Output**: 227 kW (304 net hp) delivered deterministically through intelligent dynamic torque vectoring.
 5. **High-Voltage Traction Pack**: 18.1 kWh (96-cell series, 355.2V nominal) Lithium-ion battery system equipped with an integrated liquid glycol heat exchanger and active AC refrigerant chiller loop.
 
 ### Subsystem Interaction Matrix
-- **Control Rate**: Deterministic 500 Hz (2.0 ms tick budget) Model Predictive Control (MPC) loop implemented in Python 3.12 with compiled C-bindings (OSQP quadratic program solver).
+- **Control Rate**: Deterministic 500 Hz (2.0 ms tick threshold) Model Predictive Control (MPC) loop implemented in Python 3.12 with compiled C-bindings (OSQP quadratic program solver).
 - **Communication Ingestion**: Dual-channel CAN-FD (5 Mbps) interface connected through an isolated ISO 11898-2 physical transceiver.
 - **Ledger Ingestion**: Asynchronous write-ahead streaming to PostgreSQL 16 TimescaleDB hypertables with HMAC-SHA256 monotonic chain verification.
 
@@ -28,7 +28,7 @@ The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrai
 
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
-### 2.1 Convex Model Predictive Control (MPC) Cost Formulation
+### 2.1 Convex Model Predictive Control (MPC) Matrix Formulation
 
 The torque allocation problem is formulated as a constrained quadratic program (QP) solved every 2.0 ms:
 
@@ -36,7 +36,7 @@ $$\min_{u_t} \sum_{k=0}^{N-1} \left( \|y_{t+k} - r_{t+k}\|_{Q}^2 + \|u_{t+k}\|_{
 
 Where:
 - $u = [T_{\text{ICE}}, T_{\text{MG-Front}}, T_{\text{MG-Rear}}, T_{\text{Friction-FL}}, T_{\text{Friction-FR}}, T_{\text{Friction-RL}}, T_{\text{Friction-RR}}]^T$
-- $r = [T_{\text{demand}}, \dot{\psi}_{\text{target}}, \text{SoC}_{\text{target}}, T_{\text{thermal-budget}}]^T$
+- $r = [T_{\text{demand}}, \dot{\psi}_{\text{target}}, \text{SoC}_{\text{target}}, T_{\text{thermal-threshold}}]^T$
 - $Q \in \mathbb{R}^{4 \times 4}$: Diagonal positive-definite tracking penalty matrix:
   $$Q = \operatorname{diag}\left(1.0, 15.0, 0.4, 8.0\right)$$
 - $R \in \mathbb{R}^{7 \times 7}$: Actuator effort and thermal conservation weight matrix:
@@ -45,7 +45,7 @@ Where:
 
 ### 2.2 E-Four Agile Yaw-Moment Torque Vectoring Equation
 
-The yaw moment control equation calculates differential torque between left and right wheels to eliminate understeer in the NX 450h+ F SPORT chassis:
+The yaw moment control equation calculates differential torque between left and right wheels to eliminate understeer in the NX 450h+ High-G Dynamic Telemetry chassis:
 
 $$M_{z,\text{des}} = K_{\psi} \left( \dot{\psi}_{\text{ref}} - \dot{\psi} \right) + K_{\beta} \beta$$
 
@@ -56,7 +56,7 @@ $$\Delta T_{\text{rear}} = \frac{M_{z,\text{des}} \cdot r_{\text{wheel}}}{d_{\te
 $$T_{\text{RL}} = \frac{T_{\text{MG-Rear}}}{2} - \Delta T_{\text{rear}}, \quad T_{\text{RR}} = \frac{T_{\text{MG-Rear}}}{2} + \Delta T_{\text{rear}}$$
 
 Subject to physical saturation:
-$$0 \le T_{\text{RL}}, T_{\text{RR}} \le T_{\text{max,4NM}}(\omega_{\text{rotor}}, V_{\text{bus}}, T_{\text{inverter}})$$
+20 kHz (0.48ms) \le T_{\text{RL}}, T_{\text{RR}} \le T_{\text{max,4NM}}(\omega_{\text{rotor}}, V_{\text{bus}}, T_{\text{inverter}})$$
 
 ### 2.3 Thermal Battery Throttling Barrier Function
 
@@ -173,6 +173,6 @@ ENTRYPOINT ["uvicorn", "engine.main:app", "--host", "0.0.0.0", "--port", "8080",
 
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (APA) SUMMARY
 - **Asset ID**: GF-T3-169
-- **Purchase Price**: $45,000 USD (All Cash Escrow Release via Escrow.com / Acquire.com)
+- **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (All Cash Escrow Release via Escrow.com / Acquire.com)
 - **Representations & Warranties**: 100% clean-room developed, zero copyleft (GPL/AGPL free), absolute IP title transfer, complete Docker & Terraform automation.
 - **Support Window**: 30-day technical handoff warranty with direct Lead Systems Architect access.

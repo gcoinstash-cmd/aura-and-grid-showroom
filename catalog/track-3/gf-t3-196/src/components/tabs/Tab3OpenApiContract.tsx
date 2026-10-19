@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FileCode, Globe, Radio, Play, Check, Copy } from 'lucide-react';
 
 export const Tab3OpenApiContract: React.FC = () => {
-  const [selectedEndpoint, setSelectedEndpoint] = useState<'tick' | 'state' | 'direct4' | 'audit'>('tick');
+  const [selectedEndpoint, setSelectedEndpoint] = useState<'tick' | 'state' | 'dual_vector_torque' | 'audit'>('tick');
   const [testResponse, setTestResponse] = useState<string | null>(null);
   const [isCalling, setIsCalling] = useState(false);
   const [copiedYaml, setCopiedYaml] = useState(false);
@@ -22,7 +22,7 @@ export const Tab3OpenApiContract: React.FC = () => {
             rack_angle_deg: 3.42,
             steering_ratio: 12.43,
             haptic_torque_nm: 1.82,
-            direct4_split: { front_pct: 65.0, rear_pct: 35.0 },
+            dual_vector_torque_split: { front_pct: 65.0, rear_pct: 35.0 },
             active_can_bus: "BUS_A",
             divergence_check: "PASS (<0.40 deg)",
             hmac_sha256: "9a7f311c8901df4b423188d01f8e91cb319d67710c55ea9120e74b330e71ba02"
@@ -37,7 +37,7 @@ export const Tab3OpenApiContract: React.FC = () => {
           rack_limit_deg: [-25.0, 25.0],
           can_redundancy: { bus_a: "HEALTHY", bus_b: "HEALTHY", active: "BUS_A" }
         }, null, 2));
-      } else if (selectedEndpoint === 'direct4') {
+      } else if (selectedEndpoint === 'dual_vector_torque') {
         setTestResponse(JSON.stringify({
           front_e_axle_kw: 150,
           rear_e_axle_kw: 80,
@@ -60,7 +60,7 @@ export const Tab3OpenApiContract: React.FC = () => {
   const handleCopyYaml = () => {
     navigator.clipboard.writeText(`openapi: 3.1.0
 info:
-  title: Lexus RZ 450e Steer-by-Wire & DIRECT4 Telemetry API
+  title: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE Telemetry API
   version: 1.0.0-PROD
 paths:
   /v1/telemetry/sbw/tick:
@@ -69,9 +69,9 @@ paths:
   /v1/telemetry/sbw/state:
     get:
       summary: Get Steer-by-Wire Subsystem Health
-  /v1/direct4/torque-split:
+  /v1/dual_vector_torque/torque-split:
     post:
-      summary: Direct4 Dual e-Axle Dynamic Torque Allocation
+      summary: DualVectorTorque Dual e-Axle Dynamic Torque Allocation
   /v1/audit/hmac-chain/latest:
     get:
       summary: Audit HMAC-SHA256 Monotonic Ledger Integrity`);
@@ -133,15 +133,15 @@ paths:
           </button>
 
           <button
-            onClick={() => { setSelectedEndpoint('direct4'); setTestResponse(null); }}
+            onClick={() => { setSelectedEndpoint('dual_vector_torque'); setTestResponse(null); }}
             className={`px-4 py-2 rounded-lg text-base font-bold flex items-center gap-2 transition cursor-pointer ${
-              selectedEndpoint === 'direct4'
+              selectedEndpoint === 'dual_vector_torque'
                 ? 'bg-purple-500/20 border border-purple-500 text-purple-300'
                 : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-slate-200'
             }`}
           >
             <span className="text-xs px-2 py-0.5 rounded font-mono font-extrabold bg-purple-500 text-slate-950">POST</span>
-            <span>/v1/direct4/torque-split</span>
+            <span>/v1/dual_vector_torque/torque-split</span>
           </button>
 
           <button
@@ -200,7 +200,7 @@ paths:
                 </div>
               )}
 
-              {selectedEndpoint === 'direct4' && (
+              {selectedEndpoint === 'dual_vector_torque' && (
                 <div className="text-base text-slate-300 space-y-3 font-mono text-sm">
                   <p className="text-slate-400 font-sans">
                     Computes real-time dynamic front/rear e-Axle torque split based on yaw acceleration and steering velocity.

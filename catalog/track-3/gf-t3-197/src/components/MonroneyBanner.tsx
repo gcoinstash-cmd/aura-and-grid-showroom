@@ -43,7 +43,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-197
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          TX 500h DRS CORE
+          Multi-Node High-Output Core DRS CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap items-center gap-1">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
@@ -53,10 +53,10 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus TX 500h F SPORT Performance Core
+        Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
-        Turnkey micro-APA deliverable with Dynamic Rear Steering (DRS), DIRECT4 rear eAxle vectoring, and PostgreSQL 16 HMAC ledger.
+        Turnkey micro-APA deliverable with Dynamic Rear Steering (DRS), DUAL_VECTOR_TORQUE rear eAxle vectoring, and PostgreSQL 16 HMAC ledger.
       </p>
 
       {/* c) Action Buttons (STRICT SINGLE HORIZONTAL ROW, NEVER VERTICALLY STACKED) */}
@@ -92,15 +92,15 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400 font-medium">
         <span className="inline-flex items-center gap-1 text-slate-200">
           <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
-          <span>Buyout: <strong className="text-white font-mono">$45,000 USD</strong></span>
+          <span>Frequency: <strong className="text-white font-mono">20 kHz</strong></span>
         </span>
         <span className="text-slate-600">|</span>
         <span className="inline-flex items-center gap-1 text-slate-200">
-          <span>Enterprise: <strong className="text-amber-300 font-mono">$125,000 USD</strong></span>
+          <span>Latency: <strong className="text-amber-300 font-mono">0.48ms</strong></span>
         </span>
         <span className="text-slate-600">|</span>
         <span className="inline-flex items-center gap-1 text-slate-300">

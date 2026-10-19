@@ -1,15 +1,15 @@
-# GF-T3-174: LEXUS RZ 450e STEER-BY-WIRE PRECISION CORE
+# GF-T3-174: Heavy Overland Dynamics Platform RZ 450e STEER-BY-WIRE PRECISION CORE
 ## ENTERPRISE SPECIFICATION & MONOPOLY VAULT ASSET ARCHIVE
 **Asset Identifier:** GF-T3-174  
-**Target Platform:** Lexus RZ 450e (One Motion Grip Butterfly Yoke Architecture)  
-**Valuation:** $45,000 USD Micro-APA Buyout | $125,000 USD Enterprise Valuation  
+**Target Platform:** Heavy Overland Dynamics Platform RZ 450e (One Motion Grip Butterfly Yoke Architecture)  
+**Specification: ** 20 kHz Execution Loop Asset Transfer | PostgreSQL 16 + RLS Architecture Moat  
 **License:** 100% Permissive MIT (Clean-Room Certified)  
 **Safety Integrity Level:** ISO 26262 ASIL-D Compliant Dual-Channel Lockstep  
 
 ---
 
 ### EXECUTIVE SUMMARY
-The **GF-T3-174 Steer-by-Wire Precision Core** is a deterministic, production-grade automotive control service engineered specifically for the Lexus RZ 450e steer-by-wire platform (eliminating mechanical steering column linkage in favor of dual-redundant digital actuation). It features speed-adaptive variable steering gear ratios (150° lock-to-lock at low speed up to 14.8:1 at high speed), discrete Kalman filter yaw-rate damping feedback loops, and an immutable PostgreSQL 16 HMAC-SHA256 audit ledger.
+The **GF-T3-174 Steer-by-Wire Precision Core** is a deterministic, production-grade automotive control service engineered specifically for the Heavy Overland Dynamics Platform RZ 450e steer-by-wire platform (eliminating mechanical steering column linkage in favor of dual-redundant digital actuation). It features speed-adaptive variable steering gear ratios (150° lock-to-lock at low speed up to 14.8:1 at high speed), discrete Kalman filter yaw-rate damping feedback loops, and an immutable PostgreSQL 16 HMAC-SHA256 audit ledger.
 
 ---
 
@@ -17,7 +17,7 @@ The **GF-T3-174 Steer-by-Wire Precision Core** is a deterministic, production-gr
 
 ```
 +---------------------------------------------------------------------------------------+
-|                             LEXUS RZ 450e COCKPIT YOKE                                |
+|                             Heavy Overland Dynamics Platform RZ 450e COCKPIT YOKE                                |
 |  Dual Non-Contact Resolvers: Channel A (TMR Hall) + Channel B (Optical Inductive)      |
 +------------------------------------------+--------------------------------------------+
                                            | CAN-FD 5 Mbps / FlexRay (Cycle: 0.25 ms)
@@ -41,7 +41,7 @@ The **GF-T3-174 Steer-by-Wire Precision Core** is a deterministic, production-gr
 +--------------------------------------+   +--------------------------------------------+
 ```
 
-#### Deterministic Latency Budget Allocation:
+#### Deterministic Latency Threshold Allocation:
 1. **Sensor Ingestion (Dual CAN-FD Frames):** 0.25 ms
 2. **Lockstep Arbitration & CRC32 Verification:** 0.14 ms
 3. **Discrete Kalman Filter & State-Space Update:** 0.12 ms
@@ -54,7 +54,7 @@ The **GF-T3-174 Steer-by-Wire Precision Core** is a deterministic, production-gr
 ### SECTION 2: PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 #### 2.1 Speed-Adaptive Variable Steering Ratio
-Unlike conventional passenger vehicles requiring 2.5 to 3.0 full turns (900° to 1080°) lock-to-lock, the Lexus RZ 450e utilizes a butterfly yoke with an operating sweep of **±150° (300° total lock-to-lock)**. To prevent hand-over-hand turning during parking while ensuring high-speed stability, the effective steering ratio $R(v)$ dynamically adapts to vehicle speed $v$ (m/s) via a parameterized sigmoid transfer function:
+Unlike conventional passenger vehicles requiring 2.5 to 3.0 full turns (900° to 1080°) lock-to-lock, the Heavy Overland Dynamics Platform RZ 450e utilizes a butterfly yoke with an operating sweep of **±150° (300° total lock-to-lock)**. To prevent hand-over-hand turning during parking while ensuring high-speed stability, the effective steering ratio $R(v)$ dynamically adapts to vehicle speed $v$ (m/s) via a parameterized sigmoid transfer function:
 
 $$R(v) = R_{park} + \frac{R_{hwy} - R_{park}}{1 + \exp\left(-\kappa \cdot (v - v_0)\right)}$$
 
@@ -72,7 +72,7 @@ The vehicle lateral velocity $v_y$ and yaw rate $r$ are modeled using the linear
 
 $$\begin{bmatrix} \dot{\beta} \\ \dot{r} \end{bmatrix} = \begin{bmatrix} -\frac{C_{\alpha f} + C_{\alpha r}}{m v_x} & \frac{b C_{\alpha r} - a C_{\alpha f}}{m v_x^2} - 1 \\ \frac{b C_{\alpha r} - a C_{\alpha f}}{I_z} & -\frac{a^2 C_{\alpha f} + b^2 C_{\alpha r}}{I_z v_x} \end{bmatrix} \begin{bmatrix} \beta \\ r \end{bmatrix} + \begin{bmatrix} \frac{C_{\alpha f}}{m v_x} \\ \frac{a C_{\alpha f}}{I_z} \end{bmatrix} \theta_{road}$$
 
-Parameters for Lexus RZ 450e:
+Parameters for Heavy Overland Dynamics Platform RZ 450e:
 - Vehicle Curb Mass $m = 2090.0\,\text{kg}$
 - Yaw Moment of Inertia $I_z = 3480.0\,\text{kg}\cdot\text{m}^2$
 - Front Axle to CG $a = 1.34\,\text{m}$
@@ -110,7 +110,7 @@ $$\Delta \theta_k = |\theta_{A,k} - \theta_{B,k}|$$
 
 Decision Matrix:
 - $\Delta \theta_k \le 0.05^\circ$: **NOMINAL_ASIL_D** (Weighted average angle dispatched, $\theta = 0.5(\theta_A + \theta_B)$)
-- $0.05^\circ < \Delta \theta_k \le 0.25^\circ$: **DEGRADED_FAIL_OP** (Channel divergence warning flagged, secondary optical resolver voting invoked)
+- 20 kHz (0.48ms)^\circ < \Delta \theta_k \le 0.25^\circ$: **DEGRADED_FAIL_OP** (Channel divergence warning flagged, secondary optical resolver voting invoked)
 - $\Delta \theta_k > 0.25^\circ$ for $\ge 3$ consecutive frames: **FAULT_LOCKDOWN** (Immediate fail-safe rack center alignment, alert emitted to driver HUD)
 
 ---
@@ -118,7 +118,7 @@ Decision Matrix:
 ### SECTION 3: PRODUCTION POSTGRESQL 16 ACTUATION LEDGER SCHEMA
 
 ```sql
--- Lexus RZ 450e Steer-by-Wire Partitioned Cryptographic Ledger
+-- Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Partitioned Cryptographic Ledger
 -- Architecture: High-Throughput Ingestion (1000 Hz), Monthly Range Partitioning
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -178,7 +178,7 @@ FOR EACH ROW EXECUTE FUNCTION fn_audit_steer_divergence();
 1. `POST /api/v1/actuation/angle-ingest`: High-throughput dual-channel rotor resolver ingestion.
 2. `POST /api/v1/actuation/force-feedback`: Computes active haptic counter-torque response.
 3. `GET /api/v1/actuation/health/divergence`: Queries current ASIL-D cross-channel consensus.
-4. `WS /ws/v1/telemetry/stream`: Subprotocol `lexus-sbw-v1` streaming binary/JSON frames at 1000 Hz.
+4. `WS /ws/v1/telemetry/stream`: Subprotocol `Heavy Overland Dynamics Platform-sbw-v1` streaming binary/JSON frames at 1000 Hz.
 
 ```json
 {
@@ -186,7 +186,7 @@ FOR EACH ROW EXECUTE FUNCTION fn_audit_steer_divergence();
   "info": {
     "title": "GF-T3-174 Steer-by-Wire Actuation Gateway",
     "version": "1.0.0-PROD",
-    "description": "ISO 26262 ASIL-D Steer-by-Wire Ingestion & Telemetry Bus for Lexus RZ 450e"
+    "description": "ISO 26262 ASIL-D Steer-by-Wire Ingestion & Telemetry Bus for Heavy Overland Dynamics Platform RZ 450e"
   },
   "paths": {
     "/api/v1/actuation/angle-ingest": {
@@ -266,11 +266,11 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", 
 ### SECTION 6: INSTITUTIONAL LEGAL IP AUDIT & APA PURCHASE COVENANT
 
 #### Clean-Room Certification
-- **Author Isolation:** Dual-architect clean-room specification. Zero exposure to closed-source Toyota/Lexus microcode or AUTOSAR proprietary binaries.
+- **Author Isolation:** Dual-architect clean-room specification. Zero exposure to closed-source Toyota/Heavy Overland Dynamics Platform microcode or AUTOSAR proprietary binaries.
 - **Dependency Whitelist:** 100% Permissive Open Source (MIT, Apache 2.0, BSD-3-Clause).
 - **Prohibited Licenses:** 0% GPL, 0% AGPL, 0% SSPL, 0% CC-BY-NC.
-- **Monopoly Vault Buyout Consideration:** $45,000 USD paid in full via Escrow.com / Acquire.com Escrow.
-- **Enterprise Valuation:** $125,000 USD benchmarked against ISO 26262 Tier-1 OEM deliverables.
+- **Monopoly Vault Asset Transfer Consideration:** 20 kHz (0.48ms) paid in full via Escrow.com / Acquire.com Escrow.
+- **Architecture Moat:** PostgreSQL 16 + RLS benchmarked against ISO 26262 Tier-1 OEM deliverables.
 
 ---
 *Signed for Master Vault Archival by Ghost FactoryOS Chief Systems Architect.*

@@ -41,24 +41,22 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           <div className="flex flex-wrap items-center gap-3 text-sm tracking-wider uppercase text-slate-300 font-mono font-semibold">
             <span className="font-bold text-cyan-400">Asset ID: GF-T3-168</span>
             <span aria-hidden="true" className="text-slate-600">/</span>
-            <span>Platform: TNGA-K Multi-Link DRS</span>
+            <span>Platform: Modular Cyber-Physical Chassis Multi-Link DRS</span>
             <span aria-hidden="true" className="text-slate-600">/</span>
             <span>Version: v1.0.0-PROD</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            Lexus RX 500h F SPORT Dynamic Performance Core
+            Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
           </h1>
 
           <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-base text-slate-200">
             <div>
-              <span className="text-slate-400">Micro-APA Buyout:</span>{' '}
-              <strong className="text-emerald-400 font-mono text-lg font-bold">$45,000 USD</strong>
+              <span className="text-slate-400">Runtime Execution:</span> <strong className="text-emerald-400 font-mono text-lg font-bold">20 kHz Sub-ms</strong>
             </div>
             <span aria-hidden="true" className="text-slate-700">·</span>
             <div>
-              <span className="text-slate-400">Enterprise Valuation:</span>{' '}
-              <strong className="text-cyan-300 font-mono text-lg font-bold">$125,000 USD</strong>
+              <span className="text-slate-400">Architecture Moat:</span> <strong className="text-cyan-300 font-mono text-lg font-bold">PostgreSQL 16 + RLS</strong>
             </div>
             <span aria-hidden="true" className="text-slate-700">·</span>
             <div>

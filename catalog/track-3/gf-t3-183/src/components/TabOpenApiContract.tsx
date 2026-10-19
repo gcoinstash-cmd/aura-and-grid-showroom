@@ -53,9 +53,9 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ state })
       },
     },
     torque_bias: {
-      title: 'Front/Rear Torque Bias Commands (Direct4 Allocation)',
+      title: 'Front/Rear Torque Bias Commands (DualVectorTorque Allocation)',
       endpoint: 'POST /api/v1/powertrain/torque-bias',
-      wsChannel: 'telemetry:powertrain.direct4',
+      wsChannel: 'telemetry:powertrain.dual_vector_torque',
       frequency: '500 Hz Real-Time Bus',
       samplePayload: {
         timestamp_ns: Date.now() * 1000000,
@@ -63,9 +63,9 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ state })
         command: {
           front_eaxle_nm: state.frontTorqueNm,
           rear_eaxle_nm: state.rearTorqueNm,
-          front_percentage: state.direct4SplitFront,
-          rear_percentage: state.direct4SplitRear,
-          control_mode: state.throttleDemand < 0 ? 'REGEN_DECEL_BIAS' : 'DYNAMIC_DIRECT4_NOMINAL',
+          front_percentage: state.dual_vector_torqueSplitFront,
+          rear_percentage: state.dual_vector_torqueSplitRear,
+          control_mode: state.throttleDemand < 0 ? 'REGEN_DECEL_BIAS' : 'DYNAMIC_DUAL_VECTOR_TORQUE_NOMINAL',
         },
         inverter_limits: {
           front_sic_max_amps: 260.0,
@@ -180,7 +180,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ state })
                 : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200'
             }`}
           >
-            <div className="text-xs font-mono uppercase">Direct4 Control</div>
+            <div className="text-xs font-mono uppercase">DualVectorTorque Control</div>
             <div className="text-[15px] font-bold text-white mt-1">Torque Bias Command</div>
             <div className="text-xs text-slate-400 mt-1">500 Hz Real-Time</div>
           </button>

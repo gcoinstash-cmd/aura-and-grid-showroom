@@ -30,7 +30,7 @@ export const CowlAeroTab: React.FC<CowlAeroTabProps> = ({
   } = telemetry;
 
   const pythonCoreCode = `"""
-GF-T3-189: Lexus LC 500 Convertible Structural Aero Core
+GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core
 Proprietary Cowl Resonant Damper & Boundary-Layer Vortex Suppression Engine
 Target: URZ100 Platform (5.0L 2UR-GSE V8)
 Language: Python 3.12 (Pure Standard Library + NumPy, Zero Copyleft Dependencies)
@@ -69,7 +69,7 @@ class CowlAeroMitigationEngine:
     Mitigates convertible cowl shake (18-34 Hz) and cabin buffeting.
     """
     
-    # Calibrated physical constants for LC 500 Convertible
+    # Calibrated physical constants for High-Aero Grand Touring Telemetry Core Convertible
     COWL_MASS_KG = 34.2
     BASE_CLOSED_NATURAL_FREQ_HZ = 26.8
     BASE_OPEN_NATURAL_FREQ_HZ = 19.4
@@ -214,7 +214,7 @@ class CowlAeroMitigationEngine:
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="text-base font-medium text-slate-300">
-                Lexus Soft-Top Roof
+                Heavy Overland Dynamics Platform Soft-Top Roof
               </label>
               <span className="text-base font-mono font-bold text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 px-2 py-0.5 rounded">
                 {roofState}
@@ -317,7 +317,7 @@ class CowlAeroMitigationEngine:
               <div className="flex items-center justify-between mb-4">
                 <span className="text-base font-bold text-slate-200 flex items-center gap-2">
                   <Wind className="w-5 h-5 text-amber-400" />
-                  LC 500 Convertible Wind Tunnel Aero & Cowl Deflection Vector
+                  High-Aero Grand Touring Telemetry Core Convertible Wind Tunnel Aero & Cowl Deflection Vector
                 </span>
                 <span className="text-base font-mono text-slate-400">
                   Laminar Boundary Layer · Shear Layer Bleed Active
@@ -408,7 +408,7 @@ class CowlAeroMitigationEngine:
                     </g>
                   )}
 
-                  {/* Car Profile Silhouette: Lexus LC 500 Convertible */}
+                  {/* Car Profile Silhouette: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible */}
                   <g fill="none" stroke="#94a3b8" strokeWidth="2.5">
                     {/* Front nose / Spindle grille area */}
                     <path d="M 120 195 L 140 180 L 190 175 L 340 165 L 430 115 L 490 112" />

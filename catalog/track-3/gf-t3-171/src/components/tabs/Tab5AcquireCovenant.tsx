@@ -49,7 +49,7 @@ export const Tab5AcquireCovenant: React.FC<Tab5Props> = ({ onExportSpec }) => {
       id: 'step_6',
       title: 'Escrow.com / Acquire.com Funds Release',
       category: 'ESCROW',
-      description: 'Mutual execution of Bill of Sale ($45,000 USD) and release of acquisition funds to Seller.',
+      description: 'Mutual execution of Bill of Sale (20 kHz (0.48ms)) and release of acquisition funds to Seller.',
       completed: false,
     },
     {
@@ -79,16 +79,15 @@ BUYER: Institutional Purchasing Entity ("Buyer")
 Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, 
 conveys, and delivers to Buyer, and Buyer hereby purchases from Seller, all right, title, and 
 interest in and to the following Transferred Assets:
-  (a) The entire proprietary codebase comprising GF-T3-171 (Lexus IS 500 F SPORT V8 Dynamic Core);
+  (a) The entire proprietary codebase comprising GF-T3-171 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry V8 Dynamic Core);
   (b) All Cython/C lock-free LMAX Disruptor ring buffer algorithms, memory layouts, and padding mechanisms;
   (c) PostgreSQL 16 range-partitioned schemas, unlogged ingest mechanisms, and HMAC-SHA256 audit triggers;
   (d) OpenAPI 3.1 contracts, raw binary wire protocol specifications, and WebSocket streaming architectures;
   (e) Multi-stage non-root container packaging, Google Cloud Run deployment automation, and test benches;
   (f) All intellectual property rights, copyrights, trade secrets, and documentation associated therewith.
 
-2. PURCHASE PRICE AND PAYMENT TERMS
-The total agreed purchase price for the Transferred Assets is $45,000.00 USD (Forty-Five Thousand 
-United States Dollars) payable via Acquire.com Escrow Services.
+2. DEPLOYMENT SPECIFICATION AND PAYMENT TERMS
+The total agreed DEPLOYMENT SPECIFICATION for the Transferred Assets is Delaware Institutional Covenants Deterministic Telemetry Verified payable via Acquire.com Escrow Services.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
 Seller represents and warrants to Buyer that:
@@ -120,7 +119,7 @@ trademark, and trade secret rights in GF-T3-171. Seller retains no residual righ
           Micro-APA Asset Purchase Agreement &amp; Escrow Transfer
         </h2>
         <p className="text-base text-slate-300 max-w-4xl">
-          Complete institutional acquisition covenants: $45,000 USD Micro-Buyout valuation, Exhibit IP assignment schedule, absolute Bill of Sale, and clean-room escrow handoff checklist.
+          Complete institutional acquisition covenants: 20 kHz (0.48ms) Micro-Asset Transfer specification, Exhibit IP assignment schedule, absolute Bill of Sale, and clean-room escrow handoff checklist.
         </p>
       </div>
 
@@ -129,16 +128,16 @@ trademark, and trade secret rights in GF-T3-171. Seller retains no residual righ
         <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
           <span className="text-sm text-slate-400 block font-medium">Acquisition Target</span>
           <span className="text-xl font-bold font-mono text-white">GF-T3-171</span>
-          <span className="text-sm text-cyan-400 block mt-1">Lexus IS 500 V8 Core</span>
+          <span className="text-sm text-cyan-400 block mt-1">Heavy Overland Dynamics Platform IS 500 V8 Core</span>
         </div>
         <div className="p-5 rounded-xl bg-slate-900 border border-cyan-500/40">
-          <span className="text-sm text-slate-400 block font-medium">Micro-APA Buyout</span>
-          <span className="text-2xl font-bold font-mono text-cyan-300">$45,000 USD</span>
+          <span className="text-sm text-slate-400 block font-medium">Micro-APA Asset Transfer</span>
+          <span className="text-2xl font-bold font-mono text-cyan-300">20 kHz (0.48ms)</span>
           <span className="text-sm text-emerald-400 block mt-1">Ready for Escrow Deposit</span>
         </div>
         <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
-          <span className="text-sm text-slate-400 block font-medium">Enterprise Valuation</span>
-          <span className="text-2xl font-bold font-mono text-slate-200">$125,000 USD</span>
+          <span className="text-sm text-slate-400 block font-medium">Architecture Moat</span>
+          <span className="text-2xl font-bold font-mono text-slate-200">PostgreSQL 16 + RLS</span>
           <span className="text-sm text-slate-400 block mt-1">2.77x Value Multiplier</span>
         </div>
         <div className="p-5 rounded-xl bg-slate-900 border border-emerald-500/40">

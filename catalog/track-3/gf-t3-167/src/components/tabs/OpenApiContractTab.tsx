@@ -34,7 +34,7 @@ export const OpenApiContractTab: React.FC = () => {
           status: 'SUCCESS',
           order_id: 'ord_' + crypto.randomUUID().substring(0, 13),
           sequence_id: 1000193,
-          symbol: 'LC500-DYN',
+          symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
           side: 'BUY',
           price: 104525.00,
           quantity: 10,
@@ -51,7 +51,7 @@ export const OpenApiContractTab: React.FC = () => {
         });
       } else if (activeEndpoint === 'GET_L2') {
         setSimulatedResponse({
-          symbol: 'LC500-DYN',
+          symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
           timestamp: new Date().toISOString(),
           bids: [
             [104520.00, 18],
@@ -78,7 +78,7 @@ export const OpenApiContractTab: React.FC = () => {
       } else {
         setSimulatedResponse({
           event: 'subscribed',
-          channel: 'trades.LC500-DYN',
+          channel: 'trades.High-Aero Grand Touring Telemetry Core-DYN',
           heartbeat_interval_ms: 1000,
           message: 'Connected to live execution feed. Chained HMAC stream verified.',
         });
@@ -105,11 +105,11 @@ export const OpenApiContractTab: React.FC = () => {
         return `curl -X DELETE "https://engine.ghostfactoryos.internal/api/v1/orders/ord_c7a109bf-4819" \\
   -H "X-Client-Key: CLNT_ACQ_9982"`;
       case 'GET_L2':
-        return `curl -X GET "https://engine.ghostfactoryos.internal/api/v1/book/l2?symbol=LC500-DYN&depth=20"`;
+        return `curl -X GET "https://engine.ghostfactoryos.internal/api/v1/book/l2?symbol=High-Aero Grand Touring Telemetry Core-DYN&depth=20"`;
       case 'GET_HEALTH':
         return `curl -X GET "https://engine.ghostfactoryos.internal/api/v1/telemetry/health"`;
       case 'WS_TRADES':
-        return `wscat -c "wss://engine.ghostfactoryos.internal/ws/v1/trades?symbol=LC500-DYN"`;
+        return `wscat -c "wss://engine.ghostfactoryos.internal/ws/v1/trades?symbol=High-Aero Grand Touring Telemetry Core-DYN"`;
     }
   };
 
@@ -117,7 +117,7 @@ export const OpenApiContractTab: React.FC = () => {
 info:
   title: GF-T3-167 Dynamic Core Engine API
   version: 1.0.0-PROD
-  description: High-throughput matching engine and HMAC tick ledger interface for Lexus LC 500 Dynamic Core.
+  description: High-throughput matching engine and HMAC tick ledger interface for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core.
 servers:
   - url: https://engine.ghostfactoryos.internal/api/v1
     description: Production Internal Cloud Run Service

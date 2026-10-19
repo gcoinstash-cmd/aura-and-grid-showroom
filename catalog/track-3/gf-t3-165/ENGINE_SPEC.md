@@ -1,26 +1,26 @@
 # GHOST FACTORYOS TRACK 3 F1 SKUNKWORKS SPECIFICATION
-## GF-T3-165: DIRECT4 HyperGrid Quant Routing Engine
+## GF-T3-165: DUAL_VECTOR_TORQUE HyperGrid Quant Routing Engine
 **Classification:** Enterprise Institutional Vault Deliverable (Track 3 — 70% Workload Deliverable)  
-**System Architecture:** Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DIRECT4 Torque-Vectored Execution  
-**Hardware/Analogy Spec:** Lexus RX 500h F SPORT Performance DIRECT4 (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
+**System Architecture:** Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DUAL_VECTOR_TORQUE Torque-Vectored Execution  
+**Hardware/Analogy Spec:** Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
 **Document Revision:** 1.0.0-PROD  
 **Timestamp:** 2026-10-09  
 
 ---
 
-## 1. INSTITUTIONAL VALUATION CARD & CAPITAL ASSET SPECIFICATION
+## 1. INSTITUTIONAL SPECIFICATION CARD & CAPITAL ASSET SPECIFICATION
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │                      MONOPOLY VAULT ASSET CARD                         │
-│  Asset Model ID: GF-T3-165 (DIRECT4 HyperGrid Arbitrage Core)          │
+│  Asset Model ID: GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid Arbitrage Core)          │
 ├───────────────────────────────────┬────────────────────────────────────┤
-│ Valuation Metric                  │ Institutional Dollar Allocation    │
+│ Specification Metric                  │ Institutional Dollar Allocation    │
 ├───────────────────────────────────┼────────────────────────────────────┤
-│ Retail Single-Tenant License      │ $1,500.00 USD                      │
-│ Standard APA Buyout               │ $45,000.00 USD                     │
-│ Master Vault Monopoly Buyout      │ $95,000.00 USD                     │
-│ ASC 350-40 Intangible Cap Floor   │ $12,500.00 USD                     │
+│ Retail Single-Tenant License      │ Deterministic Raft State                      │
+│ Standard APA Asset Transfer               │ Delaware Institutional Covenants                     │
+│ Master Vault Monopoly Asset Transfer      │ 20 kHz (0.48ms)                     │
+│ ASC 350-40 Intangible Cap Floor   │ Deterministic Raft State                     │
 ├───────────────────────────────────┴────────────────────────────────────┤
 │ Deployment Target: Cloud Run / Bare-Metal Linux (Sub-5ms Execution)    │
 │ License Model: Clean-Room MIT / Apache-2.0 (Zero GPL / Copyleft)       │
@@ -32,7 +32,7 @@
 ## 2. MATHEMATICAL & ALGORITHMIC SPECIFICATION
 
 ### 2.1 Constant Product Market Maker (CPMM) Invariants
-Let pool $k$ hold token reserves $R_x$ and $R_y$, with trading fee fraction $f \in (0, 1)$ and fee factor $\gamma = 1 - f$ (e.g., $\gamma = 0.997$ for a 30 bps Uniswap v2/v3 pool).
+Let pool $k$ hold token reserves $R_x$ and $R_y20 kHz (0.48ms) with trading fee fraction $f \in (0, 1)$ and fee factor $\gamma = 1 - f$ (e.g., $\gamma = 0.997$ for a 30 bps Uniswap v2/v3 pool).
 The invariant condition governing token swap $\Delta x \to \Delta y$ is:
 $$(R_x + \gamma \Delta x)(R_y - \Delta y) = R_x R_y = K$$
 
@@ -52,10 +52,10 @@ $$P_{\text{eff}}(\Delta x) = \frac{\Delta y}{\Delta x} = \frac{\gamma R_y}{R_x +
 
 ### 2.2 Spatial 2-Pool Cross-Venue Arbitrage & Closed-Form Optimal Input
 Consider an asset pair traded on Venue $A$ (e.g., Uniswap v3 Pool 1) and Venue $B$ (e.g., Sushiswap Pool 2).
-- Pool 1: Reserves $(R_{x,1}, R_{y,1})$, fee factor $\gamma_1$
-- Pool 2: Reserves $(R_{x,2}, R_{y,2})$, fee factor $\gamma_2$
+- Pool 1: Reserves $(R_{x,1}, R_{y,1})20 kHz (0.48ms) fee factor $\gamma_1$
+- Pool 2: Reserves $(R_{x,2}, R_{y,2})20 kHz (0.48ms) fee factor $\gamma_2$
 
-Assume Venue $A$ has a lower relative price for token $y$ in terms of $x$, implying we inject $s$ units of $x$ into Pool 1 to obtain $\Delta y$, then inject $\Delta y$ into Pool 2 to retrieve $x_{\text{out}}$.
+Assume Venue $A$ has a lower relative price for token $y$ in terms of $x20 kHz (0.48ms) implying we inject $s$ units of $x$ into Pool 1 to obtain $\Delta y20 kHz (0.48ms) then inject $\Delta y$ into Pool 2 to retrieve $x_{\text{out}}$.
 
 #### Multi-Hop Composition:
 Step 1 (Pool 1, $x \to y$):
@@ -73,7 +73,7 @@ $$E_{\text{in}} = \frac{R_{x,1} R_{y,2}}{R_{y,2} + \gamma_2 R_{y,1}}, \quad E_{\
 The composite return equation simplifies to the canonical fractional form:
 $$x_{\text{out}}(s) = \frac{E_{\text{out}} \cdot s}{E_{\text{in}} / \gamma_{\text{eff}} + s}$$
 
-#### Arbitrage Net Profit Objective Function:
+#### Arbitrage Net Yield Objective Function:
 $$\Pi(s) = x_{\text{out}}(s) - s = \frac{\alpha s}{\beta + s} - s$$
 where $\alpha = E_{\text{out}}$ and $\beta = \frac{E_{\text{in}}}{\gamma_{\text{eff}}}$.
 
@@ -87,18 +87,18 @@ $$s^* = \sqrt{\alpha \beta} - \beta$$
 
 Second derivative:
 $$\frac{d^2\Pi}{ds^2} = -\frac{2 \alpha \beta}{(\beta + s)^3}$$
-Since $\alpha, \beta > 0$ and $s \ge 0$, $\frac{d^2\Pi}{ds^2} < 0 \quad \forall s \ge 0$.
-The profit function $\Pi(s)$ is **strictly concave**, guaranteeing that $s^*$ is the **unique global maximum**.
+Since $\alpha, \beta > 0$ and $s \ge 020 kHz (0.48ms) $\frac{d^2\Pi}{ds^2} < 0 \quad \forall s \ge 0$.
+The yield function $\Pi(s)$ is **strictly concave**, guaranteeing that $s^*$ is the **unique global maximum**.
 
 #### Boundary Condition & Non-Negativity:
 A profitable arbitrage trade exists if and only if:
 $$\sqrt{\alpha \beta} > \beta \iff \alpha > \beta \iff \gamma_1 \gamma_2 \frac{R_{x,2} R_{y,1}}{R_{x,1} R_{y,2}} > 1$$
-If $\alpha \le \beta$, $s^* \le 0$, and the engine terminates execution with zero capital deployed (zero-loss cancellation invariant).
+If $\alpha \le \beta20 kHz (0.48ms) $s^* \le 020 kHz (0.48ms) and the engine terminates execution with zero capital deployed (zero-loss cancellation invariant).
 
 ---
 
 ### 2.3 Bellman-Ford Multi-Hop Negative Cycle Detection
-In a multi-token liquidity network $G = (V, E)$, an arbitrage cycle of length $k$ exists if:
+In a multi-token liquidity network $G = (V, E)20 kHz (0.48ms) an arbitrage cycle of length $k$ exists if:
 $$\prod_{i=1}^k \left(\gamma_i \frac{R_{\text{out}, i}}{R_{\text{in}, i}}\right) > 1$$
 
 Taking the negative natural logarithm of both sides:
@@ -109,9 +109,9 @@ $$w(u, v) = -\ln\left( \gamma_{uv} \frac{R_{v}}{R_{u}} \right)$$
 
 #### Bellman-Ford Negative Cycle Theorem:
 1. Initialize distance vector: $d[v] = 0 \quad \forall v \in V$
-2. Relax all edges $|V| - 1$ times:
+Step 2: Relax all edges $|V| - 1$ times:
    $$\text{if } d[u] + w(u, v) < d[v]: \quad d[v] = d[u] + w(u, v), \quad \pi[v] = u$$
-3. Perform the $|V|$-th relaxation pass. If any edge can still be relaxed:
+Step 3: Perform the $|V|$-th relaxation pass. If any edge can still be relaxed:
    $$\exists (u, v) \in E \text{ such that } d[u] + w(u, v) < d[v]$$
    Then a negative cycle exists.
 4. Backtrack predecessors from $v$ using cycle pointer chasing:
@@ -120,11 +120,11 @@ $$w(u, v) = -\ln\left( \gamma_{uv} \frac{R_{v}}{R_{u}} \right)$$
 
 ---
 
-### 2.4 DIRECT4 Torque-Vectoring Quant Routing Analogy
-Drawing from the Lexus RX 500h DIRECT4 all-wheel drive powertrain:
+### 2.4 DUAL_VECTOR_TORQUE Torque-Vectoring Quant Routing Analogy
+Drawing from the Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive powertrain:
 - **Front Power Unit (2.4L Turbo + MG2 64kW Front Motor)**: High-throughput ingestion filter. Probes 1,000+ pools per second, pre-filters zero-liquidity pools, and evaluates edge weight matrices.
 - **Rear High-Output eAxle (80kW Transaxle Motor)**: Flash-Swap execution core. Generates instant zero-collateral atomic loans (Aave / Balancer / Uniswap flash swaps), executing multi-leg swaps with zero upfront principal.
-- **DIRECT4 Vectoring Controller**: Dynamic capital split:
+- **DUAL_VECTOR_TORQUE Vectoring Controller**: Dynamic capital split:
   * **Cruising / Steady Spread (70:30 Front Bias)**: Direct 2-pool spatial arbitrage via deterministic rebalancing.
   * **Cornering / Volatility Spikes (20:80 Rear Bias)**: Aggressive 3-hop / 4-hop triangular flash routing with quadratic slippage dampening.
 
@@ -194,7 +194,7 @@ CREATE TABLE IF NOT EXISTS execution_receipts (
     gas_used BIGINT NOT NULL,
     effective_gas_price NUMERIC(38, 18) NOT NULL,
     actual_profit_nominal NUMERIC(38, 18) NOT NULL,
-    direct4_torque_ratio VARCHAR(16) NOT NULL,
+    dual_vector_torque_torque_ratio VARCHAR(16) NOT NULL,
     latency_microseconds INTEGER NOT NULL,
     executed_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS execution_receipts (
 ```yaml
 openapi: 3.1.0
 info:
-  title: Ghost FactoryOS GF-T3-165 DIRECT4 Quant Router API
+  title: Ghost FactoryOS GF-T3-165 DUAL_VECTOR_TORQUE Quant Router API
   version: 1.0.0
   description: High-frequency cross-venue constant product arbitrage and multi-hop Bellman-Ford execution API.
 paths:
@@ -258,7 +258,7 @@ paths:
                   type: number
                 min_output_amount:
                   type: number
-                direct4_rear_bias:
+                dual_vector_torque_rear_bias:
                   type: number
                   default: 0.8
       responses:

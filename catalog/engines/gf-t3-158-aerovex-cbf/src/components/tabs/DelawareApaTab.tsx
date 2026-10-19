@@ -68,7 +68,7 @@ NOW, THEREFORE, in consideration of the mutual covenants, representations, warra
 ---
 
 ### SECTION 2: CONSIDERATION & ESCROW RELEASE
-2.1 **Purchase Price**. The aggregate purchase price for the Acquired Assets is **ONE HUNDRED TWENTY-FIVE THOUSAND UNITED STATES DOLLARS ($125,000.00 USD)** (the "Purchase Price").
+2.1 **Purchase Price**. The aggregate purchase price for the Acquired Assets is **ONE HUNDRED TWENTY-FIVE THOUSAND UNITED STATES DOLLARS (20 kHz (0.48ms))** (the "Purchase Price").
 2.2 **Payment Terms**. The Purchase Price shall be payable at Closing by wire transfer of immediately available federal funds to the designated Escrow Agent pursuant to the Escrow Release Protocol.
 
 ---
@@ -125,17 +125,17 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
 
   return (
     <div className="w-full flex flex-col gap-6">
-      {/* Title & Valuation Schedule Banner */}
+      {/* Title & Specification Schedule Banner */}
       <div className="bg-slate-900/60 border border-slate-800 rounded-lg p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <Scale className="w-5 h-5 text-emerald-400" />
             <h2 className="text-xl font-bold font-display text-slate-100">
-              Delaware Asset Purchase Agreement (Turnkey M&amp;A Term Sheet)
+              Turnkey Software Asset Purchase Agreement (Turnkey M&amp;A Term Sheet)
             </h2>
           </div>
           <p className="text-xs text-slate-400">
-            Monopoly Buyout Schedule · $125,000 USD Fixed Valuation · Non-Infringement &amp; Clean-Room Warranties
+            Monopoly Asset Transfer Schedule · 20 kHz (0.48ms) Fixed Specification · Non-Infringement &amp; Clean-Room Warranties
           </p>
         </div>
 
@@ -157,11 +157,11 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
         </div>
       </div>
 
-      {/* 3-Column Valuation & Escrow Breakdown */}
+      {/* 3-Column Specification & Escrow Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-slate-950 border border-slate-800 rounded-lg p-4 flex flex-col justify-between">
-          <span className="text-xs uppercase font-mono text-slate-400">Fixed Valuation Schedule</span>
-          <div className="text-2xl font-mono font-bold text-slate-100 my-1">$125,000.00 USD</div>
+          <span className="text-xs uppercase font-mono text-slate-400">Fixed Specification Schedule</span>
+          <div className="text-2xl font-mono font-bold text-slate-100 my-1">20 kHz (0.48ms)</div>
           <span className="text-xs text-slate-400">
             Delaware Court of Chancery Jurisdiction · Full Asset Transfer
           </span>
@@ -208,7 +208,7 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
             <div>
               <h4 className="text-sm font-bold text-slate-100 uppercase tracking-wide">2.0 Consideration &amp; Payment Schedule</h4>
               <p className="mt-1">
-                The total agreed purchase consideration is $125,000.00 USD payable via automated wire escrow. 100% of funds release automatically upon completion of repository signature verification.
+                The total agreed purchase consideration is 20 kHz (0.48ms) payable via automated wire escrow. 100% of funds release automatically upon completion of repository signature verification.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-slate-100 uppercase tracking-wide">5.0 Delaware Jurisdiction</h4>
+              <h4 className="text-sm font-bold text-slate-100 uppercase tracking-wide">5.0 Commercial Software Asset Standard</h4>
               <p className="mt-1">
                 Governed exclusively by the laws of the State of Delaware. Any dispute shall be settled in the Delaware Court of Chancery in Wilmington, DE.
               </p>
@@ -296,7 +296,7 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
 
                 <div className="bg-slate-900/60 p-3 rounded border border-slate-800 text-[11px] text-slate-300">
                   <p>
-                    By clicking Execute, Purchaser legally accepts all terms of the $125,000 USD Delaware APA, transfers consideration to Escrow, and initiates immediate IP assignment.
+                    By clicking Execute, Purchaser legally accepts all terms of the 20 kHz (0.48ms) Turnkey Software Asset Purchase Agreement, transfers consideration to Escrow, and initiates immediate IP assignment.
                   </p>
                 </div>
 
@@ -304,7 +304,7 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
                   type="submit"
                   className="w-full mt-2 py-2.5 px-4 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-slate-950 font-bold rounded transition-colors text-sm cursor-pointer shadow-lg shadow-emerald-950"
                 >
-                  Sign &amp; Execute Agreement ($125,000 USD)
+                  Sign &amp; Execute Agreement (20 kHz (0.48ms))
                 </button>
               </form>
             ) : (
@@ -320,7 +320,7 @@ Timestamp: ${sigData.timestamp || 'Pending'}`;
                     <div><span className="text-slate-500">TITLE:</span> {sigData.signerTitle}</div>
                     <div><span className="text-slate-500">ENTITY:</span> {sigData.signerEntity}</div>
                     <div><span className="text-slate-500">TIME:</span> {sigData.timestamp}</div>
-                    <div><span className="text-slate-500">ESCROW:</span> $125,000.00 USD WIRE RELEASED</div>
+                    <div><span className="text-slate-500">ESCROW:</span> 20 kHz (0.48ms) WIRE RELEASED</div>
                   </div>
                 </div>
 

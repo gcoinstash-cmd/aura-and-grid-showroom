@@ -1,5 +1,5 @@
 # LEGAL IP AUDIT & CLEAN-ROOM CERTIFICATION
-## GF-T3-165: DIRECT4 HyperGrid Arbitrage Routing Core
+## GF-T3-165: DUAL_VECTOR_TORQUE HyperGrid Arbitrage Routing Core
 **Audit Date:** 2026-10-09  
 **Auditor Classification:** Lead Systems Architect & IP Compliance Officer  
 **Target Repository:** Ghost FactoryOS / Skunkworks Fleet Tier 3  
@@ -27,12 +27,12 @@ The quantitative algorithmic core, graph cycle solver, and execution dispatch lo
 | `lucide-react` | `^0.546.0` | ISC / MIT | YES | YES | ZERO (0.0%) |
 | `tailwindcss` | `^4.3.0` | MIT | YES | YES | ZERO (0.0%) |
 
-**Copyleft Risk Assessment:** 100% CLEAN. Unconditional freedom to license under commercial proprietary terms or private institutional buyouts.
+**Copyleft Risk Assessment:** 100% CLEAN. Unconditional freedom to license under commercial proprietary terms or private institutional transfers.
 
 ---
 
 ### 3. TRADE-DRESS & STRUCTURAL NOVELTY CLAIMS
-The DIRECT4 HyperGrid interface incorporates the following novel, non-obvious UI/UX and architectural claims:
+The DUAL_VECTOR_TORQUE HyperGrid interface incorporates the following novel, non-obvious UI/UX and architectural claims:
 1. **Torque-Vectored Split Telemetry Visualization**: Simultaneous visual balance between front-axle mempool ingestion rates and rear-eAxle flash-swap capital throughput with responsive dynamic ratio bars (70:30 to 20:80).
 2. **Zero-Slippage Optimal Rebalance Hud**: Real-time closed-form curve tangent marker plotting $s^*$ against current liquidity depth and spread ladder.
 3. **Deterministic Multi-Venue Cycle Decomposition**: Live node-edge graph topology with directional particle velocity matching calculated optimal volume.
@@ -40,4 +40,4 @@ The DIRECT4 HyperGrid interface incorporates the following novel, non-obvious UI
 ---
 
 ### 4. AUDIT CONCLUSION & SIGN-OFF
-The codebase `GF-T3-165` is hereby certified as institutional-grade, clean-room compliant, and fully eligible for the Master Vault Monopoly buyout of **$95,000.00 USD**.
+The codebase `GF-T3-165` is hereby certified as institutional-grade, clean-room compliant, and fully eligible for the Master Vault Monopoly asset transfer of **20 kHz (0.48ms)**.

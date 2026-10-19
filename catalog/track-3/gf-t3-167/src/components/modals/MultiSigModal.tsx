@@ -71,7 +71,7 @@ export const MultiSigModal: React.FC<MultiSigModalProps> = ({
                 Dual-Factor Cryptographic Authorization
               </h3>
               <p className="text-sm text-zinc-400">
-                Acquire.com Micro-APA Buyout Vault // Escrow Binding
+                Production Service Engine Vault // Escrow Binding
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export const MultiSigModal: React.FC<MultiSigModalProps> = ({
                   {isFullyVaulted ? 'ASSET PURCHASE AGREEMENT 100% SEALED' : 'AWAITING MUTUAL CRYPTOGRAPHIC SIGNING'}
                 </div>
                 <div className="text-base text-zinc-400 mt-1">
-                  Micro-APA Escrow Buyout: $45,000 USD | Asset ID: GF-T3-167
+                  Micro-APA Escrow Asset Transfer: 20 kHz (0.48ms) | Asset ID: GF-T3-167
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@ export const MultiSigModal: React.FC<MultiSigModalProps> = ({
             <div className="p-6 bg-emerald-950/50 border border-emerald-500/70 rounded-2xl text-center space-y-3">
               <Sparkles className="w-10 h-10 text-emerald-400 mx-auto" />
               <div className="font-black text-xl text-emerald-300">
-                Asset Buyout Ready for Wire Release
+                Asset Asset Transfer Ready for Wire Release
               </div>
               <p className="text-base text-emerald-200/90 max-w-lg mx-auto leading-relaxed">
                 Both cryptographic signatures are permanently stamped. Turnkey GitHub repositories, Cloud Run service credentials, and master cryptographic seeds are released to the buyer.

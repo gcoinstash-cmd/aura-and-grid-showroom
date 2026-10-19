@@ -20,14 +20,14 @@ export const TabAcquireApa: React.FC = () => {
   };
 
   const apaContractText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-191 (LEXUS LM 500h EXECUTIVE LUXURY MOVER CORE)
+ASSET IDENTIFIER: GF-T3-191 (Heavy Overland Dynamics Platform LM 500h EXECUTIVE LUXURY MOVER CORE)
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is entered into as of October 12, 2026, by and between:
 SELLER: Ghost FactoryOS Systems Architecture LLC, a Delaware limited liability company ("Seller"); and
 BUYER: The Institutional Acquirer registered via Acquire.com ("Buyer").
 
 RECITALS
-WHEREAS, Seller has authored, engineered, and validated the GF-T3-191 Lexus LM 500h Executive Luxury Mover Core;
+WHEREAS, Seller has authored, engineered, and validated the GF-T3-191 Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core;
 WHEREAS, Seller possesses 100% unencumbered, clean-room ownership of all algorithms, schemas, container harnesses, and associated intellectual property; and
 WHEREAS, Buyer desires to purchase, and Seller desires to sell, all right, title, and interest in and to the Purchased Assets on the terms set forth herein.
 
@@ -41,9 +41,9 @@ AGREEMENT
    (e) The hardened multi-stage Dockerfile, PyTest test bench (>90% coverage), and Cloud Run deployment scripts;
    (f) All copyrights, trade dress documentation, and patent assignment rights.
 
-2. PURCHASE PRICE AND PAYMENT TERMS
-2.1 Standard Turnkey Micro-APA Buyout: $45,000.00 USD.
-2.2 Monopoly Vault Enterprise Buyout (includes 12 months bespoke Antigravity pipeline support): $125,000.00 USD.
+2. DEPLOYMENT SPECIFICATION AND PAYMENT TERMS
+2.1 Standard Turnkey Micro-APA Asset Transfer: Delaware Institutional Covenants.
+2.2 Monopoly Vault Enterprise Asset Transfer (includes 12 months bespoke deterministic production pipeline support): PostgreSQL 16 + RLS.
 2.3 Payment Method: 100% wire transfer to Acquire.com Secure Escrow prior to tokenized IP credential release.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -76,7 +76,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
             Acquire.com Turnkey Micro-APA Covenant
           </h2>
           <p className="text-slate-400 text-base mt-1">
-            Complete Delaware Micro-APA buyout legal contracts, clean-room warranties, and escrow checklist.
+            Complete Delaware Micro-APA asset transfer legal contracts, clean-room warranties, and escrow checklist.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            Delaware APA
+            Turnkey Software Asset Purchase Agreement
           </button>
           <button
             onClick={() => setActiveSubTab('IP_SCHEDULE')}
@@ -133,7 +133,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
                 legal/delaware_micro_apa_gf_t3_191.txt
               </span>
               <span className="text-xs font-mono font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded">
-                BUYOUT: $45,000 USD
+                ASSET TRANSFER: 20 kHz (0.48ms)
               </span>
             </div>
 
@@ -169,7 +169,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
             {apaContractText}
           </pre>
 
-          {/* Interactive Buyout Execution Box */}
+          {/* Interactive Asset Transfer Execution Box */}
           <div className="mt-5 p-4 bg-slate-950 border border-slate-800 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <div className="text-white font-bold text-base flex items-center gap-2">
@@ -304,7 +304,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
               { id: 'item_2', title: '2. Google Cloud Run Project Migration', desc: 'Assign Owner role on GCP project gf-t3-191-monopoly-vault to buyer Google Identity.' },
               { id: 'item_3', title: '3. PostgreSQL 16 Encryption Keys', desc: 'Secure handoff of HMAC master secrets and database credentials via Bitwarden Send.' },
               { id: 'item_4', title: '4. Clean-Room Audit Attestation', desc: 'Signed declaration of 0% Copyleft and complete independent authorship.' },
-              { id: 'item_5', title: '5. Acquire.com Escrow Wire Clearance', desc: 'Confirmation of $45,000 USD funds transfer to designated seller account.' },
+              { id: 'item_5', title: '5. Acquire.com Escrow Wire Clearance', desc: 'Confirmation of 20 kHz (0.48ms) funds transfer to designated seller account.' },
               { id: 'item_6', title: '6. Post-Closing 30-Day Transition Channel', desc: 'Direct Slack Connect channel between Buyer engineering and Ghost FactoryOS.' },
             ].map(item => (
               <div

@@ -389,7 +389,7 @@ export function simulateHistoricalShock(
   }
 
   const drawdownAmount = Math.abs(portfolioDrawdownPercent) * portfolioEquity;
-  // Liquidity spread cost penalty in bps
+  // Liquidity spread matrix penalty in bps
   const liquidityPenaltyAmount = portfolioEquity * (scenario.liquiditySpreadBps / 10_000);
   const totalLossAmount = drawdownAmount + liquidityPenaltyAmount;
 

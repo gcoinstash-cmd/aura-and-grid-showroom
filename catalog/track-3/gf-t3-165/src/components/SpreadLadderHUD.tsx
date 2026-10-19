@@ -145,7 +145,7 @@ export const SpreadLadderHUD: React.FC<SpreadLadderHUDProps> = ({
 
                   <div>
                     <div className="text-xs uppercase font-mono text-zinc-400 mb-1">
-                      Net PnL Profit (Π*)
+                      Net PnL Yield (Π*)
                     </div>
                     <div className="text-2xl md:text-3xl font-mono font-bold tracking-tight text-emerald-400 tabular-nums">
                       +${cycle.net_profit.toLocaleString(undefined, { minimumFractionDigits: 2 })}
@@ -162,7 +162,7 @@ export const SpreadLadderHUD: React.FC<SpreadLadderHUDProps> = ({
                     </div>
                     <span>·</span>
                     <div>
-                      DIRECT4 Torque: {Math.round((1 - cycle.rear_torque_bias) * 100)}% F / {Math.round(cycle.rear_torque_bias * 100)}% R
+                      DUAL_VECTOR_TORQUE Torque: {Math.round((1 - cycle.rear_torque_bias) * 100)}% F / {Math.round(cycle.rear_torque_bias * 100)}% R
                     </div>
                   </div>
 

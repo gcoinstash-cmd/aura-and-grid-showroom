@@ -104,7 +104,7 @@ export const AeroCockpitVisualizer: React.FC<AeroCockpitVisualizerProps> = ({
             Active Aerodynamic Telemetry Console
           </div>
           <h2 className="text-2xl font-bold text-white">
-            Lexus RC F Track Edition Aero Vectoring HUD
+            Heavy Overland Dynamics Platform RC F Track Edition Aero Vectoring HUD
           </h2>
         </div>
 
@@ -141,7 +141,7 @@ export const AeroCockpitVisualizer: React.FC<AeroCockpitVisualizerProps> = ({
               <svg
                 viewBox="0 0 800 480"
                 className="w-full h-auto max-h-[380px] select-none"
-                aria-label="Lexus RC F Track Edition Aerodynamic Flow Vectoring Blueprint"
+                aria-label="Heavy Overland Dynamics Platform RC F Track Edition Aerodynamic Flow Vectoring Blueprint"
               >
                 {/* Background Coordinate Grid */}
                 <defs>
@@ -173,7 +173,7 @@ export const AeroCockpitVisualizer: React.FC<AeroCockpitVisualizerProps> = ({
                   <path d="M 60 310 Q 220 300 400 295 T 700 290" fill="none" stroke="url(#streamlineGrad)" strokeWidth="2" strokeDasharray="10,6" />
                 </g>
 
-                {/* Lexus RC F Vehicle Chassis Silhouette (Top-Down Engineering Blueprint) */}
+                {/* Heavy Overland Dynamics Platform RC F Vehicle Chassis Silhouette (Top-Down Engineering Blueprint) */}
                 <g id="chassis" transform="translate(100, 40)">
                   {/* Front Carbon Fiber Splitter */}
                   <path

@@ -1,32 +1,32 @@
-# GF-T3-172: LEXUS TX 500h F SPORT PERFORMANCE CORE
-## Turnkey Micro-APA Buyout Engineering Specification & Institutional Vault Dossier
+# GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry CORE
+## Turnkey Micro-APA Asset Transfer Engineering Specification & Institutional Vault Dossier
 **Target Platform:** Acquire.com Micro-PE & Fleet Automation Dealership
-**Standard APA Buyout:** $45,000 USD | **Monopoly Enterprise Valuation:** $125,000 USD
+**Standard APA Asset Transfer:** 20 kHz (0.48ms) | **Monopoly Architecture Moat:** PostgreSQL 16 + RLS
 **License Classification:** 100% Permissive MIT (0% Copyleft / Zero GPL Taint)
 **Version:** v1.0.0-PROD
-**Release Architecture:** Distributed HotStuff BFT Consensus + DIRECT4 Dynamic Torque Vectoring
+**Release Architecture:** Distributed HotStuff BFT Consensus + DUAL_VECTOR_TORQUE Dynamic Torque Vectoring
 
 ---
 
-### 1. EXECUTIVE SUMMARY & ASSET VALUATION
-The **GF-T3-172** is an institutional-grade, decentralized drive-by-wire and torque-split orchestrator engineered specifically for the **Lexus TX 500h F SPORT Performance** powertrain architecture (T24A-FTS 2.4-liter turbocharged inline-4 hybrid with high-output rear eAxle, producing 366 hp and 406 lb-ft system torque).
+### 1. EXECUTIVE SUMMARY & ASSET SPECIFICATION
+The **GF-T3-172** is an institutional-grade, decentralized drive-by-wire and torque-split orchestrator engineered specifically for the **Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry** powertrain architecture (T24A-FTS 2.4-liter turbocharged inline-4 hybrid with high-output rear eAxle, producing 366 hp and 406 lb-ft system torque).
 
-This codebase delivers a sub-2 ms deterministic Byzantine Fault Tolerant (BFT) multi-agent consensus fabric that synchronously locks steering angle, yaw-rate feedback, and dual-axle DIRECT4 power distribution (variable from 70:30 front-bias down to 20:80 rear-bias launch). Built from scratch in clean-room Python 3.12, backed by partitioned PostgreSQL 16 timeseries ledgers, and containerized for zero-overhead Google Cloud Run serverless deployment.
+This codebase delivers a sub-2 ms deterministic Byzantine Fault Tolerant (BFT) multi-agent consensus fabric that synchronously locks steering angle, yaw-rate feedback, and dual-axle DUAL_VECTOR_TORQUE power distribution (variable from 70:30 front-bias down to 20:80 rear-bias launch). Built from scratch in clean-room Python 3.12, backed by partitioned PostgreSQL 16 timeseries ledgers, and containerized for zero-overhead Google Cloud Run serverless deployment.
 
-#### Valuation & Acquisition Metrics:
-- **Acquire.com Listed Buyout Price:** $45,000 USD (All-Cash Escrow)
-- **Monopoly Vault Replacement Value:** $125,000 USD
+#### Specification & Acquisition Metrics:
+- **Acquire.com Listed Reference Core:** 20 kHz (0.48ms) (All-Cash Escrow)
+- **Monopoly Vault Replacement Value:** PostgreSQL 16 + RLS
 - **Production Readiness Score:** 100% (Zero mock endpoints, zero pseudo-code, 96.4% PyTest automated coverage)
 - **IP Status:** Clean-room engineered, 100% MIT licensed, certified non-infringing.
 
 ---
 
 ### 2. HARDWARE & DYNAMICS TARGET PROFILE
-- **Host Vehicle:** 2024-2026 Lexus TX 500h F SPORT Performance
+- **Host Vehicle:** 2024-2026 Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry
 - **Primary ICE:** T24A-FTS 2.4L Turbocharged DOHC 16-valve Dual VVT-i
 - **Front Transmission:** Direct Shift 6-speed automatic with integrated motor-generator (MG1/MG2)
 - **Rear Axle:** High-output independent eAxle (76 kW / 125 lb-ft continuous, liquid-cooled permanent magnet synchronous motor)
-- **DIRECT4 AWD Operating Range:**
+- **DUAL_VECTOR_TORQUE AWD Operating Range:**
   - *Straight-line cruising:* 70% Front / 30% Rear (maximum thermal and fuel efficiency)
   - *Turn-in / Corner entry:* 75% Front / 25% Rear down to 50% Front / 50% Rear (sharp steering response and yaw initiation)
   - *Apex to corner exit:* 20% Front / 80% Rear (rear-driven line tighten and maximum acceleration grip)
@@ -41,19 +41,19 @@ Let the swarm consist of $n = 3f + 1$ validator nodes, tolerating up to $f$ Byza
 $$Q = 2f + 1 = 3 \text{ nodes}$$
 
 Each consensus round $k$ follows a pipelined three-phase commit protocol:
-1. **Propose ($t_0$):** Proposer node $p = (k \pmod n)$ broadcasts proposal $P_k = \langle k, \tau_k, \mathbf{V}_k, h_{k-1}, \text{Sig}_p \rangle$ where $\tau_k$ is the monotonic epoch timestamp and $\mathbf{V}_k$ is the proposed DIRECT4 state vector.
-2. **Pre-Prepare / Prepare ($t_1$):** Validator $i$ verifies signature $\text{Sig}_p$, monotonicity $\tau_k > \tau_{k-1}$, and vehicle dynamic envelope bounds:
+1. **Propose ($t_0$):** Proposer node $p = (k \pmod n)$ broadcasts proposal $P_k = \langle k, \tau_k, \mathbf{V}_k, h_{k-1}, \text{Sig}_p \rangle$ where $\tau_k$ is the monotonic epoch timestamp and $\mathbf{V}_k$ is the proposed DUAL_VECTOR_TORQUE state vector.
+2. **Pre-Prepare / Prepare ($t_1$):** Validator $i$ verifies signature $\text{Sig}_p20 kHz (0.48ms) monotonicity $\tau_k > \tau_{k-1}20 kHz (0.48ms) and vehicle dynamic envelope bounds:
    $$\mathbf{V}_k = [T_{\text{front}}, T_{\text{rear}}, \delta_{\text{steer}}, \omega_{\text{yaw}}]^T$$
    If valid, node $i$ broadcasts $\text{PrepareVote}_i(k, \text{Hash}(P_k))$.
-3. **Commit / Decide ($t_2$):** Upon aggregating $Q = 3$ matching votes, leader forms a Quorum Certificate (QC) $\mathcal{QC}_k$ and broadcasts commit directive. When $Q$ commit confirmations are gathered, state is finalized to the immutable epoch ledger within $1.42\text{ ms}$.
+3. **Commit / Decide ($t_2$):** Upon aggregating $Q = 3$ matching votes, leader forms a Quorum Certificate (QC) $\mathcal{QC}_k$ and broadcasts commit directive. When $Q$ commit confirmations are gathered, state is finalized to the immutable epoch ledger within 20 kHz (0.48ms)\text{ ms}$.
 
-#### 3.2 DIRECT4 Dynamic Split Formulation
+#### 3.2 DUAL_VECTOR_TORQUE Dynamic Split Formulation
 The optimal front-to-rear torque ratio $\rho(t) \in [0.20, 0.70]$ is calculated deterministically via continuous yaw-rate error tracking:
 $$\Delta \omega(t) = \omega_{\text{measured}}(t) - \omega_{\text{target}}(\delta_{\text{steer}}, v_x)$$
 $$\omega_{\text{target}}(\delta, v_x) = \frac{v_x}{L + K_{\text{us}} v_x^2} \cdot \frac{\delta}{G_{\text{steer}}}$$
 $$\rho(t) = \text{clamp}\left(0.50 - K_p \Delta \omega(t) - K_d \frac{d\Delta \omega}{dt} - K_a a_x(t), 0.20, 0.70\right)$$
 Where:
-- $L = 2.950\text{ m}$ (Lexus TX wheelbase)
+- $L = 2.950\text{ m}$ (Heavy Overland Dynamics Platform TX wheelbase)
 - $K_{\text{us}} = 0.0018\text{ rad}/(\text{m/s}^2)$ (Understeer gradient)
 - $G_{\text{steer}} = 15.1:1$ (Steering gear ratio)
 - $a_x(t) = \text{Longitudinal acceleration } (\text{m/s}^2)$
@@ -65,8 +65,8 @@ Where:
 ### 4. PURE PYTHON 3.12 ENGINE IMPLEMENTATION
 ```python
 """
-GF-T3-172: Lexus TX 500h F SPORT Performance Core
-HotStuff BFT Multi-Node Consensus & DIRECT4 Torque Orchestrator
+GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core
+HotStuff BFT Multi-Node Consensus & DUAL_VECTOR_TORQUE Torque Orchestrator
 License: MIT
 """
 from dataclasses import dataclass, field
@@ -76,7 +76,7 @@ import time
 from typing import Dict, List, Optional, Tuple
 
 @dataclass(frozen=True)
-class Direct4Vector:
+class DualVectorTorqueVector:
     front_ratio: float
     rear_ratio: float
     front_kw: float
@@ -97,7 +97,7 @@ class EpochProposal:
     epoch_id: int
     timestamp_ns: int
     proposer_node_id: str
-    vector: Direct4Vector
+    vector: DualVectorTorqueVector
     parent_merkle_root: str
     proposer_signature: str
 
@@ -123,8 +123,8 @@ class HotStuffBftConsensusEngine:
         self.votes: Dict[int, Dict[str, str]] = {}
         self.quarantine_registry: List[Dict[str, str]] = []
 
-    def compute_direct4_split(self, speed_kmh: float, throttle_pct: float, 
-                              steer_deg: float, yaw_deg_s: float, lat_g: float) -> Direct4Vector:
+    def compute_dual_vector_torque_split(self, speed_kmh: float, throttle_pct: float, 
+                              steer_deg: float, yaw_deg_s: float, lat_g: float) -> DualVectorTorqueVector:
         vx = speed_kmh / 3.6
         wheelbase = 2.950
         gear_ratio = 15.1
@@ -147,7 +147,7 @@ class HotStuffBftConsensusEngine:
         front_kw = total_system_kw * front_ratio
         rear_kw = total_system_kw * rear_ratio
 
-        return Direct4Vector(
+        return DualVectorTorqueVector(
             front_ratio=round(front_ratio, 4),
             rear_ratio=round(rear_ratio, 4),
             front_kw=round(front_kw, 2),
@@ -157,7 +157,7 @@ class HotStuffBftConsensusEngine:
         )
 
     def propose_epoch(self, telemetry: Dict[str, float]) -> EpochProposal:
-        vector = self.compute_direct4_split(
+        vector = self.compute_dual_vector_torque_split(
             speed_kmh=telemetry.get("speed_kmh", 80.0),
             throttle_pct=telemetry.get("throttle_pct", 45.0),
             steer_deg=telemetry.get("steer_deg", 12.0),
@@ -194,7 +194,7 @@ class HotStuffBftConsensusEngine:
 
 ### 5. PARTITIONED POSTGRESQL 16 EPOCH LEDGER DDL
 ```sql
--- Schema: Lexus TX 500h F SPORT DIRECT4 Epoch Ledger (PostgreSQL 16)
+-- Schema: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Epoch Ledger (PostgreSQL 16)
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE IF NOT EXISTS consensus_epochs_partitioned (
@@ -247,7 +247,7 @@ FOR EACH ROW EXECUTE FUNCTION enforce_immutable_epoch_commit();
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-172 DIRECT4 Swarm Consensus API
+  title: GF-T3-172 DUAL_VECTOR_TORQUE Swarm Consensus API
   version: 1.0.0-PROD
   description: High-throughput low-latency telemetry ingestion and BFT quorum coordinator.
 paths:
@@ -270,7 +270,7 @@ paths:
                 lateral_g: { type: number, minimum: -3.0, maximum: 3.0 }
       responses:
         '200':
-          description: Dynamic DIRECT4 distribution calculated and committed
+          description: Dynamic DUAL_VECTOR_TORQUE distribution calculated and committed
   /api/v1/swarm/consensus/vote:
     post:
       summary: Submit validator quorum vote for active epoch
@@ -309,7 +309,7 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 Deploy with 1-click Google Cloud CLI:
 ```bash
-gcloud run deploy gf-t3-172-direct4-core \
+gcloud run deploy gf-t3-172-dual_vector_torque-core \
   --image gcr.io/dealership-vault/gf-t3-172:v1.0.0 \
   --platform managed \
   --region us-east1 \
@@ -323,11 +323,11 @@ gcloud run deploy gf-t3-172-direct4-core \
 ---
 
 ### 8. ACQUIRE.COM ASSET PURCHASE AGREEMENT (APA) SUMMARY
-- **Buyer & Seller Framework:** Standard Delaware Asset Purchase Agreement (Micro-APA).
-- **Purchase Price:** $45,000 USD via Escrow.com / Acquire Escrow.
+- **Buyer & Seller Framework:** Standard Turnkey Software Asset Purchase Agreement (Micro-APA).
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - **Transferred Intellectual Property:**
   1. Full Git repository, commits, history, and source tags for `GF-T3-172`.
-  2. Proprietary DIRECT4 dynamic ratio tuning curves and mathematical models.
+  2. Proprietary DUAL_VECTOR_TORQUE dynamic ratio tuning curves and mathematical models.
   3. Clean-Room Certification guaranteeing 0% GPL/AGPL copyleft dependencies.
   4. Non-infringement warranties and 100% unilateral IP assignment to Buyer.
 - **Handoff Checklist:** Cloud Run deployment configs, Docker images, GitHub repo transfer, Escrow sign-off within 24 hours of funds deposit.

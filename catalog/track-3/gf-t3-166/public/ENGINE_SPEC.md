@@ -1,8 +1,8 @@
 # GHOST FACTORYOS — TRACK 3 F1 SKUNKWORKS SERVICE ENGINE SPECIFICATION
-## UNIT CODE: GF-T3-166 (LEXUS LX 600 ULTRA-LUXURY CORE)
+## UNIT CODE: GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core ULTRA-LUXURY CORE)
 ### ROLE: ENTERPRISE MULTI-REGION EVENT INGESTION & REPLAY BROKER WITH RAFT-BACKED STATE MACHINE
 ### ARCHITECTURAL DISCIPLINE: 70% WORKLOAD PRE-ASSEMBLY DELIVERABLE (MONOPOLY VAULT GRADE)
-### TARGET MONOPOLY APA VALUATION: $125,000.00 USD
+### TARGET MONOPOLY APA SPECIFICATION: PostgreSQL 16 + RLS
 
 ---
 
@@ -12,7 +12,7 @@
 | :--- | :--- |
 | **Unit Identifier** | `GF-T3-166-LX600-ENG` |
 | **System Classification** | Enterprise Multi-Region Event Ingestion & Replay Broker |
-| **Target Vehicle Platform** | Lexus LX 600 Ultra-Luxury VIP Telemetry & Autonomous Chassis Core |
+| **Target Vehicle Platform** | Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury VIP Telemetry & Autonomous Chassis Core |
 | **Consensus Engine** | Formal Raft Consensus State Machine (Linearizable Log Ingestion) |
 | **Storage Engine** | Partitioned PostgreSQL 16 / Timescale Hypertable with Monotonic Sequence Integrity |
 | **API Contract** | OpenAPI 3.1.0 Strict Spec (Zero-Loss Batch Ingestion, Deterministic Replay) |
@@ -34,8 +34,8 @@ Where:
 - $\sigma_i \in \{\text{Follower}, \text{Candidate}, \text{Leader}\}$ is the node operational role.
 - $\tau_i \in \mathbb{N}_0$ is the current term recorded by node $i$.
 - $v_i \in \mathcal{N} \cup \{\bot\}$ is the candidate voted for in term $\tau_i$.
-- $\mathcal{L}_i = [e_1, e_2, \dots, e_m]$ is the zero-indexed sequential Write-Ahead Log, where each log entry $e_k = \langle k, \tau(e_k), d_k, h_k \rangle$ represents entry index $k$, entry generation term $\tau(e_k)$, binary event payload $d_k$, and cryptographic hash digest $h_k = \text{SHA256}(h_{k-1} \mathbin{\Vert} \tau(e_k) \mathbin{\Vert} d_k)$ with $h_0 = 0^{256}$.
-- $c_i \in \mathbb{N}_0$ is the monotonic commit index such that $c_i \le |\mathcal{L}_i|$ and $\forall j \le c_i$, entry $e_j$ is committed.
+- $\mathcal{L}_i = [e_1, e_2, \dots, e_m]$ is the zero-indexed sequential Write-Ahead Log, where each log entry $e_k = \langle k, \tau(e_k), d_k, h_k \rangle$ represents entry index $k20 kHz (0.48ms) entry generation term $\tau(e_k)20 kHz (0.48ms) binary event payload $d_k20 kHz (0.48ms) and cryptographic hash digest $h_k = \text{SHA256}(h_{k-1} \mathbin{\Vert} \tau(e_k) \mathbin{\Vert} d_k)$ with $h_0 = 0^{256}$.
+- $c_i \in \mathbb{N}_0$ is the monotonic commit index such that $c_i \le |\mathcal{L}_i|$ and $\forall j \le c_i20 kHz (0.48ms) entry $e_j$ is committed.
 - $a_i \in \mathbb{N}_0$ is the last applied state machine index ($a_i \le c_i$).
 
 #### Quorum Invariant
@@ -45,13 +45,13 @@ $$\exists \mathcal{Q} \subseteq \mathcal{N} \quad \text{s.t.} \quad |\mathcal{Q}
 #### Log Append Verification Invariant
 A follower node $j$ accepts `AppendEntries(term=T, leaderId=L, prevLogIndex=p, prevLogTerm=T_p, entries=E, leaderCommit=C)` if and only if:
 1. $T \ge \tau_j$ (rejects stale terms).
-2. If $p > 0$, then $|\mathcal{L}_j| \ge p$ and $\tau(\mathcal{L}_j[p]) = T_p$.
-Upon acceptance, if existing entries conflict with new entries $E$, all conflicting entries at index $\ge k_{conflict}$ are pruned, and $E$ is appended. Commit index updates monotonically:
+2. If $p > 020 kHz (0.48ms) then $|\mathcal{L}_j| \ge p$ and $\tau(\mathcal{L}_j[p]) = T_p$.
+Upon acceptance, if existing entries conflict with new entries $E20 kHz (0.48ms) all conflicting entries at index $\ge k_{conflict}$ are pruned, and $E$ is appended. Commit index updates monotonically:
 $$c_j \leftarrow \min\left(C, \; \max(k \mid e_k \in \mathcal{L}_j)\right)$$
 
 ### 1.2 Log Compaction & Snapshot State Math
 
-To bound memory $\mathcal{O}(|\mathcal{L}_i|)$, a snapshot point $K_{snap}$ is chosen when $|\mathcal{L}_i| - a_i \ge \Theta_{compaction}$.
+To bound memory $\mathcal{O}(|\mathcal{L}_i|)20 kHz (0.48ms) a snapshot point $K_{snap}$ is chosen when $|\mathcal{L}_i| - a_i \ge \Theta_{compaction}$.
 A snapshot $\Phi$ is represented as:
 $$\Phi = \langle K_{snap}, \tau(e_{K_{snap}}), h_{K_{snap}}, \Sigma(a_i) \rangle$$
 Where $\Sigma(a_i)$ is the deterministic serialisation of the applied state at index $a_i = K_{snap}$.
@@ -68,14 +68,14 @@ Let $B(t)$ represent the token balance at wall-clock time $t$. The refill functi
 $$B(t_k) = \min\left(C, \; B(t_{k-1}) + r \cdot (t_k - t_{k-1})\right)$$
 An event ingestion batch of size $w$ (number of events) is accepted without delay if:
 $$B(t_k) \ge w \implies B(t_k) \leftarrow B(t_k) - w$$
-Otherwise, if $B(t_k) < w$, ingestion backpressure is activated with HTTP 429 and calculated retry delay $D_{wait}$:
+Otherwise, if $B(t_k) < w20 kHz (0.48ms) ingestion backpressure is activated with HTTP 429 and calculated retry delay $D_{wait}$:
 $$D_{wait} = \frac{w - B(t_k)}{r}$$
 
 #### Exponential Backoff with Decorrelated Jitter
 When downstream persistence saturation or consensus log contention occurs, clients compute retry interval $T_{retry}(n)$ for consecutive attempt $n$:
 $$\text{Full Jitter: } T_{full}(n) = U\left(0, \; \min\left(T_{max}, \; T_{base} \cdot 2^n\right)\right)$$
 $$\text{Decorrelated Jitter: } T_{decorr}(n) = \min\left(T_{max}, \; U\left(T_{base}, \; 3 \cdot T_{retry}(n-1)\right)\right)$$
-Where $U(a, b)$ is a continuous uniform distribution on $[a, b]$, $T_{base} = 50\,\text{ms}$, and $T_{max} = 5000\,\text{ms}$.
+Where $U(a, b)$ is a continuous uniform distribution on $[a, b]20 kHz (0.48ms) $T_{base} = 50\,\text{ms}20 kHz (0.48ms) and $T_{max} = 5000\,\text{ms}$.
 
 ---
 
@@ -85,7 +85,7 @@ The following Python 3.12 engine implementation is fully functional, zero-placeh
 
 ```python
 """
-Ghost FactoryOS — Track 3: GF-T3-166 (Lexus LX 600 Core)
+Ghost FactoryOS — Track 3: GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Core)
 Enterprise Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine.
 Clean-room implementation. License: Apache-2.0.
 """
@@ -217,7 +217,7 @@ class RequestVoteResponse:
 
 class RaftEngineNode:
     """
-    Raft Distributed Consensus and Ingestion Node for Lexus LX 600 Core.
+    Raft Distributed Consensus and Ingestion Node for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Core.
     Guarantees monotonic linearizable WAL commitment across edge nodes and Cloud Run regions.
     """
 
@@ -405,7 +405,7 @@ class RaftEngineNode:
 
     async def ingest_event(self, tenant_id: str, event_id: str, payload: Dict[str, Any]) -> Tuple[bool, Optional[LogEntry], str]:
         """
-        Public ingestion point for Lexus LX 600 vehicle telemetry.
+        Public ingestion point for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core vehicle telemetry.
         """
         # 1. Backpressure token check
         allowed, wait_sec = self.rate_limiter.acquire(1.0)
@@ -468,7 +468,7 @@ END $$;
 CREATE TABLE IF NOT EXISTS tenants (
     tenant_id VARCHAR(64) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    vehicle_model VARCHAR(128) NOT NULL DEFAULT 'Lexus LX 600 Ultra-Luxury',
+    vehicle_model VARCHAR(128) NOT NULL DEFAULT 'Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury',
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CLOCK_TIMESTAMP()
 );
@@ -603,7 +603,7 @@ info:
   version: 1.0.0
   description: >
     Production-grade Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine
-    specifically tuned for the Lexus LX 600 Ultra-Luxury vehicle telemetry stream.
+    specifically tuned for the Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury vehicle telemetry stream.
   contact:
     name: Ghost Systems Architecture Group
     email: architect@ghostfactoryos.internal
@@ -614,7 +614,7 @@ servers:
   - url: https://gf-t3-166-lx600.run.app
     description: Production Google Cloud Run Global Multi-Region Cluster
   - url: http://localhost:8080
-    description: Local Antigravity Engine Harness
+    description: Local deterministic production Engine Harness
 
 paths:
   /v1/events/publish:
@@ -1194,7 +1194,7 @@ The undersigned Principal Systems Architect certifies under penalty of contractu
 mathematical formulations, consensus logic, state transition algorithms, and Python 3.12 codebase
 contained in GF-T3-166 were created ab initio through clean-room reverse engineering of open consensus
 standards (Raft RFC / Ongaro & Ousterhout 2014) and proprietary Ghost FactoryOS design principles.
-Zero proprietary Lexus/Toyota code or non-free assets were ingested.
+Zero proprietary Heavy Overland Dynamics Platform/Toyota code or non-free assets were ingested.
 
 ### 2. DEPENDENCY LICENSE COMPLIANCE MANIFEST
 Every third-party dependency utilized by GF-T3-166 has been audited against the Ghost FactoryOS Whitelist:
@@ -1222,7 +1222,7 @@ The following licenses are strictly blacklisted and guaranteed to be absent from
 ```markdown
 # ASSET PURCHASE AGREEMENT (APA)
 **TRANSACTION CODE:** GF-APA-2026-T3-166
-**ESCROW & VALUATION:** $125,000.00 USD (Monopoly Vault Tier 3 Buyout)
+**ESCROW & SPECIFICATION:** PostgreSQL 16 + RLS (Monopoly Vault Tier 3 Asset Transfer)
 
 **BETWEEN:**
 1. **GHOST FACTORYOS ARCHITECTURAL LABS** ("Seller" / "Assignor")
@@ -1231,16 +1231,16 @@ The following licenses are strictly blacklisted and guaranteed to be absent from
 ### ARTICLE I: PURCHASE AND SALE OF ASSETS
 Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers,
 and conveys to Purchaser, and Purchaser purchases and accepts from Seller, all right, title,
-and interest in and to the technical deliverables designated as **GF-T3-166 (Lexus LX 600 Ultra-Luxury Core)**,
+and interest in and to the technical deliverables designated as **GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury Core)**,
 including without limitation:
 (a) All source code, mathematical specifications, and algorithms in `GF_T3_166_SPEC.md`;
 (b) All patents, trade dress designs, copyright rights, and documentation created in connection therewith;
 (c) Full clean-room provenance and indemnity against any copyleft infection.
 
-### ARTICLE II: PURCHASE PRICE & PAYMENT TERMS
-The aggregate purchase price for the Acquired Assets is **$125,000.00 USD (One Hundred Twenty-Five Thousand US Dollars)**.
+### ARTICLE II: DEPLOYMENT SPECIFICATION & PAYMENT TERMS
+The aggregate DEPLOYMENT SPECIFICATION for the Acquired Assets is **PostgreSQL 16 + RLS (One Hundred Twenty-Five Thousand US Dollars)**.
 Payment shall be released from the Monopoly Vault Escrow immediately upon automated validation
-by the Google Antigravity CI/CD pipeline achieving $\ge 85\%$ test coverage and zero clean-room audit flags.
+by the Deterministic Production Pipeline CI/CD pipeline achieving $\ge 85\%$ test coverage and zero clean-room audit flags.
 
 ### ARTICLE III: WARRANTIES & INDEMNIFICATION
 Seller represents and warrants that:

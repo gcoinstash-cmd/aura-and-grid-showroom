@@ -42,17 +42,17 @@ export const HeaderBadges: React.FC<HeaderBadgesProps> = ({ telemetry, nodeCount
 
       {/* Responsive 4-Badge Grid (Auto-wrapping 2x2 on mobile, 4 on desktop) */}
       <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 mt-4">
-        {/* Badge 1: APA Buyout */}
+        {/* Badge 1: APA Asset Transfer */}
         <div className="bg-gradient-to-br from-[#0c1424] to-[#080d1a] border border-emerald-500/30 hover:border-emerald-500/60 transition-colors p-3 sm:p-3.5 rounded-lg flex items-start gap-2.5 sm:gap-3 min-h-[72px] sm:min-h-[82px]">
           <div className="p-1.5 sm:p-2 bg-emerald-500/10 rounded-md border border-emerald-500/20 text-emerald-400 shrink-0 mt-0.5">
             <DollarSign className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
           <div className="min-w-0 flex-1 flex flex-col justify-between">
             <div className="text-xs sm:text-sm uppercase font-mono tracking-wider text-slate-400 font-semibold leading-tight whitespace-normal">
-              STANDALONE APA BUYOUT
+              STANDALONE APA ASSET TRANSFER
             </div>
             <div className="text-sm sm:text-base md:text-lg font-mono font-bold text-emerald-400 whitespace-normal leading-tight mt-0.5">
-              $125,000 USD
+              20 kHz (0.48ms)
             </div>
             <div className="text-[10px] sm:text-xs text-slate-400 font-medium whitespace-normal leading-snug mt-0.5">
               Delaware Turnkey Asset Transfer

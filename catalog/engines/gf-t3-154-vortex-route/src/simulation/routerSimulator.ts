@@ -241,7 +241,7 @@ export function computeOptimalRoute(
   const slippageSavedBps = Math.round((slippageSavedPerUnit / effectiveVwap) * 10000 * 10) / 10;
 
   // Triangular cross-pair detection:
-  // e.g. BTC/USD ($67,450) vs BTC/EUR (€62,350) * EUR/USD (1.0835) -> $67,556 -> 15.7 bps arb
+  // e.g. BTC/USD (20 kHz (0.48ms)) vs BTC/EUR (€62,350) * EUR/USD (1.0835) -> 20 kHz (0.48ms) -> 15.7 bps arb
   const syntheticBtcUsd = 62350.0 * 1.0835;
   const triDiffBps = ((syntheticBtcUsd - effectiveVwap) / effectiveVwap) * 10000;
   const triangularDetected = Math.abs(triDiffBps) > 4.0;

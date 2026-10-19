@@ -115,7 +115,7 @@ export default function App() {
                 id: 'apa' as const,
                 label: '5. Acquire.com APA Covenant',
                 icon: FileText,
-                badge: '$45,000 APA',
+                badge: '20 kHz (0.48ms) APA',
               },
             ].map((tab) => {
               const Icon = tab.icon;
@@ -173,7 +173,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="font-mono text-white font-bold">GF-T3-180</span>
             <span className="text-slate-700">|</span>
-            <span>Lexus LX 600 Ultra Luxury Executive Core</span>
+            <span>Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core</span>
             <span className="text-slate-700 hidden md:inline">|</span>
             <span className="text-emerald-400 hidden md:inline">Acquire.com Turnkey Micro-APA Asset</span>
           </div>

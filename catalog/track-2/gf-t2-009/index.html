@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
   <style id="ghost-typography">
     html { font-size: 18px !important; }
     body { font-size: 1.125rem !important; line-height: 1.65 !important; }
@@ -17,10 +18,44 @@
     .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
     .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
     .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    /* WCAG AAA Contrast Overrides for Secondary Obsidian Copy */
+    .text-zinc-500, .text-stone-500, .text-gray-500, .text-neutral-500, .text-slate-500 { color: #d4d4d8 !important; }
+    .text-zinc-400, .text-stone-400, .text-gray-400, .text-neutral-400, .text-slate-400 { color: #e4e4e7 !important; }
+    .text-zinc-600, .text-stone-600, .text-gray-600, .text-neutral-600, .text-slate-600 { color: #a1a1aa !important; }
+  </style>
+  <script type="module" crossorigin src="./assets/index-DZDEx7W4.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CvwP_oIy.css">
+  <style id="gf-typography-boost">
+    html {
+      font-size: 16px !important;
+    }
+    body {
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+    }
+    /* Scale up compact tailwind utility classes */
+    .text-xs {
+      font-size: 0.875rem !important; /* 14px floor instead of 12px */
+      line-height: 1.25rem !important;
+    }
+    .text-sm {
+      font-size: 1rem !important; /* 16px instead of 14px */
+      line-height: 1.5rem !important;
+    }
+    .text-base {
+      font-size: 1.125rem !important; /* 18px */
+    }
+    /* Boost telemetry values, badges, and button labels */
+    button, a, input, select {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+    }
+    .metric-value, [class*="text-2xl"], [class*="text-3xl"] {
+      letter-spacing: -0.02em !important;
+    }
   </style>
 </head>
   <body class="bg-[#080808] text-stone-200 text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

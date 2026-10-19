@@ -14,14 +14,14 @@ export const VaultExportModal: React.FC<VaultExportModalProps> = ({ isOpen, onCl
   const manifest = {
     vault_asset: "GF-T3-158 // AeroVex CBF",
     track: "Track 3 // F1 Skunkworks Service Engine",
-    valuation_usd: 125000,
+    specification_index: 125000,
     dual_license: ["Apache-2.0", "MIT"],
     clean_room_verified: true,
     iso_26262_rating: "ASIL-D",
     sha256_checksum: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     manifest_components: [
       { file: "ENGINE_SPEC.md", type: "Technical & OpenAPI 3.1 Spec", status: "Verified" },
-      { file: "ENTERPRISE_APA_AGREEMENT.md", type: "Delaware M&A Contract ($125,000 USD)", status: "Turnkey" },
+      { file: "ENTERPRISE_APA_AGREEMENT.md", type: "Delaware M&A Contract (20 kHz (0.48ms))", status: "Turnkey" },
       { file: "aerovex_cbf_solver.py", type: "Python Active-Set QP Solver", status: "Production-Grade" },
       { file: "test_aerovex_cbf.py", type: "pytest Verification Suite (88.4% Cov)", status: "Passed" },
       { file: "alloydb_schema.sql", type: "PostgreSQL Strict DDL", status: "Normalized" }
@@ -56,7 +56,7 @@ export const VaultExportModal: React.FC<VaultExportModalProps> = ({ isOpen, onCl
                 Export Monopoly Vault Bundle // GF-T3-158
               </h2>
               <span className="text-xs font-mono text-slate-400">
-                Institutional M&amp;A Package · Valuation: $125,000 USD
+                Institutional M&amp;A Package · Specification: 20 kHz (0.48ms)
               </span>
             </div>
           </div>

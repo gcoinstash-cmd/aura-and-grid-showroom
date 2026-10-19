@@ -100,10 +100,10 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
             inlet_temp_c: 18.2
           }
         }, null, 2));
-      } else if (selectedEndpoint === '/api/v1/direct4/setpoint') {
+      } else if (selectedEndpoint === '/api/v1/dual_vector_torque/setpoint') {
         setApiResponse(JSON.stringify({
           status: 'ACCEPTED',
-          message: 'Direct4 dynamic torque arbitration override accepted by master inverter ECU.',
+          message: 'DualVectorTorque dynamic torque arbitration override accepted by master inverter ECU.',
           applied_setpoint: {
             front_torque_ratio: 0.20,
             rear_torque_ratio: 0.80,
@@ -163,9 +163,9 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
             <label className="text-slate-300 text-sm font-medium">Select Endpoint:</label>
             <div className="grid grid-cols-1 gap-2">
               {[
-                { method: 'GET', path: '/api/v1/telemetry/latest', desc: 'Fetch latest DIRECT4 & DRS state' },
+                { method: 'GET', path: '/api/v1/telemetry/latest', desc: 'Fetch latest DUAL_VECTOR_TORQUE & DRS state' },
                 { method: 'GET', path: '/api/v1/battery/bipolar-nimh/status', desc: 'Bipolar NiMH pack thermal telemetry' },
-                { method: 'POST', path: '/api/v1/direct4/setpoint', desc: 'Override torque vectoring setpoint' },
+                { method: 'POST', path: '/api/v1/dual_vector_torque/setpoint', desc: 'Override torque vectoring setpoint' },
               ].map((ep) => (
                 <button
                   key={ep.path}
@@ -311,9 +311,9 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
 const openApiJsonSpec = `{
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-199 Lexus RX 500h High-Frequency Telemetry Gateway",
+    "title": "GF-T3-199 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-Frequency Telemetry Gateway",
     "version": "1.0.0-PROD",
-    "description": "Standardized OpenAPI 3.1 contract exposing DIRECT4 AWD torque split, Dynamic Rear Steering resolver telemetry, and Bipolar NiMH pack diagnostics.",
+    "description": "Standardized OpenAPI 3.1 contract exposing DUAL_VECTOR_TORQUE AWD torque split, Dynamic Rear Steering resolver telemetry, and Bipolar NiMH pack diagnostics.",
     "license": {
       "name": "MIT Permissive",
       "url": "https://opensource.org/licenses/MIT"
@@ -328,7 +328,7 @@ const openApiJsonSpec = `{
   "paths": {
     "/api/v1/telemetry/latest": {
       "get": {
-        "summary": "Get latest consolidated DIRECT4 & DRS vehicle state",
+        "summary": "Get latest consolidated DUAL_VECTOR_TORQUE & DRS vehicle state",
         "operationId": "getLatestTelemetry",
         "responses": {
           "200": {
@@ -362,16 +362,16 @@ const openApiJsonSpec = `{
         }
       }
     },
-    "/api/v1/direct4/setpoint": {
+    "/api/v1/dual_vector_torque/setpoint": {
       "post": {
         "summary": "Inject dynamic AWD override vector",
-        "operationId": "setDirect4Vector",
+        "operationId": "setDualVectorTorqueVector",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Direct4OverrideRequest"
+                "$ref": "#/components/schemas/DualVectorTorqueOverrideRequest"
               }
             }
           }

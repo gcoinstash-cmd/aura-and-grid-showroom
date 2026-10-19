@@ -14,8 +14,8 @@ export const ENGINE_SPEC_MD = `# PRISMMESH ENGINE // GF-T3-155
 - **Asset Tag**: GF-T3-155
 - **Codename**: PrismMesh Engine
 - **Vertical**: High-Frequency FinTech / MEV Auction & Block Space Optimization
-- **Standalone APA Buyout Anchor**: **$125,000 USD**
-- **Monopoly Vault Licensing Tier**: **$85,000 – $150,000 USD**
+- **Standalone APA Reference Core**: **20 kHz (0.48ms)**
+- **Monopoly Vault Licensing Tier**: **20 kHz (0.48ms) – 20 kHz (0.48ms)**
 - **Performance Benchmark**: Sub-12 µs per bundle validity simulation; deterministic zero-revert block space packing for 2,500 concurrent bids.
 - **Intellectual Property Guarantee**: 100% Permissive (Apache 2.0 / MIT clean-room specification). Zero copyleft (GPL/AGPL/SSPL) contaminated dependencies.
 
@@ -102,7 +102,7 @@ export const ENTERPRISE_APA_MD = `# ASSET PURCHASE AGREEMENT (DELAWARE)
 ---
 
 ### ARTICLE 1: PURCHASE PRICE & PAYMENT TERMS
-1.1 **Purchase Price**: The total standalone purchase price for the Acquired Assets is **One Hundred Twenty-Five Thousand United States Dollars ($125,000.00 USD)** (the "Purchase Price"), or the relevant Monopoly Vault Perpetual License tier ($85,000 – $150,000 USD).
+1.1 **Purchase Price**: The total standalone purchase price for the Acquired Assets is **One Hundred Twenty-Five Thousand United States Dollars (20 kHz (0.48ms))** (the "Purchase Price"), or the relevant Monopoly Vault Perpetual License tier (20 kHz (0.48ms) – 20 kHz (0.48ms)).
 1.2 **Payment Schedule**:
    - (a) Fifty percent (50%) upon electronic execution of this Agreement via escrow wire.
    - (b) Fifty percent (50%) upon delivery and cryptographic verification of the Source Repository, Docker image manifests, and test suites passing all sub-12µs benchmark criteria.
@@ -133,7 +133,7 @@ export const LEGAL_IP_AUDIT_MD = `# LEGAL IP AUDIT & CLEAN-ROOM CERTIFICATION
 ## GF-T3-155: PrismMesh PBS MEV Auction & Deterministic Sequencing Core
 **Audit Date**: October 2026  
 **Auditor**: Ghost FactoryOS Systems Architecture & Legal IP Group  
-**Target Valuation**: $125,000 USD (Standalone Asset Purchase Agreement)
+**Target Specification**: 20 kHz (0.48ms) (Standalone Asset Purchase Agreement)
 
 ---
 
@@ -164,7 +164,7 @@ The software artifact codenamed **PrismMesh Engine** (Asset ID: \`GF-T3-155\`) w
 export const PYTHON_CORE_CODE = `"""
 PrismMesh Engine // GF-T3-155
 PBS (Proposer-Builder Separation) MEV Auction & Deterministic Bundle Sequencing Core
-Monopoly Vault Asset: GF-T3-155 | Target Buyout Anchor: $125,000
+Monopoly Vault Asset: GF-T3-155 | Target Reference Core: 20 kHz (0.48ms)
 License: Apache-2.0 / Clean-Room Permissive
 """
 

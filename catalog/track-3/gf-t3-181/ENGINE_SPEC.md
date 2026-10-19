@@ -1,9 +1,9 @@
-# GF-T3-181: LEXUS IS 500 F SPORT PERFORMANCE CORE
-## Turnkey Micro-APA Buyout Technical Specification (Acquire.com Asset ID: GF-T3-181)
+# GF-T3-181: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE
+## Turnkey Micro-APA Asset Transfer Technical Specification (Acquire.com Asset ID: GF-T3-181)
 **Entity:** Ghost FactoryOS — F1 Skunkworks Track 3 Deliverable  
-**Platform Target:** Lexus IS 500 F SPORT (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
-**Valuation:** Standard Micro-APA Buyout: $45,000 USD | Enterprise Monopoly Vault: $125,000 USD  
-**License:** Permissive MIT / Dual-Commercial Delaware APA  
+**Platform Target:** Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
+**Specification: ** Standard Micro-APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Monopoly Vault: PostgreSQL 16 + RLS  
+**License:** Permissive MIT / Dual-Commercial Turnkey Software Asset Purchase Agreement  
 **Audit Status:** 100% Clean-Room Certified (0% Copyleft / No GPL / No AGPL / No SSPL)  
 **Timestamp:** 2026-10-11T20:35:00-07:00
 
@@ -24,19 +24,19 @@ The **GF-T3-181 Performance Core** is a turnkey, self-contained powertrain telem
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 2UR-GSE Throttle Mapping Transfer Function
-The engine utilizes a piecewise dynamic mapping based on active drive modes (Eco, Normal, Sport, Sport S+):
+The engine utilizes a piecewise dynamic mapping based on active drive modes (Eco, Normal, Sport, High-Frequency Compute Mode):
 
 $$\theta_{\text{valve}}(p, \omega) = \min\left(100, \, \alpha_m \cdot p^{\gamma_m} \cdot \left(1 + \beta_m \cdot \frac{\omega - \omega_{\text{idle}}}{\omega_{\text{redline}} - \omega_{\text{idle}}}\right)\right)$$
 
 Where:
 - $p \in [0, 100]$: Driver throttle pedal angle percentage
 - $\omega \in [1000, 7300]$: Engine crankshaft speed in RPM
-- $\omega_{\text{idle}} = 1000$, $\omega_{\text{redline}} = 7300$
+- $\omega_{\text{idle}} = 100020 kHz (0.48ms) $\omega_{\text{redline}} = 7300$
 - Parameters per Drive Mode:
-  * **Eco Mode:** $\alpha = 0.85$, $\gamma = 1.35$ (progressive compression, damping low-throttle surge)
-  * **Normal Mode:** $\alpha = 1.00$, $\gamma = 1.10$ (linearized daily response)
-  * **Sport Mode:** $\alpha = 1.15$, $\gamma = 0.90$ (sharpened tip-in response)
-  * **Sport S+ Mode:** $\alpha = 1.28$, $\gamma = 0.78$, $\beta = 0.35$ (aggressive high-RPM non-linear throttle response with zero hysteresis)
+  * **Eco Mode:** $\alpha = 0.8520 kHz (0.48ms) $\gamma = 1.35$ (progressive compression, damping low-throttle surge)
+  * **Normal Mode:** $\alpha = 1.0020 kHz (0.48ms) $\gamma = 1.10$ (linearized daily response)
+  * **Sport Mode:** $\alpha = 1.1520 kHz (0.48ms) $\gamma = 0.90$ (sharpened tip-in response)
+  * **High-Frequency Compute Mode Mode:** $\alpha = 1.2820 kHz (0.48ms) $\gamma = 0.7820 kHz (0.48ms) $\beta = 0.35$ (aggressive high-RPM non-linear throttle response with zero hysteresis)
 
 ### 2.2 Torsen Type-B Thermal & Viscosity Degradation Model
 The differential oil temperature $T_{\text{oil}}$ updates via Newton-Stokes thermal equilibrium:
@@ -129,7 +129,7 @@ CREATE INDEX idx_telemetry_metadata_gin ON telemetry_ledger USING GIN (metadata)
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus IS 500 F SPORT Telemetry Service
+  title: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Telemetry Service
   version: 1.0.0
   description: High-frequency telemetry ingress, cryptographic audit ledger, and Torsen thermal monitoring.
 paths:
@@ -196,7 +196,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", 
 
 ---
 
-## 6. DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA)
-**PURCHASE PRICE:** $45,000 USD (Turnkey Cash) | $125,000 USD (Monopoly Enterprise)  
+## 6. Turnkey Software Asset Purchase Agreement (MICRO-APA)
+**DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 **SELLER INDEMNITY:** 100% Non-infringement clean-room author warranty, zero copyleft/GPL contamination, perpetual assignment of all copyright, trade secrets, throttle mapping curves, and database architectures.  
-**GOVERNING LAW:** State of Delaware, United States.
+**GOVERNING LAW:** Standard Commercial Jurisdiction, United States.

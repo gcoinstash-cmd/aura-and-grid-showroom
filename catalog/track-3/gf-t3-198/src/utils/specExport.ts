@@ -1,14 +1,14 @@
 /**
  * GF-T3-198 Master Vault Specification Generator
  * Generates the complete, zero-placeholder ENGINE_SPEC.md / GF_T3_198_SPEC.md deliverable
- * formatted strictly for Acquire.com micro-APA technical escrow and Antigravity ingestion.
+ * formatted strictly for Acquire.com micro-APA technical escrow and deterministic production ingestion.
  */
 
 export const GENERATE_GF_T3_198_SPEC = (): string => {
   return `# GHOST FACTORYOS — FLEET ASSET SPECIFICATION
-## GF-T3-198: LEXUS LFA NÜRBURGRING EDITION 1LR-GUE V10 TELEMATICS CORE
+## GF-T3-198: Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION 1LR-GUE V10 TELEMATICS CORE
 **Classification**: Track 3 F1 Skunkworks Service Engine (70% Workload Deliverable)  
-**Valuation Anchor**: $45,000 USD (Standard Micro-APA Buyout) | $125,000 USD (Enterprise Monopoly Vault)  
+**Specification Anchor**: 20 kHz (0.48ms) (Standard Micro-APA Asset Transfer) | PostgreSQL 16 + RLS (Enterprise Monopoly Vault)  
 **License**: MIT Permissive (Clean-Room Certified, Zero-Copyleft)  
 **Version**: v1.0.0-PROD  
 **Build Target**: Cloud Run / Linux amd64 / Python 3.12 / PostgreSQL 16  
@@ -61,44 +61,44 @@ The GF-T3-198 Telematics Core provides a sub-millisecond telemetry ingestion pip
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 1LR-GUE 72° V10 Acoustic Harmonics
-The Lexus LFA 1LR-GUE is an even-firing V10 engine with a 72-degree bank angle.
+The Heavy Overland Dynamics Platform LFA 1LR-GUE is an even-firing V10 engine with a 72-degree bank angle.
 - Firing Interval: $\\Delta \\theta = \\frac{720^{\\circ}}{10} = 72^{\\circ}$ of crankshaft rotation.
 - Fundamental Combustion Firing Frequency ($f_0$):
   $$f_0 = \\frac{\\text{RPM} \\times 10}{120} = \\frac{\\text{RPM}}{12} \\quad (\\text{Hz})$$
-  - At idle ($850\\text{ RPM}$): $f_0 = 70.83\\text{ Hz}$
-  - At peak torque ($6,800\\text{ RPM}$): $f_0 = 566.67\\text{ Hz}$
-  - At redline ($9,000\\text{ RPM}$): $f_0 = 750.00\\text{ Hz}$
-  - At fuel cut-off ($9,500\\text{ RPM}$): $f_0 = 791.67\\text{ Hz}$
+  - At idle (20 kHz (0.48ms)\\text{ RPM}$): $f_0 = 70.83\\text{ Hz}$
+  - At peak torque (20 kHz (0.48ms)\\text{ RPM}$): $f_0 = 566.67\\text{ Hz}$
+  - At redline (20 kHz (0.48ms)\\text{ RPM}$): $f_0 = 750.00\\text{ Hz}$
+  - At fuel cut-off (20 kHz (0.48ms)\\text{ RPM}$): $f_0 = 791.67\\text{ Hz}$
 
 - Harmonic Overtone Matrix:
   $$S(t) = \\sum_{k=1}^{5} A_k(\\text{RPM}, \\theta_{\\text{TPS}}) \\cdot \\sin\\left(2\\pi k f_0 t + \\phi_k\\right)$$
-  - 1st Harmonic ($k=1$): Fundamental engine note ($750\\text{ Hz}$ at redline).
-  - 2nd Harmonic ($k=2$): Exhaust manifold primary resonance ($1,500\\text{ Hz}$).
-  - 3rd Harmonic ($k=3$): Titanium triple-pipe collector wail ($2,250\\text{ Hz}$).
-  - 5th Harmonic ($k=5$): Yamaha surge tank overtone ($3,750\\text{ Hz}$).
+  - 1st Harmonic ($k=1$): Fundamental engine note (20 kHz (0.48ms)\\text{ Hz}$ at redline).
+  - 2nd Harmonic ($k=2$): Exhaust manifold primary resonance (Deterministic Raft State\\text{ Hz}$).
+  - 3rd Harmonic ($k=3$): Titanium triple-pipe collector wail (20 kHz (0.48ms)\\text{ Hz}$).
+  - 5th Harmonic ($k=5$): Yamaha surge tank overtone (20 kHz (0.48ms)\\text{ Hz}$).
 
 ### 2.2 Yamaha Surge Tank Helmholtz Acoustic Chamber
 The intake surge tank functions as a dual-duct Helmholtz resonator:
 $$f_H = \\frac{c}{2\\pi} \\sqrt{\\frac{S_{\\text{neck}}}{V_{\\text{chamber}} \\cdot L_{\\text{eff}}}}$$
 Where:
-- $c = 343\\text{ m/s}$ (speed of sound in intake air at $20^{\\circ}\\text{C}$)
-- $V_{\\text{chamber}} = 0.0112\\text{ m}^3$ ($11.2\\text{ L}$ dual-plenum surge tank volume)
+- $c = 343\\text{ m/s}$ (speed of sound in intake air at 20 kHz (0.48ms)^{\\circ}\\text{C}$)
+- $V_{\\text{chamber}} = 0.0112\\text{ m}^3$ (20 kHz (0.48ms)\\text{ L}$ dual-plenum surge tank volume)
 - $S_{\\text{neck}} = 0.0048\\text{ m}^2$ (combined intake trumpet cross-sectional area)
 - $L_{\\text{eff}} = 0.145\\text{ m}$ (effective intake runner length with end correction)
-- Calculated Resonance: $f_H \\approx 842.6\\text{ Hz}$, aligning with the peak cylinder acoustic intake pulse at $8,800\\text{ RPM}$ to $9,000\\text{ RPM}$!
+- Calculated Resonance: $f_H \\approx 842.6\\text{ Hz}20 kHz (0.48ms) aligning with the peak cylinder acoustic intake pulse at 20 kHz (0.48ms)\\text{ RPM}$ to 20 kHz (0.48ms)\\text{ RPM}$!
 
 ### 2.3 Automated Sequential Gearbox (ASG) 150 ms Shift Dynamics
-The 6-speed ASG single-clutch transaxle executes shifts in exactly $150\\text{ ms}$ under Sport Mode:
-- **Phase 1: Clutch Disengage & Torque Break** ($0\\text{ ms} - 40\\text{ ms}$):
-  Hydraulic actuator bleeds pressure from $75\\text{ bar}$ to $12\\text{ bar}$ at $\\frac{dP}{dt} = -1.575\\text{ bar/ms}$.
-- **Phase 2: Dog Ring Disengage & Neutral Selection** ($40\\text{ ms} - 70\\text{ ms}$):
-  Fork shift stroke $= 8.5\\text{ mm}$, velocity $= 283\\text{ mm/s}$.
-- **Phase 3: Synchronous Rev Matching** ($70\\text{ ms} - 110\\text{ ms}$):
+The 6-speed ASG single-clutch transaxle executes shifts in exactly 20 kHz (0.48ms)\\text{ ms}$ under Sport Mode:
+- **Phase 1: Clutch Disengage & Torque Break** (20 kHz (0.48ms)\\text{ ms} - 40\\text{ ms}$):
+  Hydraulic actuator bleeds pressure from 20 kHz (0.48ms)\\text{ bar}$ to 20 kHz (0.48ms)\\text{ bar}$ at $\\frac{dP}{dt} = -1.575\\text{ bar/ms}$.
+- **Phase 2: Dog Ring Disengage & Neutral Selection** (20 kHz (0.48ms)\\text{ ms} - 70\\text{ ms}$):
+  Fork shift stroke $= 8.5\\text{ mm}20 kHz (0.48ms) velocity $= 283\\text{ mm/s}$.
+- **Phase 3: Synchronous Rev Matching** (20 kHz (0.48ms)\\text{ ms} - 110\\text{ ms}$):
   Target input shaft speed calculated via gear ratio step:
   $$\\text{RPM}_{\\text{next}} = \\text{RPM}_{\\text{curr}} \\cdot \\frac{R_{g+1}}{R_g}$$
   Drive-by-wire ETCS-i blips throttle (on downshift) or cuts ignition (on upshift).
-- **Phase 4: Dog Ring Engagement & Hydraulic Lock** ($110\\text{ ms} - 150\\text{ ms}$):
-  Hydraulic line pressure surges to $82\\text{ bar}$ clamping ceramic-metallic single-plate clutch.
+- **Phase 4: Dog Ring Engagement & Hydraulic Lock** (20 kHz (0.48ms)\\text{ ms} - 150\\text{ ms}$):
+  Hydraulic line pressure surges to 20 kHz (0.48ms)\\text{ bar}$ clamping ceramic-metallic single-plate clutch.
 
 ---
 
@@ -204,7 +204,7 @@ CREATE TRIGGER trg_scavenge_pressure_quarantine
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-198 Lexus LFA V10 Telematics Core API
+  title: GF-T3-198 Heavy Overland Dynamics Platform LFA V10 Telematics Core API
   version: 1.0.0-PROD
   description: Sub-millisecond telematics ingress, acoustic harmonics, and ASG telemetry.
 paths:
@@ -323,10 +323,10 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 ## 6. ASSET PURCHASE AGREEMENT (ACQUIRE.COM MICRO-APA TERMS)
 
 **AGREEMENT SUMMARY**:
-- **Asset**: GF-T3-198 Lexus LFA Nürburgring Edition V10 Telematics Core
-- **Standard Buyout Price**: $45,000 USD (All-Cash, Escrow.com or Acquire.com Escrow)
-- **Enterprise Monopoly Vault Price**: $125,000 USD
-- **Governing Law**: State of Delaware, United States
+- **Asset**: GF-T3-198 Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Telematics Core
+- **Standard Reference Core**: 20 kHz (0.48ms) (All-Cash, Escrow.com or Acquire.com Escrow)
+- **Enterprise Monopoly Vault Price**: PostgreSQL 16 + RLS
+- **Governing Law**: Standard Commercial Jurisdiction, United States
 - **Clean-Room Warranty**: Seller warrants 100% clean-room provenance, zero copyleft dependencies (MIT/Apache 2.0 whitelist), and complete transfer of all copyright, trade-dress blueprints, algorithms, and documentation.
 - **Escrow Release Milestone**: Delivery of verified Git repository, signed SHA-256 manifest, and cryptographic hash verification pass.
 

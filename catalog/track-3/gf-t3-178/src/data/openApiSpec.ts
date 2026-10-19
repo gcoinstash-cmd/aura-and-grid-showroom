@@ -1,6 +1,6 @@
 export const OPENAPI_YAML_SPEC = `openapi: 3.1.0
 info:
-  title: GF-T3-178 Lexus LS 500 Executive AWD Telemetry Gateway
+  title: GF-T3-178 Heavy Overland Dynamics Platform LS 500 Executive AWD Telemetry Gateway
   version: 1.0.0-PROD
   description: >
     Zero-placeholder OpenAPI 3.1 specification for cabin acoustic interior microphone stream ingestion,
@@ -15,7 +15,7 @@ paths:
   /v1/telemetry/microphone-stream:
     post:
       summary: Ingest 4-Channel Interior Acoustic Microphone Frames
-      description: Ingests 2,000 Hz acoustic sampled vectors from Lexus cabin MEMS microphones.
+      description: Ingests 2,000 Hz acoustic sampled vectors from Heavy Overland Dynamics Platform cabin MEMS microphones.
       operationId: ingestMicrophoneStream
       requestBody:
         required: true
@@ -40,7 +40,7 @@ paths:
   /v1/actuators/anti-phase-command:
     post:
       summary: Command Active Speaker Anti-Phase Duty Cycle
-      description: Commands inverted phase duty cycle to Mark Levinson audio amplifier channels.
+      description: Commands inverted phase duty cycle to Acoustic Noise-Inversion Transducer audio amplifier channels.
       operationId: commandAntiPhaseAudio
       requestBody:
         required: true
@@ -147,7 +147,7 @@ components:
       properties:
         channel_mask:
           type: integer
-          description: Bitmask of Mark Levinson output channels (1-23)
+          description: Bitmask of Acoustic Noise-Inversion Transducer output channels (1-23)
           example: 15
         target_gain_db:
           type: number

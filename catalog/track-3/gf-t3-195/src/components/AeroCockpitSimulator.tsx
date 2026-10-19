@@ -88,7 +88,7 @@ export const AeroCockpitSimulator: React.FC<AeroCockpitSimulatorProps> = ({
             </h2>
           </div>
           <p className="text-[16px] text-slate-400 mt-0.5">
-            Real-time multi-point aerodynamic state estimation for Lexus LC 500 Inspiration Series
+            Real-time multi-point aerodynamic state estimation for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series
           </p>
         </div>
 
@@ -342,7 +342,7 @@ export const AeroCockpitSimulator: React.FC<AeroCockpitSimulatorProps> = ({
                 GROUND PLANE (CLEARANCE: {params.groundClearanceMm}mm)
               </text>
 
-              {/* Lexus Inspiration Fixed Carbon Swan-Neck Wing Foil */}
+              {/* Heavy Overland Dynamics Platform Inspiration Fixed Carbon Swan-Neck Wing Foil */}
               <g
                 transform={`translate(240, 110) rotate(${params.wingAoaDeg}, 0, 0)`}
                 className="transition-transform duration-200"

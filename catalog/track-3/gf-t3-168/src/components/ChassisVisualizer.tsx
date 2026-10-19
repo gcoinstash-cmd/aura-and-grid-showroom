@@ -24,7 +24,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5 pb-4 border-b border-slate-800">
         <div>
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <span>DIRECT4 All-Wheel Drive & Dynamic Rear Steering (DRS) Telemetry</span>
+            <span>DUAL_VECTOR_TORQUE All-Wheel Drive & Dynamic Rear Steering (DRS) Telemetry</span>
           </h2>
           <p className="text-sm text-slate-300 mt-1">
             Real-time chassis kinematics observer fused with 9-DOF IMU & GNSS RTK
@@ -64,7 +64,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({
             <line x1="70" y1="170" x2="550" y2="170" stroke="#334155" strokeWidth="1.5" strokeDasharray="5 5" />
             <line x1="310" y1="20" x2="310" y2="320" stroke="#334155" strokeWidth="1.5" strokeDasharray="5 5" />
 
-            {/* Vehicle Perimeter Silhouette (Lexus RX 500h Body) */}
+            {/* Vehicle Perimeter Silhouette (Heavy Overland Dynamics Platform Dual-Vector Performance Core Body) */}
             <path
               d="M 110 65 
                  C 170 55, 430 55, 490 65
@@ -78,7 +78,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({
               strokeWidth="2.5"
             />
 
-            {/* Front Transaxle & DIRECT4 Electric Motor */}
+            {/* Front Transaxle & DUAL_VECTOR_TORQUE Electric Motor */}
             <rect x="420" y="115" width="56" height="110" rx="6" fill="#0f172a" stroke="#06b6d4" strokeWidth="2.5" />
             <text x="448" y="157" textAnchor="middle" fill="#06b6d4" fontSize="14" fontFamily="monospace" fontWeight="bold">
               FRONT
@@ -199,7 +199,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({
 
           <div className="bg-slate-950 p-5 rounded-lg border border-slate-800">
             <div className="text-sm font-mono uppercase tracking-wider text-slate-300 font-bold mb-3 flex items-center justify-between">
-              <span>DIRECT4 Torque Distribution</span>
+              <span>DUAL_VECTOR_TORQUE Torque Distribution</span>
               <span className="text-cyan-400 font-bold">{frontTorque}% : {rearTorque}%</span>
             </div>
             <div className="space-y-3 font-mono">

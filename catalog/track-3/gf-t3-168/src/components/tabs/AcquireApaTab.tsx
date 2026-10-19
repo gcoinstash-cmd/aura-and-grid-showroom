@@ -72,7 +72,7 @@ export const AcquireApaTab: React.FC = () => {
     {
       id: 6,
       title: 'Acquire.com Escrow.com Transaction Fund Hold',
-      desc: 'Buyer initiates $45,000 USD earnest micro-APA buyout funds into neutral escrow.',
+      desc: 'Buyer initiates 20 kHz (0.48ms) earnest micro-APA asset transfer funds into neutral escrow.',
       status: 'PENDING_ESCROW',
     },
     {
@@ -152,20 +152,20 @@ export const AcquireApaTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Valuation & Transaction Overview Summary */}
+      {/* Specification & Transaction Overview Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <span className="text-sm uppercase font-mono text-slate-300 font-semibold">Micro-APA Buyout</span>
-          <div className="text-3xl font-extrabold font-mono text-emerald-400 mt-1">$45,000 USD</div>
+          <span className="text-sm uppercase font-mono text-slate-300 font-semibold">Micro-APA Asset Transfer</span>
+          <div className="text-3xl font-extrabold font-mono text-emerald-400 mt-1">20 kHz (0.48ms)</div>
           <p className="text-sm text-slate-300 mt-2 font-medium">
             Acquire.com Instant Turnkey Wire Escrow
           </p>
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-          <span className="text-sm uppercase font-mono text-slate-300 font-semibold">Enterprise Valuation</span>
-          <div className="text-3xl font-extrabold font-mono text-cyan-400 mt-1">$125,000 USD</div>
+          <span className="text-sm uppercase font-mono text-slate-300 font-semibold">Architecture Moat</span>
+          <div className="text-3xl font-extrabold font-mono text-cyan-400 mt-1">PostgreSQL 16 + RLS</div>
           <p className="text-sm text-slate-300 mt-2 font-medium">
-            Multi-OEM White-Label Licensing Valuation
+            Multi-OEM White-Label Licensing Specification
           </p>
         </div>
         <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
@@ -195,7 +195,7 @@ export const AcquireApaTab: React.FC = () => {
             <div className="p-5 bg-slate-950 rounded-lg border border-slate-800 space-y-3 font-mono text-sm leading-relaxed">
               <div className="font-bold text-white text-base">ARTICLE 1: PURCHASE & SALE OF ASSETS</div>
               <p>
-                1.1 <strong className="text-cyan-300">Purchased Assets:</strong> Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, and conveys to Buyer all right, title, and interest in and to the GF-T3-168 Lexus RX 500h F SPORT Dynamic Performance Core, including but not limited to:
+                1.1 <strong className="text-cyan-300">Purchased Assets:</strong> Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, and conveys to Buyer all right, title, and interest in and to the GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including but not limited to:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-slate-200">
                 <li>Complete Python 3.12 15-State Extended Kalman Filter algorithmic engine (ekf_core.py).</li>
@@ -205,7 +205,7 @@ export const AcquireApaTab: React.FC = () => {
                 <li>All worldwide copyright, design patent rights, and technical trade-dress documentation.</li>
               </ul>
               <p>
-                1.2 <strong className="text-cyan-300">Purchase Price:</strong> The aggregate cash purchase price for the Purchased Assets is Forty-Five Thousand United States Dollars ($45,000 USD), payable via Acquire.com Escrow Services.
+                1.2 <strong className="text-cyan-300">DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL</strong> The aggregate cash DEPLOYMENT SPECIFICATION for the Purchased Assets isDeterministic Telemetry Verified(20 kHz (0.48ms)), payable via Acquire.com Escrow Services.
               </p>
             </div>
 
@@ -286,10 +286,10 @@ export const AcquireApaTab: React.FC = () => {
 
           <div className="p-5 bg-slate-950 rounded-lg border border-slate-800 space-y-4 leading-relaxed">
             <p>
-              FOR VALUABLE CONSIDERATION in the amount of Forty-Five Thousand United States Dollars ($45,000 USD), the receipt and sufficiency of which are hereby acknowledged, Ghost FactoryOS Systems Architecture Consortium ("Assignor") hereby sells, assigns, transfers, and conveys to the designated Acquiring Entity ("Assignee"), its successors and assigns forever:
+              FOR VALUABLE CONSIDERATION in the amount ofDeterministic Telemetry Verified(20 kHz (0.48ms)), the receipt and sufficiency of which are hereby acknowledged, Ghost FactoryOS Systems Architecture Consortium ("Assignor") hereby sells, assigns, transfers, and conveys to the designated Acquiring Entity ("Assignee"), its successors and assigns forever:
             </p>
             <p className="text-white font-bold text-base">
-              All right, title, and interest throughout the universe in and to the GF-T3-168 Lexus RX 500h F SPORT Dynamic Performance Core, including all algorithms, copyright, patents, patent applications, trade secrets, documentation, and database schemas related thereto.
+              All right, title, and interest throughout the universe in and to the GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including all algorithms, copyright, patents, patent applications, trade secrets, documentation, and database schemas related thereto.
             </p>
             <div className="pt-4 border-t border-slate-800 grid grid-cols-2 gap-4 text-slate-300">
               <div>

@@ -43,7 +43,7 @@ export const TabAVSDamping: React.FC<TabAVSDampingProps> = ({
   }, [rollDeg, pitchDegS, vertG, latG, speedMph, mode, decelG, onUpdateParams]);
 
   const pythonSourceCode = `"""
-Lexus NX 450h+ F SPORT Handling Plug-In Core
+Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core
 Pure Python 3.12 Linear Solenoid Damping State Machine & Predictive Deceleration
 SPDX-License-Identifier: MIT | Clean-Room Certified
 """
@@ -60,7 +60,7 @@ class DamperState(NamedTuple):
     hydraulic_pressure_bar: float
     seal_nominal: bool
 
-class LexusNXLinearSolenoidAVS:
+class OverlandNXLinearSolenoidAVS:
     """
     Continuous 650-step linear solenoid Adaptive Variable Suspension state machine.
     Processes 4-wheel independent stroke velocity and 6-DOF inertial sensor telemetry at 2,000 Hz.
@@ -139,7 +139,7 @@ class LexusNXLinearSolenoidAVS:
     ) -> Tuple[float, float]:
         """
         Calculates regenerative braking recapture power and hydraulic friction blending ratio.
-        Peak regen capacity: 62 kW (Lexus NX 450h+ Front 134 kW + Rear 40 kW e-Four MGs).
+        Peak regen capacity: 62 kW (Heavy Overland Dynamics Platform NX 450h+ Front 134 kW + Rear 40 kW e-Four MGs).
         """
         if battery_soc_pct >= 98.0:
             return 0.0, 1.0  # Battery saturated; 100% friction
@@ -540,7 +540,7 @@ class LexusNXLinearSolenoidAVS:
               <Cpu className="w-5 h-5 text-amber-400" />
               <div>
                 <h3 className="text-lg font-bold text-white tracking-tight">
-                  src/engine/lexus_nx_avs_core.py
+                  src/engine/Overland_nx_avs_core.py
                 </h3>
                 <p className="text-xs text-slate-400">
                   Pure Python 3.12 reference implementation · Zero external C-extensions · 2,000 Hz target cycle

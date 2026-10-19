@@ -36,13 +36,13 @@ export const VerifyHashModal: React.FC<VerifyHashModalProps> = ({
   if (!isOpen) return null;
 
   const certificatePayload = `--- GF-T3-195 CRYPTOGRAPHIC AUDIT CERTIFICATE ---
-Asset: Lexus LC 500 Carbon Aero Core
+Asset: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core
 Frame Nonce: #${currentFrame.nonce}
 Audit Timestamp: ${verifiedTime}
 HMAC-SHA256 Signature: ${currentFrame.hmacSignature}
 Status: 100% VALIDATED (ZERO ROLLBACK, ZERO COMPROMISE)
 Clean-Room Provenance: 100% MIT Permissive (0% Copyleft)
-Delaware APA Buyout Anchor: $45,000 USD
+Turnkey Software Asset Purchase Agreement Reference Core: 20 kHz (0.48ms)
 --------------------------------------------------`;
 
   const handleCopyCertificate = () => {

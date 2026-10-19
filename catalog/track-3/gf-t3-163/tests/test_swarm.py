@@ -26,7 +26,7 @@ from app.core.swarm import (
 
 class TestSwarmConsensusAndKineticMesh(unittest.TestCase):
     def setUp(self):
-        """Initializes a fresh 12-node Lexus GX 550 Overtrail+ Swarm Cluster"""
+        """Initializes a fresh 12-node Heavy Overland Dynamics Platform Swarm Cluster"""
         self.cluster = SwarmCluster(node_count=12)
 
     def test_initial_cluster_topology_and_quorum(self):
@@ -144,8 +144,8 @@ class TestSwarmConsensusAndKineticMesh(unittest.TestCase):
         # Quarantined node cannot start election
         self.assertFalse(bad_node.start_election())
 
-    def test_lexus_gx550_ekdss_and_crawl_control_actuation(self):
-        """Verifies Lexus GX 550 Overtrail+ specific actuation triggers across swarm"""
+    def test_Overland_gx550_ekdss_and_crawl_control_actuation(self):
+        """Verifies Heavy Overland Dynamics Platform specific actuation triggers across swarm"""
         leader = self.cluster.nodes[self.cluster.active_leader]
 
         # Set Crawl Control Speed to 2.5 km/h for steep rock descent

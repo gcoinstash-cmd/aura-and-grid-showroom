@@ -91,7 +91,7 @@ export default function App() {
       id: 5,
       name: 'Acquire.com APA Covenant',
       icon: Scale,
-      badge: '$45K Turnkey Buyout',
+      badge: 'Turnkey Diligence',
     },
   ];
 
@@ -207,7 +207,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <ShieldCheck className="w-6 h-6 text-emerald-400" />
             <span className="font-semibold">
-              GF-T3-175 Lexus UX 300h Urban Edge Core • 100% Clean-Room Permissive MIT
+              GF-T3-175 Heavy Overland Dynamics Platform UX 300h Urban Edge Core • 100% Clean-Room Permissive MIT
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 font-mono">
@@ -215,7 +215,7 @@ export default function App() {
             <span>•</span>
             <span>NIST FIPS 180-4</span>
             <span>•</span>
-            <span className="text-emerald-400 font-bold">Escrow Buyout: $45,000 USD</span>
+            <span className="text-emerald-400 font-bold">Escrow Asset Transfer: 20 kHz (0.48ms)</span>
           </div>
         </div>
       </footer>

@@ -128,7 +128,7 @@ const MTS_SPECS: Record<MtsMode, MtsSpec> = {
 };
 
 const PYTHON_CODE = `"""
-Lexus LX 600 F SPORT (GF-T3-194) Active Height Control (AHC) & MTS Engine
+Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) Active Height Control (AHC) & MTS Engine
 Clean-Room Certified Python 3.12 Pure Algorithmic State Machine
 Proprietary 4-Wheel Electro-Hydraulic Pressure & Nitrogen Accumulator Modulator
 """
@@ -178,7 +178,7 @@ class ChassisDynamics:
     roll_angle_deg: float = 0.0
     pitch_angle_deg: float = 0.0
 
-class LexusAhcCoreStateMachine:
+class OverlandAhcCoreStateMachine:
     """
     4-Wheel Active Height Control Core with 2,200 Hz Accumulator Modulation
     Implements hydraulic mass flow and adiabatic nitrogen compression:
@@ -303,7 +303,7 @@ export const AhcSuspensionTab: React.FC<AhcSuspensionTabProps> = ({
   const handleRunPythonTestBench = () => {
     setIsSimRunning(true);
     const logs = [
-      `[T0.000s] Initializing LexusAhcCoreStateMachine() at 2,200 Hz accumulator clock...`,
+      `[T0.000s] Initializing OverlandAhcCoreStateMachine() at 2,200 Hz accumulator clock...`,
       `[T0.004s] Calibrating 4-corner pressure transducers: FL=185.2 bar, FR=185.0 bar, RL=182.4 bar, RR=182.1 bar`,
       `[T0.010s] Drive Mode: ${hydraulicState.driveMode} | MTS Profile: ${hydraulicState.mtsMode}`,
       `[T0.025s] Current Ride Height: ${hydraulicState.heightLevel} (${hydraulicState.corners.FL.heightMm.toFixed(1)} mm)`,
@@ -463,7 +463,7 @@ export const AhcSuspensionTab: React.FC<AhcSuspensionTabProps> = ({
               <line x1="230" y1="160" x2="80" y2="250" stroke="url(#hydraulicLine)" strokeWidth="3" strokeDasharray="4 2" />
               <line x1="230" y1="160" x2="380" y2="250" stroke="url(#hydraulicLine)" strokeWidth="3" strokeDasharray="4 2" />
 
-              {/* Vehicle Body Outline (Lexus LX 600 silhouette) */}
+              {/* Vehicle Body Outline (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core silhouette) */}
               <g transform={`rotate(${hydraulicState.rollDeg}, 230, 160)`}>
                 <rect
                   x="140"
@@ -479,12 +479,12 @@ export const AhcSuspensionTab: React.FC<AhcSuspensionTabProps> = ({
                 {/* Windshield & Roof lines */}
                 <path d="M 160 85 L 300 85 L 290 145 L 170 145 Z" fill="#0f172a" stroke="#64748b" strokeWidth="1.5" />
                 <path d="M 170 165 L 290 165 L 295 240 L 165 240 Z" fill="#0f172a" stroke="#64748b" strokeWidth="1.5" />
-                {/* F SPORT Emblem marker */}
+                {/* High-G Dynamic Telemetry Emblem marker */}
                 <text x="230" y="118" fill="#e2e8f0" fontSize="12" fontWeight="800" textAnchor="middle" letterSpacing="2">
-                  F SPORT
+                  High-G Dynamic Telemetry
                 </text>
                 <text x="230" y="205" fill="#94a3b8" fontSize="10" fontFamily="monospace" textAnchor="middle">
-                  LX 600 AHC
+                  Ultra-Heavy Telemetry Core AHC
                 </text>
               </g>
 
@@ -790,7 +790,7 @@ export const AhcSuspensionTab: React.FC<AhcSuspensionTabProps> = ({
               Pure Python 3.12 AHC Core State Machine (ahc_state_machine.py)
             </h3>
             <p className="text-slate-400 text-base mt-1">
-              Zero-placeholder, mathematically closed electro-hydraulic modulation engine. Ready for Antigravity ingestion.
+              Zero-placeholder, mathematically closed electro-hydraulic modulation engine. Ready for deterministic production ingestion.
             </p>
           </div>
           <div className="flex items-center gap-2">

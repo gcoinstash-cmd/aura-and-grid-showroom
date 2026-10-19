@@ -18,12 +18,12 @@ export const TelemetryMetricsStrip: React.FC<TelemetryMetricsStripProps> = ({
 }) => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-      {/* Card 1: E-KDSS Valve Loop */}
+      {/* Card 1: Dynamic Kinetic Suspension Telemetry Valve Loop */}
       <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-lg hover:border-slate-700 transition-colors">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold flex items-center gap-1.5">
             <Activity className="w-4 h-4 text-amber-400" />
-            E-KDSS Valve Loop
+            Dynamic Kinetic Suspension Telemetry Valve Loop
           </span>
           <span
             className={`text-xs font-mono font-bold px-2 py-0.5 rounded border ${

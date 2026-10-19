@@ -1,7 +1,7 @@
 import { TestResultItem } from '../types/terrain';
 
 export const DOCKERFILE_CONTENT = `# =====================================================================
-# GF-T3-176: Lexus GX 550 Overtrail+ Terrain Core
+# GF-T3-176: Heavy Overland Dynamics Platform Terrain Core
 # Production Hardened Multi-Stage Dockerfile (Non-Root Distroless)
 # =====================================================================
 
@@ -148,11 +148,11 @@ class TestEkdssHydraulicSafetyAndDecoupling:
 export const GCLOUD_DEPLOY_SCRIPT = `#!/usr/bin/env bash
 # =====================================================================
 # 1-Click Production Cloud Run Deployment Script
-# Asset: GF-T3-176 | Lexus GX 550 Overtrail+ Terrain Core
+# Asset: GF-T3-176 | Heavy Overland Dynamics Platform Terrain Core
 # =====================================================================
 set -euo pipefail
 
-PROJECT_ID="\${GCP_PROJECT_ID:-lexus-terrain-vault}"
+PROJECT_ID="\${GCP_PROJECT_ID:-Heavy Overland Dynamics Platform-terrain-vault}"
 REGION="us-central1"
 SERVICE_NAME="gf-t3-176-terrain-core"
 IMAGE_TAG="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:v1.0.0-PROD"

@@ -6,14 +6,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MonroneyBanner } from './components/MonroneyBanner';
 import { TelemetryMetricsStrip } from './components/TelemetryMetricsStrip';
-import { TabDirect4Core } from './components/TabDirect4Core';
+import { TabDualVectorTorqueCore } from './components/TabDualVectorTorqueCore';
 import { TabPostgresLedger } from './components/TabPostgresLedger';
 import { TabOpenApiContract } from './components/TabOpenApiContract';
 import { TabCloudRunHarness } from './components/TabCloudRunHarness';
 import { TabAcquireApa } from './components/TabAcquireApa';
 import { HashVerificationModal } from './components/HashVerificationModal';
 import { PowertrainState, LedgerBlock } from './types/telemetry';
-import { simulateStep, generateInitialLedgerBlocks } from './utils/direct4Engine';
+import { simulateStep, generateInitialLedgerBlocks } from './utils/dual_vector_torqueEngine';
 import { GF_T3_183_FULL_SPEC } from './data/specDocument';
 import { Zap, Database, Network, Terminal, FileText } from 'lucide-react';
 
@@ -32,8 +32,8 @@ export default function App() {
     rearRpm: 3280,
     frontInverterTempC: 51.4,
     rearInverterTempC: 48.2,
-    direct4SplitFront: 60,
-    direct4SplitRear: 40,
+    dual_vector_torqueSplitFront: 60,
+    dual_vector_torqueSplitRear: 40,
     steeringRatio: 8.3,
     roadWheelAngleDeg: -3.0,
     fluxWeakeningActive: false,
@@ -75,7 +75,7 @@ export default function App() {
     [powertrainState]
   );
 
-  // Simulate Direct4 button action
+  // Simulate DualVectorTorque button action
   const handleSimulate = async () => {
     setIsSimulating(true);
     // Dynamic iteration: vary inputs slightly or cycle to simulate active dynamics
@@ -116,7 +116,7 @@ export default function App() {
   };
 
   const navTabs = [
-    { id: 1, label: 'Direct4 BEV & Steer-by-Wire Core', icon: Zap },
+    { id: 1, label: 'DualVectorTorque BEV & Steer-by-Wire Core', icon: Zap },
     { id: 2, label: 'Postgres BEV Ledger', icon: Database },
     { id: 3, label: 'OpenAPI 3.1 Telemetry Contract', icon: Network },
     { id: 4, label: 'Turnkey Cloud Run Harness', icon: Terminal },
@@ -163,7 +163,7 @@ export default function App() {
       {/* Main Tab Content Viewport */}
       <main className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
         {activeTab === 1 && (
-          <TabDirect4Core state={powertrainState} onUpdateInputs={handleUpdateInputs} />
+          <TabDualVectorTorqueCore state={powertrainState} onUpdateInputs={handleUpdateInputs} />
         )}
         {activeTab === 2 && (
           <TabPostgresLedger
@@ -182,7 +182,7 @@ export default function App() {
       <footer className="w-full border-t border-slate-900 py-6 px-4 md:px-6 text-center text-xs text-slate-400 font-mono">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span>Ghost FactoryOS · GF-T3-183 Lexus RZ 450e Direct4 Core</span>
+            <span>Ghost FactoryOS · GF-T3-183 Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Core</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>Delaware Micro-APA Asset</span>

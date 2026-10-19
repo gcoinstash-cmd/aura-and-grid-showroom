@@ -442,13 +442,13 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="font-bold text-slate-400">GHOST FACTORYOS</span>
             <span>·</span>
-            <span>GF-T3-181 (Lexus IS 500 F SPORT Performance Core)</span>
+            <span>GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core)</span>
             <span>·</span>
             <span className="text-emerald-400 font-mono">Clean-Room Certified</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>Delaware Micro-APA Asset ID: GF-T3-181</span>
-            <span>Acquire.com Verified Buyout</span>
+            <span>Acquire.com Verified Asset Transfer</span>
           </div>
         </div>
       </footer>

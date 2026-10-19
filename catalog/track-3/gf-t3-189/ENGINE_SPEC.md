@@ -1,10 +1,10 @@
-# GF-T3-189: LEXUS LC 500 CONVERTIBLE STRUCTURAL AERO CORE
+# GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO CORE
 ## TURNKEY MICRO-APA ASSET SPECIFICATION & INSTITUTIONAL MASTER VAULT
 
 **Asset Identifier:** GF-T3-189  
-**Platform Target:** Lexus LC 500 Convertible (URZ100 Platform / 5.0L 2UR-GSE V8)  
-**Valuation Floor (Micro-APA Buyout):** $45,000.00 USD  
-**Enterprise Buyout Option:** $125,000.00 USD  
+**Platform Target:** Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible (URZ100 Platform / 5.0L 2UR-GSE V8)  
+**Specification Floor (Micro-APA Asset Transfer):** Delaware Institutional Covenants  
+**Enterprise Asset Transfer Option:** PostgreSQL 16 + RLS  
 **Clean-Room Audit Status:** 100% Certified / 0% Copyleft (Permissive MIT/Apache-2.0 Only)  
 **Release Version:** v1.0.0-PROD  
 **Timestamp:** 2026-10-12T02:45:00Z  
@@ -12,7 +12,7 @@
 ---
 
 ### 1. EXECUTIVE SUMMARY & SYSTEM TOPOLOGY
-The GF-T3-189 Structural Aero Core is an ultra-low-latency chassis stabilization and aerodynamic vortex suppression subsystem engineered for open-cockpit grand tourers, specifically calibrated for the Lexus LC 500 Convertible. 
+The GF-T3-189 Structural Aero Core is an ultra-low-latency chassis stabilization and aerodynamic vortex suppression subsystem engineered for open-cockpit grand tourers, specifically calibrated for the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible. 
 
 Open-top convertibles exhibit severe structural torsional compliance loss when the rigid roof is stowed, producing harmonic cowl shake between 18 Hz and 34 Hz and aerodynamic cabin buffeting above 65 mph. The GF-T3-189 integrates:
 1. **Active Hydraulic Cowl Damper Control Loop**: Runs a 2,400 Hz micro-displacement controller countering A-pillar resonance and strut-tower shear deflection.
@@ -31,7 +31,7 @@ $$F_d(t) = -c_{	ext{eff}}(dot{	heta}) cdot dot{x}_{	ext{cowl}}(t) - k_{	ext{flex
 Where:
 - $x_{	ext{cowl}}(t)$: Micro-displacement across the cowl bulkhead (microns $mu m$).
 - $dot{x}_{	ext{cowl}}(t)$: Rate of deflection measured via fiber-optic strain gauge array at 2,400 Hz.
-- $c_{	ext{eff}}$: Dynamic hydraulic damping coefficient modulated between $1,200 \,\text{N}\cdot\text{s/m}$ and $8,600 \,\text{N}\cdot\text{s/m}$.
+- $c_{	ext{eff}}$: Dynamic hydraulic damping coefficient modulated between 20 kHz (0.48ms) \,\text{N}\cdot\text{s/m}$ and 20 kHz (0.48ms) \,\text{N}\cdot\text{s/m}$.
 - $Gamma(omega_r)$: Notch filter compensating for primary 24.5 Hz URZ100 engine-induced secondary cowl vibration modes.
 
 #### 2.2 Open-Top Aero Vortex Suppression
@@ -88,7 +88,7 @@ CREATE TABLE gf_aero_core.harmonic_quarantine (
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-189 Lexus LC 500 Structural Aero Telemetry Service
+  title: GF-T3-189 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Structural Aero Telemetry Service
   version: 1.0.0
   description: High-throughput telemetry ingestion and active cowl damping dispatch engine.
 paths:
@@ -131,9 +131,9 @@ paths:
 
 ---
 
-### 6. DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA) SUMMARY
+### 6. Turnkey Software Asset Purchase Agreement (MICRO-APA) SUMMARY
 - **Seller**: Ghost FactoryOS Systems Architecture LLC
 - **Buyer**: Institutional Transferee via Acquire.com Escrow
-- **Asset**: GF-T3-189 Lexus LC 500 Convertible Structural Aero Core
-- **Consideration**: $45,000.00 USD (Base Turnkey) / $125,000.00 USD (Exclusive Enterprise)
+- **Asset**: GF-T3-189 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core
+- **Consideration**: Delaware Institutional Covenants (Base Turnkey) / PostgreSQL 16 + RLS (Exclusive Enterprise)
 - **Representations & Warranties**: Full clean-room provenance, immediate source repository push, and zero infringement warranty.

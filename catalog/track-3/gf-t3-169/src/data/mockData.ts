@@ -66,7 +66,7 @@ export const INITIAL_AUDIT_LOGS: AuditLogEntry[] = [
     eventType: 'ESCROW_SIGN',
     actorRole: 'ACQUIRE_BUYER_ESCROW',
     actorName: 'Escrow.com Attorney-in-Fact',
-    details: 'Acquire.com Micro-APA Escrow Covenant draft stamped: $45,000 USD wire instructions validated',
+    details: 'Acquire.com Micro-APA Escrow Covenant draft stamped: 20 kHz (0.48ms) wire instructions validated',
     sha256Hash: '12bf99c298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b78528822',
     status: 'VERIFIED',
   },

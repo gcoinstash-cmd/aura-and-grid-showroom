@@ -38,8 +38,8 @@ export const TabCloudRunHarness: React.FC = () => {
     },
     {
       id: 'TC-04',
-      name: 'test_direct4_corner_exit_rear_bias',
-      module: 'tests/test_direct4_dynamics.py',
+      name: 'test_dual_vector_torque_corner_exit_rear_bias',
+      module: 'tests/test_dual_vector_torque_dynamics.py',
       status: 'passed',
       executionTimeMs: 15,
       assertions: 4,
@@ -85,8 +85,8 @@ export const TabCloudRunHarness: React.FC = () => {
   };
 
   const copyDeployCommand = () => {
-    const cmd = `gcloud run deploy gf-t3-183-direct4-core \\
-  --image gcr.io/lexus-bevs/gf-t3-183:v1.0.0-prod \\
+    const cmd = `gcloud run deploy gf-t3-183-dual_vector_torque-core \\
+  --image gcr.io/Heavy Overland Dynamics Platform-bevs/gf-t3-183:v1.0.0-prod \\
   --region us-central1 \\
   --platform managed \\
   --cpu 2 \\
@@ -240,8 +240,8 @@ CMD ["python", "-m", "src.main"]`}</code>
               Immediate deployment to Google Cloud Run managed containers with autoscaling from 1 to 10 instances and automatic SSL termination.
             </p>
             <pre className="bg-slate-950 p-4 rounded-lg overflow-x-auto text-xs font-mono text-emerald-300 border border-slate-800/80 leading-relaxed">
-              <code>{`gcloud run deploy gf-t3-183-direct4-core \\
-  --image gcr.io/lexus-bevs/gf-t3-183:v1.0.0-prod \\
+              <code>{`gcloud run deploy gf-t3-183-dual_vector_torque-core \\
+  --image gcr.io/Heavy Overland Dynamics Platform-bevs/gf-t3-183:v1.0.0-prod \\
   --region us-central1 \\
   --platform managed \\
   --cpu 2 \\

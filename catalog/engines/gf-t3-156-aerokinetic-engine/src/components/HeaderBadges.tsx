@@ -42,16 +42,16 @@ export const HeaderBadges: React.FC<HeaderBadgesProps> = ({ latencyUs, totalStep
 
         {/* Responsive 2x2 Telemetry Grid (grid-cols-2 md:grid-cols-4) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {/* Badge 1: $125,000 APA BUYOUT */}
+          {/* Badge 1: 20 kHz (0.48ms) APA ASSET TRANSFER */}
           <div className="bg-[#0f172a]/80 border border-teal-500/30 rounded-lg p-3 hover:border-teal-400/60 transition-colors">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-teal-400">VALUATION ANCHOR</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-400">SPECIFICATION ANCHOR</span>
               <DollarSign className="w-4 h-4 text-teal-400" />
             </div>
             <div className="text-xl sm:text-2xl font-black font-mono text-white mt-1">
-              $125,000 <span className="text-xs font-normal text-slate-400">USD</span>
+              20 kHz (0.48ms) <span className="text-xs font-normal text-slate-400">USD</span>
             </div>
-            <div className="text-xs text-slate-400 mt-0.5">Standard APA Buyout Anchor</div>
+            <div className="text-xs text-slate-400 mt-0.5">Standard APA Reference Core</div>
           </div>
 
           {/* Badge 2: Filter Latency: 12.8 µs */}

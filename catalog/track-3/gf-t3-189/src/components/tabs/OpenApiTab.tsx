@@ -13,7 +13,7 @@ export const OpenApiTab: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-189 Lexus LC 500 Structural Aero Telemetry Service
+  title: GF-T3-189 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Structural Aero Telemetry Service
   version: 1.0.0
   description: High-throughput chassis strain telemetry and active cowl damping dispatch engine.
   contact:
@@ -180,7 +180,7 @@ paths:
               OpenAPI 3.1 & WebSocket Streaming Protocol
             </h2>
             <p className="text-base text-slate-300 mt-1">
-              Low-latency JSON REST contracts and 2,400 Hz binary WebSocket telemetry streaming for Lexus LC 500 chassis strain gauges.
+              Low-latency JSON REST contracts and 2,400 Hz binary WebSocket telemetry streaming for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core chassis strain gauges.
             </p>
           </div>
 

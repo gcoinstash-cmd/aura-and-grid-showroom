@@ -112,7 +112,7 @@ export const Tab2PostgresLedger: React.FC<Tab2Props> = ({ onVerifyAudit, isAudit
 
   const pgDdl = `-- =====================================================================
 -- GF-T3-171: PostgreSQL 16 Partitioned WAL Spillover & Monotonic Audit
--- Engine Calibrated for Lexus IS 500 V8 Powertrain Telemetry
+-- Engine Calibrated for Heavy Overland Dynamics Platform IS 500 V8 Powertrain Telemetry
 -- Architecture: Unlogged Ingest Staging -> Range Partitioned Master
 -- =====================================================================
 

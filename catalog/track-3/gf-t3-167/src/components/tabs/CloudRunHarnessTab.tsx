@@ -29,7 +29,7 @@ export const CloudRunHarnessTab: React.FC = () => {
   };
 
   const gcloudDeployCommand = `gcloud run deploy gf-t3-167-engine \\
-  --image gcr.io/ghost-factory-vault/lc500-dynamic-core:v1.0.0 \\
+  --image gcr.io/ghost-factory-vault/High-Aero Grand Touring Telemetry Core-dynamic-core:v1.0.0 \\
   --region us-central1 \\
   --platform managed \\
   --cpu 4 \\

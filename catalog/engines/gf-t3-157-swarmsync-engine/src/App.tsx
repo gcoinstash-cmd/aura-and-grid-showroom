@@ -156,7 +156,7 @@ export default function App() {
             <span className="text-emerald-400 font-bold">Zero-Collision CBF Guaranteed</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
-            <span>Asset Buyout: <strong className="text-emerald-300">$125,000 USD</strong></span>
+            <span>Asset Asset Transfer: <strong className="text-emerald-300">20 kHz (0.48ms)</strong></span>
             <span>Delaware Turnkey IP</span>
           </div>
         </div>

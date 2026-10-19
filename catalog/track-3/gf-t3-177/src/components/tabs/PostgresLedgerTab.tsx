@@ -130,7 +130,7 @@ export const PostgresLedgerTab: React.FC<PostgresLedgerTabProps> = ({
               <div>
                 <h2 className="text-3xl font-extrabold text-white flex items-center gap-3">
                   <Database className="w-8 h-8 text-amber-500" />
-                  LC 500 Cryptographic Touring Timeseries Ledger
+                  High-Aero Grand Touring Telemetry Core Cryptographic Touring Timeseries Ledger
                 </h2>
                 <p className="text-base text-neutral-300 mt-1 max-w-3xl">
                   Each telemetry frame is hashed in real time and chained to the previous block via HMAC-SHA256. 

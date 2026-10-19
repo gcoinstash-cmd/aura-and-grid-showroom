@@ -9,11 +9,11 @@ export const TabOpenAPISpec: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: Lexus NX 450h+ F SPORT AVS Telemetry Gateway
+  title: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry AVS Telemetry Gateway
   version: 1.0.0-PROD
   description: High-throughput telemetry ingress, 650-step linear solenoid dispatch, and PHEV battery regen broadcast for GF-T3-185.
 servers:
-  - url: https://telemetry.lexus-nx.ghostfactory.io/v1
+  - url: https://telemetry.Heavy Overland Dynamics Platform-nx.ghostfactory.io/v1
     description: Production High-Performance Gateway (Cloud Run)
 paths:
   /telemetry/ingress:
@@ -103,7 +103,7 @@ webhooks:
   stream_avs_phev:
     summary: WebSocket 2,000 Hz Binary / JSON Stream
     servers:
-      - url: wss://telemetry.lexus-nx.ghostfactory.io/v1/stream/avs-phev
+      - url: wss://telemetry.Heavy Overland Dynamics Platform-nx.ghostfactory.io/v1/stream/avs-phev
 `;
 
   const handleCopy = () => {
@@ -271,7 +271,7 @@ webhooks:
               Real-time duplex socket channel delivering 2,000 frames/sec with zero TCP head-of-line blocking:
             </p>
             <div className="bg-slate-950 p-3 rounded-lg text-xs font-mono text-cyan-300 border border-slate-800">
-              <code>wss://telemetry.lexus-nx.ghostfactory.io/v1/stream/avs-phev</code>
+              <code>wss://telemetry.Heavy Overland Dynamics Platform-nx.ghostfactory.io/v1/stream/avs-phev</code>
             </div>
           </div>
         </div>

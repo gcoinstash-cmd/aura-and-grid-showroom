@@ -20,7 +20,7 @@ export const VerifyHashModal: React.FC<VerifyHashModalProps> = ({
   const rootMerkleHash = "7f8b9a2c3d4e5f60718293a4b5c6d7e8f90123456789abcdef0123456789abcd";
 
   const moduleHashes = [
-    { name: "core/direct4_controller.py", hash: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", status: "VERIFIED" },
+    { name: "core/dual_vector_torque_controller.py", hash: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", status: "VERIFIED" },
     { name: "db/schema_v1_partitioned.sql", hash: "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb", status: "VERIFIED" },
     { name: "specs/openapi_v3_1_strict.json", hash: "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce", status: "VERIFIED" },
     { name: "deploy/Dockerfile", hash: "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a", status: "VERIFIED" },

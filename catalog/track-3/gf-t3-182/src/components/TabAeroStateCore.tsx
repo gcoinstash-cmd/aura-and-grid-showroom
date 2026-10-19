@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Copy, Check, Terminal, Cpu, PlayCircle, BookOpen } from 'lucide-react';
 
 const PYTHON_AERO_CORE_CODE = `"""
-GF-T3-182: Lexus RC F Track Edition Active Aero Core Engine
+GF-T3-182: Heavy Overland Dynamics Platform RC F Track Edition Active Aero Core Engine
 Revision: v1.0.0-PROD | Python 3.12+ Native
 Clean-Room Certified | 100% Permissive MIT
 """
@@ -52,10 +52,10 @@ class AeroControlOutput:
     record_hash: str
     hmac_signature: str
 
-class LexusRCFAeroCore:
+class OverlandRCFAeroCore:
     """
     High-Frequency (1,000 Hz) deterministic active aerodynamic controller
-    calibrated for Lexus RC F Track Edition carbon aerodynamics package.
+    calibrated for Heavy Overland Dynamics Platform RC F Track Edition carbon aerodynamics package.
     """
     RHO_AIR: float = 1.225                 # kg/m^3 (Standard sea level)
     REF_FRONTAL_AREA: float = 2.12         # m^2 (RC F Track Edition frontal area)

@@ -1,18 +1,18 @@
 # =====================================================================
 # GHOST FACTORYOS SKUNKWORKS — ASSET SPECIFICATION
-# IDENTIFIER: GF-T3-194 (Lexus LX 600 F SPORT Performance Core)
-# ACQUIRE.COM TURNKEY MICRO-APA BUYOUT ASSET
+# IDENTIFIER: GF-T3-194 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
+# ACQUIRE.COM TURNKEY MICRO-APA ASSET TRANSFER ASSET
 # AUDIT CLASSIFICATION: MONOPOLY VAULT DELIVERABLE (DELAWARE)
 # =====================================================================
 
 Generated: 2026-10-13T06:14:31.038Z
-Valuation Anchor: $45,000 USD (Turnkey Buyout) | $125,000 USD (Enterprise Expansion)
+Specification Anchor: 20 kHz (0.48ms) (Turnkey Asset Transfer) | PostgreSQL 16 + RLS (Enterprise Expansion)
 IP Clean-Room Status: 100% Certified / 0.0% Copyleft / MIT Permissive Whitelist
 
 -----------------------------------------------------------------------
 ## 1. EXECUTIVE ASSET SUMMARY & MONRONEY SPECIFICATION
 -----------------------------------------------------------------------
-- Vehicle Application: Lexus LX 600 F SPORT (VJA310 Platform)
+- Vehicle Application: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (VJA310 Platform)
 - Powertrain Integration: V35A-FTS 3.4L Twin-Turbo V6 (409 hp / 479 lb-ft)
 - Suspension Architecture: 4-Wheel Electro-Hydraulic Active Height Control (AHC)
 - Articulation Range: -25mm (Low) to +105mm (Extra High / Articulation Stroke)
@@ -99,9 +99,9 @@ REST Endpoints:
     gcloud run deploy lx600-ahc-core --image gcr.io/$PROJECT_ID/lx600-ahc-core:v1.0.0 --memory 1Gi --cpu 1
 
 -----------------------------------------------------------------------
-## 6. DELAWARE MICRO-APA BUYOUT TERMS (Acquire.com)
+## 6. DELAWARE MICRO-APA REFERENCE CORE (Acquire.com)
 -----------------------------------------------------------------------
-- Purchase Price: $45,000 USD (Standard Turnkey) / $125,000 USD (Enterprise)
+- DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - Escrow Service: Acquire.com / Escrow.com API Handoff
 - Warranty of Clean-Room Genesis: Zero reverse-engineered binaries, zero GPL contamination.
 - Full Bill of Sale & Exhibit IP Assignment executed upon closing.

@@ -21,8 +21,8 @@ interface TabDrsYawCoreProps {
 }
 
 const PYTHON_CODE = `"""
-GF-T3-192: Dynamic Rear Steering (DRS) & DIRECT4 AWD Arbitration Engine
-Target Vehicle: Lexus TX 550h+ (TNGA-K Architecture, 3.5L V6 PHEV)
+GF-T3-192: Dynamic Rear Steering (DRS) & DUAL_VECTOR_TORQUE AWD Arbitration Engine
+Target Vehicle: Heavy Overland Dynamics Platform High-Output Multi-Node Core (Modular Cyber-Physical Chassis Architecture, 3.5L V6 PHEV)
 License: MIT Permissive | Clean-Room Audited
 """
 from dataclasses import dataclass
@@ -55,14 +55,14 @@ class ArbitrationOutput:
     front_wheel_angle_deg: float
     target_rear_toe_deg: float
     phase_mode: str
-    direct4_front_pct: float
-    direct4_rear_pct: float
+    dual_vector_torque_front_pct: float
+    dual_vector_torque_rear_pct: float
     turning_radius_m: float
     divergence_error_mm: float
     quarantine_alert: bool
     hmac_signature: str
 
-class LexusTxDrsCore:
+class OverlandTxDrsCore:
     def __init__(self, hmac_key: bytes):
         self.key = hmac_key
         self.last_rear_toe = 0.0
@@ -96,7 +96,7 @@ class LexusTxDrsCore:
         target_rear = self.last_rear_toe + max(-max_delta, min(max_delta, target_rear - self.last_rear_toe))
         self.last_rear_toe = target_rear
 
-        # DIRECT4 AWD torque vectoring arbitration (80:20 up to 20:80 split)
+        # DUAL_VECTOR_TORQUE AWD torque vectoring arbitration (80:20 up to 20:80 split)
         lat_ratio = min(1.0, abs(inp.lateral_accel_g) / 0.8)
         rear_torque_pct = 20.0 + (60.0 * lat_ratio)
         if mode == "IN_PHASE_STABILIZATION":
@@ -123,8 +123,8 @@ class LexusTxDrsCore:
             front_wheel_angle_deg=round(front_deg, 3),
             target_rear_toe_deg=round(target_rear, 3),
             phase_mode=mode,
-            direct4_front_pct=round(front_torque_pct, 1),
-            direct4_rear_pct=round(rear_torque_pct, 1),
+            dual_vector_torque_front_pct=round(front_torque_pct, 1),
+            dual_vector_torque_rear_pct=round(rear_torque_pct, 1),
             turning_radius_m=round(radius_m, 2),
             divergence_error_mm=round(divergence, 3),
             quarantine_alert=quarantine,
@@ -165,11 +165,11 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
           <div>
             <div className="flex items-center gap-2 mb-1">
               <h2 className="text-3xl font-extrabold text-white tracking-tight">
-                DRS Dynamic Yaw Control & DIRECT4 Core
+                DRS Dynamic Yaw Control & DUAL_VECTOR_TORQUE Core
               </h2>
             </div>
             <p className="text-slate-300 text-base leading-relaxed">
-              Lexus TX 550h+ continuous rear toe-angle arbitration ($\pm 4.0^\circ$) coupled with 3.5L V6 PHEV rear e-Axle torque vectoring.
+              Heavy Overland Dynamics Platform High-Output Multi-Node Core continuous rear toe-angle arbitration ($\pm 4.0^\circ$) coupled with 3.5L V6 PHEV rear e-Axle torque vectoring.
             </p>
           </div>
 
@@ -267,8 +267,8 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
                 : 'bg-slate-800/80 border-slate-700/60 text-slate-300 hover:bg-slate-800 hover:text-white'
             }`}
           >
-            <div className="text-base font-bold">4. Sport S+ High Lateral</div>
-            <div className="text-xs text-emerald-400 font-mono mt-0.5">145 km/h · 20:80 DIRECT4 Vector</div>
+            <div className="text-base font-bold">4. High-Frequency Compute Mode High Lateral</div>
+            <div className="text-xs text-emerald-400 font-mono mt-0.5">145 km/h · 20:80 DUAL_VECTOR_TORQUE Vector</div>
           </button>
         </div>
       </div>
@@ -280,7 +280,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
           <div className="flex items-center justify-between mb-4">
             <span className="text-slate-300 font-bold text-lg flex items-center gap-2">
               <Car className="w-5 h-5 text-amber-400" />
-              Lexus TNGA-K Dynamic Steering Kinematics
+              Heavy Overland Dynamics Platform Modular Cyber-Physical Chassis Dynamic Steering Kinematics
             </span>
             <span className="text-xs font-mono text-slate-400 bg-slate-800 px-2.5 py-1 rounded">
               Wheelbase: 2,950 mm
@@ -317,7 +317,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
                 />
               )}
 
-              {/* Vehicle Body Chassis Box (Lexus TX Profile) */}
+              {/* Vehicle Body Chassis Box (Heavy Overland Dynamics Platform TX Profile) */}
               <rect
                 x="160"
                 y="40"
@@ -344,13 +344,13 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
 
               {/* Front Axle Bar */}
               <line x1="145" y1="75" x2="315" y2="75" stroke="#475569" strokeWidth="4" />
-              {/* Front Differential / DIRECT4 Motor representation */}
+              {/* Front Differential / DUAL_VECTOR_TORQUE Motor representation */}
               <rect x="210" y="66" width="40" height="18" rx="3" fill="#3b82f6" />
               <text x="230" y="79" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">e-CVT</text>
 
               {/* Rear Axle Bar */}
               <line x1="145" y1="245" x2="315" y2="245" stroke="#475569" strokeWidth="4" />
-              {/* Rear DIRECT4 High-Torque e-Axle */}
+              {/* Rear DUAL_VECTOR_TORQUE High-Torque e-Axle */}
               <rect x="206" y="235" width="48" height="20" rx="3" fill="#10b981" />
               <text x="230" y="249" textAnchor="middle" fill="#ffffff" fontSize="9" fontWeight="bold">e-Axle</text>
 
@@ -450,30 +450,30 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
             </div>
           </div>
 
-          {/* DIRECT4 Torque Vectoring Meter */}
+          {/* DUAL_VECTOR_TORQUE Torque Vectoring Meter */}
           <div className="mt-4 p-3 bg-slate-950 border border-slate-800 rounded-lg">
             <div className="flex items-center justify-between mb-1.5">
               <span className="text-sm font-bold text-slate-300 flex items-center gap-1.5">
                 <Zap className="w-4 h-4 text-emerald-400" />
-                DIRECT4 PHEV Dynamic Torque Distribution
+                DUAL_VECTOR_TORQUE PHEV Dynamic Torque Distribution
               </span>
               <span className="text-xs font-mono text-emerald-400 font-bold">
-                {state.direct4FrontRatio}% Front : {state.direct4RearRatio}% Rear e-Axle
+                {state.dual_vector_torqueFrontRatio}% Front : {state.dual_vector_torqueRearRatio}% Rear e-Axle
               </span>
             </div>
             {/* Split Bar */}
             <div className="w-full h-4 bg-slate-800 rounded-full overflow-hidden flex">
               <div
                 className="bg-blue-500 transition-all duration-200 flex items-center justify-center text-[10px] font-bold text-white font-mono"
-                style={{ width: `${state.direct4FrontRatio}%` }}
+                style={{ width: `${state.dual_vector_torqueFrontRatio}%` }}
               >
-                Front {state.direct4FrontRatio}%
+                Front {state.dual_vector_torqueFrontRatio}%
               </div>
               <div
                 className="bg-emerald-500 transition-all duration-200 flex items-center justify-center text-[10px] font-bold text-slate-950 font-mono"
-                style={{ width: `${state.direct4RearRatio}%` }}
+                style={{ width: `${state.dual_vector_torqueRearRatio}%` }}
               >
-                Rear {state.direct4RearRatio}%
+                Rear {state.dual_vector_torqueRearRatio}%
               </div>
             </div>
             <div className="flex justify-between items-center text-xs text-slate-400 font-mono mt-1.5">
@@ -589,7 +589,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
               <div className="text-slate-400 pl-2">
                 δ_r = +δ_f · 0.22 · min(1.0, (v - 80.0)/35.0)
               </div>
-              <div className="text-emerald-400 font-bold pt-1">3. DIRECT4 Torque Partition:</div>
+              <div className="text-emerald-400 font-bold pt-1">3. DUAL_VECTOR_TORQUE Torque Partition:</div>
               <div className="text-slate-400 pl-2">
                 T_rear = 0.20 + 0.60 · (|a_y| / 0.80)
               </div>

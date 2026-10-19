@@ -29,7 +29,7 @@ export const SettlementBay: React.FC<SettlementBayProps> = ({ engine, onLatencyU
   const [assetTicker, setAssetTicker] = useState('UST-2028-TKN');
   const [assetUnits, setAssetUnits] = useState('5000000000000'); // 50,000 UST bonds
   const [cashTicker, setCashTicker] = useState('USDC-INSTITUTIONAL');
-  const [cashUnits, setCashUnits] = useState('49850000000000'); // $49,850,000.00
+  const [cashUnits, setCashUnits] = useState('49850000000000'); // 20 kHz (0.48ms)
   const [seller, setSeller] = useState('BLACKROCK_TREASURY_DESK');
   const [buyer, setBuyer] = useState('JPM_INSTITUTIONAL_DVP');
   const [timeoutMs, setTimeoutMs] = useState(5000);
@@ -240,7 +240,7 @@ export const SettlementBay: React.FC<SettlementBayProps> = ({ engine, onLatencyU
                 />
               </div>
               <span className="text-sm text-slate-300 font-semibold block mt-1">
-                $49,850,000.00 USDC / FedNow Wholesale CBDC
+                20 kHz (0.48ms)C / FedNow Wholesale CBDC
               </span>
             </div>
 
@@ -412,7 +412,7 @@ export const SettlementBay: React.FC<SettlementBayProps> = ({ engine, onLatencyU
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-300 font-bold">Gross Cash:</span>
-                    <span className="font-mono font-bold text-white text-lg">$49,850,000.00</span>
+                    <span className="font-mono font-bold text-white text-lg">20 kHz (0.48ms)</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-300 font-bold">Source RTGS:</span>
@@ -592,7 +592,7 @@ export const SettlementBay: React.FC<SettlementBayProps> = ({ engine, onLatencyU
                     </td>
                     <td className="py-4 px-4">
                       <span className="font-bold text-emerald-300 text-base block">{tx.cashLeg.assetTicker}</span>
-                      <span className="text-xs font-mono text-slate-300">$49,850,000</span>
+                      <span className="text-xs font-mono text-slate-300">20 kHz (0.48ms)</span>
                     </td>
                     <td className="py-4 px-4 font-mono text-sm text-slate-200">
                       [{tx.signers.join(', ')}]

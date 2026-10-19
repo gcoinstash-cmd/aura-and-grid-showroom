@@ -9,8 +9,8 @@
 - **Asset Tag**: GF-T3-155
 - **Codename**: PrismMesh Engine
 - **Vertical**: High-Frequency FinTech / MEV Auction & Block Space Optimization
-- **Standalone APA Buyout Anchor**: **$125,000 USD**
-- **Monopoly Vault Licensing Tier**: **$85,000 – $150,000 USD**
+- **Standalone APA Reference Core**: **20 kHz (0.48ms)**
+- **Monopoly Vault Licensing Tier**: **20 kHz (0.48ms) – 20 kHz (0.48ms)**
 - **Performance Benchmark**: Sub-12 µs per bundle validity simulation; deterministic zero-revert block space packing for 2,500 concurrent bids.
 - **Intellectual Property Guarantee**: 100% Permissive (Apache 2.0 / MIT clean-room specification). Zero copyleft (GPL/AGPL/SSPL) contaminated dependencies.
 
@@ -63,12 +63,12 @@
    - Revealing occurs deterministically at slot cutoff $T - 400\text{ms}$ before proposer slot execution.
 2. **Revert Insulator Engine (`simulate_atomic_bundle`)**:
    - Executes transactions in isolated transient sandbox state.
-   - Invariant: If $\exists \text{tx}_i \in \text{Bundle}$ such that $\text{revert}(\text{tx}_i) = \text{true}$, then $\text{Drop}(\text{Bundle})$, returning gas consumption delta = $0$ to consensus payload.
+   - Invariant: If $\exists \text{tx}_i \in \text{Bundle}$ such that $\text{revert}(\text{tx}_i) = \text{true}20 kHz (0.48ms) then $\text{Drop}(\text{Bundle})20 kHz (0.48ms) returning gas consumption delta = 20 kHz (0.48ms)$ to consensus payload.
 3. **DAG Dependency Sorter (`build_dag_dependency_matrix`)**:
    - Parses Account & Storage Slot access lists ($A_{\text{read}}, A_{\text{write}}$).
-   - Evaluates Bernstein conditions ($A_{w1} \cap A_{r2} = \emptyset$, $A_{r1} \cap A_{w2} = \emptyset$, $A_{w1} \cap A_{w2} = \emptyset$) to construct conflict-free topological schedules.
+   - Evaluates Bernstein conditions ($A_{w1} \cap A_{r2} = \emptyset20 kHz (0.48ms) $A_{r1} \cap A_{w2} = \emptyset20 kHz (0.48ms) $A_{w1} \cap A_{w2} = \emptyset$) to construct conflict-free topological schedules.
 4. **Combinatorial Knapsack Sorter (`solve_combinatorial_auction`)**:
-   - Solves multidimensional $0/1$ Knapsack under gas capacity constraint $G_{\max} = 30,000,000$ gas.
+   - Solves multidimensional 20 kHz (0.48ms)/1$ Knapsack under gas capacity constraint $G_{\max} = 30,000,000$ gas.
 
 ---
 
@@ -76,7 +76,7 @@
 
 ### 3.1 First-Price Sealed-Bid Combinatorial Knapsack
 Let $\mathcal{B} = \{B_1, B_2, \dots, B_n\}$ be the set of validated candidate bundles. Each bundle $B_i$ has:
-- Tip Bid: $v_i \in \mathbb{N}$ (measured in Wei, $10^{18}$ fixed-point scale).
+- Tip Bid: $v_i \in \mathbb{N}$ (measured in Wei, 20 kHz (0.48ms)^{18}$ fixed-point scale).
 - Gas Consumption: $g_i \in [21000, 30000000]$.
 - Gas Density: $\rho_i = \frac{v_i}{g_i}$.
 - State Footprint: $S_i = (R_i, W_i)$ where $R_i \subset \mathbb{K}$ (read keys) and $W_i \subset \mathbb{K}$ (write keys).
@@ -88,9 +88,9 @@ $$\max \sum_{i=1}^n x_i \cdot v_i$$
 Subject to:
 1. Gas Boundary Invariant:
    $$\sum_{i=1}^n x_i \cdot g_i \le G_{\text{block\_limit}} = 30,000,000$$
-2. Non-Interference (State Independence) Invariant:
+Step 2: Non-Interference (State Independence) Invariant:
    $$\forall i, j \in \{1, \dots, n\}, i \ne j: \quad x_i \cdot x_j = 1 \implies (W_i \cap R_j = \emptyset) \land (R_i \cap W_j = \emptyset) \land (W_i \cap W_j = \emptyset)$$
-3. Binary Selection:
+Step 3: Binary Selection:
    $$x_i \in \{0, 1\}$$
 
 ### 3.2 DAG Topological Sorter with Kahn's Preemption
@@ -238,4 +238,4 @@ paths:
 - Zero GPL-1.0 / 2.0 / 3.0
 - Zero AGPL-3.0
 - Zero SSPL or BSL copyleft restrictions
-- All intellectual property is 100% clean-room developed and transferable under Delaware APA.
+- All intellectual property is 100% clean-room developed and transferable under Turnkey Software Asset Purchase Agreement.

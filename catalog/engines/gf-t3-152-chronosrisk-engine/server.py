@@ -17,7 +17,7 @@ from src.core.risk_engine import (
 
 app = FastAPI(
     title="ChronosRisk Engine // GF-T3-152",
-    description="Real-Time Portfolio Value-at-Risk (VaR), Expected Shortfall (CVaR), and Historical Shock Simulation Core",
+    description="Real-Time Portfolio Index-at-Risk (VaR), Expected Shortfall (CVaR), and Historical Shock Simulation Core",
     version="1.0.0",
 )
 

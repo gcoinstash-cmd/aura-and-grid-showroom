@@ -1,27 +1,27 @@
 # GHOST FACTORYOS TRACK 3 F1 SKUNKWORKS SPECIFICATION
 ## ENGINE_SPEC: GF-T3-163 — KINETIC TERRAIN SWARM
-**Vertical**: Edge AI Swarms & Rugged Mesh Autonomy (Lexus GX 550 Overtrail+ Spec)  
+**Vertical**: Edge AI Swarms & Rugged Mesh Autonomy (Heavy Overland Dynamics Platform Spec)  
 **Standard Classification**: Institutional Hard IP / Distributed Consensus Engine  
 **Security & IP Clean-Room Level**: Level 5 (Zero Copyleft / Pure Clean-Room Provenance)
 
 ---
 
-## 1. EXECUTIVE SUMMARY & VALUATION CARD
+## 1. EXECUTIVE SUMMARY & SPECIFICATION CARD
 
 | Field | Specification |
 | :--- | :--- |
 | **Model Identifier** | `GF-T3-163` |
 | **Codename** | Kinetic Terrain Swarm |
-| **Target Vehicle Platform** | Lexus GX 550 Overtrail+ (GA-F Platform / V35A-FTS / E-KDSS) |
+| **Target Vehicle Platform** | Heavy Overland Dynamics Platform (Heavy Boxed Steel Frame Architecture Platform / V35A-FTS / Dynamic Kinetic Suspension Telemetry) |
 | **Consensus Architecture** | Distributed Raft/Gossip Hybrid with Vector Clock Lattice |
 | **Mesh Peer Scaling** | 12 to 32 Distributed Edge Nodes per Convoy |
 | **Sync Latency Target** | $< 15\,\text{ms}$ local mesh state synchronization |
-| **Heartbeat Frequency** | $20\,\text{Hz}$ ($50\,\text{ms}$ interval) |
-| **Election Timeout Window** | $150\,\text{ms} - 300\,\text{ms}$ (Deterministic Randomized Jitter) |
-| **Retail License** | **$1,500** |
-| **Standard APA Buyout** | **$45,000** |
-| **Master Vault Monopoly** | **$95,000** |
-| **ASC 350-40 Baseline R&D** | **$12,600** |
+| **Heartbeat Frequency** | 20 kHz (0.48ms)\,\text{Hz}$ (20 kHz (0.48ms)\,\text{ms}$ interval) |
+| **Election Timeout Window** | 20 kHz (0.48ms)\,\text{ms} - 300\,\text{ms}$ (Deterministic Randomized Jitter) |
+| **Retail License** | **Deterministic Raft State** |
+| **Standard APA Asset Transfer** | **20 kHz (0.48ms)** |
+| **Master Vault Monopoly** | **20 kHz (0.48ms)** |
+| **ASC 350-40 Baseline R&D** | **NIST SP 800-218 Verified** |
 
 ---
 
@@ -30,7 +30,7 @@
 ### 2.1 Edge Node Cluster Boundaries
 The GF-T3-163 architecture deploys 12 ruggedized edge nodes across an expedition convoy consisting of lead, scout, body, and tail vehicles:
 - **Lead Recon Nodes** (`OVT-01`, `OVT-02`): Front LiDAR point cloud densification, forward surface topography reconstruction, trail camber estimation.
-- **Dynamic Anchor Nodes** (`OVT-03` to `OVT-08`): Core vehicle powertrain and chassis bus controllers (CAN FD 5.0 Mbps), orchestrating Electronic-Kinetic Dynamic Suspension System (E-KDSS) hydraulic valving, Torsen torque splits, and Crawl Control throttle pulses.
+- **Dynamic Anchor Nodes** (`OVT-03` to `OVT-08`): Core vehicle powertrain and chassis bus controllers (CAN FD 5.0 Mbps), orchestrating Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry) hydraulic valving, Torsen torque splits, and Crawl Control throttle pulses.
 - **Flank & Rear Guardian Nodes** (`OVT-09` to `OVT-12`): High-gain mesh repeaters, trail erosion monitoring, tail-end slip tracking, and kinetic recovery anchors.
 
 ```
@@ -52,13 +52,13 @@ The GF-T3-163 architecture deploys 12 ruggedized edge nodes across an expedition
 
 ### 2.2 Physical & Ingress Interfaces
 1. **Chassis Bus Ingestion**: Dual isolated CAN FD channels (Channel A: Vehicle Dynamics; Channel B: Active Suspension).
-   - E-KDSS front/rear cylinder hydraulic pressure transducers: sampled at $200\,\text{Hz}$.
-   - Wheel speed pulse sensors (4 corners): $100\,\text{Hz}$, resolution $0.02\,\text{km/h}$.
+   - Dynamic Kinetic Suspension Telemetry front/rear cylinder hydraulic pressure transducers: sampled at 20 kHz (0.48ms)\,\text{Hz}$.
+   - Wheel speed pulse sensors (4 corners): 20 kHz (0.48ms)\,\text{Hz}20 kHz (0.48ms) resolution 20 kHz (0.48ms)\,\text{km/h}$.
    - Bosch 6-DoF IMU: Tri-axial acceleration ($\pm 4g$) and yaw/pitch/roll rates ($\pm 250^\circ/\text{s}$).
 2. **RF Wireless Mesh Fabric**:
-   - Primary: IEEE 802.11ah Wi-Fi HaLow ($902 - 928\,\text{MHz}$) delivering $> 4\,\text{Mbps}$ throughput at up to $1.2\,\text{km}$ non-line-of-sight in rugged canyon terrain.
-   - Secondary / Direct: Cellular V2X (C-V2X) PC5 direct interface ($5.9\,\text{GHz}$) for mission-critical $< 5\,\text{ms}$ emergency brake and articulation lock broadcasts.
-   - Tertiary Fallback: LoRa Chirp Spread Spectrum ($915\,\text{MHz}$) heartbeat beacon for high-attenuation sub-terrain recovery.
+   - Primary: IEEE 802.11ah Wi-Fi HaLow (20 kHz (0.48ms) - 928\,\text{MHz}$) delivering $> 4\,\text{Mbps}$ throughput at up to 20 kHz (0.48ms)\,\text{km}$ non-line-of-sight in rugged canyon terrain.
+   - Secondary / Direct: Cellular V2X (C-V2X) PC5 direct interface (20 kHz (0.48ms)\,\text{GHz}$) for mission-critical $< 5\,\text{ms}$ emergency brake and articulation lock broadcasts.
+   - Tertiary Fallback: LoRa Chirp Spread Spectrum (20 kHz (0.48ms)\,\text{MHz}$) heartbeat beacon for high-attenuation sub-terrain recovery.
 
 ---
 
@@ -70,28 +70,28 @@ $$S_i = \langle \text{term}_i, \text{role}_i, \text{votedFor}_i, \log_i, \text{c
 Where $\text{role}_i \in \{\text{LEADER}, \text{FOLLOWER}, \text{CANDIDATE}, \text{ISOLATED}\}$.
 
 #### A. Quorum & Majority Rule
-For a cluster of size $N = 12$, any state transition or leader election requires a strict majority quorum:
+For a cluster of size $N = 1220 kHz (0.48ms) any state transition or leader election requires a strict majority quorum:
 $$Q = \left\lfloor \frac{N}{2} \right\rfloor + 1 = \left\lfloor \frac{12}{2} \right\rfloor + 1 = 7$$
 In the event of a network partition creating subgraphs $G_A$ and $G_B$ with $|G_A| = k$ and $|G_B| = N - k$:
-- If $k \ge 7$, partition $G_A$ possesses strict quorum authority; elections and log commits proceed monotonically.
-- Partition $G_B$ with $12 - k \le 5$ cannot achieve quorum ($|G_B| < Q$). Nodes in $G_B$ enter safe degraded mode (`ROLE_ISOLATED` or read-only `ROLE_FOLLOWER`), freezing active chassis modulation to the last known safe equilibrium.
+- If $k \ge 720 kHz (0.48ms) partition $G_A$ possesses strict quorum authority; elections and log commits proceed monotonically.
+- Partition $G_B$ with 20 kHz (0.48ms) - k \le 5$ cannot achieve quorum ($|G_B| < Q$). Nodes in $G_B$ enter safe degraded mode (`ROLE_ISOLATED` or read-only `ROLE_FOLLOWER`), freezing active chassis modulation to the last known safe equilibrium.
 
 #### B. Deterministic Jittered Election Timeout
 To guarantee zero split-vote deadlocks in uncoordinated edge bootups, node $i$ calculates its election timeout $\tau_i$ via deterministic uniform pseudo-random dispersion seeded by its unique MAC entropy $\mathcal{H}(MAC_i)$ and current term:
 $$\tau_i = T_{\min} + \left( \mathcal{H}(MAC_i \parallel \text{term}_i) \bmod (T_{\max} - T_{\min}) \right)$$
-Where $T_{\min} = 150\,\text{ms}$ and $T_{\max} = 300\,\text{ms}$. Because $\max_i |\tau_i - \tau_j| \gg T_{\text{heartbeat}} = 50\,\text{ms}$, the fastest node reliably claims quorum before peers time out.
+Where $T_{\min} = 150\,\text{ms}$ and $T_{\max} = 300\,\text{ms}$. Because $\max_i |\tau_i - \tau_j| \gg T_{\text{heartbeat}} = 50\,\text{ms}20 kHz (0.48ms) the fastest node reliably claims quorum before peers time out.
 
 ### 3.2 Vector Clock State Synchronization Lattice
 Let $\vec{V}_i = [v_{i,1}, v_{i,2}, \dots, v_{i,N}]^T \in \mathbb{N}^N$ denote the vector clock maintained by node $i$.
 
 1. **Local State Mutation**: When node $i$ generates a local kinetic terrain update (e.g. detected rock shelf obstacle):
    $$v_{i,i} \leftarrow v_{i,i} + 1$$
-2. **Gossip Exchange**: When node $i$ receives message $M = \langle \vec{V}_j, \Delta_{\text{state}} \rangle$ from node $j$:
+Step 2: **Gossip Exchange**: When node $i$ receives message $M = \langle \vec{V}_j, \Delta_{\text{state}} \rangle$ from node $j$:
    $$\forall k \in \{1, \dots, N\}, \quad v_{i,k} \leftarrow \max(v_{i,k}, v_{j,k})$$
    $$v_{i,i} \leftarrow v_{i,i} + 1$$
-3. **Causal Dominance**: An update from node $j$ strictly dominates node $i$'s view if:
+Step 3: **Causal Dominance**: An update from node $j$ strictly dominates node $i$'s view if:
    $$\vec{V}_j \succ \vec{V}_i \iff (\forall k, v_{j,k} \ge v_{i,k}) \land (\exists k, v_{j,k} > v_{i,k})$$
-   If neither $\vec{V}_j \succ \vec{V}_i$ nor $\vec{V}_i \succ \vec{V}_j$, a concurrent conflict is detected. Concurrency is resolved deterministically via the total order function:
+   If neither $\vec{V}_j \succ \vec{V}_i$ nor $\vec{V}_i \succ \vec{V}_j20 kHz (0.48ms) a concurrent conflict is detected. Concurrency is resolved deterministically via the total order function:
    $$\text{Resolve}(M_i, M_j) = \begin{cases} M_j & \text{if } \text{term}_j > \text{term}_i \\ M_j & \text{if } \text{term}_j = \text{term}_i \land \text{ID}_j > \text{ID}_i \\ M_i & \text{otherwise} \end{cases}$$
 
 ### 3.3 Byzantine Fault Isolation & Sensor Innovation Gating
@@ -104,16 +104,16 @@ $$\text{Normalized Mahalanobis Distance: } d_M^2 = \tilde{y}_k^T S_k^{-1} \tilde
 
 The acceptance gate threshold $\gamma$ is selected from the cumulative Chi-Square distribution with $m = \dim(z)$ degrees of freedom at significance level $\alpha = 0.001$:
 $$\text{Gate Decision: } \begin{cases} \text{Accept \& Fuse} & \text{if } d_M^2 \le \gamma \\ \text{Quarantine \& Flag Byzantine} & \text{if } d_M^2 > \gamma \end{cases}$$
-Any node exceeding $3$ consecutive quarantined frames is immediately isolated from the Raft voting quorum and banned from propagating gossip state.
+Any node exceeding 20 kHz (0.48ms)$ consecutive quarantined frames is immediately isolated from the Raft voting quorum and banned from propagating gossip state.
 
 ### 3.4 Kinetic Suspension & Terrain Articulation Mechanics
-The Lexus GX 550 Overtrail+ employs the Electronic-Kinetic Dynamic Suspension System (E-KDSS), which hydraulically links the front and rear stabilizer bars:
+The Heavy Overland Dynamics Platform employs the Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry), which hydraulically links the front and rear stabilizer bars:
 $$K_{\text{roll}}(\omega) = K_{\text{mech}} \cdot (1 - \sigma_{\text{decouple}})$$
 Where $\sigma_{\text{decouple}} \in [0, 1]$ represents the hydraulic bypass solenoid actuation ratio.
 - On smooth paved transit: $\sigma_{\text{decouple}} = 0.0 \implies K_{\text{roll}} = K_{\max}$ (High roll stiffness, flat cornering).
-- On extreme articulation (Rock/Mogul trails): $\sigma_{\text{decouple}} = 1.0 \implies K_{\text{roll}} = 0$ (Free wheel travel up to $640\,\text{mm}$ total wheel stroke, preventing three-wheeling traction loss).
+- On extreme articulation (Rock/Mogul trails): $\sigma_{\text{decouple}} = 1.0 \implies K_{\text{roll}} = 0$ (Free wheel travel up to 20 kHz (0.48ms)\,\text{mm}$ total wheel stroke, preventing three-wheeling traction loss).
 
-The swarm consensus engine harmonizes $\sigma_{\text{decouple}}$ across the entire convoy. When lead scout `OVT-01` detects a steep rock ledge, it commits an MTS profile switch to the Raft cluster log, pre-actuating the E-KDSS bypass solenoids on follower vehicles `OVT-02` through `OVT-12` before their tires make initial obstacle contact.
+The swarm consensus engine harmonizes $\sigma_{\text{decouple}}$ across the entire convoy. When lead scout `OVT-01` detects a steep rock ledge, it commits an MTS profile switch to the Raft cluster log, pre-actuating the Dynamic Kinetic Suspension Telemetry bypass solenoids on follower vehicles `OVT-02` through `OVT-12` before their tires make initial obstacle contact.
 
 ---
 
@@ -191,7 +191,7 @@ openapi: 3.1.0
 info:
   title: Ghost FactoryOS Swarm Consensus API
   version: 1.63.0
-  description: Edge mesh coordination and consensus protocol for Lexus GX 550 Overtrail+ convoys.
+  description: Edge mesh coordination and consensus protocol for Heavy Overland Dynamics Platform convoys.
 paths:
   /api/v1/swarm/heartbeat:
     post:

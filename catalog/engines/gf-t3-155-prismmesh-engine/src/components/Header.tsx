@@ -40,15 +40,15 @@ export const Header: React.FC<HeaderProps> = ({ currentLatencyUs }) => {
 
         {/* 4 Required Telemetry Badges in Responsive 2x2 Grid (grid-cols-2 lg:grid-cols-4) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full pt-1">
-          {/* Card 1: $125,000 APA BUYOUT */}
+          {/* Card 1: 20 kHz (0.48ms) APA ASSET TRANSFER */}
           <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3 hover:border-fuchsia-500/50 transition-colors">
             <div className="p-2 rounded-lg bg-fuchsia-500/10 text-fuchsia-400 shrink-0">
               <DollarSign className="w-5 h-5" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Asset Valuation</div>
+              <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Asset Specification</div>
               <div className="text-sm sm:text-base font-black font-mono text-white whitespace-normal leading-snug">
-                $125,000 APA BUYOUT
+                20 kHz (0.48ms) APA ASSET TRANSFER
               </div>
             </div>
           </div>

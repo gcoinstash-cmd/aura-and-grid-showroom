@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab }) => {
             className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-lg transition-colors whitespace-nowrap shadow-sm shadow-cyan-950"
           >
             <ShieldCheck className="w-4 h-4 text-slate-900" />
-            Acquire.com Asset ($45k)
+            Acquire.com Asset (20 kHz (0.48ms))
           </button>
         </div>
       </div>

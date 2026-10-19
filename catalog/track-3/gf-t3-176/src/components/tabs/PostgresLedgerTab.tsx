@@ -144,7 +144,7 @@ export const PostgresLedgerTab: React.FC = () => {
               PostgreSQL Trigger Fired: trg_quarantine_slip_events
             </h4>
             <p className="text-base text-rose-200 leading-relaxed">
-              Cross-axle stroke delta reached 8.5" while E-KDSS was in transition. Row flagged with <code className="bg-rose-900/60 px-1.5 py-0.5 rounded text-white font-mono font-bold">quarantined = TRUE</code> and audit recorded in <code className="bg-rose-900/60 px-1.5 py-0.5 rounded text-white font-mono font-bold">quarantine_slip_log</code>.
+              Cross-axle stroke delta reached 8.5" while Dynamic Kinetic Suspension Telemetry was in transition. Row flagged with <code className="bg-rose-900/60 px-1.5 py-0.5 rounded text-white font-mono font-bold">quarantined = TRUE</code> and audit recorded in <code className="bg-rose-900/60 px-1.5 py-0.5 rounded text-white font-mono font-bold">quarantine_slip_log</code>.
             </p>
           </div>
         </div>

@@ -1,8 +1,8 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
- * Turnkey Micro-APA Buyout Asset for Acquire.com
+ * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Turnkey Micro-APA Asset Transfer Asset for Acquire.com
  */
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -288,7 +288,7 @@ export default function App() {
             <span>·</span>
             <span>Asset GF-T3-174</span>
             <span>·</span>
-            <span>Lexus RZ 450e Steer-by-Wire Precision Core</span>
+            <span>Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core</span>
           </div>
 
           <div className="flex items-center gap-4 text-sm font-mono text-slate-400">

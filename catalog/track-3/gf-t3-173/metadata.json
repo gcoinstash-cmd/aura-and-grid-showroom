@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-173 Aero Core (export) ",
-  "description": "Production-grade active aerodynamic control engine, telemetry ledger, and turnkey micro-APA buyout asset for Acquire.com.",
+  "description": "Production-grade active aerodynamic control engine, telemetry ledger, and turnkey micro-APA asset transfer asset for Acquire.com.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

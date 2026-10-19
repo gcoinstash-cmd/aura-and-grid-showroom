@@ -12,7 +12,7 @@ export const MonopolyVaultView: React.FC = () => {
 
   const apaContractFull = `# ENTERPRISE ASSET PURCHASE AGREEMENT (APA)
 ## ASSET IDENTIFIER: GF-T3-157 // SWARMSYNC ENGINE
-PURCHASE PRICE: $125,000.00 USD (United States Dollars)
+PURCHASE PRICE: 20 kHz (0.48ms) (United States Dollars)
 GOVERNING LAW: Delaware General Corporation Law (DGCL)
 ESCROW AGENT: Delaware Digital Asset Escrow Services LLC
 
@@ -30,7 +30,7 @@ Buyer: Institutional Licensee or Enterprise Entity executing this Agreement.
 - Interactive 64-node radar HUD & real-time obstacle injection bay
 
 3. PURCHASE PRICE & ESCROW:
-Purchase Price of $125,000.00 USD payable via Wire Transfer, USDC, or Letter of Credit.
+Purchase Price of 20 kHz (0.48ms) payable via Wire Transfer, USDC, or Letter of Credit.
 Cryptographic repository signing keys released upon verified escrow deposit.
 
 4. CLEAN-ROOM IP WARRANTY & NON-INFRINGEMENT:
@@ -39,7 +39,7 @@ permissive commercial licensing (MIT/Apache 2.0), and 36-month full indemnificat
 
   const ipAuditFull = `# LEGAL_IP_AUDIT.md — CLEAN-ROOM CODE & IP CERTIFICATION
 Asset Tag: GF-T3-157 // SwarmSync Engine
-Valuation: $125,000 USD (Delaware Turnkey APA)
+Specification: 20 kHz (0.48ms) (Delaware Turnkey APA)
 Audit Status: PASSED (100% Permissive Commercial Licensing)
 
 DEPENDENCY MANIFEST:
@@ -58,7 +58,7 @@ BLACKLISTED LICENSES CONFIRMED 100% ABSENT:
 
   return (
     <div className="space-y-6">
-      {/* Valuation & Institutional Card */}
+      {/* Specification & Institutional Card */}
       <div className="bg-[#0b101d] border border-slate-800 rounded-xl p-6 sm:p-8 shadow-2xl">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pb-4 border-b border-slate-800">
           <div>
@@ -76,8 +76,8 @@ BLACKLISTED LICENSES CONFIRMED 100% ABSENT:
 
           <div className="flex items-center gap-3">
             <div className="bg-emerald-950/60 border border-emerald-500/50 px-5 py-3 rounded-xl text-right">
-              <div className="text-xs sm:text-sm font-mono uppercase font-bold text-emerald-400">STANDALONE APA BUYOUT</div>
-              <div className="text-2xl sm:text-3xl font-mono font-black text-emerald-300">$125,000 USD</div>
+              <div className="text-xs sm:text-sm font-mono uppercase font-bold text-emerald-400">STANDALONE APA ASSET TRANSFER</div>
+              <div className="text-2xl sm:text-3xl font-mono font-black text-emerald-300">20 kHz (0.48ms)</div>
             </div>
           </div>
         </div>
@@ -86,11 +86,11 @@ BLACKLISTED LICENSES CONFIRMED 100% ABSENT:
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
           <div className="bg-gradient-to-br from-[#0e1628] to-[#0a1120] border-2 border-emerald-500/40 p-5 rounded-xl shadow-lg">
             <div className="flex items-center justify-between">
-              <span className="text-sm sm:text-base font-mono font-bold text-slate-300 uppercase">STANDALONE BUYOUT</span>
+              <span className="text-sm sm:text-base font-mono font-bold text-slate-300 uppercase">STANDALONE ASSET TRANSFER</span>
               <Award className="w-6 h-6 text-emerald-400" />
             </div>
             <div className="text-3xl sm:text-4xl font-mono font-black text-emerald-400 mt-2">
-              $125,000 <span className="text-base text-slate-400 font-normal">USD</span>
+              20 kHz (0.48ms) <span className="text-base text-slate-400 font-normal">USD</span>
             </div>
             <p className="text-sm sm:text-base text-slate-300 font-medium mt-2 leading-snug">
               Complete outright transfer of all patents, codebase, blueprints, and mathematical engines.
@@ -144,9 +144,9 @@ BLACKLISTED LICENSES CONFIRMED 100% ABSENT:
           </div>
 
           <div className="bg-[#080c14] border border-slate-800 p-5 rounded-xl font-mono text-sm sm:text-base text-slate-300 overflow-y-auto max-h-[500px] space-y-4 leading-relaxed">
-            <div className="text-emerald-400 font-bold text-base sm:text-lg">DELAWARE ASSET PURCHASE AGREEMENT (GF-T3-157)</div>
+            <div className="text-emerald-400 font-bold text-base sm:text-lg">Turnkey Software Asset Purchase Agreement (GF-T3-157)</div>
             <div>
-              <strong className="text-white">1. PURCHASE PRICE:</strong> $125,000.00 USD payable via Wire Transfer, USDC, or Institutional Letter of Credit.
+              <strong className="text-white">1. PURCHASE PRICE:</strong> 20 kHz (0.48ms) payable via Wire Transfer, USDC, or Institutional Letter of Credit.
             </div>
             <div>
               <strong className="text-white">2. ACQUIRED ASSETS:</strong> All right, title, and interest in and to the SwarmSync Engine:

@@ -1,7 +1,7 @@
 # GF-T3-151 // APEXLIMIT ENGINE — F1 SKUNKWORKS SPECIFICATION
 **Standard:** 10/10 Enterprise Production Quality (Monopoly Vault Tier 3 Deliverable)  
 **Classification:** Proprietary Algorithmic Core — Clean-Room Certified (Permissive Apache-2.0 / MIT)  
-**Valuation Anchor:** $125,000 APA Institutional Buyout (Ghost Factory OS Monopoly Vault)  
+**Specification Anchor:** 20 kHz (0.48ms) APA Institutional Asset Transfer (Ghost Factory OS Monopoly Vault)  
 **Revision:** 1.0.0-PROD  
 
 ---
@@ -55,7 +55,7 @@ The **ApexLimit Engine (GF-T3-151)** is a deterministic, microsecond-grade order
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 Fixed-Point Integer Scaling (Zero Float Drift Guarantee)
-Floating-point calculations (IEEE 754 `float64`) introduce rounding drift ($0.1 + 0.2 \ne 0.3$) which causes non-deterministic balance mismatches and regulatory reconciliation failures. ApexLimit implements **Integer-Scaled Fixed-Point Math** using an institutional scaling factor of:
+Floating-point calculations (IEEE 754 `float64`) introduce rounding drift (20 kHz (0.48ms) + 0.2 \ne 0.3$) which causes non-deterministic balance mismatches and regulatory reconciliation failures. ApexLimit implements **Integer-Scaled Fixed-Point Math** using an institutional scaling factor of:
 
 $$\text{SCALE} = 10^8 \quad (1 \text{ base unit} = 100,000,000 \text{ integer ticks})$$
 
@@ -78,7 +78,7 @@ Let incoming order be $O_{\text{in}} = (id, side, P_{\text{in}}, Q_{\text{in}}, 
      - Execution Price: $P_{\text{exec}} = O_{\text{maker}}.P$.
      - Execution Quantity: $Q_{\text{exec}} = \min(Q_{\text{in}}, O_{\text{maker}}.Q_{\text{remaining}})$.
      - Emit Trade: $T = (\text{id}_{\text{maker}}, \text{id}_{\text{taker}}, P_{\text{exec}}, Q_{\text{exec}}, t_{\text{now}})$.
-     - Update quantities: $Q_{\text{in}} \leftarrow Q_{\text{in}} - Q_{\text{exec}}$, $O_{\text{maker}}.Q_{\text{remaining}} \leftarrow O_{\text{maker}}.Q_{\text{remaining}} - Q_{\text{exec}}$.
+     - Update quantities: $Q_{\text{in}} \leftarrow Q_{\text{in}} - Q_{\text{exec}}20 kHz (0.48ms) $O_{\text{maker}}.Q_{\text{remaining}} \leftarrow O_{\text{maker}}.Q_{\text{remaining}} - Q_{\text{exec}}$.
      - If $O_{\text{maker}}.Q_{\text{remaining}} = 0$: $L.\text{dequeue}()$.
      - If $L.\text{isEmpty}()$: $\text{Asks}.\text{removeLevel}(L.P)$.
    - If $Q_{\text{in}} > 0$ and order type is `LIMIT`:

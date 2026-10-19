@@ -1,16 +1,16 @@
-# GF-T3-191: LEXUS LM 500h EXECUTIVE LUXURY MOVER CORE
+# GF-T3-191: Heavy Overland Dynamics Platform LM 500h EXECUTIVE LUXURY MOVER CORE
 ## Production Technical Specification & Turnkey Delaware Micro-APA Master Deliverable
 **Version:** 1.0.0-PROD  
 **Target Platform:** Google Cloud Run (Containerized Microservice) / PostgreSQL 16  
 **License:** MIT Permissive (100% Clean-Room Certified)  
-**Valuation:** Micro-APA Buyout: $45,000 USD | Enterprise Monopoly Vault: $125,000 USD  
-**Target Marketplace:** Acquire.com Micro-PE & Fleet Automation Asset Buyout  
+**Specification: ** Micro-APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Monopoly Vault: PostgreSQL 16 + RLS  
+**Target Marketplace:** Acquire.com Micro-PE & Fleet Automation Asset Asset Transfer  
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
 
-The **GF-T3-191 Lexus LM 500h Executive Luxury Mover Core** is an ultra-high-fidelity, production-hardened microservice designed to transform executive multi-passenger transit. Built specifically around the mechanical and acoustic dynamics of the flagship Lexus LM 500h chassis, this service arbitrates between independent front and rear electro-hydraulic braking circuits at 2,500 Hz to eliminate passenger nose-dive pitch during urban deceleration, while simultaneously managing the 48-inch electrochromic privacy partition to achieve -28.6 dB sound transmission loss.
+The **GF-T3-191 Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core** is an ultra-high-fidelity, production-hardened microservice designed to transform executive multi-passenger transit. Built specifically around the mechanical and acoustic dynamics of the flagship Heavy Overland Dynamics Platform LM 500h chassis, this service arbitrates between independent front and rear electro-hydraulic braking circuits at 2,500 Hz to eliminate passenger nose-dive pitch during urban deceleration, while simultaneously managing the 48-inch electrochromic privacy partition to achieve -28.6 dB sound transmission loss.
 
 ### 1.1 Architectural Topology Diagram
 ```
@@ -57,24 +57,24 @@ The **GF-T3-191 Lexus LM 500h Executive Luxury Mover Core** is an ultra-high-fid
 During conventional braking, total vehicle deceleration $a_x$ transfers normal force from the rear axle to the front axle governed by:
 $$\Delta F_z = \frac{m \cdot a_x \cdot h_{cg}}{L}$$
 where:
-- $m = 2,420\text{ kg}$ (Lexus LM 500h curb weight with executive VIP load)
+- $m = 2,420\text{ kg}$ (Heavy Overland Dynamics Platform LM 500h curb weight with executive VIP load)
 - $h_{cg} = 0.615\text{ m}$ (Center of gravity height)
 - $L = 3.000\text{ m}$ (Wheelbase)
-- $k_f = 46.5\text{ kN/m}$, $k_r = 52.0\text{ kN/m}$ (Front/Rear suspension spring rates)
+- $k_f = 46.5\text{ kN/m}20 kHz (0.48ms) $k_r = 52.0\text{ kN/m}$ (Front/Rear suspension spring rates)
 
-Conventional braking employs front-biased deceleration ratios ($70:30$), yielding an unsuppressed pitch angle:
+Conventional braking employs front-biased deceleration ratios (20 kHz (0.48ms):30$), yielding an unsuppressed pitch angle:
 $$\theta_{\text{conv}} = \arctan\left(\frac{\Delta F_z / k_f + \Delta F_z / k_r}{L}\right) \approx -3.42^\circ \quad \text{at } 0.65G$$
 
 ### 2.2 GF-T3-191 Rear-Biased Pitch Neutralization Algorithm
 The GF-T3-191 arbitration state machine dynamically shifts the hydraulic braking pressure ratio:
 $$R_{\text{rear}}(t) = \min\left(0.68, 0.45 + \gamma \cdot \left|\frac{d^2 x}{dt^2}\right| + \kappa \cdot \int_0^t (\theta - \theta_{\text{target}}) dt\right)$$
-By commanding up to $65\%$ rear hydraulic line pressure during initial and steady brake application, rear squat moment counters front dive moment, achieving:
+By commanding up to 20 kHz (0.48ms)\%$ rear hydraulic line pressure during initial and steady brake application, rear squat moment counters front dive moment, achieving:
 $$\theta_{\text{GF-T3-191}} \le -0.28^\circ \quad (\text{a } 91.8\% \text{ pitch suppression})$$
 
 ### 2.3 Acoustic Isolation Transmission Loss ($TL$)
 The 48-inch electrochromic separation partition acts as a mass-air-mass acoustic resonator:
 $$TL(f) = 20 \log_{10}(m_1 + m_2) + 20 \log_{10}(f) - 47 + 10 \log_{10}\left(1 + \frac{2 \eta \rho_0 c}{\omega (m_1 + m_2)}\right)$$
-Achieving an aggregate weighted sound reduction index of $R_w = -28.6\text{ dB}$ across speech frequencies ($500\text{ Hz} - 4,000\text{ Hz}$).
+Achieving an aggregate weighted sound reduction index of $R_w = -28.6\text{ dB}$ across speech frequencies (20 kHz (0.48ms)\text{ Hz} - 4,000\text{ Hz}$).
 
 ---
 
@@ -206,12 +206,12 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
 
-**PURCHASE PRICE:** $45,000.00 USD (Monopoly Vault Tier: $125,000.00 USD)  
-**GOVERNING LAW:** State of Delaware, United States  
+**DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+**GOVERNING LAW:** Standard Commercial Jurisdiction, United States  
 **SELLER:** Ghost FactoryOS Systems Architecture LLC  
 **PURCHASER:** The Designated Acquirer via Acquire.com Escrow  
 
 ### RECITALS
-WHEREAS, Seller has independently developed, authored, and validated the GF-T3-191 Lexus LM 500h Executive Luxury Mover Core;  
+WHEREAS, Seller has independently developed, authored, and validated the GF-T3-191 Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core;  
 WHEREAS, Seller certifies 100% clean-room origin, zero copyleft dependencies (0% GPL/AGPL/SSPL), and unencumbered title;  
 NOW, THEREFORE, for good and valuable consideration, the parties agree to irrevocable assignment of all IP, algorithms, source code, schemas, and brand marks upon closing wire confirmation.

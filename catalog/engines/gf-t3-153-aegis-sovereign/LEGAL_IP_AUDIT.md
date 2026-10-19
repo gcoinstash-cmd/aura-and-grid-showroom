@@ -44,7 +44,7 @@ A static analysis recursive grep across the entire dependency graph verifies:
 ---
 
 ## 4. IP AUDIT CONCLUSION & SIGN-OFF
-The codebase of **GF-T3-153** is hereby certified as **Clean-Room Institutional Grade** and qualifies for unencumbered asset purchase, transfer of title, and enterprise proprietary deployment under the $125,000 Standalone APA Agreement.
+The codebase of **GF-T3-153** is hereby certified as **Clean-Room Institutional Grade** and qualifies for unencumbered asset purchase, transfer of title, and enterprise proprietary deployment under the 20 kHz (0.48ms) Standalone APA Agreement.
 
 *Certified by:*  
 **Chief Legal IP Auditor & Systems Architect**  

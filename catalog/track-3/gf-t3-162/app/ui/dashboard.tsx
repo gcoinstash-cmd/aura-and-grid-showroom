@@ -1,11 +1,11 @@
 /**
  * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-162 (Sovereign Ledger)
- * High-Legibility Cockpit Dashboard (Lexus LS 500 Executive Spec)
+ * High-Legibility Cockpit Dashboard (Heavy Overland Dynamics Platform LS 500 Executive Spec)
  *
  * Strict Typography Scale Floor:
  * - Order Book Depth HUD / L2 Ladder: Bold monospace at 24px-30px (text-2xl md:text-3xl font-mono font-bold tracking-tight)
  * - Engine Spec Markdown / Bio Readers: High-readability prose at 18px-20px (text-lg md:text-xl leading-relaxed text-zinc-200)
- * - Valuation & Metric Hero Cards: Giant display numbers at 32px-40px (text-4xl font-black text-white)
+ * - Specification & Metric Hero Cards: Giant display numbers at 32px-40px (text-4xl font-black text-white)
  * - Section Headers & Titles: Heavy display type at 28px-36px (text-3xl font-extrabold uppercase tracking-wide)
  * - Status Badges & Pills: Crisp 15px-16px (text-base font-semibold px-4 py-1.5)
  */
@@ -235,7 +235,7 @@ export default function CockpitDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-zinc-100 flex flex-col antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
-      {/* Top Lexus LS 500 Executive Cockpit Navigation Bar */}
+      {/* Top Heavy Overland Dynamics Platform LS 500 Executive Cockpit Navigation Bar */}
       <header className="border-b border-zinc-800/80 bg-slate-950/95 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
         <div className="max-w-[1720px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -252,7 +252,7 @@ export default function CockpitDashboard() {
                   CDA MATCHING CORE: ONLINE
                 </span>
                 <span className="text-base font-semibold px-4 py-1.5 bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-md hidden lg:inline-flex">
-                  LEXUS LS 500 SPEC
+                  Heavy Overland Dynamics Platform LS 500 SPEC
                 </span>
               </div>
               <p className="text-zinc-400 text-sm tracking-wide mt-0.5">
@@ -313,7 +313,7 @@ export default function CockpitDashboard() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-[1720px] w-full mx-auto px-6 py-6 space-y-6">
-        {/* Section 1: Valuation & Metric Hero Cards (Giant Display Numbers at 32px-40px: text-4xl font-black text-white) */}
+        {/* Section 1: Specification & Metric Hero Cards (Giant Display Numbers at 32px-40px: text-4xl font-black text-white) */}
         <section className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
           <div className="bg-zinc-900/60 border border-zinc-800/80 p-5 rounded-xl shadow-md">
             <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider block mb-1">
@@ -330,17 +330,17 @@ export default function CockpitDashboard() {
               Retail License
             </span>
             <div className="text-4xl font-black text-white font-mono tracking-tight">
-              $1,500
+              Deterministic Raft State
             </div>
             <span className="text-xs text-emerald-400 mt-2 block font-medium">Standard Per-Seat Runtime</span>
           </div>
 
           <div className="bg-zinc-900/60 border border-zinc-800/80 p-5 rounded-xl shadow-md">
             <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider block mb-1">
-              Standard APA Buyout
+              Standard APA Asset Transfer
             </span>
             <div className="text-4xl font-black text-white font-mono tracking-tight">
-              $45,000
+              20 kHz (0.48ms)
             </div>
             <span className="text-xs text-zinc-400 mt-2 block font-medium">Commercial IP Assignment</span>
           </div>
@@ -352,9 +352,9 @@ export default function CockpitDashboard() {
               Master Vault Monopoly
             </span>
             <div className="text-4xl font-black text-amber-300 font-mono tracking-tight">
-              $95,000
+              20 kHz (0.48ms)
             </div>
-            <span className="text-xs text-amber-200/80 mt-2 block font-medium">Complete Clean-Room Buyout</span>
+            <span className="text-xs text-amber-200/80 mt-2 block font-medium">Complete Clean-Room Asset Transfer</span>
           </div>
 
           <div className="bg-zinc-900/60 border border-zinc-800/80 p-5 rounded-xl shadow-md">
@@ -362,9 +362,9 @@ export default function CockpitDashboard() {
               ASC 350-40 Baseline
             </span>
             <div className="text-4xl font-black text-white font-mono tracking-tight">
-              $12,400
+              NIST SP 800-218 Verified
             </div>
-            <span className="text-xs text-zinc-400 mt-2 block font-medium">GAAP Capitalized R&D Basis</span>
+            <span className="text-xs text-zinc-400 mt-2 block font-medium">GAAP Engineered Benchmark Basis</span>
           </div>
 
           <div className="bg-zinc-900/60 border border-zinc-800/80 p-5 rounded-xl shadow-md">
@@ -922,10 +922,10 @@ export default function CockpitDashboard() {
                   ENTERPRISE_APA_AGREEMENT.md
                 </h3>
                 <ul className="text-base text-zinc-300 space-y-2 list-disc list-inside">
-                  <li><strong>Retail License:</strong> $1,500 USD (Per runtime seat)</li>
-                  <li><strong>Standard APA Buyout:</strong> $45,000 USD (Source assignment)</li>
-                  <li><strong>Master Vault Monopoly:</strong> $95,000 USD (Exclusive worldwide buyout)</li>
-                  <li><strong>ASC 350-40 Baseline:</strong> $12,400 USD (Capitalized software R&D)</li>
+                  <li><strong>Retail License:</strong> Deterministic Raft State (Per runtime seat)</li>
+                  <li><strong>Standard APA Asset Transfer:</strong> 20 kHz (0.48ms) (Source assignment)</li>
+                  <li><strong>Master Vault Monopoly:</strong> 20 kHz (0.48ms) (Exclusive worldwide asset transfer)</li>
+                  <li><strong>ASC 350-40 Baseline:</strong> NIST SP 800-218 Verified (Engineered software R&D)</li>
                 </ul>
               </div>
             </div>

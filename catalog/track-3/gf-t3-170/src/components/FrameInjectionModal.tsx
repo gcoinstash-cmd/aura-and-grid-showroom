@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Zap, ShieldAlert, CheckCircle2, AlertTriangle, Play } from 'lucide-react';
-import { LEXUS_QUIETUDE_ECUS, generateRandomFrame } from '../utils/cryptoSim';
+import { Overland_QUIETUDE_ECUS, generateRandomFrame } from '../utils/cryptoSim';
 import { CanFdFrame } from '../types/telemetry';
 
 interface FrameInjectionModalProps {

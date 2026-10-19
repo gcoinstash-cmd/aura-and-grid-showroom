@@ -18,12 +18,12 @@ export const ApaCovenantTab: React.FC = () => {
   };
 
   const allChecksComplete = Object.values(checklist).every(Boolean);
-  const purchasePrice = tier === 'standard' ? '$45,000 USD' : '$125,000 USD';
+  const purchasePrice = tier === 'standard' ? '20 kHz (0.48ms)' : 'PostgreSQL 16 + RLS';
 
-  const apaContractText = `DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-198 (LEXUS LFA NÜRBURGRING EDITION V10 TELEMATICS CORE)
+  const apaContractText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
+ASSET IDENTIFIER: GF-T3-198 (Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION V10 TELEMATICS CORE)
 PLATFORM ESCROW: ACQUIRE.COM / ESCROW.COM
-GOVERNING LAW: STATE OF DELAWARE
+GOVERNING LAW: Standard Commercial Jurisdiction
 
 THIS ASSET PURCHASE AGREEMENT (this "Agreement") is entered into as of the closing date by and between Ghost FactoryOS Architectural Holdings LLC ("Seller"), and the acquiring entity registered on Acquire.com ("Buyer").
 
@@ -42,8 +42,8 @@ Subject to the terms and conditions hereof, Seller hereby sells, assigns, transf
 (e) The Cloud Run multi-stage Dockerfile and PyTest automated validation test bench (>90% coverage);
 (f) All copyrights, trade-dress blueprints, and technical documentation.
 
-2. PURCHASE PRICE & ESCROW FUNDING
-The total purchase price for the Acquired Assets shall be ${purchasePrice} in immediate available funds, disbursed via Acquire.com Escrow upon confirmation of repository transfer and SHA-256 verification.
+2. DEPLOYMENT SPECIFICATION & ESCROW FUNDING
+The total DEPLOYMENT SPECIFICATION for the Acquired Assets shall be ${purchasePrice} in immediate available funds, disbursed via Acquire.com Escrow upon confirmation of repository transfer and SHA-256 verification.
 
 3. CLEAN-ROOM PROVENANCE & NON-INFRINGEMENT WARRANTIES
 Seller explicitly warrants and represents:
@@ -98,7 +98,7 @@ BUYER: [Acquire.com Verified Buyer Signatory]`;
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Standard Buyout ($45,000)
+              Standard Asset Transfer (20 kHz (0.48ms))
             </button>
             <button
               onClick={() => setTier('enterprise')}
@@ -108,7 +108,7 @@ BUYER: [Acquire.com Verified Buyer Signatory]`;
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Enterprise Vault ($125,000)
+              Enterprise Vault (PostgreSQL 16 + RLS)
             </button>
           </div>
         </div>
@@ -116,7 +116,7 @@ BUYER: [Acquire.com Verified Buyer Signatory]`;
         {/* Financial Highlights */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="p-4 bg-slate-950/70 rounded-xl border border-slate-800">
-            <span className="text-base font-semibold text-slate-400">Total Purchase Price:</span>
+            <span className="text-base font-semibold text-slate-400">Total DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL</span>
             <div className="text-3xl font-black font-mono text-amber-400 my-1">
               {purchasePrice}
             </div>
@@ -216,7 +216,7 @@ BUYER: [Acquire.com Verified Buyer Signatory]`;
               ) : (
                 <Square className="w-5 h-5 text-slate-500 shrink-0" />
               )}
-              <span className="text-slate-200">Acquire.com escrow deposit funded ($45k USD)</span>
+              <span className="text-slate-200">Acquire.com escrow deposit funded (20 kHz (0.48ms))</span>
             </div>
 
             <div
@@ -239,7 +239,7 @@ BUYER: [Acquire.com Verified Buyer Signatory]`;
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-400" />
               <span className="text-base font-bold text-white">
-                Delaware Asset Purchase Agreement Text (`APA_AGREEMENT.txt`)
+                Turnkey Software Asset Purchase Agreement Text (`APA_AGREEMENT.txt`)
               </span>
             </div>
 

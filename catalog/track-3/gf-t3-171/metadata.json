@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-171 Dynamic Core (export) ",
-  "description": "Production-grade micro-APA buyout asset cockpit for GF-T3-171 featuring LMAX Disruptor ring buffer engine, PostgreSQL WAL spillover ledger, OpenAPI 3.1 execution contract, Cloud Run harness, and Acquire.com covenants.",
+  "description": "Production-grade micro-APA asset transfer asset cockpit for GF-T3-171 featuring LMAX Disruptor ring buffer engine, PostgreSQL WAL spillover ledger, OpenAPI 3.1 execution contract, Cloud Run harness, and Acquire.com covenants.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

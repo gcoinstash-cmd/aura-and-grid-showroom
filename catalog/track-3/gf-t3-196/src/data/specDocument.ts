@@ -1,8 +1,8 @@
-export const GF_T3_196_SPEC_MARKDOWN = `# GF-T3-196: LEXUS RZ 450e STEER-BY-WIRE DIRECT4 CORE
+export const GF_T3_196_SPEC_MARKDOWN = `# GF-T3-196: Heavy Overland Dynamics Platform RZ 450e STEER-BY-WIRE DUAL_VECTOR_TORQUE CORE
 ## TURNKEY INSTITUTIONAL ASSET PURCHASE AGREEMENT (APA) SPECIFICATION
 **Dealership Fleet Tier:** Track 3 (F1 Skunkworks Service Engine - 70% Design Deliverable)  
-**Target Platform:** Lexus RZ 450e (EB-Platform / e-TNGA Steer-by-Wire DIRECT4 Architecture)  
-**Valuation Anchor:** $45,000 USD (Turnkey Micro-APA) | $125,000 USD (Institutional Monopoly Buyout)  
+**Target Platform:** Heavy Overland Dynamics Platform RZ 450e (EB-Platform / e-Modular Cyber-Physical Chassis Steer-by-Wire DUAL_VECTOR_TORQUE Architecture)  
+**Specification Anchor:** 20 kHz (0.48ms) (Turnkey Micro-APA) | PostgreSQL 16 + RLS (Institutional Monopoly Asset Transfer)  
 **Clean-Room Certification:** 100% Permissive (MIT / Apache-2.0 / BSD) — 0% Copyleft / GPL Free  
 **Cryptographic Integrity:** SHA-256 HMAC Monotonic Audit Ledger  
 
@@ -10,7 +10,7 @@ export const GF_T3_196_SPEC_MARKDOWN = `# GF-T3-196: LEXUS RZ 450e STEER-BY-WIRE
 
 ## 1. ARCHITECTURAL TOPOLOGY & CONTAINER BOUNDARIES
 
-The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator bridge paired with Lexus DIRECT4 intelligent all-wheel drive dynamic torque vectoring.
+The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator bridge paired with Heavy Overland Dynamics Platform DUAL_VECTOR_TORQUE intelligent all-wheel drive dynamic torque vectoring.
 
 \`\`\`
                    +-------------------------------------------------+
@@ -37,7 +37,7 @@ The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator
                        +-------------------+-------------------+
                        |                                       |
     +------------------v------------------+ +------------------v------------------+
-    |      STEERING GEAR ACTUATOR         | |         DIRECT4 VECTORING ECU        |
+    |      STEERING GEAR ACTUATOR         | |         DUAL_VECTOR_TORQUE VECTORING ECU        |
     |  - Dual Brushless DC Motors (BLDC)  | |  - Front e-Axle (150 kW / 266 Nm)   |
     |  - Pinion Position Feedback Angle   | |  - Rear e-Axle  (80 kW / 168 Nm)    |
     |  - Divergence Sentinel (<0.4 deg)   | |  - 100:0 to 0:100 Dynamic Allocation|
@@ -60,7 +60,7 @@ The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 One-Motion Grip Dynamic Steering Ratio Equation
-In conventional steering, mechanical rack-and-pinion ratios are fixed (typically 1:14 to 1:16), requiring up to 2.7 turns (972°) lock-to-lock with hand-over-hand maneuvering. The Lexus RZ 450e One-Motion Grip operates strictly between **-150° and +150° (300° total lock-to-lock)**.
+In conventional steering, mechanical rack-and-pinion ratios are fixed (typically 1:14 to 1:16), requiring up to 2.7 turns (972°) lock-to-lock with hand-over-hand maneuvering. The Heavy Overland Dynamics Platform RZ 450e One-Motion Grip operates strictly between **-150° and +150° (300° total lock-to-lock)**.
 
 The effective steering ratio $R(v)$ is computed as a continuous function of vehicle velocity $v$ (in m/s):
 
@@ -81,12 +81,12 @@ Where $\\Phi(\\mu)$ is the road surface friction scale coefficient:
 - Wet Asphalt: $\\mu = 0.75$
 - Packed Snow / Ice: $\\mu = 0.25$
 
-### 2.2 DIRECT4 Dual e-Axle Dynamic Torque Vectoring
-Lexus DIRECT4 optimizes front and rear e-Axle electric motor torque distribution ($\\tau_{\\text{front}}$ and $\\tau_{\\text{rear}}$) in real time:
+### 2.2 DUAL_VECTOR_TORQUE Dual e-Axle Dynamic Torque Vectoring
+Heavy Overland Dynamics Platform DUAL_VECTOR_TORQUE optimizes front and rear e-Axle electric motor torque distribution ($\\tau_{\\text{front}}$ and $\\tau_{\\text{rear}}$) in real time:
 
 $$\\tau_{\\text{front}} + \\tau_{\\text{rear}} = \\tau_{\\text{demand}}$$
 
-1. **Launch from Standstill ($v < 5 \\text{ km/h}$):** Front:Rear = **60:40 to 40:60** to maximize initial wheel grip and eliminate pitch.
+Step 1: **Launch from Standstill ($v < 5 \\text{ km/h}$):** Front:Rear = **60:40 to 40:60** to maximize initial wheel grip and eliminate pitch.
 2. **Straight-Line Acceleration:** Front:Rear = **50:50 to 20:80** preventing front-wheel slip and shifting weight to rear axle.
 3. **Corner Turn-In ($|\\dot{\\theta}_{\\text{yoke}}| > 15^\\circ/\\text{s}$):** Front:Rear = **75:25** for crisp, agile turn-in response.
 4. **Mid-Corner Apex ($a_y > 0.3g$):** Front:Rear = **50:50** maximizing lateral stability.
@@ -95,7 +95,7 @@ $$\\tau_{\\text{front}} + \\tau_{\\text{rear}} = \\tau_{\\text{demand}}$$
 ### 2.3 Python 3.12 Production Core Engine
 \`\`\`python
 """
-GF-T3-196: Lexus RZ 450e Steer-by-Wire DIRECT4 Core State Machine
+GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core State Machine
 Standard: ISO 26262 ASIL-D Compliant Dual-Redundant Controller
 """
 import math
@@ -113,12 +113,12 @@ class TelemetryFrame:
     rack_angle_deg: float
     steering_ratio: float
     haptic_torque_nm: float
-    direct4_front_pct: float
-    direct4_rear_pct: float
+    dual_vector_torque_front_pct: float
+    dual_vector_torque_rear_pct: float
     can_active_bus: str
     hmac_sha256: str
 
-class LexusRZ450eSbwCore:
+class OverlandRZ450eSbwCore:
     R_MIN = 6.0
     R_MAX = 18.0
     K_SLOPE = 0.18
@@ -147,7 +147,7 @@ class LexusRZ450eSbwCore:
         rack = raw_rack * min(1.0, max(0.2, friction_mu))
         return round(max(-self.MAX_RACK_DEG, min(self.MAX_RACK_DEG, rack)), 3)
 
-    def compute_direct4_split(self, speed_kmh: float, yoke_deg: float, lateral_g: float) -> tuple[float, float]:
+    def compute_dual_vector_torque_split(self, speed_kmh: float, yoke_deg: float, lateral_g: float) -> tuple[float, float]:
         abs_yoke = abs(yoke_deg)
         abs_g = abs(lateral_g)
         
@@ -181,7 +181,7 @@ class LexusRZ450eSbwCore:
         now_ns = time.time_ns()
         ratio = self.compute_steering_ratio(speed_kmh)
         rack_deg = self.calculate_rack_angle(yoke_deg, speed_kmh, friction_mu)
-        front_pct, rear_pct = self.compute_direct4_split(speed_kmh, yoke_deg, lateral_g)
+        front_pct, rear_pct = self.compute_dual_vector_torque_split(speed_kmh, yoke_deg, lateral_g)
         
         # Calculate simulated haptic resistance on yoke (reaction motor)
         haptic_nm = round(abs(rack_deg) * 0.18 * friction_mu + (speed_kmh * 0.015), 2)
@@ -199,8 +199,8 @@ class LexusRZ450eSbwCore:
             rack_angle_deg=rack_deg,
             steering_ratio=ratio,
             haptic_torque_nm=haptic_nm,
-            direct4_front_pct=front_pct,
-            direct4_rear_pct=rear_pct,
+            dual_vector_torque_front_pct=front_pct,
+            dual_vector_torque_rear_pct=rear_pct,
             can_active_bus=self._active_bus,
             hmac_sha256=sig
         )
@@ -211,7 +211,7 @@ class LexusRZ450eSbwCore:
 ## 3. PRODUCTION POSTGRESQL 16 PARTITIONED DATA SCHEMA
 
 \`\`\`sql
--- GF-T3-196: Lexus RZ 450e Steer-by-Wire & DIRECT4 High-Frequency Telemetry Ledger
+-- GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE High-Frequency Telemetry Ledger
 -- PostgreSQL 16 + pg_partman / timeseries partition structure
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
@@ -229,8 +229,8 @@ CREATE TABLE steer_telemetry_partitioned (
     actual_pinion_angle_deg NUMERIC(6,3) NOT NULL,
     actuator_divergence_delta NUMERIC(6,3) GENERATED ALWAYS AS (abs(target_rack_angle_deg - actual_pinion_angle_deg)) STORED,
     pinion_resistance_nm NUMERIC(6,2) NOT NULL,
-    direct4_front_pct NUMERIC(4,1) NOT NULL CHECK (direct4_front_pct BETWEEN 0.0 AND 100.0),
-    direct4_rear_pct NUMERIC(4,1) NOT NULL CHECK (direct4_rear_pct BETWEEN 0.0 AND 100.0),
+    dual_vector_torque_front_pct NUMERIC(4,1) NOT NULL CHECK (dual_vector_torque_front_pct BETWEEN 0.0 AND 100.0),
+    dual_vector_torque_rear_pct NUMERIC(4,1) NOT NULL CHECK (dual_vector_torque_rear_pct BETWEEN 0.0 AND 100.0),
     front_inverter_current_a NUMERIC(6,2) NOT NULL,
     rear_inverter_current_a NUMERIC(6,2) NOT NULL,
     active_can_bus VARCHAR(10) NOT NULL CHECK (active_can_bus IN ('BUS_A', 'BUS_B')),
@@ -281,7 +281,7 @@ FOR EACH ROW EXECUTE FUNCTION trg_enforce_sbw_safety_sentinel();
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Lexus RZ 450e Steer-by-Wire & DIRECT4 Telemetry API
+  title: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE Telemetry API
   version: 1.0.0-PROD
   description: High-frequency actuator telemetry ingestion, dynamic ratio calculation, and HMAC verification.
 paths:
@@ -312,8 +312,8 @@ paths:
                   rack_angle_deg: { type: number }
                   steering_ratio: { type: number }
                   haptic_torque_nm: { type: number }
-                  direct4_front_pct: { type: number }
-                  direct4_rear_pct: { type: number }
+                  dual_vector_torque_front_pct: { type: number }
+                  dual_vector_torque_rear_pct: { type: number }
                   active_bus: { type: string, enum: [BUS_A, BUS_B] }
                   hmac_sha256: { type: string }
 
@@ -359,12 +359,12 @@ paths:
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
 
 **ASSET PURCHASE AND TRANSFER AGREEMENT**  
-*Asset Identifier: GF-T3-196 (Lexus RZ 450e Steer-by-Wire DIRECT4 Core)*  
-*Governing Law: State of Delaware, United States*  
-*Base Purchase Price: $45,000.00 USD (Forty-Five Thousand United States Dollars)*  
-*Monopoly Institutional Buyout: $125,000.00 USD (One Hundred Twenty-Five Thousand United States Dollars)*  
+*Asset Identifier: GF-T3-196 (Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core)*  
+*Governing Law: Standard Commercial Jurisdiction, United States*  
+*Base DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+*Monopoly Institutional Asset Transfer: PostgreSQL 16 + RLS Deterministic Telemetry Verified*  
 
-1. **Transfer of Assets:** Seller hereby unconditionally sells, transfers, assigns, conveys, and delivers to Buyer all right, title, and interest in and to the Proprietary Steer-by-Wire Algorithms, One-Motion Grip State Machines, DIRECT4 Dynamic Torque Vectoring Logic, PostgreSQL 16 Partition Schemas, OpenAPI 3.1 contracts, Docker Harnesses, and Git Repositories comprising asset GF-T3-196.
+1. **Transfer of Assets:** Seller hereby unconditionally sells, transfers, assigns, conveys, and delivers to Buyer all right, title, and interest in and to the Proprietary Steer-by-Wire Algorithms, One-Motion Grip State Machines, DUAL_VECTOR_TORQUE Dynamic Torque Vectoring Logic, PostgreSQL 16 Partition Schemas, OpenAPI 3.1 contracts, Docker Harnesses, and Git Repositories comprising asset GF-T3-196.
 2. **Clean-Room Warranty:** Seller represents and warrants that the Asset was engineered under clean-room specifications without incorporation of proprietary OEM binaries, proprietary CAN dumps, or copyleft-encumbered codebases.
 3. **Escrow Terms:** Funds shall be held in Escrow via Escrow.com / Acquire.com Escrow Services, released upon verified SHA-256 master archive checksum delivery and pass of all 100% PyTest ASIL-D suites.
 `;

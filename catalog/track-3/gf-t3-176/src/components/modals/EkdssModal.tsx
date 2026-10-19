@@ -46,10 +46,10 @@ export const EkdssModal: React.FC<EkdssModalProps> = ({ isOpen, onClose }) => {
             <Sliders className="w-6 h-6 text-amber-400" />
             <div>
               <h3 className="text-2xl font-bold text-white">
-                Simulate E-KDSS Articulation & Hydraulic Solenoid Slew
+                Simulate Dynamic Kinetic Suspension Telemetry Articulation & Hydraulic Solenoid Slew
               </h3>
               <p className="text-[15px] text-neutral-400 mt-0.5">
-                Dynamic stabilizer decoupling test harness for Lexus GX 550 Overtrail+
+                Dynamic stabilizer decoupling test harness for Heavy Overland Dynamics Platform
               </p>
             </div>
           </div>
@@ -92,7 +92,7 @@ export const EkdssModal: React.FC<EkdssModalProps> = ({ isOpen, onClose }) => {
                     ? 'bg-emerald-500/20 border-emerald-500 text-emerald-300'
                     : 'bg-blue-500/20 border-blue-500 text-blue-300'
                 }`}>
-                  {isDecoupled ? 'E-KDSS VALVE OPEN (FREE BYPASS)' : 'E-KDSS VALVE CLOSED (RIGID)'}
+                  {isDecoupled ? 'Dynamic Kinetic Suspension Telemetry VALVE OPEN (FREE BYPASS)' : 'Dynamic Kinetic Suspension Telemetry VALVE CLOSED (RIGID)'}
                 </div>
                 <div className="text-base text-neutral-300 font-mono">
                   Roll Stiffness: <strong className="text-white">{rollStiffness.toLocaleString()} Nm/rad</strong>

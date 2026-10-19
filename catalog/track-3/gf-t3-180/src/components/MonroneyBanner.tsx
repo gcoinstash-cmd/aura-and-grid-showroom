@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-180
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          LX 600 EXEC CORE
+          Ultra-Heavy Telemetry Core EXEC CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -29,7 +29,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus LX 600 Ultra Luxury Executive Core
+        Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
         Turnkey micro-APA deliverable with 4-Wheel AHC electro-hydraulic suspension damping, V35A-FTS twin-turbo wastegate management, and PostgreSQL 16 HMAC ledger.
@@ -65,19 +65,19 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <div className="inline-flex items-center gap-1 text-slate-300 font-medium">
           <DollarSign className="w-3.5 h-3.5 text-amber-400" />
-          <span className="text-slate-400">Buyout:</span>
-          <span className="text-white font-bold font-mono">$45,000 USD</span>
+          <span className="text-slate-400">Asset Transfer:</span>
+          <span className="text-white font-bold font-mono">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-700 hidden sm:inline">|</span>
 
         <div className="inline-flex items-center gap-1 text-slate-300 font-medium">
           <Award className="w-3.5 h-3.5 text-amber-500" />
           <span className="text-slate-400">Enterprise:</span>
-          <span className="text-amber-300 font-bold font-mono">$125,000 USD</span>
+          <span className="text-amber-300 font-bold font-mono">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-700 hidden sm:inline">|</span>
 

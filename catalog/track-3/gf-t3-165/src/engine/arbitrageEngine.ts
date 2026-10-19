@@ -1,12 +1,12 @@
 /**
- * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DIRECT4 HyperGrid)
+ * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid)
  * TypeScript Deterministic CPMM Arbitrage & Bellman-Ford Engine
  * Mirrors app/core/arbitrage.py with 100% mathematical fidelity.
  */
 
 export interface LiquidityPool {
   pool_id: string;
-  venue_id: 'UNISWAP_V3' | 'SUSHISWAP' | 'CURVE_CRYPTO' | 'DIRECT4_EAXLE';
+  venue_id: 'UNISWAP_V3' | 'SUSHISWAP' | 'CURVE_CRYPTO' | 'DUAL_VECTOR_TORQUE_EAXLE';
   token_a: string;
   token_b: string;
   reserve_a: number;
@@ -377,8 +377,8 @@ export const INITIAL_POOLS: LiquidityPool[] = [
     fee_bps: 30,
   },
   {
-    pool_id: 'POOL-DIRECT4-WBTC-USDC',
-    venue_id: 'DIRECT4_EAXLE',
+    pool_id: 'POOL-DUAL_VECTOR_TORQUE-WBTC-USDC',
+    venue_id: 'DUAL_VECTOR_TORQUE_EAXLE',
     token_a: 'WBTC',
     token_b: 'USDC',
     reserve_a: 150,

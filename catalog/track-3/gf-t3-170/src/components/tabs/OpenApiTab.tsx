@@ -34,7 +34,7 @@ export const OpenApiTab: React.FC = () => {
       method: 'GET',
       path: '/api/v1/ecu/quietude/status',
       title: 'Quietude Acoustic Status',
-      desc: 'Health diagnostics for Lexus ES 350h dual-microphones & inverter filters',
+      desc: 'Health diagnostics for Heavy Overland Dynamics Platform ES 350h dual-microphones & inverter filters',
     },
   ];
 
@@ -69,14 +69,14 @@ export const OpenApiTab: React.FC = () => {
         setApiResponse({
           statusCode: 200,
           rotation_status: 'ROTATED',
-          new_session_id: 'HSM-SESS-99482-LEXUS-ES350h',
+          new_session_id: 'HSM-SESS-99482-Heavy Overland Dynamics Platform-ES350h',
           session_expires_in_sec: 3600,
           ephemeral_public_key: 'ed25519:pk:302a300506032b65700321008f12a34b56c...',
         });
       } else {
         setApiResponse({
           statusCode: 200,
-          vehicle: 'Lexus ES 350h Executive',
+          vehicle: 'Heavy Overland Dynamics Platform ES 350h Executive',
           chassis_status: 'NOMINAL',
           cabin_spl_db: 38.4,
           active_noise_cancellation: {
@@ -91,7 +91,7 @@ export const OpenApiTab: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-170 Lexus ES 350h Executive Quietude Core Gateway
+  title: GF-T3-170 Heavy Overland Dynamics Platform ES 350h Executive Quietude Core Gateway
   version: 1.0.0-PROD
   description: High-throughput zero-trust automotive CAN-FD telemetry & HSM gateway.
 servers:
@@ -138,7 +138,7 @@ paths:
           description: New hardware session established
   /api/v1/ecu/quietude/status:
     get:
-      summary: Diagnostics for Lexus ES 350h Executive Quietude acoustics
+      summary: Diagnostics for Heavy Overland Dynamics Platform ES 350h Executive Quietude acoustics
       responses:
         '200':
           description: Nominal chassis & cabin sound pressure levels

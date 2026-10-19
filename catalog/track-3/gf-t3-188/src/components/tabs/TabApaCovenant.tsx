@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
-  FileCheck2,
-  DollarSign,
+  FileCheck2,Deterministic Telemetry Verifiedign,
   ShieldCheck,
   Award,
   Copy,
@@ -22,7 +21,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
   const apaAgreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
 ASSET IDENTIFIER: GF-T3-188
-TARGET CODEBASE: LEXUS GX 550 OVERTRAIL+ E-KDSS & CRAWL CONTROL CORE
+TARGET CODEBASE: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL CORE
 ACQUIRE.COM TRANSACTION VAULT #AQ-2026-188-MONOPOLY
 
 This ASSET PURCHASE AGREEMENT (the "Agreement") is entered into as of the Effective Date, by and between:
@@ -38,7 +37,7 @@ TERMS AND CONDITIONS:
 1. PURCHASE AND SALE OF ASSETS
 1.1 Acquired Assets:
 Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer all right, title, and interest in:
-(a) All source code for the E-KDSS 2,000 Hz electronic stabilizer bar disconnect arbitration engine;
+(a) All source code for the Dynamic Kinetic Suspension Telemetry 2,000 Hz electronic stabilizer bar disconnect arbitration engine;
 (b) All closed-loop 5-speed Crawl Control PID and PWM brake modulation software;
 (c) PostgreSQL 16 timeseries hypertables, HMAC-SHA256 signature chain verification routines, and hydraulic safety quarantine trigger functions;
 (d) OpenAPI 3.1 protocol specifications, JSON schemas, and WebSocket streaming contracts;
@@ -48,10 +47,10 @@ Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer all righ
 1.2 Excluded Liabilities:
 Buyer does not assume and shall not be responsible for any debt, obligations, or liabilities of Seller incurred prior to the Closing Date.
 
-2. PURCHASE PRICE AND PAYMENT
-2.1 Valuation & Allocation:
-- Option A (Turnkey Micro-APA Buyout): $45,000 USD
-- Option B (Monopoly Vault Enterprise Buyout): $125,000 USD
+2. DEPLOYMENT SPECIFICATION AND PAYMENT
+2.1 Specification & Allocation:
+- Option A (Turnkey Micro-APA Asset Transfer): 20 kHz (0.48ms)
+- Option B (Monopoly Vault Enterprise Asset Transfer): PostgreSQL 16 + RLS
 Payment shall be made in immediately available funds via Escrow.com or Acquire.com Digital Vault Escrow.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -62,8 +61,8 @@ Zero lines of code are subject to GPL, AGPL, SSPL, or any other copyleft or reci
 3.3 Non-Infringement:
 The Acquired Assets do not infringe, misappropriate, or violate any patent, copyright, trademark, trade secret, or other proprietary right of any third party.
 
-4. DELAWARE GOVERNING LAW & JURISDICTION
-This Agreement shall be governed by, and construed in accordance with, the laws of the State of Delaware, without giving effect to conflicts of laws principles.`;
+4. Commercial Software Asset Standard & JURISDICTION
+This Agreement shall be governed by, and construed in accordance with, the laws of the Standard Commercial Jurisdiction, without giving effect to conflicts of laws principles.`;
 
   const copyAgreement = () => {
     navigator.clipboard.writeText(apaAgreementText);
@@ -113,9 +112,9 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
           <div className="bg-slate-950 p-4 rounded-xl border border-amber-500/30 flex items-center justify-between">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold block mb-0.5">
-                Turnkey Micro-APA Buyout
+                Turnkey Micro-APA Asset Transfer
               </span>
-              <span className="text-2xl font-black text-white font-mono">$45,000 USD</span>
+              <span className="text-2xl font-black text-white font-mono">20 kHz (0.48ms)</span>
               <p className="text-xs text-slate-400 mt-1">Single-entity production rights & full source code escrow handoff</p>
             </div>
             <DollarSign className="w-8 h-8 text-amber-400/80" />
@@ -124,10 +123,10 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
           <div className="bg-slate-950 p-4 rounded-xl border border-emerald-500/30 flex items-center justify-between">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-0.5">
-                Monopoly Enterprise Vault Buyout
+                Monopoly Enterprise Vault Asset Transfer
               </span>
-              <span className="text-2xl font-black text-white font-mono">$125,000 USD</span>
-              <p className="text-xs text-slate-400 mt-1">Unrestricted perpetual global buyout + exclusivity covenants</p>
+              <span className="text-2xl font-black text-white font-mono">PostgreSQL 16 + RLS</span>
+              <p className="text-xs text-slate-400 mt-1">Unrestricted perpetual global asset transfer + exclusivity covenants</p>
             </div>
             <Award className="w-8 h-8 text-emerald-400/80" />
           </div>
@@ -162,7 +161,7 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
                 : 'text-slate-400 hover:text-white'
             }`}
           >
-            Delaware Asset Purchase Agreement
+            Turnkey Software Asset Purchase Agreement
           </button>
           <button
             onClick={() => setActiveSubSection('exhibit_a')}
@@ -227,7 +226,7 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
 
           <div className="space-y-3 font-mono">
             <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-              <strong className="text-emerald-400 block mb-1">1. E-KDSS Suspension Disconnect Kinematic Algorithms</strong>
+              <strong className="text-emerald-400 block mb-1">1. Dynamic Kinetic Suspension Telemetry Suspension Disconnect Kinematic Algorithms</strong>
               <p className="text-slate-300">Mathematical formulation for real-time bypass valve state &sigma;(v, &Delta;z_cross, a_y), dynamic roll stiffness synthesis, and hydraulic chamber volume equalization equations.</p>
             </div>
             <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
@@ -254,7 +253,7 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
           </h3>
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3 text-slate-300 leading-relaxed">
             <p>
-              FOR VALUABLE CONSIDERATION received, the sufficiency of which is hereby acknowledged, Seller hereby sells, conveys, transfers, and assigns to Buyer all right, title, and interest in and to Asset GF-T3-188 (Lexus GX 550 Overtrail+ Core).
+              FOR VALUABLE CONSIDERATION received, the sufficiency of which is hereby acknowledged, Seller hereby sells, conveys, transfers, and assigns to Buyer all right, title, and interest in and to Asset GF-T3-188 (Heavy Overland Dynamics Platform Core).
             </p>
             <p>
               Seller warrants that it possesses full legal power and authority to convey the assets, and that title to all assets is conveyed free and clear of all liens, pledges, charges, and encumbrances.
@@ -289,7 +288,7 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
               { label: 'PostgreSQL 16 Migration DDL (Zero circular dependencies)', status: 'VERIFIED' },
               { label: 'OpenAPI 3.1 Schema Validation (Zero OAS lint warnings)', status: 'VERIFIED' },
               { label: 'Non-root Docker Container Vulnerability Scan (0 CVEs)', status: 'VERIFIED' },
-              { label: 'Delaware Asset Purchase Agreement Counter-signatures', status: 'READY FOR CLOSING' },
+              { label: 'Turnkey Software Asset Purchase Agreement Counter-signatures', status: 'READY FOR CLOSING' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-center justify-between bg-slate-950 p-2.5 rounded-lg border border-slate-800">
                 <span className="text-slate-300">{item.label}</span>

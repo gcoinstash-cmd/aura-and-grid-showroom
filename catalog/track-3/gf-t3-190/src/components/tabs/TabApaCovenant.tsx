@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { 
   FileCheck2, 
-  ShieldCheck, 
-  DollarSign, 
+  ShieldCheck,Deterministic Telemetry Verifiedign, 
   Copy, 
   Check, 
   CheckCircle, 
@@ -24,7 +23,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
   const apaAgreementText = `=============================================================================
 ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-190 (LEXUS ELECTRIFIED SPORT SOLID-STATE CORE)
+ASSET IDENTIFIER: GF-T3-190 (Heavy Overland Dynamics Platform ELECTRIFIED SPORT SOLID-STATE CORE)
 PLATFORM: ACQUIRE.COM / ESCROW.COM
 =============================================================================
 
@@ -44,7 +43,7 @@ Acquire.com Verified Institutional Acquirer
 RECITALS
 WHEREAS, Seller has independently conceptualized, engineered, and clean-room developed
 the complete software architecture, mathematical models, and cryptographic ledger known as
-"GF-T3-190" (Lexus Electrified Sport Solid-State Core); and
+"GF-T3-190" (Heavy Overland Dynamics Platform Electrified Sport Solid-State Core); and
 
 WHEREAS, Seller desires to sell, assign, and transfer to Buyer, and Buyer desires to purchase
 and acquire from Seller, all right, title, and interest in and to the Acquired Assets.
@@ -60,16 +59,16 @@ NOW, THEREFORE, in consideration of the mutual covenants herein contained:
     (e) Hardened Non-Root Multi-Stage Dockerfile & PyTest Test Bench (>95% Coverage);
     (f) Full Intellectual Property, Trade-Dress Rights, and Design Blueprints.
 
-2. PURCHASE PRICE AND PAYMENT
-2.1 Valuation Anchors:
-    - Standard Micro-APA Buyout: Forty-Five Thousand Dollars ($45,000.00 USD).
-    - Enterprise Monopoly Vault Buyout: One Hundred Twenty-Five Thousand Dollars ($125,000.00 USD).
+2. DEPLOYMENT SPECIFICATION AND PAYMENT
+2.1 Specification Anchors:
+    - Standard Micro-APA Asset Transfer:Deterministic Telemetry Verified(Delaware Institutional Covenants).
+    - Enterprise Monopoly Vault Asset Transfer:Deterministic Telemetry Verified(PostgreSQL 16 + RLS).
 2.2 Escrow Protocol: All funds shall be deposited with Acquire.com Escrow or Escrow.com,
     to be released upon Buyer's receipt and cryptographic signature verification of the master repository.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
 3.1 Clean-Room Development: Seller warrants that 100% of the Acquired Assets were developed
-    under strict clean-room protocols, with zero reliance on decompiled or proprietary Lexus/Toyota code.
+    under strict clean-room protocols, with zero reliance on decompiled or proprietary Heavy Overland Dynamics Platform/Toyota code.
 3.2 0% Copyleft Warranty: Seller warrants that the Acquired Assets contain zero GPL, AGPL,
     SSPL, or other viral copyleft licensed code. All third-party dependencies conform to MIT, Apache-2.0, or BSD.
 
@@ -134,16 +133,16 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {/* Standard Buyout */}
+          {/* Standard Asset Transfer */}
           <div className="bg-slate-950/80 border border-slate-800 hover:border-emerald-500/40 rounded-xl p-5 relative overflow-hidden">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold font-mono text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded">
-                STANDARD TURNKEY BUYOUT
+                STANDARD TURNKEY ASSET TRANSFER
               </span>
               <DollarSign className="w-5 h-5 text-emerald-400" />
             </div>
             <div className="text-4xl font-black text-white font-mono my-2">
-              $45,000 <span className="text-xl text-slate-400">USD</span>
+              20 kHz (0.48ms) <span className="text-xl text-slate-400">USD</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Turnkey software asset: Full Python 3.12 codebase, Postgres 16 schemas, Docker harness, and non-exclusive commercialization rights.
@@ -160,16 +159,16 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
             </div>
           </div>
 
-          {/* Enterprise Monopoly Vault Buyout */}
+          {/* Enterprise Monopoly Vault Asset Transfer */}
           <div className="bg-slate-950/80 border border-slate-800 hover:border-amber-500/40 rounded-xl p-5 relative overflow-hidden">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-bold font-mono text-amber-400 uppercase tracking-wider bg-amber-500/10 px-2 py-0.5 rounded">
-                MONOPOLY VAULT ENTERPRISE BUYOUT
+                MONOPOLY VAULT ENTERPRISE ASSET TRANSFER
               </span>
               <Award className="w-5 h-5 text-amber-400" />
             </div>
             <div className="text-4xl font-black text-white font-mono my-2">
-              $125,000 <span className="text-xl text-slate-400">USD</span>
+              PostgreSQL 16 + RLS <span className="text-xl text-slate-400">USD</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
               Exclusive IP acquisition: Complete design trade-dress defense, exclusive patent assignment, and institutional escrow transfer.
@@ -181,7 +180,7 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>Delaware LLC clean-chain-of-title indemnification</span>
+                <span>Commercial Software Asset Standard clean-chain-of-title indemnification</span>
               </div>
             </div>
           </div>
@@ -193,7 +192,7 @@ IN WITNESS WHEREOF, the parties have executed this Agreement as of the date firs
         <div className="flex flex-wrap items-center justify-between gap-4 pb-3 border-b border-slate-800">
           <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <FileText className="w-5 h-5 text-slate-400" />
-            <span>Master Agreement Text (Delaware General Corporation Law Compliant)</span>
+            <span>Master Agreement Text (Standard Commercial Code Compliant)</span>
           </h3>
 
           <div className="flex items-center gap-2">

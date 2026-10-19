@@ -29,7 +29,7 @@ export const EkdssTab: React.FC = () => {
     const totalSpread = +(Math.max(flStroke, frStroke, rlStroke, rrStroke) - Math.min(flStroke, frStroke, rlStroke, rrStroke)).toFixed(1);
     const crossAxleDelta = +(Math.max(Math.abs(flStroke - frStroke), Math.abs(rlStroke - rrStroke))).toFixed(1);
 
-    // E-KDSS Decoupling logic
+    // Dynamic Kinetic Suspension Telemetry Decoupling logic
     let frontDecoupled = false;
     let rearDecoupled = false;
     let modeName = 'RIGID_HIGHWAY';
@@ -101,7 +101,7 @@ export const EkdssTab: React.FC = () => {
       {/* Intro Header */}
       <div className="border-b border-neutral-800 pb-5">
         <h2 className="text-3xl font-extrabold text-white tracking-tight">
-          E-KDSS & Differential Core Engine
+          Dynamic Kinetic Suspension Telemetry & Differential Core Engine
         </h2>
         <p className="mt-2 text-[16px] text-neutral-400 max-w-4xl leading-relaxed">
           Pure Python 3.12 active off-road suspension state machine. Dynamically unlatches front and rear stabilizer bar hydraulic cylinders within 3.8ms, allowing up to 24.5 inches of independent axle articulation while orchestrating Torsen center and electronic rear differential lock allocation.
@@ -176,7 +176,7 @@ export const EkdssTab: React.FC = () => {
             />
             <div className="text-base text-neutral-400 flex justify-between">
               <span>0 km/h (Crawl)</span>
-              <span>65 km/h (E-KDSS Cutoff)</span>
+              <span>65 km/h (Dynamic Kinetic Suspension Telemetry Cutoff)</span>
               <span>120 km/h</span>
             </div>
           </div>
@@ -286,10 +286,10 @@ export const EkdssTab: React.FC = () => {
               {/* Main Chassis Frame Box */}
               <rect x="130" y="50" width="300" height="200" rx="16" fill="url(#chassisGrad)" stroke="#525252" strokeWidth="2.5" />
               <text x="280" y="145" textAnchor="middle" fill="#a3a3a3" fontSize="20" fontFamily="JetBrains Mono" fontWeight="bold">
-                LEXUS GX 550 OVERTRAIL+
+                Heavy Overland Dynamics Platform
               </text>
               <text x="280" y="175" textAnchor="middle" fill="#d4d4d4" fontSize="17" fontFamily="JetBrains Mono" fontWeight="600">
-                GA-F LADDER FRAME (TNGA)
+                Heavy Boxed Steel Frame Architecture LADDER FRAME (Modular Cyber-Physical Chassis)
               </text>
 
               {/* Front Stabilizer Bar Circuit */}

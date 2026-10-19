@@ -5,7 +5,7 @@ Clean-Room Permissive Implementation (Apache 2.0 / MIT)
 
 Mathematical Specifications:
 1. Optimal Dynamic Split Algorithm:
-   - Non-linear convex cost optimization incorporating venue taker fees, maker rebates,
+   - Non-linear convex matrix optimization incorporating venue taker fees, maker rebates,
      bid-ask spreads, and market impact curves:
      Min C(x) = sum_{i=1}^M [ x_i * P_i^{eff}(x_i) + x_i * fee_i - rebate_i ]
      subject to sum x_i = Q, 0 <= x_i <= Cap_i
@@ -137,7 +137,7 @@ class RoutingDecision:
 class VortexRouteCore:
     """
     Sub-20 microsecond Cross-Venue Smart Order Router Core.
-    Implements non-linear convex cost decomposition, latency jitter compensation,
+    Implements non-linear convex matrix decomposition, latency jitter compensation,
     and adverse selection protection with zero floating-point arithmetic loss.
     """
 
@@ -256,7 +256,7 @@ class VortexRouteCore:
 
         max_venue_latency = max(books[v].latency_us for v in valid_venues)
 
-        # 1. Marginal Cost Optimizer Iteration (Discrete Convex Allocator)
+        # 1. Marginal Matrix Optimizer Iteration (Discrete Convex Allocator)
         # Discretize parent order into granular allocations for convex optimization
         step_chunks = 50
         chunk_size = max(1, remaining_qty // step_chunks)

@@ -16,13 +16,13 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
 }) => {
   return (
     <header className="relative w-full bg-neutral-900/90 border-b border-neutral-800 text-neutral-100 px-4 sm:px-6 lg:px-8 py-6">
-      {/* Top Badge Bar: Place "ASSET ID: GF-T3-177", "LEXUS LC 500 GRAND TOURING CORE", and "v1.0.0-PROD" into a single, clean horizontal flex row */}
+      {/* Top Badge Bar: Place "ASSET ID: GF-T3-177", "Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GRAND TOURING CORE", and "v1.0.0-PROD" into a single, clean horizontal flex row */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
         <span className="inline-flex items-center px-3 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 text-base font-bold font-mono tracking-wider">
           ASSET ID: GF-T3-177
         </span>
         <span className="inline-flex items-center px-3 py-1 rounded bg-neutral-800 text-neutral-200 border border-neutral-700 text-base font-semibold tracking-wide">
-          LEXUS LC 500 GRAND TOURING CORE
+          Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GRAND TOURING CORE
         </span>
         <span className="inline-flex items-center px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-base font-bold font-mono">
           v1.0.0-PROD
@@ -37,10 +37,10 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-6 border-b border-neutral-800">
         <div className="max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
-            Lexus LC 500 Convertible Grand Touring Cockpit
+            Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Cockpit
           </h1>
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
-            Turnkey micro-APA buyout asset for Acquire.com. Production-grade active rear steering (DRS) phase transition state machine, 2UR-GSE 5.0L naturally aspirated V8 bimodal acoustic exhaust matrix, and partitioned PostgreSQL cryptographic ledger.
+            Turnkey micro-APA asset transfer asset for Acquire.com. Production-grade active rear steering (DRS) phase transition state machine, 2UR-GSE 5.0L naturally aspirated V8 bimodal acoustic exhaust matrix, and partitioned PostgreSQL cryptographic ledger.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
         </div>
       </div>
 
-      {/* Financial Bar: Horizontal flex container for buyout pills */}
+      {/* Financial Bar: Horizontal flex container for asset transfer pills */}
       <div className="flex flex-wrap items-center gap-3 pt-4">
         <button
           type="button"
@@ -83,7 +83,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
           className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono font-bold text-base transition-colors cursor-pointer"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-          $45,000 USD Micro-APA
+          20 kHz Execution Loop
         </button>
 
         <button
@@ -91,7 +91,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
           onClick={onOpenApaModal}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/40 text-purple-300 font-mono font-bold text-base transition-colors cursor-pointer"
         >
-          $125,000 USD Enterprise
+          PostgreSQL 16 + RLS
         </button>
 
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 font-mono font-semibold text-base">

@@ -39,7 +39,7 @@ export const TabCloudRunHarness: React.FC = () => {
   };
 
   const dockerfileCode = `# =============================================================================
-# GF-T3-195: Lexus LC 500 Carbon Aero Core - Production Dockerfile
+# GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core - Production Dockerfile
 # Multi-stage, non-root user (10001:10001), minimal security attack surface
 # =============================================================================
 
@@ -87,11 +87,11 @@ Simulates 250 km/h turbulence stability, vortex shedding, and HMAC ledger integr
 
 import pytest
 import math
-from aero_vortex_core import LexusCarbonAeroEngine, RHO_SEA_LEVEL
+from aero_vortex_core import OverlandCarbonAeroEngine, RHO_SEA_LEVEL
 
 @pytest.fixture
 def engine():
-    return LexusCarbonAeroEngine()
+    return OverlandCarbonAeroEngine()
 
 def test_high_speed_downforce_at_240kmh(engine):
     """Verifies +185 kg downforce and 48/52 balance distribution at 240 km/h."""
@@ -102,7 +102,7 @@ def test_high_speed_downforce_at_240kmh(engine):
         yaw_slip_deg=0.0,
         ground_clearance_mm=125.0
     )
-    assert 170.0 <= frame.downforce_net_kg <= 195.0, "Downforce must match LC 500 aero profile"
+    assert 170.0 <= frame.downforce_net_kg <= 195.0, "Downforce must match High-Aero Grand Touring Telemetry Core aero profile"
     assert 50.0 <= frame.balance_rear_pct <= 54.0, "Aero balance rear bias must remain stable"
     assert frame.boundary_layer_state == "TURBULENT_STABLE"
     assert len(frame.hmac_sha256_hash) == 64

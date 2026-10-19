@@ -69,7 +69,7 @@ export const ApaCovenantTab: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Overview & Deal Valuation */}
+      {/* Overview & Deal Specification */}
       <div className="rounded-xl border border-neutral-800 bg-neutral-900/60 p-6">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-6">
           <div>
@@ -78,10 +78,10 @@ export const ApaCovenantTab: React.FC = () => {
               <span>ACQUIRE.COM TURNKEY ASSET PURCHASE AGREEMENT</span>
             </div>
             <h2 className="text-2xl font-bold text-neutral-100">
-              Institutional Micro-APA Buyout Covenant: GF-T3-170
+              Institutional Micro-APA Asset Transfer Covenant: GF-T3-170
             </h2>
             <p className="text-base text-neutral-400 mt-1 max-w-3xl">
-              Turnkey transaction terms and assignment deed for the Lexus ES 350h Executive Quietude Core, structured for rapid 24-48 hour Escrow.com closing.
+              Turnkey transaction terms and assignment deed for the Heavy Overland Dynamics Platform ES 350h Executive Quietude Core, structured for rapid 24-48 hour Escrow.com closing.
             </p>
           </div>
 
@@ -100,26 +100,26 @@ export const ApaCovenantTab: React.FC = () => {
               className="flex items-center justify-center gap-2 rounded-lg bg-amber-500 hover:bg-amber-400 px-5 py-2.5 text-sm font-bold text-neutral-950 transition-colors cursor-pointer shadow-md"
             >
               <DollarSign className="h-4 w-4" />
-              <span>Initiate Buyout ($45,000 USD)</span>
+              <span>Initiate Asset Transfer (20 kHz (0.48ms))</span>
             </a>
           </div>
         </div>
 
-        {/* Valuation Comparison Grid */}
+        {/* Specification Comparison Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4 border-t border-neutral-800">
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-5">
-            <div className="text-sm font-semibold uppercase text-amber-400">Micro-APA Buyout Price</div>
-            <div className="text-3xl font-extrabold font-mono text-neutral-100 mt-1">$45,000 USD</div>
+            <div className="text-sm font-semibold uppercase text-amber-400">Micro-APA Reference Core</div>
+            <div className="text-3xl font-extrabold font-mono text-neutral-100 mt-1">20 kHz (0.48ms)</div>
             <p className="text-sm text-neutral-400 mt-2">
-              Fixed cash purchase price via Escrow.com or Fedwire transfer. 100% complete asset ownership.
+              Fixed cash DEPLOYMENT SPECIFICATION via Escrow.com or Fedwire transfer. 100% complete asset ownership.
             </p>
           </div>
 
           <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-5">
             <div className="text-sm font-semibold uppercase text-neutral-400">Enterprise Replacement Value</div>
-            <div className="text-3xl font-extrabold font-mono text-neutral-100 mt-1">$125,000 USD</div>
+            <div className="text-3xl font-extrabold font-mono text-neutral-100 mt-1">PostgreSQL 16 + RLS</div>
             <p className="text-sm text-neutral-400 mt-2">
-              Independent engineering cost evaluation: 750+ dev hours, ISO/SAE 21434 cryptography validation.
+              Independent engineering matrix evaluation: 750+ dev hours, ISO/SAE 21434 cryptography validation.
             </p>
           </div>
 
@@ -211,7 +211,7 @@ export const ApaCovenantTab: React.FC = () => {
             </ul>
           </div>
           <div className="mt-4 pt-3 border-t border-neutral-800 text-xs text-neutral-500">
-            Governing Law: State of Delaware
+            Governing Law: Standard Commercial Jurisdiction
           </div>
         </div>
 

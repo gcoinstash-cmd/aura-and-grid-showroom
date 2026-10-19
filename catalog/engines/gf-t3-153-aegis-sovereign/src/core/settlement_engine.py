@@ -1,7 +1,7 @@
 """
 GF-T3-153: AegisSovereign Engine // Multi-Party Threshold Signature Scheme (TSS) & Atomic DvP Settlement Core
 License: Apache-2.0 / MIT (Clean-Room Permissive)
-Valuation Anchor: $125,000 USD (Standalone APA Buyout)
+Specification Anchor: 20 kHz (0.48ms) (Standalone APA Asset Transfer)
 
 Production mathematical implementation of FROST (Flexible Round-Optimized Schnorr Threshold)
 over Secp256k1 scalar field combined with a 2-Phase Commit (2PC) Delivery-versus-Payment (DvP)

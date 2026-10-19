@@ -122,7 +122,7 @@ export default function App() {
             }`}
           >
             <ShieldCheck className="w-4 h-4" />
-            <span>Tab 4: Monopoly Vault & APA ($125K)</span>
+            <span>Tab 4: Monopoly Vault & APA (20 kHz (0.48ms))</span>
           </button>
 
           <button
@@ -191,11 +191,11 @@ export default function App() {
             <span className="text-emerald-400 font-bold">100% CLEAN-ROOM PERMISSIVE</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
-            <span>Delaware Jurisdiction</span>
+            <span>Commercial Software Asset Standard</span>
             <span>·</span>
             <span>Sub-12µs Knapsack Allocator</span>
             <span>·</span>
-            <span className="text-fuchsia-400 font-bold">$125,000 Standalone APA</span>
+            <span className="text-fuchsia-400 font-bold">20 kHz (0.48ms) Standalone APA</span>
           </div>
         </div>
       </footer>

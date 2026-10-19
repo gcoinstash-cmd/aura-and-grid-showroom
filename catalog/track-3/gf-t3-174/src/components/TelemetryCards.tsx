@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Lexus RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
  * Live Telemetry Metrics (4 Cards with 14px floor, tabular numbers, relative positioning)
  */
 
@@ -190,7 +190,7 @@ export const TelemetryCards: React.FC<TelemetryCardsProps> = ({
               </div>
               <div className="flex justify-between text-slate-400">
                 <span>Acquire.com Status</span>
-                <span className="text-amber-400 font-bold">Ready for Buyout</span>
+                <span className="text-amber-400 font-bold">Ready for Asset Transfer</span>
               </div>
             </div>
           </div>

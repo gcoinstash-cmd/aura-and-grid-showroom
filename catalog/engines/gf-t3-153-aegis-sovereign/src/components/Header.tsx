@@ -34,10 +34,10 @@ export const Header: React.FC<HeaderProps> = ({ currentLatency, activeTab, setAc
 
           {/* High-Visibility Status Pill Badges */}
           <div className="flex flex-wrap items-center gap-3">
-            {/* $125,000 APA BUYOUT */}
+            {/* 20 kHz (0.48ms) APA ASSET TRANSFER */}
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-950/40 border border-amber-500/70 text-amber-300 shadow-[0_0_20px_rgba(245,158,11,0.2)]">
               <DollarSign className="w-5 h-5 text-amber-400" />
-              <span className="text-base font-black tracking-wide">$125,000 APA BUYOUT</span>
+              <span className="text-base font-black tracking-wide">20 kHz (0.48ms) APA ASSET TRANSFER</span>
             </div>
 
             {/* Latency Gauge */}

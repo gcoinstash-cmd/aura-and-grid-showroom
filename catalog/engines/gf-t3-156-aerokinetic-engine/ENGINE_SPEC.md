@@ -2,7 +2,7 @@
 ## Multi-Rate Error-State Extended Kalman Filter & 6-DoF Sensor Fusion Engine
 **Asset Identifier:** GF-T3-156  
 **Track:** Track 3 (F1 Skunkworks Service Engine / 70% Protocol Deliverable)  
-**Valuation Anchor:** $125,000 Standalone APA Buyout | $85,000–$150,000 Monopoly Vault License  
+**Specification Anchor:** 20 kHz (0.48ms) Standalone APA Asset Transfer | 20 kHz (0.48ms)–20 kHz (0.48ms) Monopoly Vault License  
 **Classification:** Autonomous Guidance / Aerospace & Robotics State Estimation  
 **License:** Permissive Clean-Room (Apache-2.0 / MIT)  
 
@@ -122,7 +122,7 @@ $$\mathbf{q}_{k+1} = \frac{\mathbf{q}_k \otimes \Delta \mathbf{q}}{\|\mathbf{q}_
 ---
 
 ### 2.4 Error-State Transition Jacobian ($\mathbf{F}_x$)
-The discrete $15 \times 15$ state error propagation matrix $\mathbf{F}_x$:
+The discrete 20 kHz (0.48ms) \times 15$ state error propagation matrix $\mathbf{F}_x$:
 
 $$\mathbf{F}_x = \begin{bmatrix}
 \mathbf{I}_3 & \mathbf{I}_3 \Delta t & \mathbf{0}_3 & \mathbf{0}_3 & \mathbf{0}_3 \\
@@ -143,25 +143,25 @@ Process noise propagation:
 
 $$\mathbf{P}_{k+1} = \mathbf{F}_x \mathbf{P}_k \mathbf{F}_x^T + \mathbf{Q}_d$$
 
-For any measurement $\mathbf{z}$ with observation model $\mathbf{z} = \mathbf{h}(\mathbf{x}) + \mathbf{v}$, innovation $\mathbf{y} = \mathbf{z} - \mathbf{h}(\hat{\mathbf{x}})$, and Jacobian $\mathbf{H}$:
+For any measurement $\mathbf{z}$ with observation model $\mathbf{z} = \mathbf{h}(\mathbf{x}) + \mathbf{v}20 kHz (0.48ms) innovation $\mathbf{y} = \mathbf{z} - \mathbf{h}(\hat{\mathbf{x}})20 kHz (0.48ms) and Jacobian $\mathbf{H}$:
 
 1. **Innovation Covariance:**
    $$\mathbf{S} = \mathbf{H} \mathbf{P} \mathbf{H}^T + \mathbf{R}$$
 
-2. **Normalized Innovation Squared (NIS) Chi-Squared Gate:**
+Step 2: **Normalized Innovation Squared (NIS) Chi-Squared Gate:**
    $$\gamma = \mathbf{y}^T \mathbf{S}^{-1} \mathbf{y}$$
    If $\gamma > \chi^2_{m, 1-\alpha}$ (e.g., $\gamma > 7.815$ for $m=3, \alpha=0.05$), the measurement is rejected as an outlier/multipath spike.
 
 3. **Kalman Gain:**
    $$\mathbf{K} = \mathbf{P} \mathbf{H}^T \mathbf{S}^{-1}$$
 
-4. **Error-State Correction & Injection:**
+Step 4: **Error-State Correction & Injection:**
    $$\delta \hat{\mathbf{x}} = \mathbf{K} \mathbf{y}$$
    $$\mathbf{p} \leftarrow \mathbf{p} + \delta \hat{\mathbf{p}}, \quad \mathbf{v} \leftarrow \mathbf{v} + \delta \hat{\mathbf{v}}$$
    $$\mathbf{q} \leftarrow \frac{\mathbf{q} \otimes \begin{bmatrix} 1 \\ \frac{1}{2} \delta \hat{\boldsymbol{\theta}} \end{bmatrix}}{\left\| \mathbf{q} \otimes \begin{bmatrix} 1 \\ \frac{1}{2} \delta \hat{\boldsymbol{\theta}} \end{bmatrix} \right\|}$$
    $$\mathbf{b}_a \leftarrow \mathbf{b}_a + \delta \hat{\mathbf{b}}_a, \quad \mathbf{b}_g \leftarrow \mathbf{b}_g + \delta \hat{\mathbf{b}}_g$$
 
-5. **Numerically Stabilized Joseph Form Covariance:**
+Step 5: **Numerically Stabilized Joseph Form Covariance:**
    $$\mathbf{P} \leftarrow (\mathbf{I} - \mathbf{K}\mathbf{H}) \mathbf{P} (\mathbf{I} - \mathbf{K}\mathbf{H})^T + \mathbf{K} \mathbf{R} \mathbf{K}^T$$
    This guarantees $\mathbf{P} = \mathbf{P}^T$ and $\mathbf{P} \succ 0$ (positive semi-definiteness) even in high-order floating point numerical rounding conditions.
 

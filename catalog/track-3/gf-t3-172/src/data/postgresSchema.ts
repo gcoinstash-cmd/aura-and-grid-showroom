@@ -4,7 +4,7 @@
  */
 
 export const POSTGRES_DDL = `-- ============================================================================
--- GF-T3-172: LEXUS TX 500h F SPORT PERFORMANCE CORE
+-- GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry CORE
 -- Partitioned PostgreSQL 16 Epoch Ledger with Cryptographic Merkle Verification
 -- Target: Cloud SQL / AlloyDB / PostgreSQL 16.2
 -- ============================================================================
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS consensus_epochs_partitioned (
     parent_merkle_root CHAR(64) NOT NULL,
     epoch_merkle_root CHAR(64) NOT NULL,
     
-    -- DIRECT4 Dynamic Vector Attributes
+    -- DUAL_VECTOR_TORQUE Dynamic Vector Attributes
     front_torque_ratio NUMERIC(5,4) NOT NULL CHECK (front_torque_ratio BETWEEN 0.2000 AND 0.7000),
     rear_torque_ratio NUMERIC(5,4) NOT NULL CHECK (rear_torque_ratio BETWEEN 0.3000 AND 0.8000),
     front_kw NUMERIC(7,2) NOT NULL CHECK (front_kw >= 0.0),
@@ -93,7 +93,7 @@ FOR EACH ROW EXECUTE FUNCTION enforce_immutable_epoch_commit();
 CREATE OR REPLACE FUNCTION verify_epoch_merkle_integrity(
     p_epoch_id BIGINT,
     p_telemetry_hash TEXT,
-    p_direct4_hash TEXT,
+    p_dual_vector_torque_hash TEXT,
     p_steer_hash TEXT,
     p_quorum_hash TEXT
 )
@@ -104,8 +104,8 @@ DECLARE
     v_computed_root TEXT;
     v_stored_root TEXT;
 BEGIN
-    -- Branch 1 = SHA256(leaf_telemetry || leaf_direct4)
-    v_left_branch := encode(digest(p_telemetry_hash || p_direct4_hash, 'sha256'), 'hex');
+    -- Branch 1 = SHA256(leaf_telemetry || leaf_dual_vector_torque)
+    v_left_branch := encode(digest(p_telemetry_hash || p_dual_vector_torque_hash, 'sha256'), 'hex');
     -- Branch 2 = SHA256(leaf_steer || leaf_quorum)
     v_right_branch := encode(digest(p_steer_hash || p_quorum_hash, 'sha256'), 'hex');
     -- Root = SHA256(left_branch || right_branch)
@@ -140,7 +140,7 @@ export const INITIAL_EPOCHS = [
     status: 'COMMITTED_FINAL' as const,
     leafHashes: {
       telemetry: '0xa11c4793f18e9a221b098ca34891bca7281',
-      direct4Vector: '0xb22d5894f29fa3312c109db45902cdb8392',
+      dual_vector_torqueVector: '0xb22d5894f29fa3312c109db45902cdb8392',
       steerByWire: '0xc33e6905f30ab4423d210ec56013dec9403',
       quorumSignatures: '0xd44f7016f41bc5534e321fd67124efda514',
     },
@@ -149,7 +149,7 @@ export const INITIAL_EPOCHS = [
     epochNumber: 1048579,
     timestampIso: '2026-10-11T14:32:17.410Z',
     proposerId: 'node-3',
-    proposerNode: 'Node 3 (Rear eAxle Dynamic Direct4)',
+    proposerNode: 'Node 3 (Rear eAxle Dynamic DualVectorTorque)',
     blockHash: '0x43b28f710e9c4d51a6108e492cb154670afb8173491c20e57261904aef72c410',
     merkleRoot: '0x39a1fe48c9032bb410972cb71a934fe01a48c2b79410ea82b40182ecbf814401',
     txCount: 64,
@@ -163,7 +163,7 @@ export const INITIAL_EPOCHS = [
     status: 'COMMITTED_FINAL' as const,
     leafHashes: {
       telemetry: '0x10f84a71b29a834e09f481c9a01bce47102',
-      direct4Vector: '0x21a95b82c30b945f10a592da012cde58213',
+      dual_vector_torqueVector: '0x21a95b82c30b945f10a592da012cde58213',
       steerByWire: '0x32ba6c93d41c056a21b603eb123def69324',
       quorumSignatures: '0x43cb7da4e52d167b32c714fc234efa70435',
     },
@@ -186,7 +186,7 @@ export const INITIAL_EPOCHS = [
     status: 'COMMITTED_FINAL' as const,
     leafHashes: {
       telemetry: '0x99a0bf21c40918e721a941bc48019af2810',
-      direct4Vector: '0x88b1ce32d51029f832ba52cd59120ba3921',
+      dual_vector_torqueVector: '0x88b1ce32d51029f832ba52cd59120ba3921',
       steerByWire: '0x77c2df43e62130a943cb63de60231cb4032',
       quorumSignatures: '0x66d3ea54f73241ba54dc74ef71342dc5143',
     },
@@ -205,7 +205,7 @@ export const INITIAL_EPOCHS = [
     status: 'QUARANTINED' as const,
     leafHashes: {
       telemetry: '0x00000000000000000000000000000000000',
-      direct4Vector: '0xbaadbaadbaadbaadbaadbaadbaadbaadbaa',
+      dual_vector_torqueVector: '0xbaadbaadbaadbaadbaadbaadbaadbaadbaa',
       steerByWire: '0x00000000000000000000000000000000000',
       quorumSignatures: '0x00000000000000000000000000000000000',
     },

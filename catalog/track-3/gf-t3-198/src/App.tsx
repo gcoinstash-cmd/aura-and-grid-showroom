@@ -192,7 +192,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono text-slate-400 font-bold">GF-T3-198</span>
             <span>·</span>
-            <span>Lexus LFA Nürburgring Edition V10 Telematics Core</span>
+            <span>Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Telematics Core</span>
           </div>
           <div className="flex items-center gap-4 text-sm font-mono text-slate-400">
             <span>Delaware Micro-APA Asset</span>

@@ -545,7 +545,7 @@ export default function App() {
             GF-T3-185 · Ghost FactoryOS Track 3 F1 Skunkworks Service Engine
           </div>
           <div className="text-slate-400">
-            Delaware Asset Purchase Agreement Escrow Ready · Acquire.com Qualified
+            Turnkey Software Asset Purchase Agreement Escrow Ready · Acquire.com Qualified
           </div>
         </div>
       </footer>

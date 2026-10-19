@@ -22,7 +22,7 @@ export const ThrottleTorsenTab: React.FC<ThrottleTorsenTabProps> = ({
   const [isRunningTest, setIsRunningTest] = useState(false);
 
   const pythonCoreCode = `"""
-GF-T3-181: Lexus IS 500 F SPORT (2UR-GSE 5.0L V8 & Torsen Type-B LSD)
+GF-T3-181: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8 & Torsen Type-B LSD)
 Deterministic 1,600 Hz Throttle Remapping & Thermodynamic Viscosity Monitor.
 Zero Copyleft / MIT Permissive Clean-Room Implementation.
 """
@@ -50,7 +50,7 @@ MAPPING_TABLE: dict[DriveMode, MappingCoefficients] = {
     DriveMode.SPORT_PLUS: MappingCoefficients(alpha=1.28, gamma=0.78, beta_rpm=0.38),
 }
 
-class LexusThrottleEngine:
+class OverlandThrottleEngine:
     """Deterministic 1,600 Hz (0.625ms loop) throttle valve actuator."""
     IDLE_RPM = 1000
     REDLINE_RPM = 7300
@@ -161,7 +161,7 @@ tests/test_torsen_thermal.py::test_thermal_shear_guard PASSED [100%]
           {/* Drive Mode Selector Buttons */}
           <div>
             <label className="block text-[15px] font-medium text-slate-300 mb-2">
-              F SPORT Drive Mode Selection:
+              High-G Dynamic Telemetry Drive Mode Selection:
             </label>
             <div className="grid grid-cols-4 gap-2">
               {(['ECO', 'NORMAL', 'SPORT', 'SPORT_PLUS'] as DriveMode[]).map((mode) => {

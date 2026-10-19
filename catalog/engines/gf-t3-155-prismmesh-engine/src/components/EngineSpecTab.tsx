@@ -78,8 +78,8 @@ export const EngineSpecTab: React.FC<EngineSpecTabProps> = ({ specContent }) => 
                 <p className="font-bold text-fuchsia-400">PrismMesh Engine</p>
               </div>
               <div>
-                <span className="text-slate-500">APA Buyout Anchor:</span>
-                <p className="font-bold text-emerald-400">$125,000 USD</p>
+                <span className="text-slate-500">APA Reference Core:</span>
+                <p className="font-bold text-emerald-400">20 kHz (0.48ms)</p>
               </div>
               <div>
                 <span className="text-slate-500">Clean IP:</span>

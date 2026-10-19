@@ -171,7 +171,7 @@ SHA-256 Audit Integrity Hash: 0x8a91cbf482e9d30017a4c7e6b014f32997da1538d6f02cb8
                   <th className="py-2">WEIGHT</th>
                   <th className="py-2">ANN. VOL</th>
                   <th className="py-2">MVaR</th>
-                  <th className="py-2">COMPONENT VAR ($)</th>
+                  <th className="py-2">COMPONENT VAR (UNITS)</th>
                   <th className="py-2 text-right">RISK CONTRIB</th>
                 </tr>
               </thead>

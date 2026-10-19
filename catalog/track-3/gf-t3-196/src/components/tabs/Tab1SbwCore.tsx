@@ -18,12 +18,12 @@ export const Tab1SbwCore: React.FC<Tab1SbwCoreProps> = ({
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(`"""
-Lexus RZ 450e Steer-by-Wire DIRECT4 State Machine
+Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
 Standard: ISO 26262 ASIL-D Dual-Redundant Controller
 """
 import math, hmac, hashlib, time
 
-class LexusRZ450eSbwCore:
+class OverlandRZ450eSbwCore:
     R_MIN = 6.0
     R_MAX = 18.0
     K_SLOPE = 0.18
@@ -50,7 +50,7 @@ class LexusRZ450eSbwCore:
     const rack = Math.max(-25, Math.min(25, (val / ratio) * state.roadFrictionCoeff));
     const haptic = Math.abs(rack) * 0.18 * state.roadFrictionCoeff + speed * 0.015;
     
-    // DIRECT4 dynamic torque calculation
+    // DUAL_VECTOR_TORQUE dynamic torque calculation
     let front = 55;
     if (speed < 10) front = 60;
     else if (Math.abs(val) > 45) front = 50; // apex
@@ -63,8 +63,8 @@ class LexusRZ450eSbwCore:
       rackAngleDeg: parseFloat(rack.toFixed(2)),
       steeringRatio: parseFloat(ratio.toFixed(2)),
       hapticFeedbackTorqueNm: parseFloat((val < 0 ? -haptic : haptic).toFixed(2)),
-      direct4FrontRatio: front,
-      direct4RearRatio: rear,
+      dual_vector_torqueFrontRatio: front,
+      dual_vector_torqueRearRatio: rear,
       lateralAccG: parseFloat(((speed * speed / 1200) * (Math.sin(rack * Math.PI / 180))).toFixed(2)),
     });
   };
@@ -88,8 +88,8 @@ class LexusRZ450eSbwCore:
       steeringRatio: parseFloat(ratio.toFixed(2)),
       rackAngleDeg: parseFloat(rack.toFixed(2)),
       hapticFeedbackTorqueNm: parseFloat((val < 0 ? -haptic : haptic).toFixed(2)),
-      direct4FrontRatio: front,
-      direct4RearRatio: rear,
+      dual_vector_torqueFrontRatio: front,
+      dual_vector_torqueRearRatio: rear,
       lateralAccG: parseFloat(((spd * spd / 1200) * (Math.sin(rack * Math.PI / 180))).toFixed(2)),
     });
   };
@@ -111,7 +111,7 @@ class LexusRZ450eSbwCore:
           <div>
             <h2 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
               <Sliders className="w-7 h-7 text-amber-400" />
-              Steer-by-Wire & DIRECT4 Vectoring Cockpit
+              Steer-by-Wire & DUAL_VECTOR_TORQUE Vectoring Cockpit
             </h2>
             <p className="text-slate-300 text-base mt-1">
               Dual-redundant 4,000 Hz CAN-FD actuator loop eliminating mechanical steering shaft linkage, dynamically paired with front/rear e-Axle torque vectoring.
@@ -338,15 +338,15 @@ class LexusRZ450eSbwCore:
               </div>
             </div>
 
-            {/* DIRECT4 Torque Vectoring Bar */}
+            {/* DUAL_VECTOR_TORQUE Torque Vectoring Bar */}
             <div className="mt-5 p-4 rounded-xl bg-slate-900 border border-slate-800">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-base font-bold text-white flex items-center gap-2">
                   <Layers className="w-5 h-5 text-emerald-400" />
-                  DIRECT4 e-Axle Dynamic Distribution
+                  DUAL_VECTOR_TORQUE e-Axle Dynamic Distribution
                 </span>
                 <span className="font-mono font-bold text-base text-emerald-400">
-                  {state.direct4FrontRatio}% FRONT : {state.direct4RearRatio}% REAR
+                  {state.dual_vector_torqueFrontRatio}% FRONT : {state.dual_vector_torqueRearRatio}% REAR
                 </span>
               </div>
 
@@ -354,26 +354,26 @@ class LexusRZ450eSbwCore:
               <div className="h-6 w-full bg-slate-800 rounded-lg overflow-hidden flex border border-slate-700">
                 <div
                   className="bg-blue-600 flex items-center justify-center text-xs font-mono font-bold text-white transition-all duration-150"
-                  style={{ width: `${state.direct4FrontRatio}%` }}
+                  style={{ width: `${state.dual_vector_torqueFrontRatio}%` }}
                 >
-                  Front {state.direct4FrontRatio}%
+                  Front {state.dual_vector_torqueFrontRatio}%
                 </div>
                 <div
                   className="bg-emerald-600 flex items-center justify-center text-xs font-mono font-bold text-white transition-all duration-150"
-                  style={{ width: `${state.direct4RearRatio}%` }}
+                  style={{ width: `${state.dual_vector_torqueRearRatio}%` }}
                 >
-                  Rear {state.direct4RearRatio}%
+                  Rear {state.dual_vector_torqueRearRatio}%
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 mt-3 text-sm font-mono text-slate-400">
                 <div className="p-2 bg-slate-950/60 rounded border border-slate-800">
                   <span className="text-blue-400 font-bold block">Front e-Axle: 150 kW</span>
-                  <span>{((state.direct4FrontRatio / 100) * 266).toFixed(0)} Nm current torque</span>
+                  <span>{((state.dual_vector_torqueFrontRatio / 100) * 266).toFixed(0)} Nm current torque</span>
                 </div>
                 <div className="p-2 bg-slate-950/60 rounded border border-slate-800">
                   <span className="text-emerald-400 font-bold block">Rear e-Axle: 80 kW</span>
-                  <span>{((state.direct4RearRatio / 100) * 168).toFixed(0)} Nm current torque</span>
+                  <span>{((state.dual_vector_torqueRearRatio / 100) * 168).toFixed(0)} Nm current torque</span>
                 </div>
               </div>
             </div>
@@ -390,7 +390,7 @@ class LexusRZ450eSbwCore:
               Pure Python 3.12 Steer-by-Wire State Machine
             </h3>
             <p className="text-slate-400 text-base mt-1">
-              Zero-placeholder ISO 26262 ASIL-D mathematical engine for dynamic rack angle, sigmoid variable ratio, and DIRECT4 torque distribution.
+              Zero-placeholder ISO 26262 ASIL-D mathematical engine for dynamic rack angle, sigmoid variable ratio, and DUAL_VECTOR_TORQUE torque distribution.
             </p>
           </div>
           <button
@@ -404,11 +404,11 @@ class LexusRZ450eSbwCore:
         </div>
 
         <pre className="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto text-sm text-slate-300 font-mono leading-relaxed">
-{`# GF-T3-196: Lexus RZ 450e Steer-by-Wire DIRECT4 State Machine
+{`# GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
 import math, hmac, hashlib, time
 from dataclasses import dataclass
 
-class LexusRZ450eSbwCore:
+class OverlandRZ450eSbwCore:
     R_MIN = 6.0    # 1:6 ratio at 0 km/h (Parking Agility)
     R_MAX = 18.0   # 1:18 ratio at 160 km/h (High-speed Tracking)
     K_SLOPE = 0.18 # Sigmoid curve transition steepness
@@ -425,7 +425,7 @@ class LexusRZ450eSbwCore:
         raw_rack = clamped_yoke / ratio
         return round(max(-25.0, min(25.0, raw_rack * min(1.0, max(0.2, friction_mu)))), 3)
 
-    def compute_direct4_split(self, speed_kmh: float, yoke_deg: float, lateral_g: float) -> tuple[float, float]:
+    def compute_dual_vector_torque_split(self, speed_kmh: float, yoke_deg: float, lateral_g: float) -> tuple[float, float]:
         if speed_kmh < 10.0: front = 60.0
         elif abs(yoke_deg) > 45.0 or abs(lateral_g) > 0.4: front = 50.0 # Apex balance
         elif abs(yoke_deg) > 15.0: front = 75.0                         # Turn-in agility

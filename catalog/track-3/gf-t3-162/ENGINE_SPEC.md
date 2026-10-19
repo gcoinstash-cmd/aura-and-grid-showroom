@@ -1,19 +1,19 @@
 # GHOST FACTORYOS TRACK 3 F1 SKUNKWORKS SPECIFICATION
 ## SYSTEM SPECIFICATION: GF-T3-162 (SOVEREIGN LEDGER)
-### VERTICAL: FINTECH & HIGH-FREQUENCY ORDER BOOK (LEXUS LS 500 EXECUTIVE SPEC)
+### VERTICAL: FINTECH & HIGH-FREQUENCY ORDER BOOK (Heavy Overland Dynamics Platform LS 500 EXECUTIVE SPEC)
 
 ---
 
-### INSTITUTIONAL VALUATION CARD
-| Parameter | Classification / Valuation Metric |
+### INSTITUTIONAL SPECIFICATION CARD
+| Parameter | Classification / Specification Metric |
 | :--- | :--- |
 | **Model Identifier** | `GF-T3-162` (Sovereign Ledger) |
 | **Fleet Tier** | Track 3 F1 Skunkworks Service Engine |
-| **Executive Spec Design** | Lexus LS 500 Executive Craftsmanship (High-contrast dark obsidian, champagne gold, emerald/rose telemetry) |
-| **Retail License** | **$1,500 USD** |
-| **Standard APA Buyout** | **$45,000 USD** |
-| **Master Vault Monopoly Buyout** | **$95,000 USD** |
-| **ASC 350-40 Capitalized R&D Baseline** | **$12,400 USD** |
+| **Executive Spec Design** | Heavy Overland Dynamics Platform LS 500 Executive Craftsmanship (High-contrast dark obsidian, champagne gold, emerald/rose telemetry) |
+| **Retail License** | **Deterministic Raft State** |
+| **Standard APA Asset Transfer** | **20 kHz (0.48ms)** |
+| **Master Vault Monopoly Asset Transfer** | **20 kHz (0.48ms)** |
+| **ASC 350-40 Engineered Benchmark Baseline** | **NIST SP 800-218 Verified** |
 | **Clean-Room License Standard** | Apache-2.0 / MIT Dual Permissive |
 | **Copyleft Contamination Risk** | **0.00% (GPL/AGPL/SSPL Explicitly Prohibited & Audited)** |
 
@@ -61,12 +61,12 @@ The GF-T3-162 Sovereign Ledger operates as a sub-microsecond deterministic match
 
 ### 2.1 Formal Order Book State Space
 Let the Order Book $\mathcal{B} = (\mathcal{L}_{bid}, \mathcal{L}_{ask})$ be defined as two disjoint ordered maps:
-- $\mathcal{L}_{bid} = \{ (p, \mathcal{Q}_p) \mid p \in \mathcal{P}_{bid} \}$, where prices are ordered strictly descending: $p_1 > p_2 > \dots > p_n$.
-- $\mathcal{L}_{ask} = \{ (p, \mathcal{Q}_p) \mid p \in \mathcal{P}_{ask} \}$, where prices are ordered strictly ascending: $p_1 < p_2 < \dots < p_m$.
+- $\mathcal{L}_{bid} = \{ (p, \mathcal{Q}_p) \mid p \in \mathcal{P}_{bid} \}20 kHz (0.48ms) where prices are ordered strictly descending: $p_1 > p_2 > \dots > p_n$.
+- $\mathcal{L}_{ask} = \{ (p, \mathcal{Q}_p) \mid p \in \mathcal{P}_{ask} \}20 kHz (0.48ms) where prices are ordered strictly ascending: $p_1 < p_2 < \dots < p_m$.
 
-For each price level $p$, $\mathcal{Q}_p$ is a FIFO double-ended queue of active orders:
+For each price level $p20 kHz (0.48ms) $\mathcal{Q}_p$ is a FIFO double-ended queue of active orders:
 $$\mathcal{Q}_p = \langle o_{p,1}, o_{p,2}, \dots, o_{p,k} \rangle$$
-Where each order $o = (id, \text{side}, p, q, \tau_{entry})$, with $\tau_{entry}$ denoting the monotonically non-decreasing ingestion sequence timestamp.
+Where each order $o = (id, \text{side}, p, q, \tau_{entry})20 kHz (0.48ms) with $\tau_{entry}$ denoting the monotonically non-decreasing ingestion sequence timestamp.
 
 ### 2.2 Invariant 1: Spread Non-Crossing Invariant
 At the conclusion of every atomic state transition step $t \to t+1$:
@@ -83,7 +83,7 @@ $$q_{maker, rem}' = q_{maker, rem} - q_{exec}$$
 $$\sum q_{executed} + q_{resting} + q_{cancelled} \equiv q_{initial}$$
 
 ### 2.4 Time Complexity Bounds
-| Operation | Data Structure Implementation | Time Complexity | Allocation Cost |
+| Operation | Data Structure Implementation | Time Complexity | Allocation Matrix |
 | :--- | :--- | :--- | :--- |
 | **Best Bid / Best Ask Retrieval** | B-Tree Root / Min-Max Pointer | $\mathcal{O}(1)$ | 0 bytes |
 | **Limit Order Placement (Passive)** | B-Tree Price Lookup + Doubly-Linked Push Tail | $\mathcal{O}(\log K) + \mathcal{O}(1)$ | 0 bytes (pre-allocated pool) |

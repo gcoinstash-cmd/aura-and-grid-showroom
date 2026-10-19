@@ -140,7 +140,7 @@ class RiskManager:
         """Net Equity = Cash + Collateral * (1 - Haircut) + Unrealized PnL"""
         total = account.cash_balance_scaled
 
-        # Collateral valuation with haircut
+        # Collateral specification with haircut
         for asset_id, amount_scaled in account.collateral_balances_scaled.items():
             if asset_id in self.collateral_assets:
                 asset = self.collateral_assets[asset_id]

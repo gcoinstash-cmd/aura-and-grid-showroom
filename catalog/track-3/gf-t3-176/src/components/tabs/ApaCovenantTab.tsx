@@ -38,18 +38,18 @@ export const ApaCovenantTab: React.FC = () => {
         </p>
       </div>
 
-      {/* Financial Valuation & Escrow Summary Strip */}
+      {/* Financial Specification & Escrow Summary Strip */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
           <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
-            <span className="text-base font-mono text-neutral-400 uppercase font-semibold">Micro-APA Buyout</span>
+            <span className="text-base font-mono text-neutral-400 uppercase font-semibold">Micro-APA Asset Transfer</span>
             <DollarSign className="w-5 h-5 text-amber-400" />
           </div>
           <div className="mt-4 text-3xl md:text-4xl font-extrabold text-amber-400 num-tabular">
-            $45,000 USD
+            20 kHz (0.48ms)
           </div>
           <p className="mt-2.5 text-base text-neutral-300 leading-relaxed">
-            All-cash buyout price via Escrow.com or Acquire Pay. Standard 3-day inspection window.
+            All-cash reference core via Escrow.com or Acquire Pay. Standard 3-day inspection window.
           </p>
         </div>
 
@@ -59,10 +59,10 @@ export const ApaCovenantTab: React.FC = () => {
             <Award className="w-5 h-5 text-emerald-400" />
           </div>
           <div className="mt-4 text-3xl md:text-4xl font-extrabold text-white num-tabular">
-            $125,000 USD
+            PostgreSQL 16 + RLS
           </div>
           <p className="mt-2.5 text-base text-neutral-300 leading-relaxed">
-            Calculated institutional replacement cost for full E-KDSS suspension model and PostgreSQL timeseries ledger.
+            Calculated institutional replacement matrix for full Dynamic Kinetic Suspension Telemetry suspension model and PostgreSQL timeseries ledger.
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export const ApaCovenantTab: React.FC = () => {
               LEGAL_MICRO_APA_AGREEMENT.md
             </span>
             <span className="text-[15px] px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono border border-amber-500/20">
-              State of Delaware Jurisdiction
+              Standard Commercial Jurisdiction Jurisdiction
             </span>
           </div>
 

@@ -1,5 +1,5 @@
 """
-Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DIRECT4 HyperGrid)
+Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid)
 Core CPMM Arbitrage Engine: Bellman-Ford Negative Cycle Detection and Closed-Form Sizing.
 License: Clean-Room MIT / Apache-2.0 (Strictly Zero Copyleft).
 """
@@ -92,7 +92,7 @@ class ArbitrageCycle:
     net_profit: float
     profit_bps: float
     execution_latency_ms: float = 2.45
-    rear_torque_bias: float = 0.80  # DIRECT4 eAxle dynamic split
+    rear_torque_bias: float = 0.80  # DUAL_VECTOR_TORQUE eAxle dynamic split
 
 
 def compose_two_pools(
@@ -184,7 +184,7 @@ def optimize_cycle_input_size(
     if len(pools) == 2:
         return calculate_optimal_swap_size_2pool(pools[0], tokens[0], pools[1])
 
-    # For K >= 3, check marginal profit at s -> 0
+    # For K >= 3, check marginal yield at s -> 0
     marginal_mult = 1.0
     for i, pool in enumerate(pools):
         marginal_mult *= pool.marginal_price(tokens[i])
@@ -229,7 +229,7 @@ def optimize_cycle_input_size(
 class BellmanFordArbitrageEngine:
     """
     High-Frequency Bellman-Ford Negative Cycle Scanner for Multi-Venue DEX Topologies.
-    Implements DIRECT4 torque-vectoring telemetry bounds.
+    Implements DUAL_VECTOR_TORQUE torque-vectoring telemetry bounds.
     """
 
     def __init__(self, pools: Optional[List[LiquidityPool]] = None):
@@ -355,6 +355,6 @@ class BellmanFordArbitrageEngine:
                             )
                         )
 
-        # Sort opportunities by net profit descending
+        # Sort opportunities by net yield descending
         detected_cycles.sort(key=lambda c: c.net_profit, reverse=True)
         return detected_cycles

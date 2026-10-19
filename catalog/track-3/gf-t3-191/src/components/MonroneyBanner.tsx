@@ -32,7 +32,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus LM 500h Executive Luxury Mover Core
+        Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with Rear Comfort braking pitch control, electrochromic partition acoustic isolation, and PostgreSQL 16 HMAC ledger.
@@ -71,16 +71,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs">
         <div className="inline-flex items-center gap-1.5 text-slate-300 font-mono">
-          <span className="text-slate-500 uppercase font-semibold">Buyout:</span>
-          <span className="text-amber-400 font-bold">$45,000 USD</span>
+          <span className="text-slate-500 uppercase font-semibold">Asset Transfer:</span>
+          <span className="text-amber-400 font-bold">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="inline-flex items-center gap-1.5 text-slate-300 font-mono">
           <span className="text-slate-500 uppercase font-semibold">Enterprise:</span>
-          <span className="text-emerald-400 font-bold">$125,000 USD</span>
+          <span className="text-emerald-400 font-bold">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="inline-flex items-center gap-1.5 text-slate-300 font-mono">

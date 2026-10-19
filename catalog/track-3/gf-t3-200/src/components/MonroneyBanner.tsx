@@ -29,7 +29,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus Electrified Supercar Concept Core
+        Heavy Overland Dynamics Platform Electrified Supercar Concept Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with quad-motor independent torque vectoring, solid-state battery thermal matrix, sub-2.0s launch dynamics, and PostgreSQL 16 HMAC ledger.
@@ -62,16 +62,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* Valuation & Audit Strip */}
+      {/* Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
         <div className="flex items-center gap-1.5">
-          <span className="text-slate-500">Buyout:</span>
-          <span className="text-white font-semibold">$45,000 USD</span>
+          <span className="text-slate-500">Asset Transfer:</span>
+          <span className="text-white font-semibold">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="flex items-center gap-1.5">
           <span className="text-slate-500">Enterprise:</span>
-          <span className="text-amber-300 font-semibold">$125,000 USD</span>
+          <span className="text-amber-300 font-semibold">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-700">|</span>
         <div className="flex items-center gap-1.5">

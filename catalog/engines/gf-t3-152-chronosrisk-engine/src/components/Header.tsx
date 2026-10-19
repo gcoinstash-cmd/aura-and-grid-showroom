@@ -52,8 +52,8 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5 text-slate-300 bg-slate-800/80 border border-slate-700 px-2.5 py-0.5 rounded text-xs font-semibold">
-            <span className="text-amber-400 font-bold">$125,000</span>
-            <span className="text-slate-400">APA BUYOUT</span>
+            <span className="text-amber-400 font-bold">20 kHz (0.48ms)</span>
+            <span className="text-slate-400">APA ASSET TRANSFER</span>
           </div>
 
           <button

@@ -1,6 +1,6 @@
-# GF-T3-193: LEXUS IS 500 F SPORT PERFORMANCE CORE
-## Turnkey Micro-APA Acquisition Master Specification — Delaware Asset Purchase Agreement Ready
-**Target Valuation:** $45,000 USD (Standard Buyout) | $125,000 USD (Enterprise Monopoly Vault)  
+# GF-T3-193: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE
+## Turnkey Micro-APA Acquisition Master Specification — Turnkey Software Asset Purchase Agreement Ready
+**Target Specification: ** 20 kHz (0.48ms) (Standard Asset Transfer) | PostgreSQL 16 + RLS (Enterprise Monopoly Vault)  
 **License:** Permissive MIT License (100% Clean-Room Certified, Zero GPL/AGPL Contamination)  
 **Hardware Profile:** Naturally Aspirated 2UR-GSE 5.0L V8 + Torsen® Type-B Helical LSD + PostgreSQL 16 Ledger  
 **Version:** v1.0.0-PROD (Monotonic Nonce Sequence #1,000,000+)
@@ -9,7 +9,7 @@
 
 ## 1. EXECUTIVE SUMMARY & SYSTEM TOPOLOGY
 
-GF-T3-193 is a high-performance, containerized telemetry and dynamics control engine built for the Lexus IS 500 F SPORT Performance platform (2UR-GSE 472 hp / 395 lb-ft naturally aspirated quad-cam 32-valve 5.0L V8).
+GF-T3-193 is a high-performance, containerized telemetry and dynamics control engine built for the Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry platform (2UR-GSE 472 hp / 395 lb-ft naturally aspirated quad-cam 32-valve 5.0L V8).
 
 ### 1.1 Architectural Topology
 - **Container Boundary:** Distroless Non-Root Debian/Alpine Container (gcr.io/ghost-factory/gf-t3-193:v1.0.0) running on Google Cloud Run with scale-to-zero capability.
@@ -53,18 +53,18 @@ GF-T3-193 is a high-performance, containerized telemetry and dynamics control en
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 Dual-Stage Acoustic Intake Runner Helmholtz Resonator
-The naturally aspirated Lexus 2UR-GSE employs dual-stage intake runner lengths to maximize volumetric efficiency ($\eta_v$) across both low-end torque delivery and high-RPM atmospheric breathing.
+The naturally aspirated Heavy Overland Dynamics Platform 2UR-GSE employs dual-stage intake runner lengths to maximize volumetric efficiency ($\eta_v$) across both low-end torque delivery and high-RPM atmospheric breathing.
 
 The Helmholtz resonance frequency ($f_H$) for the intake manifold runner chamber is governed by:
 $$f_H = \frac{c}{2\pi} \sqrt{\frac{A}{V \cdot L_{\text{eff}}}}$$
 
 Where:
-- $c$: Speed of sound in intake air ($c = \sqrt{\gamma \cdot R \cdot T} \approx 343 \text{ m/s}$ at $20^\circ\text{C}$)
+- $c$: Speed of sound in intake air ($c = \sqrt{\gamma \cdot R \cdot T} \approx 343 \text{ m/s}$ at 20 kHz (0.48ms)^\circ\text{C}$)
 - $A$: Cross-sectional area of the intake runner ($A = \frac{\pi \cdot d^2}{4} = 0.002642 \text{ m}^2$ for $d = 58\text{ mm}$)
 - $V$: Intake plenum volume ($V \approx 0.0042 \text{ m}^3$)
 - $L_{\text{eff}}$: Effective acoustic runner length:
-  - **Stage 1 (Primary Runner, RPM < 3,600):** $L_{\text{eff}} = 0.420 \text{ m}$ (420 mm long path), tuning $f_H \approx 68 \text{ Hz}$, aligning with intake valve opening pulses at 2,000–3,200 RPM to produce 395 lb-ft torque plateau.
-  - **Stage 2 (Acoustic Bypass Flap Open, RPM \ge 3,600):** Secondary butterfly opens via servo actuator, shortening effective length to $L_{\text{eff}} = 0.210 \text{ m}$, shifting resonance frequency to $f_H \approx 96 \text{ Hz}$ with high-frequency acoustic overtones up to 2,500 Hz, inducing cylinder ram charging up to the 7,100 RPM peak horsepower (472 hp) and 7,300 RPM rev limiter.
+  - **Stage 1 (Primary Runner, RPM < 3,600):** $L_{\text{eff}} = 0.420 \text{ m}$ (420 mm long path), tuning $f_H \approx 68 \text{ Hz}20 kHz (0.48ms) aligning with intake valve opening pulses at 2,000–3,200 RPM to produce 395 lb-ft torque plateau.
+  - **Stage 2 (Acoustic Bypass Flap Open, RPM \ge 3,600):** Secondary butterfly opens via servo actuator, shortening effective length to $L_{\text{eff}} = 0.210 \text{ m}20 kHz (0.48ms) shifting resonance frequency to $f_H \approx 96 \text{ Hz}$ with high-frequency acoustic overtones up to 2,500 Hz, inducing cylinder ram charging up to the 7,100 RPM peak horsepower (472 hp) and 7,300 RPM rev limiter.
 
 ### 2.2 Torsen® Type-B Helical Limited Slip Differential Dynamics
 The rear mechanical differential utilizes crossed-axis helical planetary gears with an asymmetric Torque Bias Ratio (TBR) of 2.8:1.
@@ -160,7 +160,7 @@ CREATE TRIGGER trg_torsen_oil_temp_quarantine
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-193 Lexus IS 500 Performance Telemetry API
+  title: GF-T3-193 Heavy Overland Dynamics Platform IS 500 Performance Telemetry API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion, acoustic intake valve management, and Torsen LSD control protocol.
 paths:
@@ -228,9 +228,9 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 ## 6. ASSET PURCHASE AGREEMENT (ACQUIRE.COM MONOPOLY VAULT TERMS)
 
-**BUYOUT PRICE:** $45,000 USD (Base Turnkey Asset) | $125,000 USD (Enterprise Monopoly Buyout)  
-**JURISDICTION:** State of Delaware, United States  
-**SELLER WARRANTY:** 100% Clean-Room Certified. Seller expressly warrants and represents that the Software contains zero Copyleft (GPL, AGPL, SSPL) code, zero proprietary Lexus/Toyota intellectual property violations (all physical mathematical calculations independently derived from first principles of thermodynamics, fluid dynamics, and gear mechanics), and is fully assignable free and clear of all liens and encumbrances.
+**REFERENCE CORE:** 20 kHz (0.48ms) (Base Turnkey Asset) | PostgreSQL 16 + RLS (Enterprise Monopoly Asset Transfer)  
+**JURISDICTION:** Standard Commercial Jurisdiction, United States  
+**SELLER WARRANTY:** 100% Clean-Room Certified. Seller expressly warrants and represents that the Software contains zero Copyleft (GPL, AGPL, SSPL) code, zero proprietary Heavy Overland Dynamics Platform/Toyota intellectual property violations (all physical mathematical calculations independently derived from first principles of thermodynamics, fluid dynamics, and gear mechanics), and is fully assignable free and clear of all liens and encumbrances.
 
 **EXHIBIT A: INCLUDED ASSETS**
 1. Full proprietary source code repository (`is500_acoustic_torsen_core.py`, FastAPI routes, tests).

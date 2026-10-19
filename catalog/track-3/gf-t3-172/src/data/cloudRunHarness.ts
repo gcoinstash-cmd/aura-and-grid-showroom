@@ -4,7 +4,7 @@
  */
 
 export const DOCKERFILE_CONTENT = `# ==============================================================================
-# GF-T3-172: Lexus TX 500h F SPORT DIRECT4 Core
+# GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Core
 # Multi-Stage Production Dockerfile (Distroless / Non-Root appuser UID:10001)
 # ==============================================================================
 
@@ -32,7 +32,7 @@ FROM python:3.12-slim-bookworm AS runtime
 
 LABEL maintainer="Ghost FactoryOS <vault@ghostfactoryos.internal>" \\
       asset.id="GF-T3-172" \\
-      asset.model="Lexus TX 500h F SPORT Performance Core" \\
+      asset.model="Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core" \\
       asset.license="MIT" \\
       asset.val="USD 45000"
 
@@ -54,7 +54,7 @@ ENV PORT=8080 \\
     PYTHONUNBUFFERED=1 \\
     SWARM_NODE_ID=node-0 \\
     CLUSTER_CONSENSUS_PROTOCOL=HOTSTUFF_BFT \\
-    DIRECT4_ENVELOPE_STRICT=TRUE \\
+    DUAL_VECTOR_TORQUE_ENVELOPE_STRICT=TRUE \\
     MAX_COMMIT_LATENCY_US=2000
 
 # Drop all privileges
@@ -70,13 +70,13 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 
 export const PYTEST_CODE = `"""
 test_consensus_harness.py - Comprehensive Test Bench for GF-T3-172
-Swarm BFT Consensus & Lexus TX 500h DIRECT4 Dynamics
+Swarm BFT Consensus & Heavy Overland Dynamics Platform Multi-Node High-Output Core DUAL_VECTOR_TORQUE Dynamics
 Coverage: 96.4% lines | Strict Anti-Regression Bench
 """
 import pytest
 import time
 import hashlib
-from src.consensus.engine import HotStuffBftConsensusEngine, Direct4Vector, EpochProposal
+from src.consensus.engine import HotStuffBftConsensusEngine, DualVectorTorqueVector, EpochProposal
 
 @pytest.fixture
 def test_cluster():
@@ -106,7 +106,7 @@ def test_byzantine_equivocation_quarantine(test_cluster):
         "speed_kmh": 120.0, "throttle_pct": 100.0, "steer_deg": 45.0, "yaw_deg_s": 25.0, "lat_g": 1.8
     })
     # Corrupt vector to 95% front torque (exceeds 70% physical envelope)
-    rogue_proposal.vector = Direct4Vector(
+    rogue_proposal.vector = DualVectorTorqueVector(
         front_ratio=0.95, rear_ratio=0.05, front_kw=260.0, rear_kw=13.0,
         target_yaw_rate=20.0, steer_angle_deg=45.0
     )
@@ -127,11 +127,11 @@ def test_network_partition_split_recovery(test_cluster):
     assert len(votes) < leader.quorum_size
     assert leader.commit_epoch(proposal, votes) is False
 
-def test_direct4_torque_split_envelope_bounds(test_cluster):
-    """Ensure DIRECT4 distribution strictly abides by Lexus TX 500h physical eAxle limits."""
+def test_dual_vector_torque_torque_split_envelope_bounds(test_cluster):
+    """Ensure DUAL_VECTOR_TORQUE distribution strictly abides by Heavy Overland Dynamics Platform Multi-Node High-Output Core physical eAxle limits."""
     engine = test_cluster[0]
     # Heavy launch acceleration test (should approach 20% front / 80% rear)
-    launch_vector = engine.compute_direct4_split(speed_kmh=40.0, throttle_pct=100.0, steer_deg=0.0, yaw_deg_s=0.0, lat_g=0.6)
+    launch_vector = engine.compute_dual_vector_torque_split(speed_kmh=40.0, throttle_pct=100.0, steer_deg=0.0, yaw_deg_s=0.0, lat_g=0.6)
     assert 0.20 <= launch_vector.front_ratio <= 0.35
     assert 0.65 <= launch_vector.rear_ratio <= 0.80
     assert abs((launch_vector.front_ratio + launch_vector.rear_ratio) - 1.0) < 1e-4
@@ -176,7 +176,7 @@ gcloud config set project auto-dealership-vault-prod
 gcloud builds submit --tag gcr.io/dealership-vault/gf-t3-172:v1.0.0 .
 
 # 3. Deploy to Serverless Cloud Run (US-East1)
-gcloud run deploy gf-t3-172-direct4-core \\
+gcloud run deploy gf-t3-172-dual_vector_torque-core \\
   --image gcr.io/dealership-vault/gf-t3-172:v1.0.0 \\
   --platform managed \\
   --region us-east1 \\
@@ -186,15 +186,15 @@ gcloud run deploy gf-t3-172-direct4-core \\
   --min-instances 1 \\
   --max-instances 10 \\
   --timeout 30s \\
-  --set-env-vars="SWARM_NODES=4,CLUSTER_MODE=BFT_HOTSTUFF,DIRECT4_STRICT=TRUE"
+  --set-env-vars="SWARM_NODES=4,CLUSTER_MODE=BFT_HOTSTUFF,DUAL_VECTOR_TORQUE_STRICT=TRUE"
 `;
 
 export const PYTEST_SUITE_RESULTS = [
   { testName: 'test_bft_quorum_3f_plus_1_success', durationMs: 0.38, status: 'PASSED' as const, description: 'Supermajority quorum achieved across 3 of 4 validators' },
   { testName: 'test_byzantine_equivocation_quarantine', durationMs: 0.44, status: 'PASSED' as const, description: 'Detected 95:05 torque ratio violation; quarantined node' },
   { testName: 'test_network_partition_split_recovery', durationMs: 0.31, status: 'PASSED' as const, description: '2:2 split prevented safety breach; safely halted commit' },
-  { testName: 'test_direct4_torque_split_envelope_bounds', durationMs: 0.29, status: 'PASSED' as const, description: 'Verified front [20%-70%] & rear [30%-80%] dynamic limits' },
-  { testName: 'test_sub_2ms_commit_latency_benchmark', durationMs: 0.48, status: 'PASSED' as const, description: 'Benchmark round finished in 0.48 ms (budget: 2.0 ms)' },
+  { testName: 'test_dual_vector_torque_torque_split_envelope_bounds', durationMs: 0.29, status: 'PASSED' as const, description: 'Verified front [20%-70%] & rear [30%-80%] dynamic limits' },
+  { testName: 'test_sub_2ms_commit_latency_benchmark', durationMs: 0.48, status: 'PASSED' as const, description: 'Benchmark round finished in 0.48 ms (threshold: 2.0 ms)' },
   { testName: 'test_merkle_root_tamper_detection', durationMs: 0.22, status: 'PASSED' as const, description: 'SHA-256 Merkle root rejected tampered leaf payloads' },
   { testName: 'test_view_change_leader_rotation', durationMs: 0.19, status: 'PASSED' as const, description: 'Smooth modulo round leader assignment across cluster' },
   { testName: 'test_steer_by_wire_redundancy_failover', durationMs: 0.25, status: 'PASSED' as const, description: 'Dual-channel steer-by-wire sensor discrepancy detected' },

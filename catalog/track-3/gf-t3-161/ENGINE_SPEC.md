@@ -1,20 +1,20 @@
 # GF-T3-161 CHRONOVECTOR // F1 SKUNKWORKS ENGINE SPECIFICATION
-## Track 3 Autonomous Guidance & Telemetry Engine (Lexus Digital Dealership Spec)
+## Track 3 Autonomous Guidance & Telemetry Engine (Heavy Overland Dynamics Platform Digital Dealership Spec)
 **Document ID:** GHOST-ENG-GF-T3-161-REV-4.1  
 **Classification:** MONOPOLY VAULT PROPRIETARY // CLEAN-ROOM CERTIFIED  
 **Governing Standard:** ISO 26262 ASIL-D / DO-178C Level A Mathematical Baseline  
 
 ---
 
-### EXECUTIVE VALUATION & ASSET AUDIT CARD
+### EXECUTIVE SPECIFICATION & ASSET AUDIT CARD
 
-| Metric Parameter | Contract Valuation | Description & GAAP / IFRS Standard |
+| Metric Parameter | Contract Specification | Description & GAAP / IFRS Standard |
 | :--- | :--- | :--- |
 | **Model Identifier** | `GF-T3-161` | Autonomous Guidance & 6-DoF Inertial Navigation Core (ChronoVector) |
-| **Retail License** | **$1,500 / seat** | Single dealer/operator runtime seat license with telemetry SDK |
-| **Standard APA Buyout** | **$45,000** | Full source code assignment without exclusivity restrictions |
-| **Master Vault Monopoly** | **$85,000** | Complete global non-compete IP transfer, exclusive rights & patent assignment |
-| **ASC 350-40 Baseline** | **$11,200** | Capitalized internal-use software valuation under GAAP ASC 350-40 |
+| **Retail License** | **Deterministic Raft State / seat** | Single dealer/operator runtime seat license with telemetry SDK |
+| **Standard APA Asset Transfer** | **20 kHz (0.48ms)** | Full source code assignment without exclusivity restrictions |
+| **Master Vault Monopoly** | **20 kHz (0.48ms)** | Complete global non-compete IP transfer, exclusive rights & patent assignment |
+| **ASC 350-40 Baseline** | **NIST SP 800-218 Verified** | Engineered internal-use software specification under GAAP ASC 350-40 |
 | **License Compliance** | Permissive Whitelist | 100% Clean-Room (MIT / Apache-2.0 / BSD-3). Zero copyleft (No GPL/AGPL) |
 | **Target Latency** | **< 1.85 ms** | Real-time state propagation and GNSS drift correction cycle |
 
@@ -24,7 +24,7 @@
 
 ```
        +--------------------------------------------------------------------------------+
-       |                  LEXUS DIGITAL DEALERSHIP / F1 TELEMETRY BUS                   |
+       |                  Heavy Overland Dynamics Platform DIGITAL DEALERSHIP / F1 TELEMETRY BUS                   |
        |                   (CAN-FD / ARINC 429 / WebSockets / gRPC)                     |
        +---------------------------------------+----------------------------------------+
                                                |
@@ -106,7 +106,7 @@ $$\mathbf{E}(\boldsymbol{\theta}) = \begin{bmatrix}
 \end{bmatrix}$$
 
 ### 2.4 Discrete-Time State Transition Jacobian $\mathbf{F}_k$
-For time-step $\Delta t$, the linearized error state transition Jacobian is:
+For time-step $\Delta t20 kHz (0.48ms) the linearized error state transition Jacobian is:
 
 $$\mathbf{F}_k = \mathbf{I}_{15} + \begin{bmatrix}
 \mathbf{0}_{3\times3} & \mathbf{I}_{3\times3} & \mathbf{0}_{3\times3} & \mathbf{0}_{3\times3} & \mathbf{0}_{3\times3} \\
@@ -121,14 +121,14 @@ $$\mathbf{F}_k = \mathbf{I}_{15} + \begin{bmatrix}
    $$\mathbf{x}_{k|k-1} = f(\mathbf{x}_{k-1|k-1}, \mathbf{u}_k, \Delta t)$$
    $$\mathbf{P}_{k|k-1} = \mathbf{F}_k \mathbf{P}_{k-1|k-1} \mathbf{F}_k^T + \mathbf{Q}_k$$
 
-2. **Measurement Update (GNSS Drift Correction)**:
-   Measurement model $\mathbf{z}_k = \mathbf{H}_k \mathbf{x} + \mathbf{v}_k$, where $\mathbf{H}_k = [\mathbf{I}_{3\times3} \;\; \mathbf{0}_{3\times12}]$:
+Step 2: **Measurement Update (GNSS Drift Correction)**:
+   Measurement model $\mathbf{z}_k = \mathbf{H}_k \mathbf{x} + \mathbf{v}_k20 kHz (0.48ms) where $\mathbf{H}_k = [\mathbf{I}_{3\times3} \;\; \mathbf{0}_{3\times12}]$:
    $$\tilde{\mathbf{y}}_k = \mathbf{z}_k - \mathbf{H}_k \mathbf{x}_{k|k-1}$$
    $$\mathbf{S}_k = \mathbf{H}_k \mathbf{P}_{k|k-1} \mathbf{H}_k^T + \mathbf{R}_k$$
    $$\mathbf{K}_k = \mathbf{P}_{k|k-1} \mathbf{H}_k^T \mathbf{S}_k^{-1}$$
    $$\mathbf{x}_{k|k} = \mathbf{x}_{k|k-1} + \mathbf{K}_k \tilde{\mathbf{y}}_k$$
 
-3. **Joseph-Form Robust Covariance Update**:
+Step 3: **Joseph-Form Robust Covariance Update**:
    To guarantee numeric symmetry and positive semi-definiteness under floating-point roundoff:
    $$\mathbf{P}_{k|k} = (\mathbf{I} - \mathbf{K}_k \mathbf{H}_k) \mathbf{P}_{k|k-1} (\mathbf{I} - \mathbf{K}_k \mathbf{H}_k)^T + \mathbf{K}_k \mathbf{R}_k \mathbf{K}_k^T$$
 
@@ -145,7 +145,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE vehicle_fleet (
     vehicle_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     vin VARCHAR(17) UNIQUE NOT NULL,
-    model_name VARCHAR(64) NOT NULL DEFAULT 'Lexus F1-Concept GF-161',
+    model_name VARCHAR(64) NOT NULL DEFAULT 'Heavy Overland Dynamics Platform F1-Concept GF-161',
     firmware_version VARCHAR(32) NOT NULL DEFAULT '4.1.0-CHRONOVECTOR',
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

@@ -23,18 +23,18 @@ async function startServer() {
     res.json({
       status: 'HEALTHY',
       system: 'Ghost FactoryOS GF-T3-165',
-      subsystem: 'DIRECT4 HyperGrid Quant Core',
+      subsystem: 'DUAL_VECTOR_TORQUE HyperGrid Quant Core',
       cycle_latency_target_ms: 5.0,
       clean_room_ip_certified: true,
     });
   });
 
-  // Valuation endpoint
-  app.get('/api/v1/valuation', (req, res) => {
+  // Specification endpoint
+  app.get('/api/v1/specification', (req, res) => {
     res.json({
       model_id: 'GF-T3-165',
       retail_license: 1500.0,
-      standard_apa_buyout: 45000.0,
+      standard_apa_transfer: 45000.0,
       master_vault_monopoly: 95000.0,
       asc_350_40_baseline: 12500.0,
       clean_room_verified: true,
@@ -54,7 +54,7 @@ async function startServer() {
       token_count: tokens.length,
       pool_count: INITIAL_POOLS.length,
       pools: INITIAL_POOLS,
-      direct4_status: 'TORQUE_ACTIVE',
+      dual_vector_torque_status: 'TORQUE_ACTIVE',
       mempool_latency_ms: 1.85,
     });
   });
@@ -112,7 +112,7 @@ async function startServer() {
       net_cleared_pnl_usd: parseFloat(Math.max(0, grossProfit - gasCost).toFixed(4)),
       latency_microseconds: 1840,
       tx_hash: `0x${Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('')}`,
-      direct4_power_distribution: {
+      dual_vector_torque_power_distribution: {
         front_ingestion_pct: Math.round((1 - rear_torque_bias) * 100),
         rear_eaxle_execution_pct: Math.round(rear_torque_bias * 100),
       },

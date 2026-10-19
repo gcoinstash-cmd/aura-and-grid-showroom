@@ -34,7 +34,7 @@ export const TabOpenApiContract: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-175 Lexus UX 300h Urban Edge Core API
+  title: GF-T3-175 Heavy Overland Dynamics Platform UX 300h Urban Edge Core API
   version: 1.0.0-PROD
   description: High-frequency 500 Hz telemetry ingestion, WebSocket telemetry broadcast, and urban brake dispatch.
 servers:

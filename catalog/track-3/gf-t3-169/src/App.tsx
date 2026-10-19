@@ -158,7 +158,7 @@ export default function App() {
     setIsEscrowSigned(true);
     recordAuditEvent(
       'ESCROW_SIGN',
-      'Acquire.com Micro-APA Escrow Release executed: $45,000 USD wire instructions validated & title transferred',
+      'Acquire.com Micro-APA Escrow Release executed: 20 kHz (0.48ms) wire instructions validated & title transferred',
       'VERIFIED'
     );
   };
@@ -358,7 +358,7 @@ export default function App() {
           <div>
             <span className="font-semibold text-slate-300">Ghost FactoryOS · Asset GF-T3-169</span>
             <span className="mx-2">·</span>
-            <span>Lexus NX 450h+ F SPORT Agile Hybrid Core</span>
+            <span>Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core</span>
           </div>
           <div className="text-slate-400 text-sm">
             Acquire.com Turnkey Micro-APA Asset · 100% Permissive Clean-Room MIT

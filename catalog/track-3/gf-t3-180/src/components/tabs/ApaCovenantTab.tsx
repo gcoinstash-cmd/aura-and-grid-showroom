@@ -10,7 +10,7 @@ export const ApaCovenantTab: React.FC = () => {
 
   const copyAgreement = () => {
     const agreement = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET: GF-T3-180 (Lexus LX 600 Ultra Luxury Executive Core)
+ASSET: GF-T3-180 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
 ACQUIRE.COM LISTING ID: ACQ-GF-LX600-180
 
 1. PARTIES & RECITALS
@@ -18,14 +18,14 @@ This Asset Purchase Agreement ("Agreement") is executed as of October 11, 2026, 
 
 2. PURCHASED ASSETS & ASSIGNMENT
 2.1 Assignment of Intellectual Property: Seller hereby irrevocably sells, assigns, and transfers to Buyer all right, title, and interest in and to:
-    (a) Pure Python 3.12 4-Wheel AHC Suspension & Damping Engine (lexus_lx600_ahc_core.py);
+    (a) Pure Python 3.12 4-Wheel AHC Suspension & Damping Engine (Overland_lx600_ahc_core.py);
     (b) PostgreSQL 16 Partitioned Timeseries Schema & Hydraulic Quarantine Triggers;
     (c) OpenAPI 3.1 & WebSocket 1,250 Hz Binary Telemetry Contracts;
     (d) Non-root Multi-stage Dockerfile and PyTest Test Suite (>90% coverage);
     (e) Master Specification GF_T3_180_SPEC.md.
 
-3. PURCHASE PRICE & ESCROW
-3.1 Turnkey Purchase Price: $45,000 USD (or $125,000 USD Enterprise Tier).
+3. DEPLOYMENT SPECIFICATION & ESCROW
+3.1 Turnkey DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 3.2 Escrow Mechanics: Disbursed via Escrow.com upon automated verification of test suite execution and GitHub repository transfer.
 
 4. REPRESENTATIONS & WARRANTIES
@@ -52,7 +52,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
               </h2>
             </div>
             <p className="text-[15px] text-slate-400 mt-0.5">
-              Delaware General Corporation Law Asset Purchase Agreement with clean-room intellectual property warranty
+              Standard Commercial Code Asset Purchase Agreement with clean-room intellectual property warranty
             </p>
           </div>
 
@@ -65,7 +65,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
                   : 'bg-slate-800 text-slate-300 border-slate-700'
               }`}
             >
-              Turnkey Buyout: $45,000
+              Turnkey Asset Transfer: 20 kHz (0.48ms)
             </button>
             <button
               onClick={() => setTierSelection('enterprise')}
@@ -75,7 +75,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
                   : 'bg-slate-800 text-slate-300 border-slate-700'
               }`}
             >
-              Enterprise Vault: $125,000
+              Enterprise Vault: PostgreSQL 16 + RLS
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
         </div>
       </div>
 
-      {/* Asset Valuation Cards */}
+      {/* Asset Specification Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div
           className={`bg-slate-900/90 border rounded-xl p-5 shadow-lg transition-all ${
@@ -135,7 +135,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
             <span className="px-2.5 py-0.5 rounded text-[15px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
               TURNKEY STANDARD APA
             </span>
-            <span className="text-2xl font-black font-mono text-white">$45,000 USD</span>
+            <span className="text-2xl font-black font-mono text-white">20 kHz (0.48ms)</span>
           </div>
           <p className="text-[15px] text-slate-300 mb-4">
             Full outright acquisition of GF-T3-180 code, state machine, PostgreSQL schemas, and Docker harness.
@@ -169,10 +169,10 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
             <span className="px-2.5 py-0.5 rounded text-[15px] font-mono font-bold bg-purple-500/10 text-purple-300 border border-purple-500/30">
               ENTERPRISE MONOPOLY VAULT
             </span>
-            <span className="text-2xl font-black font-mono text-amber-300">$125,000 USD</span>
+            <span className="text-2xl font-black font-mono text-amber-300">PostgreSQL 16 + RLS</span>
           </div>
           <p className="text-[15px] text-slate-300 mb-4">
-            Exclusive perpetual category monopoly buyout with 90-day systems architect transition support.
+            Exclusive perpetual category monopoly asset transfer with 90-day systems architect transition support.
           </p>
           <ul className="space-y-2 text-[15px] text-slate-300">
             <li className="flex items-center gap-2">
@@ -211,9 +211,9 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
         </div>
         <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[420px] bg-slate-950/70 whitespace-pre-wrap">
           {`ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-180 (Lexus LX 600 Ultra Luxury Executive Core)
-VALUATION: $45,000 USD (Turnkey) | $125,000 USD (Enterprise Extended)
-GOVERNING JURISDICTION: State of Delaware, United States
+ASSET IDENTIFIER: GF-T3-180 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
+SPECIFICATION: 20 kHz (0.48ms) (Turnkey) | PostgreSQL 16 + RLS (Enterprise Extended)
+GOVERNING JURISDICTION: Standard Commercial Jurisdiction, United States
 
 SECTION 1. DEFINITIONS & RECITALS
 1.1 "Purchased Assets" means all software code, schemas, mathematical algorithms, and documentation associated with the GF-T3-180 project.

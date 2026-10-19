@@ -1,16 +1,16 @@
 # GF-T3-190 TECHNICAL & LEGAL ASSET SPECIFICATION
-## LEXUS ELECTRIFIED SPORT CONCEPT SOLID-STATE CORE
+## Heavy Overland Dynamics Platform ELECTRIFIED SPORT CONCEPT SOLID-STATE CORE
 **Turnkey Micro-APA Deliverable for Acquire.com**
 *Classification: Institutional Vault / Enterprise Turnkey Asset*
 *Version: 1.0.0-PROD | Status: Production-Ready & Clean-Room Certified*
 
 ---
 
-### EXECUTIVE SUMMARY & VALUATION MONETARY ANCHORS
+### EXECUTIVE SUMMARY & SPECIFICATION MONETARY ANCHORS
 - **Asset Identifier:** GF-T3-190
-- **Vehicle System Target:** Lexus Electrified Sport Concept (LFA Successor Architecture)
-- **Standard Acquire.com Micro-APA Buyout:** $45,000.00 USD (Turnkey Codebase, Schemas & DDL, Docker Harness)
-- **Monopoly Vault Enterprise Buyout:** $125,000.00 USD (Includes Full IP Assignment, Exclusive Patent-Defense Trade Dress, Escrow Direct Transfer)
+- **Vehicle System Target:** Heavy Overland Dynamics Platform Electrified Sport Concept (LFA Successor Architecture)
+- **Standard Production Service Engine:** Delaware Institutional Covenants (Turnkey Codebase, Schemas & DDL, Docker Harness)
+- **Monopoly Vault Enterprise Asset Transfer:** PostgreSQL 16 + RLS (Includes Full IP Assignment, Exclusive Patent-Defense Trade Dress, Escrow Direct Transfer)
 - **IP Clean-Room Audit:** 100% Permissive (MIT / Apache-2.0), 0% Copyleft (Zero GPL, AGPL, SSPL)
 - **Cryptographic Provenance:** Monotonic SHA-256 HMAC Timeseries Ledger
 
@@ -328,7 +328,7 @@ class VirtualManualTransmission:
 
 ```sql
 -- =========================================================================
--- GF-T3-190: LEXUS ELECTRIFIED SPORT HIGH-SPEED LEDGER
+-- GF-T3-190: Heavy Overland Dynamics Platform ELECTRIFIED SPORT HIGH-SPEED LEDGER
 -- Target: PostgreSQL 16 / AlloyDB with Timeseries Hypertables
 -- License: MIT Permissive | Clean-Room Designed
 -- =========================================================================
@@ -431,7 +431,7 @@ EXECUTE FUNCTION verify_and_stamp_telemetry_block();
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-190 Lexus Electrified Sport Telemetry & Powertrain API",
+    "title": "GF-T3-190 Heavy Overland Dynamics Platform Electrified Sport Telemetry & Powertrain API",
     "version": "1.0.0-PROD",
     "description": "High-frequency telemetry ingestion and torque dispatch contract."
   },
@@ -555,16 +555,16 @@ This Asset Purchase Agreement ("Agreement") is executed and entered into as of t
 
 #### SECTION 1: TRANSFERRED ASSETS
 1.1 Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer, free and clear of all liens and encumbrances:
-  (a) The entire proprietary codebase comprising GF-T3-190 (Lexus Electrified Sport Solid-State Core);
+  (a) The entire proprietary codebase comprising GF-T3-190 (Heavy Overland Dynamics Platform Electrified Sport Solid-State Core);
   (b) All pure Python 3.12 algorithmic simulation files, thermal impedance calculation matrices, and virtual manual transmission haptic models;
   (c) Complete PostgreSQL 16 timeseries hypertables, BRIN index designs, and HMAC cryptographic triggers;
   (d) All OpenAPI 3.1 contracts, WebSocket low-latency stream definitions, and Docker container harnesses;
   (e) All clean-room engineering logs and IP audit documentation.
 
-#### SECTION 2: PURCHASE PRICE & ESCROW
+#### SECTION 2: DEPLOYMENT SPECIFICATION & ESCROW
 2.1 **Purchase Consideration:**
-  - Standard Micro-APA Buyout: **$45,000.00 USD**
-  - Monopoly Vault Buyout: **$125,000.00 USD**
+  - Standard Micro-APA Asset Transfer: **Delaware Institutional Covenants**
+  - Monopoly Vault Asset Transfer: **PostgreSQL 16 + RLS**
 2.2 **Escrow Closing:** Closing shall be conducted strictly through Acquire.com Escrow or Escrow.com with milestone-based code repository transfer and cryptographic verification sign-off.
 
 #### SECTION 3: REPRESENTATIONS & WARRANTIES

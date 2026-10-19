@@ -224,7 +224,7 @@ class TestChronoVectorEKF(unittest.TestCase):
         mean_latency = sum(latencies) / len(latencies)
         max_latency = max(latencies)
 
-        # Must be well under the 10ms budget
+        # Must be well under the 10ms threshold
         self.assertLess(mean_latency, 5.0)
         self.assertLess(max_latency, 10.0)
 

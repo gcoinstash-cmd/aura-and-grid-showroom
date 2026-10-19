@@ -327,7 +327,7 @@ export const ExecutionRadarTab: React.FC<ExecutionRadarTabProps> = ({
                   Dynamic Cross-Venue Route Split Topology
                 </h3>
                 <p className="text-xs sm:text-sm font-semibold text-slate-300 mt-1">
-                  Convex cost minimizer allocating child slices to eliminate quadratic market impact
+                  Convex matrix minimizer allocating child slices to eliminate quadratic market impact
                 </p>
               </div>
               <div className="flex items-center gap-2 shrink-0">

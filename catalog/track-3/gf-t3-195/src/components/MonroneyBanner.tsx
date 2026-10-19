@@ -28,7 +28,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-195
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-[11px] font-mono font-semibold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
-          LC 500 CARBON AERO
+          High-Aero Grand Touring Telemetry Core CARBON AERO
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono font-bold px-2 py-0.5 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -37,7 +37,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Lexus LC 500 Carbon Aero Core
+        Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with fixed carbon high-downforce wing aerodynamics, vortex yaw damping, and PostgreSQL 16 HMAC ledger.
@@ -76,16 +76,16 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         </button>
       </div>
 
-      {/* d) Valuation & Audit Strip */}
+      {/* d) Specification & Audit Strip */}
       <div className="flex flex-row flex-wrap items-center gap-3 text-xs text-slate-300">
         <div className="flex items-center gap-1">
-          <span className="text-slate-400 font-medium">Buyout:</span>
-          <span className="font-mono font-bold text-amber-400">$45,000 USD</span>
+          <span className="text-slate-400 font-medium">Asset Transfer:</span>
+          <span className="font-mono font-bold text-amber-400">20 kHz (0.48ms)</span>
         </div>
         <span className="text-slate-600 font-mono">|</span>
         <div className="flex items-center gap-1">
           <span className="text-slate-400 font-medium">Enterprise:</span>
-          <span className="font-mono font-bold text-white">$125,000 USD</span>
+          <span className="font-mono font-bold text-white">PostgreSQL 16 + RLS</span>
         </div>
         <span className="text-slate-600 font-mono">|</span>
         <div className="flex items-center gap-1">

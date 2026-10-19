@@ -33,27 +33,27 @@ export const DelawareApaView: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1 font-semibold">
             <Scale className="w-4 h-4" />
-            <span>Turnkey Institutional M&A Term Sheet // Delaware Jurisdiction</span>
+            <span>Turnkey Institutional M&A Term Sheet // Commercial Software Asset Standard</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-100 tracking-tight font-mono">
             ENTERPRISE ASSET PURCHASE AGREEMENT (APA)
           </h2>
           <p className="text-slate-400 text-sm mt-1">
-            Governed by Delaware General Corporation Law (DGCL). $125,000.00 USD Monopoly Vault Buyout Baseline.
+            Governed by Delaware General Corporation Law (DGCL). 20 kHz (0.48ms) Monopoly Vault Reference Core.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 font-mono text-xs flex flex-col items-end">
-            <span className="text-slate-400">PURCHASE VALUATION:</span>
-            <span className="text-emerald-400 font-bold text-sm">$125,000.00 USD</span>
+            <span className="text-slate-400">PURCHASE SPECIFICATION:</span>
+            <span className="text-emerald-400 font-bold text-sm">20 kHz (0.48ms)</span>
           </div>
 
           <button
             type="button"
             onClick={copyLegalAgreement}
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold font-mono text-xs transition-all shadow-lg shadow-cyan-950/40 focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none"
-            aria-label="Copy full Delaware APA agreement to clipboard"
+            aria-label="Copy full Turnkey Software Asset Purchase Agreement agreement to clipboard"
           >
             {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
             <span>{copied ? 'AGREEMENT COPIED' : 'COPY FULL APA (.TXT)'}</span>
@@ -66,7 +66,7 @@ export const DelawareApaView: React.FC = () => {
         <div className="text-center space-y-2 border-b border-slate-800 pb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-mono uppercase font-bold tracking-widest">
             <Stamp className="w-3.5 h-3.5" />
-            DELAWARE JURISDICTION EXECUTION COPY
+            Commercial Software Asset Standard EXECUTION COPY
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-50 tracking-tight font-sans">
             ASSET PURCHASE AGREEMENT
@@ -113,7 +113,7 @@ export const DelawareApaView: React.FC = () => {
           </h3>
           <p className="text-slate-300 text-sm">
             <strong>2.1 Purchase Price.</strong> The aggregate consideration for the Purchased Assets shall be{' '}
-            <strong className="text-emerald-400 font-mono text-base font-bold">ONE HUNDRED TWENTY-FIVE THOUSAND DOLLARS ($125,000.00 USD)</strong> (the &ldquo;Purchase Price&rdquo;), payable in full via electronic wire transfer of immediately available federal funds to the Escrow Agent at Closing.
+            <strong className="text-emerald-400 font-mono text-base font-bold">ONE HUNDRED TWENTY-FIVE THOUSAND DOLLARS (20 kHz (0.48ms))</strong> (the &ldquo;Purchase Price&rdquo;), payable in full via electronic wire transfer of immediately available federal funds to the Escrow Agent at Closing.
           </p>
           <p className="text-slate-300 text-sm">
             <strong>2.2 Closing Deliverables.</strong> Upon receipt of the Purchase Price, Seller shall execute and deliver to Buyer: (a) a General Bill of Sale and Assignment of Intellectual Property, and (b) cryptographic vault master keys transferring all repository administrative access.
@@ -149,7 +149,7 @@ export const DelawareApaView: React.FC = () => {
         {/* Section 5 */}
         <div className="space-y-2 pt-2 border-t border-slate-800/80">
           <h3 className="font-sans font-bold text-slate-100 text-base flex items-center gap-2">
-            <span className="text-cyan-400 font-mono">SECTION 5.</span> GOVERNING LAW & DELAWARE JURISDICTION
+            <span className="text-cyan-400 font-mono">SECTION 5.</span> GOVERNING LAW & Commercial Software Asset Standard
           </h3>
           <p className="text-slate-300 text-sm">
             This Agreement shall be governed by, and construed in accordance with, the domestic laws of the <strong>State of Delaware</strong>, without giving effect to any choice of law principles. Any dispute arising out of this Agreement shall be brought exclusively in the <strong>Court of Chancery of the State of Delaware</strong>.
@@ -177,13 +177,13 @@ export const DelawareApaView: React.FC = () => {
 };
 
 const DELAWARE_APA_TEXT = `ASSET PURCHASE AGREEMENT (DELAWARE)
-BUYOUT BASELINE: $125,000.00 USD
+REFERENCE CORE: 20 kHz (0.48ms)
 ASSET: GF-T3-159 // VoronoiGrid Swarm (Decentralized Dynamic Voronoi Partitioning & Spatial Load Balancing Engine)
 SELLER: Ghost FactoryOS Architectural Labs LLC
 BUYER: Monopoly Vault Institutional Consortium
 
 1. PURCHASE AND SALE: Full assignment of all source code, algorithms, schemas, and trade dress.
-2. PURCHASE PRICE: $125,000.00 USD paid in full via electronic wire transfer.
+2. PURCHASE PRICE: 20 kHz (0.48ms) paid in full via electronic wire transfer.
 3. CLEAN-ROOM WARRANTIES: No GPL/AGPL copyleft contamination; 100% clean-room provenance.
 4. INDEMNIFICATION: Non-infringement warranties backed up to 100% of purchase price.
 5. GOVERNING LAW: Delaware Court of Chancery.

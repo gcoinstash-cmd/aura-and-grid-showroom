@@ -18,12 +18,12 @@ export const Tab5ApaCovenant: React.FC = () => {
 
   const handleCopyApa = () => {
     navigator.clipboard.writeText(`ASSET PURCHASE AND TRANSFER AGREEMENT (DELAWARE MICRO-APA)
-Asset Identifier: GF-T3-196 (Lexus RZ 450e Steer-by-Wire DIRECT4 Core)
-Purchase Price: $45,000.00 USD (Micro-APA) / $125,000.00 USD (Enterprise Monopoly Buyout)
-Governing Law: State of Delaware, United States
+Asset Identifier: GF-T3-196 (Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core)
+DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+Governing Law: Standard Commercial Jurisdiction, United States
 Platform Escrow: Acquire.com / Escrow.com Integrated Protocol
 
-1. ASSET TRANSFER: Seller hereby assigns all right, title, and interest in and to the Steer-by-Wire One-Motion Grip algorithms, DIRECT4 torque vectoring engine, PostgreSQL 16 partitioned schema, and OpenAPI 3.1 contracts.
+1. ASSET TRANSFER: Seller hereby assigns all right, title, and interest in and to the Steer-by-Wire One-Motion Grip algorithms, DUAL_VECTOR_TORQUE torque vectoring engine, PostgreSQL 16 partitioned schema, and OpenAPI 3.1 contracts.
 2. CLEAN-ROOM WARRANTY: 100% Permissive licenses (MIT/Apache 2.0/BSD). Zero GPL/AGPL copyleft taint.
 3. ABSOLUTE ASSIGNMENT: Unencumbered, worldwide, perpetual IP assignment.`);
     setCopiedApa(true);
@@ -57,24 +57,24 @@ Platform Escrow: Acquire.com / Escrow.com Integrated Protocol
           </div>
         </div>
 
-        {/* Valuation & Transaction Summary Cards */}
+        {/* Specification & Transaction Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">
-              Standard Micro-APA Buyout
+              Standard Micro-APA Asset Transfer
             </span>
             <div className="text-3xl font-black text-amber-400 font-mono flex items-center gap-1">
               <DollarSign className="w-6 h-6 text-amber-400" />
               45,000 <span className="text-sm text-slate-400 font-sans">USD</span>
             </div>
             <p className="text-xs text-slate-400 mt-2">
-              Turnkey standalone asset buyout via Acquire.com escrow with full IP transfer.
+              Turnkey standalone asset asset transfer via Acquire.com escrow with full IP transfer.
             </p>
           </div>
 
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800">
             <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-1">
-              Monopoly Vault Buyout
+              Monopoly Vault Asset Transfer
             </span>
             <div className="text-3xl font-black text-emerald-400 font-mono flex items-center gap-1">
               <Award className="w-6 h-6 text-emerald-400" />
@@ -107,7 +107,7 @@ Platform Escrow: Acquire.com / Escrow.com Integrated Protocol
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
             {[
-              { key: 'escrowDeposit', label: '1. Acquire.com Escrow Deposit Funded ($45k USD)' },
+              { key: 'escrowDeposit', label: '1. Acquire.com Escrow Deposit Funded' },
               { key: 'cleanRoomAudit', label: '2. Clean-Room Dependency Certification Verified' },
               { key: 'codeTransfer', label: '3. GitHub Enterprise Repository Master Push Delivered' },
               { key: 'hmacVerification', label: '4. SHA-256 Monotonic Ledger Integrity Signed' },
@@ -149,7 +149,7 @@ Platform Escrow: Acquire.com / Escrow.com Integrated Protocol
             </h4>
             <ul className="list-disc list-inside text-slate-300 text-base space-y-1.5 leading-relaxed">
               <li><strong>One-Motion Grip Mathematical Engine:</strong> Python 3.12 sigmoid variable steering ratio and Ackermann road rack kinematics.</li>
-              <li><strong>DIRECT4 Dual e-Axle Vectoring Controller:</strong> Real-time torque splitting logic across front (150 kW) and rear (80 kW) electric powertrains.</li>
+              <li><strong>DUAL_VECTOR_TORQUE Dual e-Axle Vectoring Controller:</strong> Real-time torque splitting logic across front (150 kW) and rear (80 kW) electric powertrains.</li>
               <li><strong>PostgreSQL 16 Timeseries Ledger:</strong> Partitioned hypertable DDL, divergence quarantine triggers, and HMAC-SHA256 signature verifier.</li>
               <li><strong>OpenAPI 3.1 & WebSocket Streaming Protocol:</strong> Complete production telemetry specification contracts.</li>
               <li><strong>Cloud Run Container Infrastructure:</strong> Non-root multi-stage Dockerfile and PyTest ASIL-D test bench with 98% coverage.</li>

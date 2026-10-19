@@ -107,7 +107,7 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ currentF
 info:
   title: GF-T3-186 Telemetry & E-Four Vectoring Protocol
   version: 1.0.0-PROD
-  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Lexus UX 300h F SPORT Handling Core.
+  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry Handling Core.
   license:
     name: MIT Permissive
     url: https://opensource.org/licenses/MIT

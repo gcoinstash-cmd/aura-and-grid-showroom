@@ -22,25 +22,25 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-400">
               <span className="font-mono font-semibold text-amber-400">Asset ID: GF-T3-170</span>
               <span aria-hidden="true" className="text-neutral-600">·</span>
-              <span className="text-neutral-200">Model: Lexus ES 350h Executive Core v1.0.0-PROD</span>
+              <span className="text-neutral-200">Model: Heavy Overland Dynamics Platform ES 350h Executive Core v1.0.0-PROD</span>
               <span aria-hidden="true" className="text-neutral-600">·</span>
               <span className="text-neutral-400">ISO/SAE 21434 Zero-Trust HSM</span>
             </div>
 
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-100 text-wrap-balance">
-              Lexus ES 350h Executive Quietude Core
+              Heavy Overland Dynamics Platform ES 350h Executive Quietude Core
             </h1>
             <p className="text-sm md:text-base text-neutral-400 max-w-3xl">
-              Turnkey micro-APA buyout asset for Acquire.com: CAN-FD zero-trust hardware security module, sub-1.5ms anti-replay filter, and PostgreSQL 16 immutable Merkle audit ledger.
+              Turnkey micro-APA asset transfer asset for Acquire.com: CAN-FD zero-trust hardware security module, sub-1.5ms anti-replay filter, and PostgreSQL 16 immutable Merkle audit ledger.
             </p>
 
             {/* Badges / Unboxed Monroney Specs with clear 14px floor */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <div className="flex items-center gap-2 rounded-md bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 text-sm font-semibold text-amber-400">
-                <span>Micro-APA Buyout: $45,000 USD</span>
+                <span>Micro-APA Asset Transfer: 20 kHz (0.48ms)</span>
               </div>
               <div className="flex items-center gap-2 rounded-md bg-neutral-800/80 border border-neutral-700 px-3 py-1.5 text-sm font-semibold text-neutral-200">
-                <span>Enterprise Valuation: $125,000 USD</span>
+                <span>Architecture Moat: PostgreSQL 16 + RLS</span>
               </div>
               <div className="flex items-center gap-2 rounded-md bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 text-sm font-semibold text-emerald-400">
                 <CheckCircle2 className="h-4 w-4" />

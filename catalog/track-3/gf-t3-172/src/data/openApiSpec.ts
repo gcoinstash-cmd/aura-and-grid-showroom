@@ -5,14 +5,14 @@
 
 export const OPENAPI_YAML = `openapi: 3.1.0
 info:
-  title: GF-T3-172 Lexus TX 500h DIRECT4 Swarm Engine
+  title: GF-T3-172 Heavy Overland Dynamics Platform Multi-Node High-Output Core DUAL_VECTOR_TORQUE Swarm Engine
   description: High-throughput low-latency telemetry ingestion, BFT quorum coordinator, and state broadcasting.
   version: 1.0.0-PROD
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://gf-t3-172-direct4-core-7v3x.a.run.app
+  - url: https://gf-t3-172-dual_vector_torque-core-7v3x.a.run.app
     description: Google Cloud Run Managed Production Cluster
 paths:
   /api/v1/swarm/telemetry/ingest:
@@ -39,7 +39,7 @@ paths:
   /api/v1/swarm/epochs/{epoch_id}:
     get:
       summary: Retrieve committed consensus epoch block
-      description: Returns finalized block state including SHA-256 Merkle root, quorum signatures, and computed DIRECT4 torque split vector.
+      description: Returns finalized block state including SHA-256 Merkle root, quorum signatures, and computed DUAL_VECTOR_TORQUE torque split vector.
       operationId: getEpochById
       parameters:
         - name: epoch_id
@@ -73,9 +73,9 @@ paths:
         '200':
           description: Vote registered in quorum matrix.
 
-  /api/v1/swarm/direct4/vector:
+  /api/v1/swarm/dual_vector_torque/vector:
     get:
-      summary: Get active DIRECT4 torque split ratio
+      summary: Get active DUAL_VECTOR_TORQUE torque split ratio
       description: High-speed endpoint returning instantaneous front/rear torque and kW power distribution.
       operationId: getActiveTorqueVector
       responses:
@@ -84,7 +84,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Direct4Vector'
+                $ref: '#/components/schemas/DualVectorTorqueVector'
 
 components:
   schemas:
@@ -136,7 +136,7 @@ components:
           type: integer
           example: 1731339138420000000
 
-    Direct4Vector:
+    DualVectorTorqueVector:
       type: object
       properties:
         front_ratio:
@@ -220,7 +220,7 @@ export const API_ENDPOINTS: ApiEndpoint[] = [
     responseSample: {
       status: 'COMMITTED_IN_EPOCH',
       epoch_id: 1048581,
-      direct4_split: {
+      dual_vector_torque_split: {
         front_ratio: 0.42,
         rear_ratio: 0.58,
         front_kw: 114.66,
@@ -266,8 +266,8 @@ export const API_ENDPOINTS: ApiEndpoint[] = [
   },
   {
     method: 'GET',
-    path: '/api/v1/swarm/direct4/vector',
-    summary: 'Read Active DIRECT4 Split Vector',
+    path: '/api/v1/swarm/dual_vector_torque/vector',
+    summary: 'Read Active DUAL_VECTOR_TORQUE Split Vector',
     description: 'Real-time telemetry readout of instantaneous front/rear motor output and dynamic bias mode.',
     responseSample: {
       front_ratio: 0.35,
@@ -283,7 +283,7 @@ export const API_ENDPOINTS: ApiEndpoint[] = [
     method: 'WSS',
     path: '/ws/v1/swarm/telemetry-stream',
     summary: 'Real-time Swarm Telemetry WebSocket (100 Hz)',
-    description: 'Low-overhead binary/JSON WebSocket framing streaming live epoch proposals, consensus phase steps, and DIRECT4 splits.',
+    description: 'Low-overhead binary/JSON WebSocket framing streaming live epoch proposals, consensus phase steps, and DUAL_VECTOR_TORQUE splits.',
     responseSample: {
       event: 'EPOCH_COMMITTED',
       epoch_id: 1048581,

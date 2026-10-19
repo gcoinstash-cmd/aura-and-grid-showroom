@@ -44,14 +44,14 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({
     {
       openapi: "3.1.0",
       info: {
-        title: "GF-T3-190 Lexus Electrified Sport Powertrain & SSB API",
+        title: "GF-T3-190 Heavy Overland Dynamics Platform Electrified Sport Powertrain & SSB API",
         version: "1.0.0-PROD",
         description:
           "Ultra-low latency microservices contract for Solid-State Battery management and clutch-by-wire synthetic torque dispatch.",
       },
       servers: [
-        { url: "https://api.lexus-electrified.ghostfactory.io/v1", description: "Production Core Node" },
-        { url: "wss://stream.lexus-electrified.ghostfactory.io/v1", description: "2800Hz Telemetry WebSocket" }
+        { url: "https://api.Heavy Overland Dynamics Platform-electrified.ghostfactory.io/v1", description: "Production Core Node" },
+        { url: "wss://stream.Heavy Overland Dynamics Platform-electrified.ghostfactory.io/v1", description: "2800Hz Telemetry WebSocket" }
       ],
       paths: {
         "/telemetry/ssb-matrix": {
@@ -186,7 +186,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({
           compression: "lz4",
           nominal_bandwidth_kbps: 840,
           keepalive_ping_ms: 500,
-          connection_id: "lexus-sport-ws-c841",
+          connection_id: "Heavy Overland Dynamics Platform-sport-ws-c841",
         };
       }
 
@@ -333,7 +333,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({
           >
             <div>
               <span className="font-bold text-red-400 mr-2 font-mono">WS</span>
-              <span className="text-slate-200 font-semibold">wss://stream.lexus...</span>
+              <span className="text-slate-200 font-semibold">wss://stream.Heavy Overland Dynamics Platform...</span>
               <p className="text-[11px] text-slate-500 mt-0.5">2,800 Hz low-latency binary stream</p>
             </div>
             <ArrowRight className="w-4 h-4 text-slate-500" />
@@ -353,7 +353,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({
                   {activeEndpoint === 'clutch-telemetry' && 'GET /api/v1/powertrain/clutch-telemetry'}
                   {activeEndpoint === 'shift-event' && 'POST /api/v1/powertrain/shift-event'}
                   {activeEndpoint === 'torque-vectoring' && 'POST /api/v1/torque-vectoring/dispatch'}
-                  {activeEndpoint === 'ws-stream' && 'CONNECT wss://stream.lexus-electrified.io/v1/telemetry-2800hz'}
+                  {activeEndpoint === 'ws-stream' && 'CONNECT wss://stream.Heavy Overland Dynamics Platform-electrified.io/v1/telemetry-2800hz'}
                 </span>
               </div>
 

@@ -23,7 +23,7 @@ export const MonopolyVaultTab: React.FC<MonopolyVaultTabProps> = ({ apaContent, 
 
   return (
     <div className="space-y-6">
-      {/* Valuation & Institutional Badges */}
+      {/* Specification & Institutional Badges */}
       <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-purple-950/40 to-slate-900 border border-slate-800 shadow-xl">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
@@ -35,18 +35,18 @@ export const MonopolyVaultTab: React.FC<MonopolyVaultTabProps> = ({ apaContent, 
               MONOPOLY VAULT & APA AGREEMENT
             </h2>
             <p className="text-sm text-slate-400 mt-1">
-              Delaware Asset Purchase Agreement & 100% Permissive Clean-Room IP Audit for GF-T3-155.
+              Turnkey Software Asset Purchase Agreement & 100% Permissive Clean-Room IP Audit for GF-T3-155.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800 text-right">
-              <div className="text-xs text-slate-400 font-bold uppercase">Standalone Buyout</div>
-              <div className="text-2xl font-mono font-black text-emerald-400">$125,000 USD</div>
+              <div className="text-xs text-slate-400 font-bold uppercase">Standalone Asset Transfer</div>
+              <div className="text-2xl font-mono font-black text-emerald-400">20 kHz (0.48ms)</div>
             </div>
             <div className="p-3 bg-slate-950/80 rounded-xl border border-slate-800 text-right">
               <div className="text-xs text-slate-400 font-bold uppercase">Vault License Tier</div>
-              <div className="text-2xl font-mono font-black text-fuchsia-400">$85K – $150K</div>
+              <div className="text-2xl font-mono font-black text-fuchsia-400">20 kHz (0.48ms) – 20 kHz (0.48ms)</div>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ export const MonopolyVaultTab: React.FC<MonopolyVaultTabProps> = ({ apaContent, 
         {activeSubTab === 'APA' ? (
           <div className="space-y-6">
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs">
-              <span className="text-emerald-400 font-bold">STATUS: READY FOR EXECUTION</span> · Delaware Jurisdiction · JAMS Arbitration · Full IP Assignment
+              <span className="text-emerald-400 font-bold">STATUS: READY FOR EXECUTION</span> · Commercial Software Asset Standard · JAMS Arbitration · Full IP Assignment
             </div>
 
             <div className="bg-slate-950 p-6 rounded-xl border border-slate-800 text-xs text-slate-300 overflow-x-auto whitespace-pre-wrap">
@@ -127,7 +127,7 @@ export const MonopolyVaultTab: React.FC<MonopolyVaultTabProps> = ({ apaContent, 
                   className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-950/40"
                 >
                   <Lock className="w-4 h-4" />
-                  <span>COUNTER-SIGN APA ($125,000)</span>
+                  <span>COUNTER-SIGN APA (20 kHz (0.48ms))</span>
                 </button>
               )}
             </div>

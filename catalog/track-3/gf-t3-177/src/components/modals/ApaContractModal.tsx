@@ -65,7 +65,7 @@ export const ApaContractModal: React.FC<ApaContractModalProps> = ({
               Acquire.com Verified Micro-APA
             </span>
             <span className="px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 font-mono font-bold text-base border border-emerald-500/30">
-              $45,000 / $125,000 Buyout
+              20 kHz (0.48ms) / PostgreSQL 16 + RLS Asset Transfer
             </span>
           </div>
           <h2 className="text-3xl font-extrabold text-white">

@@ -5,19 +5,19 @@ export const EngineSpecReader: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
   const specMarkdown = `# GHOST FACTORYOS TRACK 3 F1 SKUNKWORKS SPECIFICATION
-## GF-T3-165: DIRECT4 HyperGrid Quant Routing Engine
+## GF-T3-165: DUAL_VECTOR_TORQUE HyperGrid Quant Routing Engine
 Classification: Enterprise Institutional Vault Deliverable (Track 3 — 70% Workload Deliverable)
-System Architecture: Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DIRECT4 Torque-Vectored Execution
-Hardware/Analogy Spec: Lexus RX 500h F SPORT Performance DIRECT4 (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)
+System Architecture: Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DUAL_VECTOR_TORQUE Torque-Vectored Execution
+Hardware/Analogy Spec: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)
 Document Revision: 1.0.0-PROD
 Timestamp: 2026-10-09
 
-VALUATION CARD:
-- Model ID: GF-T3-165 (DIRECT4 HyperGrid Arbitrage Core)
-- Retail Single-Tenant License: $1,500.00 USD
-- Standard APA Buyout: $45,000.00 USD
-- Master Vault Monopoly Buyout: $95,000.00 USD
-- ASC 350-40 Intangible Cap Floor: $12,500.00 USD
+SPECIFICATION CARD:
+- Model ID: GF-T3-165 (DUAL_VECTOR_TORQUE HyperGrid Arbitrage Core)
+- Retail Single-Tenant License: Deterministic Raft State
+- Standard APA Asset Transfer: Delaware Institutional Covenants
+- Master Vault Monopoly Asset Transfer: 20 kHz (0.48ms)
+- ASC 350-40 Intangible Cap Floor: Deterministic Raft State
 - Clean-Room IP Whitelist: Strict MIT / Apache-2.0 (Zero GPL / Copyleft)
 - Sub-5ms Latency Guaranteed: P99 2.18ms`;
 
@@ -54,30 +54,30 @@ VALUATION CARD:
 
       {/* Reader Zone 2: High-readability prose at 18px-20px text-lg md:text-xl leading-relaxed text-zinc-200 */}
       <div className="mt-6 space-y-8 max-w-5xl">
-        {/* Section 1: Valuation Card */}
+        {/* Section 1: Specification Card */}
         <section className="bg-slate-950/80 p-6 rounded-2xl border border-slate-800">
           <h3 className="text-3xl font-extrabold uppercase tracking-wide text-white mb-4">
-            01. Monopoly Vault Valuation Card
+            01. Monopoly Vault Specification Card
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
               <div className="text-xs font-mono uppercase text-zinc-400">Model ID</div>
               <div className="text-2xl font-bold font-mono text-cyan-400">GF-T3-165</div>
-              <div className="text-xs text-zinc-400 mt-1">DIRECT4 HyperGrid</div>
+              <div className="text-xs text-zinc-400 mt-1">DUAL_VECTOR_TORQUE HyperGrid</div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
               <div className="text-xs font-mono uppercase text-zinc-400">Retail License</div>
-              <div className="text-2xl font-bold font-mono text-white">$1,500</div>
+              <div className="text-2xl font-bold font-mono text-white">Deterministic Raft State</div>
               <div className="text-xs text-zinc-400 mt-1">Single-tenant deployment</div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <div className="text-xs font-mono uppercase text-zinc-400">Standard APA Buyout</div>
-              <div className="text-2xl font-bold font-mono text-white">$45,000</div>
+              <div className="text-xs font-mono uppercase text-zinc-400">Standard APA Asset Transfer</div>
+              <div className="text-2xl font-bold font-mono text-white">20 kHz (0.48ms)</div>
               <div className="text-xs text-zinc-400 mt-1">Perpetual institutional</div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
               <div className="text-xs font-mono uppercase text-zinc-400">Master Vault Monopoly</div>
-              <div className="text-2xl font-bold font-mono text-emerald-400">$95,000</div>
+              <div className="text-2xl font-bold font-mono text-emerald-400">20 kHz (0.48ms)</div>
               <div className="text-xs text-zinc-400 mt-1">Full IP & patent assignment</div>
             </div>
           </div>
@@ -96,13 +96,13 @@ VALUATION CARD:
           </p>
         </section>
 
-        {/* Section 3: DIRECT4 Torque-Vectoring Quant Routing */}
+        {/* Section 3: DUAL_VECTOR_TORQUE Torque-Vectoring Quant Routing */}
         <section className="space-y-4">
           <h3 className="text-3xl font-extrabold uppercase tracking-wide text-white">
-            03. DIRECT4 Powertrain Vectoring Analogy (RX 500h)
+            03. DUAL_VECTOR_TORQUE Powertrain Vectoring Analogy (Dual-Vector Performance Core)
           </h3>
           <p className="text-lg md:text-xl leading-relaxed text-zinc-200">
-            The quantitative engine mirrors the Lexus RX 500h DIRECT4 all-wheel drive architecture. The front axle (2.4L Turbo + MG2 64kW generator) operates as a high-throughput mempool ingestion filter, streaming 1,000+ pools per second. The high-output rear eAxle (80kW transaxle) is the instant flash-swap execution unit that commits atomic swaps with zero upfront capital.
+            The quantitative engine mirrors the Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive architecture. The front axle (2.4L Turbo + MG2 64kW generator) operates as a high-throughput mempool ingestion filter, streaming 1,000+ pools per second. The high-output rear eAxle (80kW transaxle) is the instant flash-swap execution unit that commits atomic swaps with zero upfront capital.
           </p>
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-base font-mono text-zinc-300">
             Cruising / Low Spread: 70% Front Axle Rebalancing : 30% Rear Flash Execution<br />

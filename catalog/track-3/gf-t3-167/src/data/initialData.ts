@@ -22,7 +22,7 @@ export const INITIAL_TICKS: TradeTick[] = [
   {
     sequenceId: 1000188,
     timestamp: '2026-10-10T21:28:40.104Z',
-    symbol: 'LC500-DYN',
+    symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
     side: 'BUY',
     price: 104525.00,
     quantity: 12,
@@ -34,7 +34,7 @@ export const INITIAL_TICKS: TradeTick[] = [
   {
     sequenceId: 1000189,
     timestamp: '2026-10-10T21:28:45.312Z',
-    symbol: 'LC500-DYN',
+    symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
     side: 'SELL',
     price: 104525.00,
     quantity: 8,
@@ -46,7 +46,7 @@ export const INITIAL_TICKS: TradeTick[] = [
   {
     sequenceId: 1000190,
     timestamp: '2026-10-10T21:29:12.780Z',
-    symbol: 'LC500-DYN',
+    symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
     side: 'BUY',
     price: 104530.00,
     quantity: 15,
@@ -58,7 +58,7 @@ export const INITIAL_TICKS: TradeTick[] = [
   {
     sequenceId: 1000191,
     timestamp: '2026-10-10T21:29:44.205Z',
-    symbol: 'LC500-DYN',
+    symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
     side: 'BUY',
     price: 104530.00,
     quantity: 6,
@@ -70,7 +70,7 @@ export const INITIAL_TICKS: TradeTick[] = [
   {
     sequenceId: 1000192,
     timestamp: '2026-10-10T21:30:02.891Z',
-    symbol: 'LC500-DYN',
+    symbol: 'High-Aero Grand Touring Telemetry Core-DYN',
     side: 'SELL',
     price: 104525.00,
     quantity: 20,
@@ -108,7 +108,7 @@ export const INITIAL_AUDIT_LOGS: AuditLogEntry[] = [
     category: 'APA_ESCROW',
     actor: 'Acquire.com Escrow Interface',
     action: 'Draft Asset Purchase Agreement Vaulted',
-    details: 'Asset ID GF-T3-167 entered escrow stage. Buyout price: $45,000 USD. Awaiting Dual-Key.',
+    details: 'Asset ID GF-T3-167 entered escrow stage. Reference Core: 20 kHz (0.48ms). Awaiting Dual-Key.',
     hash: '0x77ee018cb34...',
     status: 'VERIFIED',
   },
@@ -128,8 +128,8 @@ export const INITIAL_NOTIFICATIONS: SystemNotification[] = [
   {
     id: 'notif_1',
     timestamp: '2026-10-10T21:30:00Z',
-    title: 'GF-T3-167 Ready for Buyout',
-    message: 'Lexus LC 500 Dynamic Core v1.0.0-PROD verified on Acquire.com Micro-APA Escrow.',
+    title: 'GF-T3-167 Ready for Asset Transfer',
+    message: 'Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD verified on Acquire.com Micro-APA Escrow.',
     level: 'success',
     read: false,
   },

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { ShieldCheck, FileText, CheckCircle2, Copy, Check, DollarSign, Award } from 'lucide-react';
 
 const APA_LEGAL_AGREEMENT = `# =====================================================================
-# ASSET PURCHASE AGREEMENT (DELAWARE JURISDICTION)
+# ASSET PURCHASE AGREEMENT (Commercial Software Asset Standard)
 # ACQUIRE.COM MICRO-APA DELIVERABLE
-# ASSET IDENTIFIER: GF-T3-194 (Lexus LX 600 F SPORT Performance Core)
+# ASSET IDENTIFIER: GF-T3-194 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
 # =====================================================================
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is executed and entered into as of October 12, 2026, by and between:
@@ -12,7 +12,7 @@ This ASSET PURCHASE AGREEMENT (this "Agreement") is executed and entered into as
 SELLER: Ghost FactoryOS Skunkworks Fleet Division ("Seller"), a Delaware entity; and
 BUYER: The Acquiring Institutional Counterparty / Sovereign Acquirer ("Buyer") via Acquire.com Escrow.
 
-WHEREAS, Seller has engineered and constructed the turnkey, clean-room software asset known as "GF-T3-194: Lexus LX 600 F SPORT Performance Core", comprising 4-wheel electro-hydraulic Active Height Control (AHC) algorithms, multi-terrain nitrogen accumulator modulation state machines, partitioned PostgreSQL 16 HMAC ledger schemas, and Google Cloud Run deployment harnesses (collectively, the "Acquired Assets"); and
+WHEREAS, Seller has engineered and constructed the turnkey, clean-room software asset known as "GF-T3-194: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core", comprising 4-wheel electro-hydraulic Active Height Control (AHC) algorithms, multi-terrain nitrogen accumulator modulation state machines, partitioned PostgreSQL 16 HMAC ledger schemas, and Google Cloud Run deployment harnesses (collectively, the "Acquired Assets"); and
 
 WHEREAS, Buyer desires to acquire all right, title, interest, and intellectual property in and to the Acquired Assets free and clear of all liens and encumbrances.
 
@@ -26,14 +26,14 @@ Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer:
 (d) Production multi-stage non-root Dockerfile and PyTest suite with >94% test coverage;
 (e) All associated copyrights, patents, trade secrets, and documentation.
 
-2. PURCHASE PRICE AND ESCROW TERMS
-(a) Standard Micro-APA Buyout: Forty-Five Thousand United States Dollars ($45,000 USD); or
-(b) Enterprise Institutional Buyout: One Hundred Twenty-Five Thousand United States Dollars ($125,000 USD), including 12 months engineering advisory and custom OEM integration support.
+2. DEPLOYMENT SPECIFICATION AND ESCROW TERMS
+(a) Standard Micro-APA Asset Transfer:Deterministic Telemetry Verified(20 kHz (0.48ms)); or
+(b) Enterprise Institutional Asset Transfer:Deterministic Telemetry Verified(PostgreSQL 16 + RLS), including 12 months engineering advisory and custom OEM integration support.
 (c) Closing Mechanism: All funds shall be held in Escrow via Acquire.com / Escrow.com and disbursed immediately upon verification of GitHub repository transfer and HMAC cryptographic key rotation.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
 Seller represents, warrants, and covenants that:
-(a) Clean-Room Genesis: All code was written from clean-room technical specifications without reference to infringing proprietary reverse-engineered Toyota or Lexus factory binary dumps;
+(a) Clean-Room Genesis: All code was written from clean-room technical specifications without reference to infringing proprietary reverse-engineered Toyota or Heavy Overland Dynamics Platform factory binary dumps;
 (b) Zero Copyleft Contamination: The codebase contains 0.0% GPL, AGPL, SSPL, or copyleft-licensed dependencies. All libraries conform strictly to MIT, Apache 2.0, or BSD permissive standards;
 (c) Non-Infringement: The Acquired Assets do not infringe, misappropriate, or violate any third-party intellectual property or patent claim;
 (d) Free of Backdoors: The software contains no hidden backdoors, logic bombs, or telemetry exfiltration vectors.
@@ -49,7 +49,7 @@ EXHIBIT B: BILL OF SALE AND ASSIGNMENT OF INTELLECTUAL PROPERTY
 Seller irrevocably assigns and transfers worldwide patent rights, source copyrights, and trade-dress designs to Buyer in perpetuity.
 
 EXHIBIT C: TECHNICAL ESCROW HANDOFF PROTOCOL
-Step 1: Escrow verification of wire deposit ($45,000 / $125,000 USD).
+Step 1: Escrow verification of wire deposit (20 kHz (0.48ms) / PostgreSQL 16 + RLS).
 Step 2: Transfer of GitHub master repository ownership and container registry images.
 Step 3: Cryptographic rotation of HMAC-SHA256 master salt to Buyer's HSM.
 Step 4: Formal release of escrow funds to Seller.
@@ -68,13 +68,13 @@ export const ApaCovenantTab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Valuation Tier & Escrow Summary */}
+      {/* Specification Tier & Escrow Summary */}
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 shadow-xl">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
           <div>
             <h2 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
               <ShieldCheck className="w-7 h-7 text-emerald-400" />
-              Acquire.com Delaware Micro-APA Buyout Covenant
+              Acquire.com Delaware Micro-APA Asset Transfer Covenant
             </h2>
             <p className="text-slate-400 text-base mt-1">
               Legally binding micro-Asset Purchase Agreement (APA) drafted under Delaware law with clean-room intellectual property warranty and bill of sale.
@@ -112,14 +112,14 @@ export const ApaCovenantTab: React.FC = () => {
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-base font-bold text-slate-300">
-                Standard Turnkey Buyout
+                Standard Turnkey Asset Transfer
               </span>
               <span className="bg-amber-500/20 text-amber-400 text-base font-mono font-bold px-2 py-0.5 rounded">
                 READY TO CLOSE
               </span>
             </div>
             <div className="text-4xl font-black text-white font-mono tabular-nums my-2">
-              $45,000 <span className="text-2xl font-bold text-slate-400">USD</span>
+              20 kHz (0.48ms) <span className="text-2xl font-bold text-slate-400">USD</span>
             </div>
             <p className="text-slate-400 text-base mb-3">
               Full IP assignment, code repositories, PostgreSQL schemas, and Docker deployment artifacts.
@@ -147,7 +147,7 @@ export const ApaCovenantTab: React.FC = () => {
               </span>
             </div>
             <div className="text-4xl font-black text-white font-mono tabular-nums my-2">
-              $125,000 <span className="text-2xl font-bold text-slate-400">USD</span>
+              PostgreSQL 16 + RLS <span className="text-2xl font-bold text-slate-400">USD</span>
             </div>
             <p className="text-slate-400 text-base mb-3">
               Includes 12 months priority OEM telemetry support, custom CAN bus hardware adapters, and SLA guarantees.
@@ -166,7 +166,7 @@ export const ApaCovenantTab: React.FC = () => {
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
             {[
-              { num: 1, title: 'Escrow Funded', desc: 'Buyer deposits buyout amount' },
+              { num: 1, title: 'Escrow Funded', desc: 'Buyer deposits asset transfer amount' },
               { num: 2, title: 'Code Delivered', desc: 'GitHub repo & Docker image transferred' },
               { num: 3, title: 'Key Rotation', desc: 'HMAC salt re-keyed to Buyer HSM' },
               { num: 4, title: 'Escrow Released', desc: 'Delaware Bill of Sale sealed' },
@@ -198,7 +198,7 @@ export const ApaCovenantTab: React.FC = () => {
       <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 shadow-xl">
         <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
           <FileText className="w-5 h-5 text-indigo-400" />
-          Full Delaware Asset Purchase Agreement & Bill of Sale Text
+          Full Turnkey Software Asset Purchase Agreement & Bill of Sale Text
         </h3>
         <p className="text-slate-400 text-base mb-4">
           Pre-drafted, enforceable institutional agreement ready for Acquire.com electronic signature.

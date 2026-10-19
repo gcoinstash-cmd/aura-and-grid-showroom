@@ -14,7 +14,7 @@ import { TabCloudRunHarness } from './components/tabs/TabCloudRunHarness';
 import { TabAPACovenant } from './components/tabs/TabAPACovenant';
 import { FxLMSSimulationModal } from './components/modals/FxLMSSimulationModal';
 import { VerifyLedgerModal } from './components/modals/VerifyLedgerModal';
-import { BuyoutOfferModal } from './components/modals/BuyoutOfferModal';
+import { TransferOfferModal } from './components/modals/TransferOfferModal';
 import { GF_T3_178_SPEC_MD } from './data/specDocument';
 import { Cpu, Database, Network, Cloud, FileCheck, Download } from 'lucide-react';
 
@@ -22,7 +22,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('fxlms');
   const [fxlmsModalOpen, setFxlmsModalOpen] = useState(false);
   const [verifyLedgerModalOpen, setVerifyLedgerModalOpen] = useState(false);
-  const [buyoutModalOpen, setBuyoutModalOpen] = useState(false);
+  const [transferModalOpen, setTransferModalOpen] = useState(false);
 
   // Live telemetry state
   const [telemetry, setTelemetry] = useState<TelemetryState>({
@@ -160,7 +160,7 @@ export default function App() {
 
           {activeTab === 'apa' && (
             <TabAPACovenant
-              onOpenBuyoutInquiry={() => setBuyoutModalOpen(true)}
+              onOpenTransferInquiry={() => setTransferModalOpen(true)}
               onExportSpec={handleExportSpec}
             />
           )}
@@ -173,7 +173,7 @@ export default function App() {
           <div>
             <span className="font-semibold text-slate-300">GF-T3-178 Flagship Core</span>
             <span className="mx-2">·</span>
-            <span>Target Platform: Lexus LS 500 Executive AWD Saloon</span>
+            <span>Target Platform: Heavy Overland Dynamics Platform LS 500 Executive AWD Saloon</span>
           </div>
 
           <div className="flex items-center gap-6">
@@ -187,10 +187,10 @@ export default function App() {
             </button>
             <button
               type="button"
-              onClick={() => setBuyoutModalOpen(true)}
+              onClick={() => setTransferModalOpen(true)}
               className="text-amber-400 hover:text-amber-300 transition-colors cursor-pointer font-semibold"
             >
-              Acquire.com Buyout Escrow ($45,000 USD)
+              Acquire.com Asset Transfer Escrow (20 kHz (0.48ms))
             </button>
           </div>
         </div>
@@ -207,9 +207,9 @@ export default function App() {
         onClose={() => setVerifyLedgerModalOpen(false)}
       />
 
-      <BuyoutOfferModal
-        isOpen={buyoutModalOpen}
-        onClose={() => setBuyoutModalOpen(false)}
+      <TransferOfferModal
+        isOpen={transferModalOpen}
+        onClose={() => setTransferModalOpen(false)}
         onExportSpec={handleExportSpec}
       />
     </div>

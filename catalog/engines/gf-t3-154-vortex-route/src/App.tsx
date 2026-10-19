@@ -233,8 +233,8 @@ export default function App() {
             <span className="font-semibold text-slate-400">TRACK 3 ARCHITECTURAL DELIVERABLE</span>
           </div>
           <div className="flex flex-wrap items-center gap-6">
-            <span>ANCHOR VALUATION: <strong className="text-amber-400 font-black text-base">$125,000 USD</strong></span>
-            <span>JURISDICTION: <strong className="text-slate-200 font-bold">DELAWARE LLC</strong></span>
+            <span>ANCHOR SPECIFICATION: <strong className="text-amber-400 font-black text-base">20 kHz (0.48ms)</strong></span>
+            <span>JURISDICTION: <strong className="text-slate-200 font-bold">Commercial Software Asset Standard</strong></span>
             <span>CLEAN-ROOM IP: <strong className="text-emerald-400 font-bold">100% PERMISSIVE</strong></span>
           </div>
         </div>

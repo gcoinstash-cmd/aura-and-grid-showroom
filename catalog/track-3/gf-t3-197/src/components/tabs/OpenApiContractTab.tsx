@@ -17,18 +17,18 @@ import {
 } from 'lucide-react';
 
 export const OpenApiContractTab: React.FC = () => {
-  const [activeEndpoint, setActiveEndpoint] = useState<'INGRESS' | 'ACTUATOR_STATUS' | 'DIRECT4_SPLIT' | 'WS_STREAM'>('INGRESS');
+  const [activeEndpoint, setActiveEndpoint] = useState<'INGRESS' | 'ACTUATOR_STATUS' | 'DUAL_VECTOR_TORQUE_SPLIT' | 'WS_STREAM'>('INGRESS');
   const [copiedContract, setCopiedContract] = useState(false);
   const [simulatingCall, setSimulatingCall] = useState(false);
   const [responsePayload, setResponsePayload] = useState<string | null>(null);
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: Lexus TX 500h F SPORT Dynamic Rear Steering & DIRECT4 Service
+  title: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Dynamic Rear Steering & DUAL_VECTOR_TORQUE Service
   version: 1.0.0-PROD
   description: >
     High-frequency CAN-bus translation, Dynamic Rear Steering (DRS) actuator commands,
-    and DIRECT4 torque vectoring telemetry engine for GF-T3-197.
+    and DUAL_VECTOR_TORQUE torque vectoring telemetry engine for GF-T3-197.
 servers:
   - url: https://gf-t3-197-telemetry-engine-a1b2c3.run.app
     description: Production Google Cloud Run Gateway (VPC-Secured)
@@ -64,9 +64,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ActuatorStatus'
 
-  /api/v1/telemetry/direct4/torque-split:
+  /api/v1/telemetry/dual_vector_torque/torque-split:
     post:
-      summary: Request DIRECT4 Front/Rear eAxle Power Distribution
+      summary: Request DUAL_VECTOR_TORQUE Front/Rear eAxle Power Distribution
       operationId: calculateTorqueSplit
       requestBody:
         required: true
@@ -117,8 +117,8 @@ components:
       required:
         - target_rear_steer_deg
         - phase
-        - direct4_front_pct
-        - direct4_rear_pct
+        - dual_vector_torque_front_pct
+        - dual_vector_torque_rear_pct
         - hmac_signature
       properties:
         target_rear_steer_deg:
@@ -129,10 +129,10 @@ components:
           type: string
           enum: [COUNTER_PHASE, IN_PHASE, NEUTRAL]
           example: IN_PHASE
-        direct4_front_pct:
+        dual_vector_torque_front_pct:
           type: integer
           example: 50
-        direct4_rear_pct:
+        dual_vector_torque_rear_pct:
           type: integer
           example: 50
         hmac_signature:
@@ -156,8 +156,8 @@ components:
               kinematic_gain: 0.88,
               turning_radius_m: 5.24,
               turning_radius_reduction_pct: 12.1,
-              direct4_front_pct: 75,
-              direct4_rear_pct: 25,
+              dual_vector_torque_front_pct: 75,
+              dual_vector_torque_rear_pct: 25,
               hmac_signature: '7d8f99e3a012bcf4e98d8214fa762110c73298a44b91f1a2384a6b291c98110b',
               ledger_persisted: true,
             },
@@ -184,7 +184,7 @@ components:
             2
           )
         );
-      } else if (activeEndpoint === 'DIRECT4_SPLIT') {
+      } else if (activeEndpoint === 'DUAL_VECTOR_TORQUE_SPLIT') {
         setResponsePayload(
           JSON.stringify(
             {
@@ -323,11 +323,11 @@ components:
               <button
                 type="button"
                 onClick={() => {
-                  setActiveEndpoint('DIRECT4_SPLIT');
+                  setActiveEndpoint('DUAL_VECTOR_TORQUE_SPLIT');
                   setResponsePayload(null);
                 }}
                 className={`w-full p-3 rounded-xl border text-left transition-all flex items-center justify-between cursor-pointer ${
-                  activeEndpoint === 'DIRECT4_SPLIT'
+                  activeEndpoint === 'DUAL_VECTOR_TORQUE_SPLIT'
                     ? 'bg-cyan-950/40 border-cyan-500/60 shadow-md'
                     : 'bg-slate-950 border-slate-800 hover:border-slate-700'
                 }`}
@@ -338,7 +338,7 @@ components:
                       POST
                     </span>
                     <span className="text-base font-mono font-semibold text-white">
-                      /api/v1/telemetry/direct4/torque-split
+                      /api/v1/telemetry/dual_vector_torque/torque-split
                     </span>
                   </div>
                   <p className="text-base text-slate-400 mt-1">

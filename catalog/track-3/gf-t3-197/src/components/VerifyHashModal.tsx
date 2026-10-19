@@ -73,7 +73,7 @@ export const VerifyHashModal: React.FC<VerifyHashModalProps> = ({
           <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-300 text-base leading-relaxed flex items-start gap-2.5">
             <ShieldCheck className="w-5 h-5 shrink-0 text-emerald-400 mt-0.5" />
             <span>
-              All DRS steering commands, vehicle velocities, and DIRECT4 torque splits are sealed into immutable PostgreSQL 16 append-only partition blocks.
+              All DRS steering commands, vehicle velocities, and DUAL_VECTOR_TORQUE torque splits are sealed into immutable PostgreSQL 16 append-only partition blocks.
             </span>
           </div>
         </div>

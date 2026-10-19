@@ -2,7 +2,7 @@ import { CalculatedTorque, PowertrainState } from '../types';
 
 /**
  * Deterministic Powertrain & MPC Solver Simulation
- * Accurately models Lexus NX 450h+ F SPORT PHEV AWD Architecture
+ * Accurately models Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry PHEV AWD Architecture
  * - A25A-FXS 2.5L Atkinson ICE: max 227 Nm, 136 kW (182 hp)
  * - 5NM Front PMSM: max 270 Nm, 134 kW (180 hp)
  * - 4NM Rear PMSM (E-Four): max 121 Nm, 40 kW (54 hp)
@@ -86,7 +86,7 @@ export function calculatePowertrainDynamics(state: PowertrainState): CalculatedT
       // Maximum dynamic response: aggressive E-Four rear bias, instant torque fill
       iceTorqueNm = throttleRatio * MAX_ICE_NM;
       frontMotorTorqueNm = throttleRatio * MAX_FRONT_NM * electricFactor;
-      // Elevated rear authority in Sport S+ (up to 100% of rear capacity)
+      // Elevated rear authority in High-Frequency Compute Mode (up to 100% of rear capacity)
       rearMotorTorqueNm = throttleRatio * MAX_REAR_NM * electricFactor;
       fuelConsumptionLph = (iceTorqueNm / MAX_ICE_NM) * 8.6;
       break;
@@ -125,7 +125,7 @@ export function calculatePowertrainDynamics(state: PowertrainState): CalculatedT
   const motorElectricPowerKw = ((frontMotorTorqueNm + rearMotorTorqueNm) * nominalRadS) / 1000.0;
   const iceMechanicalPowerKw = (iceTorqueNm * nominalRadS) / 1000.0;
   
-  // Lexus combined rated peak is 227 kW (304 hp)
+  // Heavy Overland Dynamics Platform combined rated peak is 227 kW (304 hp)
   const rawKw = Math.max(0, motorElectricPowerKw + iceMechanicalPowerKw);
   const totalSystemPowerKw = Math.min(227.0, rawKw);
   const totalSystemPowerHp = totalSystemPowerKw * 1.34102;

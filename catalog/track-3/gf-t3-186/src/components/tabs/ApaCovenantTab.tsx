@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import {
   FileText,
   ShieldCheck,
-  CheckCircle2,
-  DollarSign,
+  CheckCircle2,Deterministic Telemetry Verifiedign,
   Copy,
   Check,
   Lock,
@@ -18,12 +17,12 @@ export const ApaCovenantTab: React.FC = () => {
 
   // Interactive escrow checklist state
   const [checklist, setChecklist] = useState([
-    { id: 'escrow_fund', label: '1. Acquire.com Escrow Deposit ($45,000 USD buyer escrow lock confirmed)', done: true },
+    { id: 'escrow_fund', label: '1. Acquire.com Escrow Deposit (20 kHz (0.48ms) buyer escrow lock confirmed)', done: true },
     { id: 'cleanroom_cert', label: '2. Clean-Room IP Audit (0% Copyleft, MIT/BSD-3 only, zero AGPL/SSPL confirmed)', done: true },
     { id: 'git_transfer', label: '3. Full Git Repository Transfer (Root admin commit history handed to buyer organization)', done: true },
     { id: 'container_deploy', label: '4. Google Cloud Run Artifact Registry image re-tagging & DDL migration handover', done: false },
     { id: 'hmac_handshake', label: '5. Cryptographic Master HMAC Secret & PostgreSQL connection credential key exchange', done: false },
-    { id: 'escrow_release', label: '6. Final Technical Acceptance & Acquire Escrow Buyout Fund Disbursement', done: false },
+    { id: 'escrow_release', label: '6. Final Technical Acceptance & Acquire Escrow Asset Transfer Fund Disbursement', done: false },
   ]);
 
   const toggleChecklistItem = (id: string) => {
@@ -35,7 +34,7 @@ export const ApaCovenantTab: React.FC = () => {
   const completedCount = checklist.filter(c => c.done).length;
 
   const agreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-186 (LEXUS UX 300h F SPORT HANDLING CORE)
+ASSET IDENTIFIER: GF-T3-186 (Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry HANDLING CORE)
 
 This ASSET PURCHASE AGREEMENT ("Agreement") is entered into as of October 11, 2026, by and between the Seller ("Ghost FactoryOS Architect") and the Buyer via the Acquire.com Institutional Acquisition Platform.
 
@@ -53,8 +52,8 @@ NOW, THEREFORE, for good and valuable consideration, the receipt and sufficiency
     (d) Turnkey Dockerfile, Google Cloud Run deployment manifests, and PyTest verification test suites;
     (e) All documentation, architecture diagrams, and mathematical kinematic derivations.
 
-2. PURCHASE PRICE & ESCROW DISBURSEMENT
-2.1 Purchase Price: The total buyout consideration for the Purchased Assets is Forty-Five Thousand United States Dollars ($45,000 USD) for the Single Turnkey Buyout, or One Hundred Twenty-Five Thousand United States Dollars ($125,000 USD) for the Enterprise Multi-Tenant OEM License.
+2. DEPLOYMENT SPECIFICATION & ESCROW DISBURSEMENT
+2.1 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 2.2 Escrow Protocol: All funds shall be deposited with Acquire.com Escrow or Escrow.com and released upon satisfactory completion of the Technical Handoff Checklist.
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
@@ -71,11 +70,11 @@ NOW, THEREFORE, for good and valuable consideration, the receipt and sufficiency
 - Master Technical Documentation: GF_T3_186_SPEC.md
 
 5. GOVERNING LAW AND VENUE
-This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without giving effect to any choice of law principles.`;
+This Agreement shall be governed by and construed in accordance with the laws of the Standard Commercial Jurisdiction, without giving effect to any choice of law principles.`;
 
   const billOfSaleText = `EXHIBIT B: BILL OF SALE AND INSTRUMENT OF ASSIGNMENT
 
-FOR VALUABLE CONSIDERATION received, the undersigned Seller hereby unconditionally sells, grants, conveys, transfers, and assigns unto Buyer all worldwide right, title, and interest in and to the GF-T3-186 (Lexus UX 300h F SPORT Handling Core) software assets, mathematical algorithms, and IP documentation.
+FOR VALUABLE CONSIDERATION received, the undersigned Seller hereby unconditionally sells, grants, conveys, transfers, and assigns unto Buyer all worldwide right, title, and interest in and to the GF-T3-186 (Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry Handling Core) software assets, mathematical algorithms, and IP documentation.
 
 Seller warrants that it possesses full power and authority to effectuate this assignment, that the title conveyed is good, valid, and marketable, and that the assets are free and clear of all liens, claims, encumbrances, and third-party liabilities.
 
@@ -97,7 +96,7 @@ IN WITNESS WHEREOF, Seller has executed this Bill of Sale as of the Effective Da
               Acquire.com APA Covenant &amp; Escrow
             </h2>
             <p className="text-base text-slate-400 mt-1">
-              Delaware Micro-Asset Purchase Agreement ($45,000 USD Buyout / $125,000 USD Enterprise), Bill of Sale &amp; Clean-Room Escrow Protocol
+              Delaware Micro-Asset Purchase Agreement (20 kHz (0.48ms) Asset Transfer / PostgreSQL 16 + RLS), Bill of Sale &amp; Clean-Room Escrow Protocol
             </p>
           </div>
 
@@ -135,17 +134,17 @@ IN WITNESS WHEREOF, Seller has executed this Bill of Sale as of the Effective Da
           </div>
         </div>
 
-        {/* Valuation & Legal Warranties Strip */}
+        {/* Specification & Legal Warranties Strip */}
         <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
-            <span className="text-base font-bold text-slate-300">Turnkey Buyout Price</span>
-            <div className="text-3xl font-black text-amber-400 font-mono mt-1">$45,000 <span className="text-xl text-slate-400">USD</span></div>
+            <span className="text-base font-bold text-slate-300">Turnkey Reference Core</span>
+            <div className="text-3xl font-black text-amber-400 font-mono mt-1">20 kHz (0.48ms) <span className="text-xl text-slate-400">USD</span></div>
             <p className="text-base text-slate-500 mt-1">100% full IP assignment via Acquire Escrow</p>
           </div>
 
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800">
             <span className="text-base font-bold text-slate-300">Enterprise Multi-Tenant</span>
-            <div className="text-3xl font-black text-emerald-400 font-mono mt-1">$125,000 <span className="text-xl text-slate-400">USD</span></div>
+            <div className="text-3xl font-black text-emerald-400 font-mono mt-1">PostgreSQL 16 + RLS <span className="text-xl text-slate-400">USD</span></div>
             <p className="text-base text-slate-500 mt-1">Unlimited OEM dealership re-licensing</p>
           </div>
 
@@ -226,7 +225,7 @@ IN WITNESS WHEREOF, Seller has executed this Bill of Sale as of the Effective Da
                 ENTERPRISE_APA_AGREEMENT.md
               </span>
               <p className="text-base text-slate-400 mt-0.5">
-                Standard Delaware General Corporation Law Turnkey Asset Purchase Agreement
+                Standard Standard Commercial Code Turnkey Asset Purchase Agreement
               </p>
             </div>
             <button

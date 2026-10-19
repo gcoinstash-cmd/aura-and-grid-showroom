@@ -1,17 +1,17 @@
-# GF-T3-170 SPECIFICATION: LEXUS ES 350h EXECUTIVE QUIETUDE CORE
-**Model:** Lexus ES 350h Executive Quietude Core v1.0.0-PROD  
+# GF-T3-170 SPECIFICATION: Heavy Overland Dynamics Platform ES 350h EXECUTIVE QUIETUDE CORE
+**Model:** Heavy Overland Dynamics Platform ES 350h Executive Quietude Core v1.0.0-PROD  
 **Asset ID:** `GF-T3-170`  
-**Acquire.com Micro-APA Buyout:** $45,000 USD (Escrow.com / Wire)  
-**Enterprise Valuation Baseline:** $125,000 USD  
+**Production Service Engine:** 20 kHz (0.48ms) (Escrow.com / Wire)  
+**Architecture Moat Baseline:** PostgreSQL 16 + RLS  
 **License:** 100% Permissive MIT (Clean-Room Certified / 0% Copyleft)  
 **Audit Standard:** ISO/SAE 21434 Automotive Cybersecurity & UNECE R155 Compliant  
 
 ---
 
 ## 1. EXECUTIVE SUMMARY & ASSET CLASSIFICATION
-GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engineered for the Lexus ES 350h luxury hybrid platform. It provides hardware-grade message authentication for CAN-FD bus networks running at 5 Mbps data phase, delivering:
+GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engineered for the Heavy Overland Dynamics Platform ES 350h luxury hybrid platform. It provides hardware-grade message authentication for CAN-FD bus networks running at 5 Mbps data phase, delivering:
 1. **Ed25519 Zero-Trust Message Authentication:** Deterministic signing and verification of high-speed powertrain and acoustic cancellation frames at over 100,000 msg/sec.
-2. **Sub-1.5ms Replay Attack Defenses:** Constant-time sliding-window bitmask anti-replay engine ($O(1)$ amortized cost) eliminating man-in-the-middle frame injection.
+2. **Sub-1.5ms Replay Attack Defenses:** Constant-time sliding-window bitmask anti-replay engine ($O(1)$ amortized matrix) eliminating man-in-the-middle frame injection.
 3. **Partitioned PostgreSQL 16 Immutable Security Ledger:** Partitioned timeseries storage with Merkle tree checkpoints verifying tamper-proof chain of custody.
 4. **OpenAPI 3.1 & WebSocket Ingestion Gateway:** Low-overhead streaming protocol for fleet telematics and real-time remote diagnostics.
 5. **Turnkey Cloud Run Microservice:** Distroless container harness with non-root security context and 1-click `gcloud` deployment scripts.
@@ -23,7 +23,7 @@ GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engine
 ### 2.1 Vehicle In-Cabin & Powertrain Bus Topology
 ```
 +-----------------------------------------------------------------------------------+
-|                        LEXUS ES 350h EXECUTIVE HYBRID PLATFORM                    |
+|                        Heavy Overland Dynamics Platform ES 350h EXECUTIVE HYBRID PLATFORM                    |
 |                                                                                   |
 |  +-------------------+       +-------------------+       +---------------------+  |
 |  | ECU-ANC-CHAMBER   |       | ECU-HYBRID-INV    |       | ECU-ACOUSTIC-SEAL   |  |
@@ -78,7 +78,7 @@ $$S = (r + H(R \parallel A \parallel M) a) \pmod \ell$$
 $$\sigma = (R, S) \in \{0, 1\}^{512}$$
 
 Verification Criterion:
-$$8S B = 8R + 8 H(R \parallel A \parallel M) A$$
+20 kHz (0.48ms)S B = 8R + 8 H(R \parallel A \parallel M) A$$
 
 ### 3.2 Sliding-Window Anti-Replay Bitmask Filter ($O(1)$)
 Let $S_{head}$ be the highest sequence number verified, and $W$ be a 64-bit bitmask register ($W \in [0, 2^{64}-1]$).
@@ -90,14 +90,14 @@ For incoming sequence number $S_{in}$:
    $$\text{Else}: \quad W \leftarrow (W \ll \Delta) \mid 1$$
    $$S_{head} \leftarrow S_{in} \quad (\text{ACCEPTED})$$
 
-2. **If $S_{in} \le S_{head}$:**
+Step 2: **If $S_{in} \le S_{head}$:**
    $$\Delta = S_{head} - S_{in}$$
    $$\text{If } \Delta \ge 64: \quad \text{REJECT (STALE)}$$
    $$\text{If } (W \& (1 \ll \Delta)) \ne 0: \quad \text{REJECT (REPLAY)}$$
    $$W \leftarrow W \mid (1 \ll \Delta) \quad (\text{ACCEPTED)}$$
 
-### 3.3 Lexus Executive Quietude Dual-Microphone Kalman Filter
-For active cabin acoustic noise suppression across the Lexus ES 350h chassis:
+### 3.3 Heavy Overland Dynamics Platform Executive Quietude Dual-Microphone Kalman Filter
+For active cabin acoustic noise suppression across the Heavy Overland Dynamics Platform ES 350h chassis:
 $$\mathbf{x}_k = \mathbf{A} \mathbf{x}_{k-1} + \mathbf{B} \mathbf{u}_k + \mathbf{w}_k$$
 $$\mathbf{z}_k = \mathbf{H} \mathbf{x}_k + \mathbf{v}_k$$
 Kalman Gain:
@@ -190,7 +190,7 @@ CREATE INDEX idx_canfd_leaf_hash ON canfd_telemetry_ledger (merkle_leaf_hash);
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-170 Lexus ES 350h Executive Quietude Core Gateway
+  title: GF-T3-170 Heavy Overland Dynamics Platform ES 350h Executive Quietude Core Gateway
   version: 1.0.0-PROD
   description: High-throughput zero-trust automotive CAN-FD telemetry & HSM gateway.
 paths:
@@ -261,8 +261,8 @@ GF-T3-170 is 100% clean-room engineered. Zero GPL, AGPL, SSPL, or copyleft licen
 
 ## 7. INSTITUTIONAL M&A ASSET PURCHASE AGREEMENT (APA) SUMMARY
 **Acquire.com Deal Terms:**
-- **Purchase Price:** $45,000.00 USD cash via Escrow.com or direct Federal Reserve wire.
-- **Enterprise Replacement Valuation:** $125,000.00 USD.
+- **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
+- **Enterprise Replacement Specification: ** PostgreSQL 16 + RLS.
 - **Transferred Assets:** 100% exclusive worldwide intellectual property rights, source code, test suites, architecture blueprints, Dockerfiles, and PostgreSQL DDL.
 - **Seller Representations:** 100% clean-room provenance, zero open litigation, no encumbrances, zero third-party copyleft restrictions.
 - **Handoff Escrow Deliverables:** Master Git bundle, SHA-256 container hashes, Cloud Run deployment configurations, and signed Bill of Sale.

@@ -5,13 +5,13 @@
 
 import React from 'react';
 import { Cpu, Zap, Database, ShieldCheck, Check, Clock } from 'lucide-react';
-import { Direct4Telemetry, ConsensusPhase } from '../types/cockpit';
+import { DualVectorTorqueTelemetry, ConsensusPhase } from '../types/cockpit';
 
 interface TelemetryCardsProps {
   currentPhase: ConsensusPhase;
   activeEpoch: number;
   commitLatencyMs: number;
-  direct4: Direct4Telemetry;
+  dual_vector_torque: DualVectorTorqueTelemetry;
   merkleRoot: string;
   activeNodesCount: number;
 }
@@ -20,12 +20,12 @@ export const TelemetryCards: React.FC<TelemetryCardsProps> = ({
   currentPhase,
   activeEpoch,
   commitLatencyMs,
-  direct4,
+  dual_vector_torque,
   merkleRoot,
   activeNodesCount,
 }) => {
-  const frontPct = Math.round(direct4.frontTorquePct);
-  const rearPct = Math.round(direct4.rearTorquePct);
+  const frontPct = Math.round(dual_vector_torque.frontTorquePct);
+  const rearPct = Math.round(dual_vector_torque.rearTorquePct);
 
   return (
     <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -69,11 +69,11 @@ export const TelemetryCards: React.FC<TelemetryCardsProps> = ({
           </div>
         </div>
 
-        {/* Card 2: DIRECT4 Dual-Axle Split */}
+        {/* Card 2: DUAL_VECTOR_TORQUE Dual-Axle Split */}
         <div className="relative bg-slate-900/90 border border-slate-800 rounded-xl p-5 shadow-sm hover:border-slate-700 transition">
           <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
             <span className="text-slate-400 text-sm font-semibold tracking-wider uppercase font-mono">
-              DIRECT4 Dual-Axle Split
+              DUAL_VECTOR_TORQUE Dual-Axle Split
             </span>
             <span className="inline-flex items-center px-2.5 py-1 rounded bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-mono text-sm font-medium">
               Dynamic AWD
@@ -104,8 +104,8 @@ export const TelemetryCards: React.FC<TelemetryCardsProps> = ({
               />
             </div>
             <div className="flex justify-between items-center text-sm font-mono text-slate-400">
-              <span>Front {direct4.frontPowerKw.toFixed(0)} kW</span>
-              <span>Rear {direct4.rearPowerKw.toFixed(0)} kW</span>
+              <span>Front {dual_vector_torque.frontPowerKw.toFixed(0)} kW</span>
+              <span>Rear {dual_vector_torque.rearPowerKw.toFixed(0)} kW</span>
             </div>
           </div>
         </div>

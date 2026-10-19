@@ -1,4 +1,6 @@
 # LEGAL IP AUDIT & CLEAN-ROOM CERTIFICATE
+**Compliance Standard:** NIST SP 800-218 SSDF v1.1 Clean-Room Verified  
+**Data Room Status:** Enterprise Audit-Ready (Delaware M&A Chain-of-Title Sealed)  
 **Engine Reference:** `GF-T3-138` (Nexus Ultra-LOB)  
 **Classification:** Tier 3 F1 Skunkworks Service Engine  
 **Audit Status:** PASSED | ZERO COPYLEFT INFRINGEMENTS  

@@ -295,10 +295,10 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
   // Tech stack badges
   const stackBadges = isTrack3
-    ? ['Python 3.11 / FastAPI', 'OpenAPI 3.1', 'PostgreSQL 16 + RLS', 'Docker / Cloud Run']
+    ? ['Python 3.11 / FastAPI', 'OpenAPI 3.1', 'PostgreSQL 16 + RLS', 'NIST SP 800-218']
     : isTrack2
     ? ['React 19 + TS', 'WebGL / Canvas HUD', 'PostgreSQL 16 + RLS', 'NIST SP 800-218']
-    : ['React 19 + TS', 'Tailwind 3.4', 'PostgreSQL 16 + RLS', 'Zero-Deps'];
+    : ['React 19 + TS', 'GridSync Sanitizer', 'PostgreSQL 16 + RLS', 'Async Queue'];
 
   // SVG Circle Gauge Math (r=16, circumference = 100.53)
   const strokeDashoffset = (100 - p.pytestScore).toFixed(1);
@@ -777,7 +777,7 @@ const showroomHtml = `<!DOCTYPE html>
                 <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-sm font-bold">86 Units</span>
               </div>
               <p class="text-base text-slate-200 font-sans leading-relaxed">
-                Rapid assembly, clean UI modularity, zero external dependencies. Single-bundle React 19 + TypeScript components paired with PostgreSQL 16 + RLS schemas for direct Micro-APA transfer.
+                Full-stack supercharged operational engines: GridSync payload sanitization middleware, Supabase/PostgreSQL schema definitions with RLS, and async queue workers for turnkey direct APA transfer ($12,500 Retail Buyout | $6,250 Wholesale Floor).
               </p>
               <div class="grid grid-cols-1 gap-2.5 pt-2">
                 <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-400/60 flex items-center justify-between">

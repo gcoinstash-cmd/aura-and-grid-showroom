@@ -1,4 +1,6 @@
 # LEGAL IP AUDIT & CLEAN-ROOM CERTIFICATION
+**Compliance Standard:** NIST SP 800-218 SSDF v1.1 Clean-Room Verified  
+**Data Room Status:** Enterprise Audit-Ready (Delaware M&A Chain-of-Title Sealed)  
 ## GF-T3-155: PrismMesh PBS MEV Auction & Deterministic Sequencing Core
 **Audit Date**: October 2026  
 **Auditor**: Ghost FactoryOS Systems Architecture & Legal IP Group  

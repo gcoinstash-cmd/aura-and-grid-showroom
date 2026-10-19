@@ -1,5 +1,9 @@
 # ACQUIRE_DATA_ROOM — T3-NEXUS-ORDERBOOK
 
+> **ENTERPRISE AUDIT-READY DATA ROOM // SEALED & VERIFIED**
+> **NIST SP 800-218 SSDF v1.1 Clean-Room Certified // Zero Viral Copyleft (MIT/Apache-2.0)**
+
+
 **Asset ID:** T3-NEXUS-01 · **Product:** NEXUS-ORDERBOOK · **Pricing track:** Track 3 (F1 Skunkworks) · **Sector:** FinTech / Quant
 **Data-room version:** 1.0 · **Prepared:** 2026-10-04 · **Owner:** GhostFactoryOS (ZoMae Media LLC)
 

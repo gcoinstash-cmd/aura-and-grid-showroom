@@ -55,23 +55,51 @@ async function promptUser(query) {
 async function main() {
   banner();
 
-  const isNonInteractive = process.argv.includes('--non-interactive') || process.argv.includes('--auto') || !process.stdin.isTTY;
+  const isDryRun = process.argv.includes('--dry-run');
+  const isNonInteractive = isDryRun || process.argv.includes('--non-interactive') || process.argv.includes('--auto') || !process.stdin.isTTY;
 
+  // Parse --unit or --units
   let unitIds = [];
-  if (isNonInteractive) {
-    const unitArg = process.argv.find(a => a.startsWith('--units='));
-    if (unitArg) {
-      unitIds = unitArg.split('=')[1].split(',').map(s => s.trim());
-    } else {
-      unitIds = ['GF-T2-201', 'GF-T2-202', 'GF-T3-203'];
+  for (let i = 0; i < process.argv.length; i++) {
+    const arg = process.argv[i];
+    if (arg === '--unit' || arg === '--units') {
+      if (process.argv[i + 1] && !process.argv[i + 1].startsWith('--')) {
+        unitIds = process.argv[i + 1].split(',').map(s => s.trim());
+      }
+    } else if (arg.startsWith('--unit=') || arg.startsWith('--units=')) {
+      unitIds = arg.split('=')[1].split(',').map(s => s.trim());
     }
-    console.log(`${SLATE}Running in automated execution mode for units: ${unitIds.join(', ')}${RESET}`);
-  } else {
-    console.log(`${BOLD}Enter the 3 target Chassis Asset IDs scheduled for today's assembly:${RESET}`);
-    const inputUnits = await promptUser(`${CYAN}Chassis IDs (comma-separated, default: GF-T2-201, GF-T2-202, GF-T3-203): ${RESET}`);
-    unitIds = inputUnits
-      ? inputUnits.split(',').map(u => u.trim())
-      : ['GF-T2-201', 'GF-T2-202', 'GF-T3-203'];
+  }
+
+  // Parse --tier
+  let tier = 'Track 1';
+  for (let i = 0; i < process.argv.length; i++) {
+    const arg = process.argv[i];
+    if (arg === '--tier') {
+      if (process.argv[i + 1] && !process.argv[i + 1].startsWith('--')) {
+        tier = process.argv[i + 1].trim();
+      }
+    } else if (arg.startsWith('--tier=')) {
+      tier = arg.split('=')[1].trim();
+    }
+  }
+
+  if (unitIds.length === 0) {
+    if (isNonInteractive) {
+      unitIds = ['GF-T2-201', 'GF-T2-202', 'GF-T3-203'];
+    } else {
+      console.log(`${BOLD}Enter the target Chassis Asset IDs scheduled for assembly:${RESET}`);
+      const inputUnits = await promptUser(`${CYAN}Chassis IDs (comma-separated, default: GF-T2-201, GF-T2-202, GF-T3-203): ${RESET}`);
+      unitIds = inputUnits
+        ? inputUnits.split(',').map(u => u.trim())
+        : ['GF-T2-201', 'GF-T2-202', 'GF-T3-203'];
+    }
+  }
+
+  if (isDryRun) {
+    console.log(`${GREEN}${BOLD}[DRY-RUN VERIFICATION ACTIVE] Tier: ${tier} | Units: ${unitIds.join(', ')}${RESET}`);
+  } else if (isNonInteractive) {
+    console.log(`${SLATE}Running in automated execution mode for units: ${unitIds.join(', ')} (${tier})${RESET}`);
   }
 
   console.log(`\n${AMBER}Initiating Gate Verifications for Chassis Batch: [ ${unitIds.join(' | ')} ]${RESET}\n`);
@@ -140,6 +168,8 @@ async function main() {
   const logRecord = {
     batchId: `GF-BATCH-${dateStr}`,
     assetIds: unitIds,
+    tier,
+    dryRun: isDryRun,
     commitTimestamp: now.toISOString(),
     cleanRoomIpVerification: 'Certified 100% Permissive Open-Source Stack (MIT / Apache 2.0 / Zero Viral Copyleft)',
     nistSp800218Compliance: 'VERIFIED // SSDF v1.1 Alignment Passed',
@@ -157,6 +187,7 @@ async function main() {
 
 **Batch ID:** \`${logRecord.batchId}\`  
 **Target Units:** ${unitIds.map(u => `\`${u}\``).join(', ')}  
+**Tier Classification:** \`${tier}\` (${isDryRun ? 'DRY-RUN VERIFICATION' : 'PRODUCTION'})  
 **Timestamp:** \`${now.toISOString()}\`  
 **Overall Status:** **${logRecord.overallAssemblyStatus}**  
 **Clean-Room IP:** ${logRecord.cleanRoomIpVerification}  

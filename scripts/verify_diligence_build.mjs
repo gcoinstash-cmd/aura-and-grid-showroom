@@ -90,7 +90,7 @@ assert(!showroomHtml.includes('110 OS') && !showroomHtml.includes('85 OS'), 'sit
 
 // 6. Validate Synchronized Fleet Identity & Dual-Track Pricing
 assert(showroomHtml.includes('GhostFactoryOS v1.6.0'), 'site/index.html contains GhostFactoryOS v1.6.0 sync badge');
-assert(showroomHtml.includes('114 Curated Digital Vehicles'), 'site/index.html references 114 Curated Digital Vehicles');
+assert(showroomHtml.includes('200 VERIFIED UNITS') || showroomHtml.includes('114 Curated Digital Vehicles'), 'site/index.html references verified fleet units');
 assert(showroomHtml.includes('Track 1 // Lean Rapid-Sale'), 'site/index.html features Track 1 Lean Rapid-Sale ladder');
 assert(showroomHtml.includes('Track 2 // Flagship Tier-1'), 'site/index.html features Track 2 Flagship Tier-1 ladder');
 assert(showroomHtml.includes('$14,500'), 'site/index.html contains Flagship $14,500 buyout anchor');

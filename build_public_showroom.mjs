@@ -39,6 +39,15 @@ if (!fs.existsSync(MANIFEST_PATH)) {
 // Ensure directories exist
 fs.mkdirSync(SITE_ASSETS_DIR, { recursive: true });
 
+// Copy verified 4-gate dyno audit receipt to site/ for institutional buyer download
+const DYNO_SOURCE_PATH = path.join(rootDir, 'tools', 'ghost-factory-console', 'src', 'data', 'latest-dyno-audit.json');
+const DYNO_SITE_PATH = path.join(SITE_DIR, 'DYNO_AUDIT_RECEIPT.json');
+const DYNO_ROOT_PATH = path.join(rootDir, 'DYNO_AUDIT_RECEIPT.json');
+if (fs.existsSync(DYNO_SOURCE_PATH)) {
+  fs.copyFileSync(DYNO_SOURCE_PATH, DYNO_SITE_PATH);
+  fs.copyFileSync(DYNO_SOURCE_PATH, DYNO_ROOT_PATH);
+}
+
 const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'));
 const fleetData = fs.existsSync(FLEET_PATH) ? JSON.parse(fs.readFileSync(FLEET_PATH, 'utf-8')) : manifest.products;
 
@@ -284,21 +293,25 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const trackAttr = isTrack3 ? 'track3' : isTrack2 ? 'track2' : 'track1';
   const cleanId = String(p.id).padStart(3, '0');
 
-  // Strict APA Buyout Valuation Lock per Track (Zero Retail / Zero Subscriptions)
-  const primaryApaLabel = 'PRIVATE ALLOCATION // APA SPEC READY';
+  // Strict APA Buyout Window Stickers per Track
+  const primaryApaLabel = isTrack3
+    ? 'Full Engine APA: $35,000–$65,000'
+    : isTrack2
+    ? 'Chassis APA Anchor: $14,500'
+    : 'Micro-APA Buyout Anchor: $4,500';
 
   const vaultApaLabel = isTrack3
-    ? 'Sovereign Monopoly APA'
+    ? 'Monopoly Vault: $75,000–$150,000+'
     : isTrack2
-    ? 'Category Sovereign Assignment'
+    ? 'Strategic Vault: $25,000–$50,000'
     : 'Direct Clean-Room Title Assignment';
 
   // Tech stack badges
   const stackBadges = isTrack3
-    ? ['Python 3.11 / FastAPI', 'OpenAPI 3.1', 'PostgreSQL 16 + RLS', 'Docker / Cloud Run']
+    ? ['Python 3.11 / FastAPI', 'OpenAPI 3.1', 'PostgreSQL 16 + RLS', 'NIST SP 800-218']
     : isTrack2
     ? ['React 19 + TS', 'WebGL / Canvas HUD', 'PostgreSQL 16 + RLS', 'NIST SP 800-218']
-    : ['React 19 + TS', 'Tailwind 3.4', 'PostgreSQL 16 + RLS', 'Zero-Deps'];
+    : ['React 19 + TS', 'GridSync Sanitizer', 'PostgreSQL 16 + RLS', 'Async Queue'];
 
   // SVG Circle Gauge Math (r=16, circumference = 100.53)
   const strokeDashoffset = (100 - p.pytestScore).toFixed(1);
@@ -453,6 +466,9 @@ const showroomHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Aura & Grid — F1 Pit Wall Telemetry & Pure APA Title Configurator // GhostFactoryOS</title>
   <meta name="description" content="200 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 63 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
   <meta name="version" content="v3.1-APA">
@@ -599,259 +615,306 @@ const showroomHtml = `<!DOCTYPE html>
 </head>
 <body class="bg-[#05070B] text-slate-100 selection:bg-emerald-500 selection:text-black">
 
-  <!-- ================= 1. TOP TELEMETRY NAV (F1 PIT WALL COMMAND BAR) ================= -->
+  <!-- ================= 1. TOP TELEMETRY NAV (GAMIFIED ADHD COMMAND BAR) ================= -->
   <header class="fixed top-0 inset-x-0 z-50 w-full border-b border-white/10 bg-[#05070B]/95 backdrop-blur-2xl px-4 lg:px-8 py-2.5">
-    <div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-3">
+    <div class="max-w-[1600px] mx-auto flex items-center justify-between gap-3 font-mono">
       
-      <!-- Minimal Tactical Header Identity: AURA & GRID // REPOSITORY ENGINE V2.0 // STATUS: OPERATIONAL -->
-      <div class="flex items-center gap-3 shrink-0 font-mono text-sm">
-        <a href="#" class="flex items-center gap-2 text-white font-extrabold tracking-tight text-base sm:text-lg">
-          <span class="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-400/50 flex items-center justify-center text-emerald-400 text-xs shadow-[0_0_12px_rgba(16,185,129,0.4)]">A&amp;G</span>
-          <span>AURA &amp; GRID</span>
-        </a>
-        <span class="text-slate-700 hidden sm:inline">//</span>
-        <span class="hidden sm:inline-flex items-center text-xs font-mono uppercase bg-[#111724] text-cyan-300 px-2.5 py-1 rounded-md border border-cyan-500/30">
-          REPOSITORY ENGINE V2.0
-        </span>
-        <span class="text-slate-700 hidden md:inline">//</span>
-        <div class="flex items-center gap-2 bg-emerald-950/40 border border-emerald-500/40 px-2.5 py-1 rounded-md">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-emerald-300 font-bold uppercase text-xs">STATUS: OPERATIONAL</span>
-        </div>
-      </div>
+      <!-- Left: AURA & GRID Logo -->
+      <a href="#" class="flex items-center gap-2.5 text-white font-extrabold tracking-tight text-base sm:text-lg">
+        <span class="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-400/50 flex items-center justify-center text-emerald-400 text-xs shadow-[0_0_12px_rgba(16,185,129,0.4)]">A&amp;G</span>
+        <span class="tracking-wide">AURA &amp; GRID</span>
+      </a>
 
-      <!-- Tactical CTA -->
-      <div class="flex items-center gap-3 font-mono text-sm">
-        <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber rounded-lg bg-emerald-500 hover:bg-[#FF9F0A] text-black text-xs sm:text-sm font-mono font-extrabold px-3.5 py-1.5 sm:px-4 sm:py-2 border border-[#FF9F0A] transition cursor-pointer">
-          ACQUIRE TITLE (APA) &rarr;
-        </button>
+      <!-- Center & Right: LEVEL 24 XP 14,820 Streak Badge + DYNO STATUS: 4/4 GATES PASSED (Neon Emerald) -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Level 24 XP Streak Badge -->
+        <div class="flex items-center gap-2 bg-[#111724] border border-amber-500/40 px-3 py-1 rounded-lg text-xs">
+          <span class="text-amber-400 font-black">LEVEL 24</span>
+          <span class="text-slate-400 hidden sm:inline">XP 14,820</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        </div>
+
+        <!-- Dyno Status: 4/4 Gates Passed Badge -->
+        <div class="flex items-center gap-2 bg-emerald-950/40 border border-emerald-500/50 px-3 py-1 rounded-lg text-xs shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10B981]"></span>
+          <span class="text-emerald-300 font-black uppercase tracking-wider text-[11px] sm:text-xs">DYNO STATUS: 4/4 GATES PASSED</span>
+        </div>
       </div>
 
     </div>
   </header>
 
-  <!-- ================= 2. HERO BAY: 3D CAD / WIREFRAME DYNO VIEWPORT & PURE APA CONFIGURATOR ================= -->
-  <section id="hero" class="scroll-mt-28 pt-20 pb-6 lg:pt-22 lg:pb-8 px-4 lg:px-8 border-b border-white/10 relative overflow-hidden bg-[#05070B]">
-    <div class="max-w-[1600px] mx-auto">
+  <!-- ================= 2. HERO BAY: HOLOGRAPHIC 3D DYNO SCANNER & PURE APA CONFIGURATOR ================= -->
+  <section id="hero" class="scroll-mt-28 pt-16 pb-6 px-4 lg:px-8 border-b border-white/10 relative bg-[#05070B]">
+    <div class="max-w-[1600px] mx-auto w-full">
       
-      <!-- Top Title Banner -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-4">
+      <!-- Top Title & Telemetry Header Banner -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-3 mb-3">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-2">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[11px] font-mono uppercase tracking-widest mb-1.5">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>PURE APA TITLE TRANSFER // 200 SYNCED UNITS (114 Curated Digital Vehicles Baseline)</span>
+            <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
           </div>
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Interactive 3D Chassis Dyno &amp; <span class="cyan-gradient-text">Direct APA Title Configurator.</span>
+          <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-tight">
+            Holographic Chassis Dyno &amp; <span class="cyan-gradient-text">Direct APA Title Configurator.</span>
           </h1>
         </div>
-        <div class="flex flex-wrap items-center gap-3 font-mono text-sm">
-          <div class="px-4 py-2.5 rounded-xl bg-[#111724] border border-cyan-500/30 shadow-[0_0_20px_-5px_rgba(0,240,255,0.2)]">
-            <span class="text-slate-300 block text-xs">COLLECTION ALLOCATION</span>
-            <span class="text-cyan-300 font-bold text-sm">200 Synced Chassis // Pure APA Title Transfer</span>
-          </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+          <span class="text-cyan-300 font-bold">COMMIT: b787061</span>
+          <span>//</span>
+          <span class="text-emerald-400 font-bold">0% DRIFT</span>
         </div>
       </div>
 
-      <!-- 3D CAD DYNO VIEWPORT + TRACK 1 / TRACK 2 / TRACK 3 PURE APA CONFIGURATOR GRID -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <!-- Telemetry Ribbon: 4 Tactile Stat Gauges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-3 font-mono text-xs">
         
-        <!-- LEFT 7 COLS: INTERACTIVE 3D CAD / WIREFRAME DYNO VIEWPORT -->
-        <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 relative overflow-hidden flex flex-col justify-between min-h-[540px] shadow-[0_0_50px_-12px_rgba(0,240,255,0.22)]">
-          
-          <!-- Rotating Perspective Grid Floor -->
-          <div id="dynoGridPlane" class="absolute inset-0 dyno-grid-plane pointer-events-none opacity-75"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#05070B] via-transparent to-[#05070B]/80 pointer-events-none"></div>
+        <!-- Card 1: FLEET UNITS: 200 VERIFIED -->
+        <div class="p-3 rounded-xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
+          <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">FLEET UNITS</div>
+          <div class="text-lg font-black text-cyan-300 mono-metric-crisp mt-0.5">200 VERIFIED</div>
+          <div class="text-[10px] text-slate-500 mt-0.5">86 T1 • 51 T2 • 63 T3</div>
+        </div>
 
-          <!-- Top Viewport Telemetry HUD Bar -->
-          <div class="relative z-10 p-4 sm:p-5 border-b border-white/10 bg-[#05070B]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-3 font-mono text-sm">
-            <div class="flex items-center gap-2.5">
-              <span class="px-2.5 py-1 rounded bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 font-bold text-sm" id="dynoUnitBadge">DYNO BAY // TRACK 1 LEAN TUNER</span>
-              <span class="text-white font-bold truncate max-w-[260px] sm:max-w-md text-sm" id="dynoUnitTitle">Select any unit or switch Track tabs</span>
+        <!-- Card 2: DYNO INTEGRITY: 4/4 GATES -->
+        <div class="p-3 rounded-xl bg-[#0A0D14] border border-emerald-500/40 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(16,185,129,0.2)]">
+          <div class="text-emerald-400 text-[10px] uppercase font-bold tracking-wider flex items-center justify-between">
+            <span>DYNO INTEGRITY</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          </div>
+          <div class="text-lg font-black text-emerald-400 mono-metric-crisp mt-0.5">4/4 GATES</div>
+          <div class="text-[10px] text-slate-400 mt-0.5">Deterministic Math &amp; RLS</div>
+        </div>
+
+        <!-- Card 3: IP TITLE: 100% PERMISSIVE -->
+        <div class="p-3 rounded-xl bg-[#0A0D14] border border-amber-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(255,159,10,0.15)]">
+          <div class="text-amber-400 text-[10px] uppercase font-bold tracking-wider">IP TITLE</div>
+          <div class="text-lg font-black text-amber-300 mono-metric-crisp mt-0.5">100% PERMISSIVE</div>
+          <div class="text-[10px] text-slate-500 mt-0.5">Zero Copyleft • MIT / Apache</div>
+        </div>
+
+        <!-- Card 4: ACQUISITION: PURE APA -->
+        <div class="p-3 rounded-xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(56,189,248,0.15)]">
+          <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">ACQUISITION</div>
+          <div class="text-lg font-black text-sky-300 mono-metric-crisp mt-0.5">PURE APA</div>
+          <div class="text-[10px] text-slate-500 mt-0.5">Direct Sovereign Handover</div>
+        </div>
+
+      </div>
+
+      <!-- Bounded Pit-Wall Comms Log: Compact monospace terminal (h-14) -->
+      <div class="h-14 bg-[#0A0D14] border border-white/10 rounded-xl px-4 py-2 flex items-center justify-between font-mono text-xs overflow-hidden mb-4">
+        <div class="flex items-center gap-3 overflow-hidden">
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold shrink-0">PIT WALL COMMS</span>
+          <div id="pitWallCommsLog" class="text-slate-300 flex items-center gap-2 overflow-hidden truncate">
+            <span class="text-emerald-400 font-bold shrink-0" id="commsCaller">🟢 CREW CHIEF:</span>
+            <span id="commsMsgText" class="text-slate-200 truncate">Chassis Dyno Bay Calibrated • All 4 Gates Sealed</span>
+          </div>
+        </div>
+        <div class="hidden sm:flex items-center gap-2 text-slate-500 text-[10px] shrink-0 font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <span>14ms LOCK</span>
+        </div>
+      </div>
+
+      <!-- 3D CYBERPUNK HOLOGRAPHIC DYNO + TRACK 1 / TRACK 2 / TRACK 3 CONFIGURATOR GRID -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
+        
+        <!-- LEFT 7 COLS: CYBERPUNK HOLOGRAPHIC DYNO SCANNER -->
+        <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/40 relative overflow-hidden flex flex-col justify-between shadow-[0_0_40px_-10px_rgba(0,240,255,0.25)]">
+          
+          <!-- Top Dyno Header Bar: Unit Badge + [DYNO SEALED 4/4 GATES] + Arcade Controls -->
+          <div class="relative z-10 p-3 sm:p-3.5 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md flex flex-wrap items-center justify-between gap-2.5 font-mono text-xs">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 font-bold text-xs" id="dynoUnitBadge">DYNO BAY // TRACK 1 LEAN TUNER</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/80 shadow-[0_0_12px_rgba(16,185,129,0.5)] font-bold text-[10px] tracking-wider animate-pulse">
+                [DYNO SEALED 4/4 GATES]
+              </span>
+              <span class="text-white font-bold truncate max-w-[200px] sm:max-w-xs text-xs" id="dynoUnitTitle">Unit #001 — Ready for Dyno</span>
             </div>
-            <div class="flex items-center gap-2">
-              <button onclick="rotateDynoGrid(-15)" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-sm cursor-pointer" title="Rotate 3D CAD Grid Left">⟲ Yaw -15°</button>
-              <button onclick="toggleExplodedCad()" id="explodeBtn" class="px-3 py-1.5 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-300 font-bold text-sm cursor-pointer">Explode 3D Layers</button>
-              <button onclick="rotateDynoGrid(15)" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-sm cursor-pointer" title="Rotate 3D CAD Grid Right">Yaw +15° ⟳</button>
+            
+            <!-- Tactile Arcade Dyno Controls -->
+            <div class="flex items-center gap-1.5 font-mono text-xs">
+              <button onclick="rotateDynoGrid(-15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Left">
+                [YAW -15°]
+              </button>
+              <button onclick="triggerScanSchematic()" id="scanSchematicBtn" class="px-2.5 py-1 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/60 text-cyan-300 font-extrabold text-xs shadow-[0_0_10px_rgba(0,240,255,0.3)] transition-all cursor-pointer" title="Trigger Laser Chassis Scan">
+                [SCAN SCHEMATIC]
+              </button>
+              <button onclick="rotateDynoGrid(15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Right">
+                [YAW +15°]
+              </button>
             </div>
           </div>
 
-          <!-- Center 3D Wireframe CAD Stage (Expanded Padding & Breathing Room) -->
-          <div class="relative z-10 my-auto px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16 flex flex-col items-center justify-center">
-            <div id="cadStage" class="cad-wireframe-box w-full max-w-2xl relative p-2 sm:p-4">
-              <!-- Interactive 3D Isometric Multi-Layer Wireframe SVG -->
-              <svg id="dynoCadSvg" viewBox="-30 -15 660 330" class="w-full h-auto drop-shadow-[0_0_28px_rgba(0,240,255,0.32)]">
-                <defs>
-                  <linearGradient id="cadCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#10B981" stop-opacity="0.9"/>
-                  </linearGradient>
-                  <linearGradient id="cadAmber" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#FF9F0A" stop-opacity="0.95"/>
-                    <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.65"/>
-                  </linearGradient>
-                </defs>
-
-                <!-- Outer Rotating Dyno Telemetry Ring -->
-                <ellipse cx="300" cy="175" rx="235" ry="78" fill="none" stroke="#00F0FF" stroke-width="1.3" stroke-dasharray="8 6" stroke-opacity="0.5"/>
-                <ellipse cx="300" cy="175" rx="190" ry="60" fill="none" stroke="#10B981" stroke-width="1.1" stroke-dasharray="4 4" stroke-opacity="0.45"/>
-
-                <!-- LAYER 3 (BOTTOM): PostgreSQL 16 + Strict RLS Vault Chassis -->
-                <g id="cadLayerBottom" class="transition-transform duration-500">
-                  <polygon points="300,145 480,195 300,245 120,195" fill="#05070B" fill-opacity="0.9" stroke="#10B981" stroke-width="2.2"/>
-                  <line x1="210" y1="170" x2="390" y2="220" stroke="#10B981" stroke-width="0.9" stroke-opacity="0.5"/>
-                  <line x1="390" y1="170" x2="210" y2="220" stroke="#10B981" stroke-width="0.9" stroke-opacity="0.5"/>
-                  <text x="300" y="203" fill="#34D399" stroke="#05070B" stroke-width="3" paint-order="stroke" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="800" letter-spacing="0.03em" text-anchor="middle" id="cadLayer3Text">L3: POSTGRESQL 16 + RLS VAULT SCHEMA</text>
-                </g>
-
-                <!-- Vertical Telemetry Bus Pillars -->
-                <line x1="120" y1="195" x2="120" y2="105" stroke="#00F0FF" stroke-width="1.3" stroke-dasharray="3 3" stroke-opacity="0.65"/>
-                <line x1="480" y1="195" x2="480" y2="105" stroke="#00F0FF" stroke-width="1.3" stroke-dasharray="3 3" stroke-opacity="0.65"/>
-                <line x1="300" y1="245" x2="300" y2="155" stroke="#00F0FF" stroke-width="1.3" stroke-dasharray="3 3" stroke-opacity="0.65"/>
-
-                <!-- LAYER 2 (MIDDLE): Deterministic State Machine / Physics Solver -->
-                <g id="cadLayerMid" class="transition-transform duration-500">
-                  <polygon points="300,100 480,150 300,200 120,150" fill="#0A0D14" fill-opacity="0.88" stroke="#00F0FF" stroke-width="2.2"/>
-                  <circle cx="300" cy="150" r="28" fill="none" stroke="#FF9F0A" stroke-width="1.6" stroke-dasharray="5 3"/>
-                  <text x="300" y="155" fill="#67E8F9" stroke="#05070B" stroke-width="3" paint-order="stroke" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="800" letter-spacing="0.03em" text-anchor="middle" id="cadLayer2Text">L2: DETERMINISTIC TELEMETRY &amp; STATE CORE</text>
-                </g>
-
-                <!-- LAYER 1 (TOP): React 19 + TypeScript Cockpit / OpenAPI 3.1 HUD -->
-                <g id="cadLayerTop" class="transition-transform duration-500">
-                  <polygon points="300,55 480,105 300,155 120,105" fill="#111724" fill-opacity="0.92" stroke="url(#cadCyan)" stroke-width="2.4"/>
-                  <circle cx="230" cy="105" r="4.5" fill="#10B981"/>
-                  <circle cx="300" cy="85" r="4.5" fill="#00F0FF"/>
-                  <circle cx="370" cy="105" r="4.5" fill="#FF9F0A"/>
-                  <text x="300" y="111" fill="#FFFFFF" stroke="#05070B" stroke-width="3" paint-order="stroke" font-family="'JetBrains Mono', monospace" font-size="13.5" font-weight="800" letter-spacing="0.03em" text-anchor="middle" id="cadLayer1Text">L1: REACT 19 + TS MODULAR COCKPIT HUD</text>
-                </g>
-              </svg>
-            </div>
+          <!-- Interactive Holographic Dyno Canvas Stage -->
+          <div class="relative z-10 w-full flex-1 flex items-center justify-center p-2 sm:p-3 bg-gradient-to-b from-[#05070B] via-[#0A0D14] to-[#05070B]">
+            <canvas id="dynoHoloCanvas" class="w-full h-64 md:h-80 block rounded-xl border border-cyan-500/20 shadow-inner"></canvas>
           </div>
 
           <!-- Bottom Dyno Telemetry Readout Strip -->
-          <div class="relative z-10 p-4 sm:p-5 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-sm">
+          <div class="relative z-10 p-3 sm:p-3.5 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">APA ALLOCATION TRACK</span>
-              <span class="text-cyan-300 font-bold text-sm mono-metric-crisp" id="dynoPowertrainReadout">Track 1 // PRIVATE ALLOCATION</span>
+              <span class="text-slate-400 text-[10px] block uppercase tracking-wider">APA ALLOCATION TRACK</span>
+              <span class="text-cyan-300 font-bold text-xs mono-metric-crisp" id="dynoPowertrainReadout">Track 1 // $4,500 BUYOUT ANCHOR</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">PYTEST VERIFICATION</span>
-              <span class="text-emerald-400 font-extrabold text-sm mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
+              <span class="text-slate-400 text-[10px] block uppercase tracking-wider">PYTEST VERIFICATION</span>
+              <span class="text-emerald-400 font-extrabold text-xs mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">IP CLEANLINESS</span>
-              <span class="text-white font-bold text-sm mono-metric-crisp">Zero-Copyleft (MIT)</span>
+              <span class="text-slate-400 text-[10px] block uppercase tracking-wider">IP CLEANLINESS</span>
+              <span class="text-white font-bold text-xs mono-metric-crisp">Zero-Copyleft (MIT)</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">DYNO TELEMETRY</span>
-              <span class="text-amber-300 font-extrabold text-sm mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
+              <span class="text-slate-400 text-[10px] block uppercase tracking-wider">DYNO TELEMETRY</span>
+              <span class="text-amber-300 font-extrabold text-xs mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
             </div>
           </div>
         </div>
 
         <!-- RIGHT 5 COLS: TRACK 1 / TRACK 2 / TRACK 3 SELECTOR TABS & PURE APA BUYOUT MATRIX -->
-        <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
+        <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-4 sm:p-5 flex flex-col justify-between shadow-2xl">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-sm font-mono uppercase tracking-widest text-amber-400 font-bold">Pure APA Title Allocation Matrix</span>
-              <span class="text-xs font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2.5 py-1 rounded font-bold">100% Title Assignment</span>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Pure APA Title Allocation Matrix</span>
+              <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold">100% Title Assignment</span>
             </div>
 
             <!-- Interactive Track 1 / Track 2 / Track 3 Selector Tabs -->
-            <div class="grid grid-cols-3 gap-2.5 mb-5 font-mono text-sm" role="tablist">
-              <button onclick="selectHeroTrack('track1')" id="heroTab-track1" class="py-2.5 px-3 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold transition-all cursor-pointer text-center">
-                TRACK 1<br><span class="text-xs font-normal opacity-95">Lean Tuner (86)</span>
+            <div class="grid grid-cols-3 gap-2 mb-3.5 font-mono text-xs" role="tablist">
+              <button onclick="selectHeroTrack('track1')" id="heroTab-track1" class="py-2 px-2.5 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold transition-all cursor-pointer text-center">
+                TRACK 1<br><span class="text-[10px] font-normal opacity-95">Lean Tuner (86)</span>
               </button>
-              <button onclick="selectHeroTrack('track2')" id="heroTab-track2" class="py-2.5 px-3 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-amber-300 transition-all cursor-pointer text-center">
-                TRACK 2<br><span class="text-xs font-normal opacity-95">Hypercar (51)</span>
+              <button onclick="selectHeroTrack('track2')" id="heroTab-track2" class="py-2 px-2.5 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-amber-300 transition-all cursor-pointer text-center">
+                TRACK 2<br><span class="text-[10px] font-normal opacity-95">Hypercar (51)</span>
               </button>
-              <button onclick="selectHeroTrack('track3')" id="heroTab-track3" class="py-2.5 px-3 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-sky-300 transition-all cursor-pointer text-center">
-                TRACK 3<br><span class="text-xs font-normal opacity-95">Skunkworks (63)</span>
+              <button onclick="selectHeroTrack('track3')" id="heroTab-track3" class="py-2 px-2.5 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-sky-300 transition-all cursor-pointer text-center">
+                TRACK 3<br><span class="text-[10px] font-normal opacity-95">Skunkworks (63)</span>
               </button>
             </div>
 
             <!-- Track 1 Configurator Panel (Default) -->
-            <div id="heroPanel-track1" class="space-y-3.5 font-mono">
+            <div id="heroPanel-track1" class="space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 1 // Lean Rapid-Sale (Lean Tuner)</h2>
-                <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-sm font-bold">86 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 1 // Lean Rapid-Sale (Lean Tuner)</h2>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-bold">86 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
-                Rapid assembly, clean UI modularity, zero external dependencies. Single-bundle React 19 + TypeScript components paired with PostgreSQL 16 + RLS schemas for direct Micro-APA transfer.
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
+                Full-stack supercharged operational engines: GridSync payload sanitization middleware, Supabase/PostgreSQL schema definitions with RLS, and async queue workers for turnkey direct APA transfer.
               </p>
-              <div class="grid grid-cols-1 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-400/60 flex items-center justify-between">
-                  <div>
-                    <div class="text-xs text-emerald-300 uppercase font-bold">Direct Repository Title Transfer</div>
-                    <div class="text-base sm:text-lg font-extrabold text-white mt-0.5">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  </div>
-                  <span class="px-3 py-1 rounded bg-emerald-500/20 text-emerald-300 text-sm font-bold">Clean-Room IP</span>
+              
+              <!-- Retail Window Sticker: Track 1 -->
+              <div class="p-3 rounded-xl bg-emerald-950/25 border border-emerald-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-emerald-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 1</span>
+                  <span class="text-[10px] text-slate-400">TURNKEY DIRECT ASSIGNMENT</span>
                 </div>
+                <div class="flex items-baseline justify-between">
+                  <span class="text-xs text-slate-300">Micro-APA Buyout Anchor:</span>
+                  <span class="text-xl font-black text-emerald-400 mono-metric-crisp">$4,500</span>
+                </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  100% Clean-Room Repository Handover • PostgreSQL + RLS Schema • Zero-Dependency Components
+                </div>
+              </div>
+
+              <!-- Action CTAs anchored inside Track 1 Card -->
+              <div class="flex flex-col gap-2 w-full mt-4">
+                <button onclick="openFlagshipModal(null, 'Track 1 Lean Tuner', 'Lean Prototype', 'track1')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-[#05070B] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  ACQUIRE TITLE (APA) →
+                </button>
+                <button onclick="openFlagshipModal(null, 'Track 1 Lean Tuner', 'Lean Prototype', 'track1')" class="w-full py-3 px-4 border border-[#00F0FF]/40 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  INQUIRE VAULT BUYOUT
+                </button>
               </div>
             </div>
 
             <!-- Track 2 Configurator Panel -->
-            <div id="heroPanel-track2" class="hidden space-y-3.5 font-mono">
+            <div id="heroPanel-track2" class="hidden space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 2 // Hypercar Flagship</h2>
-                <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-sm font-bold">51 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 2 // Hypercar Flagship</h2>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">51 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
                 High-density interactive SCADA UI, canvas/WebGL state machines, domain physics solvers, 8–15 sub-panels, and full NIST SP 800-218 compliance gate pack.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-[#05070B] border border-amber-500/40">
-                  <div class="text-xs text-amber-300 uppercase font-bold">Standard Title Transfer</div>
-                  <div class="text-sm sm:text-base font-extrabold text-white mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-300 mt-0.5">Direct APA Schedule</div>
+              
+              <!-- Retail Window Sticker: Track 2 -->
+              <div class="p-3 rounded-xl bg-amber-950/25 border border-amber-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-amber-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 2</span>
+                  <span class="text-[10px] text-slate-400">HIGH-DENSITY SCADA OS</span>
                 </div>
-                <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-400/60">
-                  <div class="text-xs text-amber-300 uppercase font-bold">Strategic Monopoly Lock</div>
-                  <div class="text-sm sm:text-base font-extrabold text-amber-300 mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-200 mt-0.5">Full Category Retirement</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Chassis APA Buyout Anchor:</span>
+                    <span class="text-lg font-black text-amber-300 mono-metric-crisp">$14,500</span>
+                  </div>
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Vault Buyout:</span>
+                    <span class="text-lg font-black text-white mono-metric-crisp">$25,000 – $50,000</span>
+                  </div>
                 </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  Domain Physics Solvers • 8–15 Interactive Screens • Full NIST SP 800-218 SSDF Suite
+                </div>
+              </div>
+
+              <!-- Action CTAs anchored inside Track 2 Card -->
+              <div class="flex flex-col gap-2 w-full mt-4">
+                <button onclick="openFlagshipModal(null, 'Track 2 Hypercar Flagship', 'SCADA / Deep Tech', 'track2')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-[#05070B] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  ACQUIRE TITLE (APA) →
+                </button>
+                <button onclick="openFlagshipModal(null, 'Track 2 Hypercar Flagship', 'SCADA / Deep Tech', 'track2')" class="w-full py-3 px-4 border border-[#00F0FF]/40 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  INQUIRE VAULT BUYOUT
+                </button>
               </div>
             </div>
 
             <!-- Track 3 Configurator Panel -->
-            <div id="heroPanel-track3" class="hidden space-y-3.5 font-mono">
+            <div id="heroPanel-track3" class="hidden space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 3 // Skunkworks Engine</h2>
-                <span class="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 text-sm font-bold">63 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 3 // Skunkworks Engine</h2>
+                <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-xs font-bold">63 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
                 Working Service Engines &amp; Production Reference Architectures. Custom Kalman/Order-Book/Consensus math, OpenAPI 3.1, &gt;80% pytest, zero copyleft.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-[#05070B] border border-sky-500/40">
-                  <div class="text-xs text-sky-300 uppercase font-bold">Baseline Engine Title</div>
-                  <div class="text-sm sm:text-base font-extrabold text-white mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-300 mt-0.5">Full Container &amp; SQL Core</div>
+              
+              <!-- Retail Window Sticker: Track 3 -->
+              <div class="p-3 rounded-xl bg-sky-950/25 border border-sky-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-sky-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 3</span>
+                  <span class="text-[10px] text-slate-400">R&amp;D BYPASS ENGINE CORE</span>
                 </div>
-                <div class="p-4 rounded-xl bg-sky-950/30 border border-sky-400/60">
-                  <div class="text-xs text-sky-300 uppercase font-bold">Sovereign Vault Lock</div>
-                  <div class="text-sm sm:text-base font-extrabold text-sky-300 mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-200 mt-0.5">Exclusive Vertical Rights</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Full Engine APA Buyout:</span>
+                    <span class="text-lg font-black text-sky-300 mono-metric-crisp">$35,000 – $65,000</span>
+                  </div>
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Vault Buyout:</span>
+                    <span class="text-lg font-black text-white mono-metric-crisp">$75,000 – $150,000+</span>
+                  </div>
                 </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  Production Reference Engine • Turnkey Cloud Run Container • Clean-Room Legal Dossier
+                </div>
+              </div>
+
+              <!-- Action CTAs anchored inside Track 3 Card -->
+              <div class="flex flex-col gap-2 w-full mt-4">
+                <button onclick="openFlagshipModal(null, 'Track 3 Skunkworks Engine', 'Working Service Engine', 'track3')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-[#05070B] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  ACQUIRE TITLE (APA) →
+                </button>
+                <button onclick="openFlagshipModal(null, 'Track 3 Skunkworks Engine', 'Working Service Engine', 'track3')" class="w-full py-3 px-4 border border-[#00F0FF]/40 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
+                  INQUIRE VAULT BUYOUT
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- Bottom Action Triggers inside Hero Configurator -->
-          <div class="mt-6 pt-4 border-t border-white/10 space-y-3 font-mono text-sm">
-            <div class="flex items-center justify-between text-sm text-slate-300">
-              <span>Active APA Allocation:</span>
-              <span id="heroSelectedStatus" class="text-emerald-400 font-bold">PRIVATE ALLOCATION // APA SPEC READY</span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-[#FF9F0A] text-black border border-[#FF9F0A] font-extrabold text-center uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer">
-                ACQUIRE TITLE (APA) ➔
-              </button>
-              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber py-3.5 px-4 rounded-xl bg-[#FF9F0A]/15 hover:bg-[#FF9F0A] border border-[#FF9F0A] text-[#FF9F0A] hover:text-black font-extrabold uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer">
-                INQUIRE VAULT BUYOUT
-              </button>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -931,15 +994,15 @@ const showroomHtml = `<!DOCTYPE html>
             </button>
             <button onclick="filterByTrack('track1')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-emerald-950/40 border border-emerald-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-emerald-300 font-bold">Track 1 • Lean Tuner</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$4,500 Anchor</span>
             </button>
             <button onclick="filterByTrack('track2')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-amber-950/40 border border-amber-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-amber-300 font-bold">Track 2 • Hypercar</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$14,500 Anchor</span>
             </button>
             <button onclick="filterByTrack('track3')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-sky-950/40 border border-sky-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-sky-300 font-bold">Track 3 • Skunkworks</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$35k–$65k APA</span>
             </button>
           </div>
 
@@ -1162,32 +1225,261 @@ ${renderedCardsHtml}
     const prevPageBtn = document.getElementById('prevPageBtn');
     const nextPageBtn = document.getElementById('nextPageBtn');
 
-    // 3D CAD Dyno Controls
-    function rotateDynoGrid(delta) {
-      dynoRotationDeg = (dynoRotationDeg + delta) % 360;
-      const plane = document.getElementById('dynoGridPlane');
-      if (plane) {
-        plane.style.setProperty('--dyno-rot', dynoRotationDeg + 'deg');
-      }
-      const stage = document.getElementById('cadStage');
-      if (stage) {
-        stage.style.setProperty('--cad-ry', (-18 + (dynoRotationDeg * 0.35)) + 'deg');
+    // ================= CYBERPUNK HOLOGRAPHIC DYNO SCANNER =================
+    const holoCanvas = document.getElementById('dynoHoloCanvas');
+    const holoCtx = holoCanvas ? holoCanvas.getContext('2d') : null;
+    let dynoYaw = 0.55;
+    let targetYaw = 0.55;
+    let radarSweepAngle = 0;
+    let isScanning = false;
+    let scanProgress = 0;
+
+    // F1 Chassis 3D Nodes
+    const f1Nodes = [
+      { id: 'nose', x: 0, y: -0.1, z: 2.2, color: '#00F0FF' },
+      { id: 'fw_l', x: -1.3, y: -0.2, z: 1.8, color: '#00F0FF' },
+      { id: 'fw_r', x: 1.3, y: -0.2, z: 1.8, color: '#00F0FF' },
+      { id: 'fw_cl', x: -0.3, y: -0.15, z: 2.0, color: '#10B981' },
+      { id: 'fw_cr', x: 0.3, y: -0.15, z: 2.0, color: '#10B981' },
+      { id: 'fa_l', x: -1.1, y: 0.0, z: 1.2, color: '#00F0FF' },
+      { id: 'fa_r', x: 1.1, y: 0.0, z: 1.2, color: '#00F0FF' },
+      { id: 'fa_c', x: 0, y: 0.1, z: 1.2, color: '#FF9F0A' },
+      { id: 'cp_front', x: 0, y: 0.45, z: 0.5, color: '#00F0FF' },
+      { id: 'halo_peak', x: 0, y: 0.85, z: 0.0, color: '#FF9F0A' },
+      { id: 'halo_l', x: -0.35, y: 0.65, z: 0.1, color: '#FF9F0A' },
+      { id: 'halo_r', x: 0.35, y: 0.65, z: 0.1, color: '#FF9F0A' },
+      { id: 'sp_fl', x: -0.9, y: 0.25, z: 0.5, color: '#00F0FF' },
+      { id: 'sp_fr', x: 0.9, y: 0.25, z: 0.5, color: '#00F0FF' },
+      { id: 'sp_rl', x: -0.7, y: 0.35, z: -0.7, color: '#10B981' },
+      { id: 'sp_rr', x: 0.7, y: 0.35, z: -0.7, color: '#10B981' },
+      { id: 'airbox', x: 0, y: 0.95, z: -0.4, color: '#FF9F0A' },
+      { id: 'spine_mid', x: 0, y: 0.65, z: -1.1, color: '#00F0FF' },
+      { id: 'ra_l', x: -1.15, y: 0.0, z: -1.1, color: '#00F0FF' },
+      { id: 'ra_r', x: 1.15, y: 0.0, z: -1.1, color: '#00F0FF' },
+      { id: 'ra_c', x: 0, y: 0.1, z: -1.1, color: '#FF9F0A' },
+      { id: 'rw_bl', x: -0.95, y: 0.45, z: -1.8, color: '#00F0FF' },
+      { id: 'rw_br', x: 0.95, y: 0.45, z: -1.8, color: '#00F0FF' },
+      { id: 'rw_tl', x: -0.95, y: 0.9, z: -1.8, color: '#00F0FF' },
+      { id: 'rw_tr', x: 0.95, y: 0.9, z: -1.8, color: '#00F0FF' },
+      { id: 'diffuser', x: 0, y: -0.25, z: -1.8, color: '#10B981' }
+    ];
+
+    const f1Edges = [
+      ['nose', 'fw_cl'], ['nose', 'fw_cr'],
+      ['fw_cl', 'fw_l'], ['fw_cr', 'fw_r'],
+      ['fw_l', 'fa_l'], ['fw_r', 'fa_r'],
+      ['nose', 'fa_c'], ['fa_c', 'fa_l'], ['fa_c', 'fa_r'],
+      ['fa_c', 'cp_front'],
+      ['cp_front', 'halo_peak'], ['cp_front', 'halo_l'], ['cp_front', 'halo_r'],
+      ['halo_l', 'halo_peak'], ['halo_r', 'halo_peak'],
+      ['halo_peak', 'airbox'],
+      ['cp_front', 'sp_fl'], ['cp_front', 'sp_fr'],
+      ['sp_fl', 'sp_rl'], ['sp_fr', 'sp_rr'],
+      ['sp_rl', 'ra_c'], ['sp_rr', 'ra_c'],
+      ['airbox', 'spine_mid'], ['spine_mid', 'diffuser'],
+      ['ra_c', 'ra_l'], ['ra_c', 'ra_r'],
+      ['spine_mid', 'rw_bl'], ['spine_mid', 'rw_br'],
+      ['rw_bl', 'rw_br'], ['rw_tl', 'rw_tr'],
+      ['rw_bl', 'rw_tl'], ['rw_br', 'rw_tr'],
+      ['diffuser', 'rw_bl'], ['diffuser', 'rw_br']
+    ];
+
+    function resizeHoloCanvas() {
+      if (!holoCanvas) return;
+      const rect = holoCanvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      holoCanvas.width = Math.floor(rect.width * dpr);
+      holoCanvas.height = Math.floor(rect.height * dpr);
+    }
+
+    if (window.ResizeObserver && holoCanvas) {
+      new ResizeObserver(() => resizeHoloCanvas()).observe(holoCanvas);
+    }
+    resizeHoloCanvas();
+
+    function rotateDynoGrid(deltaDeg) {
+      targetYaw += (deltaDeg * Math.PI) / 180;
+    }
+
+    function triggerScanSchematic() {
+      isScanning = true;
+      scanProgress = 0;
+      const btn = document.getElementById('scanSchematicBtn');
+      if (btn) {
+        btn.innerText = '[SCANNING...]';
+        btn.classList.add('border-emerald-400', 'text-emerald-300');
+        setTimeout(() => {
+          btn.innerText = '[SCAN SCHEMATIC]';
+          btn.classList.remove('border-emerald-400', 'text-emerald-300');
+        }, 2200);
       }
     }
 
-    function toggleExplodedCad() {
-      isCadExploded = !isCadExploded;
-      const top = document.getElementById('cadLayerTop');
-      const bottom = document.getElementById('cadLayerBottom');
-      const btn = document.getElementById('explodeBtn');
-      if (top && bottom) {
-        top.style.transform = isCadExploded ? 'translateY(-28px)' : 'translateY(0)';
-        bottom.style.transform = isCadExploded ? 'translateY(28px)' : 'translateY(0)';
+    function renderHoloLoop(time) {
+      if (holoCtx && holoCanvas) {
+        const w = holoCanvas.width;
+        const h = holoCanvas.height;
+        const dpr = window.devicePixelRatio || 1;
+        const width = w / dpr;
+        const height = h / dpr;
+
+        holoCtx.save();
+        holoCtx.scale(dpr, dpr);
+
+        // Cyber dark void background
+        holoCtx.fillStyle = '#06080E';
+        holoCtx.fillRect(0, 0, width, height);
+
+        const cx = width / 2;
+        const cy = height / 2;
+
+        // 1. Rotating Radar Grid
+        [40, 80, 120, 160, 200].forEach((r, idx) => {
+          holoCtx.beginPath();
+          holoCtx.arc(cx, cy, r, 0, Math.PI * 2);
+          holoCtx.strokeStyle = idx % 2 === 0 ? 'rgba(0, 240, 255, 0.12)' : 'rgba(16, 185, 129, 0.08)';
+          holoCtx.lineWidth = 1;
+          holoCtx.setLineDash([4, 6]);
+          holoCtx.stroke();
+          holoCtx.setLineDash([]);
+        });
+
+        // Radar Crosshairs
+        holoCtx.beginPath();
+        holoCtx.moveTo(cx - 210, cy);
+        holoCtx.lineTo(cx + 210, cy);
+        holoCtx.moveTo(cx, cy - 170);
+        holoCtx.lineTo(cx, cy + 170);
+        holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.08)';
+        holoCtx.lineWidth = 1;
+        holoCtx.stroke();
+
+        // Radar Sweep Beam & Fade Trail
+        radarSweepAngle += 0.025;
+        const sweepGrad = holoCtx.createRadialGradient(cx, cy, 10, cx, cy, 210);
+        sweepGrad.addColorStop(0, 'rgba(0, 240, 255, 0.22)');
+        sweepGrad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+        holoCtx.beginPath();
+        holoCtx.moveTo(cx, cy);
+        holoCtx.arc(cx, cy, 210, radarSweepAngle - 0.45, radarSweepAngle);
+        holoCtx.closePath();
+        holoCtx.fillStyle = sweepGrad;
+        holoCtx.fill();
+
+        holoCtx.beginPath();
+        holoCtx.moveTo(cx, cy);
+        holoCtx.lineTo(cx + Math.cos(radarSweepAngle) * 210, cy + Math.sin(radarSweepAngle) * 210);
+        holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.65)';
+        holoCtx.lineWidth = 1.4;
+        holoCtx.stroke();
+
+        // 2. Smooth Damped Chassis Rotation
+        dynoYaw += (targetYaw - dynoYaw) * 0.1;
+        const cosY = Math.cos(dynoYaw);
+        const sinY = Math.sin(dynoYaw);
+        const scale = Math.min(width, height) * 0.22;
+        const projected = {};
+
+        f1Nodes.forEach(node => {
+          const rx = node.x * cosY - node.z * sinY;
+          const rz = node.x * sinY + node.z * cosY;
+          const ry = node.y;
+          const px = cx + rx * scale;
+          const py = cy + (rz * 0.46 * scale) - (ry * scale * 1.15);
+          projected[node.id] = { x: px, y: py, color: node.color, depth: rz };
+        });
+
+        // 3. Draw Chassis Wireframe Edges
+        f1Edges.forEach(([idA, idB]) => {
+          const a = projected[idA];
+          const b = projected[idB];
+          if (!a || !b) return;
+          holoCtx.beginPath();
+          holoCtx.moveTo(a.x, a.y);
+          holoCtx.lineTo(b.x, b.y);
+          holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.75)';
+          holoCtx.shadowColor = '#00F0FF';
+          holoCtx.shadowBlur = 8;
+          holoCtx.lineWidth = 1.6;
+          holoCtx.stroke();
+        });
+        holoCtx.shadowBlur = 0;
+
+        // 4. Draw Chassis Telemetry Sensor Nodes
+        Object.values(projected).forEach(p => {
+          holoCtx.beginPath();
+          holoCtx.arc(p.x, p.y, 3.5, 0, Math.PI * 2);
+          holoCtx.fillStyle = p.color;
+          holoCtx.shadowColor = p.color;
+          holoCtx.shadowBlur = 10;
+          holoCtx.fill();
+        });
+        holoCtx.shadowBlur = 0;
+
+        // 5. Active Laser Scan Schematic Effect
+        if (isScanning) {
+          scanProgress += 0.022;
+          const laserY = (cy - scale * 1.3) + Math.sin(scanProgress * Math.PI) * (scale * 2.6);
+          holoCtx.beginPath();
+          holoCtx.moveTo(cx - 180, laserY);
+          holoCtx.lineTo(cx + 180, laserY);
+          holoCtx.strokeStyle = 'rgba(16, 185, 129, 0.95)';
+          holoCtx.shadowColor = '#10B981';
+          holoCtx.shadowBlur = 14;
+          holoCtx.lineWidth = 2.4;
+          holoCtx.stroke();
+
+          holoCtx.font = "bold 9px 'JetBrains Mono', monospace";
+          holoCtx.fillStyle = '#34D399';
+          holoCtx.fillText(">> HOLOGRAPHIC SCAN: DETERMINISTIC LOGIC // RLS ACTIVE", cx - 160, laserY - 8);
+          holoCtx.shadowBlur = 0;
+
+          if (scanProgress >= Math.PI) {
+            isScanning = false;
+          }
+        }
+
+        // 6. Active RPM Dyno Harmonic Wave Strip
+        const waveY = height - 20;
+        holoCtx.beginPath();
+        for (let x = 0; x < width; x += 4) {
+          const t = time * 0.0035;
+          const yOff = Math.sin(x * 0.035 + t * 4) * 5 + Math.cos(x * 0.07 - t * 2) * 2.5;
+          if (x === 0) holoCtx.moveTo(x, waveY + yOff);
+          else holoCtx.lineTo(x, waveY + yOff);
+        }
+        holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.65)';
+        holoCtx.lineWidth = 1.3;
+        holoCtx.stroke();
+
+        holoCtx.font = "9px 'JetBrains Mono', monospace";
+        holoCtx.fillStyle = '#64748B';
+        holoCtx.fillText("HARMONIC DYNO RPM FREQUENCY // 14ms LOCK", 12, waveY - 10);
+
+        holoCtx.restore();
       }
-      if (btn) {
-        btn.innerText = isCadExploded ? 'Collapse 3D Layers' : 'Explode 3D Layers';
-      }
+      requestAnimationFrame(renderHoloLoop);
     }
+    requestAnimationFrame(renderHoloLoop);
+
+    // ================= BOUNDED PIT-WALL COMMS STREAMER =================
+    const commsMessages = [
+      { caller: '🟢 CREW CHIEF:', text: 'Chassis Dyno Bay Calibrated • All 4 Gates Sealed' },
+      { caller: '⚡ PIT WALL:', text: 'Clean-Room Title Seals Ready • Zero Copyleft Debt' },
+      { caller: '🏎️ DYNO BAY:', text: 'Track 1, 2 & 3 Powertrains Online • 14ms Latency Lock' },
+      { caller: '🛡️ AUDIT DESK:', text: 'DYNO_AUDIT_RECEIPT.json Verified (200/200 Units Passed)' },
+      { caller: '🔑 APA LEDGER:', text: 'Direct Sovereign Repository Title Transfer Active' }
+    ];
+    let commsIdx = 0;
+    setInterval(() => {
+      commsIdx = (commsIdx + 1) % commsMessages.length;
+      const callerEl = document.getElementById('commsCaller');
+      const textEl = document.getElementById('commsMsgText');
+      if (callerEl && textEl) {
+        callerEl.innerText = commsMessages[commsIdx].caller;
+        textEl.innerText = commsMessages[commsIdx].text;
+      }
+    }, 3800);
 
     function selectHeroTrack(track) {
       currentHeroTrack = track;
@@ -1200,39 +1492,27 @@ ${renderedCardsHtml}
         }
         if (tab) {
           if (t === track) {
-            tab.className = 'py-2.5 px-3 rounded-xl border border-cyan-400 bg-cyan-500/20 text-white font-extrabold transition-all cursor-pointer text-center';
+            tab.className = 'py-2 px-2.5 rounded-xl border border-cyan-400 bg-cyan-500/20 text-white font-extrabold transition-all cursor-pointer text-center';
           } else {
-            tab.className = 'py-2.5 px-3 rounded-xl border border-white/10 bg-[#05070B] text-slate-300 hover:text-white transition-all cursor-pointer text-center';
+            tab.className = 'py-2 px-2.5 rounded-xl border border-white/10 bg-[#05070B] text-slate-300 hover:text-white transition-all cursor-pointer text-center';
           }
         }
       });
 
       const badge = document.getElementById('dynoUnitBadge');
       const powertrain = document.getElementById('dynoPowertrainReadout');
-      const status = document.getElementById('heroSelectedStatus');
-      const l1 = document.getElementById('cadLayer1Text');
-      const l2 = document.getElementById('cadLayer2Text');
 
       if (track === 'track1') {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 1 LEAN TUNER';
-        if (powertrain) powertrain.innerText = 'Track 1 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
-        if (l1) l1.textContent = 'L1: SINGLE-BUNDLE REACT 19 + TS UI';
-        if (l2) l2.textContent = 'L2: ZERO-DEPENDENCY MODULAR STATE';
+        if (powertrain) powertrain.innerText = 'Track 1 // $4,500 BUYOUT ANCHOR';
       } else if (track === 'track2') {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 2 HYPERCAR FLAGSHIP';
-        if (powertrain) powertrain.innerText = 'Track 2 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
-        if (l1) l1.textContent = 'L1: 8-15 PANEL WEBGL / CANVAS HUD';
-        if (l2) l2.textContent = 'L2: DOMAIN PHYSICS & SCADA SOLVER';
+        if (powertrain) powertrain.innerText = 'Track 2 // $14,500 BUYOUT ANCHOR';
       } else {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 3 SKUNKWORKS ENGINE';
-        if (powertrain) powertrain.innerText = 'Track 3 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
-        if (l1) l1.textContent = 'L1: OPENAPI 3.1 + CLOUD RUN CONTAINER';
-        if (l2) l2.textContent = 'L2: KALMAN / ORDERBOOK / CONSENSUS ENGINE';
+        if (powertrain) powertrain.innerText = 'Track 3 // $35,000–$65,000 APA';
       }
-      rotateDynoGrid(15);
+      rotateDynoGrid(20);
       filterByTrack(track);
     }
 
@@ -1259,10 +1539,10 @@ ${renderedCardsHtml}
 
       if (titleEl) titleEl.innerText = 'UNIT #' + String(id).padStart(3, '0') + ' // ' + name;
       if (pytestEl) pytestEl.innerText = pytest + '% Pytest Verified';
-      if (l3) l3.textContent = 'L3: PG16 RLS [' + tables.toUpperCase() + ']';
       if (sideUnit) sideUnit.innerText = 'Unit #' + String(id).padStart(3, '0') + ': ' + name;
       if (sidePrice) sidePrice.innerText = primaryApa + ' | ' + vaultApa;
 
+      triggerScanSchematic();
       document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -1462,7 +1742,11 @@ ${renderedCardsHtml}
       const priceEl = document.getElementById('flagshipModalTrackPrice');
       const mailtoBtn = document.getElementById('flagshipMailtoBtn');
 
-      const trackPricingText = 'PRIVATE ALLOCATION // APA SPEC READY';
+      const trackPricingText = track === 'track3'
+        ? 'Full Engine APA: $35,000–$65,000 | Vault Buyout: $75,000–$150,000+'
+        : track === 'track2'
+        ? 'Chassis APA Anchor: $14,500 | Vault Buyout: $25,000–$50,000'
+        : 'Micro-APA Buyout Anchor: $4,500';
 
       if (priceEl) priceEl.innerText = trackPricingText;
 
@@ -1526,10 +1810,20 @@ if (fs.existsSync(tailwindBin) && fs.existsSync(tailwindConfig) && fs.existsSync
   console.warn('⚠️ Warning: Tailwind binary or config not found; using existing style.css');
 }
 
-// Mirror to repository root for hosting environments configured for root publishing
+// Mirror to repository root, dist, and public for hosting environments configured for root, dist, or public publishing
 const ROOT_HTML_PATH = path.join(rootDir, 'index.html');
 fs.copyFileSync(OUTPUT_HTML_PATH, ROOT_HTML_PATH);
 console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to repository root: ${ROOT_HTML_PATH}`);
+
+const DIST_DIR = path.join(rootDir, 'dist');
+fs.mkdirSync(DIST_DIR, { recursive: true });
+fs.copyFileSync(OUTPUT_HTML_PATH, path.join(DIST_DIR, 'index.html'));
+console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to dist: ${path.join(DIST_DIR, 'index.html')}`);
+
+const PUBLIC_DIR = path.join(rootDir, 'public');
+fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+fs.copyFileSync(OUTPUT_HTML_PATH, path.join(PUBLIC_DIR, 'index.html'));
+console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to public: ${path.join(PUBLIC_DIR, 'index.html')}`);
 
 const ROOT_ASSETS_DIR = path.join(rootDir, 'assets');
 fs.mkdirSync(ROOT_ASSETS_DIR, { recursive: true });

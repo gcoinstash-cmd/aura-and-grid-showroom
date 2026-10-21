@@ -466,6 +466,9 @@ const showroomHtml = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Aura & Grid — F1 Pit Wall Telemetry & Pure APA Title Configurator // GhostFactoryOS</title>
   <meta name="description" content="200 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 63 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
   <meta name="version" content="v3.1-APA">
@@ -650,7 +653,7 @@ const showroomHtml = `<!DOCTYPE html>
         <div>
           <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[11px] font-mono uppercase tracking-widest mb-1.5">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>PURE APA TITLE TRANSFER // 200 SYNCED CHASSIS // ZERO COPYLEFT</span>
+            <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
           </div>
           <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-tight">
             Holographic Chassis Dyno &amp; <span class="cyan-gradient-text">Direct APA Title Configurator.</span>

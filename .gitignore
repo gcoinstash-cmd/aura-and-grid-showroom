@@ -3,7 +3,8 @@
 .env.*
 !.env.example
 node_modules/
-dist/
+dist/*
+!dist/index.html
 !dist/litigation-ops-os/
 !dist/litigation-ops-os/**
 .DS_Store

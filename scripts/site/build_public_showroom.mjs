@@ -1807,10 +1807,20 @@ if (fs.existsSync(tailwindBin) && fs.existsSync(tailwindConfig) && fs.existsSync
   console.warn('⚠️ Warning: Tailwind binary or config not found; using existing style.css');
 }
 
-// Mirror to repository root for hosting environments configured for root publishing
+// Mirror to repository root, dist, and public for hosting environments configured for root, dist, or public publishing
 const ROOT_HTML_PATH = path.join(rootDir, 'index.html');
 fs.copyFileSync(OUTPUT_HTML_PATH, ROOT_HTML_PATH);
 console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to repository root: ${ROOT_HTML_PATH}`);
+
+const DIST_DIR = path.join(rootDir, 'dist');
+fs.mkdirSync(DIST_DIR, { recursive: true });
+fs.copyFileSync(OUTPUT_HTML_PATH, path.join(DIST_DIR, 'index.html'));
+console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to dist: ${path.join(DIST_DIR, 'index.html')}`);
+
+const PUBLIC_DIR = path.join(rootDir, 'public');
+fs.mkdirSync(PUBLIC_DIR, { recursive: true });
+fs.copyFileSync(OUTPUT_HTML_PATH, path.join(PUBLIC_DIR, 'index.html'));
+console.log(`🪞 [Aura & Grid] Mirrored showroom index.html to public: ${path.join(PUBLIC_DIR, 'index.html')}`);
 
 const ROOT_ASSETS_DIR = path.join(rootDir, 'assets');
 fs.mkdirSync(ROOT_ASSETS_DIR, { recursive: true });

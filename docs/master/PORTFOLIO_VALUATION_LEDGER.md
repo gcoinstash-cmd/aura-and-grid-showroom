@@ -5,7 +5,7 @@
 **Accounting Standard:** ASC 350-40 (Internal-Use Software Capitalization) & ASC 985 (Software for Sale/Licensing)  
 **Authority Hierarchy:** Executive Dealership Principal (Owner / Capital Allocation) × Lead Systems Engineer & Governance Architect (Technical Execution & Audit Verification)  
 **Effective Date:** 2026-10-19  
-**Revision:** 1.0.0-PROD-CERTIFIED  
+**Revision:** 2.0.0-DYNO-SEALED-CERTIFIED  
 
 ---
 
@@ -60,7 +60,36 @@ The portfolio comprises **200 fully verified full-stack software assets** plus t
 
 ---
 
-## 3. CAPITAL GOVERNANCE DIRECTIVES
+## 3. MANDATORY 4-GATE DYNO VERIFICATION & IN-REPO TITLE AUDIT RECEIPTS
+
+Every asset cataloged in the portfolio is bound by the **4 Dyno Integrity Gates**, established as absolute repository law for all 200 existing chassis and all future manufacturing roadmaps (GF-T3-223 through GF-T3-250+):
+
+```
++----------------------------------------------------------------------------------------------------+
+|                                    THE 4 DYNO INTEGRITY GATES LAW                                  |
+|                                                                                                    |
+|   GATE 01: MATH & LOGIC CORE        ---> Verified deterministic algorithms (zero unseeded randoms) |
+|   GATE 02: DATABASE & PERSISTENCE   ---> PostgreSQL 16 DDL, normalized tables, foreign keys, RLS   |
+|   GATE 03: ZERO-TRUST INGRESS       ---> GridSync payload sanitization stripping XSS & SQLi vectors|
+|   GATE 04: MECHANICAL TEST DYNO     ---> Executable pytest/vitest boundary suites (>80% pass gate) |
++----------------------------------------------------------------------------------------------------+
+```
+
+### 1. In-Repo Title Receipt Standard (Transferable Legal Dossier)
+For every vehicle passing the dyno verification sweep, two permanent physical audit artifacts reside directly in that unit's repository root:
+- **`DYNO_AUDIT_RECEIPT.json`:** Contains unit ID, unit name, timestamp, git commit SHA anchor, test coverage percentage, and individual gate telemetry.
+- **`AUDIT_SEAL.md`:** Formal Certificate of Title Audit displaying the official Aura & Grid verification seal, clean-room MIT/Apache-2.0 permissive compliance, and ASC 350-40 capitalization tier.
+- **Micro-APA Legal Portability:** These receipts permanently live inside the chassis repository and transfer seamlessly to the acquiring counterparty upon bilateral title transfer.
+
+### 2. Live Dealership Console Badging
+The GhostFactoryOS Console Showroom Floor and Lot tabs dynamically consume `latest-dyno-audit.json`. Passing units display a glowing neon emerald verification badge with a pulsing live status beacon directly above the primary action CTAs (`ACQUIRE TITLE (APA)` and `INQUIRE VAULT BUYOUT`):
+```
+[DYNO SEALED 4/4 GATES]  100% PASS
+```
+
+---
+
+## 4. CAPITAL GOVERNANCE & PRODUCTION DIRECTIVES
 
 ### 1. 80% Sovereign Vault Reserve / 20% Annual Liquid Float Harvest
 - **80% Sovereign Floor:** A minimum of 80% of all cataloged assets (currently 160 units of 200) must remain permanently vaulted inside GhostFactoryOS.
@@ -69,14 +98,16 @@ The portfolio comprises **200 fully verified full-stack software assets** plus t
 
 ### 2. Daily Production Cadence: 3 High-Moat Service Engines
 - The foundry maintains an output of **three (3) high-moat multi-tier engines per day**, restricted exclusively to **Track 2 (Hypercar Flagship)** and **Track 3 (Deep Skunkworks)** architectures.
-- Daily assembly adheres to the 3-slot pipeline:
-  - **Slot 1 (Morning):** Data Plane, PostgreSQL 16 schema, RLS policies, GridSync zero-trust sanitization.
-  - **Slot 2 (Midday):** Core compute, asynchronous queue workers, deterministic state engines.
-  - **Slot 3 (Afternoon):** Telemetry HUD, >80% automated test gate coverage, NIST SP 800-218 compliance verification.
+- Daily assembly adheres to the 4-Gate Dyno protocol:
+  - **Slot 1 (Morning):** Gate 01 Deterministic Math & State Machines.
+  - **Slot 2 (Midday):** Gate 02 PostgreSQL 16 schema, foreign keys, and RLS policies.
+  - **Slot 3 (Afternoon):** Gate 03 GridSync zero-trust sanitization and input boundary clamping.
+  - **Slot 4 (Evening):** Gate 04 >80% automated test dyno verification and in-repo receipt injection (`DYNO_AUDIT_RECEIPT.json` & `AUDIT_SEAL.md`).
 
 ### 3. Factory Automation: Weekly Monday Swarm Cron Orchestrator
 - **Cadence:** Scheduled every Monday at 00:00 UTC (`cron: 0 0 * * 1`).
-- **Pipeline:** Automated dependency audit, zero-vulnerability confirmation, clean-room license validation (100% MIT/Apache 2.0/BSD), and public showroom compilation (`node scripts/site/build_public_showroom.mjs`).
+- **Pipeline:** Automated dependency audit, zero-vulnerability confirmation, clean-room license validation (100% MIT/Apache 2.0/BSD), full 200-chassis dyno sweep (`node scripts/factory/verify_dyno_gates.mjs --scan-all`), and public showroom compilation (`node scripts/site/build_public_showroom.mjs`).
+- **Auto-Commit:** Automated git commit and push of fresh telemetry reports to `telemetry/dyno-reports/`.
 
 ### 4. Annual ASC 350-40 IP Capitalization Audit
 - Formal capitalization schedule review executed annually at fiscal year-end.
@@ -84,14 +115,14 @@ The portfolio comprises **200 fully verified full-stack software assets** plus t
 
 ---
 
-## 4. PRODUCT TRUTH & VALUATION DISCLAIMER
+## 5. PRODUCT TRUTH & VALUATION DISCLAIMER
 
 All valuations presented herein reflect enterprise replacement costs under ASC 350-40 / ASC 985 and commercial catalog pricing. These figures do not represent verified SaaS recurring revenues or past cash collections. All catalog prototypes, hosted demos, and simulations default to sample/simulated data disclosures unless verified via live production deployment under Dealership Principal authorization.
 
 ---
 
-## 5. CREW CHIEF SIGN-OFF & NEXT 3 MOVES
+## 6. CREW CHIEF SIGN-OFF & NEXT 3 MOVES
 
 1. **Lock Valuation Matrix:** Treat $6.65M Retail / $4.20M Capitalized / $3.24M Wholesale / $2.00M Walk-Away as certified ledger benchmarks.
-2. **Execute Track 2 & Track 3 Production:** Enforce strict adherence to >80% test gates and turnkey APA documentation.
-3. **Synchronize Showroom Distribution:** Re-verify public showroom assets upon completion of each scheduled manufacturing batch.
+2. **Enforce 4-Gate Dyno Passing Gate:** Every forward assembly unit (GF-T3-223 through GF-T3-250+) must generate `DYNO_AUDIT_RECEIPT.json` and `AUDIT_SEAL.md` before catalog inclusion.
+3. **Automate Monday Swarm Cron:** Maintain continuous weekly swarm validation and showroom synchronization.

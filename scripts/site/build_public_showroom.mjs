@@ -39,6 +39,15 @@ if (!fs.existsSync(MANIFEST_PATH)) {
 // Ensure directories exist
 fs.mkdirSync(SITE_ASSETS_DIR, { recursive: true });
 
+// Copy verified 4-gate dyno audit receipt to site/ for institutional buyer download
+const DYNO_SOURCE_PATH = path.join(rootDir, 'tools', 'ghost-factory-console', 'src', 'data', 'latest-dyno-audit.json');
+const DYNO_SITE_PATH = path.join(SITE_DIR, 'DYNO_AUDIT_RECEIPT.json');
+const DYNO_ROOT_PATH = path.join(rootDir, 'DYNO_AUDIT_RECEIPT.json');
+if (fs.existsSync(DYNO_SOURCE_PATH)) {
+  fs.copyFileSync(DYNO_SOURCE_PATH, DYNO_SITE_PATH);
+  fs.copyFileSync(DYNO_SOURCE_PATH, DYNO_ROOT_PATH);
+}
+
 const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'));
 const fleetData = fs.existsSync(FLEET_PATH) ? JSON.parse(fs.readFileSync(FLEET_PATH, 'utf-8')) : manifest.products;
 
@@ -284,13 +293,17 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const trackAttr = isTrack3 ? 'track3' : isTrack2 ? 'track2' : 'track1';
   const cleanId = String(p.id).padStart(3, '0');
 
-  // Strict APA Buyout Valuation Lock per Track (Zero Retail / Zero Subscriptions)
-  const primaryApaLabel = 'PRIVATE ALLOCATION // APA SPEC READY';
+  // Strict APA Buyout Window Stickers per Track
+  const primaryApaLabel = isTrack3
+    ? 'Full Engine APA: $35,000–$65,000'
+    : isTrack2
+    ? 'Chassis APA Anchor: $14,500'
+    : 'Micro-APA Buyout Anchor: $4,500';
 
   const vaultApaLabel = isTrack3
-    ? 'Sovereign Monopoly APA'
+    ? 'Monopoly Vault: $75,000–$150,000+'
     : isTrack2
-    ? 'Category Sovereign Assignment'
+    ? 'Strategic Vault: $25,000–$50,000'
     : 'Direct Clean-Room Title Assignment';
 
   // Tech stack badges
@@ -631,54 +644,89 @@ const showroomHtml = `<!DOCTYPE html>
   </header>
 
   <!-- ================= 2. HERO BAY: 3D CAD / WIREFRAME DYNO VIEWPORT & PURE APA CONFIGURATOR ================= -->
-  <section id="hero" class="scroll-mt-28 pt-20 pb-6 lg:pt-22 lg:pb-8 px-4 lg:px-8 border-b border-white/10 relative overflow-hidden bg-[#05070B]">
-    <div class="max-w-[1600px] mx-auto">
+  <section id="hero" class="scroll-mt-28 pt-16 pb-4 px-4 lg:px-8 border-b border-white/10 relative bg-[#05070B] lg:h-screen lg:overflow-hidden lg:flex lg:flex-col lg:justify-between">
+    <div class="max-w-[1600px] mx-auto w-full lg:flex-1 lg:flex lg:flex-col lg:justify-between">
       
-      <!-- Top Title Banner -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-4">
+      <!-- Top Title Banner & Buyer-Facing Trust Telemetry Cards -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-3">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-2">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-1.5">
             <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            <span>PURE APA TITLE TRANSFER // 200 SYNCED UNITS (114 Curated Digital Vehicles Baseline)</span>
+            <span>PURE APA TITLE TRANSFER // 200 SYNCED CHASSIS (100% ZERO-COPYLEFT)</span>
           </div>
-          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 class="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-tight">
             Interactive 3D Chassis Dyno &amp; <span class="cyan-gradient-text">Direct APA Title Configurator.</span>
           </h1>
         </div>
-        <div class="flex flex-wrap items-center gap-3 font-mono text-sm">
-          <div class="px-4 py-2.5 rounded-xl bg-[#111724] border border-cyan-500/30 shadow-[0_0_20px_-5px_rgba(0,240,255,0.2)]">
-            <span class="text-slate-300 block text-xs">COLLECTION ALLOCATION</span>
-            <span class="text-cyan-300 font-bold text-sm">200 Synced Chassis // Pure APA Title Transfer</span>
+
+        <!-- BUYER-FACING TRUST TELEMETRY: CARD 1 & CARD 2 -->
+        <div class="flex flex-col sm:flex-row items-stretch gap-3 font-mono text-xs shrink-0">
+          
+          <!-- Card 1: DYNO INTEGRITY CERTIFICATION -->
+          <div class="p-3 rounded-xl bg-[#0A0D14]/95 border border-emerald-500/40 shadow-[0_0_20px_-5px_rgba(16,185,129,0.25)] flex flex-col justify-between gap-1.5 min-w-[280px]">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-white font-extrabold text-xs uppercase tracking-wider">DYNO INTEGRITY CERTIFICATION</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.5)] font-black text-[10px] tracking-wider animate-pulse">
+                [DYNO SEALED 4/4 GATES]
+              </span>
+            </div>
+            <div class="text-slate-300 text-[11px] leading-relaxed">
+              100% Deterministic Logic • PostgreSQL + RLS • GridSync Ingress • &gt;80% Test Coverage
+            </div>
+            <div class="pt-1 border-t border-white/10 flex items-center justify-between">
+              <a href="DYNO_AUDIT_RECEIPT.json" target="_blank" download class="text-[11px] font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 py-1 px-2 rounded bg-emerald-950/50 hover:bg-emerald-900/60 border border-emerald-500/30 transition-all cursor-pointer">
+                <span>View DYNO_AUDIT_RECEIPT.json</span>
+                <span>↗</span>
+              </a>
+              <span class="text-[10px] text-slate-300">200/200 PASSED</span>
+            </div>
           </div>
+
+          <!-- Card 2: CLEAN-ROOM IP & TITLE TRANSFER WARRANTY -->
+          <div class="p-3 rounded-xl bg-[#0A0D14]/95 border border-cyan-500/40 shadow-[0_0_20px_-5px_rgba(0,240,255,0.2)] flex flex-col justify-between gap-1.5 min-w-[280px]">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-white font-extrabold text-xs uppercase tracking-wider">CLEAN-ROOM IP &amp; TITLE WARRANTY</span>
+              <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-400 font-bold text-[10px]">
+                TITLE ASSIGNMENT
+              </span>
+            </div>
+            <div class="text-cyan-300 text-xs font-bold">
+              SOVEREIGN ASSET PURCHASE AGREEMENT (APA)
+            </div>
+            <div class="text-slate-300 text-[11px] leading-relaxed pt-1 border-t border-white/10">
+              100% Clean-Room Title Transfer • Zero Copyleft (MIT / Apache-2.0) • Full Codebase &amp; Architecture Handover
+            </div>
+          </div>
+
         </div>
       </div>
 
       <!-- 3D CAD DYNO VIEWPORT + TRACK 1 / TRACK 2 / TRACK 3 PURE APA CONFIGURATOR GRID -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch lg:flex-1 lg:min-h-0">
         
         <!-- LEFT 7 COLS: INTERACTIVE 3D CAD / WIREFRAME DYNO VIEWPORT -->
-        <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 relative overflow-hidden flex flex-col justify-between min-h-[540px] shadow-[0_0_50px_-12px_rgba(0,240,255,0.22)]">
+        <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 relative overflow-hidden flex flex-col justify-between shadow-[0_0_50px_-12px_rgba(0,240,255,0.22)]">
           
           <!-- Rotating Perspective Grid Floor -->
           <div id="dynoGridPlane" class="absolute inset-0 dyno-grid-plane pointer-events-none opacity-75"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-[#05070B] via-transparent to-[#05070B]/80 pointer-events-none"></div>
 
           <!-- Top Viewport Telemetry HUD Bar -->
-          <div class="relative z-10 p-4 sm:p-5 border-b border-white/10 bg-[#05070B]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-3 font-mono text-sm">
-            <div class="flex items-center gap-2.5">
-              <span class="px-2.5 py-1 rounded bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 font-bold text-sm" id="dynoUnitBadge">DYNO BAY // TRACK 1 LEAN TUNER</span>
-              <span class="text-white font-bold truncate max-w-[260px] sm:max-w-md text-sm" id="dynoUnitTitle">Select any unit or switch Track tabs</span>
+          <div class="relative z-10 p-3 sm:p-4 border-b border-white/10 bg-[#05070B]/85 backdrop-blur-md flex flex-wrap items-center justify-between gap-2.5 font-mono text-xs">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 font-bold text-xs" id="dynoUnitBadge">DYNO BAY // TRACK 1 LEAN TUNER</span>
+              <span class="text-white font-bold truncate max-w-[220px] sm:max-w-md text-xs" id="dynoUnitTitle">Select any unit or switch Track tabs</span>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="rotateDynoGrid(-15)" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-sm cursor-pointer" title="Rotate 3D CAD Grid Left">⟲ Yaw -15°</button>
-              <button onclick="toggleExplodedCad()" id="explodeBtn" class="px-3 py-1.5 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-300 font-bold text-sm cursor-pointer">Explode 3D Layers</button>
-              <button onclick="rotateDynoGrid(15)" class="px-3 py-1.5 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-sm cursor-pointer" title="Rotate 3D CAD Grid Right">Yaw +15° ⟳</button>
+              <button onclick="rotateDynoGrid(-15)" class="px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-xs cursor-pointer" title="Rotate 3D CAD Grid Left">⟲ Yaw -15°</button>
+              <button onclick="toggleExplodedCad()" id="explodeBtn" class="px-2.5 py-1 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-300 font-bold text-xs cursor-pointer">Explode 3D Layers</button>
+              <button onclick="rotateDynoGrid(15)" class="px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 border border-white/15 text-slate-200 hover:text-white text-xs cursor-pointer" title="Rotate 3D CAD Grid Right">Yaw +15° ⟳</button>
             </div>
           </div>
 
-          <!-- Center 3D Wireframe CAD Stage (Expanded Padding & Breathing Room) -->
-          <div class="relative z-10 my-auto px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16 flex flex-col items-center justify-center">
-            <div id="cadStage" class="cad-wireframe-box w-full max-w-2xl relative p-2 sm:p-4">
+          <!-- Center 3D Wireframe CAD Stage -->
+          <div class="relative z-10 my-auto px-4 py-4 sm:px-8 sm:py-6 flex flex-col items-center justify-center">
+            <div id="cadStage" class="cad-wireframe-box w-full max-w-xl relative p-2">
               <!-- Interactive 3D Isometric Multi-Layer Wireframe SVG -->
               <svg id="dynoCadSvg" viewBox="-30 -15 660 330" class="w-full h-auto drop-shadow-[0_0_28px_rgba(0,240,255,0.32)]">
                 <defs>
@@ -729,125 +777,149 @@ const showroomHtml = `<!DOCTYPE html>
           </div>
 
           <!-- Bottom Dyno Telemetry Readout Strip -->
-          <div class="relative z-10 p-4 sm:p-5 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-sm">
+          <div class="relative z-10 p-3 sm:p-4 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">APA ALLOCATION TRACK</span>
-              <span class="text-cyan-300 font-bold text-sm mono-metric-crisp" id="dynoPowertrainReadout">Track 1 // PRIVATE ALLOCATION</span>
+              <span class="text-slate-300 text-[10px] block uppercase tracking-wider">APA ALLOCATION TRACK</span>
+              <span class="text-cyan-300 font-bold text-xs mono-metric-crisp" id="dynoPowertrainReadout">Track 1 // $4,500 BUYOUT ANCHOR</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">PYTEST VERIFICATION</span>
-              <span class="text-emerald-400 font-extrabold text-sm mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
+              <span class="text-slate-300 text-[10px] block uppercase tracking-wider">PYTEST VERIFICATION</span>
+              <span class="text-emerald-400 font-extrabold text-xs mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">IP CLEANLINESS</span>
-              <span class="text-white font-bold text-sm mono-metric-crisp">Zero-Copyleft (MIT)</span>
+              <span class="text-slate-300 text-[10px] block uppercase tracking-wider">IP CLEANLINESS</span>
+              <span class="text-white font-bold text-xs mono-metric-crisp">Zero-Copyleft (MIT)</span>
             </div>
             <div>
-              <span class="text-slate-300 text-xs block uppercase tracking-wider">DYNO TELEMETRY</span>
-              <span class="text-amber-300 font-extrabold text-sm mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
+              <span class="text-slate-300 text-[10px] block uppercase tracking-wider">DYNO TELEMETRY</span>
+              <span class="text-amber-300 font-extrabold text-xs mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
             </div>
           </div>
         </div>
 
         <!-- RIGHT 5 COLS: TRACK 1 / TRACK 2 / TRACK 3 SELECTOR TABS & PURE APA BUYOUT MATRIX -->
-        <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-6 sm:p-7 flex flex-col justify-between shadow-2xl">
+        <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-4 sm:p-5 flex flex-col justify-between shadow-2xl">
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-sm font-mono uppercase tracking-widest text-amber-400 font-bold">Pure APA Title Allocation Matrix</span>
-              <span class="text-xs font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2.5 py-1 rounded font-bold">100% Title Assignment</span>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Pure APA Title Allocation Matrix</span>
+              <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold">100% Title Assignment</span>
             </div>
 
             <!-- Interactive Track 1 / Track 2 / Track 3 Selector Tabs -->
-            <div class="grid grid-cols-3 gap-2.5 mb-5 font-mono text-sm" role="tablist">
-              <button onclick="selectHeroTrack('track1')" id="heroTab-track1" class="py-2.5 px-3 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold transition-all cursor-pointer text-center">
-                TRACK 1<br><span class="text-xs font-normal opacity-95">Lean Tuner (86)</span>
+            <div class="grid grid-cols-3 gap-2 mb-3.5 font-mono text-xs" role="tablist">
+              <button onclick="selectHeroTrack('track1')" id="heroTab-track1" class="py-2 px-2.5 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold transition-all cursor-pointer text-center">
+                TRACK 1<br><span class="text-[10px] font-normal opacity-95">Lean Tuner (86)</span>
               </button>
-              <button onclick="selectHeroTrack('track2')" id="heroTab-track2" class="py-2.5 px-3 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-amber-300 transition-all cursor-pointer text-center">
-                TRACK 2<br><span class="text-xs font-normal opacity-95">Hypercar (51)</span>
+              <button onclick="selectHeroTrack('track2')" id="heroTab-track2" class="py-2 px-2.5 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-amber-300 transition-all cursor-pointer text-center">
+                TRACK 2<br><span class="text-[10px] font-normal opacity-95">Hypercar (51)</span>
               </button>
-              <button onclick="selectHeroTrack('track3')" id="heroTab-track3" class="py-2.5 px-3 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-sky-300 transition-all cursor-pointer text-center">
-                TRACK 3<br><span class="text-xs font-normal opacity-95">Skunkworks (63)</span>
+              <button onclick="selectHeroTrack('track3')" id="heroTab-track3" class="py-2 px-2.5 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-sky-300 transition-all cursor-pointer text-center">
+                TRACK 3<br><span class="text-[10px] font-normal opacity-95">Skunkworks (63)</span>
               </button>
             </div>
 
             <!-- Track 1 Configurator Panel (Default) -->
-            <div id="heroPanel-track1" class="space-y-3.5 font-mono">
+            <div id="heroPanel-track1" class="space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 1 // Lean Rapid-Sale (Lean Tuner)</h2>
-                <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-sm font-bold">86 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 1 // Lean Rapid-Sale (Lean Tuner)</h2>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-bold">86 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
-                Full-stack supercharged operational engines: GridSync payload sanitization middleware, Supabase/PostgreSQL schema definitions with RLS, and async queue workers for turnkey direct APA transfer ($12,500 Retail Buyout | $6,250 Wholesale Floor).
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
+                Full-stack supercharged operational engines: GridSync payload sanitization middleware, Supabase/PostgreSQL schema definitions with RLS, and async queue workers for turnkey direct APA transfer.
               </p>
-              <div class="grid grid-cols-1 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-400/60 flex items-center justify-between">
-                  <div>
-                    <div class="text-xs text-emerald-300 uppercase font-bold">Direct Repository Title Transfer</div>
-                    <div class="text-base sm:text-lg font-extrabold text-white mt-0.5">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  </div>
-                  <span class="px-3 py-1 rounded bg-emerald-500/20 text-emerald-300 text-sm font-bold">Clean-Room IP</span>
+              
+              <!-- Retail Window Sticker: Track 1 -->
+              <div class="p-3 rounded-xl bg-emerald-950/25 border border-emerald-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-emerald-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 1</span>
+                  <span class="text-[10px] text-slate-400">TURNKEY DIRECT ASSIGNMENT</span>
+                </div>
+                <div class="flex items-baseline justify-between">
+                  <span class="text-xs text-slate-300">Micro-APA Buyout Anchor:</span>
+                  <span class="text-xl font-black text-emerald-400 mono-metric-crisp">$4,500</span>
+                </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  100% Clean-Room Repository Handover • PostgreSQL + RLS Schema • Zero-Dependency Components
                 </div>
               </div>
             </div>
 
             <!-- Track 2 Configurator Panel -->
-            <div id="heroPanel-track2" class="hidden space-y-3.5 font-mono">
+            <div id="heroPanel-track2" class="hidden space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 2 // Hypercar Flagship</h2>
-                <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-sm font-bold">51 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 2 // Hypercar Flagship</h2>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">51 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
                 High-density interactive SCADA UI, canvas/WebGL state machines, domain physics solvers, 8–15 sub-panels, and full NIST SP 800-218 compliance gate pack.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-[#05070B] border border-amber-500/40">
-                  <div class="text-xs text-amber-300 uppercase font-bold">Standard Title Transfer</div>
-                  <div class="text-sm sm:text-base font-extrabold text-white mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-300 mt-0.5">Direct APA Schedule</div>
+              
+              <!-- Retail Window Sticker: Track 2 -->
+              <div class="p-3 rounded-xl bg-amber-950/25 border border-amber-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-amber-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 2</span>
+                  <span class="text-[10px] text-slate-400">HIGH-DENSITY SCADA OS</span>
                 </div>
-                <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-400/60">
-                  <div class="text-xs text-amber-300 uppercase font-bold">Strategic Monopoly Lock</div>
-                  <div class="text-sm sm:text-base font-extrabold text-amber-300 mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-200 mt-0.5">Full Category Retirement</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Chassis APA Buyout Anchor:</span>
+                    <span class="text-lg font-black text-amber-300 mono-metric-crisp">$14,500</span>
+                  </div>
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Vault Buyout:</span>
+                    <span class="text-lg font-black text-white mono-metric-crisp">$25,000 – $50,000</span>
+                  </div>
+                </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  Domain Physics Solvers • 8–15 Interactive Screens • Full NIST SP 800-218 SSDF Suite
                 </div>
               </div>
             </div>
 
             <!-- Track 3 Configurator Panel -->
-            <div id="heroPanel-track3" class="hidden space-y-3.5 font-mono">
+            <div id="heroPanel-track3" class="hidden space-y-2.5 font-mono">
               <div class="flex items-center justify-between">
-                <h2 class="text-xl font-bold text-white font-sans">Track 3 // Skunkworks Engine</h2>
-                <span class="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 text-sm font-bold">63 Units</span>
+                <h2 class="text-base font-bold text-white font-sans">Track 3 // Skunkworks Engine</h2>
+                <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-xs font-bold">63 Units</span>
               </div>
-              <p class="text-base text-slate-200 font-sans leading-relaxed">
+              <p class="text-xs text-slate-300 font-sans leading-relaxed">
                 Working Service Engines &amp; Production Reference Architectures. Custom Kalman/Order-Book/Consensus math, OpenAPI 3.1, &gt;80% pytest, zero copyleft.
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                <div class="p-4 rounded-xl bg-[#05070B] border border-sky-500/40">
-                  <div class="text-xs text-sky-300 uppercase font-bold">Baseline Engine Title</div>
-                  <div class="text-sm sm:text-base font-extrabold text-white mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-300 mt-0.5">Full Container &amp; SQL Core</div>
+              
+              <!-- Retail Window Sticker: Track 3 -->
+              <div class="p-3 rounded-xl bg-sky-950/25 border border-sky-500/40 space-y-1.5">
+                <div class="flex items-center justify-between border-b border-white/10 pb-1">
+                  <span class="text-[11px] text-sky-400 uppercase font-bold tracking-wider">OFFICIAL WINDOW STICKER // TRACK 3</span>
+                  <span class="text-[10px] text-slate-400">R&amp;D BYPASS ENGINE CORE</span>
                 </div>
-                <div class="p-4 rounded-xl bg-sky-950/30 border border-sky-400/60">
-                  <div class="text-xs text-sky-300 uppercase font-bold">Sovereign Vault Lock</div>
-                  <div class="text-sm sm:text-base font-extrabold text-sky-300 mt-1">PRIVATE ALLOCATION // APA SPEC READY</div>
-                  <div class="text-xs text-slate-200 mt-0.5">Exclusive Vertical Rights</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Full Engine APA Buyout:</span>
+                    <span class="text-lg font-black text-sky-300 mono-metric-crisp">$35,000 – $65,000</span>
+                  </div>
+                  <div>
+                    <span class="text-[11px] text-slate-300 block">Vault Buyout:</span>
+                    <span class="text-lg font-black text-white mono-metric-crisp">$75,000 – $150,000+</span>
+                  </div>
+                </div>
+                <div class="text-[10px] text-slate-300 leading-snug">
+                  Production Reference Engine • Turnkey Cloud Run Container • Clean-Room Legal Dossier
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Bottom Action Triggers inside Hero Configurator -->
-          <div class="mt-6 pt-4 border-t border-white/10 space-y-3 font-mono text-sm">
-            <div class="flex items-center justify-between text-sm text-slate-300">
-              <span>Active APA Allocation:</span>
-              <span id="heroSelectedStatus" class="text-emerald-400 font-bold">PRIVATE ALLOCATION // APA SPEC READY</span>
+          <div class="mt-3 pt-2.5 border-t border-white/10 space-y-2 font-mono text-xs">
+            <div class="flex items-center justify-between text-xs text-slate-300">
+              <span>Active Allocation Sticker:</span>
+              <span id="heroSelectedStatus" class="text-emerald-400 font-bold">Micro-APA Buyout Anchor: $4,500</span>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-[#FF9F0A] text-black border border-[#FF9F0A] font-extrabold text-center uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer">
-                ACQUIRE TITLE (APA) ➔
+            <div class="flex flex-col gap-2 w-full">
+              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded-lg text-xs font-mono tracking-wider bg-emerald-500 hover:bg-[#FF9F0A] text-black border border-[#FF9F0A] font-extrabold uppercase transition-all min-h-[42px] flex items-center justify-center cursor-pointer">
+                ACQUIRE TITLE (APA)
               </button>
-              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber py-3.5 px-4 rounded-xl bg-[#FF9F0A]/15 hover:bg-[#FF9F0A] border border-[#FF9F0A] text-[#FF9F0A] hover:text-black font-extrabold uppercase tracking-wider transition-all flex items-center justify-center cursor-pointer">
+              <button onclick="openFlagshipModal(null, null, null)" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded-lg text-xs font-mono tracking-wider bg-[#FF9F0A]/15 hover:bg-[#FF9F0A] border border-[#FF9F0A] text-[#FF9F0A] hover:text-black font-extrabold uppercase transition-all min-h-[42px] flex items-center justify-center cursor-pointer">
                 INQUIRE VAULT BUYOUT
               </button>
             </div>
@@ -931,15 +1003,15 @@ const showroomHtml = `<!DOCTYPE html>
             </button>
             <button onclick="filterByTrack('track1')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-emerald-950/40 border border-emerald-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-emerald-300 font-bold">Track 1 • Lean Tuner</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$4,500 Anchor</span>
             </button>
             <button onclick="filterByTrack('track2')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-amber-950/40 border border-amber-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-amber-300 font-bold">Track 2 • Hypercar</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$14,500 Anchor</span>
             </button>
             <button onclick="filterByTrack('track3')" class="w-full py-2.5 px-3 rounded-lg bg-[#05070B] hover:bg-sky-950/40 border border-sky-500/30 text-left text-sm flex items-center justify-between cursor-pointer transition-all">
               <span class="text-sky-300 font-bold">Track 3 • Skunkworks</span>
-              <span class="text-slate-200 text-xs">PRIVATE ALLOCATION</span>
+              <span class="text-slate-200 text-xs">$35k–$65k APA</span>
             </button>
           </div>
 
@@ -1215,20 +1287,20 @@ ${renderedCardsHtml}
 
       if (track === 'track1') {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 1 LEAN TUNER';
-        if (powertrain) powertrain.innerText = 'Track 1 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
+        if (powertrain) powertrain.innerText = 'Track 1 // $4,500 BUYOUT ANCHOR';
+        if (status) status.innerText = 'Micro-APA Buyout Anchor: $4,500';
         if (l1) l1.textContent = 'L1: SINGLE-BUNDLE REACT 19 + TS UI';
         if (l2) l2.textContent = 'L2: ZERO-DEPENDENCY MODULAR STATE';
       } else if (track === 'track2') {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 2 HYPERCAR FLAGSHIP';
-        if (powertrain) powertrain.innerText = 'Track 2 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
+        if (powertrain) powertrain.innerText = 'Track 2 // $14,500 BUYOUT ANCHOR';
+        if (status) status.innerText = 'Chassis APA Anchor: $14,500 | Vault: $25k–$50k';
         if (l1) l1.textContent = 'L1: 8-15 PANEL WEBGL / CANVAS HUD';
         if (l2) l2.textContent = 'L2: DOMAIN PHYSICS & SCADA SOLVER';
       } else {
         if (badge) badge.innerText = 'DYNO BAY // TRACK 3 SKUNKWORKS ENGINE';
-        if (powertrain) powertrain.innerText = 'Track 3 // PRIVATE ALLOCATION';
-        if (status) status.innerText = 'PRIVATE ALLOCATION // APA SPEC READY';
+        if (powertrain) powertrain.innerText = 'Track 3 // $35,000–$65,000 APA';
+        if (status) status.innerText = 'Full Engine APA: $35k–$65k | Vault: $75k–$150k+';
         if (l1) l1.textContent = 'L1: OPENAPI 3.1 + CLOUD RUN CONTAINER';
         if (l2) l2.textContent = 'L2: KALMAN / ORDERBOOK / CONSENSUS ENGINE';
       }
@@ -1462,7 +1534,11 @@ ${renderedCardsHtml}
       const priceEl = document.getElementById('flagshipModalTrackPrice');
       const mailtoBtn = document.getElementById('flagshipMailtoBtn');
 
-      const trackPricingText = 'PRIVATE ALLOCATION // APA SPEC READY';
+      const trackPricingText = track === 'track3'
+        ? 'Full Engine APA: $35,000–$65,000 | Vault Buyout: $75,000–$150,000+'
+        : track === 'track2'
+        ? 'Chassis APA Anchor: $14,500 | Vault Buyout: $25,000–$50,000'
+        : 'Micro-APA Buyout Anchor: $4,500';
 
       if (priceEl) priceEl.innerText = trackPricingText;
 

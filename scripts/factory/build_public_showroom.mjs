@@ -221,63 +221,10 @@ console.log(`📸 Indexed covers in-memory: ${rasterCoversFound} raster + ${svgC
 
 // Render high-contrast F1 Telemetry Visual Header / Cover
 function renderCoverMarkup(p) {
-  const cleanId = String(p.id).padStart(3, '0');
-  const isTrack3 = Boolean(p.isTrack3);
-  const isTrack2 = Boolean(p.isTrack2);
-
-  if (isTrack3 || isTrack2 || [5, 8, 9, 10, 86, 87, 88, 115, 116, 117, 118, 121, 122].includes(p.id)) {
-    const borderAccent = isTrack3 ? 'border-sky-500/35 group-hover:border-sky-400/70' : isTrack2 ? 'border-amber-500/35 group-hover:border-amber-400/70' : 'border-emerald-500/35 group-hover:border-emerald-400/70';
-    const badgeAccent = isTrack3 ? 'bg-sky-950/80 border-sky-500/50 text-sky-300' : isTrack2 ? 'bg-amber-950/80 border-amber-500/50 text-amber-300' : 'bg-emerald-950/80 border-emerald-500/50 text-emerald-300';
-    const dotAccent = isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400';
-    const strokeHex = isTrack3 ? '#38BDF8' : isTrack2 ? '#F59E0B' : '#10B981';
-
-    return `
-    <div class="w-full h-full relative overflow-hidden bg-gradient-to-br from-[#05070B] via-[#0A0D14] to-[#111724] border-b ${borderAccent} flex flex-col justify-between p-4 transition-colors">
-      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-45" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid-card-${p.id}" width="26" height="26" patternUnits="userSpaceOnUse">
-            <path d="M 26 0 L 0 0 0 26" fill="none" stroke="${strokeHex}" stroke-width="0.45" stroke-opacity="0.28"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid-card-${p.id})"/>
-        <circle cx="80%" cy="50%" r="54" fill="none" stroke="#00F0FF" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="4 4"/>
-        <circle cx="80%" cy="50%" r="34" fill="none" stroke="${strokeHex}" stroke-width="1.2" stroke-opacity="0.55"/>
-        <line x1="80%" y1="12%" x2="80%" y2="88%" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.35"/>
-        <line x1="58%" y1="50%" x2="98%" y2="50%" stroke="${strokeHex}" stroke-width="0.6" stroke-opacity="0.35"/>
-        <circle cx="80%" cy="50%" r="3.5" fill="${strokeHex}"/>
-        <circle cx="86%" cy="40%" r="2.5" fill="#00F0FF"/>
-      </svg>
-      <div class="relative z-10 flex items-center justify-between text-xs font-mono tracking-wider">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded border ${badgeAccent} font-bold">
-          <span class="w-1.5 h-1.5 rounded-full ${dotAccent} animate-pulse"></span>
-          UNIT #${cleanId} // ${isTrack3 ? 'SKUNKWORKS ENGINE' : isTrack2 ? 'HYPERCAR FLAGSHIP' : 'LEAN TUNER'}
-        </span>
-        <span class="text-slate-300 font-mono text-xs bg-black/60 px-2 py-0.5 rounded border border-white/10">b787061</span>
-      </div>
-      <div class="relative z-10 my-auto flex items-center gap-3.5 py-2">
-        <div class="w-11 h-11 rounded-xl bg-black/70 border border-white/15 flex items-center justify-center text-cyan-300 shadow-lg shrink-0">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-            <polyline points="2 17 12 22 22 17"/>
-            <polyline points="2 12 12 17 22 12"/>
-          </svg>
-        </div>
-        <div class="min-w-0">
-          <div class="text-sm font-mono font-bold text-white tracking-wider uppercase truncate">${escapeHtml(p.name)}</div>
-          <div class="text-xs font-mono text-cyan-300/90 truncate">${escapeHtml(p.archetype_name || 'SCADA MISSION CONSOLE')}</div>
-        </div>
-      </div>
-      <div class="relative z-10 pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-300">
-        <span class="text-emerald-400 font-bold tracking-tight">[ZERO-COPYLEFT // MIT/APACHE 2.0]</span>
-        <span class="text-amber-300 font-bold">RLS + PYTEST ${p.pytestScore}%</span>
-      </div>
-    </div>`;
-  }
-
-  return `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'640\\' height=\\'360\\' viewBox=\\'0 0 640 360\\'><rect width=\\'640\\' height=\\'360\\' fill=\\'%2305070B\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23C5A880\\' font-family=\\'monospace\\' font-size=\\'16\\' font-weight=\\'bold\\' text-anchor=\\'middle\\' dominant-baseline=\\'middle\\'>AURA &amp; GRID // TELEMETRY CHASSIS</text></svg>'">`;
+  return `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+<div style="display:none;" class="w-full h-32 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>`;
 }
 
-// Pre-render all 200 F1-grade Spec Cards into static DOM (Pure APA Title Buyout Model)
 const renderedCardsHtml = publicProducts.map((p, idx) => {
   const isTrack3 = Boolean(p.isTrack3);
   const isTrack2 = Boolean(p.isTrack2);
@@ -330,16 +277,16 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
            data-checkout="${escapeHtml(p.commercial_checkout_url)}"
            data-active="${p.checkout_active ? '1' : '0'}">
         <div>
-          <!-- Cover / Telemetry Header Window -->
-          <div class="relative bg-[#05070B] border-b border-white/10 aspect-[16/9] overflow-hidden">
-            ${coverMarkup}
-            ${!isCustomVectorCard ? `
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-black/85 backdrop-blur-md border border-white/15 text-xs font-mono uppercase text-cyan-300 font-bold">
-              UNIT #${cleanId} // ${escapeHtml(p.sector)}
-            </div>
-            <div class="absolute top-3 right-3 px-2.5 py-1 rounded ${isTrack3 ? 'bg-sky-500/20 border-sky-400/50 text-sky-300' : isTrack2 ? 'bg-amber-500/20 border-amber-400/50 text-amber-300' : 'bg-emerald-500/20 border-emerald-400/50 text-emerald-300'} border text-xs font-mono font-bold">
-              ${isTrack3 ? 'TRACK 3 SKUNKWORKS' : isTrack2 ? 'TRACK 2 HYPERCAR' : 'TRACK 1 LEAN TUNER'}
-            </div>` : ''}
+          <!-- Flex Chassis Card Header (No Absolute Positioning) -->
+          <div class="flex items-center justify-between w-full p-3 border-b border-white/5 bg-[#080C14]">
+            <span class="font-mono text-xs font-bold text-slate-200 truncate pr-2">UNIT #${cleanId} // ${escapeHtml(p.name).toUpperCase()}</span>
+            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase">${isTrack3 ? 'TRACK 3 // SKUNKWORKS' : isTrack2 ? 'TRACK 2 // HYPERCAR' : 'TRACK 1 // LEAN TUNER'}</span>
+          </div>
+
+          <!-- Cover / Telemetry Preview Window -->
+          <div class="relative bg-[#05070B] border-b border-white/10 aspect-[16/9] overflow-hidden flex items-center justify-center">
+            <img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div style="display:none;" class="w-full h-32 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>
           </div>
 
           <!-- Card Telemetry Body -->
@@ -372,12 +319,9 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
               </div>
             </div>
 
-            <!-- High-Contrast Universal Truth Pill Badge (Visible plain text in DOM) -->
-            <div class="my-2.5 flex flex-wrap items-center gap-2">
-              <span class="inline-flex items-center px-3 py-1 rounded-full ${isTrack3 ? 'bg-sky-400 text-black border-sky-300' : 'bg-amber-400 text-black border-amber-300'} font-black text-xs font-mono uppercase tracking-wider shadow-sm border">
-                ${isTrack3 ? '[WORKING SERVICE ENGINE]' : '[SIMULATED DATA PROTOTYPE]'}
-              </span>
-              <span class="text-sm font-mono text-slate-300">Commit <strong class="text-white">b787061</strong></span>
+            <!-- Subtle Telemetry Status Pill Tag -->
+            <div class="text-[10px] font-mono ${isTrack3 ? 'text-sky-400/80 bg-sky-500/10 border-sky-500/20' : 'text-amber-400/80 bg-amber-500/10 border-amber-500/20'} border px-2 py-1 rounded text-center my-2">
+              ${isTrack3 ? 'WORKING SERVICE ENGINE // PRODUCTION REFERENCE' : 'SIMULATED DATA PROTOTYPE'}
             </div>
 
             <p class="text-base text-slate-200 line-clamp-2 mb-3.5 leading-relaxed">${escapeHtml(p.category)}</p>
@@ -703,16 +647,16 @@ const showroomHtml = `<!DOCTYPE html>
       <div class="rounded-2xl bg-[#0A0D14] border border-cyan-500/40 overflow-hidden shadow-[0_0_30px_-5px_rgba(0,240,255,0.2)] flex flex-col">
         
         <!-- Dyno Bay Top Control Bar -->
-        <div class="relative z-10 flex items-center justify-between p-2.5 sm:p-3 border-b border-white/10 bg-[#05070B]/95 font-mono">
+        <div class="relative z-10 flex items-center justify-between w-full p-2 border-b border-white/10 bg-[#05070B]/95 font-mono">
           <div class="flex items-center gap-2 overflow-hidden">
-            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold tracking-wider animate-pulse shrink-0">
+            <span class="px-2.5 py-1 text-[11px] font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded shrink-0">
               [DYNO SEALED 4/4 GATES]
             </span>
-            <span class="text-white font-bold truncate text-xs sm:text-sm" id="dynoUnitTitle">Unit #001 — Ready for Dyno</span>
+            <span class="text-white font-bold truncate text-xs" id="dynoUnitTitle">Unit #001 — Ready for Dyno</span>
           </div>
           
           <!-- Tactile Arcade Dyno Controls -->
-          <div class="flex items-center gap-1 font-mono text-xs shrink-0">
+          <div class="flex items-center gap-1.5 font-mono text-xs shrink-0">
             <button onclick="rotateDynoGrid(-15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Left">
               [YAW -15°]
             </button>

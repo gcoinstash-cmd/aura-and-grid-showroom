@@ -31,11 +31,22 @@ CREATE TABLE IF NOT EXISTS telemetry_snapshots_y2026m10 PARTITION OF telemetry_s
 CREATE INDEX IF NOT EXISTS idx_telemetry_brin ON telemetry_snapshots USING BRIN (recorded_at);
 CREATE INDEX IF NOT EXISTS idx_telemetry_drive_mode ON telemetry_snapshots (drive_mode);
 
+-- Venues Registry
+CREATE TABLE IF NOT EXISTS arbitrage_venues (
+    venue_id VARCHAR(64) PRIMARY KEY,
+    venue_name VARCHAR(64) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+INSERT INTO arbitrage_venues (venue_id, venue_name)
+VALUES ('LD4', 'London Equinix LD4'), ('NY4', 'Secaucus Equinix NY4'), ('TY3', 'Tokyo Equinix TY3')
+ON CONFLICT (venue_id) DO NOTHING;
+
 -- Global Arbitrage Vectors table
 CREATE TABLE IF NOT EXISTS arbitrage_vectors (
     route_id VARCHAR(64) PRIMARY KEY,
-    source_venue VARCHAR(64) NOT NULL,
-    target_venue VARCHAR(64) NOT NULL,
+    source_venue VARCHAR(64) NOT NULL REFERENCES arbitrage_venues(venue_id),
+    target_venue VARCHAR(64) NOT NULL REFERENCES arbitrage_venues(venue_id),
     distance_km DOUBLE PRECISION NOT NULL,
     fiber_latency_ns BIGINT NOT NULL,
     chrono_latency_ns BIGINT NOT NULL,
@@ -54,3 +65,9 @@ CREATE TABLE IF NOT EXISTS telemetry_audit_ledger (
     details JSONB NOT NULL,
     sha256_hash VARCHAR(64) NOT NULL
 );
+
+-- ROW LEVEL SECURITY HARDENING
+ALTER TABLE arbitrage_venues ENABLE ROW LEVEL SECURITY;
+ALTER TABLE telemetry_snapshots ENABLE ROW LEVEL SECURITY;
+ALTER TABLE arbitrage_vectors ENABLE ROW LEVEL SECURITY;
+ALTER TABLE telemetry_audit_ledger ENABLE ROW LEVEL SECURITY;

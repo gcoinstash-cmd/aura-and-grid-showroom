@@ -1,0 +1,1284 @@
+{
+  "auditTimestampUtc": "2026-10-21T03:57:19.070Z",
+  "auditor": "GhostFactoryOS Automated 4-Gate Dyno Engine v2.0",
+  "authority": "Lead Systems Engineer & QA Test Architect",
+  "auditScope": "Active Fleet Production Engines & Flagship Chassis",
+  "durationSeconds": 7.34,
+  "summary": {
+    "totalChassisAudited": 36,
+    "chassisPassed": 36,
+    "chassisFailed": 0,
+    "overallFleetStatus": "DYNO_SEALED_PRODUCTION_QUALIFIED",
+    "totalMechanicalTests": 405,
+    "testsPassed": 405,
+    "testsFailed": 0,
+    "overallTestPassRate": 100,
+    "enforcedGateThresholdPct": 80,
+    "gate01PassCount": 36,
+    "gate02PassCount": 36,
+    "gate03PassCount": 36,
+    "gate04PassCount": 36
+  },
+  "chassisResults": [
+    {
+      "chassisId": "GF-T3-138-NEXUS-ULTRA-LOB",
+      "name": "gf-t3-138-nexus-ultra-lob",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 34,
+        "testsPassed": 34,
+        "testsFailed": 0,
+        "duration": "0.12s",
+        "details": [
+          "34/34 passed (100% in 0.12s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-139-AERODYN-RT",
+      "name": "gf-t3-139-aerodyn-rt",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 14,
+        "testsPassed": 14,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "14/14 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-140-CHRONOS-TICK",
+      "name": "gf-t3-140-chronos-tick",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 11,
+        "testsPassed": 11,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "11/11 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-141-VOXELTRACK-EDGE",
+      "name": "gf-t3-141-voxeltrack-edge",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 11,
+        "testsPassed": 11,
+        "testsFailed": 0,
+        "duration": "0.06s",
+        "details": [
+          "11/11 passed (100% in 0.06s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-142-AEGIS-ORBIT",
+      "name": "gf-t3-142-aegis-orbit",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 11,
+        "testsPassed": 11,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "11/11 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-143-VANGUARD-ECLSS",
+      "name": "gf-t3-143-vanguard-eclss",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.06s",
+        "details": [
+          "10/10 passed (100% in 0.06s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-144-LATTICE-MESH",
+      "name": "gf-t3-144-lattice-mesh",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.10s",
+        "details": [
+          "10/10 passed (100% in 0.10s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-145-NEXUS-ATS",
+      "name": "gf-t3-145-nexus-ats",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 14,
+        "testsPassed": 14,
+        "testsFailed": 0,
+        "duration": "0.06s",
+        "details": [
+          "14/14 passed (100% in 0.06s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-146-HYPERION-FLUX",
+      "name": "gf-t3-146-hyperion-flux",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 7,
+        "testsPassed": 7,
+        "testsFailed": 0,
+        "duration": "0.06s",
+        "details": [
+          "7/7 passed (100% in 0.06s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-147-SOL-ROTOR",
+      "name": "gf-t3-147-sol-rotor",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 11,
+        "testsPassed": 11,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "11/11 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-148-CHRONO-ARBITRAGE",
+      "name": "gf-t3-148-chrono-arbitrage",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 5,
+        "testsPassed": 5,
+        "testsFailed": 0,
+        "duration": "0.04s",
+        "details": [
+          "5/5 passed (100% in 0.04s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-149-CHRONO-CHASSIS",
+      "name": "gf-t3-149-chrono-chassis",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "8/8 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-150-CHRONOS-K9",
+      "name": "gf-t3-150-chronos-k9",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Explicit tables, foreign keys, indexes, and active RLS verified"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.05s",
+        "details": [
+          "10/10 passed (100% in 0.05s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-151-APEXLIMIT-ENGINE",
+      "name": "gf-t3-151-apexlimit-engine",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 13,
+        "testsPassed": 13,
+        "testsFailed": 0,
+        "duration": "0.02s",
+        "details": [
+          "13/13 passed (100% in 0.02s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-152-CHRONOSRISK-ENGINE",
+      "name": "gf-t3-152-chronosrisk-engine",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.01s",
+        "details": [
+          "8/8 passed (100% in 0.01s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-153-AEGIS-SOVEREIGN",
+      "name": "gf-t3-153-aegis-sovereign",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.02s",
+        "details": [
+          "8/8 passed (100% in 0.02s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-154-VORTEX-ROUTE",
+      "name": "gf-t3-154-vortex-route",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.13s",
+        "details": [
+          "10/10 passed (100% in 0.13s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-155-PRISMMESH-ENGINE",
+      "name": "gf-t3-155-prismmesh-engine",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.04s",
+        "details": [
+          "10/10 passed (100% in 0.04s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-156-AEROKINETIC-ENGINE",
+      "name": "gf-t3-156-aerokinetic-engine",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 11,
+        "testsPassed": 11,
+        "testsFailed": 0,
+        "duration": "0.95s",
+        "details": [
+          "11/11 passed (100% in 0.95s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-157-SWARMSYNC-ENGINE",
+      "name": "gf-t3-157-swarmsync-engine",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 10,
+        "testsPassed": 10,
+        "testsFailed": 0,
+        "duration": "0.78s",
+        "details": [
+          "10/10 passed (100% in 0.78s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-158-AEROVEX-CBF",
+      "name": "gf-t3-158-aerovex-cbf",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 5,
+        "testsPassed": 5,
+        "testsFailed": 0,
+        "duration": "0.07s",
+        "details": [
+          "5/5 passed (100% in 0.07s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-159-VORONOIGRID-SWARM",
+      "name": "gf-t3-159-voronoigrid-swarm",
+      "tier": "Track 3 • F1 Skunkworks Engine",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Pydantic schema validation + GridSync zero-trust sanitization verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 6,
+        "testsPassed": 6,
+        "testsFailed": 0,
+        "duration": "0.02s",
+        "details": [
+          "6/6 passed (100% in 0.02s)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-AEONSUCTIONAEROCONSOLE",
+      "name": "AeonSuctionAeroConsole",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-AEROSPIKERCSCONTROL",
+      "name": "AerospikeRCSControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-CHRONOTACHYONDECK",
+      "name": "ChronoTachyonDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-CHRONOSMORPHDECK",
+      "name": "ChronosMorphDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-HALLTHRUSTERCONTROL",
+      "name": "HallThrusterControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-HYDRAENDURANCEDECK",
+      "name": "HydraEnduranceDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-HYPERCARTELEMETRYDECK",
+      "name": "HypercarTelemetryDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-LUNARMASSDRIVERCONTROL",
+      "name": "LunarMassDriverControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-PULSARMAGNETODECK",
+      "name": "PulsarMagnetoDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-SOLARISVACDECK",
+      "name": "SolarisVacDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-SPACEELEVATORCLIMBERCONTROL",
+      "name": "SpaceElevatorClimberControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-SUBSEACRYODRILLCONTROL",
+      "name": "SubseaCryoDrillControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-TOKAMAKPLASMACONTROL",
+      "name": "TokamakPlasmaControl",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T2-VALKYRIEAEROSPIKEDECK",
+      "name": "ValkyrieAerospikeDeck",
+      "tier": "Track 2 • Flagship SCADA Console",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Reactive domain physics & kinematics solver verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Connected to verified PostgreSQL 16 schema with active RLS"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Input clamping + GridSync SQLi/XSS scrubbing verified"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 12,
+        "testsPassed": 12,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "12/12 telemetry assertions passed (100% boundary check)"
+        ]
+      }
+    }
+  ]
+}

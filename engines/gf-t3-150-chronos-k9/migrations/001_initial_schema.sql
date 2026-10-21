@@ -30,9 +30,21 @@ CREATE TABLE IF NOT EXISTS maglev_telemetry_snapshots_y2026m10 PARTITION OF magl
 CREATE INDEX IF NOT EXISTS idx_maglev_brin ON maglev_telemetry_snapshots USING BRIN (recorded_at);
 CREATE INDEX IF NOT EXISTS idx_maglev_run_mode ON maglev_telemetry_snapshots (run_mode);
 
+-- MagLev Bogie Registry
+CREATE TABLE IF NOT EXISTS maglev_bogies (
+    bogie_id VARCHAR(8) PRIMARY KEY,
+    bogie_name VARCHAR(32) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+INSERT INTO maglev_bogies (bogie_id, bogie_name)
+VALUES ('BOGIE-01', 'Front-Left MagLev Bogie'), ('BOGIE-02', 'Front-Right MagLev Bogie'),
+       ('BOGIE-03', 'Rear-Left MagLev Bogie'), ('BOGIE-04', 'Rear-Right MagLev Bogie')
+ON CONFLICT (bogie_id) DO NOTHING;
+
 -- Quad Bogie Telemetry Airgap Log
 CREATE TABLE IF NOT EXISTS bogie_airgap_telemetry (
-    bogie_id VARCHAR(8) NOT NULL,
+    bogie_id VARCHAR(8) NOT NULL REFERENCES maglev_bogies(bogie_id),
     timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     gap_mm DOUBLE PRECISION NOT NULL,
     target_gap_mm DOUBLE PRECISION NOT NULL DEFAULT 15.0,
@@ -49,3 +61,9 @@ CREATE TABLE IF NOT EXISTS maglev_audit_ledger (
     details JSONB NOT NULL,
     sha256_hash VARCHAR(64) NOT NULL
 );
+
+-- ROW LEVEL SECURITY HARDENING
+ALTER TABLE maglev_bogies ENABLE ROW LEVEL SECURITY;
+ALTER TABLE maglev_telemetry_snapshots ENABLE ROW LEVEL SECURITY;
+ALTER TABLE bogie_airgap_telemetry ENABLE ROW LEVEL SECURITY;
+ALTER TABLE maglev_audit_ledger ENABLE ROW LEVEL SECURITY;

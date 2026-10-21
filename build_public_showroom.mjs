@@ -310,7 +310,8 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
   return `
       <!-- F1 Spec Card #${p.id} -->
-      <div class="product-card${initialHidden} rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between scroll-mt-32 group"
+      <div class="product-card${initialHidden} rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between scroll-mt-32 group cursor-pointer"
+           onclick="loadVehicleIntoDyno(${p.id})"
            id="vehicle-${p.id}"
            data-id="${p.id}"
            data-name="${escapeHtml(p.name)}"
@@ -425,26 +426,26 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           </div>
         </div>
 
-        <!-- Card Actions: 3D Dyno Inspect + Live Demo + ACQUIRE TITLE (APA) -->
-        <div class="p-5 sm:p-6 pt-0 border-t border-white/5 mt-2 flex flex-col gap-2.5 text-sm font-mono">
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="loadVehicleIntoDyno(${p.id})" class="py-2.5 px-2.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 font-bold transition-all min-h-[42px] flex items-center justify-center gap-1 cursor-pointer">
-              <span>3D Dyno Inspect</span>
+        <!-- Card Actions: Quick Actions + Clean Full-Width Vertical CTA Stack -->
+        <div class="p-3.5 sm:p-4 pt-0 border-t border-white/5 mt-1 flex flex-col gap-2 font-mono">
+          <div class="grid grid-cols-2 gap-1.5">
+            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id})" class="py-2 px-2 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 font-bold transition-all min-h-[36px] flex items-center justify-center gap-1 cursor-pointer text-xs">
+              <span>⚡ Dyno Inspect</span>
             </button>
             ${p.isExternalLive ? `
-            <a href="${escapeHtml(p.preview_url)}" target="_blank" class="py-2.5 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[42px] flex items-center justify-center gap-1">
+            <a href="${escapeHtml(p.preview_url)}" target="_blank" onclick="event.stopPropagation();" class="py-2 px-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[36px] flex items-center justify-center gap-1 text-xs">
               <span>Live Demo ↗</span>
             </a>` : `
-            <button onclick="loadVehicleIntoDyno(${p.id})" class="py-2.5 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[42px] flex items-center justify-center gap-1 cursor-pointer">
+            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id})" class="py-2 px-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[36px] flex items-center justify-center gap-1 cursor-pointer text-xs">
               <span>Dyno Spec ↗</span>
             </button>`}
           </div>
-          <div class="flex flex-col gap-2 w-full mt-4">
-            <button onclick="openModal(this)" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded text-sm font-mono tracking-wider bg-emerald-500/20 hover:bg-[#FF9F0A] text-emerald-300 hover:text-black border border-[#FF9F0A] font-extrabold transition-all min-h-[44px] flex items-center justify-center cursor-pointer">
-              ACQUIRE TITLE (APA)
+          <div class="flex flex-col gap-1.5 w-full mt-0.5">
+            <button onclick="event.stopPropagation(); openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}', 'acquire')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
+              ACQUIRE TITLE (APA) →
             </button>
-            <button onclick="openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}')" class="cta-cyber-amber w-full text-center py-2.5 px-3 rounded text-sm font-mono tracking-wider ${isTrack3 ? 'bg-sky-500/20 text-sky-200 hover:bg-[#FF9F0A] hover:text-black' : isTrack2 ? 'bg-amber-500/20 text-amber-200 hover:bg-[#FF9F0A] hover:text-black' : 'bg-[#FF9F0A]/15 text-[#FF9F0A] hover:bg-[#FF9F0A] hover:text-black'} border border-[#FF9F0A] font-extrabold transition-all min-h-[44px] flex items-center justify-center cursor-pointer">
-              INQUIRE VAULT BUYOUT
+            <button onclick="event.stopPropagation(); openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}', 'dossier')" class="w-full py-2.5 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer flex items-center justify-center">
+              REQUEST VAULT DOSSIER
             </button>
           </div>
         </div>
@@ -604,10 +605,10 @@ const showroomHtml = `<!DOCTYPE html>
     }
   </style>
 </head>
-<body class="bg-[#05070B] text-slate-100 selection:bg-emerald-500 selection:text-black h-screen max-h-screen overflow-hidden flex flex-col justify-between p-2 sm:p-3 md:p-4 font-sans">
+<body class="min-h-screen bg-[#05070B] text-slate-100 flex flex-col justify-between font-sans selection:bg-emerald-500 selection:text-black">
 
   <!-- ================= 1. TOP TELEMETRY NAV (GAMIFIED ADHD COMMAND BAR) ================= -->
-  <header class="w-full border-b border-white/10 bg-[#05070B] px-2 sm:px-4 py-1.5 shrink-0">
+  <header class="w-full border-b border-white/10 bg-[#05070B] px-3 sm:px-4 py-2 shrink-0">
     <div class="max-w-[1700px] mx-auto flex items-center justify-between gap-3 font-mono">
       
       <!-- Left: AURA & GRID Logo -->
@@ -617,31 +618,49 @@ const showroomHtml = `<!DOCTYPE html>
       </a>
 
       <!-- Center: 200 VERIFIED UNITS BADGE -->
-      <div class="hidden md:inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-[11px] font-mono uppercase tracking-widest">
+      <div class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest">
         <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
         <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
       </div>
 
-      <!-- Right: DYNO INTEGRITY + FLEET DRAWER TOGGLE -->
+      <!-- Right: DYNO INTEGRITY BADGE -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Dyno Integrity: 4/4 Gates Passed Badge -->
-        <div class="flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/50 px-2.5 py-1 rounded-lg text-xs shadow-[0_0_10px_rgba(16,185,129,0.25)]">
+        <div class="flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/50 px-3 py-1 rounded-lg text-xs shadow-[0_0_10px_rgba(16,185,129,0.25)]">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10B981]"></span>
           <span class="text-emerald-300 font-bold uppercase tracking-wider text-[10px] sm:text-[11px]">DYNO INTEGRITY: 4/4 GATES PASSED</span>
         </div>
-
-        <!-- Fleet Lot Drawer Trigger Button -->
-        <button onclick="toggleFleetDrawer()" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5" title="Open 200-Unit Fleet Spec Drawer">
-          <span>FLEET LOT (200)</span>
-          <span class="text-[10px]">▼</span>
-        </button>
       </div>
 
     </div>
   </header>
 
-  <!-- ================= 2. TELEMETRY RIBBON: 4 TACTILE STAT GAUGES ================= -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 my-1 font-mono text-xs shrink-0 max-w-[1700px] w-full mx-auto">
+  <!-- ================= 2. HIGH-TACTILITY TRACK NAVIGATION BAR ================= -->
+  <nav class="w-full bg-[#0A0D14] border-b border-white/10 px-3 sm:px-4 py-2 shrink-0">
+    <div class="max-w-[1700px] mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 overflow-x-auto py-0.5 w-full sm:w-auto font-mono text-xs" role="tablist">
+        <button onclick="setTrackNav('track1')" id="navPill-track1" class="track-pill px-3.5 py-1.5 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold uppercase tracking-wider transition-all cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+          [ TRACK 1 // LEAN TUNER (86 UNITS) ]
+        </button>
+        <button onclick="setTrackNav('track2')" id="navPill-track2" class="track-pill px-3.5 py-1.5 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-amber-300 hover:border-amber-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
+          [ TRACK 2 // HYPERCAR FLAGSHIP (51 UNITS) ]
+        </button>
+        <button onclick="setTrackNav('track3')" id="navPill-track3" class="track-pill px-3.5 py-1.5 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
+          [ TRACK 3 // SKUNKWORKS ENGINE (63 UNITS) ]
+        </button>
+        <button onclick="setTrackNav('all')" id="navPill-all" class="track-pill px-2.5 py-1.5 rounded-xl border border-white/10 bg-[#111724]/60 text-slate-400 hover:text-white font-medium uppercase tracking-wider transition-all cursor-pointer text-[11px]">
+          [ ALL LOTS (200) ]
+        </button>
+      </div>
+
+      <div class="hidden xl:flex items-center gap-2 font-mono text-[11px] text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>DUAL-PANE F1 ARCADE COCKPIT // 6 UNITS PER LOT</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= 3. TELEMETRY RIBBON: 4 TACTILE STAT GAUGES ================= -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 my-2 font-mono text-xs shrink-0 max-w-[1700px] w-full mx-auto px-3 sm:px-4">
     <!-- Card 1: FLEET UNITS: 200 VERIFIED -->
     <div class="p-2 sm:p-2.5 rounded-xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_12px_-4px_rgba(0,240,255,0.15)]">
       <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">FLEET UNITS</div>
@@ -670,210 +689,151 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="p-2 sm:p-2.5 rounded-xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_12px_-4px_rgba(56,189,248,0.15)]">
       <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">ACQUISITION</div>
       <div class="text-base sm:text-lg font-black text-sky-300 mono-metric-crisp mt-0.5">PURE APA TENDER</div>
-      <div class="text-[10px] text-slate-500">Direct Sovereign Handover</div>
+      <div class="text-[10px] text-slate-500">Zero Retail Licensing</div>
     </div>
   </div>
 
-  <!-- ================= 3. MAIN COCKPIT: F1 DYNO BAY + TRIM CONFIGURATOR GRID ================= -->
-  <main class="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-3 my-1 max-w-[1700px] w-full mx-auto overflow-hidden">
+  <!-- ================= 4. DUAL-PANE F1 ARCADE COCKPIT ================= -->
+  <main class="max-w-[1700px] w-full mx-auto px-3 sm:px-4 py-2 flex flex-col lg:flex-row gap-4 flex-1 items-start">
     
-    <!-- LEFT 7 COLS: SLEEK F1 CHASSIS WIREFRAME DYNO BAY -->
-    <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/40 relative overflow-hidden flex flex-col justify-between shadow-[0_0_35px_-10px_rgba(0,240,255,0.22)]">
+    <!-- LEFT PANE (45% Width): HOLOGRAPHIC 3D DYNO BAY SCANNER & TENDER PANEL -->
+    <div class="w-full lg:w-[45%] flex flex-col gap-3 lg:sticky lg:top-4 shrink-0">
       
-      <!-- Top Dyno Header Bar: Unit Badge + [DYNO SEALED 4/4 GATES] + Arcade Controls -->
-      <div class="relative z-10 p-2 sm:p-2.5 border-b border-white/10 bg-[#05070B]/90 backdrop-blur-md flex flex-wrap items-center justify-between gap-2 font-mono text-xs shrink-0">
-        <div class="flex items-center gap-2 flex-wrap">
-          <span class="px-2 py-0.5 rounded bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 font-bold text-xs" id="dynoUnitBadge">DYNO BAY // F1 CHASSIS WIREFRAME</span>
-          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/80 shadow-[0_0_10px_rgba(16,185,129,0.5)] font-bold text-[10px] tracking-wider animate-pulse">
-            [DYNO SEALED 4/4 GATES]
-          </span>
-          <span class="text-white font-bold truncate max-w-[180px] sm:max-w-xs text-xs" id="dynoUnitTitle">Unit #001 — Ready for Dyno</span>
-        </div>
+      <!-- Dyno Scanner Stage Box -->
+      <div class="rounded-2xl bg-[#0A0D14] border border-cyan-500/40 overflow-hidden shadow-[0_0_30px_-5px_rgba(0,240,255,0.2)] flex flex-col">
         
-        <!-- Tactile Arcade Dyno Controls -->
-        <div class="flex items-center gap-1 font-mono text-xs">
-          <button onclick="rotateDynoGrid(-15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Left">
-            [YAW -15°]
+        <!-- Dyno Bay Top Control Bar -->
+        <div class="relative z-10 flex items-center justify-between p-2.5 sm:p-3 border-b border-white/10 bg-[#05070B]/95 font-mono">
+          <div class="flex items-center gap-2 overflow-hidden">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold tracking-wider animate-pulse shrink-0">
+              [DYNO SEALED 4/4 GATES]
+            </span>
+            <span class="text-white font-bold truncate text-xs sm:text-sm" id="dynoUnitTitle">Unit #001 — Ready for Dyno</span>
+          </div>
+          
+          <!-- Tactile Arcade Dyno Controls -->
+          <div class="flex items-center gap-1 font-mono text-xs shrink-0">
+            <button onclick="rotateDynoGrid(-15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Left">
+              [YAW -15°]
+            </button>
+            <button onclick="triggerScanSchematic()" id="scanSchematicBtn" class="px-2.5 py-1 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/60 text-cyan-300 font-extrabold text-xs shadow-[0_0_10px_rgba(0,240,255,0.3)] transition-all cursor-pointer" title="Trigger Laser Chassis Scan">
+              [SCAN SCHEMATIC]
+            </button>
+            <button onclick="rotateDynoGrid(15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Right">
+              [YAW +15°]
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive F1 Chassis Dyno Canvas Stage -->
+        <div class="relative z-10 w-full h-[260px] sm:h-[300px] flex items-center justify-center p-2 bg-gradient-to-b from-[#05070B] via-[#0A0D14] to-[#05070B] overflow-hidden">
+          <canvas id="dynoHoloCanvas" class="w-full h-full block rounded-xl border border-cyan-500/20 shadow-inner"></canvas>
+        </div>
+
+        <!-- Bottom Dyno Telemetry Readout Strip -->
+        <div class="relative z-10 p-2.5 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs shrink-0">
+          <div>
+            <span class="text-slate-400 text-[10px] block uppercase tracking-wider">APA ALLOCATION TRACK</span>
+            <span class="text-cyan-300 font-bold text-xs mono-metric-crisp truncate block" id="dynoPowertrainReadout">Track 1 // PRIVATE APA</span>
+          </div>
+          <div>
+            <span class="text-slate-400 text-[10px] block uppercase tracking-wider">PYTEST VERIFICATION</span>
+            <span class="text-emerald-400 font-extrabold text-xs mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
+          </div>
+          <div>
+            <span class="text-slate-400 text-[10px] block uppercase tracking-wider">IP CLEANLINESS</span>
+            <span class="text-white font-bold text-xs mono-metric-crisp">Zero-Copyleft (MIT)</span>
+          </div>
+          <div>
+            <span class="text-slate-400 text-[10px] block uppercase tracking-wider">DYNO TELEMETRY</span>
+            <span class="text-amber-300 font-extrabold text-xs mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left Active Loaded Unit & Institutional Tender Panel -->
+      <div class="rounded-2xl bg-[#111724]/95 border border-white/15 p-3.5 sm:p-4 flex flex-col gap-3 shadow-xl overflow-hidden font-mono">
+        <div class="flex items-center justify-between border-b border-white/10 pb-2">
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Loaded Chassis Specification</span>
+          <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold">100% Clean Title Transfer</span>
+        </div>
+
+        <div>
+          <h2 class="text-sm sm:text-base font-bold text-white font-sans truncate" id="leftLoadedUnitName">Unit #001 // Apex Sentinel C2 Console</h2>
+          <p class="text-xs text-slate-300 font-sans leading-relaxed line-clamp-2 mt-1" id="leftLoadedUnitDesc">Supercharged operational telemetry prototype: real-time Kalman filtering, automated AlloyDB persistent schemas, and OpenAPI 3.1 contract endpoints.</p>
+        </div>
+
+        <!-- Institutional Tender Badge -->
+        <div class="p-2.5 rounded-xl bg-[#05070B] border border-cyan-500/35 space-y-1">
+          <div class="flex items-center justify-between border-b border-white/10 pb-1">
+            <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider" id="leftTenderStatus">ALLOCATION: PRIVATE APA TENDER</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          </div>
+          <div class="text-xs font-bold text-emerald-400">100% CLEAN-ROOM TITLE TRANSFER AVAILABLE</div>
+          <div class="text-[11px] text-slate-400 leading-snug">Terms &amp; Institutional Allocation Disclosed Under Mutual APA NDA</div>
+        </div>
+
+        <!-- Full-Width Vertical CTA Stack (Directive 4) -->
+        <div class="flex flex-col gap-2 w-full mt-1">
+          <button id="leftCtaAcquireBtn" onclick="openLoadedUnitModal('acquire')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
+            ACQUIRE TITLE (APA) →
           </button>
-          <button onclick="triggerScanSchematic()" id="scanSchematicBtn" class="px-2.5 py-1 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/60 text-cyan-300 font-extrabold text-xs shadow-[0_0_10px_rgba(0,240,255,0.3)] transition-all cursor-pointer" title="Trigger Laser Chassis Scan">
-            [SCAN SCHEMATIC]
-          </button>
-          <button onclick="rotateDynoGrid(15)" class="px-2.5 py-1 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Right">
-            [YAW +15°]
+          <button id="leftCtaDossierBtn" onclick="openLoadedUnitModal('dossier')" class="w-full py-2.5 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer flex items-center justify-center">
+            REQUEST VAULT DOSSIER
           </button>
         </div>
       </div>
 
-      <!-- Interactive F1 Chassis Dyno Canvas Stage (Dynamic Flex-1) -->
-      <div class="relative z-10 w-full flex-1 min-h-0 flex items-center justify-center p-1 sm:p-2 bg-gradient-to-b from-[#05070B] via-[#0A0D14] to-[#05070B] overflow-hidden">
-        <canvas id="dynoHoloCanvas" class="w-full h-full block rounded-xl border border-cyan-500/20 shadow-inner"></canvas>
-      </div>
-
-      <!-- Bottom Dyno Telemetry Readout Strip -->
-      <div class="relative z-10 p-2 sm:p-2.5 border-t border-white/10 bg-[#05070B]/95 grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs shrink-0">
-        <div>
-          <span class="text-slate-400 text-[10px] block uppercase tracking-wider">APA ALLOCATION TRACK</span>
-          <span class="text-cyan-300 font-bold text-xs mono-metric-crisp" id="dynoPowertrainReadout">Track 1 // PRIVATE APA TENDER</span>
-        </div>
-        <div>
-          <span class="text-slate-400 text-[10px] block uppercase tracking-wider">PYTEST VERIFICATION</span>
-          <span class="text-emerald-400 font-extrabold text-xs mono-metric-crisp" id="dynoPytestReadout">&gt;88% Branch Pass</span>
-        </div>
-        <div>
-          <span class="text-slate-400 text-[10px] block uppercase tracking-wider">IP CLEANLINESS</span>
-          <span class="text-white font-bold text-xs mono-metric-crisp">Zero-Copyleft (MIT)</span>
-        </div>
-        <div>
-          <span class="text-slate-400 text-[10px] block uppercase tracking-wider">DYNO TELEMETRY</span>
-          <span class="text-amber-300 font-extrabold text-xs mono-metric-crisp" id="dynoRpmReadout">14ms // 60 FPS Lock</span>
-        </div>
-      </div>
     </div>
 
-    <!-- RIGHT 5 COLS: TRACK 1 / TRACK 2 / TRACK 3 SELECTOR TABS & INSTITUTIONAL TENDER PANEL -->
-    <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-3 sm:p-4 flex flex-col justify-between shadow-2xl overflow-hidden">
-      <div>
-        <div class="flex items-center justify-between mb-2 shrink-0">
-          <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Pure APA Title Allocation Matrix</span>
-          <span class="text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2 py-0.5 rounded font-bold">100% Title Assignment</span>
+    <!-- RIGHT PANE (55% Width): VISIBLE CHASSIS LOT GRID (6 UNITS PER VIEW) -->
+    <div class="w-full lg:w-[55%] flex flex-col gap-3 flex-1">
+      
+      <!-- Top Lot Control Bar: Active Track + Search Input -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#0A0D14] border border-white/10 rounded-xl p-2.5 sm:px-3 font-mono">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-xs font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (86 UNITS)</span>
         </div>
-
-        <!-- Interactive Track 1 / Track 2 / Track 3 Selector Tabs -->
-        <div class="grid grid-cols-3 gap-1.5 mb-2.5 font-mono text-xs shrink-0" role="tablist">
-          <button onclick="selectHeroTrack('track1')" id="heroTab-track1" class="py-1.5 px-2 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold transition-all cursor-pointer text-center">
-            TRACK 1<br><span class="text-[10px] font-normal opacity-95">Lean Tuner (86)</span>
-          </button>
-          <button onclick="selectHeroTrack('track2')" id="heroTab-track2" class="py-1.5 px-2 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-amber-300 transition-all cursor-pointer text-center">
-            TRACK 2<br><span class="text-[10px] font-normal opacity-95">Hypercar (51)</span>
-          </button>
-          <button onclick="selectHeroTrack('track3')" id="heroTab-track3" class="py-1.5 px-2 rounded-xl border border-white/15 bg-[#05070B] text-slate-200 hover:text-sky-300 transition-all cursor-pointer text-center">
-            TRACK 3<br><span class="text-[10px] font-normal opacity-95">Skunkworks (63)</span>
-          </button>
-        </div>
-
-        <!-- Track 1 Configurator Panel (Default) -->
-        <div id="heroPanel-track1" class="space-y-2 font-mono flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between">
-              <h2 class="text-sm sm:text-base font-bold text-white font-sans">Track 1 // Lean Rapid-Sale (Lean Tuner)</h2>
-              <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-bold">86 Units</span>
-            </div>
-            <p class="text-xs text-slate-300 font-sans leading-relaxed mt-1">
-              Full-stack supercharged operational engines: GridSync payload sanitization middleware, Supabase/PostgreSQL schema definitions with RLS, and async queue workers for turnkey direct APA transfer.
-            </p>
-          </div>
-          
-          <!-- Institutional Tender Badge: Track 1 -->
-          <div class="p-2.5 rounded-xl bg-[#05070B] border border-cyan-500/35 space-y-1">
-            <div class="flex items-center justify-between border-b border-white/10 pb-1">
-              <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">ALLOCATION: PRIVATE APA TENDER</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            </div>
-            <div class="text-xs font-bold text-emerald-400">100% CLEAN-ROOM TITLE TRANSFER AVAILABLE</div>
-            <div class="text-[11px] text-slate-400 leading-snug">Terms &amp; Institutional Allocation Disclosed Under Mutual APA NDA</div>
-          </div>
-
-          <!-- Action Buttons Vertical Stack: Track 1 -->
-          <div class="flex flex-col gap-2 w-full mt-2">
-            <button onclick="openFlagshipModal(null, 'Track 1 Lean Tuner', 'Lean Prototype', 'track1')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)]">
-              ACQUIRE TITLE (APA) →
-            </button>
-            <button onclick="openFlagshipModal(null, 'Track 1 Lean Tuner', 'Lean Prototype', 'track1')" class="w-full py-2.5 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
-              REQUEST VAULT DOSSIER
-            </button>
-          </div>
-        </div>
-
-        <!-- Track 2 Configurator Panel -->
-        <div id="heroPanel-track2" class="hidden space-y-2 font-mono flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between">
-              <h2 class="text-sm sm:text-base font-bold text-white font-sans">Track 2 // Hypercar Flagship</h2>
-              <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">51 Units</span>
-            </div>
-            <p class="text-xs text-slate-300 font-sans leading-relaxed mt-1">
-              High-density interactive SCADA UI, canvas/WebGL state machines, domain physics solvers, 8–15 sub-panels, and full NIST SP 800-218 compliance gate pack.
-            </p>
-          </div>
-          
-          <!-- Institutional Tender Badge: Track 2 -->
-          <div class="p-2.5 rounded-xl bg-[#05070B] border border-cyan-500/35 space-y-1">
-            <div class="flex items-center justify-between border-b border-white/10 pb-1">
-              <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">ALLOCATION: PRIVATE APA TENDER</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            </div>
-            <div class="text-xs font-bold text-emerald-400">100% CLEAN-ROOM TITLE TRANSFER AVAILABLE</div>
-            <div class="text-[11px] text-slate-400 leading-snug">Terms &amp; Institutional Allocation Disclosed Under Mutual APA NDA</div>
-          </div>
-
-          <!-- Action Buttons Vertical Stack: Track 2 -->
-          <div class="flex flex-col gap-2 w-full mt-2">
-            <button onclick="openFlagshipModal(null, 'Track 2 Hypercar Flagship', 'SCADA / Deep Tech', 'track2')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)]">
-              ACQUIRE TITLE (APA) →
-            </button>
-            <button onclick="openFlagshipModal(null, 'Track 2 Hypercar Flagship', 'SCADA / Deep Tech', 'track2')" class="w-full py-2.5 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
-              REQUEST VAULT DOSSIER
-            </button>
-          </div>
-        </div>
-
-        <!-- Track 3 Configurator Panel -->
-        <div id="heroPanel-track3" class="hidden space-y-2 font-mono flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between">
-              <h2 class="text-sm sm:text-base font-bold text-white font-sans">Track 3 // Skunkworks Engine</h2>
-              <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-xs font-bold">63 Units</span>
-            </div>
-            <p class="text-xs text-slate-300 font-sans leading-relaxed mt-1">
-              Working Service Engines &amp; Production Reference Architectures. Custom Kalman/Order-Book/Consensus math, OpenAPI 3.1, &gt;80% pytest, zero copyleft.
-            </p>
-          </div>
-          
-          <!-- Institutional Tender Badge: Track 3 -->
-          <div class="p-2.5 rounded-xl bg-[#05070B] border border-cyan-500/35 space-y-1">
-            <div class="flex items-center justify-between border-b border-white/10 pb-1">
-              <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">ALLOCATION: PRIVATE APA TENDER</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-            </div>
-            <div class="text-xs font-bold text-emerald-400">100% CLEAN-ROOM TITLE TRANSFER AVAILABLE</div>
-            <div class="text-[11px] text-slate-400 leading-snug">Terms &amp; Institutional Allocation Disclosed Under Mutual APA NDA</div>
-          </div>
-
-          <!-- Action Buttons Vertical Stack: Track 3 -->
-          <div class="flex flex-col gap-2 w-full mt-2">
-            <button onclick="openFlagshipModal(null, 'Track 3 Skunkworks Engine', 'Working Service Engine', 'track3')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)]">
-              ACQUIRE TITLE (APA) →
-            </button>
-            <button onclick="openFlagshipModal(null, 'Track 3 Skunkworks Engine', 'Working Service Engine', 'track3')" class="w-full py-2.5 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded transition-all cursor-pointer">
-              REQUEST VAULT DOSSIER
-            </button>
-          </div>
-        </div>
+        
+        <input type="text" id="searchInput" placeholder="Search 200 units by name, stack, SQL table..." class="w-full sm:w-64 bg-[#05070B] border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
       </div>
 
-      <!-- Quick Drawer Trigger in Panel -->
-      <div class="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono shrink-0">
-        <span class="text-slate-400">Select Unit from Lot:</span>
-        <button onclick="toggleFleetDrawer()" class="text-cyan-300 hover:text-white font-bold flex items-center gap-1 cursor-pointer">
-          <span>[BROWSE 200 CHASSIS LOT ▾]</span>
+      <!-- Visible 6-Unit Lot Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5" id="productsGrid">
+${renderedCardsHtml}
+      </div>
+
+      <div id="noResults" class="hidden text-center py-12 text-slate-400 font-mono text-sm bg-[#0A0D14] rounded-2xl border border-white/10">
+        No matching digital vehicle chassis located in current query filter.
+      </div>
+
+      <!-- Tactile Arcade Pagination (Directive 3) -->
+      <div id="paginationContainer" class="mt-2 flex items-center justify-between font-mono text-xs border border-white/10 bg-[#0A0D14] rounded-xl px-3 py-2.5 shrink-0">
+        <button id="prevPageBtn" class="px-3.5 py-1.5 rounded-lg bg-[#111724] border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 font-bold transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">
+          [ &lt; PREV LOT ]
+        </button>
+        <span class="text-amber-300 font-extrabold tracking-wider bg-black/60 px-3 py-1 rounded-md border border-white/10" id="paginationIndicator">
+          PAGE 1 OF 15 (86 UNITS)
+        </span>
+        <button id="nextPageBtn" class="px-3.5 py-1.5 rounded-lg bg-[#111724] border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 font-bold transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">
+          [ NEXT LOT &gt; ]
         </button>
       </div>
+
     </div>
 
   </main>
 
-  <!-- ================= 4. BOTTOM PIT WALL STATUS BAR ================= -->
-  <footer class="w-full border-t border-white/10 bg-[#05070B] px-2 sm:px-4 py-1 flex items-center justify-between font-mono text-xs shrink-0 max-w-[1700px] mx-auto">
+  <!-- ================= 5. BOTTOM PIT WALL STATUS BAR ================= -->
+  <footer class="w-full border-t border-white/10 bg-[#05070B] px-3 sm:px-4 py-2 flex items-center justify-between font-mono text-xs shrink-0 max-w-[1700px] mx-auto mt-4">
     <div class="flex items-center gap-2 overflow-hidden truncate">
       <span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold shrink-0">PIT WALL</span>
-      <span class="text-slate-300 truncate" id="commsMsgText">🟢 CREW CHIEF: F1 Chassis Dyno Bay Calibrated • 4/4 Gates Sealed • Zero Public Pricing</span>
+      <span class="text-slate-300 truncate" id="commsMsgText">🟢 CREW CHIEF: F1 Arcade Cockpit Active • 4/4 Gates Sealed • Zero Public Pricing</span>
     </div>
     
     <div class="flex items-center gap-3 text-slate-400 text-[10px] sm:text-xs shrink-0">
-      <button onclick="toggleFleetDrawer()" class="text-cyan-300 hover:underline font-bold hidden sm:inline cursor-pointer">
-        [OPEN 200-UNIT LOT]
-      </button>
-      <span class="hidden md:inline">//</span>
       <span class="text-cyan-300 font-bold hidden md:inline">COMMIT: b787061</span>
       <span class="hidden md:inline">//</span>
       <span class="text-emerald-400 font-bold">0% DRIFT</span>
@@ -882,73 +842,63 @@ const showroomHtml = `<!DOCTYPE html>
     </div>
   </footer>
 
-  <!-- ================= SLIDE-OVER FLEET LOT DRAWER (200 UNITS) ================= -->
-  <div id="fleetDrawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex justify-end transition-opacity">
-    <div class="w-full max-w-4xl h-full bg-[#0B0F19] border-l border-white/15 flex flex-col justify-between p-4 sm:p-6 overflow-hidden shadow-2xl relative">
-      
-      <!-- Drawer Header -->
-      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4 shrink-0 font-mono">
-        <div>
-          <div class="text-xs uppercase tracking-widest text-cyan-400 font-bold">200 ACTIVE ASSETS // PURE APA TITLE INVENTORY</div>
-          <h2 class="text-xl sm:text-2xl font-bold text-white font-sans">Fleet Telemetry Lot</h2>
+  <!-- ================= INSTITUTIONAL APA TENDER MODAL ================= -->
+  <div id="flagshipModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="w-full max-w-lg bg-[#0A0D14] border border-cyan-500/40 rounded-2xl p-5 sm:p-6 shadow-[0_0_50px_rgba(0,240,255,0.2)] font-mono flex flex-col gap-4 relative">
+      <button onclick="closeFlagshipModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-bold p-1 cursor-pointer">
+        ✕
+      </button>
+
+      <div class="border-b border-white/10 pb-3">
+        <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold uppercase tracking-wider">
+          M&amp;A PRIVATE TENDER DESK
+        </span>
+        <h3 class="text-lg sm:text-xl font-bold text-white mt-1.5 font-sans" id="flagshipModalTitle">
+          Selective APA Title Transfer Desk
+        </h3>
+        <p class="text-xs text-slate-400 mt-0.5" id="flagshipModalSector">
+          Software Architecture // Unit #001
+        </p>
+      </div>
+
+      <div class="p-3 rounded-xl bg-[#111724] border border-white/10 space-y-2 text-xs">
+        <div class="flex items-center justify-between">
+          <span class="text-slate-400">TENDER ALLOCATION:</span>
+          <span class="text-cyan-300 font-bold" id="flagshipModalTrackPrice">PRIVATE APA TENDER // NDA REQUIRED</span>
         </div>
-        <button onclick="toggleFleetDrawer()" class="px-3 py-1.5 rounded bg-[#111724] border border-white/15 text-slate-300 hover:text-white font-bold text-sm cursor-pointer">
-          ✕ CLOSE LOT
+        <div class="flex items-center justify-between border-t border-white/10 pt-2">
+          <span class="text-slate-400">TITLE CONDITION:</span>
+          <span class="text-emerald-400 font-bold">100% CLEAN-ROOM (MIT/APACHE)</span>
+        </div>
+        <div class="flex items-center justify-between border-t border-white/10 pt-2">
+          <span class="text-slate-400">TRANSFER TIMELINE:</span>
+          <span class="text-amber-300 font-bold">TURNKEY 24-48 HR ASSIGNMENT</span>
+        </div>
+      </div>
+
+      <div class="text-[11px] text-slate-400 leading-relaxed bg-[#05070B] p-3 rounded-lg border border-white/5">
+        Asset purchase agreements execute clean-room repository assignment with verified git history, schema definitions, and compliance manifests. All disclosures governed under bilateral institutional NDA.
+      </div>
+
+      <div class="flex flex-col gap-2 pt-1">
+        <a id="flagshipMailtoBtn" href="mailto:advisory@auraandgrid.com?subject=Private%20APA%20Title%20Acquisition%20Inquiry" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-bold text-xs uppercase tracking-wider rounded text-center transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)]">
+          EXECUTE INQUIRY VIA SECURE MAILTO →
+        </a>
+        <button onclick="closeFlagshipModal()" class="w-full py-2.5 px-4 bg-[#111724] hover:bg-white/10 border border-white/15 text-slate-300 text-xs rounded text-center transition-all cursor-pointer">
+          DISMISS WINDOW
         </button>
       </div>
-
-      <!-- Search & Filters in Drawer -->
-      <div class="space-y-3 mb-4 shrink-0 font-mono">
-        <input type="text" id="searchInput" placeholder="Search 200 units by name, stack, SQL table..." class="w-full bg-[#05070B] border border-white/15 rounded-xl px-4 py-2 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
-        
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-1.5 text-xs" id="filterContainer">
-          <button class="filter-btn active px-3 py-1 rounded-lg bg-emerald-500 text-black font-bold cursor-pointer" data-filter="all">All (200)</button>
-          <button class="filter-btn px-3 py-1 rounded-lg bg-[#111724] border border-emerald-500/30 text-emerald-300 cursor-pointer" data-filter="track1">Track 1 (86)</button>
-          <button class="filter-btn px-3 py-1 rounded-lg bg-[#111724] border border-amber-500/30 text-amber-300 cursor-pointer" data-filter="track2">Track 2 (51)</button>
-          <button class="filter-btn px-3 py-1 rounded-lg bg-[#111724] border border-sky-500/30 text-sky-300 cursor-pointer" data-filter="track3">Track 3 (63)</button>
-        </div>
-      </div>
-
-      <!-- Scrollable Cards Grid Container -->
-      <div class="flex-1 min-h-0 overflow-y-auto pr-1">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="productsGrid">
-${renderedCardsHtml}
-        </div>
-
-        <div id="noResults" class="hidden text-center py-12 text-slate-400 font-mono text-sm">
-          No matching digital vehicle chassis located in current query filter.
-        </div>
-      </div>
-
-      <!-- Pagination in Drawer -->
-      <div id="paginationContainer" class="mt-3 flex items-center justify-between font-mono text-xs border-t border-white/10 pt-3 shrink-0">
-        <button id="prevPageBtn" class="px-3 py-1.5 rounded bg-[#111724] border border-white/15 text-slate-200 hover:text-white cursor-pointer disabled:opacity-30">
-          [ &lt; PREV LOT ]
-        </button>
-        <span class="text-cyan-300 font-bold" id="paginationIndicator">Page 1 of 34</span>
-        <button id="nextPageBtn" class="px-3 py-1.5 rounded bg-[#111724] border border-white/15 text-slate-200 hover:text-white cursor-pointer disabled:opacity-30">
-          [ NEXT LOT &gt; ]
-        </button>
-      </div>
-
     </div>
   </div>
-<!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
+
+  <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
   <script>
     const PAGE_SIZE = 6;
     let currentPage = 1;
     let totalPages = 1;
-    let activeFilter = 'all';
+    let activeFilter = 'track1';
     let searchQuery = '';
-    let currentHeroTrack = 'track1';
-
-    function toggleFleetDrawer() {
-      const drawer = document.getElementById('fleetDrawer');
-      if (drawer) {
-        drawer.classList.toggle('hidden');
-      }
-    }
+    let currentLoadedUnitId = 1;
 
     const noResults = document.getElementById('noResults');
     const paginationContainer = document.getElementById('paginationContainer');
@@ -1048,16 +998,17 @@ ${renderedCardsHtml}
       ['cp_rim_l', 'cp_rim_b'], ['cp_rim_r', 'cp_rim_b'],
       ['cp_rim_f', 'halo_pylon'], ['halo_pylon', 'halo_apex'],
       ['halo_apex', 'halo_l'], ['halo_apex', 'halo_r'],
-      ['halo_l', 'cp_rim_b'], ['halo_r', 'cp_rim_b'],
+      ['halo_l', 'cp_rim_l'], ['halo_r', 'cp_rim_r'],
 
-      // Airbox & Shark Fin
+      // Airbox & Engine Spine
       ['cp_rim_b', 'airbox'], ['airbox', 'shark_fin'], ['shark_fin', 'engine_deck'],
 
       // Sidepods
-      ['nose_bulk_t', 'sp_in_tl'], ['nose_bulk_t', 'sp_in_tr'],
-      ['sp_in_tl', 'sp_in_tr'], ['sp_in_bl', 'sp_in_br'],
+      ['cp_rim_f', 'sp_in_tl'], ['cp_rim_f', 'sp_in_tr'],
+      ['nose_bulk_b', 'sp_in_bl'], ['nose_bulk_b', 'sp_in_br'],
       ['sp_in_tl', 'sp_in_bl'], ['sp_in_tr', 'sp_in_br'],
       ['sp_in_tl', 'sp_mid_l'], ['sp_in_tr', 'sp_mid_r'],
+      ['sp_in_bl', 'sp_mid_l'], ['sp_in_br', 'sp_mid_r'],
       ['sp_mid_l', 'sp_coke_l'], ['sp_mid_r', 'sp_coke_r'],
       ['sp_coke_l', 'engine_deck'], ['sp_coke_r', 'engine_deck'],
 
@@ -1065,27 +1016,211 @@ ${renderedCardsHtml}
       ['engine_deck', 'hub_rl'], ['diffuser', 'hub_rl'],
       ['engine_deck', 'hub_rr'], ['diffuser', 'hub_rr'],
 
-      // Rear Wing
+      // Rear Wing & DRS
+      ['engine_deck', 'diffuser'],
       ['engine_deck', 'rw_end_bl'], ['engine_deck', 'rw_end_br'],
       ['rw_end_bl', 'rw_end_tl'], ['rw_end_br', 'rw_end_tr'],
+      ['rw_end_tl', 'rw_end_tr'],
       ['rw_main_l', 'rw_main_r'],
       ['rw_drs_l', 'rw_drs_r'],
-      ['rw_end_tl', 'rw_end_tr'],
-      ['diffuser', 'rw_end_bl'], ['diffuser', 'rw_end_br']
+      ['rw_main_l', 'rw_end_bl'], ['rw_main_r', 'rw_end_br']
     ];
 
-    function resizeHoloCanvas() {
-      if (!holoCanvas) return;
-      const rect = holoCanvas.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      holoCanvas.width = Math.floor(rect.width * dpr);
-      holoCanvas.height = Math.floor(rect.height * dpr);
+    // F1 Wheels (4 Rolling Neon Wireframe Cylinders)
+    const f1Wheels = [
+      { id: 'FL', cx: -1.45, cy: -0.05, cz: 1.35, r: 0.44, w: 0.38 },
+      { id: 'FR', cx: 1.45,  cy: -0.05, cz: 1.35, r: 0.44, w: 0.38 },
+      { id: 'RL', cx: -1.55, cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 },
+      { id: 'RR', cx: 1.55,  cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 }
+    ];
+
+    // 3D Isometric Projection Helper
+    function project3D(x, y, z, width, height, yaw, pitch) {
+      // Rotate around Y axis (Yaw)
+      const cosY = Math.cos(yaw);
+      const sinY = Math.sin(yaw);
+      const x1 = x * cosY + z * sinY;
+      const z1 = -x * sinY + z * cosY;
+
+      // Rotate around X axis (Pitch)
+      const cosP = Math.cos(pitch);
+      const sinP = Math.sin(pitch);
+      const y2 = y * cosP - z1 * sinP;
+      const z2 = y * sinP + z1 * cosP;
+
+      // Perspective scale factor
+      const fov = 4.2;
+      const cameraDist = 6.2;
+      const depth = cameraDist - z2;
+      const scale = (fov / Math.max(depth, 0.1)) * (Math.min(width, height) / 4.4);
+
+      return {
+        px: width / 2 + x1 * scale,
+        py: height / 2 - y2 * scale + (height * 0.06),
+        depth: depth
+      };
     }
 
-    if (window.ResizeObserver && holoCanvas) {
-      new ResizeObserver(() => resizeHoloCanvas()).observe(holoCanvas);
+    function drawDyno() {
+      if (!holoCanvas || !holoCtx) return;
+      const w = holoCanvas.clientWidth || 600;
+      const h = holoCanvas.clientHeight || 300;
+      if (holoCanvas.width !== w || holoCanvas.height !== h) {
+        holoCanvas.width = w;
+        holoCanvas.height = h;
+      }
+
+      // Smooth yaw interpolation towards targetYaw
+      dynoYaw += (targetYaw - dynoYaw) * 0.08;
+      dynoWheelSpin += 0.06;
+
+      const pitch = 0.38; // ~22 degrees pitch for elevated F1 pit-lane perspective
+
+      // Clear Canvas
+      holoCtx.fillStyle = '#05070B';
+      holoCtx.fillRect(0, 0, w, h);
+
+      // 1. Draw Pit-Lane Roller Grid Floor
+      holoCtx.lineWidth = 1;
+      holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.12)';
+      for (let gz = -3.2; gz <= 3.2; gz += 0.8) {
+        const p1 = project3D(-2.4, -0.52, gz, w, h, dynoYaw, pitch);
+        const p2 = project3D(2.4, -0.52, gz, w, h, dynoYaw, pitch);
+        holoCtx.beginPath();
+        holoCtx.moveTo(p1.px, p1.py);
+        holoCtx.lineTo(p2.px, p2.py);
+        holoCtx.stroke();
+      }
+      for (let gx = -2.4; gx <= 2.4; gx += 0.8) {
+        const p1 = project3D(gx, -0.52, -3.2, w, h, dynoYaw, pitch);
+        const p2 = project3D(gx, -0.52, 3.2, w, h, dynoYaw, pitch);
+        holoCtx.beginPath();
+        holoCtx.moveTo(p1.px, p1.py);
+        holoCtx.lineTo(p2.px, p2.py);
+        holoCtx.stroke();
+      }
+
+      // 2. Project Nodes
+      const projectedNodes = {};
+      for (const [key, n] of Object.entries(f1Nodes)) {
+        projectedNodes[key] = project3D(n.x, n.y, n.z, w, h, dynoYaw, pitch);
+      }
+
+      // 3. Draw F1 Structural Edges
+      holoCtx.lineWidth = 1.6;
+      holoCtx.shadowBlur = 6;
+      f1Edges.forEach(([fromKey, toKey]) => {
+        const pFrom = projectedNodes[fromKey];
+        const pTo = projectedNodes[toKey];
+        if (!pFrom || !pTo) return;
+
+        const isHalo = fromKey.startsWith('halo') || toKey.startsWith('halo');
+        const isDrs = fromKey.startsWith('rw_drs') || toKey.startsWith('rw_drs');
+        const color = (isHalo || isDrs) ? '#FF9F0A' : '#00F0FF';
+
+        holoCtx.strokeStyle = color;
+        holoCtx.shadowColor = color;
+        holoCtx.beginPath();
+        holoCtx.moveTo(pFrom.px, pFrom.py);
+        holoCtx.lineTo(pTo.px, pTo.py);
+        holoCtx.stroke();
+      });
+
+      // 4. Draw Rotating F1 Wireframe Wheels (Tread + Spokes)
+      f1Wheels.forEach(wheel => {
+        const segs = 12;
+        const ptsInner = [];
+        const ptsOuter = [];
+
+        for (let i = 0; i < segs; i++) {
+          const theta = (i / segs) * Math.PI * 2 + dynoWheelSpin;
+          const wy = Math.sin(theta) * wheel.r;
+          const wz = Math.cos(theta) * wheel.r;
+
+          const pIn = project3D(wheel.cx - (wheel.w / 2), wheel.cy + wy, wheel.cz + wz, w, h, dynoYaw, pitch);
+          const pOut = project3D(wheel.cx + (wheel.w / 2), wheel.cy + wy, wheel.cz + wz, w, h, dynoYaw, pitch);
+          ptsInner.push(pIn);
+          ptsOuter.push(pOut);
+        }
+
+        // Draw outer rim loop
+        holoCtx.strokeStyle = '#00F0FF';
+        holoCtx.shadowColor = '#00F0FF';
+        holoCtx.lineWidth = 1.4;
+        holoCtx.beginPath();
+        for (let i = 0; i < segs; i++) {
+          const next = (i + 1) % segs;
+          holoCtx.moveTo(ptsOuter[i].px, ptsOuter[i].py);
+          holoCtx.lineTo(ptsOuter[next].px, ptsOuter[next].py);
+        }
+        holoCtx.stroke();
+
+        // Draw inner rim loop & tyre treads
+        holoCtx.strokeStyle = '#FF9F0A';
+        holoCtx.shadowColor = '#FF9F0A';
+        holoCtx.lineWidth = 1.0;
+        holoCtx.beginPath();
+        for (let i = 0; i < segs; i++) {
+          const next = (i + 1) % segs;
+          holoCtx.moveTo(ptsInner[i].px, ptsInner[i].py);
+          holoCtx.lineTo(ptsInner[next].px, ptsInner[next].py);
+
+          // Tread crossline
+          holoCtx.moveTo(ptsInner[i].px, ptsInner[i].py);
+          holoCtx.lineTo(ptsOuter[i].px, ptsOuter[i].py);
+        }
+        holoCtx.stroke();
+      });
+
+      // 5. Draw Vertices (Glow Points)
+      holoCtx.shadowBlur = 8;
+      for (const [key, p] of Object.entries(projectedNodes)) {
+        const isHalo = key.startsWith('halo') || key.startsWith('hub') || key === 'airbox';
+        holoCtx.fillStyle = isHalo ? '#FF9F0A' : '#00F0FF';
+        holoCtx.shadowColor = holoCtx.fillStyle;
+        holoCtx.beginPath();
+        holoCtx.arc(p.px, p.py, 2.2, 0, Math.PI * 2);
+        holoCtx.fill();
+      }
+
+      // 6. Laser Schematic Sweep Effect (When Scanning)
+      if (isScanning) {
+        scanProgress += 0.022;
+        if (scanProgress > 1) {
+          isScanning = false;
+          scanProgress = 0;
+        } else {
+          const scanY = h * scanProgress;
+          holoCtx.shadowBlur = 15;
+          holoCtx.shadowColor = '#10B981';
+          holoCtx.strokeStyle = 'rgba(16, 185, 129, 0.85)';
+          holoCtx.lineWidth = 2.5;
+          holoCtx.beginPath();
+          holoCtx.moveTo(0, scanY);
+          holoCtx.lineTo(w, scanY);
+          holoCtx.stroke();
+
+          // Green laser sweep glow beam
+          const grad = holoCtx.createLinearGradient(0, scanY - 24, 0, scanY + 4);
+          grad.addColorStop(0, 'rgba(16, 185, 129, 0)');
+          grad.addColorStop(1, 'rgba(16, 185, 129, 0.22)');
+          holoCtx.fillStyle = grad;
+          holoCtx.fillRect(0, scanY - 24, w, 24);
+
+          // Digital readout HUD text during scan
+          holoCtx.fillStyle = '#10B981';
+          holoCtx.font = '11px "JetBrains Mono", monospace';
+          holoCtx.fillText('LASER SCANNING CHASSIS CAD: ' + Math.round(scanProgress * 100) + '%', 16, Math.max(scanY - 6, 20));
+        }
+      }
+
+      holoCtx.shadowBlur = 0;
+      requestAnimationFrame(drawDyno);
     }
-    resizeHoloCanvas();
+
+    if (holoCanvas) {
+      requestAnimationFrame(drawDyno);
+    }
 
     function rotateDynoGrid(deltaDeg) {
       targetYaw += (deltaDeg * Math.PI) / 180;
@@ -1096,267 +1231,50 @@ ${renderedCardsHtml}
       scanProgress = 0;
       const btn = document.getElementById('scanSchematicBtn');
       if (btn) {
-        btn.innerText = '[SCANNING...]';
-        btn.classList.add('border-emerald-400', 'text-emerald-300');
+        btn.classList.add('bg-emerald-500/40', 'border-emerald-400', 'text-emerald-200');
         setTimeout(() => {
-          btn.innerText = '[SCAN SCHEMATIC]';
-          btn.classList.remove('border-emerald-400', 'text-emerald-300');
-        }, 2200);
+          btn.classList.remove('bg-emerald-500/40', 'border-emerald-400', 'text-emerald-200');
+        }, 1200);
       }
     }
 
-    function renderHoloLoop(time) {
-      if (holoCtx && holoCanvas) {
-        const w = holoCanvas.width;
-        const h = holoCanvas.height;
-        const dpr = window.devicePixelRatio || 1;
-        const width = w / dpr;
-        const height = h / dpr;
+    function setTrackNav(track) {
+      activeFilter = track;
+      currentPage = 1;
 
-        holoCtx.save();
-        holoCtx.scale(dpr, dpr);
-
-        // Cyber dark void background
-        holoCtx.fillStyle = '#06080E';
-        holoCtx.fillRect(0, 0, width, height);
-
-        const cx = width / 2;
-        const cy = height / 2 + 10;
-        dynoWheelSpin += 0.08;
-
-        // Smooth Damped Chassis Rotation (Isometric 3D)
-        dynoYaw += (targetYaw - dynoYaw) * 0.1;
-        const cosY = Math.cos(dynoYaw);
-        const sinY = Math.sin(dynoYaw);
-        const pitch = 0.28;
-        const cosP = Math.cos(pitch);
-        const sinP = Math.sin(pitch);
-        const scale = Math.min(width, height) * 0.24;
-
-        // 3D Projection Helper Function
-        function project3D(x, y, z) {
-          // 1. Yaw rotation around Y axis
-          const rx = x * cosY - z * sinY;
-          const rz = x * sinY + z * cosY;
-          // 2. Pitch rotation around X axis
-          const py_rot = y * cosP - rz * sinP;
-          const pz_rot = y * sinP + rz * cosP;
-          return {
-            x: cx + rx * scale,
-            y: cy - py_rot * scale * 1.05,
-            depth: pz_rot
-          };
-        }
-
-        // 1. PIT-LANE ROLLER DYNO FLOOR GRID
-        holoCtx.lineWidth = 1;
-        for (let gx = -2.2; gx <= 2.2; gx += 0.55) {
-          const p1 = project3D(gx, -0.32, 2.8);
-          const p2 = project3D(gx, -0.32, -2.4);
-          holoCtx.beginPath();
-          holoCtx.moveTo(p1.x, p1.y);
-          holoCtx.lineTo(p2.x, p2.y);
-          holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.07)';
-          holoCtx.stroke();
-        }
-        for (let gz = -2.4; gz <= 2.8; gz += 0.65) {
-          const p1 = project3D(-2.2, -0.32, gz);
-          const p2 = project3D(2.2, -0.32, gz);
-          holoCtx.beginPath();
-          holoCtx.moveTo(p1.x, p1.y);
-          holoCtx.lineTo(p2.x, p2.y);
-          holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.07)';
-          holoCtx.stroke();
-        }
-
-        // 2. PIT-LANE CHASSIS DYNO ROLLERS (Front & Rear Axles)
-        [1.35, -1.15].forEach((axleZ, rIdx) => {
-          const r_l = project3D(-1.6, -0.32, axleZ);
-          const r_r = project3D(1.6, -0.32, axleZ);
-          holoCtx.beginPath();
-          holoCtx.moveTo(r_l.x, r_l.y);
-          holoCtx.lineTo(r_r.x, r_r.y);
-          holoCtx.strokeStyle = 'rgba(16, 185, 129, 0.35)';
-          holoCtx.lineWidth = 4;
-          holoCtx.stroke();
-
-          // Roller Spinning Surface Markers
-          for (let tick = -1.2; tick <= 1.2; tick += 0.6) {
-            const spinOff = Math.sin(dynoWheelSpin + tick * 2) * 0.12;
-            const t1 = project3D(tick, -0.30 + spinOff, axleZ);
-            const t2 = project3D(tick + 0.15, -0.34 - spinOff, axleZ);
-            holoCtx.beginPath();
-            holoCtx.moveTo(t1.x, t1.y);
-            holoCtx.lineTo(t2.x, t2.y);
-            holoCtx.strokeStyle = '#10B981';
-            holoCtx.lineWidth = 1.5;
-            holoCtx.stroke();
-          }
-        });
-
-        // 3. PROJECT F1 CHASSIS NODES
-        const projected = {};
-        for (const [id, n] of Object.entries(f1Nodes)) {
-          projected[id] = project3D(n.x, n.y, n.z);
-        }
-
-        // 4. DRAW 4 ROTATING WIREFRAME WHEELS
-        const wheelHubs = [
-          { hub: f1Nodes.hub_fl, width: 0.22, radius: 0.38, isRear: false },
-          { hub: f1Nodes.hub_fr, width: 0.22, radius: 0.38, isRear: false },
-          { hub: f1Nodes.hub_rl, width: 0.32, radius: 0.40, isRear: true },
-          { hub: f1Nodes.hub_rr, width: 0.32, radius: 0.40, isRear: true }
-        ];
-
-        wheelHubs.forEach(wConfig => {
-          const h = wConfig.hub;
-          const center = project3D(h.x, h.y, h.z);
-          const sign = h.x > 0 ? 1 : -1;
-          const outerHub = project3D(h.x + sign * wConfig.width, h.y, h.z);
-
-          // Draw Tire Tread Cylinders
-          holoCtx.beginPath();
-          holoCtx.moveTo(center.x, center.y);
-          holoCtx.lineTo(outerHub.x, outerHub.y);
-          holoCtx.strokeStyle = 'rgba(255, 159, 10, 0.6)';
-          holoCtx.lineWidth = 2;
-          holoCtx.stroke();
-
-          // Outer Wheel Rim Ellipse
-          holoCtx.beginPath();
-          const rx = scale * 0.14;
-          const ry = scale * 0.28;
-          holoCtx.ellipse(outerHub.x, outerHub.y, rx, ry, dynoYaw * 0.2, 0, Math.PI * 2);
-          holoCtx.strokeStyle = '#00F0FF';
-          holoCtx.lineWidth = 1.8;
-          holoCtx.stroke();
-
-          // Inner Wheel Rim Ellipse
-          holoCtx.beginPath();
-          holoCtx.ellipse(center.x, center.y, rx * 0.9, ry * 0.9, dynoYaw * 0.2, 0, Math.PI * 2);
-          holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.45)';
-          holoCtx.lineWidth = 1.2;
-          holoCtx.stroke();
-
-          // 5 Spinning Radial Spokes
-          for (let s = 0; s < 5; s++) {
-            const angle = dynoWheelSpin + (s * Math.PI * 2) / 5;
-            const spX = outerHub.x + Math.cos(angle) * rx * 0.85;
-            const spY = outerHub.y + Math.sin(angle) * ry * 0.85;
-            holoCtx.beginPath();
-            holoCtx.moveTo(outerHub.x, outerHub.y);
-            holoCtx.lineTo(spX, spY);
-            holoCtx.strokeStyle = '#FF9F0A';
-            holoCtx.lineWidth = 1.2;
-            holoCtx.stroke();
-          }
-        });
-
-        // 5. DRAW F1 CHASSIS WIREFRAME EDGES
-        f1Edges.forEach(([idA, idB]) => {
-          const a = projected[idA];
-          const b = projected[idB];
-          if (!a || !b) return;
-
-          holoCtx.beginPath();
-          holoCtx.moveTo(a.x, a.y);
-          holoCtx.lineTo(b.x, b.y);
-
-          // Highlight Halo and DRS Flaps in Cyber Amber
-          if (idA.startsWith('halo') || idB.startsWith('halo') || idA.startsWith('rw_drs') || idB.startsWith('rw_drs') || idA === 'airbox') {
-            holoCtx.strokeStyle = 'rgba(255, 159, 10, 0.9)';
-            holoCtx.shadowColor = '#FF9F0A';
-            holoCtx.shadowBlur = 8;
-            holoCtx.lineWidth = 1.8;
-          } else if (idA.startsWith('diffuser') || idB.startsWith('diffuser')) {
-            holoCtx.strokeStyle = 'rgba(16, 185, 129, 0.85)';
-            holoCtx.shadowColor = '#10B981';
-            holoCtx.shadowBlur = 6;
-            holoCtx.lineWidth = 1.6;
-          } else {
-            holoCtx.strokeStyle = 'rgba(0, 240, 255, 0.85)';
-            holoCtx.shadowColor = '#00F0FF';
-            holoCtx.shadowBlur = 6;
-            holoCtx.lineWidth = 1.5;
-          }
-          holoCtx.stroke();
-        });
-        holoCtx.shadowBlur = 0;
-
-        // 6. ACTIVE LASER SCHEMATIC SWEEP (Glowing Neon Green)
-        if (isScanning) {
-          scanProgress += 0.022;
-          const laserZ = 2.6 - scanProgress * 4.6;
-          const laserP1 = project3D(-2.2, 0.3, laserZ);
-          const laserP2 = project3D(2.2, 0.3, laserZ);
-
-          holoCtx.beginPath();
-          holoCtx.moveTo(laserP1.x, laserP1.y);
-          holoCtx.lineTo(laserP2.x, laserP2.y);
-          holoCtx.strokeStyle = '#10B981';
-          holoCtx.shadowColor = '#10B981';
-          holoCtx.shadowBlur = 20;
-          holoCtx.lineWidth = 3.2;
-          holoCtx.stroke();
-
-          // Laser scan plane fill
-          const laserBase1 = project3D(-2.2, -0.32, laserZ);
-          const laserBase2 = project3D(2.2, -0.32, laserZ);
-          holoCtx.beginPath();
-          holoCtx.moveTo(laserP1.x, laserP1.y);
-          holoCtx.lineTo(laserP2.x, laserP2.y);
-          holoCtx.lineTo(laserBase2.x, laserBase2.y);
-          holoCtx.lineTo(laserBase1.x, laserBase1.y);
-          holoCtx.closePath();
-          holoCtx.fillStyle = 'rgba(16, 185, 129, 0.12)';
-          holoCtx.fill();
-
-          holoCtx.font = "bold 10px 'JetBrains Mono', monospace";
-          holoCtx.fillStyle = '#34D399';
-          holoCtx.fillText(">> HOLOGRAPHIC SCAN: F1 CHASSIS PASS 4/4 GATES // ZERO COPYLEFT", laserP1.x, laserP1.y - 12);
-          holoCtx.shadowBlur = 0;
-
-          if (scanProgress >= 1.0) {
-            isScanning = false;
-          }
-        }
-
-        holoCtx.restore();
-      }
-      requestAnimationFrame(renderHoloLoop);
-    }
-    requestAnimationFrame(renderHoloLoop);
-
-    function selectHeroTrack(trackId) {
-      currentHeroTrack = trackId;
-      ['track1', 'track2', 'track3'].forEach(t => {
-        const btn = document.getElementById('heroTab-' + t);
-        const panel = document.getElementById('heroPanel-' + t);
-        if (btn && panel) {
-          if (t === trackId) {
-            btn.classList.add('border-emerald-400', 'bg-emerald-500/20', 'text-emerald-300');
-            btn.classList.remove('border-white/15', 'bg-[#05070B]', 'text-slate-200');
-            panel.classList.remove('hidden');
-          } else {
-            btn.classList.remove('border-emerald-400', 'bg-emerald-500/20', 'text-emerald-300');
-            btn.classList.add('border-white/15', 'bg-[#05070B]', 'text-slate-200');
-            panel.classList.add('hidden');
-          }
-        }
+      // Update pill button styles
+      document.querySelectorAll('.track-pill').forEach(btn => {
+        btn.classList.remove('border-emerald-400', 'bg-emerald-500/20', 'text-emerald-300', 'shadow-[0_0_15px_rgba(16,185,129,0.4)]',
+                             'border-[#FF9F0A]', 'bg-[#FF9F0A]/20', 'text-[#FF9F0A]', 'shadow-[0_0_15px_rgba(255,159,10,0.4)]',
+                             'border-[#00F0FF]', 'bg-[#00F0FF]/20', 'text-[#00F0FF]', 'shadow-[0_0_15px_rgba(0,240,255,0.4)]',
+                             'border-white/40', 'bg-white/10', 'text-white', 'shadow-[0_0_10px_rgba(255,255,255,0.2)]');
+        btn.classList.add('border-white/15', 'bg-[#111724]', 'text-slate-300');
       });
 
-      const badge = document.getElementById('dynoUnitBadge');
-      const powertrain = document.getElementById('dynoPowertrainReadout');
-      if (trackId === 'track1') {
-        if (badge) badge.innerText = 'DYNO BAY // TRACK 1 LEAN TUNER';
-        if (powertrain) powertrain.innerText = 'Track 1 // PRIVATE APA TENDER';
-      } else if (trackId === 'track2') {
-        if (badge) badge.innerText = 'DYNO BAY // TRACK 2 HYPERCAR FLAGSHIP';
-        if (powertrain) powertrain.innerText = 'Track 2 // PRIVATE APA TENDER';
-      } else {
-        if (badge) badge.innerText = 'DYNO BAY // TRACK 3 SKUNKWORKS ENGINE';
-        if (powertrain) powertrain.innerText = 'Track 3 // PRIVATE APA TENDER';
+      const activeBtn = document.getElementById('navPill-' + track);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-white/15', 'bg-[#111724]', 'text-slate-300');
+        if (track === 'track1') {
+          activeBtn.classList.add('border-emerald-400', 'bg-emerald-500/20', 'text-emerald-300', 'shadow-[0_0_15px_rgba(16,185,129,0.4)]');
+        } else if (track === 'track2') {
+          activeBtn.classList.add('border-[#FF9F0A]', 'bg-[#FF9F0A]/20', 'text-[#FF9F0A]', 'shadow-[0_0_15px_rgba(255,159,10,0.4)]');
+        } else if (track === 'track3') {
+          activeBtn.classList.add('border-[#00F0FF]', 'bg-[#00F0FF]/20', 'text-[#00F0FF]', 'shadow-[0_0_15px_rgba(0,240,255,0.4)]');
+        } else {
+          activeBtn.classList.add('border-white/40', 'bg-white/10', 'text-white', 'shadow-[0_0_10px_rgba(255,255,255,0.2)]');
+        }
       }
+
+      // Update lot header title
+      const lotTitle = document.getElementById('activeLotHeaderTitle');
+      if (lotTitle) {
+        if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (86 UNITS)';
+        else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (51 UNITS)';
+        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (63 UNITS)';
+        else lotTitle.innerText = 'ALL LOTS // 200 VERIFIED UNITS';
+      }
+
+      filterCards();
     }
 
     function filterCards() {
@@ -1403,7 +1321,7 @@ ${renderedCardsHtml}
       });
 
       if (paginationIndicator) {
-        paginationIndicator.innerText = 'Page ' + currentPage + ' of ' + totalPages + ' (' + matchedCards.length + ' Units)';
+        paginationIndicator.innerText = 'PAGE ' + currentPage + ' OF ' + totalPages + ' (' + matchedCards.length + ' UNITS)';
       }
       if (prevPageBtn) prevPageBtn.disabled = currentPage === 1;
       if (nextPageBtn) nextPageBtn.disabled = currentPage >= totalPages;
@@ -1421,20 +1339,6 @@ ${renderedCardsHtml}
         filterCards();
       });
     }
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active', 'bg-emerald-500', 'text-black');
-          b.classList.add('bg-[#111724]', 'text-slate-200');
-        });
-        btn.classList.add('active', 'bg-emerald-500', 'text-black');
-        btn.classList.remove('bg-[#111724]', 'text-slate-200');
-        activeFilter = btn.dataset.filter;
-        currentPage = 1;
-        filterCards();
-      });
-    });
 
     if (prevPageBtn) {
       prevPageBtn.addEventListener('click', () => {
@@ -1456,27 +1360,53 @@ ${renderedCardsHtml}
     function loadVehicleIntoDyno(id) {
       const card = document.getElementById('vehicle-' + id);
       if (!card) return;
+      currentLoadedUnitId = id;
       const name = card.dataset.name || 'Vehicle #' + id;
       const trackAttr = card.dataset.track || 'track1';
       const pytest = card.dataset.pytest || '88';
+      const sector = card.dataset.sector || 'Software Architecture';
+      const cleanId = String(id).padStart(3, '0');
 
+      // Highlight active card with amber/cyan border (Directive 3)
+      document.querySelectorAll('.product-card').forEach(c => {
+        c.classList.remove('ring-2', 'ring-[#FF9F0A]', 'border-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
+      });
+      card.classList.add('ring-2', 'ring-[#FF9F0A]', 'border-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
+
+      // Updates Dyno Bay title on the left to Unit #[ID] — Loaded on Dyno (Directive 3)
       const title = document.getElementById('dynoUnitTitle');
-      if (title) title.innerText = 'Unit #' + String(id).padStart(3, '0') + ' — ' + name;
+      if (title) title.innerText = 'Unit #' + cleanId + ' — Loaded on Dyno';
 
+      // Updates telemetry readouts
       const pytestEl = document.getElementById('dynoPytestReadout');
       if (pytestEl) pytestEl.innerText = pytest + '% Branch Pass';
 
-      selectHeroTrack(trackAttr);
-      triggerScanSchematic();
-
-      // Close fleet lot drawer if open
-      const drawer = document.getElementById('fleetDrawer');
-      if (drawer && !drawer.classList.contains('hidden')) {
-        drawer.classList.add('hidden');
+      const powertrainEl = document.getElementById('dynoPowertrainReadout');
+      if (powertrainEl) {
+        const trackLabel = trackAttr === 'track3' ? 'Track 3 Skunkworks' : trackAttr === 'track2' ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
+        powertrainEl.innerText = trackLabel + ' // PRIVATE APA';
       }
+
+      // Update left loaded unit details
+      const leftName = document.getElementById('leftLoadedUnitName');
+      if (leftName) leftName.innerText = 'Unit #' + cleanId + ' // ' + name;
+      const leftDesc = document.getElementById('leftLoadedUnitDesc');
+      if (leftDesc) leftDesc.innerText = (card.dataset.category || '') + ' (' + sector + ')';
+
+      // Rotates the 3D wireframe scanner (Directive 3)
+      targetYaw += 0.52;
+      triggerScanSchematic();
     }
 
-    function openFlagshipModal(id, name, sector, track) {
+    function openLoadedUnitModal(intent) {
+      const card = document.getElementById('vehicle-' + currentLoadedUnitId);
+      const name = card ? card.dataset.name : 'Track 1 Lean Tuner';
+      const sector = card ? card.dataset.sector : 'Software Architecture';
+      const track = card ? card.dataset.track : 'track1';
+      openFlagshipModal(currentLoadedUnitId, name, sector, track, intent);
+    }
+
+    function openFlagshipModal(id, name, sector, track, intent) {
       const modal = document.getElementById('flagshipModal');
       if (!modal) return;
       const titleEl = document.getElementById('flagshipModalTitle');
@@ -1486,15 +1416,25 @@ ${renderedCardsHtml}
 
       if (priceEl) priceEl.innerText = 'ALLOCATION: PRIVATE APA TENDER // NDA REQUIRED';
 
+      const isDossier = intent === 'dossier';
+      const cleanId = id ? String(id).padStart(3, '0') : '';
+
       if (name) {
-        titleEl.innerText = name;
-        sectorEl.innerText = (sector || 'Software Architecture') + ' // Unit #' + (id ? String(id).padStart(3, '0') : '');
-        const subject = encodeURIComponent('Private APA Title Acquisition Inquiry — ' + name + (id ? ' (Unit #' + id + ')' : ''));
-        mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=' + subject;
+        titleEl.innerText = isDossier ? 'Request Vault Dossier — ' + name : 'Acquire Title (APA) — ' + name;
+        sectorEl.innerText = (sector || 'Software Architecture') + (id ? ' // Unit #' + cleanId : '');
+        const subjectPrefix = isDossier ? 'Vault Dossier Request — ' : 'Private APA Title Acquisition Inquiry — ';
+        const subject = encodeURIComponent(subjectPrefix + name + (id ? ' (Unit #' + cleanId + ')' : ''));
+        if (mailtoBtn) {
+          mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=' + subject;
+          mailtoBtn.innerText = isDossier ? 'TRANSMIT DOSSIER REQUEST VIA SECURE MAILTO →' : 'EXECUTE INQUIRY VIA SECURE MAILTO →';
+        }
       } else {
-        titleEl.innerText = 'Selective APA Title Transfer Desk';
+        titleEl.innerText = isDossier ? 'Request Vault Technical Dossier' : 'Selective APA Title Transfer Desk';
         sectorEl.innerText = '200 Synced Units // Direct Repository Transfer';
-        mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=Private%20APA%20Title%20Acquisition%20Inquiry';
+        if (mailtoBtn) {
+          mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=Private%20APA%20Title%20Acquisition%20Inquiry';
+          mailtoBtn.innerText = 'EXECUTE INQUIRY VIA SECURE MAILTO →';
+        }
       }
 
       modal.classList.remove('hidden');
@@ -1508,15 +1448,17 @@ ${renderedCardsHtml}
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeFlagshipModal();
-        const drawer = document.getElementById('fleetDrawer');
-        if (drawer) drawer.classList.add('hidden');
       }
     });
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      filterCards();
+      setTrackNav('track1');
+      loadVehicleIntoDyno(1);
     } else {
-      window.addEventListener('DOMContentLoaded', () => filterCards());
+      window.addEventListener('DOMContentLoaded', () => {
+        setTrackNav('track1');
+        loadVehicleIntoDyno(1);
+      });
     }
   </script>
 </body>

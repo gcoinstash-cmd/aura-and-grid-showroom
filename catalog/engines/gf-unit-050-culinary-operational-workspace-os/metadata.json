@@ -1,0 +1,6 @@
+{
+  "name": "Culinary Operational Workspace",
+  "description": "An institutional-grade, premium operational workspace for private chefs and boutique caterers to manage bookings, menus, and client dietary tracks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Aura & Grid",
+  "description": "An ultra-premium, dark-mode-locked luxury private kitchen reservation system and contemporary Southern culinary archive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

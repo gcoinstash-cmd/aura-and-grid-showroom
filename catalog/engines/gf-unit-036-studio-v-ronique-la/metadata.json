@@ -1,0 +1,8 @@
+{
+  "name": "STUDIO VÉRONIQUE / LA",
+  "description": "Boutique interior design studio specializing in California Warm Modernism and Zen Minimalism.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

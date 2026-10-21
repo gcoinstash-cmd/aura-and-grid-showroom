@@ -1,0 +1,6 @@
+{
+  "name": "High-Ticket Offer Architect Studio",
+  "description": "A premium platform for product strategists and high-ticket offer designers to design high-ticket digital assets ($350+ Guroad ecosystems) and leverage them into enterprise high-end ($3,500+ custom-build) upsell contracts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

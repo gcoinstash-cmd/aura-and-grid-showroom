@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-base: #0D0D0D;
+  --color-accent: #E0E0E0;
+  --color-neon: #CCFF00;
+}
+
+@layer base {
+  body {
+    @apply bg-base text-accent antialiased selection:bg-accent/20 selection:text-white;
+    overflow-x: hidden;
+  }
+
+  /* Ultra-thin Minimal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-base;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent/20 transition-colors hover:bg-accent/40;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-[20px] border border-white/[0.08];
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Reveal on Scroll Utility Base */
+  .reveal-initial {
+    @apply opacity-0 translate-y-8;
+  }
+  
+  .reveal-active {
+    @apply opacity-100 translate-y-0 transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)];
+  }
+}

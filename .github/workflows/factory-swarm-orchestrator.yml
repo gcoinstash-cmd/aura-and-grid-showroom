@@ -187,11 +187,31 @@ EOF
             exit 1
           fi
 
+      - name: Execute Full 3-Track Automated 4-Gate Dyno Verification Engine
+        run: |
+          echo "Executing automated 4-gate dyno verification across all 200 chassis..."
+          node scripts/factory/verify_dyno_gates.mjs --scan-all
+
+      - name: Auto-Commit Updated Dyno Reports & In-Repo Receipts
+        run: |
+          git config user.name "GhostFactoryOS Autonomous Bot"
+          git config user.email "bot@auraandgrid.com"
+          git add telemetry/dyno-reports/ tools/ghost-factory-console/src/data/latest-dyno-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(telemetry): automated weekly 4-gate dyno audit update [skip ci]"
+            git push origin main || echo "::warning::Git push failed or branch protected"
+          else
+            echo "No telemetry changes to commit."
+          fi
+
       - name: Upload Telemetry Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: swarm-telemetry-report
-          path: telemetry/swarm-reports/latest-swarm.json
+          path: |
+            telemetry/swarm-reports/latest-swarm.json
+            telemetry/dyno-reports/latest-dyno-audit.json
+            telemetry/dyno-reports/dyno-audit-summary.md
           retention-days: 30
 
   # ============================================================================

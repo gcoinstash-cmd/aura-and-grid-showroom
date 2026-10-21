@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;650;700&family=JetBrains+Mono:wght@400;550&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Base Theme Configurations */
+:root {
+  color-scheme: dark;
+}
+
+/* Theme 1: Neon Velvet (Rose / Magenta Glow) */
+.theme-neon-velvet {
+  --color-bg-main: #0a050d;
+  --color-bg-card: #120919;
+  --color-bg-muted: #1c0e27;
+  --color-text-lead: #ffffff;
+  --color-text-body: #d8cde3;
+  --color-text-dim: #998aa6;
+  --color-brand: #ff2a7a;
+  --color-brand-rgb: 255, 42, 122;
+  --color-brand-secondary: #a855f7;
+  --color-glow: rgba(255, 42, 122, 0.35);
+  --color-glow-solid: #ff2a7a;
+  --color-border: rgba(255, 42, 122, 0.15);
+  --color-border-strong: rgba(255, 42, 122, 0.35);
+  --radius-btn: 9999px; /* Pill */
+}
+
+/* Theme 2: Gold Noir (Amber / Warm Metallic) */
+.theme-gold-noir {
+  --color-bg-main: #0a0a0a;
+  --color-bg-card: #141414;
+  --color-bg-muted: #1e1e1e;
+  --color-text-lead: #fdfbf7;
+  --color-text-body: #e4e0d5;
+  --color-text-dim: #a39e93;
+  --color-brand: #e7c169;
+  --color-brand-rgb: 231, 193, 105;
+  --color-brand-secondary: #c5a24c;
+  --color-glow: rgba(231, 193, 105, 0.25);
+  --color-glow-solid: #e7c169;
+  --color-border: rgba(231, 193, 105, 0.12);
+  --color-border-strong: rgba(231, 193, 105, 0.3);
+  --radius-btn: 0px; /* Editorial / Brutalist sharp cut */
+}
+
+/* Theme 3: Emerald After Dark (Racing Green / Mint) */
+.theme-emerald-dark {
+  --color-bg-main: #050b07;
+  --color-bg-card: #0b1510;
+  --color-bg-muted: #112219;
+  --color-text-lead: #f4faf6;
+  --color-text-body: #cfded5;
+  --color-text-dim: #8fa89b;
+  --color-brand: #10b981;
+  --color-brand-rgb: 16, 185, 129;
+  --color-brand-secondary: #059669;
+  --color-glow: rgba(16, 185, 129, 0.3);
+  --color-glow-solid: #10b981;
+  --color-border: rgba(16, 185, 129, 0.15);
+  --color-border-strong: rgba(16, 185, 129, 0.35);
+  --radius-btn: 8px; /* High-end modern rounded */
+}
+
+/* Custom styles integrating with native CSS variables */
+.bg-theme-main { background-color: var(--color-bg-main); }
+.bg-theme-card { background-color: var(--color-bg-card); }
+.bg-theme-muted { background-color: var(--color-bg-muted); }
+.text-theme-lead { color: var(--color-text-lead); }
+.text-theme-body { color: var(--color-text-body); }
+.text-theme-dim { color: var(--color-text-dim); }
+.text-theme-brand { color: var(--color-brand); }
+.border-theme { border-color: var(--color-border); }
+.border-theme-strong { border-color: var(--color-border-strong); }
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--color-glow);
+    filter: drop-shadow(0 0 2px var(--color-brand));
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(var(--color-brand-rgb), 0.55);
+    filter: drop-shadow(0 0 6px var(--color-brand));
+  }
+}
+
+.pulsing-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Smooth active scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-muted);
+  border: 2px solid var(--color-bg-main);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Selection aesthetics */
+::selection {
+  background-color: var(--color-brand);
+  color: var(--color-bg-main);
+}
+
+html {
+  scroll-behavior: smooth;
+}

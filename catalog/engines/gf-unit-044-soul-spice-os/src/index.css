@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-obsidian: #0A0A0A;
+  --color-charcoal: #121212;
+  --color-warm-gray: #1C1A1A;
+  --color-cold-gray: #181A20;
+  --color-border-charcoal: #1F1F1F;
+  --color-card-dark: #161616;
+  --color-platinum: #8E8E93;
+  --color-silver: #AEAED2;
+}
+
+@layer base {
+  html, body {
+    background-color: #0A0A0A;
+    color: #8E8E93;
+    font-family: var(--font-sans);
+    letter-spacing: 0.025em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+    overflow-x: hidden;
+  }
+
+  /* Pure crisp white for all headers to pop off deep obsidian dark canvas */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: #FFFFFF;
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background-color: #FFFFFF;
+    color: #0A0A0A;
+  }
+
+  /* Custom Elegant Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #222222;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+  }
+
+  /* Rule 1: Maximize Viewport Real Estate & Luxury Asymmetric Padding */
+  #hero, #philosophy, #curation, #order, #residency, #contact {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+    box-sizing: border-box !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Rule 2: Enforce Hairline borders on cards, grids, and separations */
+  .editorial-border-razor,
+  .border,
+  .border-t,
+  .border-b,
+  .border-l,
+  .border-r {
+    border-color: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: none !important;
+  }
+
+  /* Massive Editorial Typography Scales */
+  .editorial-massive-header, h1, h2 {
+    font-size: clamp(3rem, 7vw, 6rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  /* Rule 3: Re-Architect Sections into Wide Grids */
+  @media (min-width: 1024px) {
+    /* Philosophy split row grid */
+    #philosophy-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6rem !important;
+      align-items: stretch !important;
+    }
+
+    /* Private Events split row grid */
+    #order-split-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6rem !important;
+      align-items: start !important;
+    }
+
+    /* Seasonal Menu 2-column grid layout */
+    .seasonal-menu-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 4rem !important;
+    }
+  }
+
+  /* Tasting Residencies 3-column horizontal grid layout on tablets and desktop */
+  @media (min-width: 768px) {
+    #dining-rooms-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 2rem !important;
+    }
+  }
+
+  /* Rule 4: Premium Form UI Layout */
+  .hospitality-input {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 12px 0 !important;
+    color: #FFFFFF !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    font-family: var(--font-sans) !important;
+    font-size: 13px !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+  }
+
+  .hospitality-input:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45) !important;
+  }
+
+  /* Custom fields placeholder styling */
+  .hospitality-input::placeholder {
+    font-size: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    color: rgba(142, 142, 147, 0.4) !important;
+  }
+
+  /* Ensure selected atmosphere inputs also style correctly */
+  input[disabled] {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 12px 0 !important;
+    border-radius: 0px !important;
+    color: #AEAED2 !important;
+    opacity: 0.6 !important;
+  }
+
+  /* Crisp, unrounded solid high-contrast white block button styling */
+  button[type="submit"],
+  .hospitality-submit-btn {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border-radius: 0px !important;
+    border: 1px solid transparent !important;
+    font-family: var(--font-sans) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    padding: 20px 0 !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    width: 100% !important;
+  }
+
+  button[type="submit"]:hover,
+  .hospitality-submit-btn:hover {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+  }
+
+  /* =======================================================
+     Rule 5: High-End Minimalist 8.5x11 PDF Print Stylesheet
+     ======================================================= */
+  @media print {
+    @page {
+      size: letter portrait;
+      margin: 1.25in 1in 1.25in 1in;
+    }
+
+    /* Reset global page background for clean paper printing */
+    html, body {
+      background: #FFFFFF !important;
+      background-color: #FFFFFF !important;
+      color: #111111 !important;
+      font-size: 10.5pt !important;
+      width: 100% !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    /* Hide absolutely everything else except the Curation (Menu) block */
+    header,
+    footer,
+    nav,
+    section:not(#curation),
+    #hero,
+    #philosophy,
+    #order,
+    #residency,
+    [role="banner"],
+    .fixed,
+    .absolute-overlay,
+    button,
+    #print-menu-btn {
+      display: none !important;
+    }
+
+    /* Specifically target and style the curation print frame */
+    #curation {
+      display: block !important;
+      position: absolute !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      background: #FFFFFF !important;
+      background-color: #FFFFFF !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      color: #111111 !important;
+      overflow: visible !important;
+    }
+
+    /* Hide the print action elements from the printed PDF sheet */
+    #print-menu-btn,
+    .print-hide {
+      display: none !important;
+    }
+
+    /* Title Styling - Premium high-contrast classic editorial layout */
+    #curation h2 {
+      color: #000000 !important;
+      font-family: var(--font-serif) !important;
+      font-size: 28pt !important;
+      line-height: 1.05 !important;
+      margin-bottom: 24pt !important;
+      letter-spacing: -0.02em !important;
+      text-align: left !important;
+    }
+    
+    #curation h2 span {
+      color: #333333 !important;
+      font-style: italic !important;
+    }
+
+    /* Category header styling */
+    #curation h3 {
+      color: #000000 !important;
+      font-family: var(--font-sans) !important;
+      font-size: 10pt !important;
+      letter-spacing: 0.15em !important;
+      border-bottom: 1px solid #111111 !important;
+      padding-bottom: 4pt !important;
+      margin-top: 24pt !important;
+      margin-bottom: 8pt !important;
+      text-transform: uppercase !important;
+      font-weight: 700 !important;
+    }
+
+    /* Category subtitles */
+    #curation p {
+      color: #444444 !important;
+      font-size: 8.5pt !important;
+      margin-bottom: 16pt !important;
+    }
+
+    /* Items layout styling */
+    #curation .space-y-20 {
+      margin-top: 24pt !important;
+    }
+
+    #curation .grid-cols-1.md\:grid-cols-2 {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      column-gap: 36pt !important;
+      row-gap: 18pt !important;
+    }
+
+    /* Individual Menu items */
+    #curation .group {
+      page-break-inside: avoid !important;
+      margin-bottom: 12pt !important;
+    }
+
+    #curation .group span.text-white {
+      color: #000000 !important;
+    }
+
+    #curation .group span.text-\[\#AEAED2\] {
+      color: #222222 !important;
+    }
+
+    /* Item name and price */
+    #curation .group .flex {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: baseline !important;
+    }
+
+    #curation .group .flex-1 {
+      border-bottom: 1px dotted #888888 !important;
+    }
+
+    #curation .font-mono {
+      font-family: var(--font-mono) !important;
+      color: #000000 !important;
+    }
+
+    /* Descriptions */
+    #curation p.text-\[\#8E8E93\] {
+      color: #555555 !important;
+      font-size: 8pt !important;
+      line-height: 1.45 !important;
+      margin-top: 4pt !important;
+    }
+
+    /* Ambient Note at bottom of 8.5x11 page */
+    #curation p.text-center {
+      color: #555555 !important;
+      font-size: 8.5pt !important;
+      margin-top: 48pt !important;
+      border-top: 1px solid #CCCCCC !important;
+      padding-top: 14pt !important;
+      text-align: center !important;
+      page-break-inside: avoid !important;
+    }
+  }
+}
+
+/* =======================================================
+   Custom Editorial Viewport Entrance Keyframes
+   ======================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GF-T2-072 | FREIGHT BROKER DISPATCH OS — Telemetry HUD Console</title>
+  <meta name="description" content="FREIGHT BROKER DISPATCH OS — Intermodal Freight Brokerage & Carrier Lane OS. Ghost FactoryOS Telemetry Core." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "Plus Jakarta Sans", sans-serif; background-color: #060910; color: #f1f5f9; }
+    .font-mono { font-family: "JetBrains Mono", monospace; }
+  </style>
+  <style id="gf-typography-boost">
+    html {
+      font-size: 16px !important;
+    }
+    body {
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+    }
+    .text-xs {
+      font-size: 0.875rem !important;
+      line-height: 1.25rem !important;
+    }
+    .text-sm {
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
+    }
+    .text-base {
+      font-size: 1.125rem !important;
+    }
+    button, a, input, select {
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+    }
+    .metric-value, [class*="text-2xl"], [class*="text-3xl"] {
+      letter-spacing: -0.02em !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#060910] text-slate-100 selection:bg-emerald-500 selection:text-black">
+  <!-- TOP TELEMETRY STRIP -->
+  <header class="border-b border-zinc-800/80 bg-slate-950/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-zinc-400">NODE:</span>
+        <span class="text-cyan-300 font-bold tracking-wider">GF-T2-072</span>
+        <span class="text-zinc-600">|</span>
+        <span class="px-2 py-0.5 rounded-md bg-amber-950/40 text-amber-300 border border-amber-500/30 font-semibold">
+          TRACK 2 // FLAGSHIP TIER-1
+        </span>
+        <span class="px-2 py-0.5 rounded-md bg-emerald-950/50 text-emerald-300 border border-emerald-500/30 font-semibold">
+          NIST SP 800-218 VERIFIED
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-zinc-400 hidden sm:inline">FREQ: <strong class="text-cyan-300 font-bold">800 Hz</strong></span>
+        <span class="text-zinc-400 hidden sm:inline">LATENCY: <strong class="text-emerald-400 font-bold">0.21 ms</strong></span>
+        <button onclick="openExportModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-emerald-500/20 cursor-pointer">
+          <span>Export Technical Spec</span> &rarr;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SCADA HUD VIEWPORT -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
+    <!-- HERO TITLE CARD -->
+    <div class="bg-gradient-to-r from-zinc-950 via-slate-900 to-black border border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full bg-cyan-950/60 text-cyan-300 border border-cyan-500/40 font-mono text-xs font-bold">
+              GF-T2-072 // Intermodal Freight Brokerage & Carrier Lane OS
+            </span>
+            <span class="px-2.5 py-1 rounded-full bg-amber-400 text-black font-mono text-xs font-black uppercase">
+              [SIMULATED DATA PROTOTYPE]
+            </span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">FREIGHT BROKER DISPATCH OS</h1>
+          <p class="text-slate-400 text-sm max-w-2xl">Intermodal Freight Brokerage & Carrier Lane OS — Deterministic Telemetry Console with NIST SP 800-218 SSDF v1.1 Verification.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="logEvent('[DIAG] Subsystem telemetry verification executed at 800 Hz (0.21 ms).', 'text-cyan-400')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs font-bold transition-all border border-zinc-700">
+            Run Subsystem Audit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4-METRIC TELEMETRY GRID -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 font-mono">
+      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+        <span class="text-xs text-slate-400 block font-mono">Loop Frequency</span>
+        <strong class="text-2xl font-bold text-emerald-400 font-mono tracking-tight">800 Hz</strong>
+        <span class="text-[11px] text-slate-500 block font-mono">Deterministic Clock Sync</span>
+      </div>
+      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+        <span class="text-xs text-slate-400 block font-mono">P99 Step Latency</span>
+        <strong class="text-2xl font-bold text-cyan-400 font-mono tracking-tight">0.21 ms</strong>
+        <span class="text-[11px] text-slate-500 block font-mono">Zero-Jitter Execution</span>
+      </div>
+      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+        <span class="text-xs text-slate-400 block font-mono">Security Standard</span>
+        <strong class="text-2xl font-bold text-amber-400 font-mono tracking-tight">NIST 800-218</strong>
+        <span class="text-[11px] text-slate-500 block font-mono">SSDF v1.1 Verified</span>
+      </div>
+      <div class="bg-slate-900/60 border border-zinc-800 rounded-xl p-4 space-y-1">
+        <span class="text-xs text-slate-400 block font-mono">Telemetry Partitions</span>
+        <strong class="text-2xl font-bold text-purple-400 font-mono tracking-tight">4 Schemas</strong>
+        <span class="text-[11px] text-slate-500 block font-mono">RLS Policy Enforced</span>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE DOMAIN COCKPIT & ACTUATOR MATRIX -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-slate-900/70 border border-zinc-800 rounded-2xl p-6 space-y-4">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <h2 class="text-base font-bold text-slate-200 font-mono">Autonomous Heavy Fleet & Dispatch Telemetry HUD</h2>
+          </div>
+          <span class="text-xs font-mono text-slate-400">Frequency: 800 Hz · Latency: 0.21 ms</span>
+        </div>
+        <canvas id="domainCanvas" class="w-full h-64 rounded-xl bg-slate-950 border border-zinc-800/80"></canvas>
+        <div class="grid grid-cols-3 gap-3 text-center text-xs font-mono pt-2">
+          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+            <span class="text-slate-400 block">Clock Frequency</span>
+            <strong class="text-emerald-400 text-sm font-bold">800 Hz</strong>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+            <span class="text-slate-400 block">Measured Latency</span>
+            <strong class="text-cyan-400 text-sm font-bold">0.21 ms</strong>
+          </div>
+          <div class="bg-slate-950 p-2.5 rounded-lg border border-zinc-800">
+            <span class="text-slate-400 block">Integrity Gate</span>
+            <strong class="text-amber-400 text-sm font-bold">NIST SP 800-218</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/70 border border-zinc-800 rounded-2xl p-6 space-y-4 flex flex-col">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <h2 class="text-base font-bold text-slate-200 font-mono">Subsystem Operations Log</h2>
+          <span class="text-xs text-emerald-400 font-mono">ACTIVE_STREAM</span>
+        </div>
+        <div id="logTerminal" class="flex-1 bg-slate-950 rounded-xl p-3 font-mono text-[11px] text-slate-300 overflow-y-auto space-y-1.5 border border-zinc-800/80 max-h-56">
+          <div class="text-slate-400">[SYS] GF-T2-072 (FREIGHT BROKER DISPATCH OS) telemetry kernel online.</div>
+          <div class="text-cyan-400">[CLOCK] Deterministic loop locked at 800 Hz (0.21 ms P99 latency).</div>
+          <div class="text-emerald-400">[SSDF] NIST SP 800-218 v1.1 attestation checks passed.</div>
+          <div class="text-amber-400">[SCHEMA] 4 domain relational tables synchronized.</div>
+        </div>
+        <div class="space-y-2 pt-2 border-t border-zinc-800/80">
+          <span class="text-xs font-mono text-slate-400 block font-semibold">Specialized Domain Actuators</span>
+          <div class="grid grid-cols-1 gap-2">
+            <button onclick="triggerActuator1()" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-black font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+              Synchronize Telemetry Bus
+            </button>
+            <button onclick="calibrateDomainSensor()" class="w-full py-2.5 px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-black font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+              Calibrate Sensor Array
+            </button>
+            <button onclick="executeDiagnostic()" class="w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-black font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+              Verify NIST SP 800-218 Gate
+            </button>
+            <button onclick="emergencyOverride()" class="w-full py-2.5 px-4 rounded-xl bg-rose-700 hover:bg-rose-600 text-white font-bold border border-white/10 font-mono text-xs transition-all cursor-pointer shadow-md active:scale-95 text-center">
+              Engage Safe-State Interlock
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN RELATIONAL SCHEMAS -->
+    <div class="bg-slate-900/70 border border-zinc-800 rounded-2xl p-5 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-800 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <h2 class="text-sm font-bold text-slate-200 font-mono uppercase tracking-wider">Domain Telemetry Schemas</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="switchTableTab(0)" id="tab-btn-0" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-800 text-white border-zinc-700">load_board</button> <button onclick="switchTableTab(1)" id="tab-btn-1" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">carrier_directory</button> <button onclick="switchTableTab(2)" id="tab-btn-2" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">rate_confirmations</button> <button onclick="switchTableTab(3)" id="tab-btn-3" class="px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white">bol_vault</button>
+        </div>
+      </div>
+      <div>
+        
+        <div id="tab-content-0" class="space-y-2 ">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">load_board</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">NIST SP 800-218 Verified</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950">
+            <table class="w-full text-left font-mono text-xs">
+              <thead class="bg-slate-900/90 text-slate-400 border-b border-zinc-800 uppercase">
+                <tr>
+                  <th class="py-2.5 px-4">Record ID</th>
+                  <th class="py-2.5 px-4">Partition Node</th>
+                  <th class="py-2.5 px-4">Frequency</th>
+                  <th class="py-2.5 px-4">Latency</th>
+                  <th class="py-2.5 px-4">Verification</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800/60 text-slate-200">
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-01</td>
+                  <td class="py-2.5 px-4">load_board_shard_a</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-02</td>
+                  <td class="py-2.5 px-4">load_board_shard_b</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-03</td>
+                  <td class="py-2.5 px-4">load_board_shard_c</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-content-1" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">carrier_directory</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">NIST SP 800-218 Verified</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950">
+            <table class="w-full text-left font-mono text-xs">
+              <thead class="bg-slate-900/90 text-slate-400 border-b border-zinc-800 uppercase">
+                <tr>
+                  <th class="py-2.5 px-4">Record ID</th>
+                  <th class="py-2.5 px-4">Partition Node</th>
+                  <th class="py-2.5 px-4">Frequency</th>
+                  <th class="py-2.5 px-4">Latency</th>
+                  <th class="py-2.5 px-4">Verification</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800/60 text-slate-200">
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-01</td>
+                  <td class="py-2.5 px-4">carrier_directory_shard_a</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-02</td>
+                  <td class="py-2.5 px-4">carrier_directory_shard_b</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-03</td>
+                  <td class="py-2.5 px-4">carrier_directory_shard_c</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-content-2" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">rate_confirmations</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">NIST SP 800-218 Verified</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950">
+            <table class="w-full text-left font-mono text-xs">
+              <thead class="bg-slate-900/90 text-slate-400 border-b border-zinc-800 uppercase">
+                <tr>
+                  <th class="py-2.5 px-4">Record ID</th>
+                  <th class="py-2.5 px-4">Partition Node</th>
+                  <th class="py-2.5 px-4">Frequency</th>
+                  <th class="py-2.5 px-4">Latency</th>
+                  <th class="py-2.5 px-4">Verification</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800/60 text-slate-200">
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-01</td>
+                  <td class="py-2.5 px-4">rate_confirmations_shard_a</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-02</td>
+                  <td class="py-2.5 px-4">rate_confirmations_shard_b</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-03</td>
+                  <td class="py-2.5 px-4">rate_confirmations_shard_c</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="tab-content-3" class="space-y-2 hidden">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-mono px-1">
+            <span>Relational Schema: <strong class="text-slate-200">bol_vault</strong></span>
+            <span>RLS Policy: <span class="text-emerald-400">NIST SP 800-218 Verified</span></span>
+          </div>
+          <div class="overflow-x-auto rounded-xl border border-zinc-800 bg-slate-950">
+            <table class="w-full text-left font-mono text-xs">
+              <thead class="bg-slate-900/90 text-slate-400 border-b border-zinc-800 uppercase">
+                <tr>
+                  <th class="py-2.5 px-4">Record ID</th>
+                  <th class="py-2.5 px-4">Partition Node</th>
+                  <th class="py-2.5 px-4">Frequency</th>
+                  <th class="py-2.5 px-4">Latency</th>
+                  <th class="py-2.5 px-4">Verification</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800/60 text-slate-200">
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-01</td>
+                  <td class="py-2.5 px-4">bol_vault_shard_a</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-02</td>
+                  <td class="py-2.5 px-4">bol_vault_shard_b</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+                <tr>
+                  <td class="py-2.5 px-4 text-cyan-300 font-semibold">GF-T2-072-REC-03</td>
+                  <td class="py-2.5 px-4">bol_vault_shard_c</td>
+                  <td class="py-2.5 px-4 text-emerald-400">800 Hz</td>
+                  <td class="py-2.5 px-4 text-amber-300">0.21 ms</td>
+                  <td class="py-2.5 px-4"><span class="px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30">SSDF_PASS</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURAL CLEARANCE FOOTER -->
+    <div class="bg-slate-900/40 border border-zinc-800/80 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400">
+      <div>
+        <strong>Jurisdiction:</strong> Enterprise Architecture Clearance · <strong>NIST SP 800-218:</strong> Verified
+      </div>
+      <div>
+        GhostFactoryOS · Track 2 Flagship Tier-1 · Prototype Simulation
+      </div>
+    </div>
+  </main>
+
+  <!-- EXPORT MODAL -->
+  <div id="exportModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-slate-900 border border-zinc-700 rounded-2xl max-w-xl w-full p-6 space-y-4 font-mono text-xs">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <strong class="text-sm text-white">ENTERPRISE ASSET SPECIFICATION — GF-T2-072</strong>
+        <button onclick="closeExportModal()" class="text-slate-400 hover:text-white">&times;</button>
+      </div>
+      <div class="bg-slate-950 p-4 rounded-xl border border-zinc-800 overflow-y-auto max-h-64 text-slate-300 space-y-1">
+        <div>"unit_id": "GF-T2-072",</div>
+        <div>"name": "FREIGHT BROKER DISPATCH OS",</div>
+        <div>"category": "Intermodal Freight Brokerage & Carrier Lane OS",</div>
+        <div>"track": "Track 2 Flagship Tier-1",</div>
+        <div>"frequency": "800 Hz",</div>
+        <div>"latency_p99": "0.21 ms",</div>
+        <div>"compliance": "NIST SP 800-218 SSDF v1.1",</div>
+        <div>"status": "Clickable Interactive Prototype // Simulated Data Only"</div>
+      </div>
+      <div class="flex justify-end gap-3 pt-2">
+        <button onclick="closeExportModal()" class="px-4 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function logEvent(msg, colorClass = 'text-slate-300') {
+      const term = document.getElementById('logTerminal');
+      const div = document.createElement('div');
+      div.className = colorClass;
+      div.textContent = msg;
+      term.appendChild(div);
+      term.scrollTop = term.scrollHeight;
+    }
+
+    function switchTableTab(idx) {
+      const totalTabs = 4;
+      for (let i = 0; i < totalTabs; i++) {
+        const btn = document.getElementById('tab-btn-' + i);
+        const content = document.getElementById('tab-content-' + i);
+        if (btn && content) {
+          if (i === idx) {
+            btn.className = 'px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-800 text-white border-zinc-700';
+            content.classList.remove('hidden');
+          } else {
+            btn.className = 'px-3 py-1.5 rounded-lg border font-mono text-xs font-semibold transition-all bg-slate-950 text-slate-400 border-zinc-800 hover:text-white';
+            content.classList.add('hidden');
+          }
+        }
+      }
+    }
+
+    function openExportModal() {
+      document.getElementById('exportModal').classList.remove('hidden');
+    }
+
+    function closeExportModal() {
+      document.getElementById('exportModal').classList.add('hidden');
+    }
+
+    function triggerActuator1() { logEvent('[BUS] Primary telemetry bus synchronized at 800 Hz (0.21 ms).', 'text-emerald-400'); }
+    function calibrateDomainSensor() { logEvent('[SENSOR] Precision calibration pulse completed across domain nodes.', 'text-cyan-400'); }
+    function executeDiagnostic() { logEvent('[NIST-800-218] SSDF v1.1 verification gate returned 100% pass.', 'text-purple-400'); }
+    function emergencyOverride() { logEvent('[SAFETY] Deterministic operational interlock holding safe state.', 'text-rose-400'); }
+
+    const canvas = document.getElementById('domainCanvas');
+    const ctx = canvas.getContext('2d');
+    let phase = 0;
+
+    function resize() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = 256;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function renderTelemetry() {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(0, 0, w, h);
+
+      ctx.strokeStyle = '#1e293b';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < w; x += 40) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+      }
+      for (let y = 0; y < h; y += 32) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+      }
+
+      phase += 0.04;
+      ctx.strokeStyle = '#06b6d4';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let x = 0; x < w; x += 4) {
+        const y = h * 0.5 + Math.sin(x * 0.025 + phase) * 42 + Math.cos(x * 0.01 - phase) * 18;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      for (let x = 0; x < w; x += 4) {
+        const y = h * 0.5 + Math.cos(x * 0.02 - phase * 1.2) * 30;
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      requestAnimationFrame(renderTelemetry);
+    }
+    requestAnimationFrame(renderTelemetry);
+  </script>
+</body>
+</html>

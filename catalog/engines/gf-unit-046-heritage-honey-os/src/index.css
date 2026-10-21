@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", serif;
+
+  --color-brand-cream: #FAF9F6;
+  --color-brand-charcoal: #0B0A09;
+  --color-brand-burgundy: #C53B27;
+  --color-brand-gold: #DFC8B2;
+  --color-brand-beige: #141312;
+  --color-brand-stone: #242220;
+
+  --color-bg: var(--color-brand-charcoal);
+  --color-text: var(--color-brand-cream);
+  --color-card: var(--color-brand-beige);
+  --color-border: var(--color-brand-stone);
+}
+
+@layer base {
+  :root {
+    --color-bg: var(--color-brand-charcoal);
+    --color-text: var(--color-brand-cream);
+    --color-card: var(--color-brand-beige);
+    --color-border: var(--color-brand-stone);
+  }
+
+  .dark {
+    --color-bg: #141312;
+    --color-text: #F3ECE3;
+    --color-card: #1E1C1A;
+    --color-border: #322E2A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased transition-colors duration-500;
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-1 ring-brand-gold ring-offset-2 ring-offset-brand-charcoal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-text tracking-tight;
+    font-variation-settings: "opsz" 72, "wght" 600;
+  }
+
+  .editorial-subheader {
+    @apply text-[10px] uppercase font-bold text-brand-gold;
+    letter-spacing: 0.15em;
+  }
+}
+
+.text-reveal {
+  @apply overflow-hidden;
+}
+
+.hover-slide {
+  @apply relative overflow-hidden transition-all duration-500 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all hover:after:w-full;
+}
+
+.app-frame {
+  @apply md:border-[12px] border-brand-beige min-h-screen flex flex-col;
+}

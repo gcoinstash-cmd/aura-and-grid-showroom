@@ -1,0 +1,6 @@
+{
+  "name": "Premium Nightlife Venue Template",
+  "description": "A highly customizable premium dark-mode website template for luxury bars, jazz lounges, speakeasies, and supper clubs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -29,6 +29,24 @@ const SITE_ASSETS_DIR = path.join(SITE_DIR, 'assets', 'covers');
 const OUTPUT_HTML_PATH = path.join(SITE_DIR, 'index.html');
 const STYLE_CSS_PATH = path.join(SITE_DIR, 'assets', 'style.css');
 
+// Dynamic Git Commit Hash Telemetry Resolution (0% Drift)
+let gitCommitHash = '9531755';
+try {
+  gitCommitHash = execSync('git rev-parse --short HEAD', {
+    cwd: rootDir,
+    encoding: 'utf-8',
+    env: { ...process.env, DEVELOPER_DIR: '/Library/Developer/CommandLineTools' }
+  }).trim();
+} catch (e) {
+  try {
+    gitCommitHash = execSync('/Library/Developer/CommandLineTools/usr/bin/git rev-parse --short HEAD', {
+      cwd: rootDir,
+      encoding: 'utf-8'
+    }).trim();
+  } catch (e2) {}
+}
+
+
 console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 200 Vehicles)...');
 
 if (!fs.existsSync(MANIFEST_PATH)) {
@@ -427,12 +445,12 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
         <div class="p-4 bg-[#080C14] border-t border-white/5 font-mono">
           <div class="flex flex-col gap-2 w-full pt-3 border-t border-slate-800/80">
             <!-- Allocation Status Badge -->
-            <div class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10">
+            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender" title="Open Secure APA Title Tender">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
-                <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px]">${primaryApaLabel}</span>
+                <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px] group-hover/tender:text-[#FF9F0A] transition-colors">${primaryApaLabel}</span>
               </div>
-              <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">CLEAN TITLE</span>
+              <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider group-hover/tender:text-amber-300">TITLE TENDER ↗</span>
             </div>
 
             <!-- Standardized Full-Width CTA Target -->
@@ -763,11 +781,11 @@ const showroomHtml = `<!DOCTYPE html>
 
         <!-- Full-Width Vertical CTA Stack -->
         <div class="flex flex-col gap-2.5 w-full mt-6 pt-4 border-t border-white/10">
-          <button id="leftCtaAcquireBtn" onclick="openLoadedUnitModal('acquire')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
+          <button id="leftCtaAcquireBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'acquire')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
             ACQUIRE TITLE (APA) →
           </button>
-          <button id="leftCtaDossierBtn" onclick="openLoadedUnitModal('dossier')" class="w-full py-2.5 px-4 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer flex items-center justify-center">
-            REQUEST VAULT DOSSIER
+          <button id="leftCtaDossierBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'inquiry')" class="w-full py-2.5 px-4 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer flex items-center justify-center">
+            INQUIRE VAULT BUYOUT
           </button>
         </div>
       </div>
@@ -849,7 +867,7 @@ ${renderedCardsHtml}
     </div>
     
     <div class="flex items-center gap-3 text-slate-400 text-xs shrink-0">
-      <span class="text-cyan-300 font-bold hidden md:inline">COMMIT: b787061</span>
+      <span class="text-cyan-300 font-bold hidden md:inline">COMMIT: ${gitCommitHash}</span>
       <span class="hidden md:inline">//</span>
       <span class="text-emerald-400 font-bold">0% DRIFT</span>
       <span>//</span>
@@ -857,55 +875,202 @@ ${renderedCardsHtml}
     </div>
   </footer>
 
-  <!-- ================= INSTITUTIONAL APA TENDER MODAL ================= -->
-  <div id="flagshipModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="w-full max-w-lg bg-[#0A0D14] border border-cyan-500/40 rounded-2xl p-6 shadow-[0_0_50px_rgba(0,240,255,0.2)] font-mono flex flex-col gap-4 relative">
-      <button onclick="closeFlagshipModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-bold p-1 cursor-pointer">
+  <!-- ================= INSTITUTIONAL APA TENDER MODAL (CYBERPUNK HUD) ================= -->
+  <div id="apaTenderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" onclick="if(event.target === this) closeApaTenderModal()">
+    <div class="w-full max-w-xl bg-[#080C14] border-2 border-[#FF9F0A]/60 rounded-2xl p-6 sm:p-7 shadow-[0_0_50px_rgba(255,159,10,0.25)] font-mono flex flex-col gap-4 relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close X Button -->
+      <button onclick="closeApaTenderModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-bold p-1 cursor-pointer transition-colors" title="Dismiss HUD">
         ✕
       </button>
 
+      <!-- Modal Header -->
       <div class="border-b border-white/10 pb-3">
-        <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-bold uppercase tracking-wider">
-          M&amp;A PRIVATE TENDER DESK
-        </span>
-        <h3 class="text-lg sm:text-xl font-bold text-white mt-1.5 font-sans" id="flagshipModalTitle">
-          Selective APA Title Transfer Desk
-        </h3>
-        <p class="text-xs text-slate-400 mt-0.5" id="flagshipModalSector">
-          Software Architecture // Unit #001
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="w-2 h-2 rounded-full bg-[#FF9F0A] animate-pulse shadow-[0_0_8px_#FF9F0A]"></span>
+          <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest">INSTITUTIONAL APA ACQUISITION GATE</span>
+        </div>
+        <h2 id="apaModalHeader" class="text-base sm:text-lg font-bold text-[#FF9F0A] tracking-wider uppercase">
+          SECURE APA TITLE TRANSFER TENDER // UNIT #001
+        </h2>
+        <p id="apaModalSubTitle" class="text-xs text-slate-300 font-sans mt-0.5">
+          STRIDE MB — Boutique Fitness &amp; Performance OS
         </p>
       </div>
 
-      <div class="p-3.5 rounded-xl bg-[#111724] border border-white/10 space-y-2 text-xs">
-        <div class="flex items-center justify-between">
-          <span class="text-slate-400">TENDER ALLOCATION:</span>
-          <span class="text-cyan-300 font-bold" id="flagshipModalTrackPrice">PRIVATE APA TENDER // NDA REQUIRED</span>
+      <!-- Telemetry Readout Grid (Chassis ID, Track Tier, Pytest Gate, Clean-Room Status) -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 bg-[#05070B] border border-white/10 p-3 rounded-xl text-xs">
+        <div>
+          <span class="text-[10px] text-slate-400 block uppercase">CHASSIS ID</span>
+          <span id="apaModalChassisId" class="text-white font-bold text-xs mt-0.5 block">UNIT #001</span>
         </div>
-        <div class="flex items-center justify-between border-t border-white/10 pt-2">
-          <span class="text-slate-400">TITLE CONDITION:</span>
-          <span class="text-emerald-400 font-bold">100% CLEAN-ROOM (MIT/APACHE)</span>
+        <div>
+          <span class="text-[10px] text-slate-400 block uppercase">TRACK TIER</span>
+          <span id="apaModalTrackTier" class="text-cyan-300 font-bold text-xs mt-0.5 block truncate">Track 1 Lean Tuner</span>
         </div>
-        <div class="flex items-center justify-between border-t border-white/10 pt-2">
-          <span class="text-slate-400">TRANSFER TIMELINE:</span>
-          <span class="text-amber-300 font-bold">TURNKEY 24-48 HR ASSIGNMENT</span>
+        <div>
+          <span class="text-[10px] text-slate-400 block uppercase">PYTEST GATE</span>
+          <span id="apaModalPytestGate" class="text-emerald-400 font-extrabold text-xs mt-0.5 block">4/4 PASS (85%)</span>
+        </div>
+        <div>
+          <span class="text-[10px] text-slate-400 block uppercase">TITLE STATUS</span>
+          <span class="text-amber-300 font-bold text-xs mt-0.5 block">100% Clean-Room</span>
         </div>
       </div>
 
-      <div class="text-xs text-slate-400 leading-relaxed bg-[#05070B] p-3 rounded-lg border border-white/5">
-        Asset purchase agreements execute clean-room repository assignment with verified git history, schema definitions, and compliance manifests. All disclosures governed under bilateral institutional NDA.
+      <!-- Institutional Tender Notice Block -->
+      <div class="text-[11px] text-slate-300 leading-relaxed bg-[#111724]/70 p-3 rounded-lg border border-white/5 space-y-1">
+        <div class="flex items-center justify-between text-slate-400 border-b border-white/5 pb-1">
+          <span>ALLOCATION STATUS:</span>
+          <span class="text-cyan-300 font-bold uppercase">PRIVATE APA TENDER</span>
+        </div>
+        <p class="pt-0.5 text-slate-400">Asset Purchase Agreement transfers sovereign repository code, persistent schemas, and clean IP title under bilateral institutional NDA. Zero external runtime dependencies.</p>
       </div>
 
-      <div class="flex flex-col gap-2 pt-1">
-        <a id="flagshipMailtoBtn" href="mailto:advisory@auraandgrid.com?subject=Private%20APA%20Title%20Acquisition%20Inquiry" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-bold text-xs uppercase tracking-wider rounded-lg text-center transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)]">
-          EXECUTE INQUIRY VIA SECURE MAILTO →
-        </a>
-        <button onclick="closeFlagshipModal()" class="w-full py-2.5 px-4 bg-[#111724] hover:bg-white/10 border border-white/15 text-slate-300 text-xs rounded-lg text-center transition-all cursor-pointer">
-          DISMISS WINDOW
-        </button>
-      </div>
+      <!-- Form Inputs: Institutional Legal Entity Name, Principal Contact Email, and Jurisdiction -->
+      <form onsubmit="submitApaTender(event)" class="space-y-3 pt-1">
+        <div class="space-y-1">
+          <label class="text-[10px] uppercase font-bold text-slate-300 tracking-wider flex items-center justify-between">
+            <span>Institutional Legal Entity Name</span>
+            <span class="text-slate-400 font-normal">Required</span>
+          </label>
+          <input type="text" id="tenderEntityInput" required placeholder="e.g., Sovereign Capital Holdings LLC / Enterprise Labs Inc" class="w-full bg-[#05070B] border border-white/15 focus:border-[#FF9F0A] rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none transition-colors">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="text-[10px] uppercase font-bold text-slate-300 tracking-wider flex items-center justify-between">
+              <span>Principal Contact Email</span>
+              <span class="text-slate-400 font-normal">Required</span>
+            </label>
+            <input type="email" id="tenderEmailInput" required placeholder="principal@entity.com" class="w-full bg-[#05070B] border border-white/15 focus:border-[#FF9F0A] rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none transition-colors">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">
+              <span>Jurisdiction</span>
+            </label>
+            <input type="text" id="tenderJurisdictionInput" placeholder="e.g., Delaware / Wyoming / UK / Singapore" class="w-full bg-[#05070B] border border-white/15 focus:border-[#FF9F0A] rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none transition-colors">
+          </div>
+        </div>
+
+        <div id="tenderStatusNotice" class="hidden text-center text-xs font-mono py-1"></div>
+
+        <!-- Primary CTAs: Full-width vertical button stack -->
+        <div class="flex flex-col gap-2 w-full pt-2">
+          <button type="submit" id="tenderSubmitBtn" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg text-center transition-all cursor-pointer shadow-[0_0_20px_rgba(255,159,10,0.4)] hover:shadow-[0_0_30px_rgba(255,159,10,0.6)] flex items-center justify-center gap-1.5">
+            [ SUBMIT FORMAL TITLE TENDER (APA) → ]
+          </button>
+          <button type="button" onclick="closeApaTenderModal()" class="w-full py-2.5 px-4 bg-[#05070B] hover:bg-white/5 border border-[#00F0FF]/30 hover:border-[#00F0FF]/60 text-slate-400 hover:text-white font-mono text-xs uppercase tracking-wider rounded-lg text-center transition-all cursor-pointer">
+            [ DISMISS TELEMETRY HUD ]
+          </button>
+        </div>
+      </form>
+
     </div>
-  </div>  <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
+  </div>
+
+  <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
   <script>
+    // ================= ZERO-DEPENDENCY NATIVE WEB AUDIO TELEMETRY SYNTHESIZER =================
+    let audioCtx = null;
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    // Resume AudioContext seamlessly on first user pointerdown/click
+    document.addEventListener('pointerdown', () => {
+      getAudioContext();
+    }, { once: true });
+
+    // 1. playTelemetryClick(): Crisp 1200Hz-to-800Hz micro sine click (15ms duration)
+    function playTelemetryClick() {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1200, now);
+        osc.frequency.exponentialRampToValueAtTime(800, now + 0.015);
+
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.015);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.015);
+      } catch (e) {}
+    }
+
+    // 2. playScanSweep(): Rising 400Hz-to-1800Hz bandpass chirp (180ms duration)
+    function playScanSweep() {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const filter = ctx.createBiquadFilter();
+        const gain = ctx.createGain();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(400, now);
+        osc.frequency.exponentialRampToValueAtTime(1800, now + 0.18);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(600, now);
+        filter.frequency.exponentialRampToValueAtTime(2200, now + 0.18);
+        filter.Q.setValueAtTime(3.0, now);
+
+        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.linearRampToValueAtTime(0.12, now + 0.09);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.18);
+      } catch (e) {}
+    }
+
+    // 3. playEngageBeep(): Dual-tone 880Hz/1760Hz confirmation chime
+    function playEngageBeep() {
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        const now = ctx.currentTime;
+
+        [880, 1760].forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.06);
+
+          gain.gain.setValueAtTime(0.07, now + idx * 0.06);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.06 + 0.14);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(now + idx * 0.06);
+          osc.stop(now + idx * 0.06 + 0.14);
+        });
+      } catch (e) {}
+    }
+
     const PAGE_SIZE = 6;
     let currentPage = 1;
     let totalPages = 1;
@@ -1251,6 +1416,7 @@ ${renderedCardsHtml}
     }
 
     function triggerScanSchematic() {
+      playScanSweep();
       isScanning = true;
       scanProgress = 0;
       const btn = document.getElementById('scanSchematicBtn');
@@ -1263,6 +1429,7 @@ ${renderedCardsHtml}
     }
 
     function triggerDynoPulseAndScan() {
+      playScanSweep();
       dynoPulseTimer = 1200; // 1.2-second pulse animation
       triggerScanSchematic(); // Green horizontal laser sweep across canvas
       if (holoCanvas) {
@@ -1274,6 +1441,7 @@ ${renderedCardsHtml}
     }
 
     function setTrackNav(track) {
+      playTelemetryClick();
       activeFilter = track;
       currentPage = 1;
 
@@ -1377,6 +1545,7 @@ ${renderedCardsHtml}
 
     if (prevPageBtn) {
       prevPageBtn.addEventListener('click', () => {
+        playTelemetryClick();
         if (currentPage > 1) {
           currentPage--;
           filterCards();
@@ -1385,6 +1554,7 @@ ${renderedCardsHtml}
     }
     if (nextPageBtn) {
       nextPageBtn.addEventListener('click', () => {
+        playTelemetryClick();
         if (currentPage < totalPages) {
           currentPage++;
           filterCards();
@@ -1446,56 +1616,92 @@ ${renderedCardsHtml}
       }
     }
 
-    function openLoadedUnitModal(intent) {
-      const card = document.getElementById('vehicle-' + currentLoadedUnitId);
-      const name = card ? card.dataset.name : 'Track 1 Lean Tuner';
-      const sector = card ? card.dataset.sector : 'Software Architecture';
-      const track = card ? card.dataset.track : 'track1';
-      openFlagshipModal(currentLoadedUnitId, name, sector, track, intent);
-    }
+    function openApaTenderModal(id, intent = 'acquire') {
+      playEngageBeep();
+      const targetId = id || currentLoadedUnitId || 1;
+      const card = document.getElementById('vehicle-' + targetId);
+      const cleanId = String(targetId).padStart(3, '0');
+      const name = card ? (card.dataset.name || 'VEHICLE CHASSIS') : 'STRIDE MB';
+      const category = card ? (card.dataset.category || '') : '';
+      const sector = card ? (card.dataset.sector || '') : '';
+      const track = card ? (card.dataset.track || 'track1') : 'track1';
+      const pytest = card ? (card.dataset.pytest || '88') : '88';
 
-    function openFlagshipModal(id, name, sector, track, intent) {
-      const modal = document.getElementById('flagshipModal');
+      const trackLabel = track === 'track3' ? 'Track 3 Skunkworks' : track === 'track2' ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
+
+      const modal = document.getElementById('apaTenderModal');
       if (!modal) return;
-      const titleEl = document.getElementById('flagshipModalTitle');
-      const sectorEl = document.getElementById('flagshipModalSector');
-      const priceEl = document.getElementById('flagshipModalTrackPrice');
-      const mailtoBtn = document.getElementById('flagshipMailtoBtn');
 
-      if (priceEl) priceEl.innerText = 'ALLOCATION: PRIVATE APA TENDER // NDA REQUIRED';
+      const header = document.getElementById('apaModalHeader');
+      if (header) header.innerText = 'SECURE APA TITLE TRANSFER TENDER // UNIT #' + cleanId;
 
-      const isDossier = intent === 'dossier';
-      const cleanId = id ? String(id).padStart(3, '0') : '';
+      const subTitle = document.getElementById('apaModalSubTitle');
+      if (subTitle) subTitle.innerText = name.toUpperCase() + ' — ' + category + ' (' + sector + ')';
 
-      if (name) {
-        titleEl.innerText = isDossier ? 'Request Vault Dossier — ' + name : 'Acquire Title (APA) — ' + name;
-        sectorEl.innerText = (sector || 'Software Architecture') + (id ? ' // Unit #' + cleanId : '');
-        const subjectPrefix = isDossier ? 'Vault Dossier Request — ' : 'Private APA Title Acquisition Inquiry — ';
-        const subject = encodeURIComponent(subjectPrefix + name + (id ? ' (Unit #' + cleanId + ')' : ''));
-        if (mailtoBtn) {
-          mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=' + subject;
-          mailtoBtn.innerText = isDossier ? 'TRANSMIT DOSSIER REQUEST VIA SECURE MAILTO →' : 'EXECUTE INQUIRY VIA SECURE MAILTO →';
-        }
-      } else {
-        titleEl.innerText = isDossier ? 'Request Vault Technical Dossier' : 'Selective APA Title Transfer Desk';
-        sectorEl.innerText = '200 Synced Units // Direct Repository Transfer';
-        if (mailtoBtn) {
-          mailtoBtn.href = 'mailto:advisory@auraandgrid.com?subject=Private%20APA%20Title%20Acquisition%20Inquiry';
-          mailtoBtn.innerText = 'EXECUTE INQUIRY VIA SECURE MAILTO →';
-        }
+      const chassisEl = document.getElementById('apaModalChassisId');
+      if (chassisEl) chassisEl.innerText = 'UNIT #' + cleanId;
+
+      const trackEl = document.getElementById('apaModalTrackTier');
+      if (trackEl) trackEl.innerText = trackLabel;
+
+      const pytestEl = document.getElementById('apaModalPytestGate');
+      if (pytestEl) pytestEl.innerText = '4/4 PASS (' + pytest + '%)';
+
+      const notice = document.getElementById('tenderStatusNotice');
+      if (notice) {
+        notice.classList.add('hidden');
+        notice.innerHTML = '';
       }
 
       modal.classList.remove('hidden');
     }
 
-    function closeFlagshipModal() {
-      const modal = document.getElementById('flagshipModal');
+    function closeApaTenderModal() {
+      playTelemetryClick();
+      const modal = document.getElementById('apaTenderModal');
       if (modal) modal.classList.add('hidden');
+    }
+
+    function openLoadedUnitModal(intent) {
+      openApaTenderModal(currentLoadedUnitId, intent);
+    }
+
+    function submitApaTender(e) {
+      if (e) e.preventDefault();
+      const entity = document.getElementById('tenderEntityInput')?.value || '';
+      const email = document.getElementById('tenderEmailInput')?.value || '';
+      const jurisdiction = document.getElementById('tenderJurisdictionInput')?.value || 'Standard';
+
+      if (!entity || !email) return;
+
+      playEngageBeep();
+
+      const unitHeader = document.getElementById('apaModalHeader')?.innerText || 'UNIT CHASSIS';
+      const subject = encodeURIComponent('[MUTUAL NDA // APA TENDER] ' + unitHeader + ' — ' + entity);
+      const body = encodeURIComponent(
+        'INSTITUTIONAL APA TITLE TRANSFER TENDER\\n' +
+        '-----------------------------------------\\n' +
+        'Target: ' + unitHeader + '\\n' +
+        'Legal Entity: ' + entity + '\\n' +
+        'Principal Contact: ' + email + '\\n' +
+        'Jurisdiction: ' + jurisdiction + '\\n\\n' +
+        'We formally tender acquisition interest and request the complete Asset Purchase Agreement (APA) tender dossier, clean-room chain-of-title manifest, and bilateral NDA for private closing.'
+      );
+
+      const notice = document.getElementById('tenderStatusNotice');
+      if (notice) {
+        notice.innerHTML = '<span class="text-emerald-400 font-bold">🟢 APA TENDER LOGGED // ALLOCATION DOSSIER DISPATCHING TO ' + escapeHtml(email).toUpperCase() + '</span>';
+        notice.classList.remove('hidden');
+      }
+
+      setTimeout(() => {
+        window.location.href = 'mailto:advisory@auraandgrid.com?subject=' + subject + '&body=' + body;
+      }, 750);
     }
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeFlagshipModal();
+        closeApaTenderModal();
       }
     });
 

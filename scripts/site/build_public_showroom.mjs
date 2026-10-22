@@ -51,8 +51,18 @@ if (fs.existsSync(DYNO_SOURCE_PATH)) {
 const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'));
 const fleetData = fs.existsSync(FLEET_PATH) ? JSON.parse(fs.readFileSync(FLEET_PATH, 'utf-8')) : manifest.products;
 
-// Pre-load existing cover filenames into an in-memory Set (avoids hundreds of slow sync disk stats/copies)
-const existingCoverFiles = new Set(fs.existsSync(SITE_ASSETS_DIR) ? fs.readdirSync(SITE_ASSETS_DIR) : []);
+// Pre-load existing cover filenames into an in-memory Set (excludes 0-byte or corrupt placeholder files)
+const existingCoverFiles = new Set(
+  fs.existsSync(SITE_ASSETS_DIR)
+    ? fs.readdirSync(SITE_ASSETS_DIR).filter(f => {
+        try {
+          return fs.statSync(path.join(SITE_ASSETS_DIR, f)).size > 500;
+        } catch {
+          return false;
+        }
+      })
+    : []
+);
 
 // Map sector groupings for clean buyer filtering
 const sectorMap = {

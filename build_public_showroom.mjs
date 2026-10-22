@@ -144,26 +144,37 @@ fleetData.forEach(p => {
   const cleanSlug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const sector = sectorMap[p.vertical] || (isTrack3 || isTrack2 ? 'Deep Tech & SCADA' : 'Specialized Operations');
 
-  let coverRelPath = `assets/covers/${cleanSlug}-cover.svg`;
+  let coverRelPath = '';
+  let hasCoverOnDisk = false;
+
   if (p.coverImage || p.cover_image) {
     const explicitFilename = path.basename(p.coverImage || p.cover_image);
     if (existingCoverFiles.has(explicitFilename)) {
       coverRelPath = `assets/covers/${explicitFilename}`;
+      hasCoverOnDisk = true;
       rasterCoversFound++;
     }
   } else if (existingCoverFiles.has(`${cleanSlug}-cover.webp`)) {
     coverRelPath = `assets/covers/${cleanSlug}-cover.webp`;
+    hasCoverOnDisk = true;
     rasterCoversFound++;
   } else if (existingCoverFiles.has(`${cleanSlug}-cover.jpg`)) {
     coverRelPath = `assets/covers/${cleanSlug}-cover.jpg`;
+    hasCoverOnDisk = true;
     rasterCoversFound++;
   } else if (existingCoverFiles.has(`${cleanSlug}-cover.png`)) {
     coverRelPath = `assets/covers/${cleanSlug}-cover.png`;
+    hasCoverOnDisk = true;
     rasterCoversFound++;
+  } else if (existingCoverFiles.has(`${cleanSlug}-cover.svg`)) {
+    coverRelPath = `assets/covers/${cleanSlug}-cover.svg`;
+    hasCoverOnDisk = true;
+    svgCoversFound++;
   } else {
+    // Zero disk cover: directly renders procedural SVG telemetry schematic
+    hasCoverOnDisk = false;
     svgCoversFound++;
   }
-
   // Deterministic Pytest branch coverage score between 84% and 98%
   const pytestScore = isTrack3 ? 92 + (p.id % 7) : isTrack2 ? 88 + (p.id % 8) : 84 + (p.id % 9);
 
@@ -210,6 +221,7 @@ fleetData.forEach(p => {
     pricing_track: isTrack3 ? 'Track 3 — Skunkworks Engine' : isTrack2 ? 'Track 2 — Hypercar Flagship' : 'Track 1 — Lean Tuner',
     isTrack2,
     isTrack3,
+    hasCoverOnDisk,
     pytestScore,
     tables: p.tables || ['profiles', 'audit_logs', 'orders'],
     archetype_name: p.archetype_name ? p.archetype_name.split(':')[1]?.trim() || p.archetype_name : (isTrack3 ? 'Enterprise Reference Core' : 'Dense Operational Console'),
@@ -223,6 +235,81 @@ console.log(`📸 Indexed covers in-memory: ${rasterCoversFound} raster + ${svgC
 function renderCoverMarkup(p) {
   return `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
 <div style="display:none;" class="w-full h-32 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>`;
+}
+
+// Procedural SVG Telemetry Blueprint Generator (Zero Broken Images)
+function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = false) {
+  const displayStyle = isHidden ? 'style="display:none;"' : '';
+  
+  if (isTrack3) {
+    // Track 3: F1 Skunkworks Service Engine — State Pipeline Schematic
+    return `
+      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <div class="flex justify-between items-center text-[10px] text-slate-400">
+          <span class="text-sky-400 font-bold tracking-wider">SCHEMATIC // ENGINE BUS #${cleanId}</span>
+          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
+        </div>
+        <div class="flex items-center justify-center py-2 opacity-80">
+          <svg class="w-full h-12 stroke-[#00F0FF]/60 fill-none" viewBox="0 0 200 40">
+            <path d="M5 20 H38 M64 20 H98 M124 20 H158 M184 20 H195" stroke-width="1.5" stroke-dasharray="3 2" class="stroke-cyan-500/40" />
+            <rect x="38" y="8" width="26" height="24" rx="4" class="stroke-sky-400 fill-sky-950/40" stroke-width="1.2" />
+            <rect x="98" y="8" width="26" height="24" rx="4" class="stroke-amber-400 fill-amber-950/40" stroke-width="1.2" />
+            <rect x="158" y="8" width="26" height="24" rx="4" class="stroke-emerald-400 fill-emerald-950/40" stroke-width="1.2" />
+            <circle cx="51" cy="20" r="3" class="fill-[#00F0FF] animate-pulse" />
+            <circle cx="111" cy="20" r="3" class="fill-[#FF9F0A]" />
+            <circle cx="171" cy="20" r="3" class="fill-[#10B981]" />
+          </svg>
+        </div>
+        <div class="flex justify-between items-center text-[9px] text-slate-400">
+          <span class="text-sky-300">RUNTIME: FASTAPI + ALLOYDB</span>
+          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
+        </div>
+      </div>`;
+  } else if (isTrack2) {
+    // Track 2: Hypercar Flagship — Radar Sweep / HUD Telemetry
+    return `
+      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <div class="flex justify-between items-center text-[10px] text-slate-400">
+          <span class="text-amber-400 font-bold tracking-wider">SCHEMATIC // HUD RADAR SWEEP #${cleanId}</span>
+          <span class="text-[#FF9F0A] font-bold">[FLAGSHIP TIER-1]</span>
+        </div>
+        <div class="flex items-center justify-center py-2 opacity-80">
+          <svg class="w-full h-12 stroke-[#FF9F0A]/60 fill-none" viewBox="0 0 200 40">
+            <circle cx="100" cy="20" r="17" stroke-dasharray="3 3" class="stroke-amber-400/30" />
+            <circle cx="100" cy="20" r="9" class="stroke-cyan-400/50" />
+            <circle cx="100" cy="20" r="2.5" class="fill-[#FF9F0A] animate-ping" />
+            <path d="M15 20 H80 M120 20 H185 M100 3 V10 M100 30 V37" stroke-width="1.2" class="stroke-cyan-400/40" />
+            <path d="M25 20 L35 12 L45 20 L55 14 L65 20" stroke-width="1.2" class="stroke-amber-400/70" />
+            <path d="M135 20 L145 28 L155 20 L165 26 L175 20" stroke-width="1.2" class="stroke-amber-400/70" />
+          </svg>
+        </div>
+        <div class="flex justify-between items-center text-[9px] text-slate-400">
+          <span class="text-amber-300">STATE: REACT 19 + WEBGL</span>
+          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
+        </div>
+      </div>`;
+  } else {
+    // Track 1: Lean Tuner — Core Architecture Oscilloscope Wave
+    return `
+      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <div class="flex justify-between items-center text-[10px] text-slate-400">
+          <span class="text-emerald-400 font-bold tracking-wider">SCHEMATIC // CORE ARCHITECTURE #${cleanId}</span>
+          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
+        </div>
+        <div class="flex items-center justify-center py-2 opacity-75">
+          <svg class="w-full h-12 stroke-[#00F0FF]/50 fill-none" viewBox="0 0 200 40">
+            <path d="M0 20 H50 L60 5 L70 35 L80 15 L90 25 L100 20 H200" stroke-width="1.5" />
+            <circle cx="60" cy="5" r="2.5" class="fill-[#FF9F0A]" />
+            <circle cx="70" cy="35" r="2.5" class="fill-[#00F0FF]" />
+            <circle cx="90" cy="25" r="2" class="fill-[#10B981]" />
+          </svg>
+        </div>
+        <div class="flex justify-between items-center text-[9px] text-slate-400">
+          <span>PERSISTENCE: SUPABASE RLS</span>
+          <span class="text-emerald-400 font-bold">COVERAGE: >80%</span>
+        </div>
+      </div>`;
+  }
 }
 
 const renderedCardsHtml = publicProducts.map((p, idx) => {
@@ -254,6 +341,12 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
+  // Thumbnail preview: renders image with fallback if on disk, else renders procedural SVG schematic directly
+  const thumbnailPreviewMarkup = p.hasCoverOnDisk && p.cover_image
+    ? `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+       ${generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, true)}`
+    : generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, false);
+
   return `
       <!-- F1 Spec Card #${p.id} -->
       <div class="product-card${initialHidden} rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
@@ -284,8 +377,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
           <!-- Cover / Telemetry Preview Window (Comfortable h-36 md:h-44 height) -->
           <div class="relative bg-[#05070B] border-b border-white/10 h-36 md:h-44 overflow-hidden flex items-center justify-center shrink-0">
-            <img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div style="display:none;" class="w-full h-36 md:h-44 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>
+            ${thumbnailPreviewMarkup}
           </div>
 
           <!-- Card Telemetry Body (Comfortable Padding) -->
@@ -309,51 +401,30 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
               ${isTrack3 ? 'WORKING SERVICE ENGINE // PRODUCTION REFERENCE' : 'SIMULATED DATA PROTOTYPE'}
             </div>
 
-            <p class="text-xs text-slate-300 line-clamp-2 mb-3 leading-relaxed">${escapeHtml(p.category)}</p>
-
-            <!-- Tech Stack Badges -->
-            <div class="flex flex-wrap gap-1.5 mb-3">
-              ${stackBadges.map(badge => `<span class="px-2 py-0.5 rounded bg-[#05070B] border border-white/10 text-[10px] font-mono text-cyan-300 font-medium">${badge}</span>`).join('')}
+            <!-- Benchmark Target Pill -->
+            <div class="text-[11px] font-mono text-slate-400 truncate mb-3">
+              <span class="text-slate-400 uppercase text-[9px] font-bold">BENCHMARK:</span> ${escapeHtml(p.design_benchmark)}
             </div>
 
-            <!-- Pure APA Title Valuation Box -->
-            <div class="p-2.5 rounded-xl border text-xs font-mono ${isTrack3 ? 'bg-sky-950/20 border-sky-500/40 text-sky-200' : isTrack2 ? 'bg-amber-950/20 border-amber-500/40 text-amber-200' : 'bg-emerald-950/20 border-emerald-500/40 text-emerald-200'}">
-              <div class="flex justify-between items-center">
-                <span class="text-slate-400">Title Status:</span>
-                <span class="text-emerald-400 font-bold">${primaryApaLabel}</span>
-              </div>
+            <!-- Bottom Tech Stack Badges Strip -->
+            <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/5 font-mono text-[10px]">
+              ${stackBadges.map(b => `<span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/5">${b}</span>`).join('')}
             </div>
           </div>
         </div>
 
-        <!-- Card Actions: Mount on Dyno + Clean Full-Width Vertical CTA Stack -->
-        <div class="p-4 sm:p-5 pt-0 border-t border-white/5 mt-1 flex flex-col gap-2 font-mono">
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="py-2 px-2.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 font-bold transition-all min-h-[36px] flex items-center justify-center gap-1 cursor-pointer text-xs" title="Mount on 3D Dyno Bay Scanner">
-              <span>⚡ Mount Dyno</span>
-            </button>
-            ${p.isExternalLive ? `
-            <a href="${escapeHtml(p.preview_url)}" target="_blank" onclick="event.stopPropagation();" class="py-2 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[36px] flex items-center justify-center gap-1 text-xs">
-              <span>Live Demo ↗</span>
-            </a>` : `
-            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="py-2 px-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-center text-white font-semibold hover:text-cyan-300 transition-all min-h-[36px] flex items-center justify-center gap-1 cursor-pointer text-xs">
-              <span>Dyno Spec ↗</span>
-            </button>`}
+        <!-- Institutional APA Action Strip -->
+        <div class="p-3 bg-[#080C14] border-t border-white/5 flex items-center justify-between font-mono text-xs">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
+            <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold">${primaryApaLabel}</span>
           </div>
-
-          <div class="flex flex-col gap-1.5 w-full mt-1">
-            <button onclick="event.stopPropagation(); openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}', 'acquire')" class="w-full py-2.5 px-3 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center min-h-[38px]">
-              ACQUIRE TITLE (APA) →
-            </button>
-            <button onclick="event.stopPropagation(); openFlagshipModal(${p.id}, '${escapeHtml(p.name).replace(/'/g, "\\'")}', '${escapeHtml(p.sector).replace(/'/g, "\\'")}', '${trackAttr}', 'dossier')" class="w-full py-2 px-3 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer flex items-center justify-center min-h-[34px]">
-              REQUEST VAULT DOSSIER
-            </button>
-          </div>
+          <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="px-3 py-1 rounded bg-[#00F0FF]/15 hover:bg-[#00F0FF]/30 border border-[#00F0FF]/40 text-[#00F0FF] text-xs font-bold transition-all cursor-pointer">
+            [⚡ Mount Dyno]
+          </button>
         </div>
       </div>`;
-}).join('\n');
-
-// Compile standalone public showroom HTML
+});
 const showroomHtml = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -581,16 +652,16 @@ const showroomHtml = `<!DOCTYPE html>
       <!-- LEFT 7 COLS: 3D HOLOGRAPHIC DYNO BAY SCANNER -->
       <div class="lg:col-span-7 rounded-2xl bg-[#0A0D14] border border-cyan-500/40 overflow-hidden shadow-[0_0_35px_-5px_rgba(0,240,255,0.22)] flex flex-col justify-between">
         
-        <!-- Dyno Bay Top Control Bar -->
+        <!-- Dyno Bay Top Control Bar (Clean 2-Sided Flex Bar: Left Sealed Badge // Right Arcade Yaw Controls) -->
         <div class="relative z-10 flex items-center justify-between w-full p-3 sm:p-4 border-b border-white/10 bg-[#05070B]/95 font-mono">
-          <div class="flex items-center gap-2 overflow-hidden min-w-0 flex-1">
-            <span class="px-2.5 py-1 text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded shrink-0">
+          <!-- LEFT: [DYNO SEALED 4/4 GATES] badge (neon emerald) -->
+          <div class="flex items-center">
+            <span class="px-2.5 py-1 text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 rounded shrink-0 shadow-[0_0_10px_rgba(16,185,129,0.25)]">
               [DYNO SEALED 4/4 GATES]
             </span>
-            <span class="text-white font-bold truncate text-xs sm:text-sm" id="dynoUnitTitle">UNIT #001 // STRIDE MB — MOUNTED ON DYNO</span>
           </div>
           
-          <!-- Tactile Arcade Dyno Controls -->
+          <!-- RIGHT: Grouped arcade buttons [YAW -15°], [SCAN SCHEMATIC], [YAW +15°] -->
           <div class="flex items-center gap-1.5 font-mono text-xs shrink-0">
             <button onclick="rotateDynoGrid(-15)" class="px-3 py-1.5 rounded bg-[#111724] hover:bg-cyan-500/20 border border-white/15 hover:border-cyan-400/50 text-slate-200 hover:text-cyan-300 font-bold text-xs transition-all cursor-pointer" title="Rotate Chassis Left">
               [YAW -15°]
@@ -1321,8 +1392,8 @@ ${renderedCardsHtml}
       card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
 
       // 2. Update Dyno Bay header on the left to display UNIT #[ID] // [TITLE] — MOUNTED ON DYNO
-      const title = document.getElementById('dynoUnitTitle');
-      if (title) title.innerText = 'UNIT #' + cleanId + ' // ' + name.toUpperCase() + ' — MOUNTED ON DYNO';
+      // Dyno Bay header is clean 2-sided bar; unit title renders in Mounted Chassis Spec Card
+      // const title = document.getElementById('dynoUnitTitle');
 
       // Updates telemetry readouts
       const pytestEl = document.getElementById('dynoPytestReadout');

@@ -254,7 +254,7 @@ function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = f
   if (isTrack3) {
     // Track 3: F1 Skunkworks Service Engine — State Pipeline Schematic
     return `
-      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
         <div class="flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-sky-400 font-bold tracking-wider">SCHEMATIC // ENGINE BUS #${cleanId}</span>
           <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
@@ -278,7 +278,7 @@ function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = f
   } else if (isTrack2) {
     // Track 2: Hypercar Flagship — Radar Sweep / HUD Telemetry
     return `
-      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
         <div class="flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-amber-400 font-bold tracking-wider">SCHEMATIC // HUD RADAR SWEEP #${cleanId}</span>
           <span class="text-[#FF9F0A] font-bold">[FLAGSHIP TIER-1]</span>
@@ -301,7 +301,7 @@ function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = f
   } else {
     // Track 1: Lean Tuner — Core Architecture Oscilloscope Wave
     return `
-      <div ${displayStyle} class="w-full h-36 md:h-44 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
         <div class="flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-emerald-400 font-bold tracking-wider">SCHEMATIC // CORE ARCHITECTURE #${cleanId}</span>
           <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
@@ -351,15 +351,15 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
-  // Thumbnail preview: renders image with fallback if on disk, else renders procedural SVG schematic directly
+  // Thumbnail preview: renders image with object-top and fallback if on disk, else renders procedural SVG schematic directly
   const thumbnailPreviewMarkup = p.hasCoverOnDisk && p.cover_image
-    ? `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    ? `<img src="${p.cover_image}?v=3.2-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
        ${generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, true)}`
     : generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, false);
 
   return `
       <!-- F1 Spec Card #${p.id} -->
-      <div class="product-card${initialHidden} rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
+      <div class="product-card${initialHidden} min-h-[580px] h-full rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
            onclick="loadVehicleIntoDyno(${p.id}, false)"
            id="vehicle-${p.id}"
            data-id="${p.id}"
@@ -378,25 +378,25 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
            data-live-external="${p.isExternalLive ? '1' : '0'}"
            data-checkout="${escapeHtml(p.commercial_checkout_url)}"
            data-active="${p.checkout_active ? '1' : '0'}">
-        <div class="flex flex-col">
+        <div class="flex-1 flex flex-col">
           <!-- Flex Chassis Card Header (No Absolute Positioning) -->
           <div class="flex items-center justify-between w-full p-3 border-b border-white/5 bg-[#080C14]">
             <span class="font-mono text-xs font-bold text-slate-200 truncate pr-2">UNIT #${cleanId} // ${escapeHtml(p.name).toUpperCase()}</span>
             <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase font-bold">${trackBadgeLabel}</span>
           </div>
 
-          <!-- Cover / Telemetry Preview Window (Comfortable h-36 md:h-44 height) -->
-          <div class="relative bg-[#05070B] border-b border-white/10 h-36 md:h-44 overflow-hidden flex items-center justify-center shrink-0">
+          <!-- Hero Preview Image Bay (Directive 3: w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden) -->
+          <div class="w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden flex items-center justify-center relative shrink-0">
             ${thumbnailPreviewMarkup}
           </div>
 
-          <!-- Card Telemetry Body (Comfortable Padding) -->
+          <!-- Card Telemetry Body (Directive 4: multi-line title wrapping & reduced subtitle font) -->
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
-            <!-- Top Row: Archetype + Zero-Copyleft Stamp & Pytest Circle Gauge -->
+            <!-- Top Row: Archetype Subtitle + Main Title + Pytest Gauge -->
             <div class="flex items-start justify-between gap-2 mb-2">
               <div class="min-w-0 flex-1">
-                <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest truncate">${escapeHtml(p.archetype_name)}</div>
-                <h3 class="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors truncate mt-0.5">${escapeHtml(p.name)}</h3>
+                <div class="text-[11px] font-mono text-cyan-400 tracking-wider truncate">${escapeHtml(p.archetype_name)}</div>
+                <h3 class="text-lg font-mono font-bold text-white tracking-wide mt-0.5 leading-snug group-hover:text-cyan-300 transition-colors">${escapeHtml(p.name)}</h3>
               </div>
 
               <!-- Pytest Circle Gauge -->
@@ -423,18 +423,27 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           </div>
         </div>
 
-        <!-- Institutional APA Action Strip -->
-        <div class="p-3 bg-[#080C14] border-t border-white/5 flex items-center justify-between font-mono text-xs">
-          <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
-            <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold">${primaryApaLabel}</span>
+        <!-- Showroom Action Container (Directive 5: full-width vertical container) -->
+        <div class="p-4 bg-[#080C14] border-t border-white/5 font-mono">
+          <div class="flex flex-col gap-2 w-full pt-3 border-t border-slate-800/80">
+            <!-- Allocation Status Badge -->
+            <div class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
+                <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px]">${primaryApaLabel}</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">CLEAN TITLE</span>
+            </div>
+
+            <!-- Standardized Full-Width CTA Target -->
+            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded bg-cyan-950/40 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all cursor-pointer shadow-[0_0_10px_rgba(0,240,255,0.15)] hover:shadow-[0_0_20px_rgba(0,240,255,0.5)]">
+              [⚡ MOUNT CHASSIS ON DYNO]
+            </button>
           </div>
-          <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="px-3 py-1 rounded bg-[#00F0FF]/15 hover:bg-[#00F0FF]/30 border border-[#00F0FF]/40 text-[#00F0FF] text-xs font-bold transition-all cursor-pointer">
-            [⚡ Mount Dyno]
-          </button>
         </div>
       </div>`;
-});
+}).filter(Boolean).join('\n');
+
 const showroomHtml = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -809,7 +818,7 @@ const showroomHtml = `<!DOCTYPE html>
     </div>
 
     <!-- Spacious 6-Unit Lot Grid (Comfortable Padding p-4 md:p-6 & Gap-6) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="productsGrid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch" id="productsGrid">
 ${renderedCardsHtml}
     </div>
 

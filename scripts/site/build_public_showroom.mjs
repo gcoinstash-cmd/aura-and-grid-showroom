@@ -206,30 +206,11 @@ fleetData.forEach(p => {
   // Deterministic Pytest branch coverage score between 84% and 98%
   const pytestScore = isTrack3 ? 92 + (p.id % 7) : isTrack2 ? 88 + (p.id % 8) : 84 + (p.id % 9);
 
-  // Verified HTTP 200 production deployments
-  const VERIFIED_HOSTED_DEMOS = new Set([
-    'https://stride-manhattan-beach.onrender.com',
-    'https://the-vault-studio.onrender.com',
-    'https://velocity-exotic-fleet.onrender.com',
-    'https://apex-fight-club.onrender.com',
-    'https://elevate-capital-os.onrender.com',
-    'https://obsidian-slow-bar.onrender.com',
-    'https://the-enclave-villas.onrender.com',
-    'https://aura-medspa-os.onrender.com'
-  ]);
-
-  let cleanPreviewUrl;
-  let isExternalLive = false;
-
-  if (p.preview_url && VERIFIED_HOSTED_DEMOS.has(p.preview_url)) {
-    cleanPreviewUrl = p.preview_url;
-    isExternalLive = true;
-  } else {
-    // For containerized service engines and prototypes without external hosting,
-    // route cleanly to the client-side 3D Dyno inspection bay (100% HTTP 200 state, zero 404s)
-    cleanPreviewUrl = `#vehicle-${p.id}`;
-    isExternalLive = false;
-  }
+  // Determine if there is a live external demo URL (e.g. onrender, github.io, or explicit demoUrl/liveUrl)
+  const candidateUrl = p.demoUrl || p.liveUrl || (p.preview_url && p.preview_url.startsWith('http') && !p.preview_url.includes('gumroad.com') ? p.preview_url : '');
+  const demoUrl = candidateUrl || '';
+  const isExternalLive = Boolean(demoUrl);
+  const cleanPreviewUrl = demoUrl || `#vehicle-${p.id}`;
 
   publicProducts.push({
     id: p.id,
@@ -238,6 +219,8 @@ fleetData.forEach(p => {
     sector,
     vertical: p.vertical,
     preview_url: cleanPreviewUrl,
+    demoUrl,
+    liveUrl: demoUrl,
     isExternalLive,
     gumroad_url: '#specification',
     checkout_active: p.checkout_active ?? true,
@@ -268,27 +251,36 @@ function renderCoverMarkup(p) {
 // Procedural SVG Telemetry Blueprint Generator (Zero Broken Images)
 function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = false) {
   const displayStyle = isHidden ? 'style="display:none;"' : '';
+  const trackKey = isTrack3 ? 't3' : isTrack2 ? 't2' : 't1';
   
   if (isTrack3) {
     // Track 3: F1 Skunkworks Service Engine — State Pipeline Schematic
     return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
+      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
+        </svg>
+        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-sky-400 font-bold tracking-wider">SCHEMATIC // ENGINE BUS #${cleanId}</span>
           <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
         </div>
-        <div class="flex items-center justify-center py-2 opacity-80">
-          <svg class="w-full h-12 stroke-[#00F0FF]/60 fill-none" viewBox="0 0 200 40">
-            <path d="M5 20 H38 M64 20 H98 M124 20 H158 M184 20 H195" stroke-width="1.5" stroke-dasharray="3 2" class="stroke-cyan-500/40" />
-            <rect x="38" y="8" width="26" height="24" rx="4" class="stroke-sky-400 fill-sky-950/40" stroke-width="1.2" />
-            <rect x="98" y="8" width="26" height="24" rx="4" class="stroke-amber-400 fill-amber-950/40" stroke-width="1.2" />
-            <rect x="158" y="8" width="26" height="24" rx="4" class="stroke-emerald-400 fill-emerald-950/40" stroke-width="1.2" />
+        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
+          <svg class="w-full h-12 stroke-[#00F0FF]/70 fill-none" viewBox="0 0 200 40">
+            <path d="M5 20 H38 M64 20 H98 M124 20 H158 M184 20 H195" stroke-width="1.5" stroke-dasharray="3 2" class="stroke-cyan-500/50" />
+            <rect x="38" y="8" width="26" height="24" rx="4" class="stroke-sky-400 fill-sky-950/50" stroke-width="1.2" />
+            <rect x="98" y="8" width="26" height="24" rx="4" class="stroke-amber-400 fill-amber-950/50" stroke-width="1.2" />
+            <rect x="158" y="8" width="26" height="24" rx="4" class="stroke-emerald-400 fill-emerald-950/50" stroke-width="1.2" />
             <circle cx="51" cy="20" r="3" class="fill-[#00F0FF] animate-pulse" />
             <circle cx="111" cy="20" r="3" class="fill-[#FF9F0A]" />
             <circle cx="171" cy="20" r="3" class="fill-[#10B981]" />
           </svg>
         </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
+        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
           <span class="text-sky-300">RUNTIME: FASTAPI + ALLOYDB</span>
           <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
         </div>
@@ -296,22 +288,30 @@ function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = f
   } else if (isTrack2) {
     // Track 2: Hypercar Flagship — Radar Sweep / HUD Telemetry
     return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
+      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
+        </svg>
+        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-amber-400 font-bold tracking-wider">SCHEMATIC // HUD RADAR SWEEP #${cleanId}</span>
           <span class="text-[#FF9F0A] font-bold">[FLAGSHIP TIER-1]</span>
         </div>
-        <div class="flex items-center justify-center py-2 opacity-80">
-          <svg class="w-full h-12 stroke-[#FF9F0A]/60 fill-none" viewBox="0 0 200 40">
-            <circle cx="100" cy="20" r="17" stroke-dasharray="3 3" class="stroke-amber-400/30" />
-            <circle cx="100" cy="20" r="9" class="stroke-cyan-400/50" />
+        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
+          <svg class="w-full h-12 stroke-[#FF9F0A]/70 fill-none" viewBox="0 0 200 40">
+            <circle cx="100" cy="20" r="17" stroke-dasharray="3 3" class="stroke-amber-400/40" />
+            <circle cx="100" cy="20" r="9" class="stroke-cyan-400/60" />
             <circle cx="100" cy="20" r="2.5" class="fill-[#FF9F0A] animate-ping" />
-            <path d="M15 20 H80 M120 20 H185 M100 3 V10 M100 30 V37" stroke-width="1.2" class="stroke-cyan-400/40" />
-            <path d="M25 20 L35 12 L45 20 L55 14 L65 20" stroke-width="1.2" class="stroke-amber-400/70" />
-            <path d="M135 20 L145 28 L155 20 L165 26 L175 20" stroke-width="1.2" class="stroke-amber-400/70" />
+            <path d="M15 20 H80 M120 20 H185 M100 3 V10 M100 30 V37" stroke-width="1.2" class="stroke-cyan-400/50" />
+            <path d="M25 20 L35 12 L45 20 L55 14 L65 20" stroke-width="1.2" class="stroke-amber-400/80" />
+            <path d="M135 20 L145 28 L155 20 L165 26 L175 20" stroke-width="1.2" class="stroke-amber-400/80" />
           </svg>
         </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
+        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
           <span class="text-amber-300">STATE: REACT 19 + WEBGL</span>
           <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
         </div>
@@ -319,21 +319,29 @@ function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = f
   } else {
     // Track 1: Lean Tuner — Core Architecture Oscilloscope Wave
     return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
+      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
+        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
+        </svg>
+        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
           <span class="text-emerald-400 font-bold tracking-wider">SCHEMATIC // CORE ARCHITECTURE #${cleanId}</span>
           <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
         </div>
-        <div class="flex items-center justify-center py-2 opacity-75">
-          <svg class="w-full h-12 stroke-[#00F0FF]/50 fill-none" viewBox="0 0 200 40">
-            <path d="M0 20 H50 L60 5 L70 35 L80 15 L90 25 L100 20 H200" stroke-width="1.5" />
+        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
+          <svg class="w-full h-12 stroke-[#00F0FF]/70 fill-none" viewBox="0 0 200 40">
+            <path d="M0 20 H50 L60 5 L70 35 L80 15 L90 25 L100 20 H200" stroke-width="1.5" stroke="#00F0FF" />
             <circle cx="60" cy="5" r="2.5" class="fill-[#FF9F0A]" />
             <circle cx="70" cy="35" r="2.5" class="fill-[#00F0FF]" />
             <circle cx="90" cy="25" r="2" class="fill-[#10B981]" />
           </svg>
         </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
-          <span>PERSISTENCE: SUPABASE RLS</span>
+        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
+          <span class="text-slate-300">PERSISTENCE: SUPABASE RLS</span>
           <span class="text-emerald-400 font-bold">COVERAGE: >80%</span>
         </div>
       </div>`;
@@ -371,9 +379,16 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
   // Thumbnail preview: renders image with object-top and fallback if on disk, else renders procedural SVG schematic directly
   const thumbnailPreviewMarkup = p.hasCoverOnDisk && p.cover_image
-    ? `<img src="${p.cover_image}?v=3.2-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    ? `<img src="${p.cover_image}?v=3.2-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
        ${generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, true)}`
     : generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, false);
+
+  // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
+  const topActionBtn = p.demoUrl
+    ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`
+    : `<a href="#" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}'); return false;" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
+
+  const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
 
   return `
       <!-- F1 Spec Card #${p.id} -->
@@ -403,8 +418,8 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
             <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase font-bold">${trackBadgeLabel}</span>
           </div>
 
-          <!-- Hero Preview Image Bay (Directive 3: w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden) -->
-          <div class="w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden flex items-center justify-center relative shrink-0">
+          <!-- Hero Preview Image Bay (Strict 16:9 Aspect Video Container) -->
+          <div class="w-full aspect-video bg-[#070A10] border-b border-white/10 relative overflow-hidden group">
             ${thumbnailPreviewMarkup}
           </div>
 
@@ -441,11 +456,11 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           </div>
         </div>
 
-        <!-- Showroom Action Container (Directive 5: full-width vertical container) -->
+        <!-- Showroom Action Container (Directive 5: dual-button operational stack) -->
         <div class="p-4 bg-[#080C14] border-t border-white/5 font-mono">
-          <div class="flex flex-col gap-2 w-full pt-3 border-t border-slate-800/80">
+          <div class="flex flex-col gap-2 w-full pt-1">
             <!-- Allocation Status Badge -->
-            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender" title="Open Secure APA Title Tender">
+            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender mb-0.5" title="Open Secure APA Title Tender">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
                 <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px] group-hover/tender:text-[#FF9F0A] transition-colors">${primaryApaLabel}</span>
@@ -453,10 +468,9 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider group-hover/tender:text-amber-300">TITLE TENDER ↗</span>
             </div>
 
-            <!-- Standardized Full-Width CTA Target -->
-            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded bg-cyan-950/40 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all cursor-pointer shadow-[0_0_10px_rgba(0,240,255,0.15)] hover:shadow-[0_0_20px_rgba(0,240,255,0.5)]">
-              [⚡ MOUNT CHASSIS ON DYNO]
-            </button>
+            <!-- Dual-Button Operational Stack -->
+            ${topActionBtn}
+            ${bottomActionBtn}
           </div>
         </div>
       </div>`;
@@ -1564,15 +1578,16 @@ ${renderedCardsHtml}
 
     // Directive 2: SYNCHRONIZE LOT SELECTION TO 3D DYNO BAY
     function loadVehicleIntoDyno(id, shouldScroll = false) {
-      const card = document.getElementById('vehicle-' + id);
+      const numId = parseInt(id, 10);
+      const card = document.getElementById('vehicle-' + id) || document.getElementById('vehicle-' + numId);
       if (!card) return;
-      currentLoadedUnitId = id;
+      currentLoadedUnitId = isNaN(numId) ? id : numId;
       const name = card.dataset.name || 'Vehicle #' + id;
       const trackAttr = card.dataset.track || 'track1';
       const pytest = card.dataset.pytest || '88';
       const sector = card.dataset.sector || 'Software Architecture';
       const archetype = card.dataset.archetype || 'Dense Operational Console';
-      const cleanId = String(id).padStart(3, '0');
+      const cleanId = String(currentLoadedUnitId).padStart(3, '0');
 
       // 1. Highlight that card with a glowing cyber-amber border
       document.querySelectorAll('.product-card').forEach(c => {
@@ -1615,6 +1630,14 @@ ${renderedCardsHtml}
         if (deck) deck.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+
+    function mountChassisToDyno(id) {
+      playTelemetryClick();
+      const targetId = parseInt(id, 10);
+      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, true);
+    }
+    window.mountChassisToDyno = mountChassisToDyno;
+    window.loadVehicleIntoDyno = loadVehicleIntoDyno;
 
     function openApaTenderModal(id, intent = 'acquire') {
       playEngageBeep();

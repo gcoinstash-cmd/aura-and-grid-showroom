@@ -242,110 +242,119 @@ fleetData.forEach(p => {
 
 console.log(`📸 Indexed covers in-memory: ${rasterCoversFound} raster + ${svgCoversFound} vector SVGs (${publicProducts.length} total vehicles)`);
 
-// Render high-contrast F1 Telemetry Visual Header / Cover
-function renderCoverMarkup(p) {
-  return `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-<div style="display:none;" class="w-full h-32 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>`;
-}
+// High-Fidelity Procedural SVG Telemetry Blueprint Generator (Zero Broken Images / Full Fleet Uniformity)
+function generateProceduralTelemetryBlueprint(p) {
+  const isTrack3 = Boolean(p.isTrack3);
+  const isTrack2 = Boolean(p.isTrack2);
+  const cleanId = String(p.id).padStart(3, '0');
+  const trackNum = isTrack3 ? '3' : isTrack2 ? '2' : '1';
+  const trackName = isTrack3 ? 'SKUNKWORKS ENGINE' : isTrack2 ? 'HYPERCAR FLAGSHIP' : 'LEAN TUNER';
+  const trackTextColor = isTrack3 ? 'text-sky-400 font-bold' : isTrack2 ? 'text-amber-400' : 'text-[#00F0FF]/80';
 
-// Procedural SVG Telemetry Blueprint Generator (Zero Broken Images)
-function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = false) {
-  const displayStyle = isHidden ? 'style="display:none;"' : '';
-  const trackKey = isTrack3 ? 't3' : isTrack2 ? 't2' : 't1';
-  
+  // Deterministic seed variations based on unit sequence / ID
+  const id = Number(p.id) || 1;
+  const p1 = 12 + ((id * 7) % 22);
+  const p2 = 34 + ((id * 11) % 18);
+  const p3 = 10 + ((id * 13) % 28);
+  const p4 = 38 + ((id * 17) % 16);
+  const midX = 110 + ((id * 9) % 30);
+  const curveY = 6 + ((id * 7) % 44);
+  const curveY2 = 54 - ((id * 5) % 38);
+  const rad = 13 + (id % 9);
+
+  let dynamicSvgContent = '';
+
   if (isTrack3) {
-    // Track 3: F1 Skunkworks Service Engine — State Pipeline Schematic
-    return `
-      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
-        </svg>
-        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-sky-400 font-bold tracking-wider">SCHEMATIC // ENGINE BUS #${cleanId}</span>
-          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
-        </div>
-        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
-          <svg class="w-full h-12 stroke-[#00F0FF]/70 fill-none" viewBox="0 0 200 40">
-            <path d="M5 20 H38 M64 20 H98 M124 20 H158 M184 20 H195" stroke-width="1.5" stroke-dasharray="3 2" class="stroke-cyan-500/50" />
-            <rect x="38" y="8" width="26" height="24" rx="4" class="stroke-sky-400 fill-sky-950/50" stroke-width="1.2" />
-            <rect x="98" y="8" width="26" height="24" rx="4" class="stroke-amber-400 fill-amber-950/50" stroke-width="1.2" />
-            <rect x="158" y="8" width="26" height="24" rx="4" class="stroke-emerald-400 fill-emerald-950/50" stroke-width="1.2" />
-            <circle cx="51" cy="20" r="3" class="fill-[#00F0FF] animate-pulse" />
-            <circle cx="111" cy="20" r="3" class="fill-[#FF9F0A]" />
-            <circle cx="171" cy="20" r="3" class="fill-[#10B981]" />
-          </svg>
-        </div>
-        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
-          <span class="text-sky-300">RUNTIME: FASTAPI + ALLOYDB</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
-        </div>
-      </div>`;
+    // Track 3: F1 Skunkworks — Complex Algorithm Plots, Consensus Nodes & Ingestion Pipelines
+    dynamicSvgContent = `
+      <!-- State Pipeline Bus -->
+      <path d="M10 30 H${midX - 45} M${midX - 20} 30 H${midX + 20} M${midX + 45} 30 H230" stroke-width="1.2" stroke="rgba(56,189,248,0.45)" stroke-dasharray="3,2"/>
+      <!-- Algorithm Logic Blocks -->
+      <rect x="${midX - 45}" y="18" width="25" height="24" rx="4" class="stroke-sky-400 fill-sky-950/40" stroke-width="1.2"/>
+      <rect x="${midX + 20}" y="18" width="25" height="24" rx="4" class="stroke-[#00F0FF] fill-cyan-950/40" stroke-width="1.2"/>
+      <circle cx="${midX - 32}" cy="30" r="3.5" class="fill-[#00F0FF] animate-pulse"/>
+      <circle cx="${midX + 32}" cy="30" r="3.5" class="fill-[#FF9F0A]"/>
+      <!-- Discrete Kalman / Consensus Nodes -->
+      <circle cx="${midX}" cy="30" r="7.5" stroke="rgba(0,240,255,0.35)" stroke-width="1" class="fill-slate-900/80"/>
+      <circle cx="${midX}" cy="30" r="2.5" class="fill-emerald-400"/>
+      <!-- Polynomial Algorithm Curve -->
+      <path d="M10 ${p2} Q${midX - 30} ${curveY} ${midX} 30 T230 ${curveY2}" stroke-width="1" stroke="rgba(255,159,10,0.35)" fill="none"/>
+      <!-- Quant State Vectors -->
+      <path d="M20 45 L35 ${p1} L50 35 L65 ${p3} L80 40 L95 25" stroke-width="0.85" stroke="rgba(16,185,129,0.35)" stroke-dasharray="2,1" fill="none"/>
+      <!-- Tech Labels -->
+      <text x="20" y="15" fill="rgba(56,189,248,0.4)" font-size="6">ALGORITHM: deterministic</text>
+      <text x="20" y="52" fill="rgba(0,240,255,0.3)" font-size="6">RUNTIME: FASTAPI + ALLOYDB</text>
+      <!-- Coordinate Crosshairs -->
+      <line x1="${midX}" y1="5" x2="${midX}" y2="55" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+    `;
   } else if (isTrack2) {
-    // Track 2: Hypercar Flagship — Radar Sweep / HUD Telemetry
-    return `
-      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
-        </svg>
-        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-amber-400 font-bold tracking-wider">SCHEMATIC // HUD RADAR SWEEP #${cleanId}</span>
-          <span class="text-[#FF9F0A] font-bold">[FLAGSHIP TIER-1]</span>
-        </div>
-        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
-          <svg class="w-full h-12 stroke-[#FF9F0A]/70 fill-none" viewBox="0 0 200 40">
-            <circle cx="100" cy="20" r="17" stroke-dasharray="3 3" class="stroke-amber-400/40" />
-            <circle cx="100" cy="20" r="9" class="stroke-cyan-400/60" />
-            <circle cx="100" cy="20" r="2.5" class="fill-[#FF9F0A] animate-ping" />
-            <path d="M15 20 H80 M120 20 H185 M100 3 V10 M100 30 V37" stroke-width="1.2" class="stroke-cyan-400/50" />
-            <path d="M25 20 L35 12 L45 20 L55 14 L65 20" stroke-width="1.2" class="stroke-amber-400/80" />
-            <path d="M135 20 L145 28 L155 20 L165 26 L175 20" stroke-width="1.2" class="stroke-amber-400/80" />
-          </svg>
-        </div>
-        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
-          <span class="text-amber-300">STATE: REACT 19 + WEBGL</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
-        </div>
-      </div>`;
+    // Track 2: Hypercar Flagship — Amber Laser Sweeps, Physics Solvers & HUD Crosshairs
+    dynamicSvgContent = `
+      <!-- Concentric Radar Sweep Rings -->
+      <circle cx="${midX}" cy="30" r="${rad + 8}" stroke="rgba(255,159,10,0.22)" stroke-width="0.8" stroke-dasharray="3,3"/>
+      <circle cx="${midX}" cy="30" r="${rad}" stroke="rgba(0,240,255,0.28)" stroke-width="1.1"/>
+      <circle cx="${midX}" cy="30" r="3" class="fill-[#FF9F0A] animate-ping"/>
+      <circle cx="${midX}" cy="30" r="2" class="fill-[#FF9F0A]"/>
+      <!-- Radar Sweep Radial Vector -->
+      <line x1="${midX}" y1="30" x2="${midX + rad + 6}" y2="${30 - rad - 4}" stroke="rgba(255,159,10,0.65)" stroke-width="1.2"/>
+      <!-- High-Frequency Telemetry Wave -->
+      <path d="M10 30 H${midX - rad - 10} L${midX - rad - 5} ${p1} L${midX - rad} ${p4} L${midX - 4} 30 M${midX + 4} 30 L${midX + rad} ${p3} L${midX + rad + 6} ${p2} H230" stroke-width="1.1" stroke="rgba(0,240,255,0.32)" fill="none"/>
+      <!-- Physics Solver Parabolic Curve -->
+      <path d="M10 ${curveY} Q${midX} ${curveY2} 230 ${p4}" stroke-width="1" stroke="rgba(255,159,10,0.32)" fill="none"/>
+      <!-- Tech Labels -->
+      <text x="20" y="15" fill="rgba(255,159,10,0.4)" font-size="6">RADAR SWEEP: locked [${((id * 37) % 360)}°]</text>
+      <text x="20" y="52" fill="rgba(0,240,255,0.3)" font-size="6">STATE: REACT 19 + WEBGL HUD</text>
+      <!-- Coordinate Crosshairs -->
+      <line x1="${midX}" y1="5" x2="${midX}" y2="55" stroke="rgba(255,159,10,0.12)" stroke-dasharray="2,2"/>
+      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,159,10,0.12)" stroke-dasharray="2,2"/>
+    `;
   } else {
-    // Track 1: Lean Tuner — Core Architecture Oscilloscope Wave
-    return `
-      <div ${displayStyle} class="w-full h-full aspect-video bg-[#070A10] relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid-${cleanId}-${trackKey}" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00F0FF" stroke-width="0.5"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-${cleanId}-${trackKey})"/>
-        </svg>
-        <div class="relative z-10 flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-emerald-400 font-bold tracking-wider">SCHEMATIC // CORE ARCHITECTURE #${cleanId}</span>
-          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
+    // Track 1: Lean Tuner — Blue Diagnostics, Oscilloscope Waveforms & Supabase Schemas
+    dynamicSvgContent = `
+      <!-- Precision Oscilloscope Waveform -->
+      <path d="M10 30 L40 30 L${p1 + 25} 30 L${p1 + 35} ${p3} L${p1 + 45} ${p4} L${p1 + 55} ${p1} L${p1 + 65} ${p2} L100 30 H230" stroke-width="1.2" stroke="rgba(0,240,255,0.35)" fill="none"/>
+      <path d="M10 40 Q70 ${curveY} 120 20 T230 40" stroke-width="0.8" stroke="rgba(255,159,10,0.22)" fill="none"/>
+      <!-- Active Telemetry Beacons -->
+      <circle cx="${p1 + 35}" cy="${p3}" r="2" class="fill-[#FF9F0A]"/>
+      <circle cx="${p1 + 45}" cy="${p4}" r="2" class="fill-[#00F0FF]"/>
+      <circle cx="${p1 + 65}" cy="${p2}" r="1.8" class="fill-[#10B981]"/>
+      <!-- Coordinate Crosshairs & Circle Target -->
+      <line x1="120" y1="5" x2="120" y2="55" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+      <circle cx="120" cy="30" r="${rad}" stroke="rgba(0,240,255,0.12)" stroke-width="0.8"/>
+      <!-- Tech Labels -->
+      <text x="20" y="15" fill="rgba(0,240,255,0.3)" font-size="6">OSCILLOSCOPE: active</text>
+      <text x="20" y="52" fill="rgba(255,255,255,0.18)" font-size="6">SCHEMA: RLS + PGSQL</text>
+    `;
+  }
+
+  return `
+      <!-- Directive 1: High-Tech Procedural Telemetry Blueprint (16:9 Aspect Video) -->
+      <div class="w-full aspect-video bg-[#070A11] relative overflow-hidden flex flex-col justify-between p-3.5 border-b border-white/5 font-mono select-none">
+        <!-- Grid Overlay Background -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,7,11,0.8))] pointer-events-none"></div>
+        
+        <!-- HUD Top Bar -->
+        <div class="flex justify-between items-center z-10 text-[9px] tracking-widest text-[#00F0FF]/60 font-bold">
+          <span>TELEMETRY DIAGNOSTIC // AURA-GRID</span>
+          <span class="text-amber-500 font-extrabold uppercase">UNIT #${cleanId}</span>
         </div>
-        <div class="relative z-10 flex items-center justify-center py-1 opacity-90">
-          <svg class="w-full h-12 stroke-[#00F0FF]/70 fill-none" viewBox="0 0 200 40">
-            <path d="M0 20 H50 L60 5 L70 35 L80 15 L90 25 L100 20 H200" stroke-width="1.5" stroke="#00F0FF" />
-            <circle cx="60" cy="5" r="2.5" class="fill-[#FF9F0A]" />
-            <circle cx="70" cy="35" r="2.5" class="fill-[#00F0FF]" />
-            <circle cx="90" cy="25" r="2" class="fill-[#10B981]" />
+        
+        <!-- Middle Core Blueprint Graphic -->
+        <div class="flex-1 flex items-center justify-center relative my-1 z-10">
+          <svg class="w-full h-16 stroke-[#00F0FF]/30 fill-none" viewBox="0 0 240 60">
+            ${dynamicSvgContent}
           </svg>
         </div>
-        <div class="relative z-10 flex justify-between items-center text-[9px] text-slate-400">
-          <span class="text-slate-300">PERSISTENCE: SUPABASE RLS</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: >80%</span>
+        
+        <!-- HUD Bottom Bar -->
+        <div class="flex justify-between items-center z-10 text-[8px] tracking-wide text-slate-400">
+          <span class="uppercase ${trackTextColor}">TRACK #${trackNum} // ${trackName}</span>
+          <span class="text-[#FF9F0A]/90 font-bold border border-[#FF9F0A]/20 px-1 py-0.5 bg-[#FF9F0A]/5">4/4 GATES</span>
         </div>
       </div>`;
-  }
 }
 
 const renderedCardsHtml = publicProducts.map((p, idx) => {
@@ -376,12 +385,6 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   // SVG Circle Gauge Math (r=14, circumference = 87.96)
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
-
-  // Thumbnail preview: renders image with object-top and fallback if on disk, else renders procedural SVG schematic directly
-  const thumbnailPreviewMarkup = p.hasCoverOnDisk && p.cover_image
-    ? `<img src="${p.cover_image}?v=3.2-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-       ${generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, true)}`
-    : generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, false);
 
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
   const topActionBtn = p.demoUrl
@@ -418,10 +421,8 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
             <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase font-bold">${trackBadgeLabel}</span>
           </div>
 
-          <!-- Hero Preview Image Bay (Strict 16:9 Aspect Video Container) -->
-          <div class="w-full aspect-video bg-[#070A10] border-b border-white/10 relative overflow-hidden group">
-            ${thumbnailPreviewMarkup}
-          </div>
+          <!-- Hero Preview Procedural Telemetry Blueprint Bay (16:9 Aspect Video) -->
+          ${generateProceduralTelemetryBlueprint(p)}
 
           <!-- Card Telemetry Body (Directive 4: multi-line title wrapping & reduced subtitle font) -->
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">

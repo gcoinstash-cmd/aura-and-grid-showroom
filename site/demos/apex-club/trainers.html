@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fight Cadre & Head Cornermen — APEX CLUB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: { DEFAULT: '#E11D48' }
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0A0A0B]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base">A</span>
+        <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>CLUB</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-apex uppercase tracking-widest text-zinc-400">
+        <a href="schedule" class="hover:text-white transition-colors">Class Radar</a>
+        <a href="trainers" class="text-white font-bold border-b border-rose-500 pb-1">Fight Cadre</a>
+        <a href="waiver" class="hover:text-white transition-colors">Sparring Waiver</a>
+        <a href="admin" class="hover:text-rose-400 text-zinc-500 transition-colors">Command OS</a>
+      </nav>
+
+      <a href="join" class="btn-crimson text-xs py-2.5 px-6 font-mono-apex">
+        Join Club
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-24 max-w-7xl mx-auto px-6 w-full space-y-16">
+    
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="badge-crimson">Master Coaches</span>
+      <h1 class="font-syne font-black text-4xl sm:text-6xl text-white uppercase">The Fight Cadre</h1>
+      <p class="text-zinc-400 font-mono-apex text-base font-semibold">World title contenders, Muay Thai masters, and Olympic sports conditioning directors.</p>
+    </div>
+
+    <!-- Trainers Grid -->
+    <div id="trainers-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Injected via JavaScript -->
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#0A0A0B] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 font-mono-apex text-xs text-zinc-500">
+      <span>&copy; 2026 APEX CLUB. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-white">Arena</a>
+        <a href="schedule" class="hover:text-white">Schedule</a>
+        <a href="waiver" class="hover:text-white">Waiver</a>
+        <a href="admin" class="hover:text-rose-400">Admin Command</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('trainers-grid');
+      const trainers = window.ApexDB.getTrainers();
+
+      trainers.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'glass-panel rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group hover:border-rose-500/40 transition-all';
+        card.innerHTML = `
+          <div>
+            <div class="relative h-80 overflow-hidden">
+              <img src="${t.image}" alt="${t.name}" class="w-full h-full object-cover filter contrast-125 group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#121215] via-transparent to-transparent"></div>
+              <div class="absolute top-4 right-4">
+                <span class="badge-crimson font-mono-apex text-xs font-semibold tracking-wider">${t.status}</span>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-3">
+              <h3 class="font-syne text-2xl font-bold text-white uppercase">${t.name}</h3>
+              <p class="text-xs font-mono-apex text-rose-400 font-bold">${t.role}</p>
+              <p class="text-xs font-mono-apex text-zinc-400 leading-relaxed">${t.specialty}</p>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-8 pt-0 border-t border-white/5 mt-4 flex items-center justify-between">
+            <span class="text-xs font-semibold font-mono-apex text-zinc-500">${t.rounds}</span>
+            <a href="schedule" class="btn-ghost-apex text-xs py-2 px-4 font-mono-apex">Book Rounds</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

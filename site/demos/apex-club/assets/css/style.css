@@ -1,0 +1,133 @@
+/* APEX CLUB — Dark Obsidian & Crimson Combat Theme */
+:root {
+  --bg-primary: #0A0A0B;
+  --bg-surface: #121215;
+  --bg-card: rgba(22, 22, 27, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(225, 29, 72, 0.4);
+  --text-primary: #F4F4F6;
+  --text-muted: #8E8E93;
+  --crimson-core: #E11D48;
+  --crimson-glow: rgba(225, 29, 72, 0.15);
+  --gold-accent: #EAB308;
+  --font-heading: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-syne {
+  font-family: var(--font-heading);
+}
+
+.font-mono-apex {
+  font-family: var(--font-mono);
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-crimson {
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.08) 0%, rgba(18, 18, 21, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(225, 29, 72, 0.25);
+}
+
+.btn-crimson {
+  background-color: var(--crimson-core);
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 0.85rem 2rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px var(--crimson-glow);
+}
+
+.btn-crimson:hover {
+  background-color: #BE123C;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(225, 29, 72, 0.35);
+}
+
+.btn-ghost-apex {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 0.85rem 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-ghost-apex:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.badge-crimson {
+  background: rgba(225, 29, 72, 0.15);
+  color: #FDA4AF;
+  border: 1px solid rgba(225, 29, 72, 0.3);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badge-gold {
+  background: rgba(234, 179, 8, 0.12);
+  color: #FDE047;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--crimson-core);
+}

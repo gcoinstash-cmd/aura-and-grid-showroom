@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Application & Vetting — APEX CLUB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: { DEFAULT: '#E11D48' },
+            gold: '#EAB308'
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0A0A0B]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base">A</span>
+        <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>CLUB</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-apex uppercase tracking-widest text-zinc-400">
+        <a href="schedule" class="hover:text-white transition-colors">Class Radar</a>
+        <a href="trainers" class="hover:text-white transition-colors">Fight Cadre</a>
+        <a href="waiver" class="hover:text-white transition-colors">Sparring Waiver</a>
+        <a href="admin" class="hover:text-rose-400 text-zinc-500 transition-colors">Command OS</a>
+      </nav>
+
+      <a href="join" class="btn-crimson text-xs py-2.5 px-6 font-mono-apex">
+        Join Club
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-24 max-w-4xl mx-auto px-6 w-full space-y-12">
+    
+    <div class="text-center space-y-4">
+      <span class="badge-crimson">Private Vetting</span>
+      <h1 class="font-syne font-black text-4xl sm:text-6xl text-white uppercase">Request Sanctuary Access</h1>
+      <p class="text-zinc-400 font-mono-apex text-base font-semibold max-w-xl mx-auto">
+        Membership is strictly capped at 64 combat athletes to ensure uncrowded heavy bag lanes and dedicated 1-on-1 sparring oversight.
+      </p>
+    </div>
+
+    <!-- Tiers Selector -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div id="tier-resident" class="glass-panel p-8 rounded-3xl border-2 border-white/10 cursor-pointer hover:border-rose-500/40 transition-all space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="font-syne text-2xl font-bold text-white uppercase">Cadre Resident</h3>
+            <span class="text-xs font-mono-apex text-zinc-400">Unlimited Training & Group Sparring</span>
+          </div>
+          <div class="font-syne text-2xl font-extrabold text-white">$450<span class="text-xs font-mono-apex text-zinc-500">/mo</span></div>
+        </div>
+        <ul class="space-y-2 text-xs font-mono-apex text-zinc-400 border-t border-white/10 pt-4">
+          <li>&bull; Unlimited boxing & striking masterclasses</li>
+          <li>&bull; Bio-recovery cold plunge & sauna suite access</li>
+          <li>&bull; Cleto Reyes locker kit & glove storage</li>
+        </ul>
+      </div>
+
+      <div id="tier-vip" class="glass-panel-crimson p-8 rounded-3xl border-2 border-rose-500 cursor-pointer transition-all space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <span class="badge-crimson text-xs font-semibold tracking-wider mb-2">Most Requested</span>
+            <h3 class="font-syne text-2xl font-bold text-white uppercase">Black Card VIP</h3>
+            <span class="text-xs font-mono-apex text-zinc-400">Pro Cornerman & Private Lane</span>
+          </div>
+          <div class="font-syne text-2xl font-extrabold text-rose-400">$850<span class="text-xs font-mono-apex text-zinc-500">/mo</span></div>
+        </div>
+        <ul class="space-y-2 text-xs font-mono-apex text-zinc-300 border-t border-rose-500/20 pt-4">
+          <li>&bull; Everything in Cadre Resident</li>
+          <li>&bull; 4 monthly 1-on-1 titleholder mitt sessions</li>
+          <li>&bull; Closed-door invitation sparring clinics</li>
+          <li>&bull; Direct 24/7 cornerman concierge text line</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Intake Application Form -->
+    <div class="glass-panel p-8 rounded-3xl border border-white/10 space-y-6">
+      <h2 class="font-syne text-2xl font-bold text-white uppercase">Fighter Profile & Credentials</h2>
+      
+      <form id="membership-form" class="space-y-6 font-mono-apex text-xs">
+        <input type="hidden" id="selected-tier" value="Black Card VIP">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Legal Name</label>
+            <input type="text" id="m-name" required placeholder="Julian Sterling" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+          </div>
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Executive / Athlete Email</label>
+            <input type="email" id="m-email" required placeholder="sterling@private.io" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Mobile Contact</label>
+            <input type="tel" id="m-phone" required placeholder="+1 (310) 892-4411" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+          </div>
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Combat Experience Level</label>
+            <select id="m-exp" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+              <option>Beginner (Fundamentals & Condition Only)</option>
+              <option>Intermediate (Heavy Bag & Light Technical)</option>
+              <option selected>Advanced (Active Sparring & Competition)</option>
+              <option>Pro / Semi-Pro Athlete</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex items-center justify-between">
+          <span class="text-zinc-400">Selected Tier Deposit:</span>
+          <span id="tier-display-price" class="text-rose-400 font-bold text-sm">$850 (First Month Hold)</span>
+        </div>
+
+        <button type="submit" class="btn-crimson w-full py-4 text-xs font-bold tracking-widest uppercase">
+          Submit Dossier For Committee Vetting
+        </button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#0A0A0B] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 font-mono-apex text-xs text-zinc-500">
+      <span>&copy; 2026 APEX CLUB. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-white">Arena</a>
+        <a href="schedule" class="hover:text-white">Schedule</a>
+        <a href="trainers" class="hover:text-white">Trainers</a>
+        <a href="admin" class="hover:text-rose-400">Admin Command</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tierRes = document.getElementById('tier-resident');
+      const tierVip = document.getElementById('tier-vip');
+      const tierInput = document.getElementById('selected-tier');
+      const priceDisplay = document.getElementById('tier-display-price');
+      const form = document.getElementById('membership-form');
+
+      tierRes.addEventListener('click', () => {
+        tierRes.className = 'glass-panel-crimson p-8 rounded-3xl border-2 border-rose-500 cursor-pointer transition-all space-y-4';
+        tierVip.className = 'glass-panel p-8 rounded-3xl border-2 border-white/10 cursor-pointer hover:border-rose-500/40 transition-all space-y-4';
+        tierInput.value = 'Cadre Resident';
+        priceDisplay.textContent = '$450 (First Month Hold)';
+      });
+
+      tierVip.addEventListener('click', () => {
+        tierVip.className = 'glass-panel-crimson p-8 rounded-3xl border-2 border-rose-500 cursor-pointer transition-all space-y-4';
+        tierRes.className = 'glass-panel p-8 rounded-3xl border-2 border-white/10 cursor-pointer hover:border-rose-500/40 transition-all space-y-4';
+        tierInput.value = 'Black Card VIP';
+        priceDisplay.textContent = '$850 (First Month Hold)';
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const booking = window.ApexDB.createBooking({
+          athlete_name: document.getElementById('m-name').value,
+          athlete_email: document.getElementById('m-email').value,
+          athlete_phone: document.getElementById('m-phone').value,
+          session_title: `Membership Intake (${tierInput.value})`,
+          coach_name: 'Admissions Panel',
+          date: 'Pending Vetting',
+          tier: tierInput.value,
+          fee: tierInput.value === 'Black Card VIP' ? 850 : 450
+        });
+
+        window.showToast(`Dossier Received: Application #${booking.id} Queued`, 'crimson');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

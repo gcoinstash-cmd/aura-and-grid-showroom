@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Schedule & Sparring Radar — APEX CLUB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: { DEFAULT: '#E11D48' }
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0A0A0B]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base">A</span>
+        <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>CLUB</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-apex uppercase tracking-widest text-zinc-400">
+        <a href="schedule" class="text-white font-bold border-b border-rose-500 pb-1">Class Radar</a>
+        <a href="trainers" class="hover:text-white transition-colors">Fight Cadre</a>
+        <a href="waiver" class="hover:text-white transition-colors">Sparring Waiver</a>
+        <a href="admin" class="hover:text-rose-400 text-zinc-500 transition-colors">Command OS</a>
+      </nav>
+
+      <a href="join" class="btn-crimson text-xs py-2.5 px-6 font-mono-apex">
+        Join Club
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-24 max-w-7xl mx-auto px-6 w-full space-y-12">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+      <div class="space-y-3">
+        <span class="badge-crimson">Live Training Grid</span>
+        <h1 class="font-syne font-black text-4xl sm:text-6xl text-white uppercase">Daily Ring Radar</h1>
+        <p class="text-zinc-400 font-mono-apex text-base font-semibold">Pre-reserve your heavy bag station, mitt rounds, or closed sparring slots.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 font-mono-apex text-xs">
+        <button class="filter-btn active px-4 py-2 rounded-full border border-rose-500 bg-rose-500/20 text-rose-300" data-cat="all">All Disciplines</button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-white/30 text-zinc-400" data-cat="Boxing">Boxing</button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-white/30 text-zinc-400" data-cat="Striking">Striking</button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-white/30 text-zinc-400" data-cat="Strength">Strength</button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-white/30 text-zinc-400" data-cat="Sparring">Sparring</button>
+      </div>
+    </div>
+
+    <!-- Sessions Grid -->
+    <div id="sessions-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Injected via JavaScript -->
+    </div>
+
+  </main>
+
+  <!-- Reservation Modal -->
+  <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-6">
+    <div class="glass-panel-crimson rounded-3xl p-8 max-w-lg w-full space-y-6 border border-rose-500/30">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono-apex text-rose-400 uppercase tracking-widest">Reserve Station</span>
+          <h3 id="modal-session-title" class="font-syne text-2xl font-bold text-white uppercase mt-1">Class Title</h3>
+        </div>
+        <button id="modal-close" class="text-zinc-400 hover:text-white text-2xl font-mono-apex">&times;</button>
+      </div>
+
+      <div class="space-y-2 text-xs font-mono-apex text-zinc-300 bg-black/40 p-4 rounded-xl border border-white/5">
+        <div class="flex justify-between"><span>Lead Coach:</span> <span id="modal-coach" class="text-white font-bold"></span></div>
+        <div class="flex justify-between"><span>Scheduled Time:</span> <span id="modal-time" class="text-white font-bold"></span></div>
+        <div class="flex justify-between"><span>Session Fee:</span> <span class="text-emerald-400 font-bold">$95 (Included for VIP)</span></div>
+      </div>
+
+      <form id="booking-form" class="space-y-4 font-mono-apex text-xs">
+        <input type="hidden" id="form-session-id">
+        <div class="space-y-1">
+          <label class="text-zinc-400 uppercase">Fighter Name</label>
+          <input type="text" id="athlete-name" required placeholder="Julian Sterling" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+        </div>
+        <div class="space-y-1">
+          <label class="text-zinc-400 uppercase">Email Dispatch</label>
+          <input type="email" id="athlete-email" required placeholder="sterling@private.io" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+        </div>
+        <div class="space-y-1">
+          <label class="text-zinc-400 uppercase">Mobile Contact</label>
+          <input type="tel" id="athlete-phone" required placeholder="+1 (310) 555-0199" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+        </div>
+
+        <button type="submit" class="btn-crimson w-full py-4 text-xs font-bold tracking-wider mt-4">
+          Lock In Training Slot
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="border-t border-white/10 bg-[#0A0A0B] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 font-mono-apex text-xs text-zinc-500">
+      <span>&copy; 2026 APEX CLUB. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-white">Arena</a>
+        <a href="trainers" class="hover:text-white">Trainers</a>
+        <a href="waiver" class="hover:text-white">Waiver</a>
+        <a href="admin" class="hover:text-rose-400">Admin Command</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('sessions-container');
+      const sessions = window.ApexDB.getSessions();
+      const modal = document.getElementById('booking-modal');
+      const modalClose = document.getElementById('modal-close');
+      const bookingForm = document.getElementById('booking-form');
+
+      let currentFilter = 'all';
+
+      function renderSessions() {
+        container.innerHTML = '';
+        const filtered = currentFilter === 'all' 
+          ? sessions 
+          : sessions.filter(s => s.category === currentFilter);
+
+        filtered.forEach(s => {
+          const card = document.createElement('div');
+          card.className = 'glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-rose-500/40 transition-all space-y-6 flex flex-col justify-between';
+          
+          const available = s.spots_total - s.spots_booked;
+
+          card.innerHTML = `
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="badge-crimson">${s.category}</span>
+                <span class="text-xs font-mono-apex text-zinc-400">${s.time} &bull; ${s.duration}</span>
+              </div>
+              <h3 class="font-syne text-2xl font-bold text-white uppercase">${s.title}</h3>
+              <p class="text-xs font-mono-apex text-zinc-400">Coach: <strong class="text-zinc-200">${s.coach}</strong></p>
+              <div class="text-xs font-semibold font-mono-apex text-rose-400/90">${s.intensity}</div>
+            </div>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="text-xs font-mono-apex">
+                <span class="text-zinc-500">Slots:</span> 
+                <span class="font-bold text-white">${available} Remaining</span>
+              </div>
+              <button onclick="openBooking('${s.id}')" class="btn-crimson py-2 px-5 text-xs font-mono-apex">
+                Book Slot
+              </button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      renderSessions();
+
+      // Filtering
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.className = 'filter-btn px-4 py-2 rounded-full border border-white/10 hover:border-white/30 text-zinc-400 font-mono-apex text-xs';
+          });
+          btn.className = 'filter-btn active px-4 py-2 rounded-full border border-rose-500 bg-rose-500/20 text-rose-300 font-mono-apex text-xs';
+          currentFilter = btn.dataset.cat;
+          renderSessions();
+        });
+      });
+
+      // Modal Triggers
+      window.openBooking = (id) => {
+        const session = sessions.find(s => s.id === id);
+        if (!session) return;
+        document.getElementById('form-session-id').value = session.id;
+        document.getElementById('modal-session-title').textContent = session.title;
+        document.getElementById('modal-coach').textContent = session.coach;
+        document.getElementById('modal-time').textContent = `${session.time} (${session.duration})`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      };
+
+      modalClose.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      });
+
+      bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const sessionId = document.getElementById('form-session-id').value;
+        const session = sessions.find(s => s.id === sessionId);
+
+        const newBooking = window.ApexDB.createBooking({
+          athlete_name: document.getElementById('athlete-name').value,
+          athlete_email: document.getElementById('athlete-email').value,
+          athlete_phone: document.getElementById('athlete-phone').value,
+          session_title: session.title,
+          coach_name: session.coach,
+          date: session.time,
+          fee: 95
+        });
+
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        bookingForm.reset();
+        window.showToast(`Station Reserved: #${newBooking.id}`, 'crimson');
+      });
+    });
+  </script>
+</body>
+</html>

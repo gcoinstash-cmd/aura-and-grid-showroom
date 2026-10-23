@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combat & Sparring Legal Release — APEX CLUB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: { DEFAULT: '#E11D48' }
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <header class="fixed top-0 inset-x-0 z-40 bg-[#0A0A0B]/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base">A</span>
+        <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>CLUB</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-apex uppercase tracking-widest text-zinc-400">
+        <a href="schedule" class="hover:text-white transition-colors">Class Radar</a>
+        <a href="trainers" class="hover:text-white transition-colors">Fight Cadre</a>
+        <a href="waiver" class="text-white font-bold border-b border-rose-500 pb-1">Sparring Waiver</a>
+        <a href="admin" class="hover:text-rose-400 text-zinc-500 transition-colors">Command OS</a>
+      </nav>
+
+      <a href="join" class="btn-crimson text-xs py-2.5 px-6 font-mono-apex">
+        Join Club
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-32 pb-24 max-w-3xl mx-auto px-6 w-full space-y-10">
+    
+    <div class="text-center space-y-3">
+      <span class="badge-crimson">Mandatory Protocol</span>
+      <h1 class="font-syne font-black text-3xl sm:text-5xl text-white uppercase">Sparring & Contact Waiver</h1>
+      <p class="text-zinc-400 font-mono-apex text-base font-semibold">
+        All athletes entering the ring, sparring circle, or heavy bag line must execute this legal release.
+      </p>
+    </div>
+
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+      
+      <!-- Waiver Agreement Text -->
+      <div class="h-44 overflow-y-auto p-4 rounded-xl bg-black/50 border border-white/10 text-xs font-mono-apex text-zinc-400 space-y-3 leading-relaxed">
+        <p class="font-bold text-white uppercase">Section 1: Inherent Risks of Combat Sports</p>
+        <p>I acknowledge and fully understand that martial arts, boxing, kickboxing, and sparring involve intense physical contact, high-impact exertion, and inherent risks of injury, including but not limited to concussions, sprains, and fractures.</p>
+        <p class="font-bold text-white uppercase">Section 2: Protective Gear Mandate</p>
+        <p>I certify that I will at all times during sparring sessions utilize approved headgear, custom fitted mouthguards, 16oz boxing gloves, and groin protection inspected by an APEX coach.</p>
+        <p class="font-bold text-white uppercase">Section 3: Voluntary Release of Liability</p>
+        <p>I freely and voluntarily assume all risks associated with participation and discharge APEX CLUB, coaches, and staff from any and all liability or claims.</p>
+      </div>
+
+      <form id="waiver-form" class="space-y-6 font-mono-apex text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Fighter Full Name</label>
+            <input type="text" id="w-name" required placeholder="Julian Sterling" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+          </div>
+          <div class="space-y-2">
+            <label class="text-zinc-400 uppercase">Emergency Contact Phone</label>
+            <input type="tel" id="w-phone" required placeholder="+1 (310) 992-1200" class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white focus:border-rose-500 outline-none">
+          </div>
+        </div>
+
+        <!-- HTML5 Digital Signature Pad -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <label class="text-zinc-400 uppercase">Digital Signature (Draw with Mouse or Finger)</label>
+            <button type="button" id="clear-signature" class="text-rose-400 hover:text-rose-300 text-xs font-semibold">Clear Canvas</button>
+          </div>
+          <div class="border border-white/10 rounded-2xl bg-black/60 overflow-hidden">
+            <canvas id="signature-canvas" width="600" height="140" class="w-full h-36 cursor-crosshair"></canvas>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="w-agree" required class="w-4 h-4 rounded accent-rose-500">
+          <label for="w-agree" class="text-zinc-300 text-xs font-semibold">I confirm that I am 18+ years of age and agree to all terms of this legal release.</label>
+        </div>
+
+        <button type="submit" class="btn-crimson w-full py-4 text-xs font-bold uppercase tracking-widest">
+          Sign &amp; Verify Waiver
+        </button>
+      </form>
+
+    </div>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-[#0A0A0B] py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 font-mono-apex text-xs text-zinc-500">
+      <span>&copy; 2026 APEX CLUB. All rights reserved.</span>
+      <div class="flex gap-6">
+        <a href="/" class="hover:text-white">Arena</a>
+        <a href="schedule" class="hover:text-white">Schedule</a>
+        <a href="trainers" class="hover:text-white">Trainers</a>
+        <a href="admin" class="hover:text-rose-400">Admin Command</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const canvas = document.getElementById('signature-canvas');
+      const ctx = canvas.getContext('2d');
+      const clearBtn = document.getElementById('clear-signature');
+      const form = document.getElementById('waiver-form');
+
+      let isDrawing = false;
+      ctx.strokeStyle = '#E11D48';
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return {
+          x: (clientX - rect.left) * (canvas.width / rect.width),
+          y: (clientY - rect.top) * (canvas.height / rect.height)
+        };
+      }
+
+      function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      }
+
+      function draw(e) {
+        if (!isDrawing) return;
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      }
+
+      function stopDraw() {
+        isDrawing = false;
+      }
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDraw);
+      canvas.addEventListener('mouseleave', stopDraw);
+
+      canvas.addEventListener('touchstart', startDraw);
+      canvas.addEventListener('touchmove', draw);
+      canvas.addEventListener('touchend', stopDraw);
+
+      clearBtn.addEventListener('click', () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('w-name').value;
+        const waiver = window.ApexDB.saveWaiver({
+          name: name,
+          phone: document.getElementById('w-phone').value,
+          division: 'Full Contact & Ring Sparring'
+        });
+
+        window.showToast(`Waiver #${waiver.id} Legally Signed & Verified`, 'crimson');
+        form.reset();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    });
+  </script>
+</body>
+</html>

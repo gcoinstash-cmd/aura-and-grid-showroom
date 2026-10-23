@@ -1,0 +1,12 @@
+# Clean extensionless URLs for Render, Netlify & Cloudflare Pages
+/schedule.html    /schedule    301!
+/trainers.html    /trainers    301!
+/join.html        /join        301!
+/waiver.html      /waiver      301!
+/admin.html       /admin       301!
+
+/schedule         /schedule.html    200
+/trainers         /trainers.html    200
+/join             /join.html        200
+/waiver           /waiver.html      200
+/admin            /admin.html       200

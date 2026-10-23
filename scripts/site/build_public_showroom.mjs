@@ -242,7 +242,7 @@ fleetData.forEach(p => {
   const hasLocalDemo = !isTrack3 && fs.existsSync(path.join(SITE_DIR, 'demos', cleanSlug, 'index.html'));
   const localDemoUrl = hasLocalDemo ? `./demos/${cleanSlug}/` : '';
   const externalUrl = (!isTrack3 && candidateUrl && candidateUrl !== '#' && verifiedLiveIds.has(p.id)) ? candidateUrl : '';
-  const demoUrl = externalUrl || localDemoUrl;
+  const demoUrl = localDemoUrl || externalUrl;
   const isExternalLive = Boolean(demoUrl);
   const cleanPreviewUrl = demoUrl || `#vehicle-${p.id}`;
 

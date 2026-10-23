@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command OS & Ring Operations — APEX CLUB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0A0A0B',
+            surface: '#121215',
+            crimson: { DEFAULT: '#E11D48' },
+            gold: '#EAB308'
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Ghost Factory Universal Typography & WCAG AAA Bad-Eyesight Protection -->
+  <style id="ghost-typography">
+    html { font-size: 18px !important; }
+    body { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    p, li { font-size: 1.125rem !important; line-height: 1.65 !important; }
+    button, input, select, textarea { font-size: 1rem !important; min-height: 44px; }
+    .text-xs { font-size: 0.875rem !important; line-height: 1.4 !important; }
+    .text-sm { font-size: 0.95rem !important; line-height: 1.5 !important; }
+    .text-base { font-size: 1.125rem !important; line-height: 1.65 !important; }
+  </style>
+</head>
+<body class="bg-[#0A0A0B] text-zinc-100 min-h-screen flex flex-col antialiased text-base text-zinc-100 font-sans antialiased selection:bg-emerald-500">
+
+  <!-- Admin Navigation Bar -->
+  <header class="border-b border-white/10 bg-[#0A0A0B]/90 backdrop-blur-xl sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center font-syne font-black text-white text-base">A</span>
+        <div class="flex items-baseline gap-2">
+          <span class="font-syne font-extrabold text-xl tracking-wider text-white">APEX<span class="text-rose-500">.</span>OS</span>
+          <span class="text-xs font-semibold tracking-wider font-mono-apex text-rose-400 bg-rose-500/10 border border-rose-500/30 px-2 py-0.5 rounded-full uppercase">Command Tower</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="/" target="_blank" class="btn-ghost-apex text-xs font-mono-apex py-2 px-4">
+          View Arena &rarr;
+        </a>
+        <button id="logout-btn" class="hidden text-xs font-mono-apex text-zinc-400 hover:text-white py-2 px-3">
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Gate Screen -->
+  <section id="login-screen" class="flex-grow flex items-center justify-center px-6 py-24">
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 max-w-md w-full space-y-6 text-center">
+      <div class="w-14 h-14 rounded-2xl bg-rose-600/20 border border-rose-500/40 flex items-center justify-center mx-auto text-rose-400">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+        </svg>
+      </div>
+
+      <div class="space-y-2">
+        <h1 class="font-syne text-3xl font-extrabold text-white uppercase">Combat Tower Gate</h1>
+        <p class="text-xs font-mono-apex text-zinc-400">Restricted to General Manager & Head Cornermen</p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-left space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold font-mono-apex text-rose-300 font-bold uppercase">⚡ Demo Buyer Passkey</span>
+          <span class="text-xs font-semibold tracking-wider font-mono-apex text-zinc-400">1-Tap Unlock</span>
+        </div>
+        <button id="auto-fill-passcode" type="button" class="w-full bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/40 text-white font-mono-apex text-xs font-bold py-2.5 px-3 rounded-xl transition-all flex items-center justify-center gap-2">
+          <span>⚡ Auto-Fill Demo Passcode</span>
+          <code class="text-rose-300 bg-black/40 px-1.5 py-0.5 rounded">apex2026</code>
+        </button>
+      </div>
+
+      <form id="login-form" class="space-y-4 font-mono-apex text-xs">
+        <input type="password" id="passcode-input" placeholder="Enter Access Code" required class="w-full bg-[#121215] border border-white/10 rounded-xl px-4 py-3 text-white text-center focus:border-rose-500 outline-none font-bold tracking-widest">
+        <button type="submit" class="btn-crimson w-full py-3.5 text-xs font-bold tracking-widest uppercase">
+          Enter Sanctuary Control
+        </button>
+      </form>
+
+      <div id="login-error" class="hidden text-rose-400 font-mono-apex text-xs">
+        Invalid Passkey. Please use <code>apex2026</code> for review.
+      </div>
+    </div>
+  </section>
+
+  <!-- Authenticated Command Dashboard -->
+  <main id="admin-dashboard" class="hidden flex-grow max-w-7xl mx-auto px-6 py-12 w-full space-y-10">
+    
+    <!-- Top Telemetry Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-apex text-zinc-400 uppercase">Total Active Bookings</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-res" class="font-syne text-3xl font-bold text-white">0</span>
+          <span class="text-xs font-mono-apex text-emerald-400">&uarr; 100% Filled</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-apex text-zinc-400 uppercase">Monthly Dues In Escrow</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-revenue" class="font-syne text-3xl font-bold text-white">$0</span>
+          <span class="text-xs font-mono-apex text-rose-400">Club MRR</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-apex text-zinc-400 uppercase">Sanctuary Roster Cap</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span class="font-syne text-3xl font-bold text-white">64</span>
+          <span class="text-xs font-mono-apex text-amber-400">Strict Cap</span>
+        </div>
+      </div>
+      <div class="glass-panel p-6 rounded-2xl border border-white/10">
+        <span class="text-xs font-mono-apex text-zinc-400 uppercase">Verified Legal Waivers</span>
+        <div class="flex items-baseline justify-between mt-2">
+          <span id="stat-total-waivers" class="font-syne text-3xl font-bold text-white">0</span>
+          <span class="text-xs font-mono-apex text-emerald-400">100% Cleared</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Reservations & Intake Table -->
+    <div class="glass-panel rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="font-syne text-2xl font-bold text-white uppercase">Fighter Reservations &amp; Intake Radar</h2>
+          <p class="text-base text-zinc-200 leading-relaxed font-mono-apex mt-1">Live incoming training sessions, sparring rounds &amp; vetting dossiers</p>
+        </div>
+        <div class="flex gap-3">
+          <button id="export-csv-btn" class="btn-ghost-apex text-xs font-mono-apex py-2 px-4">
+            Export CSV
+          </button>
+          <a href="schedule" target="_blank" class="btn-crimson text-xs font-mono-apex font-bold py-2 px-4">
+            + New Reservation
+          </a>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="border-b border-white/10 text-xs font-mono-apex text-zinc-400 uppercase">
+            <tr>
+              <th class="py-3 px-4">ID</th>
+              <th class="py-3 px-4">Fighter / Applicant</th>
+              <th class="py-3 px-4">Session / Tier</th>
+              <th class="py-3 px-4">Coach / Panel</th>
+              <th class="py-3 px-4">Date & Time</th>
+              <th class="py-3 px-4">Hold Fee</th>
+              <th class="py-3 px-4 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="res-tbody" class="divide-y divide-white/5 font-mono-apex text-xs">
+            <!-- Dynamic Injection -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="res-empty-state" class="hidden py-12 text-center space-y-3">
+        <h3 class="font-syne text-lg font-bold text-white uppercase">No Active Bookings</h3>
+        <p class="text-base text-zinc-200 leading-relaxed font-mono-apex">All sparring stations and mitt rounds are currently clear.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const DEMO_PASSCODE = 'apex2026';
+      const loginScreen = document.getElementById('login-screen');
+      const dashboard = document.getElementById('admin-dashboard');
+      const passInput = document.getElementById('passcode-input');
+      const autoFillBtn = document.getElementById('auto-fill-passcode');
+      const loginForm = document.getElementById('login-form');
+      const loginError = document.getElementById('login-error');
+      const logoutBtn = document.getElementById('logout-btn');
+
+      autoFillBtn.addEventListener('click', () => {
+        passInput.value = DEMO_PASSCODE;
+        authenticate();
+      });
+
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        authenticate();
+      });
+
+      function authenticate() {
+        if (passInput.value.trim() === DEMO_PASSCODE) {
+          sessionStorage.setItem('apex_admin_auth', 'true');
+          loginScreen.classList.add('hidden');
+          dashboard.classList.remove('hidden');
+          logoutBtn.classList.remove('hidden');
+          renderData();
+          window.showToast('Combat Tower Unlocked &bull; Radar Live', 'crimson');
+        } else {
+          loginError.classList.remove('hidden');
+        }
+      }
+
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('apex_admin_auth');
+        window.location.reload();
+      });
+
+      if (sessionStorage.getItem('apex_admin_auth') === 'true') {
+        loginScreen.classList.add('hidden');
+        dashboard.classList.remove('hidden');
+        logoutBtn.classList.remove('hidden');
+        renderData();
+      }
+
+      function renderData() {
+        const bookings = window.ApexDB.getBookings();
+        const waivers = window.ApexDB.getWaivers();
+
+        // Stats
+        document.getElementById('stat-total-res').textContent = bookings.length;
+        document.getElementById('stat-total-waivers').textContent = waivers.length;
+        const totalFee = bookings.reduce((sum, b) => sum + (Number(b.fee) || 0), 0);
+        document.getElementById('stat-total-revenue').textContent = `$${totalFee.toLocaleString()}`;
+
+        const tbody = document.getElementById('res-tbody');
+        const emptyState = document.getElementById('res-empty-state');
+        tbody.innerHTML = '';
+
+        if (bookings.length === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+          bookings.forEach(b => {
+            const tr = document.createElement('tr');
+            tr.className = 'hover:bg-white/[0.02] transition-colors';
+            tr.innerHTML = `
+              <td class="py-3 px-4 font-bold text-rose-500">${b.id}</td>
+              <td class="py-3 px-4">
+                <div class="font-bold text-white">${b.athlete_name}</div>
+                <div class="text-xs font-semibold tracking-wider text-zinc-500">${b.athlete_email} &bull; ${b.athlete_phone || 'N/A'}</div>
+              </td>
+              <td class="py-3 px-4">
+                <div class="text-zinc-200 font-bold">${b.session_title}</div>
+                <div class="text-xs font-semibold tracking-wider text-zinc-400">${b.tier || 'Standard Station'}</div>
+              </td>
+              <td class="py-3 px-4 text-zinc-300">${b.coach_name || 'Assigned Cadre'}</td>
+              <td class="py-3 px-4 text-zinc-400">${b.date}</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">$${b.fee || 95}</td>
+              <td class="py-3 px-4 text-right">
+                <button onclick="cancelBooking('${b.id}')" class="text-rose-400 hover:text-rose-300 text-xs">Cancel</button>
+              </td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      }
+
+      window.cancelBooking = (id) => {
+        if (confirm(`Cancel reservation #${id}?`)) {
+          window.ApexDB.deleteBooking(id);
+          renderData();
+          window.showToast(`Reservation #${id} Cancelled`, 'crimson');
+        }
+      };
+
+      // CSV Export
+      document.getElementById('export-csv-btn').addEventListener('click', () => {
+        const bookings = window.ApexDB.getBookings();
+        let csv = 'ReservationID,Fighter,Email,Phone,SessionTitle,Coach,Date,Fee,Tier\n';
+        bookings.forEach(b => {
+          csv += `"${b.id}","${b.athlete_name}","${b.athlete_email}","${b.athlete_phone}","${b.session_title}","${b.coach_name}","${b.date}","${b.fee}","${b.tier}"\n`;
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `apex-reservations-${new Date().toISOString().split('T')[0]}.csv`;
+        a.click();
+        window.showToast('CSV Roster Export Generated', 'crimson');
+      });
+    });
+  </script>
+</body>
+</html>

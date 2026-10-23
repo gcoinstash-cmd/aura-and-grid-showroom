@@ -625,7 +625,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
     } else {
       topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
     }
-    bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+    bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
   }
 
   return `
@@ -711,6 +711,40 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
         </div>
       </div>`;
 }).filter(Boolean).join('\n');
+
+// Global Catalog JSON Payload for Client Runtime Dyno Mounting (Directive 1)
+const fleetDataPayload = publicProducts.map(p => {
+  const isTrack3 = Boolean(p.isTrack3);
+  const isTrack2 = Boolean(p.isTrack2);
+  const trackLabel = isTrack3 ? 'Track 3 Skunkworks' : isTrack2 ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
+  const schemaVal = p.tables && p.tables.length > 0
+    ? `PostgreSQL 16 + RLS (${p.tables.slice(0, 3).join(', ')})`
+    : 'PostgreSQL 16 + RLS';
+  const gateVal = isTrack3 ? '1-Click Cloud Run (Containerized)' : isTrack2 ? '1-Click Cloud Run (Full-Stack Blueprint)' : '1-Click Cloud Run';
+  return {
+    id: p.id,
+    name: p.name,
+    title: p.name,
+    tagline: p.best_for || p.category || '',
+    description: (p.best_for ? p.best_for + '. ' : '') + (p.category ? p.category + ' (' + p.sector + ').' : ''),
+    category: p.category,
+    sector: p.sector,
+    track: trackLabel,
+    pricing_track: p.pricing_track,
+    schema: schemaVal,
+    database: schemaVal,
+    gate: gateVal,
+    deployment: gateVal,
+    pytest: p.pytestScore,
+    pytestScore: p.pytestScore,
+    title_status: 'Zero-Copyleft (MIT)',
+    status: 'Zero-Copyleft (MIT)',
+    archetype_name: p.archetype_name,
+    isTrack2,
+    isTrack3
+  };
+});
+const fleetDataJson = JSON.stringify(fleetDataPayload).replace(/</g, '\\u003c');
 
 const showroomHtml = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -900,8 +934,8 @@ const showroomHtml = `<!DOCTYPE html>
   </header>
 
   <!-- ================= STAGE 1: COMMAND DECK (DYNO SCANNER + MOUNTED SPEC) ================= -->
-  <div id="dyno-bay" class="scroll-mt-20" aria-hidden="true"></div>
-  <section id="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6">
+  <section id="dyno-bay" data-alias="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6 scroll-mt-20">
+    <div id="commandDeck" class="hidden" aria-hidden="true"></div>
     
     <!-- 4-Card Telemetry Ribbon -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs">
@@ -983,7 +1017,7 @@ const showroomHtml = `<!DOCTYPE html>
           </div>
           <div>
             <span class="text-slate-400 text-[10px] block uppercase tracking-wider">IP TITLE STATUS</span>
-            <span class="text-white font-bold text-xs truncate block mt-0.5">Zero-Copyleft (MIT)</span>
+            <span class="text-white font-bold text-xs truncate block mt-0.5" id="dynoIpTitleReadout">Zero-Copyleft (MIT)</span>
           </div>
           <div>
             <span class="text-slate-400 text-[10px] block uppercase tracking-wider">TELEMETRY LOCK</span>
@@ -1003,8 +1037,8 @@ const showroomHtml = `<!DOCTYPE html>
 
           <div>
             <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest" id="leftLoadedUnitArchetype">Dense Operational Console</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-white font-sans tracking-tight mt-1 truncate" id="leftLoadedUnitName">UNIT #001 // STRIDE MB</h2>
-            <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2" id="leftLoadedUnitDesc">Supercharged operational telemetry prototype: real-time Kalman filtering, automated AlloyDB persistent schemas, and OpenAPI 3.1 contract endpoints.</p>
+            <h2 class="text-xl sm:text-2xl font-bold text-white font-sans tracking-tight mt-1 truncate" id="dyno-unit-title" data-alias="leftLoadedUnitName">UNIT #001 // STRIDE MB</h2>
+            <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2" id="dyno-unit-desc" data-alias="leftLoadedUnitDesc">Supercharged operational telemetry prototype: real-time Kalman filtering, automated AlloyDB persistent schemas, and OpenAPI 3.1 contract endpoints.</p>
           </div>
 
           <!-- Institutional Tender Badge -->
@@ -1021,11 +1055,11 @@ const showroomHtml = `<!DOCTYPE html>
           <div class="grid grid-cols-2 gap-2 text-xs">
             <div class="p-2.5 rounded-lg bg-[#05070B] border border-white/10">
               <span class="text-slate-400 block text-[10px]">DATABASE SCHEMA</span>
-              <span class="text-slate-200 font-bold">PostgreSQL 16 + RLS</span>
+              <span class="text-slate-200 font-bold" id="dyno-unit-schema">PostgreSQL 16 + RLS</span>
             </div>
             <div class="p-2.5 rounded-lg bg-[#05070B] border border-white/10">
               <span class="text-slate-400 block text-[10px]">DEPLOYMENT GATE</span>
-              <span class="text-emerald-400 font-bold">1-Click Cloud Run</span>
+              <span class="text-emerald-400 font-bold" id="dyno-unit-gate">1-Click Cloud Run</span>
             </div>
           </div>
         </div>
@@ -1222,6 +1256,8 @@ ${renderedCardsHtml}
 
   <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
   <script>
+    // Global Catalog Data Payload (Directive 1)
+    window.FLEET_DATA = ${fleetDataJson};
     // ================= ZERO-DEPENDENCY NATIVE WEB AUDIO TELEMETRY SYNTHESIZER =================
     let audioCtx = null;
     function getAudioContext() {
@@ -1813,71 +1849,79 @@ ${renderedCardsHtml}
       });
     }
 
-    // Directive 2: SYNCHRONIZE LOT SELECTION TO 3D DYNO BAY
-    function loadVehicleIntoDyno(id, shouldScroll = false) {
-      const numId = parseInt(id, 10);
-      const card = document.getElementById('vehicle-' + id) || document.getElementById('vehicle-' + numId);
-      if (!card) return;
-      currentLoadedUnitId = isNaN(numId) ? id : numId;
-      const name = card.dataset.name || 'Vehicle #' + id;
-      const trackAttr = card.dataset.track || 'track1';
-      const pytest = card.dataset.pytest || '88';
-      const sector = card.dataset.sector || 'Software Architecture';
-      const archetype = card.dataset.archetype || 'Dense Operational Console';
-      const cleanId = String(currentLoadedUnitId).padStart(3, '0');
+    // Directive 1 & 3: Global Dyno Bay Mounting Runtime
+    window.mountChassisToDyno = function(unitId, shouldScroll = true) {
+      console.log('Mounting unit:', unitId);
+      const unit = (window.FLEET_DATA || []).find(u => String(u.id) === String(unitId));
+      if (!unit) {
+        console.error('Unit not found in catalog:', unitId);
+        return;
+      }
+      currentLoadedUnitId = unit.id;
 
-      // 1. Highlight that card with a glowing cyber-amber border
+      // Update DOM elements inside the dyno deck
+      const titleEl = document.getElementById('dyno-unit-title');
+      if (titleEl) titleEl.textContent = 'UNIT #' + String(unit.id).padStart(3, '0') + ' // ' + (unit.name || unit.title);
+      const leftName = document.getElementById('leftLoadedUnitName');
+      if (leftName && leftName !== titleEl) leftName.textContent = 'UNIT #' + String(unit.id).padStart(3, '0') + ' // ' + (unit.name || unit.title || '').toUpperCase();
+      
+      const descEl = document.getElementById('dyno-unit-desc');
+      if (descEl) descEl.textContent = unit.tagline || unit.description || '';
+      const leftDesc = document.getElementById('leftLoadedUnitDesc');
+      if (leftDesc && leftDesc !== descEl) leftDesc.textContent = unit.description || unit.tagline || '';
+
+      const schemaEl = document.getElementById('dyno-unit-schema');
+      if (schemaEl) schemaEl.textContent = unit.schema || unit.database || 'PostgreSQL 16 + RLS';
+
+      const gateEl = document.getElementById('dyno-unit-gate');
+      if (gateEl) gateEl.textContent = unit.gate || unit.deployment || '1-Click Cloud Run';
+
+      // Stage 1 telemetry panel updates: Track, Pytest, IP Title Status, Archetype
+      const trackEl = document.getElementById('dynoPowertrainReadout');
+      if (trackEl) trackEl.textContent = (unit.track || 'Track 1 Lean Tuner') + ' // PRIVATE APA';
+
+      const pytestEl = document.getElementById('dynoPytestReadout');
+      if (pytestEl) pytestEl.textContent = (unit.pytest || unit.pytestScore || 88) + '% Branch Pass';
+
+      const ipEl = document.getElementById('dynoIpTitleReadout');
+      if (ipEl) ipEl.textContent = unit.title_status || unit.status || 'Zero-Copyleft (MIT)';
+
+      const archetypeEl = document.getElementById('leftLoadedUnitArchetype');
+      if (archetypeEl) archetypeEl.textContent = unit.archetype_name || (unit.isTrack3 ? 'Enterprise Reference Core' : 'Dense Operational Console');
+
+      // Audio click & 3D canvas scan pulse
+      if (typeof playTelemetryClick === 'function') playTelemetryClick();
+      if (typeof triggerDynoPulseAndScan === 'function') triggerDynoPulseAndScan();
+      if (typeof targetYaw !== 'undefined') targetYaw += 0.52;
+
+      // Card highlight in the fleet lot
       document.querySelectorAll('.product-card').forEach(c => {
         c.classList.remove('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
         const defaultBorder = c.dataset.track === 'track3' ? 'border-emerald-500/35' : c.dataset.track === 'track2' ? 'border-amber-500/35' : 'border-cyan-500/25';
         c.classList.add(defaultBorder);
       });
-      card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35', 'border-emerald-500/35', 'border-cyan-500/25');
-      card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
-
-      // 2. Update Dyno Bay header on the left to display UNIT #[ID] // [TITLE] — MOUNTED ON DYNO
-      // Dyno Bay header is clean 2-sided bar; unit title renders in Mounted Chassis Spec Card
-      // const title = document.getElementById('dynoUnitTitle');
-
-      // Updates telemetry readouts
-      const pytestEl = document.getElementById('dynoPytestReadout');
-      if (pytestEl) pytestEl.innerText = pytest + '% Branch Pass';
-
-      const powertrainEl = document.getElementById('dynoPowertrainReadout');
-      if (powertrainEl) {
-        const trackLabel = trackAttr === 'track3' ? 'Track 3 Skunkworks' : trackAttr === 'track2' ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
-        powertrainEl.innerText = trackLabel + ' // PRIVATE APA';
+      const card = document.getElementById('vehicle-' + unit.id);
+      if (card) {
+        card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35', 'border-emerald-500/35', 'border-cyan-500/25');
+        card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
       }
 
-      // Update Mounted Unit Spec Card details on the right of Command Deck
-      const leftName = document.getElementById('leftLoadedUnitName');
-      if (leftName) leftName.innerText = 'UNIT #' + cleanId + ' // ' + name.toUpperCase();
-      const leftArchetype = document.getElementById('leftLoadedUnitArchetype');
-      if (leftArchetype) leftArchetype.innerText = archetype;
-      const leftDesc = document.getElementById('leftLoadedUnitDesc');
-      if (leftDesc) leftDesc.innerText = (card.dataset.category || '') + ' (' + sector + ')';
-
-      // 3. Trigger 1.2-second pulse animation on 3D wireframe car and green horizontal laser sweep
-      triggerDynoPulseAndScan();
-      targetYaw += 0.52;
-
-      // 4. Smooth scroll to Command Deck if explicitly triggered
       if (shouldScroll) {
-        const deck = document.getElementById('commandDeck');
-        if (deck) deck.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const target = document.getElementById('dyno-bay');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
+    };
+
+    function mountChassisToDyno(unitId, shouldScroll = true) {
+      return window.mountChassisToDyno(unitId, shouldScroll);
     }
 
-    function mountChassisToDyno(id, shouldScroll = true) {
-      playTelemetryClick();
-      const targetId = parseInt(id, 10);
-      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, false);
-      if (shouldScroll) {
-        const bay = document.getElementById('dyno-bay') || document.getElementById('commandDeck');
-        if (bay) bay.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    function loadVehicleIntoDyno(id, shouldScroll = false) {
+      window.mountChassisToDyno(id, shouldScroll);
     }
-    window.mountChassisToDyno = mountChassisToDyno;
+    window.loadVehicleIntoDyno = loadVehicleIntoDyno;
     window.openApaModal = function (id) { return openApaTenderModal(parseInt(id, 10) || id, 'acquire'); };
     window.loadVehicleIntoDyno = loadVehicleIntoDyno;
 

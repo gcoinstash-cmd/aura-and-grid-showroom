@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aura & Grid — Test Drive Cockpit</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#05070B; --panel:#0B1019; --line:rgba(255,255,255,.1); --cyan:#00F0FF; --amber:#FF9F0A; --emerald:#00FF88; --accent:#00F0FF; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:#cbd5e1; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.5; }
+  a { color:inherit; text-decoration:none; }
+  .bar { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; padding:12px 20px; border-bottom:1px solid var(--line); background:#080c14; position:sticky; top:0; z-index:5; }
+  .btn { cursor:pointer; font:800 12px 'JetBrains Mono',monospace; padding:9px 14px; border-radius:6px; border:1px solid rgba(0,240,255,.4); color:var(--cyan); background:rgba(0,240,255,.1); transition:.15s; }
+  .btn:hover { background:var(--cyan); color:#000; }
+  .btn.amber { border-color:rgba(255,159,10,.5); color:var(--amber); background:rgba(255,159,10,.1); }
+  .btn.amber:hover { background:var(--amber); color:#000; }
+  main { max-width:1280px; margin:0 auto; padding:20px; display:grid; gap:16px; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .hdr { display:grid; gap:10px; border-color:color-mix(in srgb,var(--accent) 40%,transparent); }
+  h1 { margin:0; font-size:22px; color:#fff; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { padding:3px 10px; border-radius:999px; border:1px solid var(--line); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.05em; }
+  .chip.acc { color:var(--accent); border-color:color-mix(in srgb,var(--accent) 50%,transparent); }
+  .chip.amb { color:var(--amber); border-color:rgba(255,159,10,.5); }
+  .chip.grn { color:var(--emerald); border-color:rgba(0,255,136,.4); }
+  .notice { font-size:11px; color:#94a3b8; border-left:3px solid var(--amber); padding:6px 10px; background:rgba(255,159,10,.06); }
+  .grid2 { display:grid; grid-template-columns:2fr 1fr; gap:16px; }
+  @media (max-width:900px){ .grid2 { grid-template-columns:1fr; } }
+  canvas { width:100%; height:300px; display:block; background:#05070B; border-radius:8px; border:1px solid rgba(0,240,255,.2); }
+  .stat { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--line); }
+  .stat b { color:var(--accent); }
+  .meter { height:8px; background:#111724; border-radius:4px; overflow:hidden; margin-top:4px; }
+  .meter > i { display:block; height:100%; background:var(--accent); width:40%; transition:width .4s; }
+  .tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .tab { cursor:pointer; padding:7px 12px; border-radius:6px; border:1px solid var(--line); background:transparent; color:#94a3b8; font:700 12px 'JetBrains Mono',monospace; }
+  .tab.on { color:var(--accent); border-color:var(--accent); background:rgba(255,255,255,.04); }
+  pre { margin:0; padding:14px; background:#05070B; border:1px solid var(--line); border-radius:8px; overflow:auto; color:#e2e8f0; font-size:12px; }
+  .modal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; padding:16px; z-index:20; }
+  .modal.open { display:flex; }
+  .modal .box { width:100%; max-width:480px; background:var(--panel); border:1px solid rgba(255,159,10,.5); border-radius:12px; padding:20px; display:grid; gap:10px; }
+  input, textarea { width:100%; background:#05070B; border:1px solid var(--line); color:#fff; border-radius:6px; padding:9px; font:inherit; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a class="btn" href="./index.html#fleetLotSection">[← RETURN TO SHOWROOM FLEET]</a>
+  <span style="color:var(--amber);font-weight:800">AURA &amp; GRID // TEST-DRIVE COCKPIT</span>
+  <button class="btn amber" id="acquireTop">[ACQUIRE TITLE (APA)]</button>
+</div>
+
+<main id="app">
+  <div class="panel" id="notFound" hidden>
+    <h1>UNIT NOT FOUND</h1>
+    <p>No chassis matches that ID. <a class="btn" href="./index.html#fleetLotSection">[← RETURN TO SHOWROOM FLEET]</a></p>
+  </div>
+
+  <section class="panel hdr" id="header" hidden>
+    <div class="chips">
+      <span class="chip acc" id="unitNo"></span>
+      <span class="chip acc" id="trackName"></span>
+      <span class="chip grn" id="gates">GATES PASSED: 4/4</span>
+      <span class="chip amb">ALLOCATION: PRIVATE APA TENDER</span>
+    </div>
+    <h1 id="unitTitle"></h1>
+    <div id="unitMeta" style="color:#94a3b8"></div>
+    <div class="notice">SIMULATION — interactive prototype using sample / simulated data. Latency, memory and vector streams below are generated in your browser and are not real-time or live-system measurements. Endpoints and schema are illustrative.</div>
+  </section>
+
+  <section class="grid2" id="cockpit" hidden>
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><b style="color:#fff">DYNO / TELEMETRY FEED</b><span class="chip acc">SIMULATED</span></div>
+      <canvas id="feed" width="900" height="300"></canvas>
+    </div>
+    <div class="panel">
+      <b style="color:#fff">SIMULATED READOUTS</b>
+      <div class="stat"><span>Latency</span><b id="lat">14.0 ms</b></div>
+      <div class="stat"><span>Memory allocation</span><b id="memTxt">0 MB</b></div>
+      <div class="meter"><i id="memBar"></i></div>
+      <div class="stat"><span>Vector streams</span><b id="vec">0</b></div>
+      <div class="stat"><span>Pytest branch score (catalog)</span><b id="pytest"></b></div>
+      <div style="margin-top:14px;display:grid;gap:8px">
+        <button class="btn" id="spike">[ INJECT LOAD SPIKE ]</button>
+        <button class="btn" id="pause">[ PAUSE FEED ]</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="specs" hidden>
+    <div class="tabs">
+      <button class="tab on" data-tab="api">API ENDPOINTS</button>
+      <button class="tab" data-tab="sql">POSTGRESQL SCHEMA</button>
+      <button class="tab" data-tab="gates">DEPLOYMENT GATES</button>
+    </div>
+    <pre id="tabBody"></pre>
+  </section>
+
+  <section class="panel" id="cta" hidden style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <span>Title transfer is by private micro-APA for this single asset only. License, not ownership transfer, unless an APA is executed.</span>
+    <button class="btn amber" id="acquireBottom">[ACQUIRE TITLE (APA)]</button>
+  </section>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <form class="box" id="form">
+    <b style="color:var(--amber)">APA TENDER INQUIRY</b>
+    <div id="mUnit" style="color:#94a3b8"></div>
+    <div class="chip amb" style="width:fit-content">ALLOCATION: PRIVATE APA TENDER</div>
+    <input id="fName" placeholder="Name / Company" required>
+    <input id="fEmail" type="email" placeholder="Email" required>
+    <textarea id="fMsg" rows="3" placeholder="Intended use (optional)"></textarea>
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button type="button" class="btn" id="mCancel">[CANCEL]</button>
+      <button type="submit" class="btn amber">[SUBMIT INQUIRY]</button>
+    </div>
+  </form>
+</div>
+
+<script>
+const CATALOG = /*__CATALOG_JSON__*/[];
+const params = new URLSearchParams(location.search);
+const unit = CATALOG.find(u => String(u.id) === params.get('id'));
+const $ = id => document.getElementById(id);
+
+function slug(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,''); }
+function openModal(){ $('modal').classList.add('open'); }
+function closeModal(){ $('modal').classList.remove('open'); }
+['acquireTop','acquireBottom'].forEach(id => $(id).addEventListener('click', openModal));
+$('mCancel').addEventListener('click', closeModal);
+$('modal').addEventListener('click', e => { if (e.target === $('modal')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+if (!unit) {
+  $('notFound').hidden = false;
+  document.querySelectorAll('.btn.amber').forEach(b => b.disabled = true);
+} else {
+  const accent = unit.isTrack3 ? '#00FF88' : unit.isTrack2 ? '#FF9F0A' : '#00F0FF';
+  document.documentElement.style.setProperty('--accent', accent);
+  document.title = unit.name + ' — Aura & Grid Test Drive';
+  const no = '#' + String(unit.id).padStart(3, '0');
+  $('unitNo').textContent = 'UNIT ' + no;
+  $('trackName').textContent = unit.pricing_track;
+  $('unitTitle').textContent = unit.name;
+  $('unitMeta').textContent = [unit.category, unit.sector, unit.archetype_name].filter(Boolean).join(' // ');
+  $('pytest').textContent = unit.pytestScore + '%';
+  $('mUnit').textContent = 'UNIT ' + no + ' — ' + unit.name;
+  ['header','cockpit','specs'].forEach(id => $(id).hidden = false);
+  $('cta').hidden = false; $('cta').style.display = 'flex';
+
+  // Tabs (illustrative, derived from catalog table names)
+  const tables = (unit.tables && unit.tables.length ? unit.tables : ['profiles','audit_logs','orders']).map(slug);
+  const base = '/api/v1/' + slug(unit.name).replace(/_/g,'-');
+  const tabs = {
+    api: () => ['GET  /health  -> 200 {"status":"ok"}']
+      .concat(tables.flatMap(t => ['GET  ' + base + '/' + t, 'POST ' + base + '/' + t, 'GET  ' + base + '/' + t + '/{id}']))
+      .concat(['GET  /openapi.json']).join('\n') + '\n\n-- illustrative contract; sample data only',
+    sql: () => tables.map(t => 'CREATE TABLE ' + t + ' (\n  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  payload     JSONB NOT NULL,\n  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()\n);').join('\n\n') + '\n\n-- illustrative schema; see licensed deliverables for actual DDL',
+    gates: () => ['[PASS] Gate 1 — Custom state machine / math core','[PASS] Gate 2 — Clean-room permissive licenses','[PASS] Gate 3 — Strict .env separation + RBAC structure','[PASS] Gate 4 — Pytest branch score ' + unit.pytestScore + '%','','Gate statuses are catalog metadata for this simulation page, not an independent audit.'].join('\n')
+  };
+  const showTab = k => { $('tabBody').textContent = tabs[k](); document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === k)); };
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => showTab(t.dataset.tab)));
+  showTab('api');
+
+  // Simulated telemetry feed
+  const cv = $('feed'), cx = cv.getContext('2d');
+  let lat = 14, mem = 180 + (unit.id % 60), spike = 0, paused = false, t = 0;
+  const hist = new Array(120).fill(14);
+  const vecs = Array.from({ length: 40 }, () => ({ x: Math.random()*900, y: Math.random()*300, v: 0.5 + Math.random()*2 }));
+  $('spike').addEventListener('click', () => { spike = 12; });
+  $('pause').addEventListener('click', e => { paused = !paused; e.target.textContent = paused ? '[ RESUME FEED ]' : '[ PAUSE FEED ]'; });
+  function frame(){
+    if (!paused) {
+      t++;
+      lat += (14 - lat) * 0.1 + (Math.random() - 0.5) * 1.2; lat = Math.max(12, Math.min(16, lat));
+      const shown = lat + spike; if (spike > 0) spike -= 0.4; if (spike < 0) spike = 0;
+      hist.push(shown); hist.shift();
+      mem += (Math.random() - 0.5) * 3; mem = Math.max(120, Math.min(420, mem));
+      $('lat').textContent = shown.toFixed(1) + ' ms';
+      $('memTxt').textContent = mem.toFixed(0) + ' MB';
+      $('memBar').style.width = (mem / 480 * 100).toFixed(0) + '%';
+      $('vec').textContent = String(vecs.length + (t % 7));
+      cx.clearRect(0, 0, 900, 300);
+      cx.strokeStyle = 'rgba(255,255,255,.06)';
+      for (let i = 0; i < 900; i += 50) { cx.beginPath(); cx.moveTo(i, 0); cx.lineTo(i, 300); cx.stroke(); }
+      for (let j = 0; j < 300; j += 50) { cx.beginPath(); cx.moveTo(0, j); cx.lineTo(900, j); cx.stroke(); }
+      cx.strokeStyle = accent; cx.fillStyle = accent; cx.lineWidth = 2;
+      vecs.forEach(v => { v.x += v.v; if (v.x > 900) { v.x = 0; v.y = Math.random()*300; } cx.globalAlpha = .35; cx.fillRect(v.x, v.y, 12, 1.5); });
+      cx.globalAlpha = 1; cx.beginPath();
+      hist.forEach((h, i) => { const x = i / (hist.length - 1) * 900, y = 300 - (h - 8) / 24 * 260 - 20; i ? cx.lineTo(x, y) : cx.moveTo(x, y); });
+      cx.stroke();
+      cx.fillStyle = '#94a3b8'; cx.font = '11px JetBrains Mono, monospace'; cx.fillText('SIMULATED LATENCY (ms)', 10, 16);
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+
+  $('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const subject = encodeURIComponent('APA Tender Inquiry — Unit ' + no + ' ' + unit.name);
+    const body = encodeURIComponent('Unit: ' + no + ' ' + unit.name + '\nName: ' + $('fName').value + '\nEmail: ' + $('fEmail').value + '\nIntended use: ' + $('fMsg').value + '\n\nAllocation: PRIVATE APA TENDER (single-asset micro-APA; excludes GhostFactoryOS / Aura & Grid brands and shared IP).');
+    location.href = 'mailto:advisory@auraandgrid.com?subject=' + subject + '&body=' + body;
+    closeModal();
+  });
+}
+</script>
+</body>
+</html>

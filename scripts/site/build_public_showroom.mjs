@@ -608,9 +608,9 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
-  const topActionBtn = p.demoUrl
-    ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`
-    : `<button type="button" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
+  // Verified live external demo (HTTP 200 per audit) opens directly; all other units open the Universal Demo Runner.
+  const demoHref = p.demoUrl ? p.demoUrl : `./demo.html?id=${p.id}`;
+  const topActionBtn = `<a href="${demoHref}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
 
   const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
 
@@ -2014,3 +2014,29 @@ if (fs.existsSync(STYLE_CSS_PATH)) {
   fs.copyFileSync(STYLE_CSS_PATH, path.join(ROOT_ASSETS_DIR, 'style.css'));
 }
 console.log('🏁 [Aura & Grid] Pure APA F1 Pit Wall Showroom Rebuild Complete.');
+
+// Universal Demo Runner: inject the public catalog (no pricing fields) into demo_template.html
+// and mirror demo.html to site/, repository root, dist/ and public/.
+const DEMO_TEMPLATE_PATH = path.join(__dirname, 'demo_template.html');
+if (fs.existsSync(DEMO_TEMPLATE_PATH)) {
+  const demoCatalog = publicProducts.map(p => ({
+    id: p.id,
+    name: p.name,
+    category: p.category,
+    sector: p.sector,
+    pricing_track: p.pricing_track,
+    isTrack2: p.isTrack2,
+    isTrack3: p.isTrack3,
+    pytestScore: p.pytestScore,
+    tables: p.tables,
+    archetype_name: p.archetype_name
+  }));
+  const catalogJson = JSON.stringify(demoCatalog).replace(/</g, '\\u003c');
+  const demoHtml = fs.readFileSync(DEMO_TEMPLATE_PATH, 'utf-8').replace('/*__CATALOG_JSON__*/[]', () => catalogJson);
+  for (const dir of [SITE_DIR, rootDir, DIST_DIR, PUBLIC_DIR]) {
+    fs.writeFileSync(path.join(dir, 'demo.html'), demoHtml, 'utf-8');
+  }
+  console.log(`🏎️ [Aura & Grid] Universal Demo Runner compiled for ${demoCatalog.length} units -> demo.html (site, root, dist, public)`);
+} else {
+  console.warn('⚠️ Warning: scripts/site/demo_template.html not found; demo.html not generated');
+}

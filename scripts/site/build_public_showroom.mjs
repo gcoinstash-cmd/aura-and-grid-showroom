@@ -600,7 +600,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
   const topActionBtn = p.demoUrl
     ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`
-    : `<button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>`;
+    : `<button type="button" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
 
   const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
 
@@ -876,6 +876,7 @@ const showroomHtml = `<!DOCTYPE html>
   </header>
 
   <!-- ================= STAGE 1: COMMAND DECK (DYNO SCANNER + MOUNTED SPEC) ================= -->
+  <div id="dyno-bay" class="scroll-mt-20" aria-hidden="true"></div>
   <section id="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6">
     
     <!-- 4-Card Telemetry Ribbon -->
@@ -1843,10 +1844,14 @@ ${renderedCardsHtml}
       }
     }
 
-    function mountChassisToDyno(id) {
+    function mountChassisToDyno(id, shouldScroll = true) {
       playTelemetryClick();
       const targetId = parseInt(id, 10);
-      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, true);
+      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, false);
+      if (shouldScroll) {
+        const bay = document.getElementById('dyno-bay') || document.getElementById('commandDeck');
+        if (bay) bay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
     window.mountChassisToDyno = mountChassisToDyno;
     window.loadVehicleIntoDyno = loadVehicleIntoDyno;

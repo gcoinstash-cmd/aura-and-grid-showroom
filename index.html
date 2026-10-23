@@ -186,6 +186,7 @@
   </header>
 
   <!-- ================= STAGE 1: COMMAND DECK (DYNO SCANNER + MOUNTED SPEC) ================= -->
+  <div id="dyno-bay" class="scroll-mt-20" aria-hidden="true"></div>
   <section id="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6">
     
     <!-- 4-Card Telemetry Ribbon -->
@@ -1674,7 +1675,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('9', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('9')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -1821,7 +1822,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('10', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('10')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -1968,7 +1969,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('11', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('11')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2111,7 +2112,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('12', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('12')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2258,7 +2259,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('13', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('13')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2405,7 +2406,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('14', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('14')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2552,7 +2553,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('15', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('15')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2699,7 +2700,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('16', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('16')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2846,7 +2847,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('17', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('17')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -2993,7 +2994,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('18', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('18')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3140,7 +3141,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('19', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('19')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3287,7 +3288,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('20', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('20')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3434,7 +3435,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('21', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('21')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3581,7 +3582,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('22', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('22')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3728,7 +3729,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('23', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('23')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -3875,7 +3876,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('24', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('24')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4015,7 +4016,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('25', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('25')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4309,7 +4310,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('27', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('27')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4456,7 +4457,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('28', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('28')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4598,7 +4599,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('29', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('29')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4740,7 +4741,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('30', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('30')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -4887,7 +4888,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('31', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('31')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5034,7 +5035,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('32', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('32')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5176,7 +5177,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('33', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('33')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5323,7 +5324,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('34', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('34')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5472,7 +5473,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('35', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('35')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5619,7 +5620,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('36', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('36')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5766,7 +5767,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('37', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('37')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -5913,7 +5914,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('38', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('38')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6060,7 +6061,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('39', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('39')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6207,7 +6208,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('40', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('40')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6349,7 +6350,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('41', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('41')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6496,7 +6497,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('42', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('42')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6643,7 +6644,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('43', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('43')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -6790,7 +6791,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('44', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('44')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -7084,7 +7085,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('46', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('46')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -7226,7 +7227,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('47', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('47')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -7373,7 +7374,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('48', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('48')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -7515,7 +7516,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('49', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('49')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -7662,7 +7663,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('50', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('50')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -12883,7 +12884,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('86', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('86')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13032,7 +13033,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('87', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('87')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13181,7 +13182,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('88', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('88')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13330,7 +13331,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('89', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('89')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13477,7 +13478,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('90', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('90')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13620,7 +13621,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('91', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('91')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13767,7 +13768,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('92', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('92')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -13916,7 +13917,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('93', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('93')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14065,7 +14066,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('94', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('94')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14214,7 +14215,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('95', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('95')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14363,7 +14364,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('96', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('96')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14505,7 +14506,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('97', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('97')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14654,7 +14655,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('98', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('98')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14801,7 +14802,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('99', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('99')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -14948,7 +14949,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('100', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('100')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15097,7 +15098,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('101', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('101')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15239,7 +15240,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('102', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('102')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15388,7 +15389,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('103', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('103')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15537,7 +15538,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('104', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('104')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15677,7 +15678,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('105', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('105')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15826,7 +15827,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('106', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('106')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -15968,7 +15969,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('107', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('107')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16115,7 +16116,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('108', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('108')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16264,7 +16265,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('109', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('109')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16413,7 +16414,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('110', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('110')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16562,7 +16563,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('111', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('111')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16711,7 +16712,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('112', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('112')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -16853,7 +16854,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('113', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('113')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17002,7 +17003,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('114', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('114')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17142,7 +17143,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('115', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('115')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17291,7 +17292,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('116', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('116')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17440,7 +17441,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('117', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('117')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17589,7 +17590,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('118', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('118')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17738,7 +17739,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('119', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('119')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -17887,7 +17888,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('120', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('120')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18027,7 +18028,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('121', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('121')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18176,7 +18177,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('122', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('122')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18325,7 +18326,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('123', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('123')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18474,7 +18475,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('124', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('124')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18623,7 +18624,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('125', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('125')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18772,7 +18773,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('126', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('126')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -18921,7 +18922,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('127', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('127')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19070,7 +19071,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('128', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('128')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19219,7 +19220,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('129', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('129')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19368,7 +19369,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('130', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('130')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19517,7 +19518,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('131', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('131')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19666,7 +19667,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('132', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('132')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19815,7 +19816,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('133', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('133')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -19964,7 +19965,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('134', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('134')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20113,7 +20114,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('135', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('135')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20262,7 +20263,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('136', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('136')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20411,7 +20412,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('137', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('137')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20553,7 +20554,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('138', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('138')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20702,7 +20703,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('139', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('139')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20844,7 +20845,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('140', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('140')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -20984,7 +20985,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('141', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('141')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21133,7 +21134,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('142', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('142')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21282,7 +21283,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('143', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('143')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21424,7 +21425,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('144', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('144')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21566,7 +21567,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('145', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('145')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21706,7 +21707,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('146', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('146')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21846,7 +21847,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('147', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('147')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -21988,7 +21989,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('148', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('148')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22123,7 +22124,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('149', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('149')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22272,7 +22273,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('150', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('150')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22414,7 +22415,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('151', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('151')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22556,7 +22557,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('152', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('152')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22698,7 +22699,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('153', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('153')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22840,7 +22841,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('154', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('154')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -22982,7 +22983,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('155', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('155')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23131,7 +23132,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('156', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('156')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23271,7 +23272,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('157', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('157')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23411,7 +23412,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('158', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('158')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23551,7 +23552,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('159', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('159')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23686,7 +23687,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('160', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('160')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23828,7 +23829,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('161', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('161')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -23963,7 +23964,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('162', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('162')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24096,7 +24097,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('163', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('163')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24238,7 +24239,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('164', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('164')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24373,7 +24374,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('165', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('165')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24515,7 +24516,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('166', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('166')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24648,7 +24649,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('167', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('167')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24781,7 +24782,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('168', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('168')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -24923,7 +24924,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('169', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('169')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25056,7 +25057,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('170', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('170')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25189,7 +25190,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('171', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('171')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25322,7 +25323,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('172', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('172')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25464,7 +25465,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('173', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('173')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25597,7 +25598,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('174', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('174')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25730,7 +25731,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('175', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('175')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25863,7 +25864,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('176', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('176')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -25998,7 +25999,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('177', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('177')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26140,7 +26141,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('178', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('178')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26282,7 +26283,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('179', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('179')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26424,7 +26425,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('180', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('180')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26566,7 +26567,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('181', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('181')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26708,7 +26709,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('182', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('182')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26850,7 +26851,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('183', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('183')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -26992,7 +26993,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('184', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('184')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27134,7 +27135,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('185', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('185')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27276,7 +27277,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('186', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('186')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27418,7 +27419,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('187', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('187')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27560,7 +27561,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('188', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('188')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27702,7 +27703,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('189', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('189')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27844,7 +27845,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('190', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('190')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -27986,7 +27987,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('191', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('191')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28128,7 +28129,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('192', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('192')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28270,7 +28271,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('193', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('193')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28412,7 +28413,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('194', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('194')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28554,7 +28555,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('195', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('195')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28696,7 +28697,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('196', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('196')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28838,7 +28839,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('197', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('197')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -28980,7 +28981,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('198', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('198')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -29122,7 +29123,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('199', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('199')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -29264,7 +29265,7 @@
             </div>
 
             <!-- Dual-Button Operational Stack -->
-            <button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>
+            <button type="button" onclick="event.stopPropagation(); mountChassisToDyno('200', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>
             <button onclick="event.stopPropagation(); mountChassisToDyno('200')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
           </div>
         </div>
@@ -29298,7 +29299,7 @@
     </div>
     
     <div class="flex items-center gap-3 text-slate-400 text-xs shrink-0">
-      <span class="text-cyan-300 font-bold hidden md:inline">COMMIT: a309f76</span>
+      <span class="text-cyan-300 font-bold hidden md:inline">COMMIT: 83d37ac</span>
       <span class="hidden md:inline">//</span>
       <span class="text-emerald-400 font-bold">0% DRIFT</span>
       <span>//</span>
@@ -30048,10 +30049,14 @@
       }
     }
 
-    function mountChassisToDyno(id) {
+    function mountChassisToDyno(id, shouldScroll = true) {
       playTelemetryClick();
       const targetId = parseInt(id, 10);
-      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, true);
+      loadVehicleIntoDyno(isNaN(targetId) ? id : targetId, false);
+      if (shouldScroll) {
+        const bay = document.getElementById('dyno-bay') || document.getElementById('commandDeck');
+        if (bay) bay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
     window.mountChassisToDyno = mountChassisToDyno;
     window.loadVehicleIntoDyno = loadVehicleIntoDyno;

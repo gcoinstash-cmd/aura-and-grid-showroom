@@ -238,7 +238,11 @@ fleetData.forEach(p => {
   // Only URLs verified VALID_LIVE (HTTP 200) by scripts/audit_demo_links.mjs are exposed.
   // Broken / placeholder / unassigned units get '' and render the [ ⚡ TEST DRIVE SIMULATOR ] fallback.
   const candidateUrl = p.demoUrl || p.liveUrl || (p.preview_url && p.preview_url.startsWith('http') && !p.preview_url.includes('gumroad.com') ? p.preview_url : '');
-  const demoUrl = (candidateUrl && candidateUrl !== '#' && verifiedLiveIds.has(p.id)) ? candidateUrl : '';
+  // Track 3 is permanently Dyno-only: never expose any demo URL.
+  const hasLocalDemo = !isTrack3 && fs.existsSync(path.join(SITE_DIR, 'demos', cleanSlug, 'index.html'));
+  const localDemoUrl = hasLocalDemo ? `./demos/${cleanSlug}/` : '';
+  const externalUrl = (!isTrack3 && candidateUrl && candidateUrl !== '#' && verifiedLiveIds.has(p.id)) ? candidateUrl : '';
+  const demoUrl = externalUrl || localDemoUrl;
   const isExternalLive = Boolean(demoUrl);
   const cleanPreviewUrl = demoUrl || `#vehicle-${p.id}`;
 
@@ -609,10 +613,20 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
   // Verified live external demo (HTTP 200 per audit) opens directly; all other units open the Universal Demo Runner.
-  const demoHref = p.demoUrl ? p.demoUrl : `./demo.html?id=${p.id}`;
-  const topActionBtn = `<a href="${demoHref}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
-
-  const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+  let topActionBtn;
+  let bottomActionBtn;
+  if (p.isTrack3) {
+    // Track 3: Dyno-only lock. No demo link, no demo.html placeholder.
+    topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2.5 px-3 text-center text-xs font-mono font-bold rounded border border-[#00FF88]/40 text-[#00FF88] bg-[#00FF88]/10 hover:bg-[#00FF88] hover:text-black transition-all flex items-center justify-center gap-2">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+    bottomActionBtn = `<button onclick="event.stopPropagation(); openApaModal('${p.id}')" class="w-full py-2.5 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-2">[ ACQUIRE TITLE (APA) ]</button>`;
+  } else {
+    if (p.demoUrl) {
+      topActionBtn = `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
+    } else {
+      topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
+    }
+    bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+  }
 
   return `
       <!-- F1 Spec Card #${p.id} -->
@@ -1864,6 +1878,7 @@ ${renderedCardsHtml}
       }
     }
     window.mountChassisToDyno = mountChassisToDyno;
+    window.openApaModal = function (id) { return openApaTenderModal(parseInt(id, 10) || id, 'acquire'); };
     window.loadVehicleIntoDyno = loadVehicleIntoDyno;
 
     function openApaTenderModal(id, intent = 'acquire') {

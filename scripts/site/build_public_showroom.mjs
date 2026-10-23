@@ -57,6 +57,19 @@ if (!fs.existsSync(MANIFEST_PATH)) {
 // Ensure directories exist
 fs.mkdirSync(SITE_ASSETS_DIR, { recursive: true });
 
+// Mirror covers from root assets/covers if present
+const ROOT_COVERS_DIR = path.join(rootDir, 'assets', 'covers');
+if (fs.existsSync(ROOT_COVERS_DIR)) {
+  fs.readdirSync(ROOT_COVERS_DIR).forEach(f => {
+    const targetFile = path.join(SITE_ASSETS_DIR, f);
+    if (!fs.existsSync(targetFile)) {
+      try {
+        fs.copyFileSync(path.join(ROOT_COVERS_DIR, f), targetFile);
+      } catch (err) {}
+    }
+  });
+}
+
 // Copy verified 4-gate dyno audit receipt to site/ for institutional buyer download
 const DYNO_SOURCE_PATH = path.join(rootDir, 'tools', 'ghost-factory-console', 'src', 'data', 'latest-dyno-audit.json');
 const DYNO_SITE_PATH = path.join(SITE_DIR, 'DYNO_AUDIT_RECEIPT.json');
@@ -175,13 +188,20 @@ fleetData.forEach(p => {
   let coverRelPath = '';
   let hasCoverOnDisk = false;
 
-  if (p.coverImage || p.cover_image) {
-    const explicitFilename = path.basename(p.coverImage || p.cover_image);
-    if (existingCoverFiles.has(explicitFilename)) {
-      coverRelPath = `assets/covers/${explicitFilename}`;
-      hasCoverOnDisk = true;
-      rasterCoversFound++;
+  const candidateFields = [p.coverImage, p.cover_image, p.coverUrl, p.cover_url, p.banner, p.bannerUrl, p.banner_url, p.screenshot].filter(Boolean);
+  let explicitFilename = '';
+  for (const c of candidateFields) {
+    const base = path.basename(c);
+    if (existingCoverFiles.has(base)) {
+      explicitFilename = base;
+      break;
     }
+  }
+
+  if (explicitFilename) {
+    coverRelPath = `assets/covers/${explicitFilename}`;
+    hasCoverOnDisk = true;
+    rasterCoversFound++;
   } else if (existingCoverFiles.has(`${cleanSlug}-cover.webp`)) {
     coverRelPath = `assets/covers/${cleanSlug}-cover.webp`;
     hasCoverOnDisk = true;
@@ -242,117 +262,308 @@ fleetData.forEach(p => {
 
 console.log(`📸 Indexed covers in-memory: ${rasterCoversFound} raster + ${svgCoversFound} vector SVGs (${publicProducts.length} total vehicles)`);
 
-// High-Fidelity Procedural SVG Telemetry Blueprint Generator (Zero Broken Images / Full Fleet Uniformity)
-function generateProceduralTelemetryBlueprint(p) {
+// 5 Domain-Specific Visual Archetype Classifier (Directive 2)
+function getArchetypeType(p) {
+  const isTrack3 = Boolean(p.isTrack3);
+  const text = `${p.name} ${p.category || ''} ${p.vertical || ''} ${p.sector || ''} ${p.archetype_name || ''} ${p.pricing_track || ''}`.toLowerCase();
+
+  // TYPE C (Fitness / Performance / Athletics / Clinical)
+  if (/fitness|athletic|biomechanic|ecg|biometric|cardio|training|boxing|gym|fighter|recovery|contrast therapy|infusion|orthopedic|rehab|longevity|clinical|health|medical|medspa|aesthetics clinic|surgical|operatory/.test(text)) {
+    return { type: 'C', code: 'FITNESS', label: 'BIOMETRIC_ECG' };
+  }
+
+  // TYPE A (Fintech / Quant / Trading)
+  if (/fintech|quant|trading|order.?book|hft|matching engine|liquidity|exchange|debt|underwriting|private equity|m&a|crypto|bitcoin|satstacker|capital|fund|treasury|dvp|settlement|credit|family office|arbitrage|risk engine|wealth|pro-forma|allocation portal/.test(text)) {
+    return { type: 'A', code: 'FINTECH', label: 'ORDERBOOK_DEPTH' };
+  }
+
+  // TYPE D (DevTools / API / GridSync / Edge AI)
+  if (/devtools|api|gridsync|consensus|multi-agent|edge.?ai|swarm|pipeline|compiler|queue|worker|fastapi|websocket|runtime|inspect|payload|protocol/.test(text)) {
+    return { type: 'D', code: 'DEVTOOLS', label: 'TERMINAL_INSPECTOR' };
+  }
+
+  // TYPE B (SCADA / Aerospace / Defense)
+  if (isTrack3 || /defense|aerospace|telemetry|scada|radar|satellite|flight|drone|tokamak|plasma|fusion|wind tunnel|hypersonic|c2|orbit|crawler|haulage|rov|propellant|cryogenic|guidance|constellation|launch|trajectory|subsea|clean_energy|switchgear|power plant|chiller|refrigerant|hydraulic/.test(text)) {
+    return { type: 'B', code: 'SCADA', label: 'RADAR_SWEEP' };
+  }
+
+  // TYPE E (Creative / Brand / Vault - Default)
+  return { type: 'E', code: 'CREATIVE', label: 'FRAMING_GRID' };
+}
+
+// 5 Domain-Specific Visual Telemetry Archetypes Generator (Directive 2 & 3)
+function generateArchetypeSvg(p, archetype, accentColor, cleanId) {
+  const id = Number(p.id) || 1;
+  const cleanSlug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  switch (archetype.type) {
+    case 'A': {
+      // TYPE A (Fintech / Quant / Trading): Order Book Depth Chart with vertical green bid / red ask volume bars and latency readouts
+      const bidBars = [
+        { x: 18, h: 8 + (id * 3) % 10 },
+        { x: 28, h: 12 + (id * 5) % 12 },
+        { x: 38, h: 16 + (id * 7) % 14 },
+        { x: 48, h: 22 + (id * 11) % 12 },
+        { x: 58, h: 26 + (id * 13) % 12 },
+        { x: 68, h: 32 + (id * 17) % 10 },
+        { x: 78, h: 36 + (id * 19) % 8 },
+        { x: 88, h: 40 + (id * 23) % 6 }
+      ];
+      const askBars = [
+        { x: 144, h: 39 + (id * 7) % 7 },
+        { x: 154, h: 35 + (id * 11) % 9 },
+        { x: 164, h: 30 + (id * 13) % 11 },
+        { x: 174, h: 25 + (id * 17) % 11 },
+        { x: 184, h: 20 + (id * 19) % 13 },
+        { x: 194, h: 15 + (id * 23) % 12 },
+        { x: 204, h: 11 + (id * 29) % 10 },
+        { x: 214, h: 7 + (id * 31) % 8 }
+      ];
+
+      const bidRects = bidBars.map(b => `<rect x="${b.x}" y="${48 - b.h}" width="6.5" height="${b.h}" fill="#10B981" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" rx="1"/>`).join('');
+      const askRects = askBars.map(b => `<rect x="${b.x}" y="${48 - b.h}" width="6.5" height="${b.h}" fill="#EF4444" fill-opacity="0.65" stroke="#EF4444" stroke-width="0.75" rx="1"/>`).join('');
+
+      const bidPolyline = `18,48 ` + bidBars.map(b => `${b.x + 3.25},${48 - b.h}`).join(' ') + ` 98,${48 - (40 + (id * 23) % 6)}`;
+      const askPolyline = `140,${48 - (39 + (id * 7) % 7)} ` + askBars.map(b => `${b.x + 3.25},${48 - b.h}`).join(' ') + ` 222,48`;
+
+      const latencyVal = (0.7 + (id % 9) * 0.1).toFixed(1);
+      const spreadVal = (0.01 + (id % 4) * 0.01).toFixed(2);
+
+      return `
+        <!-- Order Book Baseline & Grid -->
+        <line x1="12" y1="48" x2="228" y2="48" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+        <line x1="12" y1="28" x2="228" y2="28" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+        <line x1="12" y1="12" x2="228" y2="12" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+
+        <!-- Vertical Green Bids & Red Asks -->
+        ${bidRects}
+        ${askRects}
+
+        <!-- Cumulative Stepped Curves -->
+        <polyline points="${bidPolyline}" fill="none" stroke="#34D399" stroke-width="1.2" stroke-linejoin="round"/>
+        <polyline points="${askPolyline}" fill="none" stroke="#F87171" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Mid-Market Spread Zone -->
+        <line x1="116" y1="8" x2="116" y2="48" stroke="${accentColor}" stroke-dasharray="2,2" stroke-width="1"/>
+        <rect x="96" y="20" width="40" height="13" rx="2" fill="#030712" stroke="${accentColor}" stroke-width="0.9"/>
+        <text x="116" y="29" fill="${accentColor}" font-size="5" text-anchor="middle" font-weight="bold" font-family="monospace">SPR ${spreadVal}</text>
+
+        <!-- Header Telemetry Readouts -->
+        <text x="18" y="9" fill="#10B981" font-size="5" font-family="monospace">BIDS: ${(12000 + (id * 143) % 8000).toLocaleString()}</text>
+        <text x="116" y="9" fill="${accentColor}" font-size="5" text-anchor="middle" font-family="monospace">LATENCY: ${latencyVal}μs</text>
+        <text x="214" y="9" fill="#EF4444" font-size="5" text-anchor="end" font-family="monospace">ASKS: ${(11000 + (id * 187) % 8000).toLocaleString()}</text>
+      `;
+    }
+
+    case 'B': {
+      // TYPE B (SCADA / Aerospace / Defense): Circular Radar Sweep with crosshairs, concentric range rings, and coordinate targets
+      const cx = 120, cy = 30;
+      const theta = (((id * 43) % 360) * Math.PI) / 180;
+      const sweepX = (cx + 25 * Math.cos(theta)).toFixed(1);
+      const sweepY = (cy + 25 * Math.sin(theta)).toFixed(1);
+
+      // Blip targets
+      const t1Angle = theta - 0.7;
+      const t1x = (cx + 17 * Math.cos(t1Angle)).toFixed(1);
+      const t1y = (cy + 17 * Math.sin(t1Angle)).toFixed(1);
+
+      const t2Angle = theta + 1.2;
+      const t2x = (cx + 12 * Math.cos(t2Angle)).toFixed(1);
+      const t2y = (cy + 12 * Math.sin(t2Angle)).toFixed(1);
+
+      const azVal = ((id * 37) % 360).toFixed(1);
+      const rngVal = 100 + (id * 19) % 350;
+
+      return `
+        <!-- Crosshairs with Ticks -->
+        <line x1="24" y1="30" x2="216" y2="30" stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2"/>
+        <line x1="120" y1="4" x2="120" y2="56" stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2"/>
+        <line x1="115" y1="30" x2="125" y2="30" stroke="${accentColor}" stroke-width="1.2"/>
+        <line x1="120" y1="25" x2="120" y2="35" stroke="${accentColor}" stroke-width="1.2"/>
+
+        <!-- Concentric Range Rings -->
+        <circle cx="${cx}" cy="${cy}" r="25" stroke="${accentColor}" stroke-opacity="0.22" stroke-width="0.8" stroke-dasharray="3,3" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="17" stroke="${accentColor}" stroke-opacity="0.38" stroke-width="1" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="9" stroke="${accentColor}" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="2" fill="${accentColor}"/>
+
+        <!-- Radial Radar Sweep Vector -->
+        <line x1="${cx}" y1="${cy}" x2="${sweepX}" y2="${sweepY}" stroke="${accentColor}" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="${cx}" y1="${cy}" x2="${(cx + 25 * Math.cos(theta - 0.2)).toFixed(1)}" y2="${(cy + 25 * Math.sin(theta - 0.2)).toFixed(1)}" stroke="${accentColor}" stroke-opacity="0.35" stroke-width="2"/>
+
+        <!-- Coordinate Target Blips -->
+        <circle cx="${t1x}" cy="${t1y}" r="2" fill="${accentColor}"/>
+        <circle cx="${t1x}" cy="${t1y}" r="4" stroke="${accentColor}" stroke-width="0.75" fill="none" opacity="0.75"/>
+        <text x="${Number(t1x) + 6}" y="${Number(t1y) + 3}" fill="${accentColor}" font-size="4.5" font-family="monospace">TGT-1</text>
+
+        <circle cx="${t2x}" cy="${t2y}" r="1.6" fill="#00F0FF"/>
+        <rect x="${Number(t2x) - 3}" y="${Number(t2y) - 3}" width="6" height="6" stroke="#00F0FF" stroke-width="0.6" fill="none"/>
+
+        <!-- Telemetry Readouts -->
+        <text x="18" y="11" fill="${accentColor}" font-size="5" font-family="monospace">AZ: ${azVal}° // RNG: ${rngVal}KM</text>
+        <text x="222" y="11" fill="${accentColor}" font-size="5" text-anchor="end" font-family="monospace">LOCK: ACQ-P2</text>
+        <text x="18" y="53" fill="rgba(255,255,255,0.4)" font-size="4.5" font-family="monospace">RADAR: L-BAND 12.4 GHz</text>
+        <text x="222" y="53" fill="rgba(255,255,255,0.4)" font-size="4.5" text-anchor="end" font-family="monospace">SYS: ACTIVE_PHASED</text>
+      `;
+    }
+
+    case 'C': {
+      // TYPE C (Fitness / Performance / Athletics): ECG biometric pulse line paired with dual segmented arc dials
+      const bpm = 65 + (id * 5) % 85;
+      const vo2 = (52.0 + (id % 16) * 0.9).toFixed(1);
+      const hrv = 45 + (id * 7) % 45;
+
+      return `
+        <!-- Left Segmented Arc Dial (Heart Rate) -->
+        <circle cx="42" cy="30" r="16" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"/>
+        <circle cx="42" cy="30" r="16" stroke="${accentColor}" stroke-width="3" stroke-dasharray="72 28" stroke-dashoffset="${15 + (id * 5) % 40}" stroke-linecap="round" fill="none"/>
+        <text x="42" y="28" fill="#FFFFFF" font-size="6.5" font-weight="bold" text-anchor="middle" font-family="monospace">${bpm}</text>
+        <text x="42" y="36" fill="${accentColor}" font-size="4" text-anchor="middle" font-family="monospace">BPM</text>
+
+        <!-- Right Segmented Arc Dial (VO2 Max / Metric) -->
+        <circle cx="198" cy="30" r="16" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"/>
+        <circle cx="198" cy="30" r="16" stroke="${accentColor}" stroke-width="3" stroke-dasharray="64 36" stroke-dashoffset="${20 + (id * 9) % 35}" stroke-linecap="round" fill="none"/>
+        <text x="198" y="28" fill="#FFFFFF" font-size="6.5" font-weight="bold" text-anchor="middle" font-family="monospace">${vo2}</text>
+        <text x="198" y="36" fill="${accentColor}" font-size="4" text-anchor="middle" font-family="monospace">VO2 MAX</text>
+
+        <!-- ECG Biometric Pulse Line in Center -->
+        <path d="M 66 30 L 78 30 Q 82 27 85 30 L 89 30 L 92 33 L 97 10 L 102 42 L 105 30 L 110 30 Q 116 23 122 30 L 132 30 Q 136 27 139 30 L 143 30 L 146 33 L 151 10 L 156 42 L 159 30 L 164 30 Q 170 23 174 30"
+              fill="none" stroke="${accentColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Active Cardiac Pulse Peak Indicators -->
+        <circle cx="97" cy="10" r="2" fill="${accentColor}"/>
+        <circle cx="151" cy="10" r="2" fill="${accentColor}"/>
+
+        <!-- Biometric Telemetry Readouts -->
+        <text x="120" y="11" fill="${accentColor}" font-size="5" text-anchor="middle" font-family="monospace">ECG BIOMETRIC STREAM // HRV: ${hrv}ms</text>
+        <text x="120" y="52" fill="rgba(255,255,255,0.45)" font-size="4.5" text-anchor="middle" font-family="monospace">ZONE 4 THRESHOLD // METABOLIC: OPTIMAL</text>
+      `;
+    }
+
+    case 'D': {
+      // TYPE D (DevTools / API / GridSync): Dark terminal code inspector showing formatted JSON payloads and hash checkmarks
+      const hashVal = (id * 7919).toString(16).padStart(6, '0');
+      const latencyVal = (1.1 + (id % 6) * 0.3).toFixed(1);
+
+      return `
+        <!-- Dark Terminal Frame -->
+        <rect x="14" y="6" width="212" height="48" rx="4" fill="#030611" stroke="${accentColor}" stroke-opacity="0.35" stroke-width="0.8"/>
+        <rect x="14" y="6" width="212" height="10" rx="4" fill="#080F20"/>
+        <line x1="14" y1="16" x2="226" y2="16" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+
+        <!-- Window Control Dots -->
+        <circle cx="22" cy="11" r="1.6" fill="#EF4444"/>
+        <circle cx="28" cy="11" r="1.6" fill="#F59E0B"/>
+        <circle cx="34" cy="11" r="1.6" fill="#10B981"/>
+        <text x="42" y="12.5" fill="rgba(255,255,255,0.45)" font-size="4.5" font-family="monospace">gridsync@runtime:~/${cleanSlug}</text>
+
+        <!-- Formatted JSON Payloads with Syntax Highlighting -->
+        <text x="20" y="24" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">{ <tspan fill="${accentColor}">"service"</tspan>: <tspan fill="#F59E0B">"Unit-${cleanId}"</tspan>, <tspan fill="${accentColor}">"status"</tspan>: <tspan fill="#10B981">200</tspan> }</text>
+        <text x="20" y="32" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">  <tspan fill="${accentColor}">"hash"</tspan>: <tspan fill="#94A3B8">"sha256:${hashVal}...b7"</tspan> <tspan fill="#10B981" font-weight="bold">[✓ PASS]</tspan></text>
+        <text x="20" y="40" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">  <tspan fill="${accentColor}">"cluster"</tspan>: <tspan fill="#38BDF8">"raft-consensus"</tspan>, <tspan fill="${accentColor}">"latency"</tspan>: <tspan fill="#10B981">"${latencyVal}ms"</tspan></text>
+        <text x="20" y="48" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">} <tspan fill="${accentColor}" font-weight="bold">✓ COMMITTED</tspan> <tspan fill="${accentColor}">_</tspan></text>
+
+        <!-- Hash Checkmark Verified Badge -->
+        <rect x="178" y="20" width="42" height="13" rx="2" fill="${accentColor}18" stroke="${accentColor}" stroke-opacity="0.45" stroke-width="0.8"/>
+        <text x="199" y="29" fill="${accentColor}" font-size="4.8" text-anchor="middle" font-weight="bold" font-family="monospace">SHA-256 ✓</text>
+      `;
+    }
+
+    case 'E':
+    default: {
+      // TYPE E (Creative / Brand / Vault): Architectural framing grid with rule-of-thirds crosshairs and monospace metadata blocks
+      const isoVal = 100 * ((id % 4) + 1);
+      const elevVal = 10 + (id * 3) % 40;
+
+      return `
+        <!-- Corner Viewfinder Brackets -->
+        <path d="M 16 16 V 8 H 24" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 224 16 V 8 H 216" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 16 44 V 52 H 24" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 224 44 V 52 H 216" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+
+        <!-- Rule-of-Thirds Grid Lines -->
+        <line x1="85" y1="8" x2="85" y2="52" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="155" y1="8" x2="155" y2="52" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="16" y1="22" x2="224" y2="22" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="16" y1="38" x2="224" y2="38" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+
+        <!-- Crosshair Intersections at Rule-of-Thirds Points -->
+        <path d="M 82 22 H 88 M 85 19 V 25" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 152 22 H 158 M 155 19 V 25" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 82 38 H 88 M 85 35 V 41" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 152 38 H 158 M 155 35 V 41" stroke="${accentColor}" stroke-width="1"/>
+
+        <!-- Center Architectural Frame -->
+        <rect x="94" y="24" width="52" height="12" stroke="${accentColor}" stroke-opacity="0.5" stroke-width="0.8" fill="rgba(3, 7, 18, 0.65)"/>
+        <text x="120" y="32.5" fill="${accentColor}" font-size="5" text-anchor="middle" font-weight="bold" font-family="monospace">VAULT #${cleanId}</text>
+
+        <!-- Monospace Metadata Blocks -->
+        <text x="30" y="12" fill="${accentColor}" font-size="4.8" font-family="monospace">APERTURE: f/1.4 // FL: 35mm // ISO: ${isoVal}</text>
+        <text x="210" y="12" fill="${accentColor}" font-size="4.8" text-anchor="end" font-family="monospace">GRID: 3×3 RAW</text>
+        <text x="30" y="49" fill="rgba(255,255,255,0.4)" font-size="4.5" font-family="monospace">SCALE: 1:50 // ELEV: +${elevVal}.0m</text>
+        <text x="210" y="49" fill="rgba(255,255,255,0.4)" font-size="4.5" text-anchor="end" font-family="monospace">CAD REF: ARCH-2026</text>
+      `;
+    }
+  }
+}
+
+// Precision Vehicle Hero Renderer (Directive 1: Real Screenshots First + Directive 2/3: Domain Fallback)
+function renderVehicleHero(p) {
   const isTrack3 = Boolean(p.isTrack3);
   const isTrack2 = Boolean(p.isTrack2);
   const cleanId = String(p.id).padStart(3, '0');
   const trackNum = isTrack3 ? '3' : isTrack2 ? '2' : '1';
   const trackName = isTrack3 ? 'SKUNKWORKS ENGINE' : isTrack2 ? 'HYPERCAR FLAGSHIP' : 'LEAN TUNER';
-  const trackTextColor = isTrack3 ? 'text-sky-400 font-bold' : isTrack2 ? 'text-amber-400' : 'text-[#00F0FF]/80';
 
-  // Deterministic seed variations based on unit sequence / ID
-  const id = Number(p.id) || 1;
-  const p1 = 12 + ((id * 7) % 22);
-  const p2 = 34 + ((id * 11) % 18);
-  const p3 = 10 + ((id * 13) % 28);
-  const p4 = 38 + ((id * 17) % 16);
-  const midX = 110 + ((id * 9) % 30);
-  const curveY = 6 + ((id * 7) % 44);
-  const curveY2 = 54 - ((id * 5) % 38);
-  const rad = 13 + (id % 9);
+  // Dynamic Color Coding by Track (Directive 3)
+  // Track 1 (Lean Tuner): Cyber-Cyan (#00F0FF) telemetry accents.
+  // Track 2 (Hypercar Flagship): Cyber-Amber (#FF9F0A) radar and telemetry accents.
+  // Track 3 (Skunkworks Engine): Matrix Emerald (#00FF88) quantitative terminal accents.
+  const accentColor = isTrack3 ? '#00FF88' : isTrack2 ? '#FF9F0A' : '#00F0FF';
+  const trackTextColor = isTrack3 ? 'text-[#00FF88] font-bold' : isTrack2 ? 'text-[#FF9F0A]' : 'text-[#00F0FF]/80';
 
-  let dynamicSvgContent = '';
+  const archetype = getArchetypeType(p);
+  const svgContent = generateArchetypeSvg(p, archetype, accentColor, cleanId);
 
-  if (isTrack3) {
-    // Track 3: F1 Skunkworks — Complex Algorithm Plots, Consensus Nodes & Ingestion Pipelines
-    dynamicSvgContent = `
-      <!-- State Pipeline Bus -->
-      <path d="M10 30 H${midX - 45} M${midX - 20} 30 H${midX + 20} M${midX + 45} 30 H230" stroke-width="1.2" stroke="rgba(56,189,248,0.45)" stroke-dasharray="3,2"/>
-      <!-- Algorithm Logic Blocks -->
-      <rect x="${midX - 45}" y="18" width="25" height="24" rx="4" class="stroke-sky-400 fill-sky-950/40" stroke-width="1.2"/>
-      <rect x="${midX + 20}" y="18" width="25" height="24" rx="4" class="stroke-[#00F0FF] fill-cyan-950/40" stroke-width="1.2"/>
-      <circle cx="${midX - 32}" cy="30" r="3.5" class="fill-[#00F0FF] animate-pulse"/>
-      <circle cx="${midX + 32}" cy="30" r="3.5" class="fill-[#FF9F0A]"/>
-      <!-- Discrete Kalman / Consensus Nodes -->
-      <circle cx="${midX}" cy="30" r="7.5" stroke="rgba(0,240,255,0.35)" stroke-width="1" class="fill-slate-900/80"/>
-      <circle cx="${midX}" cy="30" r="2.5" class="fill-emerald-400"/>
-      <!-- Polynomial Algorithm Curve -->
-      <path d="M10 ${p2} Q${midX - 30} ${curveY} ${midX} 30 T230 ${curveY2}" stroke-width="1" stroke="rgba(255,159,10,0.35)" fill="none"/>
-      <!-- Quant State Vectors -->
-      <path d="M20 45 L35 ${p1} L50 35 L65 ${p3} L80 40 L95 25" stroke-width="0.85" stroke="rgba(16,185,129,0.35)" stroke-dasharray="2,1" fill="none"/>
-      <!-- Tech Labels -->
-      <text x="20" y="15" fill="rgba(56,189,248,0.4)" font-size="6">ALGORITHM: deterministic</text>
-      <text x="20" y="52" fill="rgba(0,240,255,0.3)" font-size="6">RUNTIME: FASTAPI + ALLOYDB</text>
-      <!-- Coordinate Crosshairs -->
-      <line x1="${midX}" y1="5" x2="${midX}" y2="55" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
-      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
-    `;
-  } else if (isTrack2) {
-    // Track 2: Hypercar Flagship — Amber Laser Sweeps, Physics Solvers & HUD Crosshairs
-    dynamicSvgContent = `
-      <!-- Concentric Radar Sweep Rings -->
-      <circle cx="${midX}" cy="30" r="${rad + 8}" stroke="rgba(255,159,10,0.22)" stroke-width="0.8" stroke-dasharray="3,3"/>
-      <circle cx="${midX}" cy="30" r="${rad}" stroke="rgba(0,240,255,0.28)" stroke-width="1.1"/>
-      <circle cx="${midX}" cy="30" r="3" class="fill-[#FF9F0A] animate-ping"/>
-      <circle cx="${midX}" cy="30" r="2" class="fill-[#FF9F0A]"/>
-      <!-- Radar Sweep Radial Vector -->
-      <line x1="${midX}" y1="30" x2="${midX + rad + 6}" y2="${30 - rad - 4}" stroke="rgba(255,159,10,0.65)" stroke-width="1.2"/>
-      <!-- High-Frequency Telemetry Wave -->
-      <path d="M10 30 H${midX - rad - 10} L${midX - rad - 5} ${p1} L${midX - rad} ${p4} L${midX - 4} 30 M${midX + 4} 30 L${midX + rad} ${p3} L${midX + rad + 6} ${p2} H230" stroke-width="1.1" stroke="rgba(0,240,255,0.32)" fill="none"/>
-      <!-- Physics Solver Parabolic Curve -->
-      <path d="M10 ${curveY} Q${midX} ${curveY2} 230 ${p4}" stroke-width="1" stroke="rgba(255,159,10,0.32)" fill="none"/>
-      <!-- Tech Labels -->
-      <text x="20" y="15" fill="rgba(255,159,10,0.4)" font-size="6">RADAR SWEEP: locked [${((id * 37) % 360)}°]</text>
-      <text x="20" y="52" fill="rgba(0,240,255,0.3)" font-size="6">STATE: REACT 19 + WEBGL HUD</text>
-      <!-- Coordinate Crosshairs -->
-      <line x1="${midX}" y1="5" x2="${midX}" y2="55" stroke="rgba(255,159,10,0.12)" stroke-dasharray="2,2"/>
-      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,159,10,0.12)" stroke-dasharray="2,2"/>
-    `;
-  } else {
-    // Track 1: Lean Tuner — Blue Diagnostics, Oscilloscope Waveforms & Supabase Schemas
-    dynamicSvgContent = `
-      <!-- Precision Oscilloscope Waveform -->
-      <path d="M10 30 L40 30 L${p1 + 25} 30 L${p1 + 35} ${p3} L${p1 + 45} ${p4} L${p1 + 55} ${p1} L${p1 + 65} ${p2} L100 30 H230" stroke-width="1.2" stroke="rgba(0,240,255,0.35)" fill="none"/>
-      <path d="M10 40 Q70 ${curveY} 120 20 T230 40" stroke-width="0.8" stroke="rgba(255,159,10,0.22)" fill="none"/>
-      <!-- Active Telemetry Beacons -->
-      <circle cx="${p1 + 35}" cy="${p3}" r="2" class="fill-[#FF9F0A]"/>
-      <circle cx="${p1 + 45}" cy="${p4}" r="2" class="fill-[#00F0FF]"/>
-      <circle cx="${p1 + 65}" cy="${p2}" r="1.8" class="fill-[#10B981]"/>
-      <!-- Coordinate Crosshairs & Circle Target -->
-      <line x1="120" y1="5" x2="120" y2="55" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
-      <line x1="10" y1="30" x2="230" y2="30" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
-      <circle cx="120" cy="30" r="${rad}" stroke="rgba(0,240,255,0.12)" stroke-width="0.8"/>
-      <!-- Tech Labels -->
-      <text x="20" y="15" fill="rgba(0,240,255,0.3)" font-size="6">OSCILLOSCOPE: active</text>
-      <text x="20" y="52" fill="rgba(255,255,255,0.18)" font-size="6">SCHEMA: RLS + PGSQL</text>
-    `;
-  }
+  const hasImage = Boolean(p.cover_image);
 
   return `
-      <!-- Directive 1: High-Tech Procedural Telemetry Blueprint (16:9 Aspect Video) -->
-      <div class="w-full aspect-video bg-[#070A11] relative overflow-hidden flex flex-col justify-between p-3.5 border-b border-white/5 font-mono select-none">
-        <!-- Grid Overlay Background -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.02)_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,7,11,0.8))] pointer-events-none"></div>
-        
-        <!-- HUD Top Bar -->
-        <div class="flex justify-between items-center z-10 text-[9px] tracking-widest text-[#00F0FF]/60 font-bold">
-          <span>TELEMETRY DIAGNOSTIC // AURA-GRID</span>
-          <span class="text-amber-500 font-extrabold uppercase">UNIT #${cleanId}</span>
-        </div>
-        
-        <!-- Middle Core Blueprint Graphic -->
-        <div class="flex-1 flex items-center justify-center relative my-1 z-10">
-          <svg class="w-full h-16 stroke-[#00F0FF]/30 fill-none" viewBox="0 0 240 60">
-            ${dynamicSvgContent}
-          </svg>
-        </div>
-        
-        <!-- HUD Bottom Bar -->
-        <div class="flex justify-between items-center z-10 text-[8px] tracking-wide text-slate-400">
-          <span class="uppercase ${trackTextColor}">TRACK #${trackNum} // ${trackName}</span>
-          <span class="text-[#FF9F0A]/90 font-bold border border-[#FF9F0A]/20 px-1 py-0.5 bg-[#FF9F0A]/5">4/4 GATES</span>
+      <!-- Hero Preview / Blueprint Container (Directive 1 & 2: 16:9 Aspect Video) -->
+      <div class="w-full aspect-video bg-[#070A11] relative overflow-hidden border-b border-white/5 font-mono select-none group/hero">
+        ${hasImage ? `
+        <!-- Restored Real Image (Directive 1) -->
+        <img src="${escapeHtml(p.cover_image)}" 
+             alt="${escapeHtml(p.name)}" 
+             class="object-cover object-top w-full h-full absolute inset-0 z-10 transition-transform duration-500 group-hover:scale-105" 
+             loading="lazy" 
+             onerror="this.style.display='none'; var fb=this.parentElement.querySelector('.svg-blueprint-fallback'); if(fb) fb.classList.remove('hidden');" />
+        ` : ''}
+
+        <!-- Domain-Specific Fallback SVG Blueprint (Directive 2 & 3) -->
+        <div class="svg-blueprint-fallback ${hasImage ? 'hidden ' : ''}absolute inset-0 w-full h-full flex flex-col justify-between p-3.5 z-0 bg-[#070A11]">
+          <!-- Grid Overlay Background -->
+          <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,7,11,0.85))] pointer-events-none"></div>
+          
+          <!-- HUD Top Bar -->
+          <div class="flex justify-between items-center z-10 text-[9px] tracking-widest font-bold" style="color: ${accentColor}cc;">
+            <span>TELEMETRY DIAGNOSTIC // [ARCH-${archetype.type}: ${archetype.label}]</span>
+            <span class="font-extrabold uppercase" style="color: ${accentColor};">UNIT #${cleanId}</span>
+          </div>
+          
+          <!-- Middle Core Blueprint Graphic -->
+          <div class="flex-1 flex items-center justify-center relative my-1 z-10 w-full overflow-hidden">
+            <svg class="w-full h-full max-h-20" viewBox="0 0 240 60" preserveAspectRatio="xMidYMid meet">
+              ${svgContent}
+            </svg>
+          </div>
+          
+          <!-- HUD Bottom Bar -->
+          <div class="flex justify-between items-center z-10 text-[8px] tracking-wide text-slate-400">
+            <span class="uppercase ${trackTextColor}">TRACK #${trackNum} // ${trackName}</span>
+            <span class="font-bold border px-1 py-0.5" style="color: ${accentColor}; border-color: ${accentColor}40; background-color: ${accentColor}10;">4/4 GATES</span>
+          </div>
         </div>
       </div>`;
 }
@@ -395,7 +606,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
 
   return `
       <!-- F1 Spec Card #${p.id} -->
-      <div class="product-card${initialHidden} min-h-[580px] h-full rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
+      <div class="product-card${initialHidden} min-h-[580px] h-full rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-emerald-500/35 hover:border-[#00FF88]' : isTrack2 ? 'border-amber-500/35 hover:border-[#FF9F0A]' : 'border-cyan-500/25 hover:border-[#00F0FF]'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
            onclick="loadVehicleIntoDyno(${p.id}, false)"
            id="vehicle-${p.id}"
            data-id="${p.id}"
@@ -418,11 +629,11 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           <!-- Flex Chassis Card Header (No Absolute Positioning) -->
           <div class="flex items-center justify-between w-full p-3 border-b border-white/5 bg-[#080C14]">
             <span class="font-mono text-xs font-bold text-slate-200 truncate pr-2">UNIT #${cleanId} // ${escapeHtml(p.name).toUpperCase()}</span>
-            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase font-bold">${trackBadgeLabel}</span>
+            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border ${isTrack3 ? 'border-[#00FF88]/30 text-[#00FF88] bg-[#00FF88]/10' : isTrack2 ? 'border-[#FF9F0A]/30 text-[#FF9F0A] bg-[#FF9F0A]/10' : 'border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10'} uppercase font-bold">${trackBadgeLabel}</span>
           </div>
 
-          <!-- Hero Preview Procedural Telemetry Blueprint Bay (16:9 Aspect Video) -->
-          ${generateProceduralTelemetryBlueprint(p)}
+          <!-- Hero Preview (Directive 1: Real Screenshots First + Directive 2/3: Domain Fallback) -->
+          ${renderVehicleHero(p)}
 
           <!-- Card Telemetry Body (Directive 4: multi-line title wrapping & reduced subtitle font) -->
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
@@ -1593,10 +1804,10 @@ ${renderedCardsHtml}
       // 1. Highlight that card with a glowing cyber-amber border
       document.querySelectorAll('.product-card').forEach(c => {
         c.classList.remove('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
-        const defaultBorder = c.dataset.track === 'track3' ? 'border-sky-500/35' : c.dataset.track === 'track2' ? 'border-amber-500/35' : 'border-white/10';
+        const defaultBorder = c.dataset.track === 'track3' ? 'border-emerald-500/35' : c.dataset.track === 'track2' ? 'border-amber-500/35' : 'border-cyan-500/25';
         c.classList.add(defaultBorder);
       });
-      card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35');
+      card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35', 'border-emerald-500/35', 'border-cyan-500/25');
       card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
 
       // 2. Update Dyno Bay header on the left to display UNIT #[ID] // [TITLE] — MOUNTED ON DYNO

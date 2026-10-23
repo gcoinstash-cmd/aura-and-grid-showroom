@@ -600,7 +600,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
   const topActionBtn = p.demoUrl
     ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`
-    : `<a href="#" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}'); return false;" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
+    : `<button type="button" disabled aria-disabled="true" title="Live preview not published for this unit" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-500 bg-white/5 opacity-60 cursor-not-allowed flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</button>`;
 
   const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
 

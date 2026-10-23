@@ -176,6 +176,14 @@ function escapeHtml(str) {
 }
 
 const publicProducts = [];
+
+// Verified demo-link allowlist from scripts/audit_demo_links.mjs (fail-safe: missing file => no live links)
+const DEMO_AUDIT_PATH = path.join(rootDir, 'src', 'data', 'demo_link_audit.json');
+const verifiedLiveIds = new Set(
+  fs.existsSync(DEMO_AUDIT_PATH)
+    ? JSON.parse(fs.readFileSync(DEMO_AUDIT_PATH, 'utf-8')).units.filter(u => u.status === 'VALID_LIVE').map(u => u.id)
+    : []
+);
 let rasterCoversFound = 0;
 let svgCoversFound = 0;
 
@@ -227,8 +235,10 @@ fleetData.forEach(p => {
   const pytestScore = isTrack3 ? 92 + (p.id % 7) : isTrack2 ? 88 + (p.id % 8) : 84 + (p.id % 9);
 
   // Determine if there is a live external demo URL (e.g. onrender, github.io, or explicit demoUrl/liveUrl)
+  // Only URLs verified VALID_LIVE (HTTP 200) by scripts/audit_demo_links.mjs are exposed.
+  // Broken / placeholder / unassigned units get '' and render the [ ⚡ TEST DRIVE SIMULATOR ] fallback.
   const candidateUrl = p.demoUrl || p.liveUrl || (p.preview_url && p.preview_url.startsWith('http') && !p.preview_url.includes('gumroad.com') ? p.preview_url : '');
-  const demoUrl = candidateUrl || '';
+  const demoUrl = (candidateUrl && candidateUrl !== '#' && verifiedLiveIds.has(p.id)) ? candidateUrl : '';
   const isExternalLive = Boolean(demoUrl);
   const cleanPreviewUrl = demoUrl || `#vehicle-${p.id}`;
 
@@ -600,7 +610,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   // Directive 2: Dual-Button Action Stack: Direct [TEST DRIVE DEMO] + [MOUNT CHASSIS ON DYNO]
   const topActionBtn = p.demoUrl
     ? `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5">[ ↗ TEST DRIVE LIVE DEMO ]</a>`
-    : `<button type="button" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/40 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
+    : `<button type="button" onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ TEST DRIVE SIMULATOR ]</button>`;
 
   const bottomActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-white/10 text-slate-300 bg-white/5 hover:border-amber-500/50 hover:text-amber-400 transition-all cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
 

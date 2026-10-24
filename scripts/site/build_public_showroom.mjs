@@ -660,7 +660,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           <!-- Card Telemetry Body (Directive 4: multi-line title wrapping & reduced subtitle font) -->
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
             <!-- Top Row: Archetype Subtitle + Main Title + Pytest Gauge -->
-            <div class="flex items-start justify-between gap-2 mb-2">
+            <div class="flex items-start justify-between gap-2 mb-1">
               <div class="min-w-0 flex-1">
                 <div class="text-[11px] font-mono text-cyan-400 tracking-wider truncate">${escapeHtml(p.archetype_name)}</div>
                 <h3 class="text-lg font-mono font-bold text-white tracking-wide mt-0.5 leading-snug group-hover:text-cyan-300 transition-colors">${escapeHtml(p.name)}</h3>
@@ -672,6 +672,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
                 <span class="text-[9px] font-mono uppercase text-slate-400">TEST</span>
               </div>
             </div>
+            <div class="text-[11px] font-mono font-bold text-amber-400/90 tracking-wide mb-2 uppercase">[ WORKING PROTOTYPE DEMO ]</div>
 
             <!-- Subtle Telemetry Status Pill Tag -->
             <div class="text-[10px] font-mono ${isTrack3 ? 'text-sky-400/80 bg-sky-500/10 border-sky-500/20' : 'text-amber-400/80 bg-amber-500/10 border-amber-500/20'} border px-2.5 py-1 rounded-md text-center my-2 font-medium">
@@ -911,10 +912,13 @@ const showroomHtml = `<!DOCTYPE html>
         <span class="hidden sm:inline-flex text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 uppercase font-bold tracking-wider">v3.2 // TELEMETRY BLUEPRINTS</span>
       </div>
 
-      <!-- Center: 200 VERIFIED UNITS BADGE -->
-      <div class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-        <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
+      <!-- Center: 200 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
+        </div>
+        <div class="px-3 py-1 text-xs font-mono font-bold tracking-wider rounded border border-[#FF9F0A]/40 text-[#FF9F0A] bg-[#FF9F0A]/10 flex items-center gap-1.5">[ ⚡ WORKING PROTOTYPE DEMOS // ARCHITECTURAL FLEET ]</div>
       </div>
 
       <!-- Right: DYNO INTEGRITY BADGE -->
@@ -934,6 +938,12 @@ const showroomHtml = `<!DOCTYPE html>
   <!-- ================= STAGE 1: COMMAND DECK (DYNO SCANNER + MOUNTED SPEC) ================= -->
   <section id="dyno-bay" data-alias="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6 scroll-mt-20">
     <div id="commandDeck" class="hidden" aria-hidden="true"></div>
+
+    <!-- Stage 1 Dyno Bay Disclaimer -->
+    <div class="w-full p-3 rounded border border-white/10 bg-[#0B0F17] text-xs font-mono text-slate-300 flex items-center justify-between gap-3">
+      <span class="text-[#00F0FF] font-bold">DISCLAIMER:</span>
+      <span>Interactive demos reflect production-grade architecture, logic, and schemas. Delivered as sovereign software IP prototypes (not live turnkey production-ready SaaS deployments).</span>
+    </div>
     
     <!-- 4-Card Telemetry Ribbon -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs">
@@ -1237,6 +1247,8 @@ ${renderedCardsHtml}
         </div>
 
         <div id="tenderStatusNotice" class="hidden text-center text-xs font-mono py-1"></div>
+
+        <p class="text-xs font-mono text-slate-400 mt-2">Notice: 100% clean title IP transfer includes verified source code and architecture. Assets are production-grade prototypes for enterprise deployment.</p>
 
         <!-- Primary CTAs: Full-width vertical button stack -->
         <div class="flex flex-col gap-2 w-full pt-2">

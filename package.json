@@ -4,8 +4,11 @@
   "description": "Storefront Engine for Aura & Grid - Digital architecture and web templates",
   "type": "module",
   "scripts": {
+    "audit:demos": "node scripts/audit_fleet_demos.mjs --strict",
+    "prebuild": "node scripts/audit_fleet_demos.mjs --strict",
     "build": "mkdir -p dist && cp -r site/* dist/ || true",
-    "build:showroom": "node scripts/site/build_public_showroom.mjs && mkdir -p dist && cp -r site/* dist/ || true",
+    "prebuild:showroom": "node scripts/audit_fleet_demos.mjs --strict",
+    "build:showroom": "node scripts/site/build_public_showroom.mjs && node scripts/audit_fleet_demos.mjs --strict && mkdir -p dist && cp -r site/* dist/ || true",
     "sync:master": "node scripts/sync_master.mjs",
     "sync:watch": "node scripts/sync_master.mjs --watch",
     "verify:diligence": "node scripts/verify_diligence_build.mjs",

@@ -948,7 +948,7 @@ const showroomHtml = `<!DOCTYPE html>
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
         <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">TOTAL RETAIL PRICE</div>
         <div class="text-xl font-black text-cyan-300 mono-metric-crisp mt-1">$20,037,000</div>
-        <div class="text-xs text-slate-400 mt-0.5">(Outright Buyout / APA) • 251 Units</div>
+        <div class="text-xs text-slate-400 mt-0.5">Combined Standalone Agency Replacement Benchmark across all 251 upgraded chassis.</div>
       </div>
 
       <!-- Card 2: CERTIFIED FAIR MARKET VALUE -->
@@ -958,21 +958,21 @@ const showroomHtml = `<!DOCTYPE html>
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         </div>
         <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">$8,307,000</div>
-        <div class="text-xs text-slate-400 mt-0.5">86 T1 • 51 T2 • 114 T3</div>
+        <div class="text-xs text-slate-400 mt-0.5">Direct Mid-Market Appraisal • 86 T1 • 51 T2 • 114 T3</div>
       </div>
 
       <!-- Card 3: WHOLESALE PRICE -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-amber-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(255,159,10,0.15)]">
         <div class="text-amber-400 text-[10px] uppercase font-bold tracking-wider">WHOLESALE PRICE</div>
         <div class="text-xl font-black text-amber-300 mono-metric-crisp mt-1">$5,116,500</div>
-        <div class="text-xs text-slate-400 mt-0.5">Zero Copyleft • MIT / Apache</div>
+        <div class="text-xs text-slate-400 mt-0.5">Institutional Bulk Floor • Zero Copyleft (MIT / Apache)</div>
       </div>
 
       <!-- Card 4: WALK-AWAY FLOOR -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(56,189,248,0.15)]">
         <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">WALK-AWAY FLOOR</div>
         <div class="text-xl font-black text-sky-300 mono-metric-crisp mt-1">$2,500,000</div>
-        <div class="text-xs text-slate-400 mt-0.5">100% Exclusive IP Title Transfer</div>
+        <div class="text-xs text-slate-400 mt-0.5">Sovereign Liquidation Reserve • 100% Exclusive IP Title Transfer</div>
       </div>
     </div>
 

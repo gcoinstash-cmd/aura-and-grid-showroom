@@ -1,0 +1,43 @@
+{
+  "total_assets": 251,
+  "retained_floor": 201,
+  "max_apa_capacity": 50,
+  "tracks": {
+    "track_1": 86,
+    "track_2": 51,
+    "track_3": 114
+  },
+  "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Zero Licensing",
+  "valuation": {
+    "total_retail_price": 20037000,
+    "certified_fair_market_value": 8307000,
+    "wholesale_price": 5116500,
+    "walk_away_floor": 2500000
+  },
+  "pillars": {
+    "total_retail_price": {
+      "label": "TOTAL RETAIL PRICE",
+      "amount_usd": 20037000,
+      "formatted": "$20,037,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 251 upgraded chassis."
+    },
+    "certified_fair_market_value": {
+      "label": "CERTIFIED FAIR MARKET VALUE",
+      "amount_usd": 8307000,
+      "formatted": "$8,307,000",
+      "subtitle": "Direct Mid-Market Appraisal"
+    },
+    "wholesale_price": {
+      "label": "WHOLESALE PRICE",
+      "amount_usd": 5116500,
+      "formatted": "$5,116,500",
+      "subtitle": "Institutional Bulk Floor"
+    },
+    "walk_away_floor": {
+      "label": "WALK-AWAY FLOOR",
+      "amount_usd": 2500000,
+      "formatted": "$2,500,000",
+      "subtitle": "Sovereign Liquidation Reserve"
+    }
+  }
+}

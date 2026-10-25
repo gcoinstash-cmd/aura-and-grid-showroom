@@ -1,0 +1,75 @@
+{
+  "schema_version": "4.1.0-AGENCY-REPLACEMENT-251",
+  "audit_timestamp": "2026-10-25T14:30:00Z",
+  "governing_standard": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer",
+  "portfolio_classification": "Sovereign Full-Stack Software Asset Vault (Zero Mock State)",
+  "active_fleet_size": 251,
+  "target_fleet_capacity": 500,
+  "fleet_breakdown": {
+    "total_active_units": 251,
+    "tuner_hypercar_units": 137,
+    "track_1_lean_tuner": 86,
+    "track_2_hypercar_flagship": 51,
+    "track_3_reference_cores": 114,
+    "description": "251 Active Units (86 Track 1, 51 Track 2, 114 Track 3)"
+  },
+  "portfolio_valuation_pillars": {
+    "retail_showroom_baseline": {
+      "label": "TOTAL RETAIL PRICE",
+      "formatted": "$20,037,000",
+      "amount_usd": 20037000,
+      "basis": "Agency Replacement Benchmark",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 251 upgraded chassis."
+    },
+    "certified_fair_market_value": {
+      "label": "CERTIFIED FAIR MARKET VALUE",
+      "formatted": "$8,307,000",
+      "amount_usd": 8307000,
+      "basis": "Direct Mid-Market Appraisal",
+      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 251 software engines."
+    },
+    "wholesale_acquisition_reserve_floor": {
+      "label": "WHOLESALE PRICE",
+      "formatted": "$5,116,500",
+      "amount_usd": 5116500,
+      "basis": "Institutional Bulk Floor",
+      "subtitle": "Institutional baseline portfolio buyout floor reflecting standard anchor tenders."
+    },
+    "distressed_panic_floor": {
+      "label": "WALK-AWAY FLOOR",
+      "formatted": "$2,500,000",
+      "amount_usd": 2500000,
+      "basis": "Sovereign Liquidation Reserve",
+      "subtitle": "Absolute turnkey walk-away liquidation floor for immediate full IP title transfer."
+    }
+  },
+  "clean_room_diligence_standard": {
+    "badge_title": "Deterministic Clean-Room Architecture Standard",
+    "description": "Strict architectural methodology grounded in deterministic state machines, idempotent relational schemas, isolated micro-runtimes, and zero-drift type safety."
+  },
+  "portfolio_sub_breakout": {
+    "upgraded_fleet_alone": {
+      "units": 251,
+      "label": "Upgraded 251-Unit Full-Stack Fleet",
+      "msrp": "$1,752,000",
+      "wholesale_floor": "$5,116,500 Wholesale Floor",
+      "amount_msrp_usd": 1752000,
+      "amount_wholesale_floor_usd": 5116500
+    },
+    "track_3_reference_cores_alone": {
+      "units": 114,
+      "label": "Track 3 Reference Cores Alone",
+      "floor": "$3,990,000 Floor",
+      "ceiling": "$17,100,000 Retail Ceiling",
+      "amount_floor_usd": 3990000,
+      "amount_ceiling_usd": 17100000
+    }
+  },
+  "retention_governance": {
+    "minimum_retained_floor_pct": 80,
+    "minimum_retained_units": 201,
+    "maximum_apa_transfer_units": 50,
+    "target_500_retained_units": 400,
+    "target_500_apa_transfer_units": 100
+  }
+}

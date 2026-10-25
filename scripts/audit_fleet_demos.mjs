@@ -56,11 +56,11 @@ const catalogById = new Map(catalogData.map(u => [Number(u.id), u]));
 const embeddedById = new Map(embeddedFleetData.map(u => [Number(u.id), u]));
 
 /**
- * Extract card HTML block and action bindings for a specific unit ID (1..200)
+ * Extract card HTML block and action bindings for a specific unit ID (1..251)
  */
 function extractCardTelemetry(unitId) {
   const cardMarker = `<!-- F1 Spec Card #${unitId} -->`;
-  const nextMarker = unitId < 200 ? `<!-- F1 Spec Card #${unitId + 1} -->` : `</div>\n\n    <div id="noResults"`;
+  const nextMarker = unitId < 251 ? `<!-- F1 Spec Card #${unitId + 1} -->` : `</div>\n\n    <div id="noResults"`;
   const startIdx = siteHtml.indexOf(cardMarker);
   const catalogUnit = catalogById.get(unitId);
   const embeddedUnit = embeddedById.get(unitId);
@@ -233,8 +233,8 @@ async function auditUnit(unitId) {
 }
 
 async function main() {
-  console.log('⚡ [Aura & Grid] Launching 200-Unit Automated Fleet Demo Link & Dyno Telemetry Audit...');
-  const unitIds = Array.from({ length: 200 }, (_, i) => i + 1);
+  console.log('⚡ [Aura & Grid] Launching 251-Unit Automated Fleet Demo Link & Dyno Telemetry Audit...');
+  const unitIds = Array.from({ length: 251 }, (_, i) => i + 1);
   const results = new Array(unitIds.length);
   let cursor = 0;
 
@@ -281,7 +281,7 @@ async function main() {
   console.log('| Unit # | Title | Track | Target Demo URL | Diagnostic Status |');
   console.log('| :--- | :--- | :--- | :--- | :--- |');
   if (brokenUnits.length === 0) {
-    console.log('| NONE (0/200) | All 200 Fleet Units Verified Operational | Tracks 1, 2, 3 | 200/200 Valid Targets | HTTP 200 & Dyno Coupled |');
+    console.log('| NONE (0/251) | All 251 Fleet Units Verified Operational | Tracks 1, 2, 3 | 251/251 Valid Targets | HTTP 200 & Dyno Coupled |');
   } else {
     for (const b of brokenUnits) {
       console.log(`| ${b.unitNumber} | ${b.name} | ${b.track} | ${b.demoUrl || 'N/A'} | ${b.detail} |`);

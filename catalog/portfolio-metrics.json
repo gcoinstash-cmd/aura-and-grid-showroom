@@ -1,46 +1,16 @@
 {
-  "schema_version": "3.0.0",
-  "verified_timestamp": "2026-10-16T10:35:00Z",
-  "operating_model": "Sole Proprietorship - Direct Asset Purchase Agreement (APA)",
-  "transfer_instrument": "Turnkey Software Asset Purchase Agreement",
-  "active_fleet_size": 200,
-  "fleet_breakdown": {
-    "total_active_units": 200,
-    "tuner_hypercar_units": 137,
-    "track_1_lean_tuner": 86,
-    "track_2_hypercar_flagship": 51,
-    "track_3_reference_cores": 63,
-    "description": "200 units (137 Tuner/Hypercar + 63 Reference Cores)"
+  "total_assets": 251,
+  "retained_floor": 201,
+  "max_apa_capacity": 50,
+  "tracks": {
+    "track_1": 86,
+    "track_2": 51,
+    "track_3": 114
   },
-  "portfolio_valuation_pillars": {
-    "retail_showroom_baseline": {
-      "label": "RETAIL FLEET VALUE",
-      "formatted": "$4,450,000",
-      "amount_usd": 4450000,
-      "subtitle": "200 Active Engines (Tracks 1, 2, & 3)"
-    },
-    "capitalized_build_cost_asc_350_40": {
-      "label": "CAPITALIZED BUILD COST",
-      "formatted": "$2,780,000",
-      "amount_usd": 2780000,
-      "subtitle": "ASC 350-40 Audited Replacement Baseline"
-    },
-    "wholesale_acquisition_reserve_floor": {
-      "label": "WHOLESALE ACQUISITION FLOOR",
-      "formatted": "$2,190,000",
-      "amount_usd": 2190000,
-      "subtitle": "Reserve Price (~49% Bulk Asset Discount)"
-    },
-    "distressed_panic_floor": {
-      "label": "HARD WALK-AWAY FLOOR",
-      "formatted": "$1,320,000",
-      "amount_usd": 1320000,
-      "subtitle": "Distressed Panic Floor Valuation"
-    }
-  },
-  "retention_governance": {
-    "minimum_retained_floor_pct": 80,
-    "minimum_retained_units": 160,
-    "maximum_apa_transfer_units": 40
+  "valuation": {
+    "total_retail_price": 20037000,
+    "certified_fair_market_value": 8307000,
+    "wholesale_price": 5116500,
+    "walk_away_floor": 2500000
   }
 }

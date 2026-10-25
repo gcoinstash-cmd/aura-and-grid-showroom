@@ -47,7 +47,7 @@ try {
 }
 
 
-console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 200 Vehicles)...');
+console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 251 Vehicles)...');
 
 if (!fs.existsSync(MANIFEST_PATH)) {
   console.error(`❌ Missing CATALOG_MANIFEST.json at: ${MANIFEST_PATH}`);
@@ -251,8 +251,8 @@ fleetData.forEach(p => {
   const demoUrl = isVerifiedExternal
     ? candidateUrl
     : `${CONSOLE_DEMO_BASE_URL}/demos/${consoleDemoSlug}/index.html`;
-  const isExternalLive = true;
-  const cleanPreviewUrl = demoUrl;
+  const isExternalLive = p.id <= 200;
+  const cleanPreviewUrl = p.id > 200 ? `./demo.html?id=${p.id}` : demoUrl;
 
   publicProducts.push({
     id: p.id,
@@ -619,12 +619,9 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
-  // Directive 2: 100% Demo Link Parity (200/200) across Tracks 1, 2, and 3
-  // Every card renders [ ↗ TEST DRIVE LIVE DEMO ] alongside [ ⚡ MOUNT CHASSIS ON DYNO ] and [ ACQUIRE TITLE (APA) ].
-  const topActionBtn = `<a href="${p.demoUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/50 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(0,240,255,0.2)]">[ ↗ TEST DRIVE LIVE DEMO ]</a>`;
-  const bottomActionBtn = `
-            <button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border ${isTrack3 ? 'border-[#00FF88]/40 text-[#00FF88] bg-[#00FF88]/10 hover:bg-[#00FF88] hover:text-black' : 'border-white/15 text-slate-200 bg-white/5 hover:border-amber-500/50 hover:text-amber-400'} transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>
-            <button onclick="event.stopPropagation(); openApaModal('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ACQUIRE TITLE (APA) ]</button>`;
+  // Directive 2: Card Action Buttons strictly [ ⚡ MOUNT CHASSIS ON DYNO ] and [ ACQUIRE TITLE (APA) ]
+  const topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border ${isTrack3 ? 'border-[#00FF88]/40 text-[#00FF88] bg-[#00FF88]/10 hover:bg-[#00FF88] hover:text-black' : 'border-[#00F0FF]/50 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black'} transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+  const bottomActionBtn = `<button onclick="event.stopPropagation(); openApaModal('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ACQUIRE TITLE (APA) ]</button>`;
 
   return `
       <!-- F1 Spec Card #${p.id} -->
@@ -754,7 +751,7 @@ const showroomHtml = `<!DOCTYPE html>
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Aura & Grid — F1 Pit Wall Telemetry & Pure APA Title Configurator // GhostFactoryOS</title>
-  <meta name="description" content="200 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 63 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
+  <meta name="description" content="251 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 114 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
   <meta name="version" content="v3.2-TELEMETRY-BLUEPRINT">
   <meta name="telemetry:sync" content="GhostFactoryOS v1.6.0 // v3.2-TELEMETRY-BLUEPRINT">
   <link rel="canonical" href="https://auraandgrid.com/">
@@ -912,11 +909,11 @@ const showroomHtml = `<!DOCTYPE html>
         <span class="hidden sm:inline-flex text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 uppercase font-bold tracking-wider">v3.2 // TELEMETRY BLUEPRINTS</span>
       </div>
 
-      <!-- Center: 200 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
+      <!-- Center: 251 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
       <div class="flex flex-wrap items-center gap-2">
         <div class="hidden xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest">
           <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-          <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
+          <span>251 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (114)</span>
         </div>
         <div class="px-3 py-1 text-xs font-mono font-bold tracking-wider rounded border border-[#FF9F0A]/40 text-[#FF9F0A] bg-[#FF9F0A]/10 flex items-center gap-1.5">[ ⚡ WORKING PROTOTYPE DEMOS // ARCHITECTURAL FLEET ]</div>
       </div>
@@ -947,35 +944,35 @@ const showroomHtml = `<!DOCTYPE html>
     
     <!-- 4-Card Telemetry Ribbon -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs">
-      <!-- Card 1: FLEET UNITS: 200 VERIFIED -->
+      <!-- Card 1: TOTAL RETAIL PRICE -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
-        <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">FLEET UNITS</div>
-        <div class="text-xl font-black text-cyan-300 mono-metric-crisp mt-1">200 VERIFIED</div>
-        <div class="text-xs text-slate-500 mt-0.5">86 T1 • 51 T2 • 63 T3</div>
+        <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">TOTAL RETAIL PRICE</div>
+        <div class="text-xl font-black text-cyan-300 mono-metric-crisp mt-1">$20,037,000</div>
+        <div class="text-xs text-slate-400 mt-0.5">(Outright Buyout / APA) • 251 Units</div>
       </div>
 
-      <!-- Card 2: DYNO INTEGRITY: 4/4 GATES -->
+      <!-- Card 2: CERTIFIED FAIR MARKET VALUE -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-emerald-500/40 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(16,185,129,0.2)]">
         <div class="text-emerald-400 text-[10px] uppercase font-bold tracking-wider flex items-center justify-between">
-          <span>DYNO INTEGRITY</span>
+          <span>CERTIFIED FAIR MARKET VALUE</span>
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         </div>
-        <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">4/4 GATES PASSED</div>
-        <div class="text-xs text-slate-400 mt-0.5">Deterministic Math &amp; RLS</div>
+        <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">$8,307,000</div>
+        <div class="text-xs text-slate-400 mt-0.5">86 T1 • 51 T2 • 114 T3</div>
       </div>
 
-      <!-- Card 3: IP TITLE: 100% PERMISSIVE -->
+      <!-- Card 3: WHOLESALE PRICE -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-amber-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(255,159,10,0.15)]">
-        <div class="text-amber-400 text-[10px] uppercase font-bold tracking-wider">IP TITLE</div>
-        <div class="text-xl font-black text-amber-300 mono-metric-crisp mt-1">100% PERMISSIVE</div>
-        <div class="text-xs text-slate-500 mt-0.5">Zero Copyleft • MIT / Apache</div>
+        <div class="text-amber-400 text-[10px] uppercase font-bold tracking-wider">WHOLESALE PRICE</div>
+        <div class="text-xl font-black text-amber-300 mono-metric-crisp mt-1">$5,116,500</div>
+        <div class="text-xs text-slate-400 mt-0.5">Zero Copyleft • MIT / Apache</div>
       </div>
 
-      <!-- Card 4: ACQUISITION: PURE APA -->
+      <!-- Card 4: WALK-AWAY FLOOR -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(56,189,248,0.15)]">
-        <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">ACQUISITION</div>
-        <div class="text-xl font-black text-sky-300 mono-metric-crisp mt-1">PURE APA TENDER</div>
-        <div class="text-xs text-slate-500 mt-0.5">Direct Sovereign Handover</div>
+        <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">WALK-AWAY FLOOR</div>
+        <div class="text-xl font-black text-sky-300 mono-metric-crisp mt-1">$2,500,000</div>
+        <div class="text-xs text-slate-400 mt-0.5">100% Exclusive IP Title Transfer</div>
       </div>
     </div>
 
@@ -1094,7 +1091,7 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-white/10 pb-4">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
-          VAULT INVENTORY // 200 VERIFIED UNITS
+          VAULT INVENTORY // 251 VERIFIED UNITS
         </span>
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight font-sans">
           Fleet Telemetry Lot
@@ -1110,10 +1107,10 @@ const showroomHtml = `<!DOCTYPE html>
           [ TRACK 2 // HYPERCAR (51) ]
         </button>
         <button onclick="setTrackNav('track3')" id="navPill-track3" class="track-pill px-4 py-2 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
-          [ TRACK 3 // SKUNKWORKS (63) ]
+          [ TRACK 3 // SKUNKWORKS (114) ]
         </button>
         <button onclick="setTrackNav('all')" id="navPill-all" class="track-pill px-3 py-2 rounded-xl border border-white/10 bg-[#111724]/60 text-slate-400 hover:text-white font-medium uppercase tracking-wider transition-all cursor-pointer text-xs">
-          [ ALL LOTS (200) ]
+          [ ALL LOTS (251) ]
         </button>
       </div>
     </div>
@@ -1125,7 +1122,7 @@ const showroomHtml = `<!DOCTYPE html>
         <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (86 UNITS)</span>
       </div>
       
-      <input type="text" id="searchInput" placeholder="Search 200 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
+      <input type="text" id="searchInput" placeholder="Search 251 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
     </div>
 
     <!-- Spacious 6-Unit Lot Grid (Comfortable Padding p-4 md:p-6 & Gap-6) -->
@@ -1770,8 +1767,8 @@ ${renderedCardsHtml}
       if (lotTitle) {
         if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (86 UNITS)';
         else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (51 UNITS)';
-        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (63 UNITS)';
-        else lotTitle.innerText = 'ALL LOTS // 200 VERIFIED UNITS';
+        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (114 UNITS)';
+        else lotTitle.innerText = 'ALL LOTS // 251 VERIFIED UNITS';
       }
 
       filterCards();

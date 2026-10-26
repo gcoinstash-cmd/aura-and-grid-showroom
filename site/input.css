@@ -37,11 +37,13 @@
     box-shadow: 0 0 26px 2px rgba(255, 159, 10, 0.72), 0 0 10px -1px rgba(255, 159, 10, 0.9);
     transform: translateY(-1px);
   }
+  .demo-btn,
   .btn-demo-launch {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
+  .demo-btn:hover,
   .btn-demo-launch:hover {
     transform: translateY(-1px);
   }

@@ -22,21 +22,19 @@ Aura & Grid is the public dealership: test drives, non-exclusive licenses, lease
 A micro-APA transfers defined rights/code to one specific asset. It NEVER transfers GhostFactoryOS, Aura & Grid, shared IP, or the full portfolio.
 
 ## PORTFOLIO STATUS & RETENTION FLOOR
-- Total Master Vault Catalog: 150 custom full-stack digital assets & production engines (86 Track 1 Lean + 50 Track 2 Flagships + 14 Track 3 Working Service Engines fully onboarded and standardized via the Universal Track 2 Telemetry Harness).
+- Total Master Vault Catalog: 251 custom full-stack digital assets & production engines (86 Track 1 Lean + 51 Track 2 Flagships + 114 Track 3 Working Service Engines & Reference Cores fully onboarded and standardized via the Universal Track 2 Telemetry Harness).
 - Target: 500 cataloged assets.
-- Minimum Retained Floor: Always retain at least 80% of the collection (currently 120 assets retained of 150; max 30 micro-APA transferable capacity).
+- Minimum Retained Floor: Always retain at least 80% of the collection (currently 201 assets retained of 251; max 50 micro-APA transferable capacity).
 - Never treat micro-APA maximum capacity as a sales target.
 - Permanently protect: GhostFactoryOS/Aura & Grid brands, shared design tokens, component libraries, factory prompts, and core architectures.
+- Technical Standard: Deterministic Clean-Room Architecture Standard (zero copyleft, deterministic state machines, isolated micro-runtimes, idempotent relational schemas).
 
 ## ASC 350-40 REPLACEMENT APPRAISAL & DEALERSHIP VALUATION
-- Senior Architect Hard Floor: $1.50M (13,700 engineering hrs @ $109.49/hr).
-- Agency Build-Cost Appraisal: $1.95M.
-- Enterprise Showroom Asking Price: $3.11M.
-- Updated Dealership Labels:
-  * "As-Is" Bare Minimum (Baseline Trim floor: $1.15M reserve).
-  * The Hard Walk-Away Floor (internal reserve buyout: $1.15M – $1.50M).
-  * The Panic Floor Price (distressed liquidation baseline: $95,000 – $145,000).
-  * Valuation Legend: ASC 350/985 enterprise replacement cost methodologies applied with 41% bulk asset discount.
+- Total Retail Price: $20,037,000 (Combined Agency Replacement Benchmark across all 251 upgraded chassis).
+- Certified Fair Market Value (FMV): $8,307,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
+- Wholesale Price / Floor: $5,116,500 (Institutional Bulk Tender / Bulk Floor).
+- Walk-Away Floor: $2,500,000 (Sovereign Reserve Liquidation Floor).
+- Valuation Legend: Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer.
 
 ## MULTI-TRACK PRICING PROTOCOL
 Never mix tracks. Default to Track 1.
@@ -50,17 +48,17 @@ Never mix tracks. Default to Track 1.
    - Output: Fully clickable client-side prototypes, simulated WebSocket/state engines, responsive telemetry HUDs.
    - Requires full Flagship Gate qualification pass & NIST SP 800-218 Compliance Gate (COMPLIANCE.md, .env.example, README security block, Product Truth badge).
 3. TRACK 3 — F1 SKUNKWORKS WORKING SERVICE ENGINE:
-   - Tier Classification: Working Service Engines / Production Reference Architectures (Curated 35 Units total).
+   - Tier Classification: Working Service Engines / Production Reference Architectures (Curated 114 Units total).
    - Core Moat: R&D bypass value. Zero mock client state. Full-stack containerized deployments with live ingestion and persistent data schemas.
    - Monthly Enterprise Seat License: $1,500/mo (Valued at 5.0x ARR SaaS multiple).
-   - Baseline APA Buyout Floor: $35,000 – $65,000 per engine ($1.225M – $2.275M pre-revenue fleet floor).
-   - Monopoly / Vault Buyout Ceiling: $75,000 – $150,000+ per engine ($2.625M – $5.250M fleet ceiling).
-   - Allocation: Vertical A (12 Units: Telemetry/Aerospace/C2), Vertical B (12 Units: FinTech/Quant Risk), Vertical C (11 Units: Edge AI/Multi-Agent Consensus).
+   - Baseline APA Buyout Floor: $35,000 – $65,000 per engine ($3.990M Floor for Track 3 cores).
+   - Monopoly / Vault Buyout Ceiling: $75,000 – $150,000+ per engine ($17.100M Retail Ceiling for Track 3 cores).
+   - Allocation: Autonomous Telemetry & C2, FinTech & Quant Risk, Edge AI & Multi-Agent Consensus.
    - Track 3 Monopoly Gates:
      * Gate 1: Custom math/state machines (Kalman filtering, order books, multi-agent consensus).
      * Gate 2: Clean-room IP (strictly MIT/Apache 2.0/BSD, zero copyleft/AGPL).
      * Gate 3: Hardened production structure (database migrations, RBAC, strict .env config).
-     * Gate 4: Core verticals: Autonomous Telemetry (12), FinTech/Quant (12), Edge AI (11).
+     * Gate 4: Curated core verticals: Autonomous Telemetry, FinTech/Quant, Edge AI.
      * Gate 5: Turnkey deployment (pytest >80%, OpenAPI 3.1, container ready).
    - Architecture Split (70/30 Protocol):
      * 70% in Google AI Studio: Core math proofs/models, SQL schemas, OpenAPI 3.1 contracts, and APA legal manifests compiled into ENGINE_SPEC.md.

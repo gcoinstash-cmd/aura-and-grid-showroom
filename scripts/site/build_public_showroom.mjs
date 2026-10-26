@@ -261,6 +261,8 @@ fleetData.forEach(p => {
     sector,
     vertical: p.vertical,
     preview_url: cleanPreviewUrl,
+    demo_url: cleanPreviewUrl,
+    url: cleanPreviewUrl,
     demoUrl,
     liveUrl: demoUrl,
     isExternalLive,
@@ -700,7 +702,10 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider group-hover/tender:text-amber-300">TITLE TENDER ↗</span>
             </div>
 
-            <!-- Dual-Button Operational Stack -->
+            <!-- Action Button Stack: Launch Demo, Mount Dyno & Acquire APA -->
+            <a href="${p.demo_url || p.preview_url || p.url || '#'}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="btn-demo-launch w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-emerald-400/50 text-emerald-300 bg-emerald-500/15 hover:bg-emerald-400 hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+              [LAUNCH DEMO ↗]
+            </a>
             ${topActionBtn}
             ${bottomActionBtn}
           </div>
@@ -736,6 +741,9 @@ const fleetDataPayload = publicProducts.map(p => {
     title_status: 'Zero-Copyleft (MIT)',
     status: 'Zero-Copyleft (MIT)',
     archetype_name: p.archetype_name,
+    demo_url: p.preview_url,
+    preview_url: p.preview_url,
+    url: p.preview_url,
     isTrack2,
     isTrack3
   };
@@ -945,14 +953,14 @@ const showroomHtml = `<!DOCTYPE html>
         <div class="text-xs text-slate-400 mt-0.5">Combined Standalone Agency Replacement Benchmark across all 251 upgraded chassis.</div>
       </div>
 
-      <!-- Card 2: CERTIFIED FAIR MARKET VALUE -->
+      <!-- Card 2: FLEET INVENTORY -->
       <div class="p-4 rounded-2xl bg-[#0A0D14] border border-emerald-500/40 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(16,185,129,0.2)]">
         <div class="text-emerald-400 text-[10px] uppercase font-bold tracking-wider flex items-center justify-between">
-          <span>CERTIFIED FAIR MARKET VALUE</span>
+          <span>FLEET INVENTORY</span>
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
         </div>
-        <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">$8,307,000</div>
-        <div class="text-xs text-slate-400 mt-0.5">Direct Mid-Market Appraisal • 86 T1 • 51 T2 • 114 T3</div>
+        <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">251 CHASSIS</div>
+        <div class="text-xs text-slate-400 mt-0.5">86 Track 1 • 51 Track 2 • 114 Track 3</div>
       </div>
 
       <!-- Card 3: ENGINEERING REPLACEMENT SCOPE -->
@@ -1065,6 +1073,9 @@ const showroomHtml = `<!DOCTYPE html>
 
         <!-- Full-Width Vertical CTA Stack -->
         <div class="flex flex-col gap-2.5 w-full mt-6 pt-4 border-t border-white/10">
+          <a id="dynoLaunchDemoBtn" href="https://stride-manhattan-beach.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-demo-launch w-full py-3 px-4 bg-emerald-500/20 hover:bg-emerald-400 hover:text-black border border-emerald-400/60 text-emerald-300 font-mono font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(16,185,129,0.35)] flex items-center justify-center gap-2">
+            <span>[LAUNCH WORKING DEMO ↗]</span>
+          </a>
           <button id="leftCtaAcquireBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'acquire')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
             ACQUIRE TITLE (APA) →
           </button>
@@ -1889,6 +1900,11 @@ ${renderedCardsHtml}
 
       const gateEl = document.getElementById('dyno-unit-gate');
       if (gateEl) gateEl.textContent = unit.gate || unit.deployment || '1-Click Cloud Run';
+
+      const dynoDemoBtn = document.getElementById('dynoLaunchDemoBtn');
+      if (dynoDemoBtn) {
+        dynoDemoBtn.href = unit.demo_url || unit.preview_url || unit.url || '#';
+      }
 
       // Stage 1 telemetry panel updates: Track, Pytest, IP Title Status, Archetype
       const trackEl = document.getElementById('dynoPowertrainReadout');

@@ -81,8 +81,9 @@ function extractCardTelemetry(unitId) {
   const endIdx = siteHtml.indexOf(nextMarker, startIdx);
   const cardHtml = endIdx !== -1 ? siteHtml.slice(startIdx, endIdx) : siteHtml.slice(startIdx, startIdx + 6500);
 
-  // Extract [ ↗ TEST DRIVE LIVE DEMO ] href
+  // Extract demo href from [LAUNCH DEMO ↗], [ ↗ TEST DRIVE LIVE DEMO ], or data-preview
   const demoHrefMatch =
+    cardHtml.match(/<a\s+[^>]*href="([^"]+)"[^>]*>\s*\[\s*LAUNCH DEMO ↗\s*\]\s*<\/a>/i) ||
     cardHtml.match(/<a\s+href="([^"]+)"[^>]*>\s*\[\s*↗\s*TEST DRIVE LIVE DEMO\s*\]\s*<\/a>/i) ||
     cardHtml.match(/data-preview="([^"]+)"/i);
   const demoUrl = demoHrefMatch ? demoHrefMatch[1].trim() : '';

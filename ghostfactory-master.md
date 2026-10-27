@@ -64,20 +64,37 @@ Never mix tracks. Default to Track 1.
      * 70% in Google AI Studio: Core math proofs/models, SQL schemas, OpenAPI 3.1 contracts, and APA legal manifests compiled into ENGINE_SPEC.md.
      * 30% in Google Antigravity: Scaffolding app/ structure, testing ensuring >80% pytest coverage, repo packaging, and Cloud Run deployments under Dealership Principal terminal approval (`gcloud run deploy`).
 
-## 20% PORTFOLIO APA CARVE-OUT ARCHITECTURE
+## PROTOCOL: ROLLING 50-UNIT PORTFOLIO APA CARVE-OUT ARCHITECTURE
 
-### The 80/20 Retention Rule & Sovereign Carve-Out Protocol
-GhostFactoryOS enforces an immutable 80% Retention Floor across the master digital asset collection. Out of 251 active units, exactly 201 units are permanently vaulted and retained. The remaining 50 units (19.92% ~ 20%) represent the maximum allowable ownership-transfer capacity under selective Asset Purchase Agreements (APAs).
+### Core Operating Rules
+1. **Zero Company Equity Sales**: 100% corporate equity of GhostFactoryOS, Aura & Grid, and ZoMae Media LLC stays permanently with the Dealership Principal. No cap table dilution, no SAFEs, no venture equity.
+2. **Transaction Unit**: Strict 50-chassis standalone Asset Purchase Agreement (APA) carve-outs with outright IP title transfer, code repositories, and database schemas under 100% clean-room zero-copyleft guarantees (MIT/Apache-2.0). Shared factory tooling, design tokens, and future catalog rights remain 100% retained.
+3. **Dynamic Cluster Generation**: Every 50 units manufactured permanently stamps a new sealed cluster lot (`CLUSTER-001`, `CLUSTER-002`, `CLUSTER-003`, etc.). Any surplus units remain in the active unsealed lot until reaching the 50-unit seal threshold.
+4. **Escrow Standard**: Closed via Escrow.com or institutional M&A broker desks (such as Acquire.com / FE International) with an immutable minimum $1,000,000 proof-of-funds (POF) qualification gate prior to data room access.
+5. **Pricing Matrix**: Asking anchor: **$1.25M–$1.5M** per 50-unit cluster; reserve walk-away floor: **$750,000**.
 
-To maximize transaction certainty, eliminate single-asset negotiation fatigue, and provide institutional acquirers with turn-key domain monopolies, the 251-unit fleet is partitioned into **5 Discrete Vertical Commercial Clusters**. Each cluster represents a turnkey 20% portfolio carve-out (~50 units) designed for immediate commercial acquisition:
+### ROSTER OF INDUSTRIAL SCALING MILESTONES (50-UNIT APA CLUSTERS)
 
-| Cluster ID | Cluster Name | Units | APA Anchor Buyout | Cumulative Standalone Retail Replacement | Primary Acquirer Profile |
-| :--- | :--- | :---: | :---: | :---: | :--- |
-| **Cluster 01** | **Fintech & Telemetry Engines** | 50 | **$1,500,000** | $5,057,500 | Institutional hedge funds, quant trading desks, HFT market makers, fintech platforms |
-| **Cluster 02** | **Enterprise SCADA & Industrial Ops** | 50 | **$1,250,000** | $1,982,500 | Defense contractors, aerospace avionics firms, fusion/geothermal energy operators |
-| **Cluster 03** | **Autonomous AI Orchestration & Ingress** | 50 | **$1,400,000** | $7,000,000 | Enterprise AI platforms, robotics labs, multi-agent framework operators, edge compute firms |
-| **Cluster 04** | **Dense Media & Automation Workflows** | 51 | **$1,100,000** | $660,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
-| **Cluster 05** | **HealthTech & Operational Consoles** | 50 | **$1,200,000** | $3,685,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
+| Milestone Stage | Fleet Units | Sealed 50-Unit Clusters | Cumulative Retail MSRP | Carve-Out Value (~20% APA Capacity) | 80% Retained Vault Floor |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Baseline (Current)** | **251 Units** | **5 Clusters** | **$20,037,000** | **~$6.25M Carve-Out Value** | 201 Units Vaulted |
+| **Milestone 1** | **500 Units** | **10 Clusters** | **$40,000,000 ($40M)** | **$12.5M Carve-Out Value** | 400 Units Vaulted |
+| **Milestone 2** | **1,000 Units** | **20 Clusters** | **$80,000,000 ($80M)** | **$25.0M Carve-Out Value** | 800 Units Vaulted |
+| **Milestone 3** | **5,000 Units** | **100 Clusters** | **$400,000,000 ($400M)** | **$125.0M Carve-Out Value** | 4,000 Units Vaulted |
+| **Milestone 4** | **10,000 Units** | **200 Clusters** | **$800,000,000 ($800M)** | **$250.0M Carve-Out Value** | 8,000 Units Vaulted |
+| **Milestone 5** | **25,000 Units** | **500 Clusters** | **$2,000,000,000 ($2B)** | **$625.0M Carve-Out Value** | 20,000 Units Vaulted |
+
+### Current 251-Unit Active Cluster Partition
+The 251-unit fleet is partitioned into 5 Discrete Sealed Vertical Clusters + 1 Active Fabrication Queue:
+
+| Cluster ID | Cluster Name | Units | Status | Cumulative Standalone Retail | APA Asking Anchor | Reserve Walk-Away Floor | Primary Acquirer Profile |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **CLUSTER-001** | **Fintech & Telemetry Engines** | 50 | SEALED | $5,057,500 | **$1,500,000** | $750,000 | Institutional hedge funds, quant trading desks, HFT market makers, fintech platforms |
+| **CLUSTER-002** | **Enterprise SCADA & Industrial Ops** | 50 | SEALED | $1,982,500 | **$1,250,000** | $750,000 | Defense contractors, aerospace avionics firms, fusion/geothermal energy operators |
+| **CLUSTER-003** | **Autonomous AI Orchestration & Ingress** | 50 | SEALED | $7,000,000 | **$1,400,000** | $750,000 | Enterprise AI platforms, robotics labs, multi-agent framework operators, edge compute firms |
+| **CLUSTER-004** | **Dense Media & Automation Workflows** | 50 | SEALED | $647,500 | **$1,250,000** | $750,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
+| **CLUSTER-005** | **HealthTech & Operational Consoles** | 50 | SEALED | $3,572,500 | **$1,250,000** | $750,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
+| **CLUSTER-006** | **Active Ingestion Queue // Emerging Tech** | 1 | UNSEALED | $125,000 | **$1,250,000** | $750,000 | Active assembly lot (1/50 units assembled, awaiting 49 units to seal threshold) |
 
 ### Cluster Technical Due Diligence & Clean-Room Standards
 - **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.

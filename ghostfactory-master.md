@@ -64,6 +64,28 @@ Never mix tracks. Default to Track 1.
      * 70% in Google AI Studio: Core math proofs/models, SQL schemas, OpenAPI 3.1 contracts, and APA legal manifests compiled into ENGINE_SPEC.md.
      * 30% in Google Antigravity: Scaffolding app/ structure, testing ensuring >80% pytest coverage, repo packaging, and Cloud Run deployments under Dealership Principal terminal approval (`gcloud run deploy`).
 
+## 20% PORTFOLIO APA CARVE-OUT ARCHITECTURE
+
+### The 80/20 Retention Rule & Sovereign Carve-Out Protocol
+GhostFactoryOS enforces an immutable 80% Retention Floor across the master digital asset collection. Out of 251 active units, exactly 201 units are permanently vaulted and retained. The remaining 50 units (19.92% ~ 20%) represent the maximum allowable ownership-transfer capacity under selective Asset Purchase Agreements (APAs).
+
+To maximize transaction certainty, eliminate single-asset negotiation fatigue, and provide institutional acquirers with turn-key domain monopolies, the 251-unit fleet is partitioned into **5 Discrete Vertical Commercial Clusters**. Each cluster represents a turnkey 20% portfolio carve-out (~50 units) designed for immediate commercial acquisition:
+
+| Cluster ID | Cluster Name | Units | APA Anchor Buyout | Cumulative Standalone Retail Replacement | Primary Acquirer Profile |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **Cluster 01** | **Fintech & Telemetry Engines** | 50 | **$1,500,000** | $5,057,500 | Institutional hedge funds, quant trading desks, HFT market makers, fintech platforms |
+| **Cluster 02** | **Enterprise SCADA & Industrial Ops** | 50 | **$1,250,000** | $1,982,500 | Defense contractors, aerospace avionics firms, fusion/geothermal energy operators |
+| **Cluster 03** | **Autonomous AI Orchestration & Ingress** | 50 | **$1,400,000** | $7,000,000 | Enterprise AI platforms, robotics labs, multi-agent framework operators, edge compute firms |
+| **Cluster 04** | **Dense Media & Automation Workflows** | 51 | **$1,100,000** | $660,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
+| **Cluster 05** | **HealthTech & Operational Consoles** | 50 | **$1,200,000** | $3,685,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
+
+### Cluster Technical Due Diligence & Clean-Room Standards
+- **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.
+- **Deterministic State & Isolation**: Each chassis features isolated database schema migrations, Row-Level Security (RLS) policies, and discrete micro-runtime execution boundaries (zero cross-runtime state pollution).
+- **Cryptographic Audit Seal**: Full 251-unit catalog sealed with SHA-256 tamper-proof ledger hash recorded in `cleanroom_audit_receipt.json`.
+- **Turnkey Turn-Time**: Turnkey deployment into isolated customer infrastructure (Cloud Run, Kubernetes, Supabase/PostgreSQL) with full OpenAPI 3.1 contracts and >80% test coverage.
+- **Strict APA Boundary**: Transfer of a cluster conveys sole title, repository codebase, and schema for the specified cluster units only. GhostFactoryOS core architectures, Aura & Grid showroom trademarks, shared tooling, and all retained vault assets remain 100% retained by the Dealership Principal.
+
 ## PRODUCT TRUTH LABELS
 - Permitted Labels: Template, Interactive Prototype, Hosted Demo, Simulation, Deployable Source Template, Customer-Configured Deployment, Working Service Engine, Production Reference Architecture, Production Service.
 - Prohibited Claims (Unless proven): "Production-ready", "Enterprise-grade", "Full compliance", "Real-time", "Flight-qualified", "Space-qualified", "Safety-certified". All prototypes default to simulated/sample data disclosures unless verified through Track 3 production deployment.

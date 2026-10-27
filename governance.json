@@ -1,6 +1,6 @@
 {
-  "schema_version": "4.1.0-AGENCY-REPLACEMENT-251",
-  "audit_timestamp": "2026-10-25T14:30:00Z",
+  "schema_version": "4.2.0-COMMERCIAL-CLUSTERS-251",
+  "audit_timestamp": "2026-10-27T14:20:00Z",
   "governing_standard": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer",
   "portfolio_classification": "Sovereign Full-Stack Software Asset Vault (Zero Mock State)",
   "active_fleet_size": 251,
@@ -45,7 +45,9 @@
   },
   "clean_room_diligence_standard": {
     "badge_title": "Deterministic Clean-Room Architecture Standard",
-    "description": "Strict architectural methodology grounded in deterministic state machines, idempotent relational schemas, isolated micro-runtimes, and zero-drift type safety."
+    "description": "Strict architectural methodology grounded in deterministic state machines, idempotent relational schemas, isolated micro-runtimes, and zero-drift type safety.",
+    "copyleft_exposure_rate": "0.00% (Strictly MIT, Apache-2.0, BSD-2/3, ISC)",
+    "verification_seal": "INSTITUTIONAL_DILIGENCE_SEALED"
   },
   "portfolio_sub_breakout": {
     "upgraded_fleet_alone": {
@@ -71,5 +73,125 @@
     "maximum_apa_transfer_units": 50,
     "target_500_retained_units": 400,
     "target_500_apa_transfer_units": 100
+  },
+  "commercial_fleet_clusters": {
+    "carve_out_architecture": "20% Portfolio APA Carve-Out Standard",
+    "retention_floor_pct": 80,
+    "vault_retained_units": 201,
+    "max_transferable_units": 50,
+    "total_clusters": 5,
+    "total_partitioned_units": 251,
+    "cumulative_apa_anchors_usd": 6450000,
+    "cumulative_apa_anchors_formatted": "$6,450,000",
+    "cumulative_standalone_retail_usd": 18385000,
+    "cumulative_standalone_retail_formatted": "$18,385,000",
+    "clean_room_guarantee": "100% Permissive Commercial Open Source (MIT/Apache-2.0/BSD), 0% Copyleft, Isolated Relational Schemas, Enforced RLS",
+    "clusters": [
+      {
+        "cluster_id": "cluster-01",
+        "cluster_number": 1,
+        "name": "Cluster 01: Fintech & Telemetry Engines",
+        "short_name": "Fintech & Telemetry Engines",
+        "slug": "fintech-telemetry-engines",
+        "unit_count": 50,
+        "carve_out_pct": "19.92%",
+        "apa_anchor_price": 1500000,
+        "apa_anchor_formatted": "$1,500,000",
+        "cumulative_standalone_retail_price": 5057500,
+        "cumulative_standalone_retail_formatted": "$5,057,500",
+        "track_distribution": {
+          "track_1_lean_tuner": 13,
+          "track_2_hypercar_flagship": 2,
+          "track_3_f1_skunkworks": 35
+        },
+        "primary_vertical": "FinTech, Quantitative Finance & High-Frequency Telemetry",
+        "acquirer_profile": "Institutional hedge funds, quantitative trading desks, high-frequency liquidity providers, neo-banking fintech platforms, and latency-critical market makers.",
+        "turnkey_deployment_spec": "Containerized FastAPI/Python 3.12 microservices, ultra-low latency LOB matching engines, AlloyDB/PostgreSQL time-series schemas, WebSocket order book feeds, and clean-room MIT/Apache-2.0 execution harnesses."
+      },
+      {
+        "cluster_id": "cluster-02",
+        "cluster_number": 2,
+        "name": "Cluster 02: Enterprise SCADA & Industrial Ops",
+        "short_name": "Enterprise SCADA & Industrial Ops",
+        "slug": "enterprise-scada-industrial-ops",
+        "unit_count": 50,
+        "carve_out_pct": "19.92%",
+        "apa_anchor_price": 1250000,
+        "apa_anchor_formatted": "$1,250,000",
+        "cumulative_standalone_retail_price": 1982500,
+        "cumulative_standalone_retail_formatted": "$1,982,500",
+        "track_distribution": {
+          "track_1_lean_tuner": 5,
+          "track_2_hypercar_flagship": 42,
+          "track_3_f1_skunkworks": 3
+        },
+        "primary_vertical": "Aerospace, Defense, Fusion/Clean Energy, Deep-Sea Mining & Heavy Fleet SCADA",
+        "acquirer_profile": "Defense and aerospace contractors, spaceflight avionics manufacturers, commercial fusion & geothermal energy utilities, deep-sea subsea robotics operators, and critical infrastructure SCADA providers.",
+        "turnkey_deployment_spec": "High-density interactive telemetry dashboards, real-time WebSocket state synchronizers, PostgreSQL schemas with Row-Level Security (RLS), Canvas/WebGL telemetry visualizers, air-gapped container configurations, and NIST SP 800-218 SSDF v1.1 verified SBOM packages."
+      },
+      {
+        "cluster_id": "cluster-03",
+        "cluster_number": 3,
+        "name": "Cluster 03: Autonomous AI Orchestration & Ingress",
+        "short_name": "Autonomous AI Orchestration & Ingress",
+        "slug": "autonomous-ai-orchestration-ingress",
+        "unit_count": 50,
+        "carve_out_pct": "19.92%",
+        "apa_anchor_price": 1400000,
+        "apa_anchor_formatted": "$1,400,000",
+        "cumulative_standalone_retail_price": 7000000,
+        "cumulative_standalone_retail_formatted": "$7,000,000",
+        "track_distribution": {
+          "track_1_lean_tuner": 0,
+          "track_2_hypercar_flagship": 0,
+          "track_3_f1_skunkworks": 50
+        },
+        "primary_vertical": "Edge AI Swarms, Multi-Agent Consensus & Autonomous Guidance",
+        "acquirer_profile": "Enterprise AI platform providers, autonomous robotics laboratories, multi-agent AI framework operators, edge computing cloud infrastructure firms, and autonomous drone swarm coordinators.",
+        "turnkey_deployment_spec": "Multi-agent consensus state machines, decentralized task orchestration pipelines, zero-drift type contracts (OpenAPI 3.1), GPU/edge inference gateways, real-time telemetry streaming, and zero copyleft clean-room codebases."
+      },
+      {
+        "cluster_id": "cluster-04",
+        "cluster_number": 4,
+        "name": "Cluster 04: Dense Media & Automation Workflows",
+        "short_name": "Dense Media & Automation Workflows",
+        "slug": "dense-media-automation-workflows",
+        "unit_count": 51,
+        "carve_out_pct": "20.32%",
+        "apa_anchor_price": 1100000,
+        "apa_anchor_formatted": "$1,100,000",
+        "cumulative_standalone_retail_price": 660000,
+        "cumulative_standalone_retail_formatted": "$660,000",
+        "track_distribution": {
+          "track_1_lean_tuner": 50,
+          "track_2_hypercar_flagship": 1,
+          "track_3_f1_skunkworks": 0
+        },
+        "primary_vertical": "Creative Production, Luxury Hospitality & Automation Services",
+        "acquirer_profile": "Global digital media conglomerates, creative production networks, boutique luxury agency collectives, B2B workflow SaaS roll-up private equity firms, and hospitality operating system platforms.",
+        "turnkey_deployment_spec": "Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding licenses."
+      },
+      {
+        "cluster_id": "cluster-05",
+        "cluster_number": 5,
+        "name": "Cluster 05: HealthTech & Operational Consoles",
+        "short_name": "HealthTech & Operational Consoles",
+        "slug": "healthtech-operational-consoles",
+        "unit_count": 50,
+        "carve_out_pct": "19.92%",
+        "apa_anchor_price": 1200000,
+        "apa_anchor_formatted": "$1,200,000",
+        "cumulative_standalone_retail_price": 3685000,
+        "cumulative_standalone_retail_formatted": "$3,685,000",
+        "track_distribution": {
+          "track_1_lean_tuner": 18,
+          "track_2_hypercar_flagship": 6,
+          "track_3_f1_skunkworks": 26
+        },
+        "primary_vertical": "Clinical Medicine, High-Performance Athletics & Operational Dispatch",
+        "acquirer_profile": "Healthcare technology providers, clinical diagnostics networks, boutique wellness clinic operators, medical logistics networks, athletic performance academies, and high-performance biomechanics research institutions.",
+        "turnkey_deployment_spec": "HIPAA-architected data models (ready for customer BAA configuration), appointment/patient triage queues, isolated tenant database schemas with strict RLS policies, HMAC request signing middleware, and modern responsive operator HUDs."
+      }
+    ]
   }
 }

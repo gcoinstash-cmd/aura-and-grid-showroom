@@ -1,7 +1,7 @@
 {
   "manifest_title": "GhostFactoryOS Rolling 50-Unit Commercial Fleet Clusters",
   "schema_version": "5.0.0-ROLLING-50-CARVEOUT-PROTOCOL",
-  "timestamp": "2026-10-27T23:56:45.713Z",
+  "timestamp": "2026-10-28T01:17:03.826Z",
   "governing_protocol": {
     "protocol_name": "Rolling 50-Unit Portfolio APA Carve-Out Protocol",
     "protocol_version": "1.0.0",

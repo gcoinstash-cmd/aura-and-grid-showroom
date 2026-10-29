@@ -1,5 +1,5 @@
 export const PYTHON_FXLMS_CODE = `"""
-GF-T3-178: Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core
+GF-T3-178: Apex Executive AWD Flagship Core
 Production-Grade FxLMS Acoustic Inversion Engine & Electronic Boost Regulator
 Target: Python 3.12+ (CPython / Cython compatible, 100% Permissive MIT / BSD-3)
 """
@@ -67,7 +67,7 @@ class FxLMSCoreEngine:
     def _calibrate_Overland_cabin_secondary_path(self) -> List[float]:
         """
         Calibrated acoustic transfer function coefficients S^(z)
-        Matching Heavy Overland Dynamics Platform LS 500 executive rear lounge Acoustic Noise-Inversion Transducer driver geometry.
+        Matching Apex Executive LS 500 executive rear lounge Acoustic Noise-Inversion Transducer driver geometry.
         """
         M = self.cfg.secondary_path_length
         coeffs = [0.0] * M
@@ -125,7 +125,7 @@ class FxLMSCoreEngine:
         High-Frequency Electronic Wastegate Closed-Loop PID + Feedforward Law
         Returns: (target_boost_psi, wastegate_pwm_duty, is_quarantined)
         """
-        # Target boost schedule based on Heavy Overland Dynamics Platform V35A-FTS calibration table
+        # Target boost schedule based on Apex Executive V35A-FTS calibration table
         base_demand = (throttle_pct / 100.0) * 19.50 # Up to 19.5 PSI under WOT
         rpm_factor = 1.0 + 0.15 * math.sin((rpm - 1500) / 4500.0 * math.pi)
         target_psi = min(21.50, max(0.0, base_demand * rpm_factor))

@@ -2,7 +2,7 @@
 ## GF-T3-165: DUAL_VECTOR_TORQUE HyperGrid Quant Routing Engine
 **Classification:** Enterprise Institutional Vault Deliverable (Track 3 — 70% Workload Deliverable)  
 **System Architecture:** Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DUAL_VECTOR_TORQUE Torque-Vectored Execution  
-**Hardware/Analogy Spec:** Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
+**Hardware/Analogy Spec:** Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
 **Document Revision:** 1.0.0-PROD  
 **Timestamp:** 2026-10-09  
 
@@ -121,7 +121,7 @@ Step 3: Perform the $|V|$-th relaxation pass. If any edge can still be relaxed:
 ---
 
 ### 2.4 DUAL_VECTOR_TORQUE Torque-Vectoring Quant Routing Analogy
-Drawing from the Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive powertrain:
+Drawing from the Apex Executive Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive powertrain:
 - **Front Power Unit (2.4L Turbo + MG2 64kW Front Motor)**: High-throughput ingestion filter. Probes 1,000+ pools per second, pre-filters zero-liquidity pools, and evaluates edge weight matrices.
 - **Rear High-Output eAxle (80kW Transaxle Motor)**: Flash-Swap execution core. Generates instant zero-collateral atomic loans (Aave / Balancer / Uniswap flash swaps), executing multi-leg swaps with zero upfront principal.
 - **DUAL_VECTOR_TORQUE Vectoring Controller**: Dynamic capital split:

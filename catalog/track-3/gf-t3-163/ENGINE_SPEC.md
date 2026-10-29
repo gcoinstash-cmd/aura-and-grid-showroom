@@ -1,6 +1,6 @@
 # GHOST FACTORYOS TRACK 3 F1 SKUNKWORKS SPECIFICATION
 ## ENGINE_SPEC: GF-T3-163 — KINETIC TERRAIN SWARM
-**Vertical**: Edge AI Swarms & Rugged Mesh Autonomy (Heavy Overland Dynamics Platform Spec)  
+**Vertical**: Edge AI Swarms & Rugged Mesh Autonomy (Apex Executive Spec)  
 **Standard Classification**: Institutional Hard IP / Distributed Consensus Engine  
 **Security & IP Clean-Room Level**: Level 5 (Zero Copyleft / Pure Clean-Room Provenance)
 
@@ -12,7 +12,7 @@
 | :--- | :--- |
 | **Model Identifier** | `GF-T3-163` |
 | **Codename** | Kinetic Terrain Swarm |
-| **Target Vehicle Platform** | Heavy Overland Dynamics Platform (Heavy Boxed Steel Frame Architecture Platform / V35A-FTS / Dynamic Kinetic Suspension Telemetry) |
+| **Target Vehicle Platform** | Apex Executive (Heavy Boxed Steel Frame Architecture Platform / V35A-FTS / Dynamic Kinetic Suspension Telemetry) |
 | **Consensus Architecture** | Distributed Raft/Gossip Hybrid with Vector Clock Lattice |
 | **Mesh Peer Scaling** | 12 to 32 Distributed Edge Nodes per Convoy |
 | **Sync Latency Target** | $< 15\,\text{ms}$ local mesh state synchronization |
@@ -107,7 +107,7 @@ $$\text{Gate Decision: } \begin{cases} \text{Accept \& Fuse} & \text{if } d_M^2 
 Any node exceeding 20 kHz (0.48ms)$ consecutive quarantined frames is immediately isolated from the Raft voting quorum and banned from propagating gossip state.
 
 ### 3.4 Kinetic Suspension & Terrain Articulation Mechanics
-The Heavy Overland Dynamics Platform employs the Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry), which hydraulically links the front and rear stabilizer bars:
+The Apex Executive employs the Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry), which hydraulically links the front and rear stabilizer bars:
 $$K_{\text{roll}}(\omega) = K_{\text{mech}} \cdot (1 - \sigma_{\text{decouple}})$$
 Where $\sigma_{\text{decouple}} \in [0, 1]$ represents the hydraulic bypass solenoid actuation ratio.
 - On smooth paved transit: $\sigma_{\text{decouple}} = 0.0 \implies K_{\text{roll}} = K_{\max}$ (High roll stiffness, flat cornering).
@@ -191,7 +191,7 @@ openapi: 3.1.0
 info:
   title: Ghost FactoryOS Swarm Consensus API
   version: 1.63.0
-  description: Edge mesh coordination and consensus protocol for Heavy Overland Dynamics Platform convoys.
+  description: Edge mesh coordination and consensus protocol for Apex Executive convoys.
 paths:
   /api/v1/swarm/heartbeat:
     post:

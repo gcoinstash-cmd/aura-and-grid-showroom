@@ -42,13 +42,13 @@ export const AcquireApaTab: React.FC = () => {
   };
 
   const apaLegalText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE)
+ASSET IDENTIFIER: GF-T3-181 (Apex Executive IS 500 High-G Dynamic Telemetry CORE)
 PLATFORM: ACQUIRE.COM MASTER VAULT DIRECTORY
 
 This Asset Purchase Agreement ("Agreement") is entered into as of October 11, 2026, by and between Ghost FactoryOS Skunkworks ("Seller"), and ${buyerName || '[Purchaser Entity]'} ("Purchaser").
 
 RECITALS
-WHEREAS, Seller has independently architected and authored that certain proprietary software asset known as "GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core)" consisting of pure Python 3.12 throttle mapping algorithms, Torsen Type-B LSD thermodynamic monitoring models, partitioned PostgreSQL 16 cryptographic ledger schemas, OpenAPI 3.1 contracts, and production Cloud Run harnesses (collectively, the "Purchased Assets");
+WHEREAS, Seller has independently architected and authored that certain proprietary software asset known as "GF-T3-181 (Apex Executive IS 500 High-G Dynamic Telemetry Core)" consisting of pure Python 3.12 throttle mapping algorithms, Torsen Type-B LSD thermodynamic monitoring models, partitioned PostgreSQL 16 cryptographic ledger schemas, OpenAPI 3.1 contracts, and production Cloud Run harnesses (collectively, the "Purchased Assets");
 WHEREAS, Seller desires to sell, and Purchaser desires to acquire, all right, title, and interest in and to the Purchased Assets pursuant to the terms and conditions herein.
 
 NOW, THEREFORE, for good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the parties agree as follows:

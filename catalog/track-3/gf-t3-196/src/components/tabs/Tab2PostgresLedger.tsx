@@ -47,7 +47,7 @@ export const Tab2PostgresLedger: React.FC<Tab2PostgresLedgerProps> = ({
   };
 
   const handleCopySql = () => {
-    navigator.clipboard.writeText(`-- GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE PostgreSQL 16 Schema
+    navigator.clipboard.writeText(`-- GF-T3-196: Apex Executive RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE PostgreSQL 16 Schema
 CREATE TABLE steer_telemetry_partitioned (
     record_id UUID DEFAULT gen_random_uuid(),
     nonce BIGINT NOT NULL,
@@ -240,7 +240,7 @@ $$ LANGUAGE plpgsql;`);
         </div>
 
         <pre className="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto text-sm text-slate-300 font-mono leading-relaxed">
-{`-- GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE High-Frequency Telemetry Ledger
+{`-- GF-T3-196: Apex Executive RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE High-Frequency Telemetry Ledger
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE steer_telemetry_partitioned (

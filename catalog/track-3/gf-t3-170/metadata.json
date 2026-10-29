@@ -1,6 +1,8 @@
 {
-  "name": "GF-T3-170 Heavy Overland Dynamics Platform ES 350h Executive Quietude Core",
+  "name": "GF-T3-170 Apex Executive Quietude Core",
   "description": "Turnkey micro-APA asset transfer asset for Acquire.com: CAN-FD zero-trust HSM authentication engine, PostgreSQL partitioned security ledger, OpenAPI 3.1 gateway, Cloud Run harness, and APA covenant.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

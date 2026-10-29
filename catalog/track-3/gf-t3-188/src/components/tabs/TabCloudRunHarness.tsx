@@ -20,7 +20,7 @@ export const TabCloudRunHarness: React.FC = () => {
   const [copiedGcloud, setCopiedGcloud] = useState(false);
 
   const dockerfileCode = `# ==============================================================================
-# GF-T3-188: Heavy Overland Dynamics Platform DOCKER HARNESS
+# GF-T3-188: Apex Executive DOCKER HARNESS
 # Architecture: Multi-Stage Non-Root Python 3.12 Production Container
 # Security: Chainguard / Alpine Minimal, Zero Vulnerabilities, Read-Only FS
 # ==============================================================================
@@ -44,7 +44,7 @@ FROM python:3.12-slim-bookworm AS runtime
 LABEL maintainer="Ghost FactoryOS <vault@ghostfactory.ai>"
 LABEL asset.id="GF-T3-188"
 LABEL asset.tier="Track 3 F1 Skunkworks Service Engine"
-LABEL vehicle.platform="Heavy Overland Dynamics Platform Heavy Boxed Steel Frame Architecture"
+LABEL vehicle.platform="Apex Executive Heavy Boxed Steel Frame Architecture"
 
 # Security: Enforce non-root user UID 10001
 RUN groupadd -g 10001 appgroup && \\

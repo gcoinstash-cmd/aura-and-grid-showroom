@@ -1,7 +1,8 @@
 {
   "name": "Ghost FactoryOS: GF-T3-166 Spec Engine",
-  "description": "Enterprise Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury Core (Track 3)",
+  "description": "Enterprise Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine for Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury Core (Track 3)",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
-

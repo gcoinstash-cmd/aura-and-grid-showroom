@@ -67,7 +67,7 @@ export const TabAcousticTorsen: React.FC<TabAcousticTorsenProps> = ({
   const powerHp = Math.round((rpm * totalEngineTorqueNm) / 7127);
 
   const pythonCode = `"""
-Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8) Dual-Stage Acoustic & Torsen LSD Core
+Apex Executive IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8) Dual-Stage Acoustic & Torsen LSD Core
 Target: Python 3.12 Strict Typing | Ghost FactoryOS Track 3 Engine Spec
 License: MIT Permissive | Clean-Room Certified
 """

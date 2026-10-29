@@ -1,4 +1,4 @@
-# GF-T3-200: LEXUS ELECTRIFIED SUPERCAR CONCEPT CORE
+# GF-T3-200: Hypercar Flagship Trim CORE
 ## PRODUCTION ASSET SPECIFICATION & TURNKEY MICRO-APA VAULT DELIVERABLE
 **Asset Identifier:** GF-T3-200-PROD  
 **Target Platform:** Cloud Run / Bare-Metal Real-Time Inverter Gateway  
@@ -9,7 +9,7 @@
 ---
 
 ## 1. EXECUTIVE SUMMARY & SYSTEM OVERVIEW
-GF-T3-200 represents the core algorithmic and data ledger brain of the next-generation Lexus Electrified Supercar Concept. Engineered from the ground up to surpass the legacy V10 LFA through four independent permanent-magnet synchronous motors (PMSM) paired with an 800V solid-state battery architecture.
+GF-T3-200 represents the core algorithmic and data ledger brain of the next-generation Hypercar Flagship Trim. Engineered from the ground up to surpass the legacy V10 LFA through four independent permanent-magnet synchronous motors (PMSM) paired with an 800V solid-state battery architecture.
 
 ### Key Performance Capabilities
 - **Total System Output:** 1,200 Nm peak torque (+880 kW / 1,180 hp equivalent)

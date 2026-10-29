@@ -21,7 +21,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
   const apaAgreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
 ASSET IDENTIFIER: GF-T3-188
-TARGET CODEBASE: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL CORE
+TARGET CODEBASE: Apex Executive Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL CORE
 ACQUIRE.COM TRANSACTION VAULT #AQ-2026-188-MONOPOLY
 
 This ASSET PURCHASE AGREEMENT (the "Agreement") is entered into as of the Effective Date, by and between:
@@ -253,7 +253,7 @@ This Agreement shall be governed by, and construed in accordance with, the laws 
           </h3>
           <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3 text-slate-300 leading-relaxed">
             <p>
-              FOR VALUABLE CONSIDERATION received, the sufficiency of which is hereby acknowledged, Seller hereby sells, conveys, transfers, and assigns to Buyer all right, title, and interest in and to Asset GF-T3-188 (Heavy Overland Dynamics Platform Core).
+              FOR VALUABLE CONSIDERATION received, the sufficiency of which is hereby acknowledged, Seller hereby sells, conveys, transfers, and assigns to Buyer all right, title, and interest in and to Asset GF-T3-188 (Apex Executive Core).
             </p>
             <p>
               Seller warrants that it possesses full legal power and authority to convey the assets, and that title to all assets is conveyed free and clear of all liens, pledges, charges, and encumbrances.

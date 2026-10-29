@@ -47,7 +47,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-            Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
+            Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
           </h1>
 
           <div className="flex flex-wrap items-center gap-y-2 gap-x-5 text-base text-slate-200">

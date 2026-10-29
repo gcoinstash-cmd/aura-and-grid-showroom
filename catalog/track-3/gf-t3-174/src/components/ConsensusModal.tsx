@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Dual-Channel Consensus Verification Audit Modal
  */
 
@@ -42,7 +42,7 @@ export const ConsensusModal: React.FC<ConsensusModalProps> = ({
 
   const certificateText = `------------------------------------------------------------
 GF-T3-174 DUAL-CHANNEL ASIL-D CONSENSUS AUDIT CERTIFICATE
-Vehicle Platform: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Core v1.0.0-PROD
+Vehicle Platform: Apex Executive RZ 450e Steer-by-Wire Core v1.0.0-PROD
 Audit Timestamp: ${new Date().toISOString()}
 Monotonic Nonce: #${nonce}
 ------------------------------------------------------------

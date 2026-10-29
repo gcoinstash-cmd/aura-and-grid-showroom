@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Terminal, Copy, Check, Play, ShieldCheck, Box, Server } from 'lucide-react';
 
 const DOCKERFILE_CODE = `# ==============================================================================
-# GF-T3-182: Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE DOCKER HARNESS
+# GF-T3-182: Apex Executive RC F TRACK EDITION AERO CORE DOCKER HARNESS
 # Multi-Stage, Non-Root, Distroless-Compatible Debian Container
 # Clean-Room Certified | 100% Permissive MIT License
 # ==============================================================================

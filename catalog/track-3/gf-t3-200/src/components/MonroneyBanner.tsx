@@ -29,7 +29,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform Electrified Supercar Concept Core
+        Hypercar Flagship Trim Electrified Supercar Concept Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with quad-motor independent torque vectoring, solid-state battery thermal matrix, sub-2.0s launch dynamics, and PostgreSQL 16 HMAC ledger.

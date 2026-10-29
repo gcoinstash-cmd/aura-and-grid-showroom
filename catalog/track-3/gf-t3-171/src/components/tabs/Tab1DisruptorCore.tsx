@@ -102,7 +102,7 @@ export const Tab1DisruptorCore: React.FC<Tab1Props> = ({
   };
 
   const cythonCode = `# dist_disruptor.pyx
-# Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry V8 2UR-GSE Telemetry Ingest Engine
+# Apex Executive IS 500 High-G Dynamic Telemetry V8 2UR-GSE Telemetry Ingest Engine
 # Lock-Free LMAX Disruptor with Power-of-Two Bitwise Modulo & Cache Padding
 # License: MIT Permissive (Clean-Room Certified)
 
@@ -275,7 +275,7 @@ typedef struct CACHELINE_ALIGNED {
           Deterministic Sub-250ns Lock-Free Ring Buffer
         </h2>
         <p className="text-base text-slate-300 max-w-4xl">
-          Engineered to capture continuous high-frequency telemetry from the Heavy Overland Dynamics Platform IS 500 V8 engine. Uses power-of-two modulo masking (<code>seq &amp; 0x000FFFFF</code>), cache-line padded sequence barriers to eliminate false sharing, and zero-allocation execution loops.
+          Engineered to capture continuous high-frequency telemetry from the Apex Executive IS 500 V8 engine. Uses power-of-two modulo masking (<code>seq &amp; 0x000FFFFF</code>), cache-line padded sequence barriers to eliminate false sharing, and zero-allocation execution loops.
         </p>
       </div>
 

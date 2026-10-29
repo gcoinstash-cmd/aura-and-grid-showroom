@@ -22,13 +22,13 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-400">
               <span className="font-mono font-semibold text-amber-400">Asset ID: GF-T3-170</span>
               <span aria-hidden="true" className="text-neutral-600">·</span>
-              <span className="text-neutral-200">Model: Heavy Overland Dynamics Platform ES 350h Executive Core v1.0.0-PROD</span>
+              <span className="text-neutral-200">Model: Apex Executive ES 350h Executive Core v1.0.0-PROD</span>
               <span aria-hidden="true" className="text-neutral-600">·</span>
               <span className="text-neutral-400">ISO/SAE 21434 Zero-Trust HSM</span>
             </div>
 
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-100 text-wrap-balance">
-              Heavy Overland Dynamics Platform ES 350h Executive Quietude Core
+              Apex Executive Quietude Core
             </h1>
             <p className="text-sm md:text-base text-neutral-400 max-w-3xl">
               Turnkey micro-APA asset transfer asset for Acquire.com: CAN-FD zero-trust hardware security module, sub-1.5ms anti-replay filter, and PostgreSQL 16 immutable Merkle audit ledger.

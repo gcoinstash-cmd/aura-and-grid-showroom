@@ -30,7 +30,7 @@ export const CowlAeroTab: React.FC<CowlAeroTabProps> = ({
   } = telemetry;
 
   const pythonCoreCode = `"""
-GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core
+GF-T3-189: Apex Executive High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core
 Proprietary Cowl Resonant Damper & Boundary-Layer Vortex Suppression Engine
 Target: URZ100 Platform (5.0L 2UR-GSE V8)
 Language: Python 3.12 (Pure Standard Library + NumPy, Zero Copyleft Dependencies)
@@ -214,7 +214,7 @@ class CowlAeroMitigationEngine:
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="text-base font-medium text-slate-300">
-                Heavy Overland Dynamics Platform Soft-Top Roof
+                Apex Executive Soft-Top Roof
               </label>
               <span className="text-base font-mono font-bold text-cyan-400 bg-cyan-950/40 border border-cyan-800/50 px-2 py-0.5 rounded">
                 {roofState}
@@ -408,7 +408,7 @@ class CowlAeroMitigationEngine:
                     </g>
                   )}
 
-                  {/* Car Profile Silhouette: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible */}
+                  {/* Car Profile Silhouette: Apex Executive High-Aero Grand Touring Telemetry Core Convertible */}
                   <g fill="none" stroke="#94a3b8" strokeWidth="2.5">
                     {/* Front nose / Spindle grille area */}
                     <path d="M 120 195 L 140 180 L 190 175 L 340 165 L 430 115 L 490 112" />

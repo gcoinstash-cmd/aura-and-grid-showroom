@@ -10,7 +10,7 @@ export const ApaCovenantTab: React.FC = () => {
 
   const copyAgreement = () => {
     const agreement = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET: GF-T3-180 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
+ASSET: GF-T3-180 (Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
 ACQUIRE.COM LISTING ID: ACQ-GF-LX600-180
 
 1. PARTIES & RECITALS
@@ -211,7 +211,7 @@ IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreeme
         </div>
         <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[420px] bg-slate-950/70 whitespace-pre-wrap">
           {`ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-180 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
+ASSET IDENTIFIER: GF-T3-180 (Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core)
 SPECIFICATION: 20 kHz (0.48ms) (Turnkey) | PostgreSQL 16 + RLS (Enterprise Extended)
 GOVERNING JURISDICTION: Standard Commercial Jurisdiction, United States
 

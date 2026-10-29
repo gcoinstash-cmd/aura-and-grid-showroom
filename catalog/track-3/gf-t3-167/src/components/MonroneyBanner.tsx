@@ -143,7 +143,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
             <div className="flex flex-wrap items-center gap-3 mt-1">
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core
+                Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core
               </h1>
               <span className="text-xs sm:text-sm font-mono font-bold text-amber-400 bg-zinc-900 px-2.5 py-1 rounded-lg border border-zinc-700 shadow-sm">
                 v1.0.0-PROD

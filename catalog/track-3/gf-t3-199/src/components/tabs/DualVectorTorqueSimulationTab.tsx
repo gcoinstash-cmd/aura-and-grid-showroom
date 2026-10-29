@@ -699,7 +699,7 @@ export const DualVectorTorqueSimulationTab: React.FC<DualVectorTorqueSimulationT
 const pythonCodeSnippet = `#!/usr/bin/env python3
 """
 GF-T3-199 Performance Controller: DUAL_VECTOR_TORQUE & DRS Core
-Platform: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17)
+Platform: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17)
 License: MIT Permissive | Clean-Room Certified
 """
 from dataclasses import dataclass

@@ -1,5 +1,5 @@
 export const PYTHON_CORE_ENGINE_CODE = `"""
-GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
+GF-T3-177 | Apex Executive High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 Proprietary Dynamic Rear Steering (DRS) & Bimodal Acoustic Exhaust Engine
 Clean-Room Certified | Python 3.12 Production Implementation
 License: Permissive MIT
@@ -21,11 +21,11 @@ class ConvertibleTopStatus(Enum):
 
 @dataclass(frozen=True)
 class VehicleDynamicsConfig:
-    wheelbase_m: float = 2.870               # Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GA-L platform wheelbase (m)
+    wheelbase_m: float = 2.870               # Apex Executive High-Aero Grand Touring Telemetry Core GA-L platform wheelbase (m)
     track_width_rear_m: float = 1.635        # Rear track width (m)
     curb_weight_kg: float = 2055.0           # High-Aero Grand Touring Telemetry Core Convertible curb weight (kg)
     steering_ratio_front: float = 13.6       # Variable gear ratio center baseline
-    max_rear_steer_deg: float = 2.0          # Heavy Overland Dynamics Platform Dynamic Handling (LDH) rear actuator limit (±2.0°)
+    max_rear_steer_deg: float = 2.0          # Apex Executive Dynamic Handling (LDH) rear actuator limit (±2.0°)
     transition_speed_kph: float = 80.0       # Phase inversion threshold (80.0 km/h)
     phase_hysteresis_kph: float = 2.5        # Anti-hunting transition deadband (±2.5 km/h)
     understeer_gradient_rad_g: float = 0.0022 # K_us linear understeer gradient (rad/(m/s^2))
@@ -188,7 +188,7 @@ class High-Aero Grand Touring Telemetry CoreGrandTouringCore:
 `;
 
 export const POSTGRES_DDL_SCHEMA = `-- =========================================================================
--- GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
+-- GF-T3-177 | Apex Executive High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 -- Cryptographic Touring Ledger & Partitioned Timeseries Schema
 -- PostgreSQL 16 Production DDL with HMAC-SHA256 Continuous Audit
 -- License: Permissive MIT | 0% Copyleft Clean-Room
@@ -287,10 +287,10 @@ FOR EACH ROW EXECUTE FUNCTION audit_steering_rack_envelope();
 
 export const OPENAPI_SPECIFICATION = `openapi: 3.1.0
 info:
-  title: GF-T3-177 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Grand Touring Core Telemetry API
+  title: GF-T3-177 Apex Executive High-Aero Grand Touring Telemetry Core Grand Touring Core Telemetry API
   version: 1.0.0-PROD
   description: >
-    Zero-dependency high-throughput REST and WebSocket contracts for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core
+    Zero-dependency high-throughput REST and WebSocket contracts for Apex Executive High-Aero Grand Touring Telemetry Core
     Convertible Dynamic Rear Steering (DRS) and active acoustic flap control.
   license:
     name: MIT License
@@ -599,7 +599,7 @@ def test_latency_loop_under_1ms(core_engine):
 `;
 
 export const APA_AGREEMENT_MARKDOWN = `# ASSET PURCHASE AGREEMENT (APA)
-**Asset Identifier:** GF-T3-177 | Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
+**Asset Identifier:** GF-T3-177 | Apex Executive High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core
 **Transaction Platform:** Acquire.com Micro-Acquisition Vault
 **Seller:** Ghost FactoryOS Systems Architecture Corp.
 **Buyer:** Verified Institutional Acquirer / Private Equity Buyer
@@ -643,7 +643,7 @@ NOW, THEREFORE, in consideration of the mutual covenants, representations, warra
 3.1 **Clean-Room Certification.** Seller warrants and covenants that:
   (a) 100% of code lines were authored without the inclusion of copyleft, GPL, AGPL, or SSPL-licensed dependencies.
   (b) All third-party libraries utilize standard permissive MIT, BSD-3-Clause, or Apache 2.0 open-source licenses.
-  (c) No proprietary Heavy Overland Dynamics Platform/Toyota trade secret reverse-engineering was performed; all vehicle dynamics equations originate from published kinematic bicycle models and academic SAE vehicle dynamics formulations.
+  (c) No proprietary third-party OEM trade secret reverse-engineering was performed; all vehicle dynamics equations originate from published kinematic bicycle models and academic SAE vehicle dynamics formulations.
   (d) The Acquired Assets do not infringe, misappropriate, or violate any valid patent, copyright, or trademark of any third party.
 
 ---

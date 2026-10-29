@@ -11,7 +11,7 @@ interface PostgresLedgerTabProps {
 }
 
 const POSTGRESQL_DDL = `-- =====================================================================
--- Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) Active Height Control (AHC) Ledger
+-- Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) Active Height Control (AHC) Ledger
 -- PostgreSQL 16 Enterprise DDL: Partitioned Timeseries + HMAC Audit Chain
 -- Clean-Room Certified DDL Specification
 -- =====================================================================

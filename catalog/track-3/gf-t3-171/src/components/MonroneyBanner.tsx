@@ -30,7 +30,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               <span className="text-emerald-400">TURNKEY ACQUIRE.COM ASSET</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Dynamic Core v1.0.0-PROD
+              Apex Executive IS 500 High-G Dynamic Telemetry Dynamic Core v1.0.0-PROD
             </h1>
             <p className="text-base text-slate-300 max-w-3xl">
               Deterministic, sub-250ns HFT telemetry ingest &amp; execution engine calibrated for the 5.0L 2UR-GSE Quad-Cam 32V V8 powertrain (472 hp @ 7,100 RPM).

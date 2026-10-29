@@ -1,4 +1,4 @@
-# GF-T3-171: LEXUS IS 500 F SPORT V8 DYNAMIC CORE
+# GF-T3-171: Apex Executive Engine F SPORT V8 DYNAMIC CORE
 ## F1 SKUNKWORKS SERVICE ENGINE ARCHITECTURAL SPECIFICATION
 **Asset Identifier**: GF-T3-171  
 **Target Platform**: Acquire.com Turnkey Micro-APA Acquisition Asset  
@@ -10,7 +10,7 @@
 
 ## EXECUTIVE SUMMARY & MONOPOLY VAULT OVERVIEW
 
-GF-T3-171 is an institutional-grade, ultra-low-latency telemetry processing and command execution engine engineered for high-frequency telemetry streams from high-output automotive powertrains—specifically calibrated for the 5.0-liter naturally aspirated 2UR-GSE Quad-Cam 32-valve V8 of the Lexus IS 500 F SPORT Performance platform.
+GF-T3-171 is an institutional-grade, ultra-low-latency telemetry processing and command execution engine engineered for high-frequency telemetry streams from high-output automotive powertrains—specifically calibrated for the 5.0-liter naturally aspirated 2UR-GSE Quad-Cam 32-valve V8 of the Apex Executive Engine F SPORT Performance platform.
 
 The engine executes deterministic order-of-arrival event sequencing using a lock-free LMAX Disruptor ring buffer pattern implemented with power-of-two modulo masking, cache-line-padded sequence barriers, and asynchronous memory-mapped Postgres write-ahead logging (WAL) spillover.
 
@@ -86,7 +86,7 @@ typedef struct {
 
 ```python
 # dist_disruptor.pyx
-# Clean-Room Lock-Free Ring Buffer Engine for Lexus IS 500 V8 Telemetry
+# Clean-Room Lock-Free Ring Buffer Engine for Apex Executive Engine V8 Telemetry
 # License: MIT Permissive
 
 cimport cython
@@ -111,7 +111,7 @@ cdef struct V8TelemetrySlot:
     uint64_t crc64
     char _cache_pad[8]  # Aligns struct to 64 bytes
 
-cdef class LexusV8Disruptor:
+cdef class ApexExecutiveV8Disruptor:
     cdef V8TelemetrySlot* _ring_buffer
     cdef volatile int64_t _cursor
     cdef volatile int64_t _gating_sequence
@@ -325,7 +325,7 @@ paths:
 
 - **Seller**: Ghost FactoryOS Systems Architecture Vault
 - **Purchaser**: Institutional Buyer via Acquire.com Escrow
-- **Asset**: GF-T3-171 (Lexus IS 500 F SPORT Dynamic Core Telemetry Engine)
+- **Asset**: GF-T3-171 (Apex Executive Engine F SPORT Dynamic Core Telemetry Engine)
 - **Purchase Price**: $45,000 USD (Micro-APA Buyout)
 - **Escrow Verification Conditions**:
   1. Automated PyTest suite verification (>90% pass rate)

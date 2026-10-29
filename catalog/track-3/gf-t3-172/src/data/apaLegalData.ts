@@ -17,7 +17,7 @@ BUYER:   The Purchasing Entity / Micro-PE Consortium ("Buyer"), via Acquire.com.
 
 WHEREAS, Seller owns all right, title, and proprietary intellectual property
 interest in and to the production software asset designated as:
-"GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core (v1.0.0-PROD)"
+"GF-T3-172: Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core (v1.0.0-PROD)"
 (the "Purchased Asset"); and
 
 WHEREAS, Buyer desires to purchase from Seller, and Seller desires to sell and
@@ -47,7 +47,7 @@ Seller expressly warrants and represents that:
 (b) Free of Encumbrances: The Purchased Asset is free and clear of all liens,
     claims, security interests, pledges, or third-party royalty covenants.
 (c) Non-Infringement: The implementation does not violate or infringe upon any patent,
-    trademark, copyright, or trade secret of Toyota Motor Corporation, Heavy Overland Dynamics Platform, or any third party.
+    trademark, copyright, or trade secret of Toyota Motor Corporation, Apex Executive, or any third party.
 
 4. POST-CLOSING TRANSITION & HANDOFF
 Within twenty-four (24) hours of Escrow confirmation, Seller shall deliver:

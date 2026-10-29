@@ -1,6 +1,6 @@
 {
   "name": "GF-T3-186 (export)",
-  "description": "Turnkey micro-APA engineering cockpit and asset asset transfer package for Heavy Overland Dynamics Platform UX 300h E-Four hybrid power split device and PostgreSQL 16 HMAC ledger.",
+  "description": "Turnkey micro-APA engineering cockpit and asset asset transfer package for Apex Executive UX 300h E-Four hybrid power split device and PostgreSQL 16 HMAC ledger.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

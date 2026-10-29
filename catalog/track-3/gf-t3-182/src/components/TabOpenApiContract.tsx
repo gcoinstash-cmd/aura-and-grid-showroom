@@ -3,7 +3,7 @@ import { FileCode, Copy, Check, Send, Radio, ArrowRight } from 'lucide-react';
 
 const OPENAPI_SPEC = `openapi: 3.1.0
 info:
-  title: GF-T3-182 Heavy Overland Dynamics Platform RC F Track Edition Aero Core API
+  title: GF-T3-182 Hypercar Flagship Trim Aero Core API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion, active downforce control loop, and cryptographic ledger verification.
   license:

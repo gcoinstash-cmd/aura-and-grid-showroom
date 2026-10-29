@@ -49,7 +49,7 @@ export const EkdssModal: React.FC<EkdssModalProps> = ({ isOpen, onClose }) => {
                 Simulate Dynamic Kinetic Suspension Telemetry Articulation & Hydraulic Solenoid Slew
               </h3>
               <p className="text-[15px] text-neutral-400 mt-0.5">
-                Dynamic stabilizer decoupling test harness for Heavy Overland Dynamics Platform
+                Dynamic stabilizer decoupling test harness for Apex Executive
               </p>
             </div>
           </div>

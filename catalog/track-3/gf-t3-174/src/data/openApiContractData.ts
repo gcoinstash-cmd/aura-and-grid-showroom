@@ -1,14 +1,14 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * OpenAPI 3.1 Actuation Contract & WebSocket Subprotocol Specifications
  */
 
 export const OPENAPI_SPEC_OBJECT = {
   openapi: "3.1.0",
   info: {
-    title: "GF-T3-174 Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core Gateway",
+    title: "GF-T3-174 Track 2 Sovereign Flagship Steer-by-Wire Core Gateway",
     version: "1.0.0-PROD",
     description: "Ultra-low-latency ISO 26262 ASIL-D dual-channel steer-by-wire actuation arbitration contract.",
     contact: {
@@ -186,7 +186,7 @@ export const OPENAPI_SPEC_OBJECT = {
   }
 };
 
-export const WEBSOCKET_SPEC_MARKDOWN = `### WebSocket Streaming Subprotocol Specification: \`Heavy Overland Dynamics Platform-sbw-v1\`
+export const WEBSOCKET_SPEC_MARKDOWN = `### WebSocket Streaming Subprotocol Specification: \`Apex Executive-sbw-v1\`
 
 **Endpoint:** \`wss://sbw-precision-core-434044503951.us-east1.run.app/ws/v1/telemetry/stream\`  
 **Framing Cadence:** 1000 Hz (1 ms interval)  

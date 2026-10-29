@@ -86,7 +86,7 @@ export const CloudRunHarnessTab: React.FC = () => {
   };
 
   const dockerfileContent = `# ==============================================================================
-# GF-T3-197: Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS Performance Core - Production Dockerfile
+# GF-T3-197: Apex Executive Multi-Node High-Output Core DRS Performance Core - Production Dockerfile
 # Base: Python 3.12-slim | Non-root hardened container
 # ==============================================================================
 
@@ -137,7 +137,7 @@ ENTRYPOINT ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "-
 
 set -euo pipefail
 
-PROJECT_ID="\${GCP_PROJECT_ID:-Heavy Overland Dynamics Platform-drs-production}"
+PROJECT_ID="\${GCP_PROJECT_ID:-Apex Executive-drs-production}"
 SERVICE_NAME="gf-t3-197-drs-core"
 REGION="us-central1"
 IMAGE="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:1.0.0-PROD"

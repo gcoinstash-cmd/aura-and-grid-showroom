@@ -23,7 +23,7 @@ export const TabApaCovenant: React.FC<TabApaCovenantProps> = ({ onExportSpec }) 
 
   const apaAgreementText = `=============================================================================
 ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-190 (Heavy Overland Dynamics Platform ELECTRIFIED SPORT SOLID-STATE CORE)
+ASSET IDENTIFIER: GF-T3-190 (Apex Executive ELECTRIFIED SPORT SOLID-STATE CORE)
 PLATFORM: ACQUIRE.COM / ESCROW.COM
 =============================================================================
 
@@ -43,7 +43,7 @@ Acquire.com Verified Institutional Acquirer
 RECITALS
 WHEREAS, Seller has independently conceptualized, engineered, and clean-room developed
 the complete software architecture, mathematical models, and cryptographic ledger known as
-"GF-T3-190" (Heavy Overland Dynamics Platform Electrified Sport Solid-State Core); and
+"GF-T3-190" (Apex Executive Electrified Sport Solid-State Core); and
 
 WHEREAS, Seller desires to sell, assign, and transfer to Buyer, and Buyer desires to purchase
 and acquire from Seller, all right, title, and interest in and to the Acquired Assets.
@@ -68,7 +68,7 @@ NOW, THEREFORE, in consideration of the mutual covenants herein contained:
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
 3.1 Clean-Room Development: Seller warrants that 100% of the Acquired Assets were developed
-    under strict clean-room protocols, with zero reliance on decompiled or proprietary Heavy Overland Dynamics Platform/Toyota code.
+    under strict clean-room protocols, with zero reliance on decompiled or proprietary third-party OEM code.
 3.2 0% Copyleft Warranty: Seller warrants that the Acquired Assets contain zero GPL, AGPL,
     SSPL, or other viral copyleft licensed code. All third-party dependencies conform to MIT, Apache-2.0, or BSD.
 

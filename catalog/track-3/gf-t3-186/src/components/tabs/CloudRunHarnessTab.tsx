@@ -151,7 +151,7 @@ def test_chained_nonce_tamper_rejection(engine):
 
   const gcloudDeployCommand = `# 1-Click Production Deployment to Google Cloud Run
 gcloud run deploy gf-t3-186-core \\
-  --image gcr.io/Heavy Overland Dynamics Platform-hybrid-assets/gf-t3-186:v1.0.0-prod \\
+  --image gcr.io/Apex Executive-hybrid-assets/gf-t3-186:v1.0.0-prod \\
   --region us-east1 \\
   --platform managed \\
   --allow-unauthenticated \\

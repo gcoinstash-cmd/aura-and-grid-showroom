@@ -1,7 +1,7 @@
 """
 GF-T3-164 NeuroDrive Sensory Fusion — FastAPI Production API
 Pydantic v2 Schemas, OpenAPI 3.1 Compliance, Sub-3ms Endpoints
-Target Vehicle: Heavy Overland Dynamics Platform LFA Nürburgring Spec (Dual NVIDIA Drive Thor / Orin)
+Target Vehicle: Apex Executive LFA Nürburgring Spec (Dual NVIDIA Drive Thor / Orin)
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from app.core.fusion import (
 app = FastAPI(
     title="Ghost FactoryOS NeuroDrive Perception API",
     version="1.64.0",
-    description="Sub-3ms Multi-Modal Sensory Fusion for Heavy Overland Dynamics Platform LFA Nürburgring Platform (GF-T3-164)",
+    description="Sub-3ms Multi-Modal Sensory Fusion for Apex Executive LFA Nürburgring Platform (GF-T3-164)",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -45,7 +45,7 @@ class RawMeasurementInput(BaseModel):
 class FusionCycleRequest(BaseModel):
     timestamp_ns: int = Field(..., description="Hardware monotonic master clock timestamp in nanoseconds")
     measurements: List[RawMeasurementInput] = Field(..., description="Sensory packet payload for current cycle")
-    ego_speed_kmh: Optional[float] = Field(default=285.4, description="Heavy Overland Dynamics Platform LFA telemetry speed in km/h")
+    ego_speed_kmh: Optional[float] = Field(default=285.4, description="Apex Executive LFA telemetry speed in km/h")
     ego_rpm: Optional[float] = Field(default=8650.0, description="1LR-GUE V10 tachometer revs")
     steering_angle_rad: Optional[float] = Field(default=0.012, description="Steering rack angle")
 
@@ -157,7 +157,7 @@ async def fuse_sensors(request: FusionCycleRequest):
             "rpm": request.ego_rpm,
             "steering_angle_rad": request.steering_angle_rad,
             "gear": 5 if (request.ego_speed_kmh or 200) > 240 else 4,
-            "chassis": "Heavy Overland Dynamics Platform LFA Nürburgring Spec #042",
+            "chassis": "Apex Executive LFA Nürburgring Spec #042",
         },
     )
 

@@ -20,14 +20,14 @@ export const TabAcquireApa: React.FC = () => {
   };
 
   const apaContractText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-191 (Heavy Overland Dynamics Platform LM 500h EXECUTIVE LUXURY MOVER CORE)
+ASSET IDENTIFIER: GF-T3-191 (Apex Executive LM 500h EXECUTIVE LUXURY MOVER CORE)
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is entered into as of October 12, 2026, by and between:
 SELLER: Ghost FactoryOS Systems Architecture LLC, a Delaware limited liability company ("Seller"); and
 BUYER: The Institutional Acquirer registered via Acquire.com ("Buyer").
 
 RECITALS
-WHEREAS, Seller has authored, engineered, and validated the GF-T3-191 Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core;
+WHEREAS, Seller has authored, engineered, and validated the GF-T3-191 Apex Executive Mover Core;
 WHEREAS, Seller possesses 100% unencumbered, clean-room ownership of all algorithms, schemas, container harnesses, and associated intellectual property; and
 WHEREAS, Buyer desires to purchase, and Seller desires to sell, all right, title, and interest in and to the Purchased Assets on the terms set forth herein.
 

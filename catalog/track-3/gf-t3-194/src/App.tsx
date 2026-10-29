@@ -423,7 +423,7 @@ export default function App() {
           {/* Zone 1: Single text wordmark */}
           <div className="flex items-center gap-2 shrink-0">
             <span className="text-xl font-black text-white tracking-tight whitespace-nowrap">
-              Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Core
+              Apex Executive Ultra-Heavy Telemetry Core Core
             </span>
           </div>
 
@@ -620,7 +620,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono font-bold text-slate-300">GF-T3-194</span>
             <span aria-hidden="true">·</span>
-            <span>Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core</span>
+            <span>Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core</span>
             <span aria-hidden="true">·</span>
             <span>Acquire.com Turnkey Asset</span>
           </div>

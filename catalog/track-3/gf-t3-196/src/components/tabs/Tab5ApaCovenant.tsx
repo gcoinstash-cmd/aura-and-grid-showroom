@@ -18,7 +18,7 @@ export const Tab5ApaCovenant: React.FC = () => {
 
   const handleCopyApa = () => {
     navigator.clipboard.writeText(`ASSET PURCHASE AND TRANSFER AGREEMENT (DELAWARE MICRO-APA)
-Asset Identifier: GF-T3-196 (Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core)
+Asset Identifier: GF-T3-196 (Apex Executive RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core)
 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 Governing Law: Standard Commercial Jurisdiction, United States
 Platform Escrow: Acquire.com / Escrow.com Integrated Protocol

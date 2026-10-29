@@ -131,7 +131,7 @@ export default function App() {
       {/* Live Telemetry Metric Cards (Relative / Static positioning) */}
       <MetricCards telemetry={telemetry} />
 
-      {/* Main Interactive Stage: Heavy Overland Dynamics Platform RC F Track Edition Aero HUD */}
+      {/* Main Interactive Stage: Apex Executive RC F Track Edition Aero HUD */}
       <main className="flex-1 pb-16">
         <section id="aero-cockpit">
           <AeroCockpitVisualizer
@@ -242,7 +242,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="font-mono font-bold text-white">Ghost FactoryOS</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
-            <span>Asset GF-T3-182 (Heavy Overland Dynamics Platform RC F Track Edition Aero Core)</span>
+            <span>Asset GF-T3-182 (Hypercar Flagship Trim Aero Core)</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
             <span className="text-emerald-400">100% Permissive MIT</span>
           </div>

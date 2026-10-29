@@ -286,7 +286,7 @@ export const TabOpenApiContract: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Radio className="w-5 h-5 text-indigo-400" />
                 <span className="text-[15px] font-mono text-white font-semibold">
-                  wss://telemetry.Heavy Overland Dynamics Platform-tx550h.dual_vector_torque/v1/stream
+                  wss://telemetry.Apex Executive-tx550h.dual_vector_torque/v1/stream
                 </span>
               </div>
               <button

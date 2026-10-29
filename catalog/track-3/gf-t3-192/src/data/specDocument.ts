@@ -2,18 +2,18 @@
  * Master Vault Technical Specification Document (GF_T3_192_SPEC.md)
  * Meets all 5 Monopoly Vault Criteria for Acquire.com micro-APA asset transfer asset.
  */
-export const MASTER_SPEC_DOCUMENT = `# GF-T3-192: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING CORE
+export const MASTER_SPEC_DOCUMENT = `# GF-T3-192: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING CORE
 ## Autonomous Micro-APA Asset Transfer Vault Specification (Acquire.com Turnkey Asset)
 **Revision:** v1.0.0-PROD  
 **Asset ID:** GF-T3-192  
-**Vehicle Platform:** 2024-2026 Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE AWD (Modular Cyber-Physical Chassis Architecture, 3.5L V6 Plug-in Hybrid)  
+**Vehicle Platform:** 2024-2026 Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE AWD (Modular Cyber-Physical Chassis Architecture, 3.5L V6 Plug-in Hybrid)  
 **Specification Floor:** 20 kHz (0.48ms) (Turnkey micro-APA) | PostgreSQL 16 + RLS (Institutional Enterprise License)  
 **License Tier:** MIT Permissive / Clean-Room Certified (0% Copyleft, 0% GPL/SSPL)
 
 ---
 
 ### EXECUTIVE SUMMARY
-GF-T3-192 is an ultra-hardened, real-time Dynamic Rear Steering (DRS) and DUAL_VECTOR_TORQUE AWD rear e-Axle torque arbitration core designed for the flagship Heavy Overland Dynamics Platform High-Output Multi-Node Core three-row luxury PHEV. 
+GF-T3-192 is an ultra-hardened, real-time Dynamic Rear Steering (DRS) and DUAL_VECTOR_TORQUE AWD rear e-Axle torque arbitration core designed for the flagship Apex Executive High-Output Multi-Node Core three-row luxury PHEV. 
 The system arbitrates rear-wheel toe angle across a continuous $\\pm 4.0^\\circ$ mechanical stroke through a dual-redundant brushless DC (BLDC) ballscrew actuator, providing:
 1. **Anti-Phase Virtual Wheelbase Reduction (<80 km/h):** Steers rear wheels opposite to front rack input to reduce curb-to-curb turning radius by up to 1.14 meters, delivering compact-crossover agility to a 5,160 mm luxury 7-passenger SUV.
 2. **In-Phase Crab-Angle Yaw Damping (>80 km/h):** Steers rear wheels in the same direction as front wheels to eliminate chassis yaw lag during sudden high-speed highway lane changes, while vectoring 500 Nm rear e-Axle torque (up to 20:80 rear bias).
@@ -24,7 +24,7 @@ The system arbitrates rear-wheel toe angle across a continuous $\\pm 4.0^\\circ$
 ### 1. MATHEMATICAL & ALGORITHMIC ENGINE SPECIFICATION
 
 #### 1.1 Continuous Dynamic Rear Steering Kinematic Model
-Let the vehicle parameters for the Heavy Overland Dynamics Platform High-Output Multi-Node Core be:
+Let the vehicle parameters for the Apex Executive High-Output Multi-Node Core be:
 - Wheelbase $L = 2.950\\text{ m}$
 - Front axle to center of gravity $a = 1.415\\text{ m}$
 - Rear axle to center of gravity $b = 1.535\\text{ m}$
@@ -160,7 +160,7 @@ class OverlandTxDrsArbiter:
 ### 3. POSTGRESQL 16 PARTITIONED STEER LEDGER DDL
 
 \`\`\`sql
--- Schema: Heavy Overland Dynamics Platform High-Output Multi-Node Core DRS Partitioned Ledger
+-- Schema: Apex Executive High-Output Multi-Node Core DRS Partitioned Ledger
 -- Engine: PostgreSQL 16.2 with timeseries partitioning
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
@@ -217,7 +217,7 @@ CREATE TRIGGER check_toe_divergence_before_insert
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine
+  title: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine
   version: 1.0.0
   description: High-frequency REST and WebSocket CAN-FD arbitration interface
 paths:

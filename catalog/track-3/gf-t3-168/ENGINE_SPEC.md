@@ -1,8 +1,8 @@
-# GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
+# GF-T3-168: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
 ## MASTER ARCHITECTURAL & LEGAL VAULT BLUEPRINT (TRACK 3 F1 SKUNKWORKS DELIVERABLE)
 
 - **Asset Identifier**: GF-T3-168
-- **Platform Reference**: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry AWD (DualVectorTorque + Dynamic Rear Steering)
+- **Platform Reference**: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry AWD (DualVectorTorque + Dynamic Rear Steering)
 - **Asset Version**: v1.0.0-PROD
 - **Turnkey Target**: Acquire.com Micro-APA Escrow Vault
 - **Micro-APA Reference Core**: 20 kHz (0.48ms)
@@ -148,7 +148,7 @@ SELECT create_hypertable('vehicle_telemetry_ticks', 'time', chunk_time_interval 
 ### 6.1 Transaction Summary
 - **Buyer**: Designated Acquiring Entity via Acquire.com Escrow
 - **Seller**: Ghost FactoryOS Systems Architecture Consortium
-- **Purchased Asset**: GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
+- **Purchased Asset**: GF-T3-168 Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core
 - **Cash DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (Micro-APA Asset Transfer) / PostgreSQL 16 + RLS (Full Institutional Assignment)
 - **Escrow Facilitator**: Escrow.com / Acquire.com Escrow Services
 

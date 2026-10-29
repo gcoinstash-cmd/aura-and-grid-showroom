@@ -8,7 +8,7 @@ export const CanBusDiagram: React.FC = () => {
         <div>
           <h3 className="text-xl font-bold text-neutral-100 flex items-center gap-2">
             <Network className="h-5 w-5 text-amber-400" />
-            Heavy Overland Dynamics Platform ES 350h High-Speed CAN-FD Security Topology
+            Apex Executive ES 350h High-Speed CAN-FD Security Topology
           </h3>
           <p className="text-sm text-neutral-400 mt-1">
             Hardware-enforced zero-trust authentication boundary between in-cabin quietude microcontrollers and telematics gateway.

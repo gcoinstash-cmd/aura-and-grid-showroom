@@ -1,7 +1,7 @@
-# GF-T3-196: LEXUS RZ 450e STEER-BY-WIRE DIRECT4 CORE
+# GF-T3-196: Track 2 Sovereign Flagship STEER-BY-WIRE DIRECT4 CORE
 ## TURNKEY INSTITUTIONAL ASSET PURCHASE AGREEMENT (APA) SPECIFICATION
 **Dealership Fleet Tier:** Track 3 (F1 Skunkworks Service Engine - 70% Design Deliverable)  
-**Target Platform:** Lexus RZ 450e (EB-Platform / e-TNGA Steer-by-Wire DIRECT4 Architecture)  
+**Target Platform:** Track 2 Sovereign Flagship (EB-Platform / e-TNGA Steer-by-Wire DIRECT4 Architecture)  
 **Valuation Anchor:** $45,000 USD (Turnkey Micro-APA) | $125,000 USD (Institutional Monopoly Buyout)  
 **Clean-Room Certification:** 100% Permissive (MIT / Apache-2.0 / BSD) — 0% Copyleft / GPL Free  
 **Cryptographic Integrity:** SHA-256 HMAC Monotonic Audit Ledger  
@@ -10,7 +10,7 @@
 
 ## 1. ARCHITECTURAL TOPOLOGY & CONTAINER BOUNDARIES
 
-The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator bridge paired with Lexus DIRECT4 intelligent all-wheel drive dynamic torque vectoring.
+The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator bridge paired with Apex Executive Engine DIRECT4 intelligent all-wheel drive dynamic torque vectoring.
 
 ```
                    +-------------------------------------------------+
@@ -60,7 +60,7 @@ The GF-T3-196 core provides a zero-mechanical-shaft Steer-by-Wire (SBW) actuator
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 One-Motion Grip Dynamic Steering Ratio Equation
-In conventional steering, mechanical rack-and-pinion ratios are fixed (typically 1:14 to 1:16), requiring up to 2.7 turns (972°) lock-to-lock with hand-over-hand maneuvering. The Lexus RZ 450e One-Motion Grip operates strictly between **-150° and +150° (300° total lock-to-lock)**.
+In conventional steering, mechanical rack-and-pinion ratios are fixed (typically 1:14 to 1:16), requiring up to 2.7 turns (972°) lock-to-lock with hand-over-hand maneuvering. The Track 2 Sovereign Flagship One-Motion Grip operates strictly between **-150° and +150° (300° total lock-to-lock)**.
 
 The effective steering ratio $R(v)$ is computed as a continuous function of vehicle velocity $v$ (in m/s):
 
@@ -82,7 +82,7 @@ Where $\Phi(\mu)$ is the road surface friction scale coefficient:
 - Packed Snow / Ice: $\mu = 0.25$
 
 ### 2.2 DIRECT4 Dual e-Axle Dynamic Torque Vectoring
-Lexus DIRECT4 optimizes front and rear e-Axle electric motor torque distribution ($\tau_{\text{front}}$ and $\tau_{\text{rear}}$) in real time:
+Apex Executive Engine DIRECT4 optimizes front and rear e-Axle electric motor torque distribution ($\tau_{\text{front}}$ and $\tau_{\text{rear}}$) in real time:
 
 $$\tau_{\text{front}} + \tau_{\text{rear}} = \tau_{\text{demand}}$$
 
@@ -95,7 +95,7 @@ $$\tau_{\text{front}} + \tau_{\text{rear}} = \tau_{\text{demand}}$$
 ### 2.3 Python 3.12 Production Core Engine
 ```python
 """
-GF-T3-196: Lexus RZ 450e Steer-by-Wire DIRECT4 Core State Machine
+GF-T3-196: Track 2 Sovereign Flagship Steer-by-Wire DIRECT4 Core State Machine
 Standard: ISO 26262 ASIL-D Compliant Dual-Redundant Controller
 """
 import math
@@ -118,7 +118,7 @@ class TelemetryFrame:
     can_active_bus: str
     hmac_sha256: str
 
-class LexusRZ450eSbwCore:
+class Track2SovereignSbwCore:
     R_MIN = 6.0
     R_MAX = 18.0
     K_SLOPE = 0.18
@@ -211,7 +211,7 @@ class LexusRZ450eSbwCore:
 ## 3. PRODUCTION POSTGRESQL 16 PARTITIONED DATA SCHEMA
 
 ```sql
--- GF-T3-196: Lexus RZ 450e Steer-by-Wire & DIRECT4 High-Frequency Telemetry Ledger
+-- GF-T3-196: Track 2 Sovereign Flagship Steer-by-Wire & DIRECT4 High-Frequency Telemetry Ledger
 -- PostgreSQL 16 + pg_partman / timeseries partition structure
 
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
@@ -281,7 +281,7 @@ FOR EACH ROW EXECUTE FUNCTION trg_enforce_sbw_safety_sentinel();
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus RZ 450e Steer-by-Wire & DIRECT4 Telemetry API
+  title: Track 2 Sovereign Flagship Steer-by-Wire & DIRECT4 Telemetry API
   version: 1.0.0-PROD
   description: High-frequency actuator telemetry ingestion, dynamic ratio calculation, and HMAC verification.
 paths:
@@ -359,7 +359,7 @@ paths:
 ## 6. ACQUIRE.COM ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
 
 **ASSET PURCHASE AND TRANSFER AGREEMENT**  
-*Asset Identifier: GF-T3-196 (Lexus RZ 450e Steer-by-Wire DIRECT4 Core)*  
+*Asset Identifier: GF-T3-196 (Track 2 Sovereign Flagship Steer-by-Wire DIRECT4 Core)*  
 *Governing Law: State of Delaware, United States*  
 *Base Purchase Price: $45,000.00 USD (Forty-Five Thousand United States Dollars)*  
 *Monopoly Institutional Buyout: $125,000.00 USD (One Hundred Twenty-Five Thousand United States Dollars)*  

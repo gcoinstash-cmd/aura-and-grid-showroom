@@ -207,7 +207,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <ShieldCheck className="w-6 h-6 text-emerald-400" />
             <span className="font-semibold">
-              GF-T3-175 Heavy Overland Dynamics Platform UX 300h Urban Edge Core • 100% Clean-Room Permissive MIT
+              GF-T3-175 Apex Executive Urban Edge Core • 100% Clean-Room Permissive MIT
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400 font-mono">

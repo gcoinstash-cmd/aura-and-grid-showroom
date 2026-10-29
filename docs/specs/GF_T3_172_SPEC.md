@@ -1,4 +1,4 @@
-# GF-T3-172: LEXUS TX 500h F SPORT PERFORMANCE CORE
+# GF-T3-172: Apex Executive Engine F SPORT PERFORMANCE CORE
 ## Turnkey Micro-APA Buyout Engineering Specification & Institutional Vault Dossier
 **Target Platform:** Acquire.com Micro-PE & Fleet Automation Dealership
 **Standard APA Buyout:** $45,000 USD | **Monopoly Enterprise Valuation:** $125,000 USD
@@ -9,7 +9,7 @@
 ---
 
 ### 1. EXECUTIVE SUMMARY & ASSET VALUATION
-The **GF-T3-172** is an institutional-grade, decentralized drive-by-wire and torque-split orchestrator engineered specifically for the **Lexus TX 500h F SPORT Performance** powertrain architecture (T24A-FTS 2.4-liter turbocharged inline-4 hybrid with high-output rear eAxle, producing 366 hp and 406 lb-ft system torque).
+The **GF-T3-172** is an institutional-grade, decentralized drive-by-wire and torque-split orchestrator engineered specifically for the **Apex Executive Engine F SPORT Performance** powertrain architecture (T24A-FTS 2.4-liter turbocharged inline-4 hybrid with high-output rear eAxle, producing 366 hp and 406 lb-ft system torque).
 
 This codebase delivers a sub-2 ms deterministic Byzantine Fault Tolerant (BFT) multi-agent consensus fabric that synchronously locks steering angle, yaw-rate feedback, and dual-axle DIRECT4 power distribution (variable from 70:30 front-bias down to 20:80 rear-bias launch). Built from scratch in clean-room Python 3.12, backed by partitioned PostgreSQL 16 timeseries ledgers, and containerized for zero-overhead Google Cloud Run serverless deployment.
 
@@ -22,7 +22,7 @@ This codebase delivers a sub-2 ms deterministic Byzantine Fault Tolerant (BFT) m
 ---
 
 ### 2. HARDWARE & DYNAMICS TARGET PROFILE
-- **Host Vehicle:** 2024-2026 Lexus TX 500h F SPORT Performance
+- **Host Vehicle:** 2024-2026 Apex Executive Engine F SPORT Performance
 - **Primary ICE:** T24A-FTS 2.4L Turbocharged DOHC 16-valve Dual VVT-i
 - **Front Transmission:** Direct Shift 6-speed automatic with integrated motor-generator (MG1/MG2)
 - **Rear Axle:** High-output independent eAxle (76 kW / 125 lb-ft continuous, liquid-cooled permanent magnet synchronous motor)
@@ -53,7 +53,7 @@ $$\Delta \omega(t) = \omega_{\text{measured}}(t) - \omega_{\text{target}}(\delta
 $$\omega_{\text{target}}(\delta, v_x) = \frac{v_x}{L + K_{\text{us}} v_x^2} \cdot \frac{\delta}{G_{\text{steer}}}$$
 $$\rho(t) = \text{clamp}\left(0.50 - K_p \Delta \omega(t) - K_d \frac{d\Delta \omega}{dt} - K_a a_x(t), 0.20, 0.70\right)$$
 Where:
-- $L = 2.950\text{ m}$ (Lexus TX wheelbase)
+- $L = 2.950\text{ m}$ (Apex Executive Engine wheelbase)
 - $K_{\text{us}} = 0.0018\text{ rad}/(\text{m/s}^2)$ (Understeer gradient)
 - $G_{\text{steer}} = 15.1:1$ (Steering gear ratio)
 - $a_x(t) = \text{Longitudinal acceleration } (\text{m/s}^2)$
@@ -65,7 +65,7 @@ Where:
 ### 4. PURE PYTHON 3.12 ENGINE IMPLEMENTATION
 ```python
 """
-GF-T3-172: Lexus TX 500h F SPORT Performance Core
+GF-T3-172: Apex Executive Engine F SPORT Performance Core
 HotStuff BFT Multi-Node Consensus & DIRECT4 Torque Orchestrator
 License: MIT
 """
@@ -194,7 +194,7 @@ class HotStuffBftConsensusEngine:
 
 ### 5. PARTITIONED POSTGRESQL 16 EPOCH LEDGER DDL
 ```sql
--- Schema: Lexus TX 500h F SPORT DIRECT4 Epoch Ledger (PostgreSQL 16)
+-- Schema: Apex Executive Engine F SPORT DIRECT4 Epoch Ledger (PostgreSQL 16)
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 CREATE TABLE IF NOT EXISTS consensus_epochs_partitioned (

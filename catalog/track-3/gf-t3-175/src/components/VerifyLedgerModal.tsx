@@ -226,7 +226,7 @@ export const VerifyLedgerModal: React.FC<VerifyLedgerModalProps> = ({
               </code>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Every 2.0 milliseconds (500 Hz), the Heavy Overland Dynamics Platform UX 300h edge coprocessor produces a new cryptographic record linking directly to the prior hash. Any alteration of a single cell voltage digit alters subsequent block hashes irrevocably, failing database ingress validation.
+              Every 2.0 milliseconds (500 Hz), the Apex Executive UX 300h edge coprocessor produces a new cryptographic record linking directly to the prior hash. Any alteration of a single cell voltage digit alters subsequent block hashes irrevocably, failing database ingress validation.
             </p>
           </div>
         )}

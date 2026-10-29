@@ -67,7 +67,7 @@ export const TransferOfferModal: React.FC<TransferOfferModalProps> = ({
               Acquire.com Institutional Asset Transfer Portal
             </h3>
             <p className="text-sm text-slate-300">
-              GF-T3-178 (Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core) Escrow LOI
+              GF-T3-178 (Apex Executive AWD Flagship Core) Escrow LOI
             </p>
           </div>
         </div>

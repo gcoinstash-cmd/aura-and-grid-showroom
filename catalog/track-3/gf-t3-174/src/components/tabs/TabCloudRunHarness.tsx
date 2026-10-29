@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Tab 4: Turnkey Cloud Run Harness & PyTest Bench (>90% Coverage)
  */
 

@@ -18,7 +18,7 @@ export const Tab1SbwCore: React.FC<Tab1SbwCoreProps> = ({
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(`"""
-Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
+Apex Executive RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
 Standard: ISO 26262 ASIL-D Dual-Redundant Controller
 """
 import math, hmac, hashlib, time
@@ -404,7 +404,7 @@ class OverlandRZ450eSbwCore:
         </div>
 
         <pre className="bg-slate-950 p-4 rounded-xl border border-slate-800 overflow-x-auto text-sm text-slate-300 font-mono leading-relaxed">
-{`# GF-T3-196: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
+{`# GF-T3-196: Apex Executive RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE State Machine
 import math, hmac, hashlib, time
 from dataclasses import dataclass
 

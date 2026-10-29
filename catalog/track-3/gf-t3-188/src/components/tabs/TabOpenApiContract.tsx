@@ -45,7 +45,7 @@ export const TabOpenApiContract: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
+  title: Apex Executive Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
   description: High-frequency deterministic telemetry ingestion and actuator arbitration interface
   version: 1.0.0-PROD
   license:

@@ -29,7 +29,7 @@ export const TabRearComfortCore: React.FC<TabRearComfortCoreProps> = ({
   const [activeSubView, setActiveSubView] = useState<'VISUALIZER' | 'ALGORITHM_PYTHON' | 'ACOUSTIC_PHYSICS'>('VISUALIZER');
 
   const pythonAlgorithmCode = `# ==============================================================================
-# GF-T3-191: Heavy Overland Dynamics Platform LM 500h REAR COMFORT BRAKING PITCH CONTROLLER (PYTHON 3.12)
+# GF-T3-191: Apex Executive LM 500h REAR COMFORT BRAKING PITCH CONTROLLER (PYTHON 3.12)
 # Production State Machine: Real-Time Rear-Biased Hydraulic Force Arbitration
 # Loop Rate: 2,500 Hz (0.40 ms cycle) | Zero Dynamic Allocations
 # ==============================================================================
@@ -40,7 +40,7 @@ from typing import Tuple
 
 @dataclass(slots=True)
 class ChassisState:
-    mass_kg: float = 2420.0          # Heavy Overland Dynamics Platform LM 500h Executive Mover curb + VIP payload
+    mass_kg: float = 2420.0          # Apex Executive LM 500h Executive Mover curb + VIP payload
     wheelbase_m: float = 3.000       # Wheelbase length L
     cg_height_m: float = 0.615       # Center of gravity height h_cg
     k_front_n_m: float = 46500.0     # Front suspension spring stiffness
@@ -187,7 +187,7 @@ class BrakingPitchController:
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <span className="text-white text-base font-bold flex items-center gap-2">
                 <Gauge className="w-5 h-5 text-amber-400" />
-                Heavy Overland Dynamics Platform LM 500h Longitudinal Pitch & Cabin Posture
+                Apex Executive LM 500h Longitudinal Pitch & Cabin Posture
               </span>
               <span className={`px-2.5 py-0.5 rounded text-base font-mono font-bold ${
                 isComfortMode ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-red-500/20 text-red-400 border border-red-500/30'
@@ -206,7 +206,7 @@ class BrakingPitchController:
                 <span>CHASSIS CG HEIGHT: 0.615m</span>
               </div>
 
-              {/* SVG Heavy Overland Dynamics Platform LM 500h Side Silhouette with dynamic pitch angle rotation */}
+              {/* SVG Apex Executive LM 500h Side Silhouette with dynamic pitch angle rotation */}
               <div
                 className="w-full h-64 flex items-center justify-center transition-transform duration-300 ease-out"
                 style={{

@@ -86,7 +86,7 @@ export const TabCloudRunHarness: React.FC = () => {
 
   const copyDeployCommand = () => {
     const cmd = `gcloud run deploy gf-t3-183-dual_vector_torque-core \\
-  --image gcr.io/Heavy Overland Dynamics Platform-bevs/gf-t3-183:v1.0.0-prod \\
+  --image gcr.io/Apex Executive-bevs/gf-t3-183:v1.0.0-prod \\
   --region us-central1 \\
   --platform managed \\
   --cpu 2 \\
@@ -241,7 +241,7 @@ CMD ["python", "-m", "src.main"]`}</code>
             </p>
             <pre className="bg-slate-950 p-4 rounded-lg overflow-x-auto text-xs font-mono text-emerald-300 border border-slate-800/80 leading-relaxed">
               <code>{`gcloud run deploy gf-t3-183-dual_vector_torque-core \\
-  --image gcr.io/Heavy Overland Dynamics Platform-bevs/gf-t3-183:v1.0.0-prod \\
+  --image gcr.io/Apex Executive-bevs/gf-t3-183:v1.0.0-prod \\
   --region us-central1 \\
   --platform managed \\
   --cpu 2 \\

@@ -160,7 +160,7 @@ export default function App() {
       {/* Institutional Footer */}
       <footer className="pt-6 pb-10 border-t border-slate-900 text-center text-slate-500 text-sm font-mono">
         <p>
-          GF-T3-196 Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core • Turnkey Micro-APA Asset Transfer Deliverable for Acquire.com
+          GF-T3-196 Apex Executive RZ 450e Steer-by-Wire DUAL_VECTOR_TORQUE Core • Turnkey Micro-APA Asset Transfer Deliverable for Acquire.com
         </p>
         <p className="mt-1 text-slate-600">
           Clean-Room Engineered under ISO 26262 ASIL-D Guidelines • SHA-256 Monotonic Ledger Enforced

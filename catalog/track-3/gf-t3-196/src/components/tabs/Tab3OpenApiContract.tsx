@@ -60,7 +60,7 @@ export const Tab3OpenApiContract: React.FC = () => {
   const handleCopyYaml = () => {
     navigator.clipboard.writeText(`openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE Telemetry API
+  title: Apex Executive RZ 450e Steer-by-Wire & DUAL_VECTOR_TORQUE Telemetry API
   version: 1.0.0-PROD
 paths:
   /v1/telemetry/sbw/tick:

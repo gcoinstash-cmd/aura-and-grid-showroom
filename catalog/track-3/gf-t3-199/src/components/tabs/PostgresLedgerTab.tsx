@@ -325,7 +325,7 @@ Chain Tamper Rate: 0.000000% (Strict Immutable Monotonic Order Preserved)`);
 };
 
 const postgresDdlCode = `-- ============================================================================
--- GF-T3-199 Heavy Overland Dynamics Platform Dual-Vector Performance Core HYBRID LEDGER DDL
+-- GF-T3-199 Apex Executive Dual-Vector Performance Core HYBRID LEDGER DDL
 -- Platform: PostgreSQL 16 with Partitioning & pgcrypto
 -- License: MIT Permissive | Clean-Room Certified
 -- ============================================================================

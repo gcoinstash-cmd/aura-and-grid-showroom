@@ -1,8 +1,8 @@
-# GF-T3-168: LEXUS RX 500h F SPORT DYNAMIC PERFORMANCE CORE
+# GF-T3-168: Apex Executive Engine F SPORT DYNAMIC PERFORMANCE CORE
 ## MASTER ARCHITECTURAL & LEGAL VAULT BLUEPRINT (TRACK 3 F1 SKUNKWORKS DELIVERABLE)
 
 - **Asset Identifier**: GF-T3-168
-- **Platform Reference**: Lexus RX 500h F SPORT Performance AWD (Direct4 + Dynamic Rear Steering)
+- **Platform Reference**: Apex Executive Engine F SPORT Performance AWD (Direct4 + Dynamic Rear Steering)
 - **Asset Version**: v1.0.0-PROD
 - **Turnkey Target**: Acquire.com Micro-APA Escrow Vault
 - **Micro-APA Buyout Anchor**: $45,000 USD
@@ -148,7 +148,7 @@ SELECT create_hypertable('vehicle_telemetry_ticks', 'time', chunk_time_interval 
 ### 6.1 Transaction Summary
 - **Buyer**: Designated Acquiring Entity via Acquire.com Escrow
 - **Seller**: Ghost FactoryOS Systems Architecture Consortium
-- **Purchased Asset**: GF-T3-168 Lexus RX 500h F SPORT Dynamic Performance Core
+- **Purchased Asset**: GF-T3-168 Apex Executive Engine F SPORT Dynamic Performance Core
 - **Cash Purchase Price**: $45,000 USD (Micro-APA Buyout) / $125,000 USD (Full Institutional Assignment)
 - **Escrow Facilitator**: Escrow.com / Acquire.com Escrow Services
 

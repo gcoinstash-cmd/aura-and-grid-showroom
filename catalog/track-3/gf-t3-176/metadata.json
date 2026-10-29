@@ -1,6 +1,8 @@
 {
-  "name": "GF-T3-176 | Heavy Overland Dynamics Platform Terrain Core",
+  "name": "GF-T3-176 | Vanguard ECLSS Terrain Core",
   "description": "Production-grade micro-APA asset transfer asset for Acquire.com. Active Dynamic Kinetic Suspension Telemetry suspension decoupling, PostgreSQL 16 terrain ledger, OpenAPI 3.1 contracts, and Cloud Run deployment harness.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -60,7 +60,7 @@ export const INITIAL_ESCROW_MILESTONES: EscrowMilestone[] = [
 
 export const APA_AGREEMENT_LEGAL_TEXT = `ASSET PURCHASE AGREEMENT (MICRO-APA)
 ASSET IDENTIFIER: GF-T3-176
-PRODUCT: Heavy Overland Dynamics Platform TERRAIN CORE ENGINE
+PRODUCT: Apex Executive TERRAIN CORE ENGINE
 TARGET PLATFORM: ACQUIRE.COM / ESCROW.COM
 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 
@@ -95,7 +95,7 @@ Upon expiration of the Inspection Period or Buyer's written confirmation, escrow
 Seller represents, warrants, and covenants to Buyer as follows:
 3.1 Ownership and Clean-Room Provenance. Seller is the exclusive owner of the Asset. The Asset was developed strictly in a clean-room environment using permissive open-source foundations (MIT, BSD-3, Apache 2.0).
 3.2 Zero Copyleft Contamination. The Asset contains NO code governed by GPL, AGPL, LGPL with static linkage, SSPL, or any other copyleft license that would require disclosure, licensing, or distribution of Buyer's proprietary derivatives.
-3.3 Non-Infringement. To Seller's knowledge, neither the Asset nor its utilization infringes upon, misappropriates, or violates any patent, copyright, trademark, or trade secret of any third party (including Toyota Motor Corporation or Heavy Overland Dynamics Platform Division, the Asset being an independent compatible algorithmic model).
+3.3 Non-Infringement. To Seller's knowledge, neither the Asset nor its utilization infringes upon, misappropriates, or violates any patent, copyright, trademark, or trade secret of any third party (including Toyota Motor Corporation or Apex Executive Division, the Asset being an independent compatible algorithmic model).
 
 4. EXHIBIT A — INTELLECTUAL PROPERTY ASSIGNMENT
 Seller hereby irrevocably grants, assigns, and transfers to Buyer all right, title, and interest throughout the universe in and to the Asset, including all worldwide copyright renewals, patent applications, and rights to sue for past, present, or future infringement.

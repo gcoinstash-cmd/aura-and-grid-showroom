@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="text-rose-400 font-mono text-base font-bold">GF-T3-169</span>
             </div>
             <div className="text-sm text-slate-400">
-              Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core · Acquire.com Turnkey Asset
+              Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core · Acquire.com Turnkey Asset
             </div>
           </div>
         </div>

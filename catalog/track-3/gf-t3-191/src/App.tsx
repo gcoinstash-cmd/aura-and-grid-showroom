@@ -330,7 +330,7 @@ export default function App() {
       <footer className="mt-12 border-t border-slate-900 bg-slate-950/90 py-6 text-center text-xs font-mono text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            GF-T3-191 · Heavy Overland Dynamics Platform LM 500h EXECUTIVE LUXURY MOVER CORE · v1.0.0-PROD
+            GF-T3-191 · Apex Executive LM 500h EXECUTIVE LUXURY MOVER CORE · v1.0.0-PROD
           </div>
           <div>
             MONOPOLY VAULT ASSET SPECIFICATION · Commercial Software Asset Standard ESCROW VERIFIED · CLEAN-ROOM 100%

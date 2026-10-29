@@ -1,5 +1,5 @@
 export const POSTGRES_SCHEMA_SQL = `-- ============================================================================
--- GF-T3-178: Heavy Overland Dynamics Platform LS 500 EXECUTIVE AWD FLAGSHIP POSTGRESQL 16 LEDGER
+-- GF-T3-178: Apex Executive LS 500 EXECUTIVE AWD FLAGSHIP POSTGRESQL 16 LEDGER
 -- Zero Circular Foreign Keys | Partitioned Hypertables | HMAC-SHA256 Chaining
 -- ============================================================================
 

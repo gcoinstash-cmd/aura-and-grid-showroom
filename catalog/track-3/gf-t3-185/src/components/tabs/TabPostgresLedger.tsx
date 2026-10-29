@@ -21,7 +21,7 @@ export const TabPostgresLedger: React.FC<TabPostgresLedgerProps> = ({
   const [queryOutput, setQueryOutput] = useState<string | null>(null);
 
   const postgresDDL = `-- PostgreSQL 16 Hybrid Ledger & Hypertables DDL
--- Engine: GF-T3-185 Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Handling Core
+-- Engine: GF-T3-185 Apex Executive NX 450h+ High-G Dynamic Telemetry Handling Core
 -- Strict Invariant: Monotonic HMAC-SHA256 Chaining & Hydraulic Quarantine Triggers
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

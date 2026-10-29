@@ -70,7 +70,7 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
         setApiResponse(JSON.stringify({
           status: "HEALTHY",
           code: 200,
-          hardware_id: "Heavy Overland Dynamics Platform-LDH-RACK-7782B",
+          hardware_id: "Apex Executive-LDH-RACK-7782B",
           current_rack_angle_deg: telemetry.rearWheelAngleDeg,
           limit_positive_deg: 2.0,
           limit_negative_deg: -2.0,

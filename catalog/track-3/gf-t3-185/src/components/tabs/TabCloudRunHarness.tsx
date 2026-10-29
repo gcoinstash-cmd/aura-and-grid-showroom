@@ -96,8 +96,8 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--worker
 `;
 
   const deployCommand = `# 1-Click Cloud Run Deployment Harness
-gcloud run deploy gf-t3-185-Heavy Overland Dynamics Platform-core \\
-  --image gcr.io/ghost-factory-os/gf-t3-185-Heavy Overland Dynamics Platform:v1.0.0 \\
+gcloud run deploy gf-t3-185-Apex Executive-core \\
+  --image gcr.io/ghost-factory-os/gf-t3-185-Apex Executive:v1.0.0 \\
   --platform managed \\
   --region us-east1 \\
   --allow-unauthenticated \\

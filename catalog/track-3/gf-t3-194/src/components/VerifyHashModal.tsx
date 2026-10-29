@@ -31,7 +31,7 @@ export const VerifyHashModal: React.FC<VerifyHashModalProps> = ({
                 Cryptographic HMAC-SHA256 Verification
               </h3>
               <p className="text-slate-400 text-base">
-                Verifying monotonic telemetry chain for GF-T3-194 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core
+                Verifying monotonic telemetry chain for GF-T3-194 Apex Executive Ultra-Heavy Telemetry Core
               </p>
             </div>
           </div>

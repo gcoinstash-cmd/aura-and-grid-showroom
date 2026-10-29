@@ -128,7 +128,7 @@ const MTS_SPECS: Record<MtsMode, MtsSpec> = {
 };
 
 const PYTHON_CODE = `"""
-Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) Active Height Control (AHC) & MTS Engine
+Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) Active Height Control (AHC) & MTS Engine
 Clean-Room Certified Python 3.12 Pure Algorithmic State Machine
 Proprietary 4-Wheel Electro-Hydraulic Pressure & Nitrogen Accumulator Modulator
 """
@@ -463,7 +463,7 @@ export const AhcSuspensionTab: React.FC<AhcSuspensionTabProps> = ({
               <line x1="230" y1="160" x2="80" y2="250" stroke="url(#hydraulicLine)" strokeWidth="3" strokeDasharray="4 2" />
               <line x1="230" y1="160" x2="380" y2="250" stroke="url(#hydraulicLine)" strokeWidth="3" strokeDasharray="4 2" />
 
-              {/* Vehicle Body Outline (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core silhouette) */}
+              {/* Vehicle Body Outline (Apex Executive Ultra-Heavy Telemetry Core silhouette) */}
               <g transform={`rotate(${hydraulicState.rollDeg}, 230, 160)`}>
                 <rect
                   x="140"

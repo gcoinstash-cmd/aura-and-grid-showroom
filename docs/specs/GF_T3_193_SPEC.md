@@ -1,4 +1,4 @@
-# GF-T3-193: LEXUS IS 500 F SPORT PERFORMANCE CORE
+# GF-T3-193: Apex Executive Engine F SPORT PERFORMANCE CORE
 ## Turnkey Micro-APA Acquisition Master Specification — Delaware Asset Purchase Agreement Ready
 **Target Valuation:** $45,000 USD (Standard Buyout) | $125,000 USD (Enterprise Monopoly Vault)  
 **License:** Permissive MIT License (100% Clean-Room Certified, Zero GPL/AGPL Contamination)  
@@ -9,7 +9,7 @@
 
 ## 1. EXECUTIVE SUMMARY & SYSTEM TOPOLOGY
 
-GF-T3-193 is a high-performance, containerized telemetry and dynamics control engine built for the Lexus IS 500 F SPORT Performance platform (2UR-GSE 472 hp / 395 lb-ft naturally aspirated quad-cam 32-valve 5.0L V8).
+GF-T3-193 is a high-performance, containerized telemetry and dynamics control engine built for the Apex Executive Engine F SPORT Performance platform (2UR-GSE 472 hp / 395 lb-ft naturally aspirated quad-cam 32-valve 5.0L V8).
 
 ### 1.1 Architectural Topology
 - **Container Boundary:** Distroless Non-Root Debian/Alpine Container (gcr.io/ghost-factory/gf-t3-193:v1.0.0) running on Google Cloud Run with scale-to-zero capability.
@@ -53,7 +53,7 @@ GF-T3-193 is a high-performance, containerized telemetry and dynamics control en
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 Dual-Stage Acoustic Intake Runner Helmholtz Resonator
-The naturally aspirated Lexus 2UR-GSE employs dual-stage intake runner lengths to maximize volumetric efficiency ($\eta_v$) across both low-end torque delivery and high-RPM atmospheric breathing.
+The naturally aspirated Apex Executive Engine 2UR-GSE employs dual-stage intake runner lengths to maximize volumetric efficiency ($\eta_v$) across both low-end torque delivery and high-RPM atmospheric breathing.
 
 The Helmholtz resonance frequency ($f_H$) for the intake manifold runner chamber is governed by:
 $$f_H = \frac{c}{2\pi} \sqrt{\frac{A}{V \cdot L_{\text{eff}}}}$$
@@ -160,7 +160,7 @@ CREATE TRIGGER trg_torsen_oil_temp_quarantine
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-193 Lexus IS 500 Performance Telemetry API
+  title: GF-T3-193 Apex Executive Engine Performance Telemetry API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion, acoustic intake valve management, and Torsen LSD control protocol.
 paths:
@@ -230,7 +230,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
 **BUYOUT PRICE:** $45,000 USD (Base Turnkey Asset) | $125,000 USD (Enterprise Monopoly Buyout)  
 **JURISDICTION:** State of Delaware, United States  
-**SELLER WARRANTY:** 100% Clean-Room Certified. Seller expressly warrants and represents that the Software contains zero Copyleft (GPL, AGPL, SSPL) code, zero proprietary Lexus/Toyota intellectual property violations (all physical mathematical calculations independently derived from first principles of thermodynamics, fluid dynamics, and gear mechanics), and is fully assignable free and clear of all liens and encumbrances.
+**SELLER WARRANTY:** 100% Clean-Room Certified. Seller expressly warrants and represents that the Software contains zero Copyleft (GPL, AGPL, SSPL) code, zero proprietary third-party OEM intellectual property violations (all physical mathematical calculations independently derived from first principles of thermodynamics, fluid dynamics, and gear mechanics), and is fully assignable free and clear of all liens and encumbrances.
 
 **EXHIBIT A: INCLUDED ASSETS**
 1. Full proprietary source code repository (`is500_acoustic_torsen_core.py`, FastAPI routes, tests).

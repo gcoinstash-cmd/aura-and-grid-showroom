@@ -218,7 +218,7 @@ SELLER: Ghost FactoryOS Architecture LLC ("Seller"), a Delaware limited liabilit
 BUYER: The acquiring party as verified via Acquire.com / Escrow ("Buyer").
 
 RECITALS:
-WHEREAS, Seller owns all right, title, and interest in and to the software, mathematical models, schemas, and intellectual property comprising the asset designated as "GF-T3-200 (Heavy Overland Dynamics Platform Electrified Supercar Concept Core)" (the "Asset");
+WHEREAS, Seller owns all right, title, and interest in and to the software, mathematical models, schemas, and intellectual property comprising the asset designated as "GF-T3-200 (Hypercar Flagship Trim Electrified Supercar Concept Core)" (the "Asset");
 WHEREAS, Buyer desires to purchase, and Seller desires to sell, transfer, convey, and assign all right, title, and interest in and to the Acquired Assets upon the terms and subject to the conditions set forth herein;
 
 NOW, THEREFORE, the parties agree as follows:

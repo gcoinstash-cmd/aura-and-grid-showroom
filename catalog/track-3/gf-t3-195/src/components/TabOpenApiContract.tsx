@@ -19,7 +19,7 @@ export const TabOpenApiContract: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Telemetry Core
+  title: GF-T3-195 Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Telemetry Core
   version: 1.0.0-PROD
   description: High-frequency pitot differential pressure, carbon strain, and downforce ledger API.
 paths:

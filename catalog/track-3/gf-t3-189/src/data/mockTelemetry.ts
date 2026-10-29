@@ -1,6 +1,6 @@
 /**
  * Deterministic Telemetry Engine & Cryptographic HMAC Verification
- * Calibrated specifically for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible (URZ100 Platform)
+ * Calibrated specifically for Apex Executive High-Aero Grand Touring Telemetry Core Convertible (URZ100 Platform)
  */
 
 export interface TelemetryState {

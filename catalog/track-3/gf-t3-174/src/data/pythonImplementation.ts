@@ -1,12 +1,12 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Pure Python 3.12 Controller Implementation & TS Mathematical Engine
  */
 
 export const PYTHON_SBW_CORE_CODE = `"""
-Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
 Pure Python 3.12 Controller Implementation with Discrete Kalman Observer,
 Speed-Adaptive Variable Steering Ratio, and Active Yaw Damping.
 
@@ -27,7 +27,7 @@ class ConsensusStatus(Enum):
 
 @dataclass(frozen=True)
 class VehicleParameters:
-    mass_kg: float = 2090.0           # Heavy Overland Dynamics Platform RZ 450e curb mass
+    mass_kg: float = 2090.0           # Apex Executive RZ 450e curb mass
     yaw_inertia_kgm2: float = 3480.0  # Yaw moment of inertia Iz
     wheelbase_m: float = 2.85         # Total wheelbase L = a + b
     dist_cg_front_m: float = 1.34     # Distance 'a' from CG to front axle

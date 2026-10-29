@@ -50,7 +50,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
             </h2>
             <p className="text-base text-neutral-300 mt-2 max-w-3xl">
               Turnkey micro-acquisition package for acquiring full legal title, intellectual property, 
-              and production artifacts for the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core.
+              and production artifacts for the Apex Executive High-Aero Grand Touring Telemetry Core Convertible Grand Touring Core.
             </p>
           </div>
 

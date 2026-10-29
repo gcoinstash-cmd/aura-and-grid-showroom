@@ -22,7 +22,7 @@ interface TabDrsYawCoreProps {
 
 const PYTHON_CODE = `"""
 GF-T3-192: Dynamic Rear Steering (DRS) & DUAL_VECTOR_TORQUE AWD Arbitration Engine
-Target Vehicle: Heavy Overland Dynamics Platform High-Output Multi-Node Core (Modular Cyber-Physical Chassis Architecture, 3.5L V6 PHEV)
+Target Vehicle: Apex Executive High-Output Multi-Node Core (Modular Cyber-Physical Chassis Architecture, 3.5L V6 PHEV)
 License: MIT Permissive | Clean-Room Audited
 """
 from dataclasses import dataclass
@@ -169,7 +169,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
               </h2>
             </div>
             <p className="text-slate-300 text-base leading-relaxed">
-              Heavy Overland Dynamics Platform High-Output Multi-Node Core continuous rear toe-angle arbitration ($\pm 4.0^\circ$) coupled with 3.5L V6 PHEV rear e-Axle torque vectoring.
+              Apex Executive High-Output Multi-Node Core continuous rear toe-angle arbitration ($\pm 4.0^\circ$) coupled with 3.5L V6 PHEV rear e-Axle torque vectoring.
             </p>
           </div>
 
@@ -280,7 +280,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
           <div className="flex items-center justify-between mb-4">
             <span className="text-slate-300 font-bold text-lg flex items-center gap-2">
               <Car className="w-5 h-5 text-amber-400" />
-              Heavy Overland Dynamics Platform Modular Cyber-Physical Chassis Dynamic Steering Kinematics
+              Apex Executive Modular Cyber-Physical Chassis Dynamic Steering Kinematics
             </span>
             <span className="text-xs font-mono text-slate-400 bg-slate-800 px-2.5 py-1 rounded">
               Wheelbase: 2,950 mm
@@ -317,7 +317,7 @@ export const TabDrsYawCore: React.FC<TabDrsYawCoreProps> = ({
                 />
               )}
 
-              {/* Vehicle Body Chassis Box (Heavy Overland Dynamics Platform TX Profile) */}
+              {/* Vehicle Body Chassis Box (Apex Executive TX Profile) */}
               <rect
                 x="160"
                 y="40"

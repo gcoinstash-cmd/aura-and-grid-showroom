@@ -5,7 +5,7 @@ import { ApiTestResult } from '../../types/telemetry';
 const OPENAPI_SPEC = {
   openapi: "3.1.0",
   info: {
-    title: "Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine API",
+    title: "Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Service Engine API",
     version: "1.0.0-PROD",
     description: "Real-time CAN-FD Dynamic Rear Steering arbitration and DUAL_VECTOR_TORQUE e-Axle torque distribution service",
     contact: {

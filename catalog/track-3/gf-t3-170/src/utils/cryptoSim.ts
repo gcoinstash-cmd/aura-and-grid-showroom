@@ -151,7 +151,7 @@ export function buildMerkleTree(frames: CanFdFrame[]): { root: string; nodes: Me
   };
 }
 
-// Sample ECU telemetry definitions for Heavy Overland Dynamics Platform ES 350h Executive Quietude
+// Sample ECU telemetry definitions for Apex Executive ES 350h Executive Quietude
 export const Overland_QUIETUDE_ECUS = [
   {
     id: '0x1A4',

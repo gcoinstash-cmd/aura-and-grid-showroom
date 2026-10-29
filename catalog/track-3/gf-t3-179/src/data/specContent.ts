@@ -1,11 +1,11 @@
 /**
  * GF-T3-179 Master Technical Specification and Code Asset Repository
- * Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core (DUAL_VECTOR_TORQUE + 18.1 kWh PHEV Energy Arbitrator)
+ * Apex Executive High-Output Multi-Node Core Luxury Plug-in Core (DUAL_VECTOR_TORQUE + 18.1 kWh PHEV Energy Arbitrator)
  * Designed for Acquire.com Micro-APA Turnkey Asset Transfer
  */
 
 export const PYTHON_ENGINE_CODE = `"""
-GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
+GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
 Target Architecture: Pure Python 3.12 (Zero-dependency standard library / high-performance float math)
 License: MIT Permissive (Clean-Room Certified)
 """
@@ -17,7 +17,7 @@ import hashlib
 from dataclasses import dataclass
 from typing import Tuple, Dict, Any, Optional
 
-# Powertrain Constants: Heavy Overland Dynamics Platform High-Output Multi-Node Core (Luxury Plug-in Hybrid AWD)
+# Powertrain Constants: Apex Executive High-Output Multi-Node Core (Luxury Plug-in Hybrid AWD)
 V6_MAX_POWER_KW = 193.0       # 3.5L V6 2GR-FXS combustion engine (~259 hp)
 V6_MAX_TORQUE_NM = 350.0      # Front transaxle coupled
 FRONT_MG_MAX_TORQUE_NM = 270.0 # Front Electric Motor-Generator (MG2)
@@ -62,11 +62,11 @@ class OverlandTX550hDualVectorTorqueArbitrator:
     """
     Sub-millisecond 1,000 Hz DUAL_VECTOR_TORQUE Dynamic Torque Vectoring Core.
     Arbitrates between Front Transaxle (V6 + Front MG) and Rear e-Axle
-    within legal Heavy Overland Dynamics Platform High-Output Multi-Node Core mechanical constraints: 100:0 to 20:80.
+    within legal Apex Executive High-Output Multi-Node Core mechanical constraints: 100:0 to 20:80.
     """
     def __init__(self, hmac_secret_key: bytes = b"Overland_TX550H_DUAL_VECTOR_TORQUE_SECURE_KEY_2026"):
         self.hmac_secret_key = hmac_secret_key
-        self.wheelbase_m = 2.950  # Heavy Overland Dynamics Platform TX wheelbase in meters
+        self.wheelbase_m = 2.950  # Apex Executive TX wheelbase in meters
         self.track_width_m = 1.700 # Rear track width in meters
         self.mass_kg = 2445.0      # Curb weight in kg
         self.sequence_nonce = 1000000
@@ -198,7 +198,7 @@ class OverlandTX550hDualVectorTorqueArbitrator:
 `;
 
 export const POSTGRES_DDL_SCHEMA = `-- =========================================================================
--- GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE IMMUTABLE TELEMETRY LEDGER SCHEMA
+-- GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE IMMUTABLE TELEMETRY LEDGER SCHEMA
 -- Target Database: PostgreSQL 16 / AlloyDB
 -- Features: Partitioned Daily Timeseries Hypertables, Torque Divergence
 --           Quarantine Triggers, and Cryptographic HMAC-SHA256 Chains
@@ -348,11 +348,11 @@ CREATE OR REPLACE TRIGGER trg_check_torque_divergence
 
 export const OPENAPI_SPECIFICATION = `openapi: 3.1.0
 info:
-  title: GF-T3-179 Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Telemetry & Dispatch API
+  title: GF-T3-179 Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Telemetry & Dispatch API
   version: 1.0.0-PROD
   description: >
     Production-grade REST and WebSocket telemetry ingestion protocol for
-    Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
+    Apex Executive High-Output Multi-Node Core Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
 servers:
   - url: https://telemetry.dual_vector_torque-tx550h.internal/api/v1
     description: Production Cloud Run Internal Mesh
@@ -559,7 +559,7 @@ components:
 `;
 
 export const DOCKERFILE_HARNESS = `# =========================================================================
-# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Core - Multi-Stage Non-Root Dockerfile
+# GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Core - Multi-Stage Non-Root Dockerfile
 # Base Image: Python 3.12-slim (Debian Bookworm)
 # Security: Non-Root Execution (UID 10001), Read-Only FS, Zero Copyleft
 # =========================================================================
@@ -582,7 +582,7 @@ FROM python:3.12-slim AS production
 
 LABEL maintainer="Ghost FactoryOS <vault@acquire.ghostfactoryos.internal>"
 LABEL asset.id="GF-T3-179"
-LABEL asset.name="Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"
+LABEL asset.name="Apex Executive High-Output Multi-Node Core Luxury Plug-in Core"
 LABEL license="MIT Permissive"
 
 # Create unprivileged service user
@@ -742,7 +742,7 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 `;
 
 export const DELAWARE_APA_COVENANT = `# INSTITUTIONAL ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-**ASSET IDENTIFIER:** GF-T3-179 (Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core)  
+**ASSET IDENTIFIER:** GF-T3-179 (Apex Executive High-Output Multi-Node Core Luxury Plug-in Core)  
 **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 **GOVERNING LAW:** Standard Commercial Jurisdiction, United States of America  
 **PLATFORM ESCROW:** Acquire.com / Escrow.com Integrated Protocol  
@@ -750,7 +750,7 @@ export const DELAWARE_APA_COVENANT = `# INSTITUTIONAL ASSET PURCHASE AGREEMENT (
 ---
 
 ### RECITALS
-**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"), including:
+**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Apex Executive High-Output Multi-Node Core Luxury Plug-in Core"), including:
 1. Sub-millisecond DUAL_VECTOR_TORQUE 100:0 to 20:80 dynamic e-Axle torque vectoring engine (Python 3.12);
 2. 18.1 kWh PHEV energy arbitration and cell thermal state management models;
 3. Partitioned PostgreSQL 16 timeseries hypertable schema with divergence triggers and cryptographic HMAC-SHA256 signature chains;
@@ -803,18 +803,18 @@ Upon positive verification or lapse of 48 hours without written dispute, Escrow 
 IN WITNESS WHEREOF, the parties hereto have executed this Asset Purchase Agreement as of the Effective Timestamp recorded on the cryptographic ledger.
 `;
 
-export const MASTER_SPEC_MARKDOWN = `# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core LUXURY PLUG-IN CORE
+export const MASTER_SPEC_MARKDOWN = `# GF-T3-179: Apex Executive High-Output Multi-Node Core LUXURY PLUG-IN CORE
 ## deterministic production Turnkey Master Specification (70% Workload Deliverable)
 **Platform:** Ghost FactoryOS Institutional Dealership Fleet  
 **Asset Specification: ** 20 kHz (0.48ms) (Micro-APA Turnkey) / PostgreSQL 16 + RLS (Enterprise Vault)  
-**Target Vehicle:** Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Luxury Plug-in Hybrid  
+**Target Vehicle:** Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Luxury Plug-in Hybrid  
 **Architecture Track:** Track 3 (F1 Skunkworks Service Engine)  
 **License:** Permissive MIT (Clean-Room Certified / 0% Copyleft)  
 
 ---
 
 ### 1. ARCHITECTURAL TOPOLOGY & OVERVIEW
-The Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core integrates a dual-energy architecture combining:
+The Apex Executive High-Output Multi-Node Core Luxury Plug-in Core integrates a dual-energy architecture combining:
 - **Combustion & Front Hybrid Transaxle**: 3.5L V6 (2GR-FXS) coupled to electric motor-generator (MG2) delivering up to 350 Nm of front mechanical torque.
 - **Rear High-Output e-Axle**: Dedicated high-efficiency rear motor delivering up to 169 Nm directly to rear wheels without a mechanical driveshaft.
 - **High-Voltage PHEV Energy Storage**: 18.1 kWh 355V lithium-ion battery pack with dedicated liquid glycol cooling loops.

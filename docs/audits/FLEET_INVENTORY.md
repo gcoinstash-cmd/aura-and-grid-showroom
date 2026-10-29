@@ -60,41 +60,41 @@
 | `GF-T3-163` | Kinetic Terrain Swarm Distributed Consensus Engine | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-163/` | `docs/specs/GF_T3_163_SPEC.md` |
 | `GF-T3-164` | NeuroDrive Multi-Modal Sensory Fusion Engine | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-164/` | `docs/specs/GF_T3_164_SPEC.md` |
 | `GF-T3-165` | DIRECT4 HyperGrid Quant Routing & Arbitrage Engine | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-165/` | `docs/specs/GF_T3_165_SPEC.md` |
-| `GF-T3-166` | Lexus LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-166/` | `docs/specs/GF_T3_166_SPEC.md` |
-| `GF-T3-167` | Lexus LC 500 Dynamic Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-167/` | `docs/specs/GF_T3_167_SPEC.md` |
-| `GF-T3-168` | Lexus RX 500h F SPORT Dynamic Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-168/` | `docs/specs/GF_T3_168_SPEC.md` |
-| `GF-T3-169` | Lexus NX 450h+ F SPORT Agile Hybrid Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-169/` | `docs/specs/GF_T3_169_SPEC.md` |
-| `GF-T3-170` | Lexus ES 350h Executive Quietude Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-170/` | `docs/specs/GF_T3_170_SPEC.md` |
-| `GF-T3-171` | Lexus IS 500 F SPORT V8 Dynamic Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-171/` | `docs/specs/GF_T3_171_SPEC.md` |
-| `GF-T3-172` | Lexus TX 500h F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-172/` | `docs/specs/GF_T3_172_SPEC.md` |
-| `GF-T3-173` | Lexus RC F Track Edition Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-173/` | `docs/specs/GF_T3_173_SPEC.md` |
-| `GF-T3-174` | Lexus RZ 450e Steer-by-Wire Precision Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-174/` | `docs/specs/GF_T3_174_SPEC.md` |
-| `GF-T3-175` | Lexus UX 300h Urban Edge Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-175/` | `docs/specs/GF_T3_175_SPEC.md` |
-| `GF-T3-176` | Lexus GX 550 Overtrail+ Terrain Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-176/` | `docs/specs/GF_T3_176_SPEC.md` |
-| `GF-T3-177` | Lexus LC 500 Convertible Grand Touring Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-177/` | `docs/specs/GF_T3_177_SPEC.md` |
-| `GF-T3-178` | Lexus LS 500 Executive AWD Flagship Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-178/` | `docs/specs/GF_T3_178_SPEC.md` |
-| `GF-T3-179` | Lexus TX 550h+ Luxury Plug-In Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-179/` | `docs/specs/GF_T3_179_SPEC.md` |
-| `GF-T3-180` | Lexus LX 600 Ultra Luxury Executive Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-180/` | `docs/specs/GF_T3_180_SPEC.md` |
-| `GF-T3-181` | Lexus IS 500 F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-181/` | `docs/specs/GF_T3_181_SPEC.md` |
-| `GF-T3-182` | Lexus RC F Track Edition Aero Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-182/` | `docs/specs/GF_T3_182_SPEC.md` |
-| `GF-T3-183` | Lexus RZ 450e DIRECT4 Dual-Motor Electric Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-183/` | `docs/specs/GF_T3_183_SPEC.md` |
-| `GF-T3-184` | Lexus LFA Nürburgring Edition V10 Apex Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-184/` | `docs/specs/GF_T3_184_SPEC.md` |
-| `GF-T3-185` | Lexus NX 450h+ F SPORT Handling Plug-In Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-185/` | `docs/specs/GF_T3_185_SPEC.md` |
-| `GF-T3-186` | Lexus UX 300h F SPORT Handling Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-186/` | `docs/specs/GF_T3_186_SPEC.md` |
-| `GF-T3-187` | Lexus ES 300h Ultra Luxury Swing-Valve Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-187/` | `docs/specs/GF_T3_187_SPEC.md` |
-| `GF-T3-188` | Lexus GX 550 Overtrail+ E-KDSS Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-188/` | `docs/specs/GF_T3_188_SPEC.md` |
-| `GF-T3-189` | Lexus LC 500 Convertible Structural Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-189/` | `docs/specs/GF_T3_189_SPEC.md` |
-| `GF-T3-190` | Lexus Electrified Sport Concept Solid-State Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-190/` | `docs/specs/GF_T3_190_SPEC.md` |
-| `GF-T3-191` | Lexus LM 500h Executive Luxury Mover Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-191/` | `docs/specs/GF_T3_191_SPEC.md` |
-| `GF-T3-192` | Lexus TX 550h+ DIRECT4 Dynamic Rear Steering Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-192/` | `docs/specs/GF_T3_192_SPEC.md` |
-| `GF-T3-193` | Lexus IS 500 F SPORT Performance Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-193/` | `docs/specs/GF_T3_193_SPEC.md` |
-| `GF-T3-194` | Lexus LX 600 F SPORT 4-Wheel Active Height Control Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-194/` | `docs/specs/GF_T3_194_SPEC.md` |
-| `GF-T3-195` | Lexus LC 500 Inspiration Series Carbon Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-195/` | `docs/specs/GF_T3_195_SPEC.md` |
-| `GF-T3-196` | Lexus RZ 450e Steer-by-Wire DIRECT4 Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-196/` | `docs/specs/GF_T3_196_SPEC.md` |
-| `GF-T3-197` | Lexus TX 500h F SPORT Performance Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-197/` | `docs/specs/GF_T3_197_SPEC.md` |
-| `GF-T3-198` | Lexus LFA Nürburgring Edition 1LR-GUE V10 Telematics Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-198/` | `docs/specs/GF_T3_198_SPEC.md` |
-| `GF-T3-199` | Lexus RX 500h F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-199/` | `docs/specs/GF_T3_199_SPEC.md` |
-| `GF-T3-200` | Lexus Electrified Supercar Concept Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-200/` | `docs/specs/GF_T3_200_SPEC.md` |
+| `GF-T3-166` | Apex Executive Engine Ultra-Luxury Raft Event Ingestion & Spec Engine | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-166/` | `docs/specs/GF_T3_166_SPEC.md` |
+| `GF-T3-167` | Hypercar Flagship Trim Dynamic Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-167/` | `docs/specs/GF_T3_167_SPEC.md` |
+| `GF-T3-168` | Apex Executive Engine F SPORT Dynamic Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-168/` | `docs/specs/GF_T3_168_SPEC.md` |
+| `GF-T3-169` | Apex Executive Engine+ F SPORT Agile Hybrid Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-169/` | `docs/specs/GF_T3_169_SPEC.md` |
+| `GF-T3-170` | Apex Executive Engine Executive Quietude Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-170/` | `docs/specs/GF_T3_170_SPEC.md` |
+| `GF-T3-171` | Apex Executive Engine F SPORT V8 Dynamic Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-171/` | `docs/specs/GF_T3_171_SPEC.md` |
+| `GF-T3-172` | Apex Executive Engine F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-172/` | `docs/specs/GF_T3_172_SPEC.md` |
+| `GF-T3-173` | Hypercar Flagship Trim Track Edition Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-173/` | `docs/specs/GF_T3_173_SPEC.md` |
+| `GF-T3-174` | Track 2 Sovereign Flagship Steer-by-Wire Precision Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-174/` | `docs/specs/GF_T3_174_SPEC.md` |
+| `GF-T3-175` | Apex Executive Engine Urban Edge Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-175/` | `docs/specs/GF_T3_175_SPEC.md` |
+| `GF-T3-176` | Vanguard ECLSS+ Terrain Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-176/` | `docs/specs/GF_T3_176_SPEC.md` |
+| `GF-T3-177` | Hypercar Flagship Trim Convertible Grand Touring Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-177/` | `docs/specs/GF_T3_177_SPEC.md` |
+| `GF-T3-178` | Apex Executive Engine Executive AWD Flagship Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-178/` | `docs/specs/GF_T3_178_SPEC.md` |
+| `GF-T3-179` | Apex Executive Engine+ Luxury Plug-In Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-179/` | `docs/specs/GF_T3_179_SPEC.md` |
+| `GF-T3-180` | Apex Executive Engine Ultra Luxury Executive Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-180/` | `docs/specs/GF_T3_180_SPEC.md` |
+| `GF-T3-181` | Apex Executive Engine F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-181/` | `docs/specs/GF_T3_181_SPEC.md` |
+| `GF-T3-182` | Hypercar Flagship Trim Track Edition Aero Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-182/` | `docs/specs/GF_T3_182_SPEC.md` |
+| `GF-T3-183` | Track 2 Sovereign Flagship DIRECT4 Dual-Motor Electric Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-183/` | `docs/specs/GF_T3_183_SPEC.md` |
+| `GF-T3-184` | Hypercar Flagship Trim V10 Apex Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-184/` | `docs/specs/GF_T3_184_SPEC.md` |
+| `GF-T3-185` | Apex Executive Engine+ F SPORT Handling Plug-In Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-185/` | `docs/specs/GF_T3_185_SPEC.md` |
+| `GF-T3-186` | Apex Executive Engine F SPORT Handling Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-186/` | `docs/specs/GF_T3_186_SPEC.md` |
+| `GF-T3-187` | Apex Executive Engine Ultra Luxury Swing-Valve Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-187/` | `docs/specs/GF_T3_187_SPEC.md` |
+| `GF-T3-188` | Vanguard ECLSS+ E-KDSS Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-188/` | `docs/specs/GF_T3_188_SPEC.md` |
+| `GF-T3-189` | Hypercar Flagship Trim Convertible Structural Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-189/` | `docs/specs/GF_T3_189_SPEC.md` |
+| `GF-T3-190` | Hypercar Flagship Trim Solid-State Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-190/` | `docs/specs/GF_T3_190_SPEC.md` |
+| `GF-T3-191` | Apex Executive Engine Executive Luxury Mover Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-191/` | `docs/specs/GF_T3_191_SPEC.md` |
+| `GF-T3-192` | Apex Executive Engine+ DIRECT4 Dynamic Rear Steering Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-192/` | `docs/specs/GF_T3_192_SPEC.md` |
+| `GF-T3-193` | Apex Executive Engine F SPORT Performance Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-193/` | `docs/specs/GF_T3_193_SPEC.md` |
+| `GF-T3-194` | Apex Executive Engine F SPORT 4-Wheel Active Height Control Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-194/` | `docs/specs/GF_T3_194_SPEC.md` |
+| `GF-T3-195` | Hypercar Flagship Trim Inspiration Series Carbon Aero Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-195/` | `docs/specs/GF_T3_195_SPEC.md` |
+| `GF-T3-196` | Track 2 Sovereign Flagship Steer-by-Wire DIRECT4 Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-196/` | `docs/specs/GF_T3_196_SPEC.md` |
+| `GF-T3-197` | Apex Executive Engine F SPORT Performance Core (Mark II) | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-197/` | `docs/specs/GF_T3_197_SPEC.md` |
+| `GF-T3-198` | Hypercar Flagship Trim 1LR-GUE V10 Telematics Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-198/` | `docs/specs/GF_T3_198_SPEC.md` |
+| `GF-T3-199` | Apex Executive Engine F SPORT Performance Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-199/` | `docs/specs/GF_T3_199_SPEC.md` |
+| `GF-T3-200` | Hypercar Flagship Trim Core | Track 3 | $45,000 | $125,000 | Certified MIT/Apache-2.0 | Production Ready | `catalog/track-3/gf-t3-200/` | `docs/specs/GF_T3_200_SPEC.md` |
 
 ---
 

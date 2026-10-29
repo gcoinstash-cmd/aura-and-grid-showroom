@@ -34,7 +34,7 @@ export const PsdHybridCoreTab: React.FC<PsdHybridCoreTabProps> = ({
   const [activeSubView, setActiveSubView] = useState<'visualizer' | 'code'>('visualizer');
 
   const pythonCode = `# psd_state_machine.py
-# Pure Python 3.12 State Machine | Heavy Overland Dynamics Platform UX 300h 5th-Gen Hybrid
+# Pure Python 3.12 State Machine | Apex Executive UX 300h 5th-Gen Hybrid
 # Clean-Room Engineering | MIT Permissive License
 
 from dataclasses import dataclass

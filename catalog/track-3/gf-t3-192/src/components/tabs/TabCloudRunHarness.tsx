@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Play, CheckCircle2, RotateCw, Terminal, Cloud, ShieldAlert, Copy, Check } from 'lucide-react';
 
-const DOCKERFILE_CONTENT = `# Multi-Stage Hardened Containerfile for Heavy Overland Dynamics Platform TX DRS Service Engine
+const DOCKERFILE_CONTENT = `# Multi-Stage Hardened Containerfile for Apex Executive TX DRS Service Engine
 # Base: Chainguard Wolfi Python 3.12 (Zero Known CVEs)
 FROM cgr.dev/chainguard/python:latest-dev AS builder
 
@@ -31,20 +31,20 @@ ENTRYPOINT ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--p
 `;
 
 const GCLOUD_COMMANDS = `# Step 1: Authenticate and configure GCP Project
-gcloud config set project Heavy Overland Dynamics Platform-tx-deterministic production-prod
+gcloud config set project Apex Executive-tx-deterministic production-prod
 gcloud services enable run.googleapis.com artifactregistry.googleapis.com secretmanager.googleapis.com
 
 # Step 2: Build & Push Hardened Image to Artifact Registry
-gcloud builds submit --tag us-docker.pkg.dev/Heavy Overland Dynamics Platform-tx-deterministic production-prod/drs-core/tx-engine:v1.0.0-prod
+gcloud builds submit --tag us-docker.pkg.dev/Apex Executive-tx-deterministic production-prod/drs-core/tx-engine:v1.0.0-prod
 
 # Step 3: Deploy to Cloud Run with Sub-Millisecond Cold Starts
-gcloud run deploy Heavy Overland Dynamics Platform-tx-drs-service \\
-  --image=us-docker.pkg.dev/Heavy Overland Dynamics Platform-tx-deterministic production-prod/drs-core/tx-engine:v1.0.0-prod \\
+gcloud run deploy Apex Executive-tx-drs-service \\
+  --image=us-docker.pkg.dev/Apex Executive-tx-deterministic production-prod/drs-core/tx-engine:v1.0.0-prod \\
   --region=us-central1 \\
   --platform=managed \\
   --allow-unauthenticated=false \\
   --set-env-vars="ENV=production,CAN_CYCLE_FREQ_HZ=2500" \\
-  --set-secrets="HMAC_SECRET_KEY=Heavy Overland Dynamics Platform-tx-hmac-seed:latest" \\
+  --set-secrets="HMAC_SECRET_KEY=Apex Executive-tx-hmac-seed:latest" \\
   --cpu=2 \\
   --memory=2Gi \\
   --min-instances=1 \\

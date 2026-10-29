@@ -52,7 +52,7 @@ Institutional quantitative trading desks, high-frequency liquidity providers, au
 
 | # | Chassis ID | Chassis Name | Track Tier | Retail MSRP | Live Demo URL |
 | :-: | :--- | :--- | :--- | :-: | :--- |
-| 01 | `GF-T3-200` | **Heavy Overland Dynamics Platform Electrified Supercar Concept Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-200/index.html) |
+| 01 | `GF-T3-200` | **Hypercar Flagship Trim Electrified Supercar Concept Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-200/index.html) |
 | 02 | `GF-T3-252` | **GF-T3-252** | Track 3 — F1 Skunkworks Engine | `$75,000` | [`Inspect Demo`](/demos/gf-t3-252/index.html) |
 | 03 | `GF-T3-253` | **GF-T3-253** | Track 3 — F1 Skunkworks Engine | `$75,000` | [`Inspect Demo`](/demos/gf-t3-253/index.html) |
 | 04 | `GF-T3-254` | **GF-T3-254** | Track 3 — F1 Skunkworks Engine | `$75,000` | [`Inspect Demo`](/demos/gf-t3-254/index.html) |

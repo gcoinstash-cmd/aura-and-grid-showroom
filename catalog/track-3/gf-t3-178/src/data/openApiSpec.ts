@@ -1,6 +1,6 @@
 export const OPENAPI_YAML_SPEC = `openapi: 3.1.0
 info:
-  title: GF-T3-178 Heavy Overland Dynamics Platform LS 500 Executive AWD Telemetry Gateway
+  title: GF-T3-178 Apex Executive LS 500 Executive AWD Telemetry Gateway
   version: 1.0.0-PROD
   description: >
     Zero-placeholder OpenAPI 3.1 specification for cabin acoustic interior microphone stream ingestion,
@@ -15,7 +15,7 @@ paths:
   /v1/telemetry/microphone-stream:
     post:
       summary: Ingest 4-Channel Interior Acoustic Microphone Frames
-      description: Ingests 2,000 Hz acoustic sampled vectors from Heavy Overland Dynamics Platform cabin MEMS microphones.
+      description: Ingests 2,000 Hz acoustic sampled vectors from Apex Executive cabin MEMS microphones.
       operationId: ingestMicrophoneStream
       requestBody:
         required: true

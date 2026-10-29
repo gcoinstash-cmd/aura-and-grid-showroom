@@ -53,7 +53,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core
+        Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core
       </h1>
       <p className="text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with Dynamic Rear Steering (DRS), DUAL_VECTOR_TORQUE rear eAxle vectoring, and PostgreSQL 16 HMAC ledger.

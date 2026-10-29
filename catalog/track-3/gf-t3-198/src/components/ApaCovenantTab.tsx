@@ -21,7 +21,7 @@ export const ApaCovenantTab: React.FC = () => {
   const purchasePrice = tier === 'standard' ? '20 kHz (0.48ms)' : 'PostgreSQL 16 + RLS';
 
   const apaContractText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-198 (Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION V10 TELEMATICS CORE)
+ASSET IDENTIFIER: GF-T3-198 (Apex Executive LFA NÜRBURGRING EDITION V10 TELEMATICS CORE)
 PLATFORM ESCROW: ACQUIRE.COM / ESCROW.COM
 GOVERNING LAW: Standard Commercial Jurisdiction
 

@@ -1,5 +1,5 @@
 # LEGAL_IP_AUDIT.md — CLEAN-ROOM CERTIFICATION & DEPENDENCY MANIFEST
-**Asset ID:** `GF-T3-187` (Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core)
+**Asset ID:** `GF-T3-187` (Apex Executive ES 300h Ultra Luxury Core)
 **Audit Date:** October 11, 2026
 **Jurisdiction:** Standard Commercial Jurisdiction, United States
 **Certification Tier:** Track 3 Monopoly Vault Clean-Room Verified (`0% Copyleft`)

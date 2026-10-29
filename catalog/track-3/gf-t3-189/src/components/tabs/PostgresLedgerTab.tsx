@@ -20,7 +20,7 @@ export const PostgresLedgerTab: React.FC<PostgresLedgerTabProps> = ({
   const [filterQuarantine, setFilterQuarantine] = useState(false);
 
   const postgresDdl = `-- =====================================================================
--- GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO RESONANCE LEDGER
+-- GF-T3-189: Apex Executive High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO RESONANCE LEDGER
 -- Target Database: PostgreSQL 16.x / AlloyDB with Partitioned Hypertables
 -- License: MIT Permissive / Clean-Room Work Product
 -- =====================================================================
@@ -327,7 +327,7 @@ CREATE OR REPLACE TRIGGER trg_verify_cowl_ledger
               Automated Harmonic Divergence & Security Isolation Policy
             </h3>
             <p className="text-base text-slate-300">
-              In open-top sports convertibles like the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core, extreme chassis torsion over uneven pavement or high-speed kerb strikes can excite structural cowl resonance beyond normal limits. The PostgreSQL ledger enforces two fail-safe mechanisms:
+              In open-top sports convertibles like the Apex Executive High-Aero Grand Touring Telemetry Core, extreme chassis torsion over uneven pavement or high-speed kerb strikes can excite structural cowl resonance beyond normal limits. The PostgreSQL ledger enforces two fail-safe mechanisms:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-slate-900 p-4 rounded-lg border border-slate-800">

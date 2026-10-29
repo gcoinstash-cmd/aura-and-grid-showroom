@@ -25,7 +25,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
                 Asset ID: GF-T3-175
               </span>
               <span className="font-mono text-sm sm:text-base font-semibold bg-slate-800 text-slate-200 border border-slate-700 px-3.5 py-1.5 rounded-lg">
-                Model: Heavy Overland Dynamics Platform UX 300h Urban Edge Core v1.0.0-PROD
+                Model: Apex Executive Urban Edge Core v1.0.0-PROD
               </span>
               <span className="inline-flex items-center gap-2 text-sm sm:text-base font-mono font-medium text-emerald-400 bg-emerald-950/70 border border-emerald-800/70 px-3.5 py-1.5 rounded-lg">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -34,7 +34,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white flex items-center gap-3 pt-1">
-              <span>Heavy Overland Dynamics Platform UX 300h Urban Edge Core</span>
+              <span>Apex Executive Urban Edge Core</span>
             </h1>
 
             <p className="text-slate-300 text-base sm:text-lg max-w-4xl leading-relaxed pt-1">

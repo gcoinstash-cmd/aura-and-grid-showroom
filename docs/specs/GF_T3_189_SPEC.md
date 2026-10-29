@@ -1,8 +1,8 @@
-# GF-T3-189: LEXUS LC 500 CONVERTIBLE STRUCTURAL AERO CORE
+# GF-T3-189: Hypercar Flagship Trim CONVERTIBLE STRUCTURAL AERO CORE
 ## TURNKEY MICRO-APA ASSET SPECIFICATION & INSTITUTIONAL MASTER VAULT
 
 **Asset Identifier:** GF-T3-189  
-**Platform Target:** Lexus LC 500 Convertible (URZ100 Platform / 5.0L 2UR-GSE V8)  
+**Platform Target:** Hypercar Flagship Trim Convertible (URZ100 Platform / 5.0L 2UR-GSE V8)  
 **Valuation Floor (Micro-APA Buyout):** $45,000.00 USD  
 **Enterprise Buyout Option:** $125,000.00 USD  
 **Clean-Room Audit Status:** 100% Certified / 0% Copyleft (Permissive MIT/Apache-2.0 Only)  
@@ -12,7 +12,7 @@
 ---
 
 ### 1. EXECUTIVE SUMMARY & SYSTEM TOPOLOGY
-The GF-T3-189 Structural Aero Core is an ultra-low-latency chassis stabilization and aerodynamic vortex suppression subsystem engineered for open-cockpit grand tourers, specifically calibrated for the Lexus LC 500 Convertible. 
+The GF-T3-189 Structural Aero Core is an ultra-low-latency chassis stabilization and aerodynamic vortex suppression subsystem engineered for open-cockpit grand tourers, specifically calibrated for the Hypercar Flagship Trim Convertible. 
 
 Open-top convertibles exhibit severe structural torsional compliance loss when the rigid roof is stowed, producing harmonic cowl shake between 18 Hz and 34 Hz and aerodynamic cabin buffeting above 65 mph. The GF-T3-189 integrates:
 1. **Active Hydraulic Cowl Damper Control Loop**: Runs a 2,400 Hz micro-displacement controller countering A-pillar resonance and strut-tower shear deflection.
@@ -88,7 +88,7 @@ CREATE TABLE gf_aero_core.harmonic_quarantine (
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-189 Lexus LC 500 Structural Aero Telemetry Service
+  title: GF-T3-189 Hypercar Flagship Trim Structural Aero Telemetry Service
   version: 1.0.0
   description: High-throughput telemetry ingestion and active cowl damping dispatch engine.
 paths:
@@ -134,6 +134,6 @@ paths:
 ### 6. DELAWARE ASSET PURCHASE AGREEMENT (MICRO-APA) SUMMARY
 - **Seller**: Ghost FactoryOS Systems Architecture LLC
 - **Buyer**: Institutional Transferee via Acquire.com Escrow
-- **Asset**: GF-T3-189 Lexus LC 500 Convertible Structural Aero Core
+- **Asset**: GF-T3-189 Hypercar Flagship Trim Convertible Structural Aero Core
 - **Consideration**: $45,000.00 USD (Base Turnkey) / $125,000.00 USD (Exclusive Enterprise)
 - **Representations & Warranties**: Full clean-room provenance, immediate source repository push, and zero infringement warranty.

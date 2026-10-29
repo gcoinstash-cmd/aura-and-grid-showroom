@@ -89,7 +89,7 @@ export const TabEkdssCore: React.FC<TabEkdssCoreProps> = ({
 
   // Python 3.12 Reference implementation
   const pythonEngineCode = `"""
-GF-T3-188: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL ARBITRATION ENGINE
+GF-T3-188: Apex Executive Dynamic Kinetic Suspension Telemetry & CRAWL CONTROL ARBITRATION ENGINE
 Zero-placeholder production Python 3.12 reference implementation.
 Frequency: 2,000 Hz real-time deterministic loop.
 """

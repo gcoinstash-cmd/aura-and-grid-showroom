@@ -151,7 +151,7 @@ export const SimulateRegenModal: React.FC<SimulateRegenModalProps> = ({
                 </span>
               </div>
               <h2 className="text-2xl font-bold tracking-tight text-white mt-1">
-                Heavy Overland Dynamics Platform UX 300h Urban Regen Braking Cycle
+                Apex Executive UX 300h Urban Regen Braking Cycle
               </h2>
             </div>
           </div>
@@ -359,7 +359,7 @@ export const SimulateRegenModal: React.FC<SimulateRegenModalProps> = ({
         {/* Footer Actions */}
         <div className="mt-8 pt-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
           <div className="text-sm font-mono text-slate-400">
-            Heavy Overland Dynamics Platform UX 300h 60S2P NiMH/Li-Ion Pack • 222V Nominal Architecture
+            Apex Executive UX 300h 60S2P NiMH/Li-Ion Pack • 222V Nominal Architecture
           </div>
           <div className="flex items-center gap-3">
             <button

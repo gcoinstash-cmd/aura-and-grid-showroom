@@ -1,7 +1,7 @@
-# GF-T3-199: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry CORE
+# GF-T3-199: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry CORE
 ## Turnkey Micro-APA Asset Specification | Acquire.com Asset Transfer Deliverable
 **Codename:** GF-T3-199  
-**Platform:** Heavy Overland Dynamics Platform Dual-Vector Performance Core (TALH17) DUAL_VECTOR_TORQUE AWD + DRS High-Output Performance Core  
+**Platform:** Apex Executive Dual-Vector Performance Core (TALH17) DUAL_VECTOR_TORQUE AWD + DRS High-Output Performance Core  
 **Reference Core:** 20 kHz (0.48ms) (Standard Turnkey APA) / PostgreSQL 16 + RLS (Institutional Enterprise)  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
 **Audited Nonce Integrity:** Monotonic SHA-256 HMAC Chain  
@@ -10,7 +10,7 @@
 
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
-The GF-T3-199 Performance Core orchestrates the hybrid electric powertrain of the Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry platform:
+The GF-T3-199 Performance Core orchestrates the hybrid electric powertrain of the Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry platform:
 - **Primary Powerplant:** 2.4-liter turbocharged inline-4 (T24A-FTS) generating 271 hp (202 kW) @ 6,000 rpm and 339 lb-ft (460 Nm) torque.
 - **Front Power Split:** Single electric motor-generator (1NM) rated at 82 hp (61 kW) positioned between engine and 6-speed automatic transmission with wet start clutch (no planetary e-CVT).
 - **Rear High-Output e-Axle:** Water-cooled permanent magnet synchronous motor (80 kW / 107 hp, 169 Nm) integrated with differential and dual-inverter assembly.
@@ -69,7 +69,7 @@ $$\delta_r = f(V, \delta_f, \dot{\psi})$$
 """
 GF-T3-199 Performance Controller: DUAL_VECTOR_TORQUE & DRS Core
 License: MIT Permissive | Clean-Room Certified
-Target: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17)
+Target: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17)
 """
 from dataclasses import dataclass
 from typing import Tuple
@@ -271,7 +271,7 @@ CREATE TRIGGER trg_bipolar_gradient_check
 
 ### 6.1 Clean-Room IP Certification
 - **Auditor:** Ghost FactoryOS Systems Architecture Group
-- **Target Asset:** GF-T3-199 (Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core)
+- **Target Asset:** GF-T3-199 (Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Core)
 - **Copyleft Contamination:** 0.00% (No GPL, AGPL, or SSPL dependencies)
 - **Approved Permissive Dependencies:**
   - Python 3.12 (PSFL, Compatible with MIT)

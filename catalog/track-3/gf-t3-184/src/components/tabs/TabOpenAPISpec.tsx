@@ -12,7 +12,7 @@ export const TabOpenAPISpec: React.FC<TabOpenAPISpecProps> = ({ telemetry }) => 
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-184 Heavy Overland Dynamics Platform LFA Apex Telemetry Service
+  title: GF-T3-184 Apex Executive LFA Apex Telemetry Service
   version: 1.0.0-PROD
   description: High-fidelity optical telemetry ingest & WebSocket stream for 1LR-GUE V10 powertrain.
 paths:

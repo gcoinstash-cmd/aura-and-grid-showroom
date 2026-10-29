@@ -1,8 +1,8 @@
-# GF-T3-178: Heavy Overland Dynamics Platform LS 500 EXECUTIVE AWD FLAGSHIP CORE
+# GF-T3-178: Apex Executive LS 500 EXECUTIVE AWD FLAGSHIP CORE
 ## Master Technical Architecture, FxLMS Acoustic Inversion Engine & Enterprise Asset Purchase Specification
 **Asset Identifier**: GF-T3-178  
 **Dealership Tier**: Track 3 (F1 Skunkworks Flagship Service Engine)  
-**Target Vehicle Platform**: Heavy Overland Dynamics Platform LS 500 Executive AWD (V35A-FTS 3.4L Twin-Turbo V6 / Direct Shift 10-Speed)  
+**Target Vehicle Platform**: Apex Executive LS 500 Executive AWD (V35A-FTS 3.4L Twin-Turbo V6 / Direct Shift 10-Speed)  
 **Version**: v1.0.0-PROD  
 **Target Marketplace**: Acquire.com Turnkey Micro-APA Asset  
 **Escrow Specification Anchor**: 20 kHz (0.48ms) (Micro-APA Asset Transfer) | PostgreSQL 16 + RLS (Monopoly Enterprise Vault)  
@@ -11,7 +11,7 @@
 ---
 
 ## 1. EXECUTIVE SUMMARY & ASSET MONETARY THROUGHPUT THESIS
-GF-T3-178 is an autonomous, production-grade automotive systems engine engineered for the Heavy Overland Dynamics Platform LS 500 Executive AWD flagship saloon. The package solves two synchronized electro-mechanical objectives:
+GF-T3-178 is an autonomous, production-grade automotive systems engine engineered for the Apex Executive LS 500 Executive AWD flagship saloon. The package solves two synchronized electro-mechanical objectives:
 1. **Ultra-Quiet Cabin Acoustic Isolation**: Real-time 2,000 Hz Filtered-X Least Mean Squares (FxLMS) active noise cancellation that samples primary engine harmonics via dual acoustic reference sensors and injects phase-inverted anti-sound through the Acoustic Noise-Inversion Transducer 23-speaker array, delivering up to -18.4 dB cabin harmonic attenuation.
 2. **Deterministic Twin-Turbo Boost Delivery**: High-frequency closed-loop electronic wastegate solenoid actuation for the twin-turbocharged V35A-FTS power plant, eliminating torque dip and surge across dynamic load cycles while enforcing a microsecond overshoot quarantine watchdog.
 3. **Cryptographically Chained Timeseries Ledger**: Timeseries-partitioned PostgreSQL 16 hypertable with zero circular foreign keys, tracking microphone FFT frames, PWM solenoid duty cycles, and immutable HMAC-SHA256 telemetry chains.
@@ -22,7 +22,7 @@ GF-T3-178 is an autonomous, production-grade automotive systems engine engineere
 
 ```
                                   +-------------------------------------------------------------+
-                                  |                 Heavy Overland Dynamics Platform LS 500 VEHICLE BUS                    |
+                                  |                 Apex Executive LS 500 VEHICLE BUS                    |
                                   |  - Engine Crankshaft Position Sensor (CKP / RPM @ 2,000 Hz) |
                                   |  - 4x Executive Cabin Interior Microphones (MEMS 96 kHz)    |
                                   |  - Dual Electronic Wastegate Solenoids (PWM 0-100%)         |
@@ -165,7 +165,7 @@ FOR EACH ROW EXECUTE FUNCTION trg_enforce_boost_safety();
 ```yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform LS 500 Executive AWD Telemetry Gateway
+  title: Apex Executive LS 500 Executive AWD Telemetry Gateway
   version: 1.0.0-PROD
   description: High-throughput ingestion & anti-phase command interface for GF-T3-178
 paths:

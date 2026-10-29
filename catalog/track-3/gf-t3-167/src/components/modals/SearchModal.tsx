@@ -35,7 +35,7 @@ const SEARCH_ITEMS: SearchItem[] = [
   {
     id: 's2',
     title: 'L2 Order Book Bid/Ask Ladders',
-    description: 'Dynamic price-time priority matching for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core',
+    description: 'Dynamic price-time priority matching for Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core',
     tabIndex: 0,
     category: 'ENGINE',
   },

@@ -64,7 +64,7 @@ export const ChassisVisualizer: React.FC<ChassisVisualizerProps> = ({
             <line x1="70" y1="170" x2="550" y2="170" stroke="#334155" strokeWidth="1.5" strokeDasharray="5 5" />
             <line x1="310" y1="20" x2="310" y2="320" stroke="#334155" strokeWidth="1.5" strokeDasharray="5 5" />
 
-            {/* Vehicle Perimeter Silhouette (Heavy Overland Dynamics Platform Dual-Vector Performance Core Body) */}
+            {/* Vehicle Perimeter Silhouette (Apex Executive Dual-Vector Performance Core Body) */}
             <path
               d="M 110 65 
                  C 170 55, 430 55, 490 65

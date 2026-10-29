@@ -358,7 +358,7 @@ export default function App() {
           <div>
             <span className="font-semibold text-slate-300">Ghost FactoryOS · Asset GF-T3-169</span>
             <span className="mx-2">·</span>
-            <span>Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core</span>
+            <span>Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core</span>
           </div>
           <div className="text-slate-400 text-sm">
             Acquire.com Turnkey Micro-APA Asset · 100% Permissive Clean-Room MIT

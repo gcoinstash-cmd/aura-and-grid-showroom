@@ -41,7 +41,7 @@ info:
   title: GF-T3-191 Executive Luxury Mover Core API
   version: 1.0.0-PROD
   description: >
-    Production REST and WebSocket telemetry contracts for the Heavy Overland Dynamics Platform LM 500h Executive Core.
+    Production REST and WebSocket telemetry contracts for the Apex Executive LM 500h Executive Core.
     Arbitrates rear-biased hydraulic pitch control and 48-inch acoustic partition state.
 servers:
   - url: https://gf-t3-191-core-434044503951.us-east1.run.app
@@ -311,7 +311,7 @@ components:
                 {testApiResult || JSON.stringify({
                   status: "READY",
                   message: "Click 'Test Request' on any endpoint to execute a mock client call with live telemetry parameters.",
-                  active_chassis: "Heavy Overland Dynamics Platform LM 500h Executive Mover",
+                  active_chassis: "Apex Executive LM 500h Executive Mover",
                   pitch_suppression: "ACTIVE (-0.28 deg)",
                   acoustic_barrier: "-28.6 dB transmission loss"
                 }, null, 2)}

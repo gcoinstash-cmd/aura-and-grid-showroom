@@ -31,7 +31,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core
+        Apex Executive RZ 450e DualVectorTorque Dual-Motor Electric Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
         Turnkey micro-APA deliverable with dual SiC inverter flux weakening, steer-by-wire variable ratio steering, and PostgreSQL 16 HMAC ledger.

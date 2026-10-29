@@ -6,7 +6,7 @@
 
 export const GENERATE_GF_T3_198_SPEC = (): string => {
   return `# GHOST FACTORYOS — FLEET ASSET SPECIFICATION
-## GF-T3-198: Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION 1LR-GUE V10 TELEMATICS CORE
+## GF-T3-198: Apex Executive LFA NÜRBURGRING EDITION 1LR-GUE V10 TELEMATICS CORE
 **Classification**: Track 3 F1 Skunkworks Service Engine (70% Workload Deliverable)  
 **Specification Anchor**: 20 kHz (0.48ms) (Standard Micro-APA Asset Transfer) | PostgreSQL 16 + RLS (Enterprise Monopoly Vault)  
 **License**: MIT Permissive (Clean-Room Certified, Zero-Copyleft)  
@@ -61,7 +61,7 @@ The GF-T3-198 Telematics Core provides a sub-millisecond telemetry ingestion pip
 ## 2. PROPRIETARY MATHEMATICAL & ALGORITHMIC ENGINE
 
 ### 2.1 1LR-GUE 72° V10 Acoustic Harmonics
-The Heavy Overland Dynamics Platform LFA 1LR-GUE is an even-firing V10 engine with a 72-degree bank angle.
+The Apex Executive LFA 1LR-GUE is an even-firing V10 engine with a 72-degree bank angle.
 - Firing Interval: $\\Delta \\theta = \\frac{720^{\\circ}}{10} = 72^{\\circ}$ of crankshaft rotation.
 - Fundamental Combustion Firing Frequency ($f_0$):
   $$f_0 = \\frac{\\text{RPM} \\times 10}{120} = \\frac{\\text{RPM}}{12} \\quad (\\text{Hz})$$
@@ -204,7 +204,7 @@ CREATE TRIGGER trg_scavenge_pressure_quarantine
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-198 Heavy Overland Dynamics Platform LFA V10 Telematics Core API
+  title: GF-T3-198 Apex Executive LFA V10 Telematics Core API
   version: 1.0.0-PROD
   description: Sub-millisecond telematics ingress, acoustic harmonics, and ASG telemetry.
 paths:
@@ -323,7 +323,7 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 ## 6. ASSET PURCHASE AGREEMENT (ACQUIRE.COM MICRO-APA TERMS)
 
 **AGREEMENT SUMMARY**:
-- **Asset**: GF-T3-198 Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Telematics Core
+- **Asset**: GF-T3-198 Apex Executive LFA Nürburgring Edition V10 Telematics Core
 - **Standard Reference Core**: 20 kHz (0.48ms) (All-Cash, Escrow.com or Acquire.com Escrow)
 - **Enterprise Monopoly Vault Price**: PostgreSQL 16 + RLS
 - **Governing Law**: Standard Commercial Jurisdiction, United States

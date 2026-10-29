@@ -257,7 +257,7 @@ export default function Dashboard() {
     gnssDropouts: 0,
   });
 
-  // Track coordinates for Heavy Overland Dynamics Platform Digital Proving Ground circuit
+  // Track coordinates for Apex Executive Digital Proving Ground circuit
   const getGroundTruth = (t: number) => {
     const scale = 80;
     const angle = t * 0.35;
@@ -787,7 +787,7 @@ export default function Dashboard() {
               <div className="flex items-center gap-3 text-sm text-zinc-400 font-medium">
                 <span>Model ID: GF-T3-161</span>
                 <span aria-hidden="true">·</span>
-                <span>Heavy Overland Dynamics Platform Digital Dealership Spec</span>
+                <span>Sovereign Showroom Dealership Spec</span>
                 <span aria-hidden="true">·</span>
                 <span>ASIL-D / DO-178C Baseline</span>
               </div>

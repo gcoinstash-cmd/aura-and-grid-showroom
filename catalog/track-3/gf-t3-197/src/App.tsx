@@ -322,7 +322,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono font-bold text-white">GF-T3-197</span>
             <span className="text-slate-600">|</span>
-            <span>Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS &amp; DUAL_VECTOR_TORQUE Performance Core</span>
+            <span>Apex Executive Multi-Node High-Output Core DRS &amp; DUAL_VECTOR_TORQUE Performance Core</span>
           </div>
 
           <div className="flex items-center gap-4 text-base font-medium">

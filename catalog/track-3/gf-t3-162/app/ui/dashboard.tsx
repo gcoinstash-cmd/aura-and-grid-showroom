@@ -1,6 +1,6 @@
 /**
  * Ghost FactoryOS Track 3 F1 Skunkworks Engine — GF-T3-162 (Sovereign Ledger)
- * High-Legibility Cockpit Dashboard (Heavy Overland Dynamics Platform LS 500 Executive Spec)
+ * High-Legibility Cockpit Dashboard (Apex Executive LS 500 Executive Spec)
  *
  * Strict Typography Scale Floor:
  * - Order Book Depth HUD / L2 Ladder: Bold monospace at 24px-30px (text-2xl md:text-3xl font-mono font-bold tracking-tight)
@@ -235,7 +235,7 @@ export default function CockpitDashboard() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-zinc-100 flex flex-col antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
-      {/* Top Heavy Overland Dynamics Platform LS 500 Executive Cockpit Navigation Bar */}
+      {/* Top Apex Executive LS 500 Executive Cockpit Navigation Bar */}
       <header className="border-b border-zinc-800/80 bg-slate-950/95 backdrop-blur-md sticky top-0 z-50 px-6 py-4">
         <div className="max-w-[1720px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
@@ -252,7 +252,7 @@ export default function CockpitDashboard() {
                   CDA MATCHING CORE: ONLINE
                 </span>
                 <span className="text-base font-semibold px-4 py-1.5 bg-amber-500/10 text-amber-300 border border-amber-500/30 rounded-md hidden lg:inline-flex">
-                  Heavy Overland Dynamics Platform LS 500 SPEC
+                  Apex Executive LS 500 SPEC
                 </span>
               </div>
               <p className="text-zinc-400 text-sm tracking-wide mt-0.5">

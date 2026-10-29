@@ -46,7 +46,7 @@ export const AcquireApaTab: React.FC<AcquireApaTabProps> = ({
 
   const agreementText = `ASSET PURCHASE AGREEMENT (MICRO-APA COVENANT)
 ASSET IDENTIFIER: GF-T3-167
-MODEL: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core DYNAMIC CORE v1.0.0-PROD
+MODEL: Apex Executive High-Aero Grand Touring Telemetry Core DYNAMIC CORE v1.0.0-PROD
 PLATFORM: ACQUIRE.COM ESCROW / MONOPOLY VAULT
 
 1. PURCHASE AND SALE OF ASSETS

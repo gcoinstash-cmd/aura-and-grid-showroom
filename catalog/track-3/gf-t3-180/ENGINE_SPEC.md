@@ -1,5 +1,5 @@
 # MASTER ASSET SPECIFICATION: GF-T3-180
-## Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core ULTRA LUXURY EXECUTIVE CORE
+## Apex Executive Ultra-Heavy Telemetry Core ULTRA LUXURY EXECUTIVE CORE
 ### TURNKEY MICRO-APA ASSET TRANSFER DELIVERABLE FOR ACQUIRE.COM
 **Document Version:** 1.0.0-PROD  
 **Asset ID:** GF-T3-180  
@@ -12,12 +12,12 @@
 
 ## 1. EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
 
-The **GF-T3-180 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core** is a deterministic, high-throughput micro-service engine architected for electro-hydraulic suspension telemetry, multi-chamber accumulator state balancing, and twin-turbo wastegate management.
+The **GF-T3-180 Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core** is a deterministic, high-throughput micro-service engine architected for electro-hydraulic suspension telemetry, multi-chamber accumulator state balancing, and twin-turbo wastegate management.
 
 ### 1.1 Architectural Topology
 ```
 +-----------------------------------------------------------------------------------+
-|                           Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core CHASSIS SENSORS                           |
+|                           Apex Executive Ultra-Heavy Telemetry Core CHASSIS SENSORS                           |
 |  [4x Height Sensors] [4x Accumulator Pressure Transducers] [6-DoF IMU Gyro/Accel] |
 +-----------------------------------------+-----------------------------------------+
                                           | CAN-FD @ 5 Mbps / High-Speed SPI (1,250 Hz)
@@ -52,8 +52,8 @@ The **GF-T3-180 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultr
 
 ```python
 """
-Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
-File: Heavy Overland Dynamics Platform_lx600_ahc_core.py
+Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+File: Apex Executive_lx600_ahc_core.py
 License: MIT Permissive
 Author: Ghost FactoryOS Lead Systems Architects
 """
@@ -92,7 +92,7 @@ class WastegateState:
     charge_air_temp_c: float
     surge_detected: bool
 
-class Heavy Overland Dynamics PlatformLX600ExecutiveEngine:
+class Apex ExecutiveLX600ExecutiveEngine:
     """
     Deterministic 1,250 Hz control engine managing electro-hydraulic suspension
     damping and V35A-FTS electronic wastegates.
@@ -287,7 +287,7 @@ CREATE TRIGGER verify_hydraulic_seal_before_insert
 ```yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
+  title: Apex Executive Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency telemetry ingestion and actuator interface for 4-wheel electro-hydraulic suspension.
 paths:

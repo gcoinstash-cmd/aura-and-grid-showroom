@@ -7,7 +7,7 @@ export const TabAcquireApa: React.FC = () => {
 
   const copyAgreementText = () => {
     const text = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET ID: GF-T3-183 (Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core)
+ASSET ID: GF-T3-183 (Apex Executive RZ 450e DualVectorTorque Dual-Motor Electric Core)
 DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 GOVERNING LAW: Standard Commercial Jurisdiction, United States
 

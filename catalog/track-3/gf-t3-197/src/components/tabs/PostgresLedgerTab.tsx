@@ -42,7 +42,7 @@ export const PostgresLedgerTab: React.FC<PostgresLedgerTabProps> = ({
   };
 
   const postgresDdl = `-- ============================================================================
--- GF-T3-197: Heavy Overland Dynamics Platform Multi-Node High-Output Core DRS PERFORMANCE CORE LEDGER DDL
+-- GF-T3-197: Apex Executive Multi-Node High-Output Core DRS PERFORMANCE CORE LEDGER DDL
 -- Target Engine: PostgreSQL 16+ (Partitioned Timeseries with HMAC-SHA256 Chain)
 -- ============================================================================
 
@@ -90,7 +90,7 @@ DECLARE
     computed_payload TEXT;
     server_hmac_key BYTEA := '\\x5f6c657875735f7478353030685f6472735f686d61635f7365637265745f32303236';
 BEGIN
-    -- Mechanical Physical Stop Violation: Heavy Overland Dynamics Platform DRS actuator mechanical limit is ±4.05°
+    -- Mechanical Physical Stop Violation: Apex Executive DRS actuator mechanical limit is ±4.05°
     IF ABS(NEW.rear_steer_deg) > 4.05 THEN
         NEW.is_quarantined := TRUE;
         NEW.quarantine_reason := 'CRITICAL: ACTUATOR_OVERTRAVEL_EXCEEDED_PHYSICAL_STOP_4.05_DEG';

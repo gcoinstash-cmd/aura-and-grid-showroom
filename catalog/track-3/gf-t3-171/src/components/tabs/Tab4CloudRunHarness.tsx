@@ -61,7 +61,7 @@ export const Tab4CloudRunHarness: React.FC = () => {
   };
 
   const dockerfileContent = `# Multi-Stage Non-Root Production Dockerfile
-# Asset: GF-T3-171 Heavy Overland Dynamics Platform IS 500 V8 Dynamic Core
+# Asset: GF-T3-171 Apex Executive IS 500 V8 Dynamic Core
 # Base: Python 3.12 Slim Bookworm + Jemalloc for Sub-Microsecond Malloc
 
 # Stage 1: Build & Cython Compilation
@@ -112,7 +112,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", 
 
   const gcloudDeployScript = `#!/usr/bin/env bash
 # Turnkey 1-Click Google Cloud Run Deployment
-# Asset ID: GF-T3-171 Heavy Overland Dynamics Platform IS 500 V8 Dynamic Core
+# Asset ID: GF-T3-171 Apex Executive IS 500 V8 Dynamic Core
 
 set -euo pipefail
 

@@ -195,7 +195,7 @@ export const AcquireApaTab: React.FC = () => {
             <div className="p-5 bg-slate-950 rounded-lg border border-slate-800 space-y-3 font-mono text-sm leading-relaxed">
               <div className="font-bold text-white text-base">ARTICLE 1: PURCHASE & SALE OF ASSETS</div>
               <p>
-                1.1 <strong className="text-cyan-300">Purchased Assets:</strong> Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, and conveys to Buyer all right, title, and interest in and to the GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including but not limited to:
+                1.1 <strong className="text-cyan-300">Purchased Assets:</strong> Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, and conveys to Buyer all right, title, and interest in and to the GF-T3-168 Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including but not limited to:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-slate-200">
                 <li>Complete Python 3.12 15-State Extended Kalman Filter algorithmic engine (ekf_core.py).</li>
@@ -289,7 +289,7 @@ export const AcquireApaTab: React.FC = () => {
               FOR VALUABLE CONSIDERATION in the amount ofDeterministic Telemetry Verified(20 kHz (0.48ms)), the receipt and sufficiency of which are hereby acknowledged, Ghost FactoryOS Systems Architecture Consortium ("Assignor") hereby sells, assigns, transfers, and conveys to the designated Acquiring Entity ("Assignee"), its successors and assigns forever:
             </p>
             <p className="text-white font-bold text-base">
-              All right, title, and interest throughout the universe in and to the GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including all algorithms, copyright, patents, patent applications, trade secrets, documentation, and database schemas related thereto.
+              All right, title, and interest throughout the universe in and to the GF-T3-168 Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Performance Core, including all algorithms, copyright, patents, patent applications, trade secrets, documentation, and database schemas related thereto.
             </p>
             <div className="pt-4 border-t border-slate-800 grid grid-cols-2 gap-4 text-slate-300">
               <div>

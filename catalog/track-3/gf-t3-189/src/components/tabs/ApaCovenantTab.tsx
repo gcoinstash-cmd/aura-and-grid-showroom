@@ -30,14 +30,14 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({ onExportSpec }) 
   const completedCount = checklist.filter((c) => c.completed).length;
 
   const apaAgreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET: GF-T3-189 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO CORE)
+ASSET: GF-T3-189 (Apex Executive High-Aero Grand Touring Telemetry Core CONVERTIBLE STRUCTURAL AERO CORE)
 
 This Asset Purchase Agreement (the "Agreement") is entered into as of October 12, 2026, by and between:
 SELLER: Ghost FactoryOS Systems Architecture LLC, a Delaware limited liability company ("Seller"); and
 BUYER: Institutional Transferee via Acquire.com Escrow ("Buyer").
 
 RECITALS
-WHEREAS, Seller has designed, engineered, and built the proprietary software and architectural assets known as "GF-T3-189: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core" (the "Asset");
+WHEREAS, Seller has designed, engineered, and built the proprietary software and architectural assets known as "GF-T3-189: Apex Executive High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core" (the "Asset");
 WHEREAS, Seller desires to sell, assign, and transfer to Buyer, and Buyer desires to acquire from Seller, all worldwide right, title, interest, and intellectual property in and to the Purchased Assets for the DEPLOYMENT SPECIFICATION under the terms set forth herein.
 
 NOW, THEREFORE, the parties agree as follows:

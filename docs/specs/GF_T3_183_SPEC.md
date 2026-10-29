@@ -1,7 +1,7 @@
-# GF-T3-183: LEXUS RZ 450e DIRECT4 DUAL-MOTOR ELECTRIC CORE
+# GF-T3-183: Track 2 Sovereign Flagship DIRECT4 DUAL-MOTOR ELECTRIC CORE
 ## Institutional Micro-APA Technical & Legal Blueprints (Acquire.com Turnkey Deliverable)
 **System Asset ID:** GF-T3-183  
-**Classification:** Lexus RZ 450e Direct4 Dual-Motor Electric Core & Steer-by-Wire Controller  
+**Classification:** Track 2 Sovereign Flagship Direct4 Dual-Motor Electric Core & Steer-by-Wire Controller  
 **Author:** Lead Systems Architect — Ghost FactoryOS  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
 **Valuation:** Cash Buyout: $45,000 USD | Enterprise License: $125,000 USD  
@@ -11,7 +11,7 @@
 
 ## 1. EXECUTIVE OVERVIEW & ARCHITECTURAL TOPOLOGY
 
-The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Lexus RZ 450e (e-TNGA electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
+The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Track 2 Sovereign Flagship (e-TNGA electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
 
 ### 1.1 Powertrain Physical Parameters
 - **Front eAxle (1XM):** 150 kW (201 hp) Permanent Magnet Synchronous Motor (PMSM), 266.3 Nm peak torque, 13,000 RPM max rev limit, 10.28:1 integrated single-speed helical reduction.
@@ -75,7 +75,7 @@ The engine implements full Field-Oriented Control (FOC) with Clarke and Park tra
 
 ```python
 """
-GF-T3-183: Lexus RZ 450e Direct4 & Steer-by-Wire Core Control Engine
+GF-T3-183: Track 2 Sovereign Flagship Direct4 & Steer-by-Wire Core Control Engine
 License: MIT Permissive (Clean-Room Certified)
 Runtime: Python 3.12+ (zero non-standard dependencies)
 """
@@ -141,7 +141,7 @@ class Direct4VehicleDynamicsSupervisor:
 
 class SteerByWireRatioEngine:
     """
-    Lexus One Motion Grip Variable Ratio Steer-by-Wire Rack Controller.
+    Sovereign Steer-by-Wire Grip Variable Ratio Steer-by-Wire Rack Controller.
     Total lock-to-lock yoke travel is exactly 150 degrees (eliminates hand-over-hand).
     """
     MAX_YOKE_DEG: float = 150.0
@@ -226,7 +226,7 @@ Full DDL schema with timeseries range partitioning, thermal junction divergence 
 
 ```sql
 -- =============================================================================
--- GF-T3-183: LEXUS RZ 450e DIRECT4 IMMUTABLE BEV TELEMETRY LEDGER
+-- GF-T3-183: Track 2 Sovereign Flagship DIRECT4 IMMUTABLE BEV TELEMETRY LEDGER
 -- Compatible with PostgreSQL 16+ & TimescaleDB Hypertables
 -- =============================================================================
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS inverter_thermal_quarantine_log (
 CREATE OR REPLACE FUNCTION fn_verify_and_quarantine_telemetry()
 RETURNS TRIGGER AS $$
 DECLARE
-    secret_key CONSTANT TEXT := 'LEXUS-RZ450E-DIRECT4-HMAC-SECRET-PROD-2026';
+    secret_key CONSTANT TEXT := 'APEX EXECUTIVE ENGINE-RZ450E-DIRECT4-HMAC-SECRET-PROD-2026';
     expected_hmac TEXT;
     payload TEXT;
 BEGIN
@@ -324,7 +324,7 @@ REST and WebSocket contracts for high-rate vehicle dynamics streaming.
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-183 Lexus RZ 450e Direct4 Core Telemetry API",
+    "title": "GF-T3-183 Track 2 Sovereign Flagship Direct4 Core Telemetry API",
     "version": "1.0.0-PROD",
     "description": "High-frequency SiC Inverter FOC, Steer-by-Wire, and HV Battery Telemetry Service"
   },
@@ -479,7 +479,7 @@ CMD ["python", "-m", "src.main"]
 ### 5.2 PyTest Production Test Bench (>92% Coverage)
 ```python
 """
-PyTest Test Bench for GF-T3-183 Lexus Direct4 & Steer-by-Wire
+PyTest Test Bench for GF-T3-183 Apex Executive Engine Direct4 & Steer-by-Wire
 """
 import pytest
 from src.engine import (

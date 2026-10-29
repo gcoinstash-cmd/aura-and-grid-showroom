@@ -206,7 +206,7 @@ export const TabAPACovenant: React.FC = () => {
           <div>
             <h4 className="font-bold text-amber-300 text-lg">SECTION 1. PURCHASED ASSETS</h4>
             <p className="text-slate-400 mt-1.5 leading-relaxed">
-              Seller hereby agrees to sell, assign, transfer, convey, and deliver to Buyer, free and clear of all Encumbrances, all right, title, and interest in and to the technical deliverables designated as <span className="text-white font-semibold">GF-T3-184 (Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core)</span>, including:
+              Seller hereby agrees to sell, assign, transfer, convey, and deliver to Buyer, free and clear of all Encumbrances, all right, title, and interest in and to the technical deliverables designated as <span className="text-white font-semibold">GF-T3-184 (Hypercar Flagship Trim V10 Apex Core)</span>, including:
             </p>
             <ul className="list-disc list-inside text-slate-400 mt-2 space-y-1.5 ml-2 leading-relaxed">
               <li>Python 3.12 1LR-GUE Yamaha acoustic harmonics and 150 ms ASG state machine.</li>

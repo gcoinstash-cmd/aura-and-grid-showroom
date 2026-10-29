@@ -346,7 +346,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-mono font-bold text-slate-200">GF-T3-189</span>
             <span>·</span>
-            <span>Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core</span>
+            <span>Apex Executive High-Aero Grand Touring Telemetry Core Convertible Structural Aero Core</span>
             <span>·</span>
             <span className="text-emerald-400 font-mono">Turnkey Micro-APA Asset</span>
           </div>

@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Monroney Top Banner (Relative positioning - scrolls naturally off viewport)
  */
 
@@ -29,7 +29,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           <div className="flex flex-wrap items-center gap-3 text-sm font-mono text-slate-300">
             <span className="font-bold text-amber-400">ASSET ID: GF-T3-174</span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-200 font-semibold">MODEL: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Core v1.0.0-PROD</span>
+            <span className="text-slate-200 font-semibold">MODEL: Apex Executive RZ 450e Steer-by-Wire Core v1.0.0-PROD</span>
             <span className="text-slate-600">|</span>
             <span className="text-emerald-400 font-semibold">ISO 26262 ASIL-D</span>
             <span className="text-slate-600">|</span>
@@ -47,7 +47,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
         <div className="mt-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white text-balance">
-              Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core
+              Track 2 Sovereign Flagship Steer-by-Wire Core
             </h1>
             <p className="mt-2 text-base md:text-lg text-slate-300">
               Turnkey Micro-APA asset transfer asset delivering sub-millisecond dual-channel arbitration, speed-adaptive variable ratio kinematics (150° lock-to-lock), and discrete Kalman yaw damping for next-generation digital cockpits.

@@ -378,7 +378,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
           <div className="flex items-center gap-2">
             <span className="text-white font-bold">GF-T3-172</span>
-            <span>• Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core</span>
+            <span>• Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core</span>
             <span className="text-emerald-400 font-semibold">[MIT LICENSED]</span>
           </div>
 

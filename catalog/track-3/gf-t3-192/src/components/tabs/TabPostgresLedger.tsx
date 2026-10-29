@@ -20,7 +20,7 @@ interface TabPostgresLedgerProps {
 }
 
 const POSTGRES_DDL = `-- ============================================================================
--- Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING (DRS) PARTITIONED LEDGER
+-- Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE DYNAMIC REAR STEERING (DRS) PARTITIONED LEDGER
 -- Target Engine: PostgreSQL 16.2 / TimescaleDB Compatible
 -- Architecture: Timeseries Range Partitioning with Recursive HMAC Chain
 -- ============================================================================

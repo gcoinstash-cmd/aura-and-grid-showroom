@@ -235,7 +235,7 @@ export default function App() {
                 <span className="text-sm font-mono font-semibold text-slate-300">UNIT: GF-T3-166</span>
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-3 mt-1">
-                Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury Core
+                Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury Core
                 <span className="text-sm font-normal text-slate-400 font-mono bg-slate-800 px-2 py-0.5 rounded">v1.0.0-PROD</span>
               </h1>
             </div>
@@ -937,7 +937,7 @@ CREATE POLICY p_replay_auditor_select ON events_wal
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 bg-slate-950 py-5 px-6 text-center text-sm font-mono text-slate-400">
-        GHOST FACTORYOS ARCHITECTURAL LABS • UNIT GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core CORE) • MONOPOLY VAULT LICENSED
+        GHOST FACTORYOS ARCHITECTURAL LABS • UNIT GF-T3-166 (Apex Executive Ultra-Heavy Telemetry Core CORE) • MONOPOLY VAULT LICENSED
       </footer>
     </div>
   );

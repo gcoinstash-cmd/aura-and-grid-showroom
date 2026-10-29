@@ -4,7 +4,7 @@
  */
 
 export const DOCKERFILE_CONTENT = `# ==============================================================================
-# GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Core
+# GF-T3-172: Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Core
 # Multi-Stage Production Dockerfile (Distroless / Non-Root appuser UID:10001)
 # ==============================================================================
 
@@ -32,7 +32,7 @@ FROM python:3.12-slim-bookworm AS runtime
 
 LABEL maintainer="Ghost FactoryOS <vault@ghostfactoryos.internal>" \\
       asset.id="GF-T3-172" \\
-      asset.model="Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core" \\
+      asset.model="Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core" \\
       asset.license="MIT" \\
       asset.val="USD 45000"
 
@@ -70,7 +70,7 @@ ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--wor
 
 export const PYTEST_CODE = `"""
 test_consensus_harness.py - Comprehensive Test Bench for GF-T3-172
-Swarm BFT Consensus & Heavy Overland Dynamics Platform Multi-Node High-Output Core DUAL_VECTOR_TORQUE Dynamics
+Swarm BFT Consensus & Apex Executive Multi-Node High-Output Core DUAL_VECTOR_TORQUE Dynamics
 Coverage: 96.4% lines | Strict Anti-Regression Bench
 """
 import pytest
@@ -128,7 +128,7 @@ def test_network_partition_split_recovery(test_cluster):
     assert leader.commit_epoch(proposal, votes) is False
 
 def test_dual_vector_torque_torque_split_envelope_bounds(test_cluster):
-    """Ensure DUAL_VECTOR_TORQUE distribution strictly abides by Heavy Overland Dynamics Platform Multi-Node High-Output Core physical eAxle limits."""
+    """Ensure DUAL_VECTOR_TORQUE distribution strictly abides by Apex Executive Multi-Node High-Output Core physical eAxle limits."""
     engine = test_cluster[0]
     # Heavy launch acceleration test (should approach 20% front / 80% rear)
     launch_vector = engine.compute_dual_vector_torque_split(speed_kmh=40.0, throttle_pct=100.0, steer_deg=0.0, yaw_deg_s=0.0, lat_g=0.6)

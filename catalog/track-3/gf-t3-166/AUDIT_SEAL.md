@@ -5,7 +5,7 @@
           AURA & GRID // GHOSTFACTORYOS REPOSITORY ENGINE V2.0
                   OFFICIAL TITLE & DYNO INTEGRITY SEAL
 ================================================================================
-UNIT IDENTIFIER:       GF-T3-166 (Heavy Overland Dynamics Platform LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine)
+UNIT IDENTIFIER:       GF-T3-166 (Apex Executive Raft Event Ingestion & Spec Engine)
 POWERTRAIN TIER:       Track 3 • Skunkworks Engine
 AUDIT CERTIFICATION:   DYNO_SEALED_PRODUCTION_QUALIFIED (4/4 GATES CLEARED)
 TEST PASS RATE:        100% (>80% INDUSTRIAL THRESHOLD CLEARED)

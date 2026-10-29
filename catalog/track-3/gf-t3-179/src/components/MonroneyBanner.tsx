@@ -36,7 +36,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-179
         </span>
         <span className="text-slate-300 bg-slate-800 border border-slate-700 text-xs font-mono font-semibold px-2.5 py-1 rounded inline-flex w-auto whitespace-nowrap">
-          Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE CORE
+          Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE CORE
         </span>
         <span className="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold px-2.5 py-1 rounded inline-flex w-auto whitespace-nowrap">
           v1.0.0-PROD
@@ -45,7 +45,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core
+        Apex Executive High-Output Multi-Node Core Luxury Plug-in Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4">
         Turnkey micro-APA deliverable with DUAL_VECTOR_TORQUE 100:0–20:80 dynamic e-Axle torque vectoring, 18.1 kWh PHEV energy arbitration, and PostgreSQL 16 HMAC ledger.

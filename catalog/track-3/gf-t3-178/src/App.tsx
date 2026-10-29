@@ -173,7 +173,7 @@ export default function App() {
           <div>
             <span className="font-semibold text-slate-300">GF-T3-178 Flagship Core</span>
             <span className="mx-2">·</span>
-            <span>Target Platform: Heavy Overland Dynamics Platform LS 500 Executive AWD Saloon</span>
+            <span>Target Platform: Apex Executive LS 500 Executive AWD Saloon</span>
           </div>
 
           <div className="flex items-center gap-6">

@@ -276,7 +276,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <span className="font-semibold text-slate-300">GF-T3-186</span>
             <span>&middot;</span>
-            <span>Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry Handling Core</span>
+            <span>Apex Executive UX 300h High-G Dynamic Telemetry Handling Core</span>
             <span>&middot;</span>
             <span className="text-emerald-400 font-medium">Acquire.com Turnkey Asset</span>
           </div>

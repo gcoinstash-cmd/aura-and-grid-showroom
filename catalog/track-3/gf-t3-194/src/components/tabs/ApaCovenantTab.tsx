@@ -4,7 +4,7 @@ import { ShieldCheck, FileText, CheckCircle2, Copy, Check, DollarSign, Award } f
 const APA_LEGAL_AGREEMENT = `# =====================================================================
 # ASSET PURCHASE AGREEMENT (Commercial Software Asset Standard)
 # ACQUIRE.COM MICRO-APA DELIVERABLE
-# ASSET IDENTIFIER: GF-T3-194 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
+# ASSET IDENTIFIER: GF-T3-194 (Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
 # =====================================================================
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is executed and entered into as of October 12, 2026, by and between:
@@ -12,7 +12,7 @@ This ASSET PURCHASE AGREEMENT (this "Agreement") is executed and entered into as
 SELLER: Ghost FactoryOS Skunkworks Fleet Division ("Seller"), a Delaware entity; and
 BUYER: The Acquiring Institutional Counterparty / Sovereign Acquirer ("Buyer") via Acquire.com Escrow.
 
-WHEREAS, Seller has engineered and constructed the turnkey, clean-room software asset known as "GF-T3-194: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core", comprising 4-wheel electro-hydraulic Active Height Control (AHC) algorithms, multi-terrain nitrogen accumulator modulation state machines, partitioned PostgreSQL 16 HMAC ledger schemas, and Google Cloud Run deployment harnesses (collectively, the "Acquired Assets"); and
+WHEREAS, Seller has engineered and constructed the turnkey, clean-room software asset known as "GF-T3-194: Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core", comprising 4-wheel electro-hydraulic Active Height Control (AHC) algorithms, multi-terrain nitrogen accumulator modulation state machines, partitioned PostgreSQL 16 HMAC ledger schemas, and Google Cloud Run deployment harnesses (collectively, the "Acquired Assets"); and
 
 WHEREAS, Buyer desires to acquire all right, title, interest, and intellectual property in and to the Acquired Assets free and clear of all liens and encumbrances.
 
@@ -33,7 +33,7 @@ Seller hereby sells, assigns, transfers, conveys, and delivers to Buyer:
 
 3. REPRESENTATIONS AND WARRANTIES OF SELLER
 Seller represents, warrants, and covenants that:
-(a) Clean-Room Genesis: All code was written from clean-room technical specifications without reference to infringing proprietary reverse-engineered Toyota or Heavy Overland Dynamics Platform factory binary dumps;
+(a) Clean-Room Genesis: All code was written from clean-room technical specifications without reference to infringing proprietary reverse-engineered Toyota or Apex Executive factory binary dumps;
 (b) Zero Copyleft Contamination: The codebase contains 0.0% GPL, AGPL, SSPL, or copyleft-licensed dependencies. All libraries conform strictly to MIT, Apache 2.0, or BSD permissive standards;
 (c) Non-Infringement: The Acquired Assets do not infringe, misappropriate, or violate any third-party intellectual property or patent claim;
 (d) Free of Backdoors: The software contains no hidden backdoors, logic bombs, or telemetry exfiltration vectors.

@@ -12,7 +12,7 @@ export const TabApaCovenant: React.FC = () => {
   const [activeDoc, setActiveDoc] = useState<'APA' | 'BILL_OF_SALE' | 'ESCROW'>('APA');
 
   const apaAgreementText = `# ASSET PURCHASE AGREEMENT (DELAWARE)
-## ASSET IDENTIFICATION: GF-T3-195 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core CARBON AERO CORE)
+## ASSET IDENTIFICATION: GF-T3-195 (Apex Executive High-Aero Grand Touring Telemetry Core CARBON AERO CORE)
 
 This ASSET PURCHASE AGREEMENT (this "Agreement") is entered into and made effective as of October 12, 2026, by and between:
 
@@ -20,7 +20,7 @@ SELLER: Ghost FactoryOS Architecture Core ("Seller"), a Delaware technological d
 BUYER: The Purchasing Entity ("Buyer") as authenticated and processed through the Acquire.com transactional escrow platform.
 
 RECITALS
-WHEREAS, Seller is the sole, exclusive, and unencumbered owner of all right, title, and interest in and to that proprietary software asset and aerodynamic calculation system known as "GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core" (the "Purchased Assets"); and
+WHEREAS, Seller is the sole, exclusive, and unencumbered owner of all right, title, and interest in and to that proprietary software asset and aerodynamic calculation system known as "GF-T3-195: Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core" (the "Purchased Assets"); and
 WHEREAS, Buyer desires to purchase from Seller, and Seller desires to sell, convey, assign, and transfer to Buyer, all of the Purchased Assets on the terms and subject to the conditions set forth herein;
 
 NOW, THEREFORE, in consideration of the mutual covenants, representations, warranties, and agreements hereinafter set forth, the parties agree as follows:
@@ -57,7 +57,7 @@ ARTICLE 5: GOVERNING LAW & DISPUTE RESOLUTION
 
 FOR VALUE RECEIVED, Ghost FactoryOS Architecture Core ("Assignor"), hereby sells, assigns, conveys, transfers, and delivers to the Purchasing Entity ("Assignee"), all right, title, interest, and ownership in and to the software system:
 
-ASSET NAME: GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core
+ASSET NAME: GF-T3-195 Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core
 INCLUDED FILES & REPOSITORIES:
   - aero_vortex_core.py (Python 3.12 Aerodynamic State Machine)
   - aero_ledger_schema.sql (PostgreSQL 16 Partitioned DDL & HMAC Triggers)

@@ -412,7 +412,7 @@ export default function App() {
 
       {/* MAIN COCKPIT WORKSPACE */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-6 py-6 sm:px-8 space-y-8">
-        {/* Interactive Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Chassis HUD */}
+        {/* Interactive Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE Chassis HUD */}
         <ChassisVisualizer
           ekfState={ekfState}
           sensorInput={sensorInput}

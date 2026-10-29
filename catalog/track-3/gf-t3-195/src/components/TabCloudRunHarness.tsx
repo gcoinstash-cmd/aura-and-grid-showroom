@@ -39,7 +39,7 @@ export const TabCloudRunHarness: React.FC = () => {
   };
 
   const dockerfileCode = `# =============================================================================
-# GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core - Production Dockerfile
+# GF-T3-195: Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core - Production Dockerfile
 # Multi-stage, non-root user (10001:10001), minimal security attack surface
 # =============================================================================
 

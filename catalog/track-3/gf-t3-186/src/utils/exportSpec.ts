@@ -4,7 +4,7 @@
  */
 
 export function generateSpecMarkdown(): string {
-  return `# GF-T3-186: Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry HANDLING CORE
+  return `# GF-T3-186: Apex Executive UX 300h High-G Dynamic Telemetry HANDLING CORE
 ## Turnkey Micro-APA Deliverable Specification & Clean-Room Vault Package
 **Asset ID**: GF-T3-186 | **Revision**: 1.0.0-PROD | **Acquire.com Asset Transfer**: 20 kHz (0.48ms) | **Enterprise Tier**: PostgreSQL 16 + RLS
 **License**: MIT Permissive (Clean-Room Certified, 0% Copyleft, Zero AGPL/SSPL)
@@ -12,7 +12,7 @@ export function generateSpecMarkdown(): string {
 ---
 
 ### 1. EXECUTIVE SUMMARY & ARCHITECTURAL OVERVIEW
-The GF-T3-186 core is an institutional-grade, turnkey engineering subsystem designed to model, ingest, govern, and verify the 5th-Generation Hybrid Electric Vehicle (HEV) powertrain and E-Four all-wheel-drive electronic rear axle found in the Heavy Overland Dynamics Platform UX 300h (Platform Code: MZAH11 / MZAH16).
+The GF-T3-186 core is an institutional-grade, turnkey engineering subsystem designed to model, ingest, govern, and verify the 5th-Generation Hybrid Electric Vehicle (HEV) powertrain and E-Four all-wheel-drive electronic rear axle found in the Apex Executive UX 300h (Platform Code: MZAH11 / MZAH16).
 
 Key architectural capabilities:
 1. **Planetary Power Split Device (PSD) Mathematical Kinematics**:
@@ -38,7 +38,7 @@ Key architectural capabilities:
 ### 2. MATHEMATICAL & ALGORITHMIC SPECIFICATION
 
 #### 2.1 Epicyclic Planetary Gear Train Kinematics (Willis Relation)
-The Toyota/Heavy Overland Dynamics Platform Power Split Device uses a single planetary epicyclic gearset governed by the gear teeth ratio:
+The Toyota/Apex Executive Power Split Device uses a single planetary epicyclic gearset governed by the gear teeth ratio:
 - $R$: Ring gear teeth count ($R = 78$)
 - $S$: Sun gear teeth count ($S = 30$)
 - Carrier gear $C$ houses the planet pinion gears and is mechanically coupled to the M20A-FXS combustion engine crankshaft.
@@ -117,7 +117,7 @@ CREATE INDEX IF NOT EXISTS idx_telemetry_nonce_recorded
 CREATE OR REPLACE FUNCTION trg_fn_enforce_battery_quarantine()
 RETURNS TRIGGER AS $$
 BEGIN
-    -- Heavy Overland Dynamics Platform UX 300h 60-cell Li-Ion safety specification threshold: 45.0 mV delta spread
+    -- Apex Executive UX 300h 60-cell Li-Ion safety specification threshold: 45.0 mV delta spread
     IF NEW.cell_spread_mv > 45.0 THEN
         NEW.is_quarantined := TRUE;
         
@@ -266,7 +266,7 @@ openapi: 3.1.0
 info:
   title: GF-T3-186 Telemetry & E-Four Vectoring Service
   version: 1.0.0-PROD
-  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Heavy Overland Dynamics Platform UX 300h.
+  description: High-frequency 2,200 Hz CAN-FD ingestion and cryptographic ledger interface for Apex Executive UX 300h.
 servers:
   - url: https://gf-t3-186-core-7cbuk3t6zmrzluffmwbaso-uc.a.run.app
     description: Google Cloud Run Production Server

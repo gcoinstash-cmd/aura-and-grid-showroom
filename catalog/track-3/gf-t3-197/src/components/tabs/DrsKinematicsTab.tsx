@@ -83,7 +83,7 @@ export const DrsKinematicsTab: React.FC<DrsKinematicsTabProps> = ({
   };
 
   const pythonCode = `"""
-Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core - Dynamic Rear Steering (DRS) & DUAL_VECTOR_TORQUE Kinematics
+Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core - Dynamic Rear Steering (DRS) & DUAL_VECTOR_TORQUE Kinematics
 Asset ID: GF-T3-197
 Python 3.12 Production Engine
 
@@ -97,7 +97,7 @@ import math
 
 @dataclass(frozen=True)
 class VehicleParameters:
-    wheelbase_m: float = 2.950          # Heavy Overland Dynamics Platform Multi-Node High-Output Core wheelbase (m)
+    wheelbase_m: float = 2.950          # Apex Executive Multi-Node High-Output Core wheelbase (m)
     dist_cg_to_front_m: float = 1.385   # l_f
     dist_cg_to_rear_m: float = 1.565    # l_r
     curb_weight_kg: float = 2250.0      # Kerb mass (kg)
@@ -400,7 +400,7 @@ if __name__ == "__main__":
               <div className="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
                 <span className="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
                   <Navigation2 className="w-5 h-5 text-cyan-400" />
-                  Heavy Overland Dynamics Platform Multi-Node High-Output Core Active Chassis Plane (Wheelbase: 2,950 mm)
+                  Apex Executive Multi-Node High-Output Core Active Chassis Plane (Wheelbase: 2,950 mm)
                 </span>
                 <span className="text-base font-mono text-slate-400">
                   Scale: 1:35 Dynamic
@@ -431,7 +431,7 @@ if __name__ == "__main__":
                     strokeDasharray="4 4"
                   />
 
-                  {/* Vehicle Body Outline (Heavy Overland Dynamics Platform TX Profile from Top) */}
+                  {/* Vehicle Body Outline (Apex Executive TX Profile from Top) */}
                   <rect
                     x="110"
                     y="60"

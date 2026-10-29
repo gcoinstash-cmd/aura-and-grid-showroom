@@ -104,7 +104,7 @@ export const TabOpenApiContract: React.FC<TabOpenApiContractProps> = ({ currentR
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: GF-T3-193 Heavy Overland Dynamics Platform IS 500 Performance Telemetry API
+  title: GF-T3-193 Apex Executive IS 500 Performance Telemetry API
   description: High-frequency telemetry ingestion, acoustic intake valve management, and Torsen LSD control protocol.
   version: 1.0.0-PROD
   license:

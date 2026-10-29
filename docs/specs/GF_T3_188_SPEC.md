@@ -1,9 +1,9 @@
-# GF-T3-188: LEXUS GX 550 OVERTRAIL+ CORE
+# GF-T3-188: Vanguard ECLSS+ CORE
 ## F1 SKUNKWORKS SERVICE ENGINE — TURNKEY APA ASSET SPECIFICATION
 **Delaware Micro-APA Asset Package | Acquire.com Listing**
 **Asset ID**: GF-T3-188  
 **Classification**: Track 3 F1 Skunkworks Service Engine (70% Workload Deliverable)  
-**Target Vehicle Platform**: Lexus GX 550 Overtrail+ (TNGA GA-F Truck Platform)  
+**Target Vehicle Platform**: Vanguard ECLSS+ (TNGA GA-F Truck Platform)  
 **Valuation**: Turnkey Buyout $45,000 USD | Enterprise Monopoly Vault: $125,000 USD  
 **License**: MIT Permissive (Clean-Room Certified, Zero Copyleft)  
 **Standard Release**: v1.0.0-PROD  
@@ -13,11 +13,11 @@
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
 ### 1.1 Physical & Cybernetic Boundary Topology
-The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Lexus GA-F chassis:
+The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Apex Executive Engine GA-F chassis:
 
 ```
 +----------------------------------------------------------------------------------------------------+
-|                                    LEXUS GX 550 CHASSIS CAN-FD BUS                                  |
+|                                    Vanguard ECLSS CHASSIS CAN-FD BUS                                  |
 +--------------------+--------------------------------+--------------------+-------------------------+
                      |                                |                    |
                      v                                v                    v
@@ -125,7 +125,7 @@ Crawl Control arbitrates wheel torque and independent 4-wheel electro-hydraulic 
 
 ```sql
 -- ============================================================================
--- GF-T3-188: LEXUS GX 550 OVERTRAIL+ TELEMETRY & AUDIT LEDGER SCHEMA
+-- GF-T3-188: Vanguard ECLSS+ TELEMETRY & AUDIT LEDGER SCHEMA
 -- Target Engine: PostgreSQL 16.x / AlloyDB
 -- Compliance: Cryptographic HMAC-SHA256 Chaining, Nonce Audit, Zero Deadlocks
 -- ============================================================================
@@ -240,7 +240,7 @@ CREATE TRIGGER trg_pressure_safety
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ E-KDSS & Crawl Telemetry API
+  title: Vanguard ECLSS+ E-KDSS & Crawl Telemetry API
   description: High-frequency telemetry ingestion and actuator arbitration interface
   version: 1.0.0-PROD
   license:

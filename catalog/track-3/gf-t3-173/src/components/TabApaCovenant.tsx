@@ -3,7 +3,7 @@ import { FileText, Copy, Check, ShieldCheck, CheckSquare, Scale } from 'lucide-r
 
 const APA_AGREEMENT_TEXT = `================================================================================
 ASSET PURCHASE AGREEMENT (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-173 (Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE)
+ASSET IDENTIFIER: GF-T3-173 (Apex Executive RC F TRACK EDITION AERO CORE)
 ACQUIRE.COM ESCROW TRANSACTION REF: ACQ-GHOST-RCF-173
 ================================================================================
 
@@ -28,7 +28,7 @@ SECTION 1: PURCHASE AND SALE OF ASSETS
         PostgreSQL 16 partitioned schema DDL, OpenAPI 3.1 specifications, Dockerfile,
         and PyTest verification bench (>94% coverage).
     (b) CFD aerodynamic simulation matrices, lift-to-drag calibrated polar curves,
-        and Heavy Overland Dynamics Platform RC F Track Edition vehicle dynamics parameter maps.
+        and Apex Executive RC F Track Edition vehicle dynamics parameter maps.
     (c) Monotonic HMAC-SHA256 telemetry ledger database scripts and quarantine triggers.
     (d) All structural novelty design patent claims and trade-dress rights.
 1.2 DEPLOYMENT SPECIFICATION & Terms:

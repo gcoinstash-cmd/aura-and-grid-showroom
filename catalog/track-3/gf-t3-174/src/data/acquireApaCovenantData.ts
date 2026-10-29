@@ -1,12 +1,12 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Acquire.com Asset Purchase Agreement (APA) & Clean-Room IP Assignment Covenant
  */
 
 export const ACQUIRE_APA_AGREEMENT_TEXT = `# ASSET PURCHASE AGREEMENT (MICRO-APA)
-## ASSET ID: GF-T3-174 (Heavy Overland Dynamics Platform RZ 450e STEER-BY-WIRE PRECISION CORE)
+## ASSET ID: GF-T3-174 (Apex Executive RZ 450e STEER-BY-WIRE PRECISION CORE)
 
 THIS ASSET PURCHASE AGREEMENT ("Agreement") is executed as of October 11, 2026 ("Effective Date"), by and between:
 
@@ -16,7 +16,7 @@ THIS ASSET PURCHASE AGREEMENT ("Agreement") is executed as of October 11, 2026 (
 ---
 
 ### RECITALS
-WHEREAS, Seller has independently architected and developed the turnkey automotive software asset designated as **GF-T3-174: Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core**, comprising deterministic sub-millisecond dual-channel arbitration, speed-adaptive variable ratio kinematics, discrete Kalman state-space filtering, and an immutable PostgreSQL 16 cryptographic audit ledger; and
+WHEREAS, Seller has independently architected and developed the turnkey automotive software asset designated as **GF-T3-174: Track 2 Sovereign Flagship Steer-by-Wire Core**, comprising deterministic sub-millisecond dual-channel arbitration, speed-adaptive variable ratio kinematics, discrete Kalman state-space filtering, and an immutable PostgreSQL 16 cryptographic audit ledger; and
 
 WHEREAS, Buyer desires to purchase and acquire all right, title, interest, and intellectual property in and to the Purchased Assets, and Seller desires to sell and assign such assets to Buyer, pursuant to the terms herein.
 
@@ -47,7 +47,7 @@ NOW, THEREFORE, for good and valuable consideration of **Delaware Institutional 
 
 ### SECTION 3: CLEAN-ROOM REPRESENTATIONS & NON-INFRINGEMENT WARRANTIES
 3.1 **Clean-Room Certification.** Seller represents and warrants that:
-  (a) The Purchased Assets were authored in an isolated, clean-room environment with zero direct access to proprietary Toyota Motor Corporation or Heavy Overland Dynamics Platform proprietary ECU assembly code;
+  (a) The Purchased Assets were authored in an isolated, clean-room environment with zero direct access to proprietary Toyota Motor Corporation or Apex Executive proprietary ECU assembly code;
   (b) No third-party proprietary trade secrets or non-permissive open-source software (specifically including GPL, AGPL, SSPL, or CC-BY-NC licenses) were incorporated into the code;
   (c) All included third-party libraries carry 100% permissive open-source licenses (MIT, Apache 2.0, or 3-Clause BSD).
 3.2 **Title & Encumbrances.** Seller possesses sole, exclusive, unencumbered title to the Purchased Assets, free and clear of all liens, mortgages, pledges, or claims of third parties.

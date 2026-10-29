@@ -441,7 +441,7 @@ export const TabDualVectorTorqueEnergyCore: React.FC<TabDualVectorTorqueEnergyCo
         <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5 shadow-xl flex flex-col items-center justify-between">
           <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-slate-800">
             <span className="text-[15px] font-bold text-white uppercase tracking-wider">
-              Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Powertrain Architecture
+              Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Powertrain Architecture
             </span>
             <span className="text-[15px] font-mono text-slate-400">AWD Vectoring</span>
           </div>

@@ -15,7 +15,7 @@ export const CloudRunHarnessTab: React.FC = () => {
   const [gcloudCopied, setGcloudCopied] = useState(false);
 
   // Deploy configuration state
-  const [projectId, setProjectId] = useState('Heavy Overland Dynamics Platform-lfa-fleet-prod');
+  const [projectId, setProjectId] = useState('Apex Executive-lfa-fleet-prod');
   const [region, setRegion] = useState('us-central1');
   const [serviceName, setServiceName] = useState('gf-t3-198-telematics');
 

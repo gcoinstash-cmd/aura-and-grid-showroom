@@ -36,7 +36,7 @@ export const VerifyHashModal: React.FC<VerifyHashModalProps> = ({
   if (!isOpen) return null;
 
   const certificatePayload = `--- GF-T3-195 CRYPTOGRAPHIC AUDIT CERTIFICATE ---
-Asset: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core
+Asset: Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core
 Frame Nonce: #${currentFrame.nonce}
 Audit Timestamp: ${verifiedTime}
 HMAC-SHA256 Signature: ${currentFrame.hmacSignature}

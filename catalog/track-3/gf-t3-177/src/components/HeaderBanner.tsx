@@ -16,13 +16,13 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
 }) => {
   return (
     <header className="relative w-full bg-neutral-900/90 border-b border-neutral-800 text-neutral-100 px-4 sm:px-6 lg:px-8 py-6">
-      {/* Top Badge Bar: Place "ASSET ID: GF-T3-177", "Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GRAND TOURING CORE", and "v1.0.0-PROD" into a single, clean horizontal flex row */}
+      {/* Top Badge Bar: Place "ASSET ID: GF-T3-177", "Apex Executive High-Aero Grand Touring Telemetry Core GRAND TOURING CORE", and "v1.0.0-PROD" into a single, clean horizontal flex row */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
         <span className="inline-flex items-center px-3 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 text-base font-bold font-mono tracking-wider">
           ASSET ID: GF-T3-177
         </span>
         <span className="inline-flex items-center px-3 py-1 rounded bg-neutral-800 text-neutral-200 border border-neutral-700 text-base font-semibold tracking-wide">
-          Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core GRAND TOURING CORE
+          Apex Executive High-Aero Grand Touring Telemetry Core GRAND TOURING CORE
         </span>
         <span className="inline-flex items-center px-3 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-base font-bold font-mono">
           v1.0.0-PROD
@@ -37,7 +37,7 @@ export const HeaderBanner: React.FC<HeaderBannerProps> = ({
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-6 border-b border-neutral-800">
         <div className="max-w-3xl">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
-            Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Convertible Grand Touring Cockpit
+            Apex Executive High-Aero Grand Touring Telemetry Core Convertible Grand Touring Cockpit
           </h1>
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed">
             Turnkey micro-APA asset transfer asset for Acquire.com. Production-grade active rear steering (DRS) phase transition state machine, 2UR-GSE 5.0L naturally aspirated V8 bimodal acoustic exhaust matrix, and partitioned PostgreSQL cryptographic ledger.

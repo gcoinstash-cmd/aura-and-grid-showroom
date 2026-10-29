@@ -101,7 +101,7 @@ export const SuspensionCoreTab: React.FC<SuspensionCoreTabProps> = ({
 
   const copyCode = () => {
     const code = `"""
-Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
 File: Overland_lx600_ahc_core.py
 License: MIT Permissive
 Author: Ghost FactoryOS Lead Systems Architects
@@ -420,7 +420,7 @@ class OverlandLX600ExecutiveEngine:
           </button>
         </div>
         <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[380px] bg-slate-950/70">
-          <code>{`# Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
+          <code>{`# Apex Executive Ultra-Heavy Telemetry Core Ultra Luxury Executive Core - AHC & Wastegate Control Loop
 # File: Overland_lx600_ahc_core.py
 # License: MIT Permissive | Clean-Room Certified
 # Zero external runtime dependencies

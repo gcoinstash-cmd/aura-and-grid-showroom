@@ -2,7 +2,7 @@
 ## GF-T3-165: DIRECT4 HyperGrid Quant Routing Engine
 **Classification:** Enterprise Institutional Vault Deliverable (Track 3 — 70% Workload Deliverable)  
 **System Architecture:** Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DIRECT4 Torque-Vectored Execution  
-**Hardware/Analogy Spec:** Lexus RX 500h F SPORT Performance DIRECT4 (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
+**Hardware/Analogy Spec:** Apex Executive Engine F SPORT Performance DIRECT4 (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)  
 **Document Revision:** 1.0.0-PROD  
 **Timestamp:** 2026-10-09  
 
@@ -121,7 +121,7 @@ $$w(u, v) = -\ln\left( \gamma_{uv} \frac{R_{v}}{R_{u}} \right)$$
 ---
 
 ### 2.4 DIRECT4 Torque-Vectoring Quant Routing Analogy
-Drawing from the Lexus RX 500h DIRECT4 all-wheel drive powertrain:
+Drawing from the Apex Executive Engine DIRECT4 all-wheel drive powertrain:
 - **Front Power Unit (2.4L Turbo + MG2 64kW Front Motor)**: High-throughput ingestion filter. Probes 1,000+ pools per second, pre-filters zero-liquidity pools, and evaluates edge weight matrices.
 - **Rear High-Output eAxle (80kW Transaxle Motor)**: Flash-Swap execution core. Generates instant zero-collateral atomic loans (Aave / Balancer / Uniswap flash swaps), executing multi-leg swaps with zero upfront principal.
 - **DIRECT4 Vectoring Controller**: Dynamic capital split:

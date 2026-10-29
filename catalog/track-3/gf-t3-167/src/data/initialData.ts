@@ -129,7 +129,7 @@ export const INITIAL_NOTIFICATIONS: SystemNotification[] = [
     id: 'notif_1',
     timestamp: '2026-10-10T21:30:00Z',
     title: 'GF-T3-167 Ready for Asset Transfer',
-    message: 'Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD verified on Acquire.com Micro-APA Escrow.',
+    message: 'Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD verified on Acquire.com Micro-APA Escrow.',
     level: 'success',
     read: false,
   },

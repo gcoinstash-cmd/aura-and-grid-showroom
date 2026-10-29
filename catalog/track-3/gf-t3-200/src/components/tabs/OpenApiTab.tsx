@@ -127,7 +127,7 @@ export const OpenApiTab: React.FC = () => {
           <div className="flex items-center justify-between text-slate-400 mb-2 pb-2 border-b border-slate-800/80">
             <span className="text-emerald-400 flex items-center gap-1.5">
               <span className={`w-2 h-2 rounded-full ${wsStreaming ? 'bg-emerald-400 animate-ping' : 'bg-slate-500'}`} />
-              CONNECTED: wss://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal/ws/v1/telemetry/stream
+              CONNECTED: wss://inverter-gateway.Apex Executive-gf200.internal/ws/v1/telemetry/stream
             </span>
             <span className="text-purple-300">Frame #{currentFrame.nonce}</span>
           </div>
@@ -181,7 +181,7 @@ export const OpenApiTab: React.FC = () => {
           </div>
           <pre className="text-emerald-300 overflow-x-auto p-2 bg-slate-900 rounded border border-slate-800">
             {activeEndpoint === 'torque-ingress' &&
-`curl -X POST https://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal/api/v1/telemetry/torque-ingress \\
+`curl -X POST https://inverter-gateway.Apex Executive-gf200.internal/api/v1/telemetry/torque-ingress \\
   -H "Content-Type: application/json" \\
   -H "X-Inverter-Enclave-Key: hmac_sec_prod_99f4c" \\
   -d '{
@@ -193,13 +193,13 @@ export const OpenApiTab: React.FC = () => {
     "pack_telemetry": { "voltage_v": 794.0, "max_impedance_mohm": 1.35, "temp_c": 31.5 }
   }'`}
             {activeEndpoint === 'state' &&
-`curl -X GET https://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal/api/v1/telemetry/state \\
+`curl -X GET https://inverter-gateway.Apex Executive-gf200.internal/api/v1/telemetry/state \\
   -H "Accept: application/json"`}
             {activeEndpoint === 'ws-stream' &&
 `# Connect with wscat or WebSocket client:
-wscat -c wss://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal/ws/v1/telemetry/stream`}
+wscat -c wss://inverter-gateway.Apex Executive-gf200.internal/ws/v1/telemetry/stream`}
             {activeEndpoint === 'verify-hash' &&
-`curl -X POST https://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal/api/v1/ledger/verify-hash \\
+`curl -X POST https://inverter-gateway.Apex Executive-gf200.internal/api/v1/ledger/verify-hash \\
   -H "Content-Type: application/json" \\
   -d '{ "block_nonce": 1048590, "expected_digest": "0x9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08" }'`}
           </pre>
@@ -253,7 +253,7 @@ info:
     url: https://opensource.org/licenses/MIT
 
 servers:
-  - url: https://inverter-gateway.Heavy Overland Dynamics Platform-gf200.internal
+  - url: https://inverter-gateway.Apex Executive-gf200.internal
     description: High-Speed CAN-FD Production Gateway
 
 paths:

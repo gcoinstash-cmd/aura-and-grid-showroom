@@ -4,7 +4,7 @@
  */
 
 export const POSTGRES_DDL = `-- ============================================================================
--- GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry CORE
+-- GF-T3-172: Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry CORE
 -- Partitioned PostgreSQL 16 Epoch Ledger with Cryptographic Merkle Verification
 -- Target: Cloud SQL / AlloyDB / PostgreSQL 16.2
 -- ============================================================================

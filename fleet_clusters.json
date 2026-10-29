@@ -1907,7 +1907,7 @@
         {
           "id": "GF-T3-166",
           "unit_number": 166,
-          "title": "Heavy Overland Dynamics Platform LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
+          "title": "Apex Executive Raft Event Ingestion & Spec Engine",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1921,7 +1921,7 @@
         {
           "id": "GF-T3-167",
           "unit_number": 167,
-          "title": "Heavy Overland Dynamics Platform LC 500 Dynamic Core",
+          "title": "Apex Executive Dynamic Grand Touring Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1935,7 +1935,7 @@
         {
           "id": "GF-T3-168",
           "unit_number": 168,
-          "title": "Heavy Overland Dynamics Platform RX 500h F SPORT Dynamic Performance Core",
+          "title": "Apex Executive Dynamic Performance Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1949,7 +1949,7 @@
         {
           "id": "GF-T3-169",
           "unit_number": 169,
-          "title": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Agile Hybrid Core",
+          "title": "Apex Executive Agile Hybrid Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1963,7 +1963,7 @@
         {
           "id": "GF-T3-170",
           "unit_number": 170,
-          "title": "Heavy Overland Dynamics Platform ES 350h Executive Quietude Core",
+          "title": "Apex Executive Quietude Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1977,7 +1977,7 @@
         {
           "id": "GF-T3-171",
           "unit_number": 171,
-          "title": "Heavy Overland Dynamics Platform IS 500 F SPORT V8 Dynamic Core",
+          "title": "Apex Executive V8 Dynamic Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -1991,7 +1991,7 @@
         {
           "id": "GF-T3-172",
           "unit_number": 172,
-          "title": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core",
+          "title": "Apex Executive Performance Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -2005,7 +2005,7 @@
         {
           "id": "GF-T3-173",
           "unit_number": 173,
-          "title": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core",
+          "title": "Hypercar Flagship Trim Aero Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -2019,7 +2019,7 @@
         {
           "id": "GF-T3-174",
           "unit_number": 174,
-          "title": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core",
+          "title": "Track 2 Sovereign Flagship Steer-by-Wire Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3671,7 +3671,7 @@
         {
           "id": "GF-T3-175",
           "unit_number": 175,
-          "title": "Heavy Overland Dynamics Platform UX 300h Urban Edge Core",
+          "title": "Apex Executive Urban Edge Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3685,7 +3685,7 @@
         {
           "id": "GF-T3-176",
           "unit_number": 176,
-          "title": "Heavy Overland Dynamics Platform Terrain Core",
+          "title": "Vanguard ECLSS Terrain Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3699,7 +3699,7 @@
         {
           "id": "GF-T3-177",
           "unit_number": 177,
-          "title": "Heavy Overland Dynamics Platform LC 500 Convertible Grand Touring Core",
+          "title": "Hypercar Flagship Trim Convertible Grand Touring Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3713,7 +3713,7 @@
         {
           "id": "GF-T3-178",
           "unit_number": 178,
-          "title": "Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core",
+          "title": "Apex Executive AWD Flagship Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3727,7 +3727,7 @@
         {
           "id": "GF-T3-179",
           "unit_number": 179,
-          "title": "Heavy Overland Dynamics Platform TX 550h+ Luxury Plug-In Core",
+          "title": "Apex Executive Luxury Plug-In Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3741,7 +3741,7 @@
         {
           "id": "GF-T3-180",
           "unit_number": 180,
-          "title": "Heavy Overland Dynamics Platform LX 600 Ultra Luxury Executive Core",
+          "title": "Apex Executive Ultra Luxury Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3755,7 +3755,7 @@
         {
           "id": "GF-T3-181",
           "unit_number": 181,
-          "title": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core",
+          "title": "Apex Executive High-Output Performance Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3769,7 +3769,7 @@
         {
           "id": "GF-T3-182",
           "unit_number": 182,
-          "title": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core (Mark II)",
+          "title": "Hypercar Flagship Trim Aero Core (Mark II)",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3783,7 +3783,7 @@
         {
           "id": "GF-T3-183",
           "unit_number": 183,
-          "title": "Heavy Overland Dynamics Platform RZ 450e DIRECT4 Dual-Motor Electric Core",
+          "title": "Track 2 Sovereign Flagship Dual-Motor Electric Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3797,7 +3797,7 @@
         {
           "id": "GF-T3-184",
           "unit_number": 184,
-          "title": "Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core",
+          "title": "Hypercar Flagship Trim V10 Apex Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3811,7 +3811,7 @@
         {
           "id": "GF-T3-185",
           "unit_number": 185,
-          "title": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Handling Plug-In Core",
+          "title": "Apex Executive Handling Plug-In Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3825,7 +3825,7 @@
         {
           "id": "GF-T3-186",
           "unit_number": 186,
-          "title": "Heavy Overland Dynamics Platform UX 300h F SPORT Handling Core",
+          "title": "Apex Executive Handling Urban Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3839,7 +3839,7 @@
         {
           "id": "GF-T3-187",
           "unit_number": 187,
-          "title": "Heavy Overland Dynamics Platform ES 300h Ultra Luxury Swing-Valve Core",
+          "title": "Apex Executive Swing-Valve Damping Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3853,7 +3853,7 @@
         {
           "id": "GF-T3-188",
           "unit_number": 188,
-          "title": "Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry Core",
+          "title": "Vanguard ECLSS Dynamic Kinetic Suspension Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3867,7 +3867,7 @@
         {
           "id": "GF-T3-189",
           "unit_number": 189,
-          "title": "Heavy Overland Dynamics Platform LC 500 Convertible Structural Aero Core",
+          "title": "Hypercar Flagship Trim Structural Aero Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3881,7 +3881,7 @@
         {
           "id": "GF-T3-190",
           "unit_number": 190,
-          "title": "Heavy Overland Dynamics Platform Electrified Sport Concept Solid-State Core",
+          "title": "Hypercar Flagship Trim Solid-State Concept Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3895,7 +3895,7 @@
         {
           "id": "GF-T3-191",
           "unit_number": 191,
-          "title": "Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core",
+          "title": "Apex Executive Mover Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3909,7 +3909,7 @@
         {
           "id": "GF-T3-192",
           "unit_number": 192,
-          "title": "Heavy Overland Dynamics Platform TX 550h+ DIRECT4 Dynamic Rear Steering Core",
+          "title": "Apex Executive Dynamic Rear Steering Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3923,7 +3923,7 @@
         {
           "id": "GF-T3-193",
           "unit_number": 193,
-          "title": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core (Mark II)",
+          "title": "Apex Executive Performance Core (Mark II)",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3937,7 +3937,7 @@
         {
           "id": "GF-T3-194",
           "unit_number": 194,
-          "title": "Heavy Overland Dynamics Platform LX 600 F SPORT 4-Wheel Active Height Control Core",
+          "title": "Apex Executive 4-Wheel Active Height Control Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3951,7 +3951,7 @@
         {
           "id": "GF-T3-195",
           "unit_number": 195,
-          "title": "Heavy Overland Dynamics Platform LC 500 Inspiration Series Carbon Aero Core",
+          "title": "Hypercar Flagship Trim Carbon Aero Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3965,7 +3965,7 @@
         {
           "id": "GF-T3-196",
           "unit_number": 196,
-          "title": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DIRECT4 Core",
+          "title": "Track 2 Sovereign Flagship Steer-by-Wire Vectoring Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3979,7 +3979,7 @@
         {
           "id": "GF-T3-197",
           "unit_number": 197,
-          "title": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core (Mark II)",
+          "title": "Apex Executive Multi-Node Performance Core (Mark II)",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -3993,7 +3993,7 @@
         {
           "id": "GF-T3-198",
           "unit_number": 198,
-          "title": "Heavy Overland Dynamics Platform LFA Nürburgring Edition 1LR-GUE V10 Telematics Core",
+          "title": "Hypercar Flagship Trim V10 Telematics Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -4007,7 +4007,7 @@
         {
           "id": "GF-T3-199",
           "unit_number": 199,
-          "title": "Heavy Overland Dynamics Platform RX 500h F SPORT Performance Core",
+          "title": "Apex Executive Performance Telemetry Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",
@@ -4105,7 +4105,7 @@
         {
           "id": "GF-T3-200",
           "unit_number": 200,
-          "title": "Heavy Overland Dynamics Platform Electrified Supercar Concept Core",
+          "title": "Hypercar Flagship Trim Electrified Supercar Concept Core",
           "track_tier": "Track 3 — F1 Skunkworks Engine",
           "track": "Track 3",
           "vertical": "Autonomous Telemetry / Cockpit",

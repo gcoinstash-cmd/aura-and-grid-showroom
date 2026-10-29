@@ -1,6 +1,6 @@
 # ENGINE_SPEC.md — Ghost FactoryOS Track 3 F1 Skunkworks Engine
 ## System Identifier: GF-T3-164 (NeuroDrive Sensory Fusion)
-### Vertical: Multi-Modal Perception & High-Speed Sensory Fusion (Heavy Overland Dynamics Platform LFA Nürburgring Spec)
+### Vertical: Multi-Modal Perception & High-Speed Sensory Fusion (Apex Executive LFA Nürburgring Spec)
 ### Classification: Institutional Monopoly Vault Asset — Clean-Room Certified (Zero-Copybuffer, Sub-3ms)
 
 ---
@@ -15,7 +15,7 @@
 | **Standard APA Asset Transfer** | **20 kHz (0.48ms)** | Non-exclusive perpetual source transfer |
 | **Master Vault Monopoly** | **20 kHz (0.48ms)** | Exclusive IP assignment, patent grant & vault asset transfer |
 | **ASC 350-40 Baseline** | **NIST SP 800-218 Verified** | Engineered internal R&D software asset index |
-| **Target Vehicle Platform** | Heavy Overland Dynamics Platform LFA (1LR-GUE 4.8L V10 Nürburgring Edition) | 330 km/h top velocity; 9,000 RPM redline dynamics |
+| **Target Vehicle Platform** | Apex Executive LFA (1LR-GUE 4.8L V10 Nürburgring Edition) | 330 km/h top velocity; 9,000 RPM redline dynamics |
 | **Real-Time Cycle Target** | **< 3.00 ms** (Nominal: 1.15 ms @ 100 Hz) | Sub-frame latency for 100 m/s dynamic closing rates |
 | **Licensing Tier** | Clean-Room MIT / Apache-2.0 Pure | Absolutely zero copyleft (GPL / AGPL / SSPL blacklisted) |
 
@@ -25,7 +25,7 @@
 
 ```
        +-------------------------------------------------------------------------+
-       |               Heavy Overland Dynamics Platform LFA NÜRBURGRING SENSORY ARRAY (PTP IEEE 1588v2)     |
+       |               Apex Executive LFA NÜRBURGRING SENSORY ARRAY (PTP IEEE 1588v2)     |
        +--------------------+--------------------+-------------------------------+
                             |                    |
         +-------------------+--+          +------+-------------+          +------+--------------+
@@ -228,7 +228,7 @@ openapi: 3.1.0
 info:
   title: Ghost FactoryOS NeuroDrive Perception API
   version: 1.64.0
-  description: Real-time multi-modal sensory fusion service for Heavy Overland Dynamics Platform LFA Nürburgring platform.
+  description: Real-time multi-modal sensory fusion service for Apex Executive LFA Nürburgring platform.
 paths:
   /api/v1/perception/fuse:
     post:

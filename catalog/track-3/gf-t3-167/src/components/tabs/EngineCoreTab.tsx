@@ -89,7 +89,7 @@ typedef struct __attribute__((aligned(64))) {
     uint64_t timestamp_ns;       // CLOCK_MONOTONIC_RAW (nanosecond resolution)
     uint64_t order_id;           // Unique 64-bit client order key
     uint32_t trader_id;          // Compact 32-bit participant identifier
-    uint32_t instrument_id;      // 0x0167 (Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core)
+    uint32_t instrument_id;      // 0x0167 (Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core)
     uint32_t price_fixed;        // Scaled fixed-point price (price * 10,000)
     uint32_t quantity;           // Unsigned contract size
     uint8_t  side;               // 0 = BUY, 1 = SELL

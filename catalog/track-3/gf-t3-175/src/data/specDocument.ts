@@ -1,4 +1,4 @@
-export const GF_T3_175_SPEC_CONTENT = `# GF-T3-175: Heavy Overland Dynamics Platform UX 300h URBAN EDGE CORE
+export const GF_T3_175_SPEC_CONTENT = `# GF-T3-175: Apex Executive UX 300h URBAN EDGE CORE
 ## PRODUCTION SPECIFICATION & MONOPOLY VAULT BLUEPRINT (v1.0.0-PROD)
 **Target Asset Platform:** Acquire.com Turnkey Micro-APA Asset  
 **Specification Profile:** Standard APA Asset Transfer: 20 kHz (0.48ms) | Architecture Moat: PostgreSQL 16 + RLS  
@@ -8,7 +8,7 @@ export const GF_T3_175_SPEC_CONTENT = `# GF-T3-175: Heavy Overland Dynamics Plat
 ---
 
 ### EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
-GF-T3-175 is an embedded-grade edge battery management and regenerative braking coprocessor designed specifically for the Heavy Overland Dynamics Platform UX 300h (60S2P NiMH/Li-Ion traction pack, 222V nominal voltage, 60 distinct monitored cell channels). The engine runs a deterministic 500 Hz control loop executing:
+GF-T3-175 is an embedded-grade edge battery management and regenerative braking coprocessor designed specifically for the Apex Executive UX 300h (60S2P NiMH/Li-Ion traction pack, 222V nominal voltage, 60 distinct monitored cell channels). The engine runs a deterministic 500 Hz control loop executing:
 1. Continuous Coulomb integration with extended Kalman filtering (EKF) for State-of-Charge (SOC) estimation with error <= 0.002%.
 2. Dynamic kinetic brake recovery blending delivering up to 92.4% energy recapture during urban stop-and-go profiles.
 3. Cryptographic timeseries ledgering into PostgreSQL 16 with HMAC-SHA256 monotonic block hashing for tamper-evident battery health certification.
@@ -164,7 +164,7 @@ FOR EACH ROW EXECUTE FUNCTION battery_core.fn_audit_cell_health();
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-175 Heavy Overland Dynamics Platform UX 300h Urban Edge Core API
+  title: GF-T3-175 Apex Executive Urban Edge Core API
   version: 1.0.0-PROD
   description: High-frequency telemetry ingestion and cryptographic ledger interface
 paths:
@@ -241,12 +241,12 @@ All packages incorporated into GF-T3-175 have been audited and certified under p
 
 ### 5. INSTITUTIONAL VAULT CERTIFICATION
 - **Clean-Room Certification SHA-256:** \`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\`
-- **Monopoly Vault Asset ID:** \`GF-T3-175-Heavy Overland Dynamics Platform-UX300H-URBAN-CORE\`
+- **Monopoly Vault Asset ID:** \`GF-T3-175-Apex Executive-UX300H-URBAN-CORE\`
 - **Escrow Handoff Status:** Ready for Acquire.com Automated Escrow Settlement
 `;
 
 export const GF_T3_175_APA_AGREEMENT_CONTENT = `# ASSET PURCHASE AGREEMENT (APA)
-## TURNKEY MICRO-ASSET TRANSFER TRANSACTION: GF-T3-175 (Heavy Overland Dynamics Platform UX 300h URBAN EDGE CORE)
+## TURNKEY MICRO-ASSET TRANSFER TRANSACTION: GF-T3-175 (Apex Executive UX 300h URBAN EDGE CORE)
 **Transaction Platform:** Acquire.com Escrow Exchange  
 **Governing Law:** Standard Commercial Jurisdiction, United States  
 **Executed Date:** October 11, 2026  
@@ -258,7 +258,7 @@ This Asset Purchase Agreement ("Agreement") is entered into by and between:
 - **Seller:** Ghost FactoryOS Skunkworks Asset Holdings LLC ("Seller")
 - **Purchaser:** Acquire.com Verified Enterprise Buyer ("Purchaser")
 
-**WHEREAS**, Seller is the sole owner of all right, title, and interest in and to the software codebase, algorithmic trade dress, mathematical battery control engine, and accompanying schemas known as **GF-T3-175 (Heavy Overland Dynamics Platform UX 300h Urban Edge Core)**; and
+**WHEREAS**, Seller is the sole owner of all right, title, and interest in and to the software codebase, algorithmic trade dress, mathematical battery control engine, and accompanying schemas known as **GF-T3-175 (Apex Executive Urban Edge Core)**; and
 **WHEREAS**, Purchaser desires to purchase from Seller, and Seller desires to sell to Purchaser, 100% of the Purchased Assets on a clean-room, debt-free, non-encumbered basis.
 
 ---

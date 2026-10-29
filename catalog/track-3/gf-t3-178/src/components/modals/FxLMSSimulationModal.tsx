@@ -66,7 +66,7 @@ export const FxLMSSimulationModal: React.FC<FxLMSSimulationModalProps> = ({ isOp
               Interactive FxLMS Acoustic Inversion Simulator
             </h3>
             <p className="text-sm text-slate-300">
-              Heavy Overland Dynamics Platform LS 500 Cabin Acoustic Noise-Inversion Transducer Transfer Function Calibration Bench
+              Apex Executive LS 500 Cabin Acoustic Noise-Inversion Transducer Transfer Function Calibration Bench
             </p>
           </div>
         </div>

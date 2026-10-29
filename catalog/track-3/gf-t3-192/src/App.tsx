@@ -264,7 +264,7 @@ export default function App() {
             <span>ACQUIRE.COM MONOPOLY VAULT</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline">Modular Cyber-Physical Chassis PLATFORM: Heavy Overland Dynamics Platform High-Output Multi-Node Core</span>
+            <span className="hidden sm:inline">Modular Cyber-Physical Chassis PLATFORM: Apex Executive High-Output Multi-Node Core</span>
             <span className="text-emerald-400 font-bold">SHA-256 LEDGER ACTIVE</span>
           </div>
         </div>
@@ -395,7 +395,7 @@ export default function App() {
       <footer className="mt-auto border-t border-slate-900 bg-slate-950/80 py-4 px-6 text-xs text-slate-400 font-mono">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>
-            GF-T3-192 · Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Core Cockpit · v1.0.0-PROD
+            GF-T3-192 · Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE DRS Core Cockpit · v1.0.0-PROD
           </div>
           <div className="text-slate-400">
             Commercial Software Asset Standard · Acquire.com Turnkey Escrow Deliverable · Clean-Room Certified

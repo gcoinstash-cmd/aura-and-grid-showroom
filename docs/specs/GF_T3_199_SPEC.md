@@ -1,7 +1,7 @@
-# GF-T3-199: LEXUS RX 500h F SPORT PERFORMANCE CORE
+# GF-T3-199: Apex Executive Engine F SPORT PERFORMANCE CORE
 ## Turnkey Micro-APA Asset Specification | Acquire.com Buyout Deliverable
 **Codename:** GF-T3-199  
-**Platform:** Lexus RX 500h (TALH17) DIRECT4 AWD + DRS High-Output Performance Core  
+**Platform:** Apex Executive Engine (TALH17) DIRECT4 AWD + DRS High-Output Performance Core  
 **Buyout Target:** $45,000 USD (Standard Turnkey APA) / $125,000 USD (Institutional Enterprise)  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
 **Audited Nonce Integrity:** Monotonic SHA-256 HMAC Chain  
@@ -10,7 +10,7 @@
 
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
-The GF-T3-199 Performance Core orchestrates the hybrid electric powertrain of the Lexus RX 500h F SPORT Performance platform:
+The GF-T3-199 Performance Core orchestrates the hybrid electric powertrain of the Apex Executive Engine F SPORT Performance platform:
 - **Primary Powerplant:** 2.4-liter turbocharged inline-4 (T24A-FTS) generating 271 hp (202 kW) @ 6,000 rpm and 339 lb-ft (460 Nm) torque.
 - **Front Power Split:** Single electric motor-generator (1NM) rated at 82 hp (61 kW) positioned between engine and 6-speed automatic transmission with wet start clutch (no planetary e-CVT).
 - **Rear High-Output e-Axle:** Water-cooled permanent magnet synchronous motor (80 kW / 107 hp, 169 Nm) integrated with differential and dual-inverter assembly.
@@ -69,7 +69,7 @@ $$\delta_r = f(V, \delta_f, \dot{\psi})$$
 """
 GF-T3-199 Performance Controller: DIRECT4 & DRS Core
 License: MIT Permissive | Clean-Room Certified
-Target: Lexus RX 500h F SPORT (TALH17)
+Target: Apex Executive Engine F SPORT (TALH17)
 """
 from dataclasses import dataclass
 from typing import Tuple
@@ -271,7 +271,7 @@ CREATE TRIGGER trg_bipolar_gradient_check
 
 ### 6.1 Clean-Room IP Certification
 - **Auditor:** Ghost FactoryOS Systems Architecture Group
-- **Target Asset:** GF-T3-199 (Lexus RX 500h F SPORT Core)
+- **Target Asset:** GF-T3-199 (Apex Executive Engine F SPORT Core)
 - **Copyleft Contamination:** 0.00% (No GPL, AGPL, or SSPL dependencies)
 - **Approved Permissive Dependencies:**
   - Python 3.12 (PSFL, Compatible with MIT)

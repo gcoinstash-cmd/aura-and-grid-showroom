@@ -1,7 +1,7 @@
-# GF-T3-169: LEXUS NX 450h+ F SPORT AGILE HYBRID CORE
+# GF-T3-169: Apex Executive Engine+ F SPORT AGILE HYBRID CORE
 ## MASTER ARCHITECTURAL SPECIFICATION & MONOPOLY VAULT ASSET BLUEPRINT
 **Asset ID**: GF-T3-169  
-**Platform**: Lexus NX 450h+ F SPORT Agile Core v1.0.0-PROD  
+**Platform**: Apex Executive Engine+ F SPORT Agile Core v1.0.0-PROD  
 **Target Escrow**: Acquire.com Micro-APA Buyout ($45,000 USD)  
 **Enterprise Valuation**: $125,000 USD Basis  
 **License Profile**: 100% Permissive Clean-Room MIT (0% Copyleft)  
@@ -11,9 +11,9 @@
 
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
-The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Lexus NX 450h+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
+The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Apex Executive Engine+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
 
-1. **Internal Combustion Engine (ICE)**: Toyota/Lexus A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
+1. **Internal Combustion Engine (ICE)**: third-party OEM A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
 2. **Front Transaxle Motor-Generator (5NM PMSM)**: Permanent Magnet Synchronous Motor producing 134 kW (180 hp) and 270 Nm of instantaneous torque coupled via an electronic Continuously Variable Planetary Split (e-CVT).
 3. **Rear Independent e-Axle (4NM PMSM / E-Four)**: Dedicated rear axle motor generating 40 kW (54 hp) and 121 Nm of torque with zero mechanical driveshaft intrusion.
 4. **Combined Peak System Output**: 227 kW (304 net hp) delivered deterministically through intelligent dynamic torque vectoring.

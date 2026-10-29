@@ -121,12 +121,12 @@ HEALTHCHECK --interval=10s --timeout=3s --retries=3 \\
 ENTRYPOINT ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "2", "--loop", "uvloop"]`;
 
   const deployScript = `#!/usr/bin/env bash
-# 1-Click Cloud Run Deploy Script for GF-T3-181 Heavy Overland Dynamics Platform IS 500 Performance Core
+# 1-Click Cloud Run Deploy Script for GF-T3-181 Apex Executive IS 500 Performance Core
 set -euo pipefail
 
 PROJECT_ID="\${GCP_PROJECT_ID:-ghost-factoryos-vault}"
 REGION="us-central1"
-SERVICE_NAME="gf-t3-181-Heavy Overland Dynamics Platform-core"
+SERVICE_NAME="gf-t3-181-Apex Executive-core"
 IMAGE_TAG="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:1.0.0"
 
 echo "==> Building container image via Google Cloud Build..."

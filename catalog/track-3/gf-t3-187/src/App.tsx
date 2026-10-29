@@ -499,7 +499,7 @@ export default function App() {
         {/* Quiet Institutional Footer */}
         <footer className="mt-12 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400 font-mono">
           <div>
-            GF-T3-187 · Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core · Turnkey Acquire.com Micro-APA Deliverable
+            GF-T3-187 · Apex Executive ES 300h Ultra Luxury Core · Turnkey Acquire.com Micro-APA Deliverable
           </div>
           <div className="flex items-center gap-3">
             <span>Commercial Software Asset Standard</span>

@@ -442,7 +442,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <span className="font-bold text-slate-400">GHOST FACTORYOS</span>
             <span>·</span>
-            <span>GF-T3-181 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Core)</span>
+            <span>GF-T3-181 (Apex Executive IS 500 High-G Dynamic Telemetry Core)</span>
             <span>·</span>
             <span className="text-emerald-400 font-mono">Clean-Room Certified</span>
           </div>

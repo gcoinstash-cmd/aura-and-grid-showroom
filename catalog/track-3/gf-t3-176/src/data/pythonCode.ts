@@ -1,5 +1,5 @@
 export const EKDSS_PYTHON_CODE = `"""
-GF-T3-176: Heavy Overland Dynamics Platform Terrain Core Engine
+GF-T3-176: Vanguard ECLSS Terrain Core Engine
 Module: ekdss_terrain_core.py
 License: MIT Permissive / Clean-Room Certified
 Python Version: 3.12+
@@ -202,7 +202,7 @@ class TorsenDifferentialEngine:
                 "53:47 (REAR SLIP BIAS)"
             )
         else:
-            # Nominal Heavy Overland Dynamics Platform Full-Time 4WD split
+            # Nominal Apex Executive Full-Time 4WD split
             return (
                 input_torque_nm * 0.40,
                 input_torque_nm * 0.60,

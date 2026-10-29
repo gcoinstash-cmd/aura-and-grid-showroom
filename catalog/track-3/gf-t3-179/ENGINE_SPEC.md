@@ -1,15 +1,15 @@
-# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core LUXURY PLUG-IN CORE
+# GF-T3-179: Apex Executive High-Output Multi-Node Core LUXURY PLUG-IN CORE
 ## deterministic production Turnkey Master Specification (70% Workload Deliverable)
 **Platform:** Ghost FactoryOS Institutional Dealership Fleet  
 **Asset Specification: ** 20 kHz (0.48ms) (Micro-APA Turnkey) / PostgreSQL 16 + RLS (Enterprise Vault)  
-**Target Vehicle:** Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Luxury Plug-in Hybrid  
+**Target Vehicle:** Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Luxury Plug-in Hybrid  
 **Architecture Track:** Track 3 (F1 Skunkworks Service Engine)  
 **License:** Permissive MIT (Clean-Room Certified / 0% Copyleft)  
 
 ---
 
 ### 1. ARCHITECTURAL TOPOLOGY & OVERVIEW
-The Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core integrates a dual-energy architecture combining:
+The Apex Executive High-Output Multi-Node Core Luxury Plug-in Core integrates a dual-energy architecture combining:
 - **Combustion & Front Hybrid Transaxle**: 3.5L V6 (2GR-FXS) coupled to electric motor-generator (MG2) delivering up to 350 Nm of front mechanical torque.
 - **Rear High-Output e-Axle**: Dedicated high-efficiency rear motor delivering up to 169 Nm directly to rear wheels without a mechanical driveshaft.
 - **High-Voltage PHEV Energy Storage**: 18.1 kWh 355V lithium-ion battery pack with dedicated liquid glycol cooling loops.
@@ -21,7 +21,7 @@ The Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in 
 ### 2. PROPRIETARY ALGORITHMIC ENGINE (PYTHON 3.12)
 ```python
 """
-GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
+GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
 Target Architecture: Pure Python 3.12 (Zero-dependency standard library / high-performance float math)
 License: MIT Permissive (Clean-Room Certified)
 """
@@ -33,7 +33,7 @@ import hashlib
 from dataclasses import dataclass
 from typing import Tuple, Dict, Any, Optional
 
-# Powertrain Constants: Heavy Overland Dynamics Platform High-Output Multi-Node Core (Luxury Plug-in Hybrid AWD)
+# Powertrain Constants: Apex Executive High-Output Multi-Node Core (Luxury Plug-in Hybrid AWD)
 V6_MAX_POWER_KW = 193.0       # 3.5L V6 2GR-FXS combustion engine (~259 hp)
 V6_MAX_TORQUE_NM = 350.0      # Front transaxle coupled
 FRONT_MG_MAX_TORQUE_NM = 270.0 # Front Electric Motor-Generator (MG2)
@@ -74,15 +74,15 @@ class DualVectorTorqueTorqueDistribution:
     quarantine_flag: bool
     hmac_signature: str
 
-class Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator:
+class Apex ExecutiveTX550hDualVectorTorqueArbitrator:
     """
     Sub-millisecond 1,000 Hz DUAL_VECTOR_TORQUE Dynamic Torque Vectoring Core.
     Arbitrates between Front Transaxle (V6 + Front MG) and Rear e-Axle
-    within legal Heavy Overland Dynamics Platform High-Output Multi-Node Core mechanical constraints: 100:0 to 20:80.
+    within legal Apex Executive High-Output Multi-Node Core mechanical constraints: 100:0 to 20:80.
     """
-    def __init__(self, hmac_secret_key: bytes = b"Heavy Overland Dynamics Platform_TX550H_DUAL_VECTOR_TORQUE_SECURE_KEY_2026"):
+    def __init__(self, hmac_secret_key: bytes = b"Apex Executive_TX550H_DUAL_VECTOR_TORQUE_SECURE_KEY_2026"):
         self.hmac_secret_key = hmac_secret_key
-        self.wheelbase_m = 2.950  # Heavy Overland Dynamics Platform TX wheelbase in meters
+        self.wheelbase_m = 2.950  # Apex Executive TX wheelbase in meters
         self.track_width_m = 1.700 # Rear track width in meters
         self.mass_kg = 2445.0      # Curb weight in kg
         self.sequence_nonce = 1000000
@@ -219,7 +219,7 @@ class Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator:
 ### 3. PRODUCTION POSTGRESQL 16 PARTITIONED SCHEMA
 ```sql
 -- =========================================================================
--- GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE IMMUTABLE TELEMETRY LEDGER SCHEMA
+-- GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE IMMUTABLE TELEMETRY LEDGER SCHEMA
 -- Target Database: PostgreSQL 16 / AlloyDB
 -- Features: Partitioned Daily Timeseries Hypertables, Torque Divergence
 --           Quarantine Triggers, and Cryptographic HMAC-SHA256 Chains
@@ -374,11 +374,11 @@ CREATE OR REPLACE TRIGGER trg_check_torque_divergence
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-179 Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Telemetry & Dispatch API
+  title: GF-T3-179 Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Telemetry & Dispatch API
   version: 1.0.0-PROD
   description: >
     Production-grade REST and WebSocket telemetry ingestion protocol for
-    Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
+    Apex Executive High-Output Multi-Node Core Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
 servers:
   - url: https://telemetry.dual_vector_torque-tx550h.internal/api/v1
     description: Production Cloud Run Internal Mesh
@@ -591,7 +591,7 @@ components:
 #### Multi-Stage Dockerfile
 ```dockerfile
 # =========================================================================
-# GF-T3-179: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Core - Multi-Stage Non-Root Dockerfile
+# GF-T3-179: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Core - Multi-Stage Non-Root Dockerfile
 # Base Image: Python 3.12-slim (Debian Bookworm)
 # Security: Non-Root Execution (UID 10001), Read-Only FS, Zero Copyleft
 # =========================================================================
@@ -614,7 +614,7 @@ FROM python:3.12-slim AS production
 
 LABEL maintainer="Ghost FactoryOS <vault@acquire.ghostfactoryos.internal>"
 LABEL asset.id="GF-T3-179"
-LABEL asset.name="Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"
+LABEL asset.name="Apex Executive High-Output Multi-Node Core Luxury Plug-in Core"
 LABEL license="MIT Permissive"
 
 # Create unprivileged service user
@@ -656,7 +656,7 @@ PostgreSQL Divergence Triggers, and Monotonic HMAC-SHA256 Ledger Integrity.
 import pytest
 import time
 from src.dual_vector_torque_energy_arbitrator import (
-    Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator,
+    Apex ExecutiveTX550hDualVectorTorqueArbitrator,
     VehicleDynamicsInput,
     TOTAL_SYSTEM_TORQUE_NM,
     REAR_EAXLE_MAX_TORQUE_NM
@@ -664,7 +664,7 @@ from src.dual_vector_torque_energy_arbitrator import (
 
 @pytest.fixture
 def arbitrator():
-    return Heavy Overland Dynamics PlatformTX550hDualVectorTorqueArbitrator()
+    return Apex ExecutiveTX550hDualVectorTorqueArbitrator()
 
 def test_dual_vector_torque_highway_cruise_front_bias(arbitrator):
     """Test 1: Steady 65 mph highway cruise must lock to 100:0 Front Bias for efficiency."""
@@ -781,7 +781,7 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 
 ### 6. INSTITUTIONAL APA AGREEMENT & EXHIBITS
 # INSTITUTIONAL ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-**ASSET IDENTIFIER:** GF-T3-179 (Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core)  
+**ASSET IDENTIFIER:** GF-T3-179 (Apex Executive High-Output Multi-Node Core Luxury Plug-in Core)  
 **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 **GOVERNING LAW:** Standard Commercial Jurisdiction, United States of America  
 **PLATFORM ESCROW:** Acquire.com / Escrow.com Integrated Protocol  
@@ -789,7 +789,7 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 ---
 
 ### RECITALS
-**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Heavy Overland Dynamics Platform High-Output Multi-Node Core Luxury Plug-in Core"), including:
+**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Apex Executive High-Output Multi-Node Core Luxury Plug-in Core"), including:
 1. Sub-millisecond DUAL_VECTOR_TORQUE 100:0 to 20:80 dynamic e-Axle torque vectoring engine (Python 3.12);
 2. 18.1 kWh PHEV energy arbitration and cell thermal state management models;
 3. Partitioned PostgreSQL 16 timeseries hypertable schema with divergence triggers and cryptographic HMAC-SHA256 signature chains;

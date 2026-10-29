@@ -2,7 +2,7 @@ import { CalculatedTorque, PowertrainState } from '../types';
 
 /**
  * Deterministic Powertrain & MPC Solver Simulation
- * Accurately models Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry PHEV AWD Architecture
+ * Accurately models Apex Executive NX 450h+ High-G Dynamic Telemetry PHEV AWD Architecture
  * - A25A-FXS 2.5L Atkinson ICE: max 227 Nm, 136 kW (182 hp)
  * - 5NM Front PMSM: max 270 Nm, 134 kW (180 hp)
  * - 4NM Rear PMSM (E-Four): max 121 Nm, 40 kW (54 hp)
@@ -125,7 +125,7 @@ export function calculatePowertrainDynamics(state: PowertrainState): CalculatedT
   const motorElectricPowerKw = ((frontMotorTorqueNm + rearMotorTorqueNm) * nominalRadS) / 1000.0;
   const iceMechanicalPowerKw = (iceTorqueNm * nominalRadS) / 1000.0;
   
-  // Heavy Overland Dynamics Platform combined rated peak is 227 kW (304 hp)
+  // Apex Executive combined rated peak is 227 kW (304 hp)
   const rawKw = Math.max(0, motorElectricPowerKw + iceMechanicalPowerKw);
   const totalSystemPowerKw = Math.min(227.0, rawKw);
   const totalSystemPowerHp = totalSystemPowerKw * 1.34102;

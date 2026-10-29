@@ -54,7 +54,7 @@ export const TabBftDualVectorTorque: React.FC<TabBftDualVectorTorqueProps> = ({
   const phases: ConsensusPhase[] = ['PROPOSE', 'PRE-PREPARE', 'PREPARE', 'COMMIT', 'DECIDE'];
 
   const pythonConsensusCode = `# ==============================================================================
-# GF-T3-172: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry HotStuff BFT Consensus Core
+# GF-T3-172: Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry HotStuff BFT Consensus Core
 # Python 3.12 Production Implementation (Deterministic Sub-2ms Commit)
 # License: MIT (100% Permissive Clean-Room Whitelist)
 # ==============================================================================
@@ -76,7 +76,7 @@ class DualVectorTorqueStateVector:
     target_yaw_deg_s: float  # Computed Ackerman target rate
 
     def is_within_envelope(self) -> bool:
-        """Enforce strict Heavy Overland Dynamics Platform Multi-Node High-Output Core dynamic stability boundaries."""
+        """Enforce strict Apex Executive Multi-Node High-Output Core dynamic stability boundaries."""
         return (
             0.20 <= self.front_ratio <= 0.70 and
             abs((self.front_ratio + self.rear_ratio) - 1.0) < 1e-5 and

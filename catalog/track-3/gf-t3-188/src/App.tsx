@@ -375,7 +375,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="text-slate-400 font-semibold">GF-T3-188 Heavy Overland Dynamics Platform CORE</span>
+            <span className="text-slate-400 font-semibold">GF-T3-188 Apex Executive CORE</span>
             <span className="text-slate-600">/</span>
             <span>Heavy Boxed Steel Frame Architecture PLATFORM ARCHITECTURE</span>
           </div>

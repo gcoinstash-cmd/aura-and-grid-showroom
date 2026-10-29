@@ -81,7 +81,7 @@ export const ApaCovenantTab: React.FC = () => {
               Institutional Micro-APA Asset Transfer Covenant: GF-T3-170
             </h2>
             <p className="text-base text-neutral-400 mt-1 max-w-3xl">
-              Turnkey transaction terms and assignment deed for the Heavy Overland Dynamics Platform ES 350h Executive Quietude Core, structured for rapid 24-48 hour Escrow.com closing.
+              Turnkey transaction terms and assignment deed for the Apex Executive Quietude Core, structured for rapid 24-48 hour Escrow.com closing.
             </p>
           </div>
 

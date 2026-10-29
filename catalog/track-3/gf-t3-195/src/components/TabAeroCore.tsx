@@ -54,7 +54,7 @@ export const TabAeroCore: React.FC = () => {
 
   const pythonSourceCode = `#!/usr/bin/env python3
 """
-GF-T3-195: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core - Mathematical Engine
+GF-T3-195: Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core - Mathematical Engine
 Pure Python 3.12 aerodynamic state machine with zero external dependencies.
 License: MIT Permissive | Clean-Room Certified
 """
@@ -69,7 +69,7 @@ from typing import Dict, Any
 RHO_SEA_LEVEL: float = 1.225         # kg/m^3
 GRAVITY: float = 9.80665              # m/s^2
 
-# Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Specifications
+# Apex Executive High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Specifications
 S_REF: float = 2.15                   # Total frontal projected area (m^2)
 WING_SPAN: float = 1.35               # Swan-neck carbon wing span (m)
 WING_CHORD: float = 0.22              # Mean aerodynamic chord (m)
@@ -218,7 +218,7 @@ class OverlandCarbonAeroEngine:
           </h3>
         </div>
         <p className="text-[16px] text-slate-300 leading-relaxed">
-          The GF-T3-195 core engine provides a deterministic, zero-allocation Python 3.12 aerodynamic state machine modeling the fixed carbon swan-neck rear wing and underbody Venturi diffusers of the Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series. It continuously computes dynamic downforce coefficients ($C_L$), total drag ($C_D$), crosswind vortex damping moments ($N_v$), and Strouhal shedding frequencies ($St = 0.21$).
+          The GF-T3-195 core engine provides a deterministic, zero-allocation Python 3.12 aerodynamic state machine modeling the fixed carbon swan-neck rear wing and underbody Venturi diffusers of the Apex Executive High-Aero Grand Touring Telemetry Core Inspiration Series. It continuously computes dynamic downforce coefficients ($C_L$), total drag ($C_D$), crosswind vortex damping moments ($N_v$), and Strouhal shedding frequencies ($St = 0.21$).
         </p>
 
         {/* Formula Cards */}

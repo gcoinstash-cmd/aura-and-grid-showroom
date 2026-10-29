@@ -1,7 +1,7 @@
-# GF-T3-181: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE
+# GF-T3-181: Apex Executive IS 500 High-G Dynamic Telemetry CORE
 ## Turnkey Micro-APA Asset Transfer Technical Specification (Acquire.com Asset ID: GF-T3-181)
 **Entity:** Ghost FactoryOS — F1 Skunkworks Track 3 Deliverable  
-**Platform Target:** Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
+**Platform Target:** Apex Executive IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
 **Specification: ** Standard Micro-APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Monopoly Vault: PostgreSQL 16 + RLS  
 **License:** Permissive MIT / Dual-Commercial Turnkey Software Asset Purchase Agreement  
 **Audit Status:** 100% Clean-Room Certified (0% Copyleft / No GPL / No AGPL / No SSPL)  
@@ -129,7 +129,7 @@ CREATE INDEX idx_telemetry_metadata_gin ON telemetry_ledger USING GIN (metadata)
 ```yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Telemetry Service
+  title: Apex Executive IS 500 High-G Dynamic Telemetry Telemetry Service
   version: 1.0.0
   description: High-frequency telemetry ingress, cryptographic audit ledger, and Torsen thermal monitoring.
 paths:

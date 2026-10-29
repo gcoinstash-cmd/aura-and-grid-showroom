@@ -26,7 +26,7 @@ export const PowertrainMpcTab: React.FC<PowertrainMpcTabProps> = ({
 
   const PYTHON_SOLVER_CODE = `"""
 GF-T3-169 Deterministic 500 Hz MPC Controller
-Target: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core
+Target: Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core
 Dual-Motor (5NM Front + 4NM Rear E-Four) + A25A-FXS 2.5L Atkinson ICE
 """
 import numpy as np

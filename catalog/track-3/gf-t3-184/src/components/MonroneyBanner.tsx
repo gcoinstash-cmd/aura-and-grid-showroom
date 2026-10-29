@@ -34,7 +34,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* b) Title & Description */}
       <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core
+        Hypercar Flagship Trim V10 Apex Core
       </h1>
       <p className="text-slate-400 text-base line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA deliverable with 1LR-GUE 4.8L V10 9,000 RPM acoustic resonance, 150 ms ASG single-clutch shift timing, and PostgreSQL 16 HMAC ledger.

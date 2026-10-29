@@ -5,7 +5,7 @@
           AURA & GRID // GHOSTFACTORYOS REPOSITORY ENGINE V2.0
                   OFFICIAL TITLE & DYNO INTEGRITY SEAL
 ================================================================================
-UNIT IDENTIFIER:       GF-T3-186 (Heavy Overland Dynamics Platform UX 300h F SPORT Handling Core)
+UNIT IDENTIFIER:       GF-T3-186 (Apex Executive Handling Urban Core)
 POWERTRAIN TIER:       Track 3 • Skunkworks Engine
 AUDIT CERTIFICATION:   DYNO_SEALED_PRODUCTION_QUALIFIED (4/4 GATES CLEARED)
 TEST PASS RATE:        100% (>80% INDUSTRIAL THRESHOLD CLEARED)

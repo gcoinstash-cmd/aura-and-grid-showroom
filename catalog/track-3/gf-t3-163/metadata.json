@@ -1,6 +1,8 @@
 {
   "name": "Ghost FactoryOS GF-T3-163 — Kinetic Terrain Swarm",
-  "description": "Distributed Multi-Agent Consensus and Kinetic Terrain Autonomy Swarm for Heavy Overland Dynamics Platform Edge Nodes",
+  "description": "Distributed Multi-Agent Consensus and Kinetic Terrain Autonomy Swarm for Vanguard ECLSS Edge Nodes",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

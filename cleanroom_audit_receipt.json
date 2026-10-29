@@ -4518,7 +4518,7 @@
     {
       "index": 166,
       "unit_id": "GF-T3-166",
-      "name": "Heavy Overland Dynamics Platform LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
+      "name": "Apex Executive Raft Event Ingestion & Spec Engine",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-166/index.html",
@@ -4545,7 +4545,7 @@
     {
       "index": 167,
       "unit_id": "GF-T3-167",
-      "name": "Heavy Overland Dynamics Platform LC 500 Dynamic Core",
+      "name": "Apex Executive Dynamic Grand Touring Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-167/index.html",
@@ -4572,7 +4572,7 @@
     {
       "index": 168,
       "unit_id": "GF-T3-168",
-      "name": "Heavy Overland Dynamics Platform RX 500h F SPORT Dynamic Performance Core",
+      "name": "Apex Executive Dynamic Performance Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-168/index.html",
@@ -4599,7 +4599,7 @@
     {
       "index": 169,
       "unit_id": "GF-T3-169",
-      "name": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Agile Hybrid Core",
+      "name": "Apex Executive Agile Hybrid Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-169/index.html",
@@ -4626,7 +4626,7 @@
     {
       "index": 170,
       "unit_id": "GF-T3-170",
-      "name": "Heavy Overland Dynamics Platform ES 350h Executive Quietude Core",
+      "name": "Apex Executive Quietude Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-170/index.html",
@@ -4653,7 +4653,7 @@
     {
       "index": 171,
       "unit_id": "GF-T3-171",
-      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT V8 Dynamic Core",
+      "name": "Apex Executive V8 Dynamic Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-171/index.html",
@@ -4680,7 +4680,7 @@
     {
       "index": 172,
       "unit_id": "GF-T3-172",
-      "name": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core",
+      "name": "Apex Executive Performance Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-172/index.html",
@@ -4707,7 +4707,7 @@
     {
       "index": 173,
       "unit_id": "GF-T3-173",
-      "name": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core",
+      "name": "Hypercar Flagship Trim Aero Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-173/index.html",
@@ -4734,7 +4734,7 @@
     {
       "index": 174,
       "unit_id": "GF-T3-174",
-      "name": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core",
+      "name": "Track 2 Sovereign Flagship Steer-by-Wire Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-174/index.html",
@@ -4761,7 +4761,7 @@
     {
       "index": 175,
       "unit_id": "GF-T3-175",
-      "name": "Heavy Overland Dynamics Platform UX 300h Urban Edge Core",
+      "name": "Apex Executive Urban Edge Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-175/index.html",
@@ -4788,7 +4788,7 @@
     {
       "index": 176,
       "unit_id": "GF-T3-176",
-      "name": "Heavy Overland Dynamics Platform Terrain Core",
+      "name": "Vanguard ECLSS Terrain Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-176/index.html",
@@ -4815,7 +4815,7 @@
     {
       "index": 177,
       "unit_id": "GF-T3-177",
-      "name": "Heavy Overland Dynamics Platform LC 500 Convertible Grand Touring Core",
+      "name": "Hypercar Flagship Trim Convertible Grand Touring Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-177/index.html",
@@ -4842,7 +4842,7 @@
     {
       "index": 178,
       "unit_id": "GF-T3-178",
-      "name": "Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core",
+      "name": "Apex Executive AWD Flagship Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-178/index.html",
@@ -4869,7 +4869,7 @@
     {
       "index": 179,
       "unit_id": "GF-T3-179",
-      "name": "Heavy Overland Dynamics Platform TX 550h+ Luxury Plug-In Core",
+      "name": "Apex Executive Luxury Plug-In Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-179/index.html",
@@ -4896,7 +4896,7 @@
     {
       "index": 180,
       "unit_id": "GF-T3-180",
-      "name": "Heavy Overland Dynamics Platform LX 600 Ultra Luxury Executive Core",
+      "name": "Apex Executive Ultra Luxury Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-180/index.html",
@@ -4923,7 +4923,7 @@
     {
       "index": 181,
       "unit_id": "GF-T3-181",
-      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core",
+      "name": "Apex Executive High-Output Performance Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-181/index.html",
@@ -4950,7 +4950,7 @@
     {
       "index": 182,
       "unit_id": "GF-T3-182",
-      "name": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core (Mark II)",
+      "name": "Hypercar Flagship Trim Aero Core (Mark II)",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-182/index.html",
@@ -4977,7 +4977,7 @@
     {
       "index": 183,
       "unit_id": "GF-T3-183",
-      "name": "Heavy Overland Dynamics Platform RZ 450e DIRECT4 Dual-Motor Electric Core",
+      "name": "Track 2 Sovereign Flagship Dual-Motor Electric Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-183/index.html",
@@ -5004,7 +5004,7 @@
     {
       "index": 184,
       "unit_id": "GF-T3-184",
-      "name": "Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core",
+      "name": "Hypercar Flagship Trim V10 Apex Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-184/index.html",
@@ -5031,7 +5031,7 @@
     {
       "index": 185,
       "unit_id": "GF-T3-185",
-      "name": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Handling Plug-In Core",
+      "name": "Apex Executive Handling Plug-In Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-185/index.html",
@@ -5058,7 +5058,7 @@
     {
       "index": 186,
       "unit_id": "GF-T3-186",
-      "name": "Heavy Overland Dynamics Platform UX 300h F SPORT Handling Core",
+      "name": "Apex Executive Handling Urban Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-186/index.html",
@@ -5085,7 +5085,7 @@
     {
       "index": 187,
       "unit_id": "GF-T3-187",
-      "name": "Heavy Overland Dynamics Platform ES 300h Ultra Luxury Swing-Valve Core",
+      "name": "Apex Executive Swing-Valve Damping Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-187/index.html",
@@ -5112,7 +5112,7 @@
     {
       "index": 188,
       "unit_id": "GF-T3-188",
-      "name": "Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry Core",
+      "name": "Vanguard ECLSS Dynamic Kinetic Suspension Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-188/index.html",
@@ -5139,7 +5139,7 @@
     {
       "index": 189,
       "unit_id": "GF-T3-189",
-      "name": "Heavy Overland Dynamics Platform LC 500 Convertible Structural Aero Core",
+      "name": "Hypercar Flagship Trim Structural Aero Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-189/index.html",
@@ -5166,7 +5166,7 @@
     {
       "index": 190,
       "unit_id": "GF-T3-190",
-      "name": "Heavy Overland Dynamics Platform Electrified Sport Concept Solid-State Core",
+      "name": "Hypercar Flagship Trim Solid-State Concept Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-190/index.html",
@@ -5193,7 +5193,7 @@
     {
       "index": 191,
       "unit_id": "GF-T3-191",
-      "name": "Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core",
+      "name": "Apex Executive Mover Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-191/index.html",
@@ -5220,7 +5220,7 @@
     {
       "index": 192,
       "unit_id": "GF-T3-192",
-      "name": "Heavy Overland Dynamics Platform TX 550h+ DIRECT4 Dynamic Rear Steering Core",
+      "name": "Apex Executive Dynamic Rear Steering Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-192/index.html",
@@ -5247,7 +5247,7 @@
     {
       "index": 193,
       "unit_id": "GF-T3-193",
-      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core (Mark II)",
+      "name": "Apex Executive High-Output Performance Core (Mark II)",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-193/index.html",
@@ -5274,7 +5274,7 @@
     {
       "index": 194,
       "unit_id": "GF-T3-194",
-      "name": "Heavy Overland Dynamics Platform LX 600 F SPORT 4-Wheel Active Height Control Core",
+      "name": "Apex Executive 4-Wheel Active Height Control Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-194/index.html",
@@ -5301,7 +5301,7 @@
     {
       "index": 195,
       "unit_id": "GF-T3-195",
-      "name": "Heavy Overland Dynamics Platform LC 500 Inspiration Series Carbon Aero Core",
+      "name": "Hypercar Flagship Trim Carbon Aero Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-195/index.html",
@@ -5328,7 +5328,7 @@
     {
       "index": 196,
       "unit_id": "GF-T3-196",
-      "name": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DIRECT4 Core",
+      "name": "Track 2 Sovereign Flagship Steer-by-Wire Vectoring Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-196/index.html",
@@ -5355,7 +5355,7 @@
     {
       "index": 197,
       "unit_id": "GF-T3-197",
-      "name": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core (Mark II)",
+      "name": "Apex Executive Performance Core (Mark II)",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-197/index.html",
@@ -5382,7 +5382,7 @@
     {
       "index": 198,
       "unit_id": "GF-T3-198",
-      "name": "Heavy Overland Dynamics Platform LFA Nürburgring Edition 1LR-GUE V10 Telematics Core",
+      "name": "Hypercar Flagship Trim V10 Telematics Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-198/index.html",
@@ -5409,7 +5409,7 @@
     {
       "index": 199,
       "unit_id": "GF-T3-199",
-      "name": "Heavy Overland Dynamics Platform RX 500h F SPORT Performance Core",
+      "name": "Apex Executive Performance Telemetry Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-199/index.html",
@@ -5436,7 +5436,7 @@
     {
       "index": 200,
       "unit_id": "GF-T3-200",
-      "name": "Heavy Overland Dynamics Platform Electrified Supercar Concept Core",
+      "name": "Hypercar Flagship Trim Electrified Supercar Concept Core",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-200/index.html",

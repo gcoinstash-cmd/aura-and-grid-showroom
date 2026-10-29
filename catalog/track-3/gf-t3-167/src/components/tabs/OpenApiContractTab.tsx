@@ -117,7 +117,7 @@ export const OpenApiContractTab: React.FC = () => {
 info:
   title: GF-T3-167 Dynamic Core Engine API
   version: 1.0.0-PROD
-  description: High-throughput matching engine and HMAC tick ledger interface for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core.
+  description: High-throughput matching engine and HMAC tick ledger interface for Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core.
 servers:
   - url: https://engine.ghostfactoryos.internal/api/v1
     description: Production Internal Cloud Run Service

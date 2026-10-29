@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           ASSET ID: GF-T3-176
         </span>
         <span className="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-200 font-mono text-sm font-semibold rounded-md whitespace-nowrap">
-          Heavy Overland Dynamics Platform TERRAIN CORE
+          Apex Executive TERRAIN CORE
         </span>
         <span className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-sm font-bold rounded-md whitespace-nowrap">
           v1.0.0-PROD

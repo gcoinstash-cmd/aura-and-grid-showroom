@@ -1,5 +1,5 @@
 # GF-T3-161 CHRONOVECTOR // F1 SKUNKWORKS ENGINE SPECIFICATION
-## Track 3 Autonomous Guidance & Telemetry Engine (Heavy Overland Dynamics Platform Digital Dealership Spec)
+## Track 3 Autonomous Guidance & Telemetry Engine (Sovereign Showroom Dealership Spec)
 **Document ID:** GHOST-ENG-GF-T3-161-REV-4.1  
 **Classification:** MONOPOLY VAULT PROPRIETARY // CLEAN-ROOM CERTIFIED  
 **Governing Standard:** ISO 26262 ASIL-D / DO-178C Level A Mathematical Baseline  
@@ -24,7 +24,7 @@
 
 ```
        +--------------------------------------------------------------------------------+
-       |                  Heavy Overland Dynamics Platform DIGITAL DEALERSHIP / F1 TELEMETRY BUS                   |
+       |                  Apex Executive DIGITAL DEALERSHIP / F1 TELEMETRY BUS                   |
        |                   (CAN-FD / ARINC 429 / WebSockets / gRPC)                     |
        +---------------------------------------+----------------------------------------+
                                                |
@@ -145,7 +145,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE vehicle_fleet (
     vehicle_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     vin VARCHAR(17) UNIQUE NOT NULL,
-    model_name VARCHAR(64) NOT NULL DEFAULT 'Heavy Overland Dynamics Platform F1-Concept GF-161',
+    model_name VARCHAR(64) NOT NULL DEFAULT 'Apex Executive F1-Concept GF-161',
     firmware_version VARCHAR(32) NOT NULL DEFAULT '4.1.0-CHRONOVECTOR',
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

@@ -35,7 +35,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               </span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="text-slate-300 font-medium">
-                CHASSIS: Heavy Overland Dynamics Platform RC F TRACK EDITION
+                CHASSIS: Apex Executive RC F TRACK EDITION
               </span>
               <span aria-hidden="true" className="text-slate-600">·</span>
               <span className="font-mono text-emerald-400">
@@ -44,7 +44,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
             </div>
             
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
-              <span>Heavy Overland Dynamics Platform RC F Track Edition Aero Core</span>
+              <span>Hypercar Flagship Trim Aero Core</span>
             </h1>
             
             <p className="mt-1 text-sm text-slate-400 max-w-2xl">

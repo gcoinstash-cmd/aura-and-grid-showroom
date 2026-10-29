@@ -24,7 +24,7 @@ export const OpenApiContractTab: React.FC = () => {
 
   const openApiYaml = `openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Dynamic Rear Steering & DUAL_VECTOR_TORQUE Service
+  title: Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Dynamic Rear Steering & DUAL_VECTOR_TORQUE Service
   version: 1.0.0-PROD
   description: >
     High-frequency CAN-bus translation, Dynamic Rear Steering (DRS) actuator commands,

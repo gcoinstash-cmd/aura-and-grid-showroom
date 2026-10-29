@@ -77,31 +77,31 @@ Healthcare technology providers, clinical diagnostics networks, boutique wellnes
 | 23 | `GF-T2-125` | **Chronos Morph-GT Telemetry Deck** | Track 2 — Hypercar Flagship | `$35,000` | [`Inspect Demo`](/demos/gf-t2-125/index.html) |
 | 24 | `GF-T2-128` | **Hydra Endurance Deck** | Track 2 — Hypercar Flagship | `$35,000` | [`Inspect Demo`](/demos/gf-t2-128/index.html) |
 | 25 | `GF-T2-130` | **VORTEX Apex-GT Hypercar Telemetry Deck** | Track 2 — Hypercar Flagship | `$35,000` | [`Inspect Demo`](/demos/gf-t2-130/index.html) |
-| 26 | `GF-T3-175` | **Heavy Overland Dynamics Platform UX 300h Urban Edge Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-175/index.html) |
-| 27 | `GF-T3-176` | **Heavy Overland Dynamics Platform Terrain Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-176/index.html) |
-| 28 | `GF-T3-177` | **Heavy Overland Dynamics Platform LC 500 Convertible Grand Touring Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-177/index.html) |
-| 29 | `GF-T3-178` | **Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-178/index.html) |
-| 30 | `GF-T3-179` | **Heavy Overland Dynamics Platform TX 550h+ Luxury Plug-In Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-179/index.html) |
-| 31 | `GF-T3-180` | **Heavy Overland Dynamics Platform LX 600 Ultra Luxury Executive Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-180/index.html) |
-| 32 | `GF-T3-181` | **Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-181/index.html) |
-| 33 | `GF-T3-182` | **Heavy Overland Dynamics Platform RC F Track Edition Aero Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-182/index.html) |
-| 34 | `GF-T3-183` | **Heavy Overland Dynamics Platform RZ 450e DIRECT4 Dual-Motor Electric Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-183/index.html) |
-| 35 | `GF-T3-184` | **Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-184/index.html) |
-| 36 | `GF-T3-185` | **Heavy Overland Dynamics Platform NX 450h+ F SPORT Handling Plug-In Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-185/index.html) |
-| 37 | `GF-T3-186` | **Heavy Overland Dynamics Platform UX 300h F SPORT Handling Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-186/index.html) |
-| 38 | `GF-T3-187` | **Heavy Overland Dynamics Platform ES 300h Ultra Luxury Swing-Valve Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-187/index.html) |
-| 39 | `GF-T3-188` | **Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-188/index.html) |
-| 40 | `GF-T3-189` | **Heavy Overland Dynamics Platform LC 500 Convertible Structural Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-189/index.html) |
-| 41 | `GF-T3-190` | **Heavy Overland Dynamics Platform Electrified Sport Concept Solid-State Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-190/index.html) |
-| 42 | `GF-T3-191` | **Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-191/index.html) |
-| 43 | `GF-T3-192` | **Heavy Overland Dynamics Platform TX 550h+ DIRECT4 Dynamic Rear Steering Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-192/index.html) |
-| 44 | `GF-T3-193` | **Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-193/index.html) |
-| 45 | `GF-T3-194` | **Heavy Overland Dynamics Platform LX 600 F SPORT 4-Wheel Active Height Control Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-194/index.html) |
-| 46 | `GF-T3-195` | **Heavy Overland Dynamics Platform LC 500 Inspiration Series Carbon Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-195/index.html) |
-| 47 | `GF-T3-196` | **Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DIRECT4 Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-196/index.html) |
-| 48 | `GF-T3-197` | **Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-197/index.html) |
-| 49 | `GF-T3-198` | **Heavy Overland Dynamics Platform LFA Nürburgring Edition 1LR-GUE V10 Telematics Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-198/index.html) |
-| 50 | `GF-T3-199` | **Heavy Overland Dynamics Platform RX 500h F SPORT Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-199/index.html) |
+| 26 | `GF-T3-175` | **Apex Executive Urban Edge Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-175/index.html) |
+| 27 | `GF-T3-176` | **Vanguard ECLSS Terrain Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-176/index.html) |
+| 28 | `GF-T3-177` | **Hypercar Flagship Trim Convertible Grand Touring Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-177/index.html) |
+| 29 | `GF-T3-178` | **Apex Executive AWD Flagship Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-178/index.html) |
+| 30 | `GF-T3-179` | **Apex Executive Luxury Plug-In Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-179/index.html) |
+| 31 | `GF-T3-180` | **Apex Executive Ultra Luxury Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-180/index.html) |
+| 32 | `GF-T3-181` | **Apex Executive High-Output Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-181/index.html) |
+| 33 | `GF-T3-182` | **Hypercar Flagship Trim Aero Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-182/index.html) |
+| 34 | `GF-T3-183` | **Track 2 Sovereign Flagship Dual-Motor Electric Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-183/index.html) |
+| 35 | `GF-T3-184` | **Hypercar Flagship Trim V10 Apex Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-184/index.html) |
+| 36 | `GF-T3-185` | **Apex Executive Handling Plug-In Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-185/index.html) |
+| 37 | `GF-T3-186` | **Apex Executive Handling Urban Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-186/index.html) |
+| 38 | `GF-T3-187` | **Apex Executive Swing-Valve Damping Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-187/index.html) |
+| 39 | `GF-T3-188` | **Vanguard ECLSS Dynamic Kinetic Suspension Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-188/index.html) |
+| 40 | `GF-T3-189` | **Hypercar Flagship Trim Structural Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-189/index.html) |
+| 41 | `GF-T3-190` | **Hypercar Flagship Trim Solid-State Concept Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-190/index.html) |
+| 42 | `GF-T3-191` | **Apex Executive Mover Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-191/index.html) |
+| 43 | `GF-T3-192` | **Apex Executive Dynamic Rear Steering Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-192/index.html) |
+| 44 | `GF-T3-193` | **Apex Executive Performance Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-193/index.html) |
+| 45 | `GF-T3-194` | **Apex Executive 4-Wheel Active Height Control Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-194/index.html) |
+| 46 | `GF-T3-195` | **Hypercar Flagship Trim Carbon Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-195/index.html) |
+| 47 | `GF-T3-196` | **Track 2 Sovereign Flagship Steer-by-Wire Vectoring Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-196/index.html) |
+| 48 | `GF-T3-197` | **Apex Executive Multi-Node Performance Core (Mark II)** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-197/index.html) |
+| 49 | `GF-T3-198` | **Hypercar Flagship Trim V10 Telematics Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-198/index.html) |
+| 50 | `GF-T3-199` | **Apex Executive Performance Telemetry Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-199/index.html) |
 
 ---
 

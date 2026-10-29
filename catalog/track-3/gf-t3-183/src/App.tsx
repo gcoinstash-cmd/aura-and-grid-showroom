@@ -182,7 +182,7 @@ export default function App() {
       <footer className="w-full border-t border-slate-900 py-6 px-4 md:px-6 text-center text-xs text-slate-400 font-mono">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span>Ghost FactoryOS · GF-T3-183 Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Core</span>
+            <span>Ghost FactoryOS · GF-T3-183 Apex Executive RZ 450e DualVectorTorque Core</span>
           </div>
           <div className="flex items-center gap-4 text-slate-400">
             <span>Delaware Micro-APA Asset</span>

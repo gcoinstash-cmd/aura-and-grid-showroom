@@ -256,7 +256,7 @@ export const TabAcquireApaCovenant: React.FC<TabAcquireApaCovenantProps> = ({
             <strong>THIS MICRO-ASSET PURCHASE AGREEMENT (&ldquo;AGREEMENT&rdquo;)</strong> is entered into as of October 11, 2026, under the laws of the Standard Commercial Jurisdiction, by and between <strong>Ghost FactoryOS Institutional Fleet Division (&ldquo;Seller&rdquo;)</strong> and the acquiring counterparty registered via Acquire.com Escrow (&ldquo;Buyer&rdquo;).
           </p>
           <p>
-            <strong>1. ACQUIRED ASSET DESIGNATION:</strong> Seller hereby sells, assigns, transfers, and conveys unto Buyer 100% right, title, and interest in and to Asset <strong>GF-T3-187 (Heavy Overland Dynamics Platform ES 300h Ultra Luxury Core)</strong>, comprising the Dual-Passage Swing-Valve Hydraulic Damping state machine, A25A-FXS 2.5L Atkinson-Cycle regenerative braking arbitrator, PostgreSQL 16 HMAC-SHA256 partitioned telemetry ledger schema, OpenAPI 3.1.0 contracts, and React 19 engineering cockpit.
+            <strong>1. ACQUIRED ASSET DESIGNATION:</strong> Seller hereby sells, assigns, transfers, and conveys unto Buyer 100% right, title, and interest in and to Asset <strong>GF-T3-187 (Apex Executive ES 300h Ultra Luxury Core)</strong>, comprising the Dual-Passage Swing-Valve Hydraulic Damping state machine, A25A-FXS 2.5L Atkinson-Cycle regenerative braking arbitrator, PostgreSQL 16 HMAC-SHA256 partitioned telemetry ledger schema, OpenAPI 3.1.0 contracts, and React 19 engineering cockpit.
           </p>
           <p>
             <strong>2. CONSIDERATION &amp; SELECTED REFERENCE CORE:</strong>{' '}

@@ -1,9 +1,9 @@
-export const GF_T3_188_SPEC_MARKDOWN = `# GF-T3-188: Heavy Overland Dynamics Platform CORE
+export const GF_T3_188_SPEC_MARKDOWN = `# GF-T3-188: Apex Executive CORE
 ## F1 SKUNKWORKS SERVICE ENGINE — TURNKEY APA ASSET SPECIFICATION
 **Delaware Micro-APA Asset Package | Acquire.com Listing**
 **Asset ID**: GF-T3-188  
 **Classification**: Track 3 F1 Skunkworks Service Engine (70% Workload Deliverable)  
-**Target Vehicle Platform**: Heavy Overland Dynamics Platform (Modular Cyber-Physical Chassis Heavy Boxed Steel Frame Architecture Truck Platform)  
+**Target Vehicle Platform**: Apex Executive (Modular Cyber-Physical Chassis Heavy Boxed Steel Frame Architecture Truck Platform)  
 **Specification**: Turnkey Asset Transfer 20 kHz (0.48ms) | Enterprise Monopoly Vault: PostgreSQL 16 + RLS  
 **License**: MIT Permissive (Clean-Room Certified, Zero Copyleft)  
 **Standard Release**: v1.0.0-PROD  
@@ -13,11 +13,11 @@ export const GF_T3_188_SPEC_MARKDOWN = `# GF-T3-188: Heavy Overland Dynamics Pla
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
 ### 1.1 Physical & Cybernetic Boundary Topology
-The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Heavy Overland Dynamics Platform Heavy Boxed Steel Frame Architecture chassis:
+The GF-T3-188 engine operates as a deterministic, hard real-time suspension and off-road traction arbitration controller interfacing with the Apex Executive Heavy Boxed Steel Frame Architecture chassis:
 
 \`\`\`
 +----------------------------------------------------------------------------------------------------+
-|                                    Heavy Overland Dynamics Platform CHASSIS CAN-FD BUS                                  |
+|                                    Apex Executive CHASSIS CAN-FD BUS                                  |
 +--------------------+--------------------------------+--------------------+-------------------------+
                      |                                |                    |
                      v                                v                    v
@@ -125,7 +125,7 @@ Step 4: **Brake Rotor Thermal Dissipation Guard**:
 
 \`\`\`sql
 -- ============================================================================
--- GF-T3-188: Heavy Overland Dynamics Platform TELEMETRY & AUDIT LEDGER SCHEMA
+-- GF-T3-188: Apex Executive TELEMETRY & AUDIT LEDGER SCHEMA
 -- Target Engine: PostgreSQL 16.x / AlloyDB
 -- Compliance: Cryptographic HMAC-SHA256 Chaining, Nonce Audit, Zero Deadlocks
 -- ============================================================================
@@ -240,7 +240,7 @@ CREATE TRIGGER trg_pressure_safety
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
+  title: Apex Executive Dynamic Kinetic Suspension Telemetry & Crawl Telemetry API
   description: High-frequency telemetry ingestion and actuator arbitration interface
   version: 1.0.0-PROD
   license:

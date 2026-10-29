@@ -1,4 +1,4 @@
-# GF-T3-176: LEXUS GX 550 OVERTRAIL+ TERRAIN CORE
+# GF-T3-176: Vanguard ECLSS+ TERRAIN CORE
 ## TURNKEY MICRO-APA BUYOUT SPECIFICATION & MONOPOLY VAULT MASTER ARCHITECTURE
 ### ASSET ID: GF-T3-176 | VERSION: v1.0.0-PROD | TARGET: ACQUIRE.COM ESCROW HANDOFF
 
@@ -6,7 +6,7 @@
 
 ### EXECUTIVE SUMMARY & VALUATION ANCHOR
 - **Asset Identifier**: GF-T3-176
-- **Asset Description**: Lexus GX 550 Overtrail+ Terrain Core (Active Electronic Kinetic Dynamic Suspension System [E-KDSS] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
+- **Asset Description**: Vanguard ECLSS+ Terrain Core (Active Electronic Kinetic Dynamic Suspension System [E-KDSS] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
 - **Target Marketplace**: Acquire.com / Private Micro-APA Syndication
 - **Micro-APA Direct Buyout**: $45,000 USD (All-Cash Escrow)
 - **Institutional Replacement Cost**: $125,000 USD
@@ -19,7 +19,7 @@
 
 ```
                      +---------------------------------------+
-                     |    Lexus CAN 2.0B / CAN-FD Bus        |
+                     |    Sovereign CAN 2.0B / CAN-FD Bus        |
                      |  (IMU, Wheel Speed, Suspension LVDT)  |
                      +-------------------+-------------------+
                                          |
@@ -142,7 +142,7 @@ CREATE TABLE quarantine_slip_log (
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus GX 550 Overtrail+ Terrain Core API
+  title: Vanguard ECLSS+ Terrain Core API
   version: 1.0.0-PROD
   description: High-frequency REST and WebSocket interfaces for E-KDSS & Differential State.
 paths:

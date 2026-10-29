@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Database, Copy, Check, ShieldAlert, Layers, Play } from 'lucide-react';
 
 const POSTGRES_DDL = `-- =============================================================================
--- GF-T3-182: Heavy Overland Dynamics Platform RC F TRACK EDITION AERO CORE LEDGER DDL
+-- GF-T3-182: Apex Executive RC F TRACK EDITION AERO CORE LEDGER DDL
 -- Target Engine: PostgreSQL 16.x / AlloyDB
 -- Clean-Room Certified | 100% Permissive MIT License
 -- =============================================================================

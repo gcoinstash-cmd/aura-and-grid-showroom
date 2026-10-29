@@ -34,7 +34,7 @@ export const ApaCovenantTab: React.FC = () => {
   const completedCount = checklist.filter(c => c.done).length;
 
   const agreementText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-186 (Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry HANDLING CORE)
+ASSET IDENTIFIER: GF-T3-186 (Apex Executive UX 300h High-G Dynamic Telemetry HANDLING CORE)
 
 This ASSET PURCHASE AGREEMENT ("Agreement") is entered into as of October 11, 2026, by and between the Seller ("Ghost FactoryOS Architect") and the Buyer via the Acquire.com Institutional Acquisition Platform.
 
@@ -74,7 +74,7 @@ This Agreement shall be governed by and construed in accordance with the laws of
 
   const billOfSaleText = `EXHIBIT B: BILL OF SALE AND INSTRUMENT OF ASSIGNMENT
 
-FOR VALUABLE CONSIDERATION received, the undersigned Seller hereby unconditionally sells, grants, conveys, transfers, and assigns unto Buyer all worldwide right, title, and interest in and to the GF-T3-186 (Heavy Overland Dynamics Platform UX 300h High-G Dynamic Telemetry Handling Core) software assets, mathematical algorithms, and IP documentation.
+FOR VALUABLE CONSIDERATION received, the undersigned Seller hereby unconditionally sells, grants, conveys, transfers, and assigns unto Buyer all worldwide right, title, and interest in and to the GF-T3-186 (Apex Executive UX 300h High-G Dynamic Telemetry Handling Core) software assets, mathematical algorithms, and IP documentation.
 
 Seller warrants that it possesses full power and authority to effectuate this assignment, that the title conveyed is good, valid, and marketable, and that the assets are free and clear of all liens, claims, encumbrances, and third-party liabilities.
 

@@ -1,15 +1,15 @@
-# GF-T3-179: LEXUS TX 550h+ LUXURY PLUG-IN CORE
+# GF-T3-179: Apex Executive Engine+ LUXURY PLUG-IN CORE
 ## Antigravity Turnkey Master Specification (70% Workload Deliverable)
 **Platform:** Ghost FactoryOS Institutional Dealership Fleet  
 **Asset Valuation:** $45,000 USD (Micro-APA Turnkey) / $125,000 USD (Enterprise Vault)  
-**Target Vehicle:** Lexus TX 550h+ DIRECT4 Luxury Plug-in Hybrid  
+**Target Vehicle:** Apex Executive Engine+ DIRECT4 Luxury Plug-in Hybrid  
 **Architecture Track:** Track 3 (F1 Skunkworks Service Engine)  
 **License:** Permissive MIT (Clean-Room Certified / 0% Copyleft)  
 
 ---
 
 ### 1. ARCHITECTURAL TOPOLOGY & OVERVIEW
-The Lexus TX 550h+ Luxury Plug-in Core integrates a dual-energy architecture combining:
+The Apex Executive Engine+ Luxury Plug-in Core integrates a dual-energy architecture combining:
 - **Combustion & Front Hybrid Transaxle**: 3.5L V6 (2GR-FXS) coupled to electric motor-generator (MG2) delivering up to 350 Nm of front mechanical torque.
 - **Rear High-Output e-Axle**: Dedicated high-efficiency rear motor delivering up to 169 Nm directly to rear wheels without a mechanical driveshaft.
 - **High-Voltage PHEV Energy Storage**: 18.1 kWh 355V lithium-ion battery pack with dedicated liquid glycol cooling loops.
@@ -21,7 +21,7 @@ The Lexus TX 550h+ Luxury Plug-in Core integrates a dual-energy architecture com
 ### 2. PROPRIETARY ALGORITHMIC ENGINE (PYTHON 3.12)
 ```python
 """
-GF-T3-179: Lexus TX 550h+ DIRECT4 e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
+GF-T3-179: Apex Executive Engine+ DIRECT4 e-Axle Dynamic Vectoring & PHEV Energy Arbitrator
 Target Architecture: Pure Python 3.12 (Zero-dependency standard library / high-performance float math)
 License: MIT Permissive (Clean-Room Certified)
 """
@@ -33,7 +33,7 @@ import hashlib
 from dataclasses import dataclass
 from typing import Tuple, Dict, Any, Optional
 
-# Powertrain Constants: Lexus TX 550h+ (Luxury Plug-in Hybrid AWD)
+# Powertrain Constants: Apex Executive Engine+ (Luxury Plug-in Hybrid AWD)
 V6_MAX_POWER_KW = 193.0       # 3.5L V6 2GR-FXS combustion engine (~259 hp)
 V6_MAX_TORQUE_NM = 350.0      # Front transaxle coupled
 FRONT_MG_MAX_TORQUE_NM = 270.0 # Front Electric Motor-Generator (MG2)
@@ -74,15 +74,15 @@ class Direct4TorqueDistribution:
     quarantine_flag: bool
     hmac_signature: str
 
-class LexusTX550hDirect4Arbitrator:
+class ApexExecutiveDirect4Arbitrator:
     """
     Sub-millisecond 1,000 Hz DIRECT4 Dynamic Torque Vectoring Core.
     Arbitrates between Front Transaxle (V6 + Front MG) and Rear e-Axle
-    within legal Lexus TX 550h+ mechanical constraints: 100:0 to 20:80.
+    within legal Apex Executive Engine+ mechanical constraints: 100:0 to 20:80.
     """
-    def __init__(self, hmac_secret_key: bytes = b"LEXUS_TX550H_DIRECT4_SECURE_KEY_2026"):
+    def __init__(self, hmac_secret_key: bytes = b"APEX_EXECUTIVE_SECURE_KEY_2026"):
         self.hmac_secret_key = hmac_secret_key
-        self.wheelbase_m = 2.950  # Lexus TX wheelbase in meters
+        self.wheelbase_m = 2.950  # Apex Executive Engine wheelbase in meters
         self.track_width_m = 1.700 # Rear track width in meters
         self.mass_kg = 2445.0      # Curb weight in kg
         self.sequence_nonce = 1000000
@@ -219,7 +219,7 @@ class LexusTX550hDirect4Arbitrator:
 ### 3. PRODUCTION POSTGRESQL 16 PARTITIONED SCHEMA
 ```sql
 -- =========================================================================
--- GF-T3-179: LEXUS TX 550h+ DIRECT4 IMMUTABLE TELEMETRY LEDGER SCHEMA
+-- GF-T3-179: Apex Executive Engine+ DIRECT4 IMMUTABLE TELEMETRY LEDGER SCHEMA
 -- Target Database: PostgreSQL 16 / AlloyDB
 -- Features: Partitioned Daily Timeseries Hypertables, Torque Divergence
 --           Quarantine Triggers, and Cryptographic HMAC-SHA256 Chains
@@ -374,11 +374,11 @@ CREATE OR REPLACE TRIGGER trg_check_torque_divergence
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-179 Lexus TX 550h+ DIRECT4 Telemetry & Dispatch API
+  title: GF-T3-179 Apex Executive Engine+ DIRECT4 Telemetry & Dispatch API
   version: 1.0.0-PROD
   description: >
     Production-grade REST and WebSocket telemetry ingestion protocol for
-    Lexus TX 550h+ Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
+    Apex Executive Engine+ Luxury Plug-in hybrid e-Axle vectoring and HMAC ledger verification.
 servers:
   - url: https://telemetry.direct4-tx550h.internal/api/v1
     description: Production Cloud Run Internal Mesh
@@ -591,7 +591,7 @@ components:
 #### Multi-Stage Dockerfile
 ```dockerfile
 # =========================================================================
-# GF-T3-179: Lexus TX 550h+ DIRECT4 Core - Multi-Stage Non-Root Dockerfile
+# GF-T3-179: Apex Executive Engine+ DIRECT4 Core - Multi-Stage Non-Root Dockerfile
 # Base Image: Python 3.12-slim (Debian Bookworm)
 # Security: Non-Root Execution (UID 10001), Read-Only FS, Zero Copyleft
 # =========================================================================
@@ -614,7 +614,7 @@ FROM python:3.12-slim AS production
 
 LABEL maintainer="Ghost FactoryOS <vault@acquire.ghostfactoryos.internal>"
 LABEL asset.id="GF-T3-179"
-LABEL asset.name="Lexus TX 550h+ Luxury Plug-in Core"
+LABEL asset.name="Apex Executive Engine+ Luxury Plug-in Core"
 LABEL license="MIT Permissive"
 
 # Create unprivileged service user
@@ -656,7 +656,7 @@ PostgreSQL Divergence Triggers, and Monotonic HMAC-SHA256 Ledger Integrity.
 import pytest
 import time
 from src.direct4_energy_arbitrator import (
-    LexusTX550hDirect4Arbitrator,
+    ApexExecutiveDirect4Arbitrator,
     VehicleDynamicsInput,
     TOTAL_SYSTEM_TORQUE_NM,
     REAR_EAXLE_MAX_TORQUE_NM
@@ -664,7 +664,7 @@ from src.direct4_energy_arbitrator import (
 
 @pytest.fixture
 def arbitrator():
-    return LexusTX550hDirect4Arbitrator()
+    return ApexExecutiveDirect4Arbitrator()
 
 def test_direct4_highway_cruise_front_bias(arbitrator):
     """Test 1: Steady 65 mph highway cruise must lock to 100:0 Front Bias for efficiency."""
@@ -781,7 +781,7 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 
 ### 6. INSTITUTIONAL APA AGREEMENT & EXHIBITS
 # INSTITUTIONAL ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-**ASSET IDENTIFIER:** GF-T3-179 (Lexus TX 550h+ Luxury Plug-in Core)  
+**ASSET IDENTIFIER:** GF-T3-179 (Apex Executive Engine+ Luxury Plug-in Core)  
 **PURCHASE PRICE:** $45,000.00 USD (Turnkey Micro-APA Buyout) / $125,000.00 USD (Enterprise Monopoly Vault)  
 **GOVERNING LAW:** State of Delaware, United States of America  
 **PLATFORM ESCROW:** Acquire.com / Escrow.com Integrated Protocol  
@@ -789,7 +789,7 @@ def test_hmac_signature_collision_and_determinism(arbitrator):
 ---
 
 ### RECITALS
-**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Lexus TX 550h+ Luxury Plug-in Core"), including:
+**WHEREAS**, Seller has engineered, verified, and holds 100% unencumbered, clean-room proprietary rights in and to the software architecture, algorithms, and technical artifacts designated as **GF-T3-179** ("Apex Executive Engine+ Luxury Plug-in Core"), including:
 1. Sub-millisecond DIRECT4 100:0 to 20:80 dynamic e-Axle torque vectoring engine (Python 3.12);
 2. 18.1 kWh PHEV energy arbitration and cell thermal state management models;
 3. Partitioned PostgreSQL 16 timeseries hypertable schema with divergence triggers and cryptographic HMAC-SHA256 signature chains;

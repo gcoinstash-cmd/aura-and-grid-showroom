@@ -56,7 +56,7 @@ export const CanFdHsmTab: React.FC<CanFdHsmTabProps> = ({
 
   const pythonEngineCode = `"""
 GF-T3-170: Pure Python 3.12 Zero-Trust Message Authentication Engine
-Heavy Overland Dynamics Platform ES 350h Executive Quietude Core
+Apex Executive Quietude Core
 ISO/SAE 21434 & UNECE R155 Automotive Cybersecurity Standard
 """
 from dataclasses import dataclass
@@ -119,7 +119,7 @@ class SlidingWindowReplayFilter:
 
 class QuietudeHsmCore:
     """
-    Zero-Trust Automotive Gateway for Heavy Overland Dynamics Platform ES 350h Executive Quietude.
+    Zero-Trust Automotive Gateway for Apex Executive ES 350h Executive Quietude.
     Integrates Hardware Security Module (ATECC608B / OPTIGA Trust X).
     """
     def __init__(self, hsm_public_key: Ed25519PublicKey) -> None:

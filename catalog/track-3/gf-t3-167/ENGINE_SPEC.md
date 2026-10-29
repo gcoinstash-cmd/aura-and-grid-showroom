@@ -1,4 +1,4 @@
-# GF-T3-167: Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core DYNAMIC CORE (v1.0.0-PROD)
+# GF-T3-167: Apex Executive High-Aero Grand Touring Telemetry Core DYNAMIC CORE (v1.0.0-PROD)
 ## INSTITUTIONAL MASTER SERVICE SPECIFICATION & TURNKEY MICRO-APA BLUEPRINT
 **Target Platform:** Production Service Engine Vault  
 **Specification Baseline:** Micro-APA Asset Transfer: 20 kHz (0.48ms) | Enterprise Monroney Anchor: PostgreSQL 16 + RLS  
@@ -209,7 +209,7 @@ openapi: 3.1.0
 info:
   title: GF-T3-167 Dynamic Core Engine API
   version: 1.0.0-PROD
-  description: Low-latency matching engine and HMAC tick ledger interface for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core.
+  description: Low-latency matching engine and HMAC tick ledger interface for Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core.
 servers:
   - url: https://engine.ghostfactoryos.internal/api/v1
     description: Production Internal Cloud Run Service
@@ -300,7 +300,7 @@ paths:
 
 ### 6.1 Transaction Summary
 - **Asset ID:** GF-T3-167
-- **Model:** Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD
+- **Model:** Apex Executive High-Aero Grand Touring Telemetry Core Dynamic Core v1.0.0-PROD
 - **DEPLOYMENT SPECIFICATION: TURNKEY CONTAINER / BARE-METAL
 - **IP Assignment:** 100% Worldwide, Perpetual, Exclusive, Free & Clear of Liens
 - **Clean-Room Warranty:** Seller warrants zero inclusion of GPL/copyleft code and confirms clean-room implementation.

@@ -1,5 +1,5 @@
 export const APA_COVENANT_TEXT = `# ASSET PURCHASE AGREEMENT (MICRO-APA)
-## GF-T3-178: Heavy Overland Dynamics Platform LS 500 EXECUTIVE AWD FLAGSHIP CORE
+## GF-T3-178: Apex Executive LS 500 EXECUTIVE AWD FLAGSHIP CORE
 
 **THIS ASSET PURCHASE AGREEMENT** ("Agreement") is entered into as of October 11, 2026, by and between:
 - **Seller**: Ghost FactoryOS Systems Corp. ("Seller")
@@ -34,7 +34,7 @@ export const APA_COVENANT_TEXT = `# ASSET PURCHASE AGREEMENT (MICRO-APA)
 Seller hereby assigns and transfers exclusively to Buyer:
 - **Trade Dress & Architectural Novelty**: The distinct dual-path acoustic inversion and electronic wastegate co-regulation topology.
 - **Copyrights**: All author rights, commit history, and software copyright in all source code files.
-- **Trade Secrets**: Pre-calibrated secondary-path acoustic transfer matrices $\\hat{S}(z)$ tuned for the Heavy Overland Dynamics Platform LS 500 interior cabin cavity.
+- **Trade Secrets**: Pre-calibrated secondary-path acoustic transfer matrices $\\hat{S}(z)$ tuned for the Apex Executive LS 500 interior cabin cavity.
 
 ---
 

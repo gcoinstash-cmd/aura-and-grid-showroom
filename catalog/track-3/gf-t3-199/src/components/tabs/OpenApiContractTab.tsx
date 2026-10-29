@@ -311,7 +311,7 @@ export const OpenApiContractTab: React.FC<OpenApiContractTabProps> = ({ telemetr
 const openApiJsonSpec = `{
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-199 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-Frequency Telemetry Gateway",
+    "title": "GF-T3-199 Apex Executive Dual-Vector Performance Core High-Frequency Telemetry Gateway",
     "version": "1.0.0-PROD",
     "description": "Standardized OpenAPI 3.1 contract exposing DUAL_VECTOR_TORQUE AWD torque split, Dynamic Rear Steering resolver telemetry, and Bipolar NiMH pack diagnostics.",
     "license": {

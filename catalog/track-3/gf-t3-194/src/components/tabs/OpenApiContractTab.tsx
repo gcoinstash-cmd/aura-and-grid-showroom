@@ -9,7 +9,7 @@ interface OpenApiContractTabProps {
 const OPENAPI_SPEC = {
   openapi: "3.1.0",
   info: {
-    title: "Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) AHC & MTS Telemetry API",
+    title: "Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) AHC & MTS Telemetry API",
     version: "1.0.0-PROD",
     description: "Production REST & WebSocket API specification for 4-wheel Active Height Control and Multi-Terrain Select hydraulic telemetry.",
     license: {

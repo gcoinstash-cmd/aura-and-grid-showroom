@@ -1,7 +1,7 @@
-export const GF_T3_183_FULL_SPEC = `# GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DUAL_VECTOR_TORQUE DUAL-MOTOR ELECTRIC CORE
+export const GF_T3_183_FULL_SPEC = `# GF-T3-183: Apex Executive RZ 450e DUAL_VECTOR_TORQUE DUAL-MOTOR ELECTRIC CORE
 ## Institutional Micro-APA Technical & Legal Blueprints (Acquire.com Turnkey Deliverable)
 **System Asset ID:** GF-T3-183  
-**Classification:** Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Dual-Motor Electric Core & Steer-by-Wire Controller  
+**Classification:** Apex Executive RZ 450e DualVectorTorque Dual-Motor Electric Core & Steer-by-Wire Controller  
 **Author:** Lead Systems Architect — Ghost FactoryOS  
 **License:** MIT Permissive (Clean-Room Certified, 0% Copyleft)  
 **Specification: ** Cash Asset Transfer: 20 kHz (0.48ms) | Enterprise License: PostgreSQL 16 + RLS  
@@ -11,7 +11,7 @@ export const GF_T3_183_FULL_SPEC = `# GF-T3-183: Heavy Overland Dynamics Platfor
 
 ## 1. EXECUTIVE OVERVIEW & ARCHITECTURAL TOPOLOGY
 
-The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Heavy Overland Dynamics Platform RZ 450e (e-Modular Cyber-Physical Chassis electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
+The GF-T3-183 subsystem represents a zero-dependency, turnkey dual-motor powertrain management system engineered for the Apex Executive RZ 450e (e-Modular Cyber-Physical Chassis electric platform). It unifies two discrete Silicon Carbide (SiC) inverter Field-Oriented Control (FOC) state machines with a Steer-by-Wire (SbW) variable-ratio rack controller and an immutable PostgreSQL 16 HMAC audit ledger.
 
 ### 1.1 Powertrain Physical Parameters
 - **Front eAxle (1XM):** 150 kW (201 hp) Permanent Magnet Synchronous Motor (PMSM), 266.3 Nm peak torque, 13,000 RPM max rev limit, 10.28:1 integrated single-speed helical reduction.
@@ -75,7 +75,7 @@ The engine implements full Field-Oriented Control (FOC) with Clarke and Park tra
 
 \`\`\`python
 """
-GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DualVectorTorque & Steer-by-Wire Core Control Engine
+GF-T3-183: Apex Executive RZ 450e DualVectorTorque & Steer-by-Wire Core Control Engine
 License: MIT Permissive (Clean-Room Certified)
 Runtime: Python 3.12+ (zero non-standard dependencies)
 """
@@ -141,7 +141,7 @@ class DualVectorTorqueVehicleDynamicsSupervisor:
 
 class SteerByWireRatioEngine:
     """
-    Heavy Overland Dynamics Platform One Motion Grip Variable Ratio Steer-by-Wire Rack Controller.
+    Apex Executive One Motion Grip Variable Ratio Steer-by-Wire Rack Controller.
     Total lock-to-lock yoke travel is exactly 150 degrees (eliminates hand-over-hand).
     """
     MAX_YOKE_DEG: float = 150.0
@@ -226,7 +226,7 @@ Full DDL schema with timeseries range partitioning, thermal junction divergence 
 
 \`\`\`sql
 -- =============================================================================
--- GF-T3-183: Heavy Overland Dynamics Platform RZ 450e DUAL_VECTOR_TORQUE IMMUTABLE BEV TELEMETRY LEDGER
+-- GF-T3-183: Apex Executive RZ 450e DUAL_VECTOR_TORQUE IMMUTABLE BEV TELEMETRY LEDGER
 -- Compatible with PostgreSQL 16+ & TimescaleDB Hypertables
 -- =============================================================================
 
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS inverter_thermal_quarantine_log (
 CREATE OR REPLACE FUNCTION fn_verify_and_quarantine_telemetry()
 RETURNS TRIGGER AS $$
 DECLARE
-    secret_key CONSTANT TEXT := 'Heavy Overland Dynamics Platform-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026';
+    secret_key CONSTANT TEXT := 'Apex Executive-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026';
     expected_hmac TEXT;
     payload TEXT;
 BEGIN
@@ -324,7 +324,7 @@ REST and WebSocket contracts for high-rate vehicle dynamics streaming.
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "GF-T3-183 Heavy Overland Dynamics Platform RZ 450e DualVectorTorque Core Telemetry API",
+    "title": "GF-T3-183 Apex Executive RZ 450e DualVectorTorque Core Telemetry API",
     "version": "1.0.0-PROD",
     "description": "High-frequency SiC Inverter FOC, Steer-by-Wire, and HV Battery Telemetry Service"
   },
@@ -483,7 +483,7 @@ CMD ["python", "-m", "src.main"]
 ### 5.2 PyTest Production Test Bench (>92% Coverage)
 \`\`\`python
 """
-PyTest Test Bench for GF-T3-183 Heavy Overland Dynamics Platform DualVectorTorque & Steer-by-Wire
+PyTest Test Bench for GF-T3-183 Apex Executive DualVectorTorque & Steer-by-Wire
 """
 import pytest
 from src.engine import (

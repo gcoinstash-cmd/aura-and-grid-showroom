@@ -101,7 +101,7 @@ export const OpenApiContractTab: React.FC = () => {
   const copySpec = () => {
     const spec = `openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
+  title: Apex Executive Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency electro-hydraulic telemetry ingestion and V35A-FTS wastegate actuator contracts.
 paths:
@@ -369,7 +369,7 @@ paths:
           <pre className="p-5 font-mono text-[15px] text-slate-300 overflow-x-auto leading-relaxed max-h-[460px] bg-slate-950/70">
             <code>{`openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
+  title: Apex Executive Ultra-Heavy Telemetry Core AHC & Executive Telemetry API
   version: 1.0.0
   description: High-frequency electro-hydraulic telemetry ingestion and V35A-FTS wastegate actuator contracts.
 paths:

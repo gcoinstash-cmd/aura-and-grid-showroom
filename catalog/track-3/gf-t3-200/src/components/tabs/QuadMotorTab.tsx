@@ -414,7 +414,7 @@ export const QuadMotorTab: React.FC = () => {
 };
 
 const pythonVectoringSource = `# ==============================================================================
-# GF-T3-200: Heavy Overland Dynamics Platform ELECTRIFIED SUPERCAR QUAD-MOTOR VECTORING STATE MACHINE
+# GF-T3-200: Apex Executive ELECTRIFIED SUPERCAR QUAD-MOTOR VECTORING STATE MACHINE
 # Architecture: Clean-Room Python 3.12 Deterministic Real-Time Loop (5,000 Hz)
 # License: MIT Permissive / Commercial APA Asset Transfer Deliverable
 # ==============================================================================

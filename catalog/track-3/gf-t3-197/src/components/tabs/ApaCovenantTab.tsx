@@ -22,7 +22,7 @@ export const ApaCovenantTab: React.FC = () => {
 
   const apaLegalText = `ASSET PURCHASE AGREEMENT (MICRO-APA)
 JURISDICTION: Standard Commercial Jurisdiction, USA
-TARGET ASSET: GF-T3-197 (Heavy Overland Dynamics Platform Multi-Node High-Output Core High-G Dynamic Telemetry Core)
+TARGET ASSET: GF-T3-197 (Apex Executive Multi-Node High-Output Core High-G Dynamic Telemetry Core)
 ASSET TRANSFER SPECIFICATION: ${selectedPlan === 'TURNKEY' ? '20 kHz (0.48ms) (Turnkey Micro-APA)' : 'PostgreSQL 16 + RLS (Enterprise Fleet APA)'}
 ESCROW PLATFORM: Acquire.com Escrow / Escrow.com Automotive IP Protocol
 

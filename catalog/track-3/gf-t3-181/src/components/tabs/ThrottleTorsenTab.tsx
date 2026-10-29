@@ -22,7 +22,7 @@ export const ThrottleTorsenTab: React.FC<ThrottleTorsenTabProps> = ({
   const [isRunningTest, setIsRunningTest] = useState(false);
 
   const pythonCoreCode = `"""
-GF-T3-181: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8 & Torsen Type-B LSD)
+GF-T3-181: Apex Executive IS 500 High-G Dynamic Telemetry (2UR-GSE 5.0L V8 & Torsen Type-B LSD)
 Deterministic 1,600 Hz Throttle Remapping & Thermodynamic Viscosity Monitor.
 Zero Copyleft / MIT Permissive Clean-Room Implementation.
 """

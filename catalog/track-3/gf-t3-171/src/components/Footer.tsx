@@ -13,7 +13,7 @@ export const Footer: React.FC<FooterProps> = ({ onExportSpec }) => {
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-slate-300 font-semibold">
             <span>Ghost FactoryOS Chief Systems Architect</span>
             <span aria-hidden="true" className="text-slate-600">·</span>
-            <span>GF-T3-171 Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Dynamic Core</span>
+            <span>GF-T3-171 Apex Executive IS 500 High-G Dynamic Telemetry Dynamic Core</span>
           </div>
           <p className="text-sm text-slate-500">
             Turnkey Micro-APA Acquisition Asset prepared for Acquire.com Escrow &amp; Institutional Asset Transfer (20 kHz (0.48ms)).

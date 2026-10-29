@@ -1,5 +1,5 @@
 export const POSTGRES_TERRAIN_LEDGER_SQL = `-- =====================================================================
--- GF-T3-176: Heavy Overland Dynamics Platform Terrain Core
+-- GF-T3-176: Vanguard ECLSS Terrain Core
 -- Enterprise Partitioned Timeseries Ledger & HMAC-SHA256 Cryptographic Chain
 -- Target Engine: PostgreSQL 16.x (Zero External Extensions Required)
 -- License: MIT Permissive / Clean-Room Audited

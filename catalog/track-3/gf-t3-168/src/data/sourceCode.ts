@@ -1,5 +1,5 @@
 export const PYTHON_EKF_CODE = `"""
-GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
+GF-T3-168: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC PERFORMANCE CORE
 EXTENDED KALMAN FILTER SENSOR FUSION ENGINE (PYTHON 3.12)
 Clean-room algorithmic implementation fusing 9-DOF IMU, 20Hz GPS RTK,
 and 100Hz 4-wheel pulse telemetry with Dynamic Rear Steering (DRS)
@@ -40,7 +40,7 @@ class WheelTelemetry:
 
 class OverlandDynamicEKF:
     """
-    15-State Error-State / Full Extended Kalman Filter for Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE:
+    15-State Error-State / Full Extended Kalman Filter for Apex Executive Dual-Vector Performance Core DUAL_VECTOR_TORQUE:
     State Vector x = [
         p_x, p_y, p_z,          # Position in NED (m)                [0:3]
         v_x, v_y, v_z,          # Velocity in NED (m/s)              [3:6]
@@ -248,7 +248,7 @@ class OverlandDynamicEKF:
 `;
 
 export const SQL_TIMESCALEDB_CODE = `-- ====================================================================
--- GF-T3-168: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC CORE - TIMESCALE SQL LEDGER
+-- GF-T3-168: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DYNAMIC CORE - TIMESCALE SQL LEDGER
 -- PostgreSQL 16 + TimescaleDB Enterprise Time-Series Ledger
 -- Features: Hypertables, Immutable Append-Only Ledger Triggers,
 --           HMAC-SHA256 Cryptographic Integrity, Continuous Rollups.
@@ -397,7 +397,7 @@ SELECT add_continuous_aggregate_policy('telemetry_100ms_rollup',
 
 export const OPENAPI_SPEC_YAML = `openapi: 3.1.0
 info:
-  title: GF-T3-168 Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Telemetry Core API
+  title: GF-T3-168 Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Dynamic Telemetry Core API
   description: High-throughput 1,000 Hz real-time EKF state estimation, raw sensor ingestion, and cryptographic hash chain verification engine.
   version: 1.0.0-PROD
   license:
@@ -442,7 +442,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "Heavy Overland Dynamics Platform-Dual-Vector Performance Core-2026-FSPORT-01"
+            example: "Apex Executive-Dual-Vector Performance Core-2026-FSPORT-01"
       responses:
         '200':
           description: Current estimated state vector and filter health
@@ -698,13 +698,13 @@ def test_dual_vector_torque_torque_split_boundary_conditions(ekf_instance):
     rear_torque = 600.0
     total = front_torque + rear_torque
     rear_ratio = rear_torque / total
-    assert 0.20 <= rear_ratio <= 0.85, "Torque distribution must observe Heavy Overland Dynamics Platform DUAL_VECTOR_TORQUE limits"
+    assert 0.20 <= rear_ratio <= 0.85, "Torque distribution must observe Apex Executive DUAL_VECTOR_TORQUE limits"
 `;
 
 export const GCLOUD_DEPLOY_SCRIPT = `#!/usr/bin/env bash
 # ====================================================================
 # GF-T3-168: 1-CLICK PRODUCTION GOOGLE CLOUD RUN DEPLOYMENT HARNESS
-# Deploys the Heavy Overland Dynamics Platform Dual-Vector Performance Core EKF Dynamic Telemetry Core to Google Cloud Run
+# Deploys the Apex Executive Dual-Vector Performance Core EKF Dynamic Telemetry Core to Google Cloud Run
 # with auto-scaling, HTTP/2 streaming, and Cloud SQL connection proxy.
 # ====================================================================
 
@@ -712,7 +712,7 @@ set -euo pipefail
 
 PROJECT_ID="\${GCP_PROJECT_ID:-ghost-factoryos-vault}"
 REGION="\${GCP_REGION:-us-central1}"
-SERVICE_NAME="gf-t3-168-Heavy Overland Dynamics Platform-dynamic-core"
+SERVICE_NAME="gf-t3-168-Apex Executive-dynamic-core"
 IMAGE_TAG="gcr.io/\${PROJECT_ID}/\${SERVICE_NAME}:v1.0.0-PROD"
 
 echo "===================================================================="

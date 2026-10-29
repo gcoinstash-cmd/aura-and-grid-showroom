@@ -1,4 +1,4 @@
-# GF-T3-191: LEXUS LM 500h EXECUTIVE LUXURY MOVER CORE
+# GF-T3-191: Apex Executive Engine EXECUTIVE LUXURY MOVER CORE
 ## Production Technical Specification & Turnkey Delaware Micro-APA Master Deliverable
 **Version:** 1.0.0-PROD  
 **Target Platform:** Google Cloud Run (Containerized Microservice) / PostgreSQL 16  
@@ -10,7 +10,7 @@
 
 ## 1. EXECUTIVE SUMMARY & ARCHITECTURAL TOPOLOGY
 
-The **GF-T3-191 Lexus LM 500h Executive Luxury Mover Core** is an ultra-high-fidelity, production-hardened microservice designed to transform executive multi-passenger transit. Built specifically around the mechanical and acoustic dynamics of the flagship Lexus LM 500h chassis, this service arbitrates between independent front and rear electro-hydraulic braking circuits at 2,500 Hz to eliminate passenger nose-dive pitch during urban deceleration, while simultaneously managing the 48-inch electrochromic privacy partition to achieve -28.6 dB sound transmission loss.
+The **GF-T3-191 Apex Executive Engine Executive Luxury Mover Core** is an ultra-high-fidelity, production-hardened microservice designed to transform executive multi-passenger transit. Built specifically around the mechanical and acoustic dynamics of the flagship Apex Executive Engine chassis, this service arbitrates between independent front and rear electro-hydraulic braking circuits at 2,500 Hz to eliminate passenger nose-dive pitch during urban deceleration, while simultaneously managing the 48-inch electrochromic privacy partition to achieve -28.6 dB sound transmission loss.
 
 ### 1.1 Architectural Topology Diagram
 ```
@@ -57,7 +57,7 @@ The **GF-T3-191 Lexus LM 500h Executive Luxury Mover Core** is an ultra-high-fid
 During conventional braking, total vehicle deceleration $a_x$ transfers normal force from the rear axle to the front axle governed by:
 $$\Delta F_z = \frac{m \cdot a_x \cdot h_{cg}}{L}$$
 where:
-- $m = 2,420\text{ kg}$ (Lexus LM 500h curb weight with executive VIP load)
+- $m = 2,420\text{ kg}$ (Apex Executive Engine curb weight with executive VIP load)
 - $h_{cg} = 0.615\text{ m}$ (Center of gravity height)
 - $L = 3.000\text{ m}$ (Wheelbase)
 - $k_f = 46.5\text{ kN/m}$, $k_r = 52.0\text{ kN/m}$ (Front/Rear suspension spring rates)
@@ -212,6 +212,6 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]
 **PURCHASER:** The Designated Acquirer via Acquire.com Escrow  
 
 ### RECITALS
-WHEREAS, Seller has independently developed, authored, and validated the GF-T3-191 Lexus LM 500h Executive Luxury Mover Core;  
+WHEREAS, Seller has independently developed, authored, and validated the GF-T3-191 Apex Executive Engine Executive Luxury Mover Core;  
 WHEREAS, Seller certifies 100% clean-room origin, zero copyleft dependencies (0% GPL/AGPL/SSPL), and unencumbered title;  
 NOW, THEREFORE, for good and valuable consideration, the parties agree to irrevocable assignment of all IP, algorithms, source code, schemas, and brand marks upon closing wire confirmation.

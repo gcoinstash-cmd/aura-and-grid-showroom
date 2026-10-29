@@ -1,4 +1,4 @@
-export const GF_T3_171_SPEC_MARKDOWN = `# GF-T3-171: Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry V8 DYNAMIC CORE
+export const GF_T3_171_SPEC_MARKDOWN = `# GF-T3-171: Apex Executive IS 500 High-G Dynamic Telemetry V8 DYNAMIC CORE
 ## F1 SKUNKWORKS SERVICE ENGINE ARCHITECTURAL SPECIFICATION
 **Asset Identifier**: GF-T3-171  
 **Target Platform**: Acquire.com Turnkey Micro-APA Acquisition Asset  
@@ -10,7 +10,7 @@ export const GF_T3_171_SPEC_MARKDOWN = `# GF-T3-171: Heavy Overland Dynamics Pla
 
 ## EXECUTIVE SUMMARY & MONOPOLY VAULT OVERVIEW
 
-GF-T3-171 is an institutional-grade, ultra-low-latency telemetry processing and command execution engine engineered for high-frequency telemetry streams from high-output automotive powertrains—specifically calibrated for the 5.0-liter naturally aspirated 2UR-GSE Quad-Cam 32-valve V8 of the Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry platform.
+GF-T3-171 is an institutional-grade, ultra-low-latency telemetry processing and command execution engine engineered for high-frequency telemetry streams from high-output automotive powertrains—specifically calibrated for the 5.0-liter naturally aspirated 2UR-GSE Quad-Cam 32-valve V8 of the Apex Executive IS 500 High-G Dynamic Telemetry platform.
 
 The engine executes deterministic order-of-arrival event sequencing using a lock-free LMAX Disruptor ring buffer pattern implemented with power-of-two modulo masking, cache-line-padded sequence barriers, and asynchronous memory-mapped Postgres write-ahead logging (WAL) spillover.
 
@@ -86,7 +86,7 @@ typedef struct {
 
 \`\`\`python
 # dist_disruptor.pyx
-# Clean-Room Lock-Free Ring Buffer Engine for Heavy Overland Dynamics Platform IS 500 V8 Telemetry
+# Clean-Room Lock-Free Ring Buffer Engine for Apex Executive IS 500 V8 Telemetry
 # License: MIT Permissive
 
 cimport cython
@@ -325,7 +325,7 @@ paths:
 
 - **Seller**: Ghost FactoryOS Systems Architecture Vault
 - **Purchaser**: Institutional Buyer via Acquire.com Escrow
-- **Asset**: GF-T3-171 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry Dynamic Core Telemetry Engine)
+- **Asset**: GF-T3-171 (Apex Executive IS 500 High-G Dynamic Telemetry Dynamic Core Telemetry Engine)
 - **DEPLOYMENT SPECIFICATION**: 20 kHz (0.48ms) (Micro-APA Asset Transfer)
 - **Escrow Verification Conditions**:
   1. Automated PyTest suite verification (>90% pass rate)

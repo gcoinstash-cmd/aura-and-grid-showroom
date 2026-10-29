@@ -20,7 +20,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
           GF-T3-178
         </span>
         <span className="inline-flex items-center px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono text-xs font-semibold whitespace-nowrap">
-          Heavy Overland Dynamics Platform LS 500 AWD CORE
+          Apex Executive LS 500 AWD CORE
         </span>
         <span className="inline-flex items-center px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold whitespace-nowrap">
           v1.0.0-PROD
@@ -29,7 +29,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
 
       {/* 2. Main Title */}
       <h1 className="text-xl md:text-2xl font-black text-white tracking-tight mb-1">
-        Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core
+        Apex Executive AWD Flagship Core
       </h1>
       <p className="text-slate-400 text-xs md:text-sm line-clamp-2 mb-4 leading-relaxed">
         Turnkey micro-APA asset transfer deliverable with 2,000 Hz FxLMS acoustic noise cancellation, twin-turbo V35A-FTS wastegate regulation, and PostgreSQL 16 HMAC ledger.

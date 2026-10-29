@@ -1,5 +1,5 @@
 # GHOST FACTORYOS — TRACK 3 F1 SKUNKWORKS SERVICE ENGINE SPECIFICATION
-## UNIT CODE: GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core ULTRA-LUXURY CORE)
+## UNIT CODE: GF-T3-166 (Apex Executive Ultra-Heavy Telemetry Core ULTRA-LUXURY CORE)
 ### ROLE: ENTERPRISE MULTI-REGION EVENT INGESTION & REPLAY BROKER WITH RAFT-BACKED STATE MACHINE
 ### ARCHITECTURAL DISCIPLINE: 70% WORKLOAD PRE-ASSEMBLY DELIVERABLE (MONOPOLY VAULT GRADE)
 ### TARGET MONOPOLY APA SPECIFICATION: PostgreSQL 16 + RLS
@@ -12,7 +12,7 @@
 | :--- | :--- |
 | **Unit Identifier** | `GF-T3-166-LX600-ENG` |
 | **System Classification** | Enterprise Multi-Region Event Ingestion & Replay Broker |
-| **Target Vehicle Platform** | Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury VIP Telemetry & Autonomous Chassis Core |
+| **Target Vehicle Platform** | Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury VIP Telemetry & Autonomous Chassis Core |
 | **Consensus Engine** | Formal Raft Consensus State Machine (Linearizable Log Ingestion) |
 | **Storage Engine** | Partitioned PostgreSQL 16 / Timescale Hypertable with Monotonic Sequence Integrity |
 | **API Contract** | OpenAPI 3.1.0 Strict Spec (Zero-Loss Batch Ingestion, Deterministic Replay) |
@@ -85,7 +85,7 @@ The following Python 3.12 engine implementation is fully functional, zero-placeh
 
 ```python
 """
-Ghost FactoryOS — Track 3: GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Core)
+Ghost FactoryOS — Track 3: GF-T3-166 (Apex Executive Ultra-Heavy Telemetry Core Core)
 Enterprise Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine.
 Clean-room implementation. License: Apache-2.0.
 """
@@ -217,7 +217,7 @@ class RequestVoteResponse:
 
 class RaftEngineNode:
     """
-    Raft Distributed Consensus and Ingestion Node for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Core.
+    Raft Distributed Consensus and Ingestion Node for Apex Executive Ultra-Heavy Telemetry Core Core.
     Guarantees monotonic linearizable WAL commitment across edge nodes and Cloud Run regions.
     """
 
@@ -405,7 +405,7 @@ class RaftEngineNode:
 
     async def ingest_event(self, tenant_id: str, event_id: str, payload: Dict[str, Any]) -> Tuple[bool, Optional[LogEntry], str]:
         """
-        Public ingestion point for Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core vehicle telemetry.
+        Public ingestion point for Apex Executive Ultra-Heavy Telemetry Core vehicle telemetry.
         """
         # 1. Backpressure token check
         allowed, wait_sec = self.rate_limiter.acquire(1.0)
@@ -468,7 +468,7 @@ END $$;
 CREATE TABLE IF NOT EXISTS tenants (
     tenant_id VARCHAR(64) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    vehicle_model VARCHAR(128) NOT NULL DEFAULT 'Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury',
+    vehicle_model VARCHAR(128) NOT NULL DEFAULT 'Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury',
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CLOCK_TIMESTAMP()
 );
@@ -603,7 +603,7 @@ info:
   version: 1.0.0
   description: >
     Production-grade Multi-Region Event Ingestion & Replay Broker with Raft-backed State Machine
-    specifically tuned for the Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury vehicle telemetry stream.
+    specifically tuned for the Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury vehicle telemetry stream.
   contact:
     name: Ghost Systems Architecture Group
     email: architect@ghostfactoryos.internal
@@ -1194,7 +1194,7 @@ The undersigned Principal Systems Architect certifies under penalty of contractu
 mathematical formulations, consensus logic, state transition algorithms, and Python 3.12 codebase
 contained in GF-T3-166 were created ab initio through clean-room reverse engineering of open consensus
 standards (Raft RFC / Ongaro & Ousterhout 2014) and proprietary Ghost FactoryOS design principles.
-Zero proprietary Heavy Overland Dynamics Platform/Toyota code or non-free assets were ingested.
+Zero proprietary third-party OEM code or non-free assets were ingested.
 
 ### 2. DEPENDENCY LICENSE COMPLIANCE MANIFEST
 Every third-party dependency utilized by GF-T3-166 has been audited against the Ghost FactoryOS Whitelist:
@@ -1231,7 +1231,7 @@ The following licenses are strictly blacklisted and guaranteed to be absent from
 ### ARTICLE I: PURCHASE AND SALE OF ASSETS
 Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers,
 and conveys to Purchaser, and Purchaser purchases and accepts from Seller, all right, title,
-and interest in and to the technical deliverables designated as **GF-T3-166 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core Ultra-Luxury Core)**,
+and interest in and to the technical deliverables designated as **GF-T3-166 (Apex Executive Ultra-Heavy Telemetry Core Ultra-Luxury Core)**,
 including without limitation:
 (a) All source code, mathematical specifications, and algorithms in `GF_T3_166_SPEC.md`;
 (b) All patents, trade dress designs, copyright rights, and documentation created in connection therewith;

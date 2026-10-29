@@ -43,7 +43,7 @@ export const TabAVSDamping: React.FC<TabAVSDampingProps> = ({
   }, [rollDeg, pitchDegS, vertG, latG, speedMph, mode, decelG, onUpdateParams]);
 
   const pythonSourceCode = `"""
-Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core
+Apex Executive NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core
 Pure Python 3.12 Linear Solenoid Damping State Machine & Predictive Deceleration
 SPDX-License-Identifier: MIT | Clean-Room Certified
 """
@@ -139,7 +139,7 @@ class OverlandNXLinearSolenoidAVS:
     ) -> Tuple[float, float]:
         """
         Calculates regenerative braking recapture power and hydraulic friction blending ratio.
-        Peak regen capacity: 62 kW (Heavy Overland Dynamics Platform NX 450h+ Front 134 kW + Rear 40 kW e-Four MGs).
+        Peak regen capacity: 62 kW (Apex Executive NX 450h+ Front 134 kW + Rear 40 kW e-Four MGs).
         """
         if battery_soc_pct >= 98.0:
             return 0.0, 1.0  # Battery saturated; 100% friction

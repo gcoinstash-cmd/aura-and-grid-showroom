@@ -1,6 +1,6 @@
 # =====================================================================
 # GHOST FACTORYOS SKUNKWORKS — ASSET SPECIFICATION
-# IDENTIFIER: GF-T3-194 (Lexus LX 600 F SPORT Performance Core)
+# IDENTIFIER: GF-T3-194 (Apex Executive Engine F SPORT Performance Core)
 # ACQUIRE.COM TURNKEY MICRO-APA BUYOUT ASSET
 # AUDIT CLASSIFICATION: MONOPOLY VAULT DELIVERABLE (DELAWARE)
 # =====================================================================
@@ -12,7 +12,7 @@ IP Clean-Room Status: 100% Certified / 0.0% Copyleft / MIT Permissive Whitelist
 -----------------------------------------------------------------------
 ## 1. EXECUTIVE ASSET SUMMARY & MONRONEY SPECIFICATION
 -----------------------------------------------------------------------
-- Vehicle Application: Lexus LX 600 F SPORT (VJA310 Platform)
+- Vehicle Application: Apex Executive Engine F SPORT (VJA310 Platform)
 - Powertrain Integration: V35A-FTS 3.4L Twin-Turbo V6 (409 hp / 479 lb-ft)
 - Suspension Architecture: 4-Wheel Electro-Hydraulic Active Height Control (AHC)
 - Articulation Range: -25mm (Low) to +105mm (Extra High / Articulation Stroke)

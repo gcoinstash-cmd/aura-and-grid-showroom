@@ -56,7 +56,7 @@ export const HeightSimulationModal: React.FC<HeightSimulationModalProps> = ({
                 AHC Electro-Hydraulic Height Simulation Bench
               </h3>
               <p className="text-[15px] text-slate-400">
-                Heavy Overland Dynamics Platform 4-Wheel Active Height Control displacement &amp; accumulator calibration
+                Apex Executive 4-Wheel Active Height Control displacement &amp; accumulator calibration
               </p>
             </div>
           </div>

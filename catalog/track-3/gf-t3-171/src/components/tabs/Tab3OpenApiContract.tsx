@@ -58,7 +58,7 @@ info:
   version: 1.0.0-PROD
   description: >
     Ultra-low latency telemetry ingest and sequence barrier execution contract
-    calibrated for the Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry 2UR-GSE Quad-Cam V8 powertrain.
+    calibrated for the Apex Executive IS 500 High-G Dynamic Telemetry 2UR-GSE Quad-Cam V8 powertrain.
 servers:
   - url: https://gf-t3-171-engine-kimc6fcbv3veokcj6v4jer-uc.a.run.app
     description: Google Cloud Run Managed Microservice
@@ -116,7 +116,7 @@ paths:
             schema:
               type: string
               format: binary
-              description: Exactly 64 bytes binary struct (Heavy Overland Dynamics Platform V8 Telemetry Frame)
+              description: Exactly 64 bytes binary struct (Apex Executive V8 Telemetry Frame)
       responses:
         '202':
           description: Telemetry tick committed and queued for Postgres WAL spillover
@@ -142,7 +142,7 @@ paths:
 
   /ws/v1/disruptor/stream:
     get:
-      summary: WebSocket real-time binary stream of Heavy Overland Dynamics Platform V8 engine telemetry
+      summary: WebSocket real-time binary stream of Apex Executive V8 engine telemetry
       description: Zero-copy WebSocket framing with sub-microsecond broadcast.`;
 
   return (

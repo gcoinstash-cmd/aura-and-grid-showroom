@@ -79,7 +79,7 @@ BUYER: Institutional Purchasing Entity ("Buyer")
 Subject to the terms and conditions of this Agreement, Seller hereby sells, assigns, transfers, 
 conveys, and delivers to Buyer, and Buyer hereby purchases from Seller, all right, title, and 
 interest in and to the following Transferred Assets:
-  (a) The entire proprietary codebase comprising GF-T3-171 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry V8 Dynamic Core);
+  (a) The entire proprietary codebase comprising GF-T3-171 (Apex Executive IS 500 High-G Dynamic Telemetry V8 Dynamic Core);
   (b) All Cython/C lock-free LMAX Disruptor ring buffer algorithms, memory layouts, and padding mechanisms;
   (c) PostgreSQL 16 range-partitioned schemas, unlogged ingest mechanisms, and HMAC-SHA256 audit triggers;
   (d) OpenAPI 3.1 contracts, raw binary wire protocol specifications, and WebSocket streaming architectures;
@@ -128,7 +128,7 @@ trademark, and trade secret rights in GF-T3-171. Seller retains no residual righ
         <div className="p-5 rounded-xl bg-slate-900 border border-slate-800">
           <span className="text-sm text-slate-400 block font-medium">Acquisition Target</span>
           <span className="text-xl font-bold font-mono text-white">GF-T3-171</span>
-          <span className="text-sm text-cyan-400 block mt-1">Heavy Overland Dynamics Platform IS 500 V8 Core</span>
+          <span className="text-sm text-cyan-400 block mt-1">Apex Executive IS 500 V8 Core</span>
         </div>
         <div className="p-5 rounded-xl bg-slate-900 border border-cyan-500/40">
           <span className="text-sm text-slate-400 block font-medium">Micro-APA Asset Transfer</span>

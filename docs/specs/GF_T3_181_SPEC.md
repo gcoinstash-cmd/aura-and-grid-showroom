@@ -1,7 +1,7 @@
-# GF-T3-181: LEXUS IS 500 F SPORT PERFORMANCE CORE
+# GF-T3-181: Apex Executive Engine F SPORT PERFORMANCE CORE
 ## Turnkey Micro-APA Buyout Technical Specification (Acquire.com Asset ID: GF-T3-181)
 **Entity:** Ghost FactoryOS — F1 Skunkworks Track 3 Deliverable  
-**Platform Target:** Lexus IS 500 F SPORT (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
+**Platform Target:** Apex Executive Engine F SPORT (2UR-GSE 5.0L Naturally Aspirated 90° V8, Torsen Type-B LSD)  
 **Valuation:** Standard Micro-APA Buyout: $45,000 USD | Enterprise Monopoly Vault: $125,000 USD  
 **License:** Permissive MIT / Dual-Commercial Delaware APA  
 **Audit Status:** 100% Clean-Room Certified (0% Copyleft / No GPL / No AGPL / No SSPL)  
@@ -129,7 +129,7 @@ CREATE INDEX idx_telemetry_metadata_gin ON telemetry_ledger USING GIN (metadata)
 ```yaml
 openapi: 3.1.0
 info:
-  title: Lexus IS 500 F SPORT Telemetry Service
+  title: Apex Executive Engine F SPORT Telemetry Service
   version: 1.0.0
   description: High-frequency telemetry ingress, cryptographic audit ledger, and Torsen thermal monitoring.
 paths:

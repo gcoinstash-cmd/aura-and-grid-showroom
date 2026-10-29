@@ -63,15 +63,15 @@ Enterprise AI platform providers, autonomous robotics laboratories, multi-agent 
 | 09 | `GF-T3-161` | **ChronoVector Autonomous Guidance & Telemetry Engine** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-161/index.html) |
 | 10 | `GF-T3-163` | **Kinetic Terrain Swarm Distributed Consensus Engine** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-163/index.html) |
 | 11 | `GF-T3-164` | **NeuroDrive Multi-Modal Sensory Fusion Engine** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-164/index.html) |
-| 12 | `GF-T3-166` | **Heavy Overland Dynamics Platform LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-166/index.html) |
-| 13 | `GF-T3-167` | **Heavy Overland Dynamics Platform LC 500 Dynamic Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-167/index.html) |
-| 14 | `GF-T3-168` | **Heavy Overland Dynamics Platform RX 500h F SPORT Dynamic Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-168/index.html) |
-| 15 | `GF-T3-169` | **Heavy Overland Dynamics Platform NX 450h+ F SPORT Agile Hybrid Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-169/index.html) |
-| 16 | `GF-T3-170` | **Heavy Overland Dynamics Platform ES 350h Executive Quietude Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-170/index.html) |
-| 17 | `GF-T3-171` | **Heavy Overland Dynamics Platform IS 500 F SPORT V8 Dynamic Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-171/index.html) |
-| 18 | `GF-T3-172` | **Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-172/index.html) |
-| 19 | `GF-T3-173` | **Heavy Overland Dynamics Platform RC F Track Edition Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-173/index.html) |
-| 20 | `GF-T3-174` | **Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-174/index.html) |
+| 12 | `GF-T3-166` | **Apex Executive Raft Event Ingestion & Spec Engine** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-166/index.html) |
+| 13 | `GF-T3-167` | **Apex Executive Dynamic Grand Touring Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-167/index.html) |
+| 14 | `GF-T3-168` | **Apex Executive Dynamic Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-168/index.html) |
+| 15 | `GF-T3-169` | **Apex Executive Agile Hybrid Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-169/index.html) |
+| 16 | `GF-T3-170` | **Apex Executive Quietude Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-170/index.html) |
+| 17 | `GF-T3-171` | **Apex Executive V8 Dynamic Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-171/index.html) |
+| 18 | `GF-T3-172` | **Apex Executive Performance Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-172/index.html) |
+| 19 | `GF-T3-173` | **Hypercar Flagship Trim Aero Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-173/index.html) |
+| 20 | `GF-T3-174` | **Track 2 Sovereign Flagship Steer-by-Wire Core** | Track 3 — F1 Skunkworks Engine | `$125,000` | [`Inspect Demo`](/demos/gf-t3-174/index.html) |
 | 21 | `GF-T3-201` | **GF-T3-201** | Track 3 — F1 Skunkworks Engine | `$150,000` | [`Inspect Demo`](/demos/gf-t3-201/index.html) |
 | 22 | `GF-T3-216` | **GF-T3-216** | Track 3 — F1 Skunkworks Engine | `$150,000` | [`Inspect Demo`](/demos/gf-t3-216/index.html) |
 | 23 | `GF-T3-218` | **GF-T3-218** | Track 3 — F1 Skunkworks Engine | `$150,000` | [`Inspect Demo`](/demos/gf-t3-218/index.html) |

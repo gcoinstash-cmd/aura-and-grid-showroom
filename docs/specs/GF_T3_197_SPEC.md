@@ -1,7 +1,7 @@
-# GF-T3-197: LEXUS TX 500h F SPORT PERFORMANCE CORE
+# GF-T3-197: Apex Executive Engine F SPORT PERFORMANCE CORE
 ## TURNKEY MICRO-APA ACQUISITION BLUEPRINT & TECHNICAL SPECIFICATION
 **Asset Identifier**: GF-T3-197
-**Platform Target**: Lexus TX 500h 2.4L Turbo Hybrid F SPORT Performance (Direct4 AWD + Dynamic Rear Steering)
+**Platform Target**: Apex Executive Engine 2.4L Turbo Hybrid F SPORT Performance (Direct4 AWD + Dynamic Rear Steering)
 **Version**: 1.0.0-PROD
 **License**: Permissive MIT / Commercial APA Handoff
 **Target Buyout Valuation**: $45,000 USD (Turnkey Cash) | $125,000 USD (Enterprise Multi-Fleet)
@@ -50,7 +50,7 @@ GF-T3-197 is a production-grade vehicle dynamics, Dynamic Rear Steering (DRS), a
 
 ### 2.1 Extended Bicycle Model with Active Rear Wheel Angle
 Let:
-- $L = 2.950\text{ m}$ (Wheelbase of Lexus TX 500h)
+- $L = 2.950\text{ m}$ (Wheelbase of Apex Executive Engine)
 - $l_f = 1.385\text{ m}$ (Distance from CG to front axle)
 - $l_r = 1.565\text{ m}$ (Distance from CG to rear axle)
 - $m = 2,250\text{ kg}$ (Vehicle curb weight + payload)
@@ -82,7 +82,7 @@ DIRECT4 divides powertrain torque between the front 2.4L turbo engine + hybrid m
 ## 3. PRODUCTION POSTGRESQL 16 IMMUTABLE LEDGER SCHEMA
 
 ```sql
--- Schema: Lexus TX 500h DRS Performance Core Ledger
+-- Schema: Apex Executive Engine DRS Performance Core Ledger
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS telemetry_drs_ledger (

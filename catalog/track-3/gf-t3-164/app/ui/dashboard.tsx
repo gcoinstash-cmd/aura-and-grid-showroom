@@ -2,7 +2,7 @@
  * GF-T3-164 NeuroDrive Sensory Fusion — Master Cockpit Dashboard
  * Ghost FactoryOS Track 3 F1 Skunkworks Engine
  * 
- * High-Contrast Supercar Luxury Aesthetic (Heavy Overland Dynamics Platform LFA Nürburgring Spec)
+ * High-Contrast Supercar Luxury Aesthetic (Apex Executive LFA Nürburgring Spec)
  * Strict Adherence to 4 Reader Zones & Typography Scale Rules:
  *  - Global Scale Floor: rem baseline 18px (:root { font-size: 18px; })
  *  - Zone 1 (Sensor Fusion HUD / Doppler Vectors): 24px-30px monospace (text-2xl md:text-3xl font-mono font-bold tracking-tight text-cyan-400)
@@ -364,7 +364,7 @@ export default function Dashboard() {
       }
     }
 
-    // 4. Draw Ego Vehicle (Heavy Overland Dynamics Platform LFA Nürburgring Edition in Silver/Carbon)
+    // 4. Draw Ego Vehicle (Apex Executive LFA Nürburgring Edition in Silver/Carbon)
     ctx.save();
     ctx.translate(egoX, egoY);
 
@@ -664,7 +664,7 @@ export default function Dashboard() {
                 </span>
               </div>
               <p className="text-sm md:text-base text-zinc-400 font-mono mt-0.5">
-                Multi-Modal Perception · Unscented Bayesian Kalman Core · Heavy Overland Dynamics Platform LFA Nürburgring Spec
+                Multi-Modal Perception · Unscented Bayesian Kalman Core · Apex Executive LFA Nürburgring Spec
               </p>
             </div>
           </div>
@@ -1500,7 +1500,7 @@ export default function Dashboard() {
   "ego_telemetry": {
     "speed_kmh": ${telemetry.speedKmh.toFixed(1)},
     "rpm": ${telemetry.rpm},
-    "chassis": "Heavy Overland Dynamics Platform LFA Nürburgring Spec #042"
+    "chassis": "Apex Executive LFA Nürburgring Spec #042"
   }
 }`}
                 </pre>

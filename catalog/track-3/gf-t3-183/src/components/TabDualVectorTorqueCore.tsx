@@ -357,7 +357,7 @@ export const TabDualVectorTorqueCore: React.FC<TabDualVectorTorqueCoreProps> = (
             </div>
 
             <p className="text-[15px] text-slate-400 mb-4">
-              Heavy Overland Dynamics Platform One Motion Grip eliminates mechanical steering column linkage. Dual magnetoresistive resolvers measure driver yoke input (±150°), while high-speed actuator dynamically scales road wheel angle based on road velocity.
+              Apex Executive One Motion Grip eliminates mechanical steering column linkage. Dual magnetoresistive resolvers measure driver yoke input (±150°), while high-speed actuator dynamically scales road wheel angle based on road velocity.
             </p>
 
             <div className="bg-slate-950/80 rounded-lg p-4 border border-slate-800 space-y-4">

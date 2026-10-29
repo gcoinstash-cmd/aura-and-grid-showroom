@@ -24,7 +24,7 @@ export const MonroneyBanner: React.FC<MonroneyBannerProps> = ({
               ASSET ID: GF-T3-169
             </span>
             <span className="text-slate-400">·</span>
-            <span className="text-slate-300 font-semibold">Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Core</span>
+            <span className="text-slate-300 font-semibold">Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Core</span>
             <span className="text-slate-400">·</span>
             <span className="text-emerald-400 font-mono font-semibold">v1.0.0-PROD</span>
           </div>

@@ -1,5 +1,5 @@
 /**
- * GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core Cockpit
+ * GF-T3-195 Apex Executive High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core Cockpit
  * Turnkey micro-APA asset transfer asset for Acquire.com
  * Hardened Non-Breaking Header Protocol & High-Legibility Typography
  */
@@ -276,7 +276,7 @@ export default function App() {
             </div>
             <div>
               <div className="font-bold text-white">Ghost FactoryOS Architecture Core</div>
-              <div className="text-[14px]">Asset GF-T3-195 • Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core</div>
+              <div className="text-[14px]">Asset GF-T3-195 • Apex Executive High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core</div>
             </div>
           </div>
 

@@ -1,6 +1,8 @@
 {
-  "name": "GF-T3-195 Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Carbon Aero Core",
-  "description": "Turnkey micro-APA asset transfer cockpit for Heavy Overland Dynamics Platform High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core with real-time vortex dynamics, PostgreSQL 16 HMAC ledger, and Acquire.com covenants.",
+  "name": "GF-T3-195 Apex Executive High-Aero Grand Touring Telemetry Core Carbon Aero Core",
+  "description": "Turnkey micro-APA asset transfer cockpit for Apex Executive High-Aero Grand Touring Telemetry Core Inspiration Series Carbon Aero Core with real-time vortex dynamics, PostgreSQL 16 HMAC ledger, and Acquire.com covenants.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

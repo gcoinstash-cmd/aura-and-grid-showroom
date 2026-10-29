@@ -20,7 +20,7 @@ export const TabAPACovenant: React.FC = () => {
   };
 
   const agreementText = `Turnkey Software Asset Purchase Agreement (MICRO-APA)
-ASSET IDENTIFIER: GF-T3-185 (Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core)
+ASSET IDENTIFIER: GF-T3-185 (Apex Executive NX 450h+ High-G Dynamic Telemetry Handling Plug-In Core)
 
 This Asset Purchase Agreement ("Agreement") is entered into as of October 2026 by and between:
 SELLER: Ghost FactoryOS LLC, a Delaware limited liability company

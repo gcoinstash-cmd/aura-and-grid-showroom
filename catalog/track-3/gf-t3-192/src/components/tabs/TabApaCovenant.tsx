@@ -14,7 +14,7 @@ export const TabApaCovenant: React.FC = () => {
   const handleDownloadApa = () => {
     const text = `# ASSET PURCHASE AGREEMENT (MICRO-APA)
 ASSET IDENTIFIER: GF-T3-192
-ASSET NAME: Heavy Overland Dynamics Platform High-Output Multi-Node Core DUAL_VECTOR_TORQUE Dynamic Rear Steering Core
+ASSET NAME: Apex Executive High-Output Multi-Node Core DUAL_VECTOR_TORQUE Dynamic Rear Steering Core
 ACQUIRE.COM LISTING SPECIFICATION: 20 kHz (0.48ms) (Standard Turnkey micro-APA) / PostgreSQL 16 + RLS (Enterprise Multi-Fleet)
 BUYER ENTITY: ${buyerEntity}
 BUYER AUTHORIZED SIGNER: ${buyerSigner}
@@ -99,7 +99,7 @@ ${buyerEntity}
           <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Enterprise Multi-Fleet Deployment</span>
           <div className="text-3xl font-black text-emerald-400 font-mono mt-1">PostgreSQL 16 + RLS</div>
           <p className="text-xs text-slate-300 mt-2">
-            Includes unlimited commercial vehicle deployments across Heavy Overland Dynamics Platform TX/RX and Toyota Crown platforms.
+            Includes unlimited commercial vehicle deployments across Apex Executive TX/RX and Toyota Crown platforms.
           </p>
         </div>
 

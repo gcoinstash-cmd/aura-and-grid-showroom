@@ -286,7 +286,7 @@ export const EkdssTab: React.FC = () => {
               {/* Main Chassis Frame Box */}
               <rect x="130" y="50" width="300" height="200" rx="16" fill="url(#chassisGrad)" stroke="#525252" strokeWidth="2.5" />
               <text x="280" y="145" textAnchor="middle" fill="#a3a3a3" fontSize="20" fontFamily="JetBrains Mono" fontWeight="bold">
-                Heavy Overland Dynamics Platform
+                Apex Executive
               </text>
               <text x="280" y="175" textAnchor="middle" fill="#d4d4d4" fontSize="17" fontFamily="JetBrains Mono" fontWeight="600">
                 Heavy Boxed Steel Frame Architecture LADDER FRAME (Modular Cyber-Physical Chassis)

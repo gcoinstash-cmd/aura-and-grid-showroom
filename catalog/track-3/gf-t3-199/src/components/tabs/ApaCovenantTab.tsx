@@ -198,7 +198,7 @@ export const ApaCovenantTab: React.FC = () => {
 };
 
 const apaAgreementLegalText = `# ASSET PURCHASE AGREEMENT: GF-T3-199
-**ASSET CODENAME:** GF-T3-199 (Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core)
+**ASSET CODENAME:** GF-T3-199 (Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Core)
 **JURISDICTION:** Standard Commercial Jurisdiction, United States
 **SELLER:** Ghost FactoryOS LLC, a Delaware limited liability company
 **BUYER:** Qualified Purchaser via Acquire.com Micro-Asset Platform
@@ -236,7 +236,7 @@ Seller shall provide up to 90 days of technical consultation and handoff assista
 
 const exhibitAIpSchedule = `# EXHIBIT A: SCHEDULE OF PURCHASED ASSETS & IP
 Asset Identifier: GF-T3-199
-Target Platform: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17 Platform)
+Target Platform: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry (TALH17 Platform)
 
 1. Core Mathematical & Control Code:
    - \`core/dual_vector_torque_controller.py\`: 2,500 Hz dynamic torque vectoring state machine.
@@ -259,7 +259,7 @@ Target Platform: Heavy Overland Dynamics Platform Dual-Vector Performance Core H
 
 const exhibitBCleanRoom = `# EXHIBIT B: CLEAN-ROOM IP AUDIT & NON-CONTAMINATION CERTIFICATE
 Issued by: Ghost FactoryOS Independent Architecture Review Board
-Asset: GF-T3-199 (Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry Core)
+Asset: GF-T3-199 (Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry Core)
 
 CERTIFICATION:
 1. Copyleft Contamination Assessment:

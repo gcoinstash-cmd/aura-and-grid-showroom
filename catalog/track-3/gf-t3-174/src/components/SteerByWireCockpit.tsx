@@ -1,7 +1,7 @@
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
- * Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core (GF-T3-174)
+ * Track 2 Sovereign Flagship Steer-by-Wire Core (GF-T3-174)
  * Interactive Steer-by-Wire Yoke & Dynamics Cockpit
  */
 
@@ -103,7 +103,7 @@ export const SteerByWireCockpit: React.FC<SteerByWireCockpitProps> = ({
                     {/* Yoke Hub */}
                     <circle cx="160" cy="160" r="42" fill="#0f172a" stroke="#334155" strokeWidth="4" />
                     
-                    {/* Hub Heavy Overland Dynamics Platform / Core Emblem */}
+                    {/* Hub Apex Executive / Core Emblem */}
                     <circle cx="160" cy="160" r="28" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" />
                     <text x="160" y="165" fill="#f8fafc" fontSize="15" fontWeight="bold" textAnchor="middle" letterSpacing="1">
                       RZ 450e

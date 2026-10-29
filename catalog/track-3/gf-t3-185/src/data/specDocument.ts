@@ -1,4 +1,4 @@
-export const GF_T3_185_SPEC_CONTENT = `# GF-T3-185: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry HANDLING PLUG-IN CORE
+export const GF_T3_185_SPEC_CONTENT = `# GF-T3-185: Apex Executive NX 450h+ High-G Dynamic Telemetry HANDLING PLUG-IN CORE
 ## 70% ARCHITECTURAL & LEGAL SPECIFICATION (TURNKEY MICRO-APA ASSET TRANSFER ASSET)
 **Document ID:** GF-T3-185-SPEC-PROD-2026
 **Asset Class:** Institutional Turnkey Mobility Core
@@ -13,7 +13,7 @@ The GF-T3-185 engine implements the high-frequency Adaptive Variable Suspension 
 
 \`\`\`
 +------------------------------------------------------------------------------------+
-|                         Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry VEHICLE BUS                         |
+|                         Apex Executive NX 450h+ High-G Dynamic Telemetry VEHICLE BUS                         |
 |  - 6-DOF IMU (Roll, Pitch, Yaw)   - 4x Wheel Stroke Position Sensors (2,000 Hz)   |
 |  - Brake Stroke & Master Cyl Bar  - 18.1 kWh Li-Ion Battery BMS Telemetry (355V)   |
 +-----------------------------------------+------------------------------------------+
@@ -66,7 +66,7 @@ class SolenoidCommand(NamedTuple):
 
 class OverlandNXLinearSolenoidAVS:
     """
-    Precision 650-step linear solenoid AVS controller for Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry.
+    Precision 650-step linear solenoid AVS controller for Apex Executive NX 450h+ High-G Dynamic Telemetry.
     Computes corner-specific damping impedance at 2,000 Hz using skyhook damping
     and lateral roll-moment compensation.
     """
@@ -124,7 +124,7 @@ class OverlandNXLinearSolenoidAVS:
     ) -> Tuple[float, float]:
         """
         Calculates regenerative braking recapture power and friction brake blend ratio.
-        Max regen capped at 62 kW (Heavy Overland Dynamics Platform NX 450h+ dual permanent magnet motor generator).
+        Max regen capped at 62 kW (Apex Executive NX 450h+ dual permanent magnet motor generator).
         """
         if battery_soc_percent >= 98.0:
             return 0.0, 1.0  # 100% friction when battery fully saturated
@@ -229,11 +229,11 @@ Production OpenAPI 3.1 contract specification for high-throughput telematics:
 \`\`\`yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry AVS Telemetry Gateway
+  title: Apex Executive NX 450h+ High-G Dynamic Telemetry AVS Telemetry Gateway
   version: 1.0.0
   description: High-frequency telemetry ingress, linear solenoid actuator dispatch, and hybrid battery energy recovery stream.
 servers:
-  - url: https://api.Heavy Overland Dynamics Platform-nx.ghostfactory.io/v1
+  - url: https://api.Apex Executive-nx.ghostfactory.io/v1
 paths:
   /telemetry/ingress:
     post:
@@ -340,7 +340,7 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080"]
 1. **Parties:** This Asset Purchase Agreement ("Agreement") is executed between **Ghost FactoryOS LLC**, a Delaware limited liability company ("Seller"), and the acquiring entity registered on Acquire.com ("Buyer").
 2. **Purchased Assets:** Seller unconditionally assigns, transfers, and conveys all right, title, and interest in GF-T3-185, including:
    - Complete algorithmic implementation of the 650-step linear solenoid AVS controller.
-   - Predictive deceleration energy regeneration module for Heavy Overland Dynamics Platform NX 450h+ PHEV architecture.
+   - Predictive deceleration energy regeneration module for Apex Executive NX 450h+ PHEV architecture.
    - Partitioned PostgreSQL 16 HMAC ledger schemas, triggers, and quarantine handlers.
    - OpenAPI 3.1 & WebSocket telemetry interface contracts.
    - Zero-copyleft clean-room verification audit certificates.

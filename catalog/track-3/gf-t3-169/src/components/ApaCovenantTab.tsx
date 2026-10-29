@@ -44,7 +44,7 @@ export const ApaCovenantTab: React.FC<ApaCovenantTabProps> = ({
               GF-T3-169 Turnkey Micro-APA Covenant
             </h3>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-              Legally binding turnkey micro-acquisition framework for the Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core powertrain controller and telemetry engine.
+              Legally binding turnkey micro-acquisition framework for the Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Hybrid Core powertrain controller and telemetry engine.
             </p>
           </div>
 

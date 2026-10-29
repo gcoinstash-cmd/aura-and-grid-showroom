@@ -18,7 +18,7 @@ export const TabApaCovenant: React.FC = () => {
   };
 
   const apaText = `ASSET PURCHASE AGREEMENT (DELAWARE MICRO-APA)
-ASSET IDENTIFIER: GF-T3-193 (Heavy Overland Dynamics Platform IS 500 High-G Dynamic Telemetry CORE)
+ASSET IDENTIFIER: GF-T3-193 (Apex Executive IS 500 High-G Dynamic Telemetry CORE)
 ESCROW PROTOCOL: ACQUIRE.COM MONOPOLY VAULT CLOSING SPECIFICATION
 
 This ASSET PURCHASE AGREEMENT ("Agreement") is entered into and made effective as of the closing date between:

@@ -1,4 +1,4 @@
-# GF-T3-176: Heavy Overland Dynamics Platform TERRAIN CORE
+# GF-T3-176: Apex Executive TERRAIN CORE
 ## TURNKEY MICRO-APA ASSET TRANSFER SPECIFICATION & MONOPOLY VAULT MASTER ARCHITECTURE
 ### ASSET ID: GF-T3-176 | VERSION: v1.0.0-PROD | TARGET: ACQUIRE.COM ESCROW HANDOFF
 
@@ -6,7 +6,7 @@
 
 ### EXECUTIVE SUMMARY & SPECIFICATION ANCHOR
 - **Asset Identifier**: GF-T3-176
-- **Asset Description**: Heavy Overland Dynamics Platform Terrain Core (Active Electronic Kinetic Dynamic Suspension System [Dynamic Kinetic Suspension Telemetry] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
+- **Asset Description**: Vanguard ECLSS Terrain Core (Active Electronic Kinetic Dynamic Suspension System [Dynamic Kinetic Suspension Telemetry] Decoupling Engine, 6-Axis IMU Ledger, and Torsen / E-Locker Differential Torque Vectoring Engine)
 - **Target Marketplace**: Acquire.com / Private Micro-APA Syndication
 - **Micro-APA Direct Asset Transfer**: 20 kHz (0.48ms) (All-Cash Escrow)
 - **Institutional Replacement Matrix**: PostgreSQL 16 + RLS
@@ -19,7 +19,7 @@
 
 ```
                      +---------------------------------------+
-                     |    Heavy Overland Dynamics Platform CAN 2.0B / CAN-FD Bus        |
+                     |    Apex Executive CAN 2.0B / CAN-FD Bus        |
                      |  (IMU, Wheel Speed, Suspension LVDT)  |
                      +-------------------+-------------------+
                                          |
@@ -142,7 +142,7 @@ CREATE TABLE quarantine_slip_log (
 ```yaml
 openapi: 3.1.0
 info:
-  title: Heavy Overland Dynamics Platform Terrain Core API
+  title: Vanguard ECLSS Terrain Core API
   version: 1.0.0-PROD
   description: High-frequency REST and WebSocket interfaces for Dynamic Kinetic Suspension Telemetry & Differential State.
 paths:

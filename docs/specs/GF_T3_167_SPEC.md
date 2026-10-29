@@ -1,4 +1,4 @@
-# GF-T3-167: LEXUS LC 500 DYNAMIC CORE (v1.0.0-PROD)
+# GF-T3-167: Hypercar Flagship Trim DYNAMIC CORE (v1.0.0-PROD)
 ## INSTITUTIONAL MASTER SERVICE SPECIFICATION & TURNKEY MICRO-APA BLUEPRINT
 **Target Platform:** Acquire.com Micro-APA Buyout Vault  
 **Valuation Baseline:** Micro-APA Buyout: $45,000 USD | Enterprise Monroney Anchor: $125,000 USD  
@@ -209,7 +209,7 @@ openapi: 3.1.0
 info:
   title: GF-T3-167 Dynamic Core Engine API
   version: 1.0.0-PROD
-  description: Low-latency matching engine and HMAC tick ledger interface for Lexus LC 500 Dynamic Core.
+  description: Low-latency matching engine and HMAC tick ledger interface for Hypercar Flagship Trim Dynamic Core.
 servers:
   - url: https://engine.ghostfactoryos.internal/api/v1
     description: Production Internal Cloud Run Service
@@ -300,7 +300,7 @@ paths:
 
 ### 6.1 Transaction Summary
 - **Asset ID:** GF-T3-167
-- **Model:** Lexus LC 500 Dynamic Core v1.0.0-PROD
+- **Model:** Hypercar Flagship Trim Dynamic Core v1.0.0-PROD
 - **Purchase Price:** $45,000 USD (Micro-APA Buyout via Escrow.com / Acquire.com Escrow)
 - **IP Assignment:** 100% Worldwide, Perpetual, Exclusive, Free & Clear of Liens
 - **Clean-Room Warranty:** Seller warrants zero inclusion of GPL/copyleft code and confirms clean-room implementation.

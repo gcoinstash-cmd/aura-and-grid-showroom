@@ -1,5 +1,5 @@
-# GF-T3-170 SPECIFICATION: LEXUS ES 350h EXECUTIVE QUIETUDE CORE
-**Model:** Lexus ES 350h Executive Quietude Core v1.0.0-PROD  
+# GF-T3-170 SPECIFICATION: Apex Executive Engine EXECUTIVE QUIETUDE CORE
+**Model:** Apex Executive Engine Executive Quietude Core v1.0.0-PROD  
 **Asset ID:** `GF-T3-170`  
 **Acquire.com Micro-APA Buyout:** $45,000 USD (Escrow.com / Wire)  
 **Enterprise Valuation Baseline:** $125,000 USD  
@@ -9,7 +9,7 @@
 ---
 
 ## 1. EXECUTIVE SUMMARY & ASSET CLASSIFICATION
-GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engineered for the Lexus ES 350h luxury hybrid platform. It provides hardware-grade message authentication for CAN-FD bus networks running at 5 Mbps data phase, delivering:
+GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engineered for the Apex Executive Engine luxury hybrid platform. It provides hardware-grade message authentication for CAN-FD bus networks running at 5 Mbps data phase, delivering:
 1. **Ed25519 Zero-Trust Message Authentication:** Deterministic signing and verification of high-speed powertrain and acoustic cancellation frames at over 100,000 msg/sec.
 2. **Sub-1.5ms Replay Attack Defenses:** Constant-time sliding-window bitmask anti-replay engine ($O(1)$ amortized cost) eliminating man-in-the-middle frame injection.
 3. **Partitioned PostgreSQL 16 Immutable Security Ledger:** Partitioned timeseries storage with Merkle tree checkpoints verifying tamper-proof chain of custody.
@@ -23,7 +23,7 @@ GF-T3-170 is a turnkey, zero-trust automotive cryptographic security core engine
 ### 2.1 Vehicle In-Cabin & Powertrain Bus Topology
 ```
 +-----------------------------------------------------------------------------------+
-|                        LEXUS ES 350h EXECUTIVE HYBRID PLATFORM                    |
+|                        Apex Executive Engine EXECUTIVE HYBRID PLATFORM                    |
 |                                                                                   |
 |  +-------------------+       +-------------------+       +---------------------+  |
 |  | ECU-ANC-CHAMBER   |       | ECU-HYBRID-INV    |       | ECU-ACOUSTIC-SEAL   |  |
@@ -96,8 +96,8 @@ For incoming sequence number $S_{in}$:
    $$\text{If } (W \& (1 \ll \Delta)) \ne 0: \quad \text{REJECT (REPLAY)}$$
    $$W \leftarrow W \mid (1 \ll \Delta) \quad (\text{ACCEPTED)}$$
 
-### 3.3 Lexus Executive Quietude Dual-Microphone Kalman Filter
-For active cabin acoustic noise suppression across the Lexus ES 350h chassis:
+### 3.3 Apex Executive Engine Executive Quietude Dual-Microphone Kalman Filter
+For active cabin acoustic noise suppression across the Apex Executive Engine chassis:
 $$\mathbf{x}_k = \mathbf{A} \mathbf{x}_{k-1} + \mathbf{B} \mathbf{u}_k + \mathbf{w}_k$$
 $$\mathbf{z}_k = \mathbf{H} \mathbf{x}_k + \mathbf{v}_k$$
 Kalman Gain:
@@ -190,7 +190,7 @@ CREATE INDEX idx_canfd_leaf_hash ON canfd_telemetry_ledger (merkle_leaf_hash);
 ```yaml
 openapi: 3.1.0
 info:
-  title: GF-T3-170 Lexus ES 350h Executive Quietude Core Gateway
+  title: GF-T3-170 Apex Executive Engine Executive Quietude Core Gateway
   version: 1.0.0-PROD
   description: High-throughput zero-trust automotive CAN-FD telemetry & HSM gateway.
 paths:

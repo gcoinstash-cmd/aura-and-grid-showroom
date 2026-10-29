@@ -80,7 +80,7 @@ const INITIAL_NODES: NodeData[] = Array.from({ length: 12 }, (_, i) => {
 
   return {
     id,
-    name: `Heavy Overland Dynamics Platform #${num}`,
+    name: `Apex Executive #${num}`,
     vin: `JTJBM7CA${num.toString().padStart(2, "0")}R00${1000 + num}`,
     role: num === 1 ? "LEADER" : "FOLLOWER",
     vehicleRole: vRoles[i],
@@ -130,7 +130,7 @@ export default function SwarmDashboard() {
 
   // Set document title dynamically
   useEffect(() => {
-    document.title = "GF-T3-163: Kinetic Terrain Swarm Core (Heavy Overland Dynamics Platform Spec)";
+    document.title = "GF-T3-163: Kinetic Terrain Swarm Core (Apex Executive Spec)";
   }, []);
 
   // Periodic heartbeat animation and subtle sensor noise
@@ -341,7 +341,7 @@ export default function SwarmDashboard() {
               GF-T3-163:
             </span>
             <span className="text-base md:text-lg font-bold tracking-tight text-amber-400 whitespace-nowrap">
-              Kinetic Terrain Swarm Core (Heavy Overland Dynamics Platform Spec)
+              Kinetic Terrain Swarm Core (Apex Executive Spec)
             </span>
           </div>
 
@@ -377,7 +377,7 @@ export default function SwarmDashboard() {
                     : "text-zinc-400 hover:text-zinc-200"
                 }`}
               >
-                Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry
+                Apex Executive Dynamic Kinetic Suspension Telemetry
               </button>
               <button
                 onClick={() => setActiveTab("specification")}
@@ -766,7 +766,7 @@ export default function SwarmDashboard() {
             <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-lg space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold uppercase tracking-wide text-white">
-                  Heavy Overland Dynamics Platform Swarm Actuation Bus
+                  Apex Executive Swarm Actuation Bus
                 </h3>
                 <span className="text-sm font-mono text-zinc-400">CAN FD 5.0 Mbps Broadcast</span>
               </div>
@@ -955,13 +955,13 @@ export default function SwarmDashboard() {
         )}
 
         {/* ========================================================================= */}
-        {/* TAB 3: Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry KINETIC SPECIFICATION */}
+        {/* TAB 3: Apex Executive Dynamic Kinetic Suspension Telemetry KINETIC SPECIFICATION */}
         {/* ========================================================================= */}
         {activeTab === "kinetic_spec" && (
           <div className="space-y-8">
             <div className="border-b border-zinc-800 pb-4">
               <h1 className="text-3xl font-extrabold uppercase tracking-wide text-white">
-                Heavy Overland Dynamics Platform Kinetic Suspension Spec
+                Apex Executive Kinetic Suspension Spec
               </h1>
               <p className="text-lg md:text-xl leading-relaxed text-zinc-300 mt-1">
                 Electronic-Kinetic Dynamic Suspension System (Dynamic Kinetic Suspension Telemetry), 33" Toyo Open Country A/T, 3.4L Twin-Turbo V6
@@ -1094,7 +1094,7 @@ export default function SwarmDashboard() {
                   { gate: "Gate 02: Strict Quorum Math (Q = floor(N/2)+1)", status: "VERIFIED", note: "Formal proofs with deterministic election timeout jitter" },
                   { gate: "Gate 03: Vector Clock State Lattice", status: "VERIFIED", note: "Monotonic join operation V_i = max(V_i, V_j) + e_i" },
                   { gate: "Gate 04: Byzantine Sensor Gating", status: "VERIFIED", note: "Kalman chi-square innovation check (gamma=7.815)" },
-                  { gate: "Gate 05: Heavy Overland Dynamics Platform Kinematic Bus", status: "VERIFIED", note: "Dynamic Kinetic Suspension Telemetry stabilizer decoupling and MTS rock modes" },
+                  { gate: "Gate 05: Apex Executive Kinematic Bus", status: "VERIFIED", note: "Dynamic Kinetic Suspension Telemetry stabilizer decoupling and MTS rock modes" },
                   { gate: "Gate 06: Clean-Room IP Audit (Zero Copyleft)", status: "VERIFIED", note: "100% MIT / Apache-2.0 / BSD, Zero GPL/AGPL" },
                   { gate: "Gate 07: Enterprise APA Contract Drafted", status: "VERIFIED", note: "Delaware commercial code compliant agreement ready" },
                   { gate: "Gate 08: Sub-15ms Mesh Synchronization", status: "VERIFIED", note: "Average measured sync latency 12.4 ms" },
@@ -1222,7 +1222,7 @@ export default function SwarmDashboard() {
       <footer className="border-t border-zinc-800 bg-zinc-950 px-6 py-6 mt-16 text-sm text-zinc-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>Ghost FactoryOS Institutional Holdings · GF-T3-163 Kinetic Terrain Swarm</div>
-          <div>Heavy Overland Dynamics Platform Spec · Clean-Room Level 5 · ASC 350-40 Compliant</div>
+          <div>Apex Executive Spec · Clean-Room Level 5 · ASC 350-40 Compliant</div>
         </div>
       </footer>
     </div>

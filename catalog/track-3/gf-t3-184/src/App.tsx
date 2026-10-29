@@ -375,7 +375,7 @@ export default function App() {
       <footer className="w-full border-t border-slate-800/80 bg-slate-950/90 py-4 px-6 text-center text-xs font-mono text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>
-            GF-T3-184 // Heavy Overland Dynamics Platform LFA NÜRBURGRING EDITION V10 APEX CORE // 1LR-GUE YAMAHA ACOUSTICS
+            GF-T3-184 // Apex Executive LFA NÜRBURGRING EDITION V10 APEX CORE // 1LR-GUE YAMAHA ACOUSTICS
           </span>
           <span className="text-slate-400">
             Delaware Micro-APA Asset Transfer Asset | Acquire.com Turnkey Architecture | MIT Permissive

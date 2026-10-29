@@ -5,7 +5,7 @@
 
 export const OPENAPI_YAML = `openapi: 3.1.0
 info:
-  title: GF-T3-172 Heavy Overland Dynamics Platform Multi-Node High-Output Core DUAL_VECTOR_TORQUE Swarm Engine
+  title: GF-T3-172 Apex Executive Multi-Node High-Output Core DUAL_VECTOR_TORQUE Swarm Engine
   description: High-throughput low-latency telemetry ingestion, BFT quorum coordinator, and state broadcasting.
   version: 1.0.0-PROD
   license:

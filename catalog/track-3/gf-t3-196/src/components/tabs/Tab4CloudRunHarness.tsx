@@ -213,7 +213,7 @@ CMD ["uvicorn", "rz450e_sbw.main:app", "--host", "0.0.0.0", "--port", "8080"]`}
                 Zero-Cold-Start Ingestion Architecture
               </div>
               <p className="text-slate-400">
-                Minimum instance count pinned to 1 guarantees sub-millisecond response latency for connected Heavy Overland Dynamics Platform CAN-FD telemetry proxies.
+                Minimum instance count pinned to 1 guarantees sub-millisecond response latency for connected Apex Executive CAN-FD telemetry proxies.
               </p>
             </div>
           </div>

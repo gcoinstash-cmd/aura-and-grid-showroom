@@ -8,7 +8,7 @@ export const EngineSpecReader: React.FC = () => {
 ## GF-T3-165: DUAL_VECTOR_TORQUE HyperGrid Quant Routing Engine
 Classification: Enterprise Institutional Vault Deliverable (Track 3 — 70% Workload Deliverable)
 System Architecture: Deterministic CPMM Cross-Venue Bellman-Ford Arbitrage Core with DUAL_VECTOR_TORQUE Torque-Vectored Execution
-Hardware/Analogy Spec: Heavy Overland Dynamics Platform Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)
+Hardware/Analogy Spec: Apex Executive Dual-Vector Performance Core High-G Dynamic Telemetry DUAL_VECTOR_TORQUE (2.4L T24A-FTS Turbo + MG2 Front Motor + High-Output Rear eAxle)
 Document Revision: 1.0.0-PROD
 Timestamp: 2026-10-09
 
@@ -102,7 +102,7 @@ SPECIFICATION CARD:
             03. DUAL_VECTOR_TORQUE Powertrain Vectoring Analogy (Dual-Vector Performance Core)
           </h3>
           <p className="text-lg md:text-xl leading-relaxed text-zinc-200">
-            The quantitative engine mirrors the Heavy Overland Dynamics Platform Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive architecture. The front axle (2.4L Turbo + MG2 64kW generator) operates as a high-throughput mempool ingestion filter, streaming 1,000+ pools per second. The high-output rear eAxle (80kW transaxle) is the instant flash-swap execution unit that commits atomic swaps with zero upfront capital.
+            The quantitative engine mirrors the Apex Executive Dual-Vector Performance Core DUAL_VECTOR_TORQUE all-wheel drive architecture. The front axle (2.4L Turbo + MG2 64kW generator) operates as a high-throughput mempool ingestion filter, streaming 1,000+ pools per second. The high-output rear eAxle (80kW transaxle) is the instant flash-swap execution unit that commits atomic swaps with zero upfront capital.
           </p>
           <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-base font-mono text-zinc-300">
             Cruising / Low Spread: 70% Front Axle Rebalancing : 30% Rear Flash Execution<br />

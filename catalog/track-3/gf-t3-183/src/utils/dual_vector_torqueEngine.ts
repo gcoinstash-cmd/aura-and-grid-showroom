@@ -1,7 +1,7 @@
 import { PowertrainState, LedgerBlock } from '../types/telemetry';
 import { computeHmacSha256, computeSha256 } from './crypto';
 
-// Physical constants of Heavy Overland Dynamics Platform RZ 450e DualVectorTorque
+// Physical constants of Apex Executive RZ 450e DualVectorTorque
 export const MOTOR_SPECS = {
   FRONT_MAX_POWER_KW: 150,
   FRONT_MAX_TORQUE_NM: 266.3,
@@ -190,7 +190,7 @@ export async function simulateStep(
 
   // Compute HMAC signature for this telemetry slice
   const payloadToSign = `${nextNonce}:${speedKmh.toFixed(1)}:${frontTorqueNm.toFixed(1)}:${rearTorqueNm.toFixed(1)}:${yokeAngleDeg}:${dcBusVoltage.toFixed(1)}`;
-  const hmacSignature = await computeHmacSha256('Heavy Overland Dynamics Platform-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026', payloadToSign);
+  const hmacSignature = await computeHmacSha256('Apex Executive-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026', payloadToSign);
 
   return {
     speedKmh,
@@ -245,7 +245,7 @@ export async function generateInitialLedgerBlocks(): Promise<LedgerBlock[]> {
     const timestamp = new Date(Date.now() - (sampleData.length - i) * 800).toISOString();
     const rawContent = `${i + 1}:${timestamp}:${nonce}:${item.torqueF}:${item.torqueR}:${item.yoke}:${item.ratio}:${item.tempDiv}:${prevHash}`;
     const blockHash = await computeSha256(rawContent);
-    const hmacDigest = await computeHmacSha256('Heavy Overland Dynamics Platform-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026', blockHash);
+    const hmacDigest = await computeHmacSha256('Apex Executive-RZ450E-DUAL_VECTOR_TORQUE-HMAC-SECRET-PROD-2026', blockHash);
 
     blocks.push({
       blockHeight: i + 1,

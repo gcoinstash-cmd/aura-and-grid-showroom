@@ -3,10 +3,10 @@
  * Institutional-grade 70% Architectural Blueprint for Acquire.com Micro-APA
  */
 
-export const GF_T3_169_SPEC_MARKDOWN = `# GF-T3-169: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry AGILE HYBRID CORE
+export const GF_T3_169_SPEC_MARKDOWN = `# GF-T3-169: Apex Executive NX 450h+ High-G Dynamic Telemetry AGILE HYBRID CORE
 ## MASTER ARCHITECTURAL SPECIFICATION & MONOPOLY VAULT ASSET BLUEPRINT
 **Asset ID**: GF-T3-169  
-**Platform**: Heavy Overland Dynamics Platform NX 450h+ High-G Dynamic Telemetry Agile Core v1.0.0-PROD  
+**Platform**: Apex Executive NX 450h+ High-G Dynamic Telemetry Agile Core v1.0.0-PROD  
 **Target Escrow**: Production Service Engine Deployment  
 **Architecture Moat**: PostgreSQL 16 + RLS Basis  
 **License Profile**: 100% Permissive Clean-Room MIT (0% Copyleft)  
@@ -16,9 +16,9 @@ export const GF_T3_169_SPEC_MARKDOWN = `# GF-T3-169: Heavy Overland Dynamics Pla
 
 ## 1. ARCHITECTURAL TOPOLOGY & SUBSYSTEM BOUNDARIES
 
-The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Heavy Overland Dynamics Platform NX 450h+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
+The GF-T3-169 core encapsulates a deterministic, high-frequency Hybrid Powertrain Management System engineered specifically for the Apex Executive NX 450h+ AWD (PHEV) architecture. The system orchestrates three distinct power plants across an intelligent electronic bus:
 
-1. **Internal Combustion Engine (ICE)**: Toyota/Heavy Overland Dynamics Platform A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
+1. **Internal Combustion Engine (ICE)**: Toyota/Apex Executive A25A-FXS 2.5L Dynamic Force 4-Cylinder Atkinson-cycle engine producing 136 kW (182 hp) @ 6,000 RPM and 227 Nm @ 3,200–3,700 RPM.
 2. **Front Transaxle Motor-Generator (5NM PMSM)**: Permanent Magnet Synchronous Motor producing 134 kW (180 hp) and 270 Nm of instantaneous torque coupled via an electronic Continuously Variable Planetary Split (e-CVT).
 3. **Rear Independent e-Axle (4NM PMSM / E-Four)**: Dedicated rear axle motor generating 40 kW (54 hp) and 121 Nm of torque with zero mechanical driveshaft intrusion.
 4. **Combined Peak System Output**: 227 kW (304 net hp) delivered deterministically through intelligent dynamic torque vectoring.

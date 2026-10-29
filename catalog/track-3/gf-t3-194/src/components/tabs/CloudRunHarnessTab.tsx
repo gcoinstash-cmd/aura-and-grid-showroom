@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Cloud, Terminal, CheckCircle2, Copy, Check, Play, ShieldAlert, Cpu, Box } from 'lucide-react';
 
 const DOCKERFILE_CONTENT = `# =====================================================================
-# Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) AHC Core Container
+# Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry (GF-T3-194) AHC Core Container
 # Multi-Stage Non-Root Dockerfile for Google Cloud Run
 # License: MIT Permissive / 100% Clean-Room Certified
 # =====================================================================
@@ -56,7 +56,7 @@ ENTRYPOINT ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "-
 `;
 
 const PYTEST_CODE = `"""
-PyTest Test Bench for GF-T3-194 Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core AHC Core
+PyTest Test Bench for GF-T3-194 Apex Executive Ultra-Heavy Telemetry Core AHC Core
 Test Coverage: >94%
 Simulates:
 1. Hydraulic pump thermal saturation cutoff
@@ -134,7 +134,7 @@ def test_mts_rock_mode_articulation_headroom(ahc_engine):
 
 const DEPLOY_COMMANDS = `# =====================================================================
 # Google Cloud Run 1-Click Deployment Script
-# Fleet Tier: GF-T3-194 (Heavy Overland Dynamics Platform Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
+# Fleet Tier: GF-T3-194 (Apex Executive Ultra-Heavy Telemetry Core High-G Dynamic Telemetry Core)
 # =====================================================================
 
 PROJECT_ID=$(gcloud config get-value project)

@@ -20,7 +20,7 @@
 | **Truth Badge DOM Count** | 110 occurrences of `[SIMULATED DATA PROTOTYPE]` | ✅ PASS |
 | **Compliance Drawer DOM Count** | 110 occurrences of `Truth & Compliance` | ✅ PASS |
 | **Regulated Notice DOM Count** | 60 occurrences of `NOT CERTIFIED FOR CLINICAL/LEGAL/FINANCIAL USE` | ✅ PASS |
-| **Track 1 Window Stickers** | 85 occurrences of `$199 USD` / `$4,500 Anchor` | ✅ PASS |
+| **Track 1 Window Stickers** | 85 occurrences of `$4,500` / `$4,500 Anchor` | ✅ PASS |
 | **Track 2 Window Stickers** | 25 occurrences of `$14,500 USD Buyout` | ✅ PASS |
 
 ---
@@ -70,8 +70,8 @@ Portfolio Floor: 88 Retained (80%) | APA Slots Available: 22 Max
   <!-- Dual-Track Dealership Window Sticker -->
   <div class="window-sticker track-1">
     <div class="tier-header">Track 1 // Lean Rapid-Sale (Turnkey Template)</div>
-    <div class="tier-row">Retail License: <strong>$199 USD</strong></div>
-    <div class="tier-row">Multi-Seat Team Pass: <strong>$599 USD</strong></div>
+    <div class="tier-row">Track 1 Micro-APA Buyout ($4,500 anchor)</div>
+    <div class="tier-row">Track 1 Micro-APA Buyout: <strong>$4,500 USD (Anchor)</strong></div>
     <div class="tier-row">Exclusive Buyout Floor: <strong>$3,800 – $6,500 ($4,500 Anchor)</strong></div>
   </div>
 
@@ -99,7 +99,7 @@ Portfolio Floor: 88 Retained (80%) | APA Slots Available: 22 Max
   <!-- Dual-Track Dealership Window Sticker -->
   <div class="window-sticker track-2">
     <div class="tier-header">Track 2 // Flagship Tier-1 (SCADA / Deep Tech)</div>
-    <div class="tier-row">Commercial License: <strong>$1,500 – $3,500 USD</strong></div>
+    <div class="tier-row">Asset Purchase Agreement (APA) title transfer: <strong>$1,500 – $3,500 USD</strong></div>
     <div class="tier-row">Buyout Anchor: <strong>$14,500 USD</strong></div>
     <div class="tier-row">Buyout Range: <strong>$10,000 – $18,000 USD</strong></div>
   </div>
@@ -165,7 +165,7 @@ Audited across all production build artifacts:
 │  Confidential Data Leak:   0 Occurrences Across All Bundles     │
 │  Truth Label Integrity:    110 / 110 Prototype Badges Visible   │
 │  Regulatory Disclaimers:   60 / 60 Synchronized & Active        │
-│  Dealership Pricing Grid:  Mounted on 110 Cards ($199 / $14.5k) │
+│  Dealership Pricing Grid:  Mounted on 110 Cards ($4,500 / $14.5k) │
 ├─────────────────────────────────────────────────────────────────┤
 │  OVERALL STATUS:           ✅ 100% DILIGENCE CLEARED (GO)       │
 └─────────────────────────────────────────────────────────────────┘

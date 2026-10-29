@@ -4525,7 +4525,7 @@ export default function App() {
                         <div className="py-2 border-b border-zinc-900">
                           <div className="flex items-baseline gap-1">
                             <span className="text-3xl font-black font-sans leading-none text-zinc-100">
-                              ${promoApplied ? (199 * (1 - promoDiscount / 100)).toFixed(0) : '199'}
+                              ${promoApplied ? (4500 * (1 - promoDiscount / 100)).toFixed(0) : '199'}
                             </span>
                             <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-mono">/ custom</span>
                           </div>
@@ -4618,7 +4618,7 @@ export default function App() {
                                   ? (billingCycle === 'annual' 
                                       ? (promoApplied ? (39 * (1 - promoDiscount / 100)).toFixed(0) : '39')
                                       : (promoApplied ? (49 * (1 - promoDiscount / 100)).toFixed(0) : '49'))
-                                  : (promoApplied ? (199 * (1 - promoDiscount / 100)).toFixed(0) : '199')} / Total
+                                  : (promoApplied ? (4500 * (1 - promoDiscount / 100)).toFixed(0) : '199')} / Total
                               </span>
                             </div>
                           </div>

@@ -44,8 +44,8 @@ To ensure secure software development practices under NIST SP 800-218:
 | Parameter | Track 1: Lean Rapid-Sale (Default) | Track 2: Flagship Tier-1 (Selective) | Track 3: F1 Skunkworks Engine (Production Ref) |
 |---|---|---|---|
 | **Fleet Count** | 86 Assets | 50 Deep-Tech SCADA Assets | 14 Onboarded & Standardized (`T3-NEXUS-01`, `GF-T3-138` to `GF-T3-150` via Universal Track 2 Telemetry Harness) |
-| **Retail License** | \$199 | \$1,500 – \$3,500 | \$1,500/mo Enterprise Seat License |
-| **Commercial Team Seat** | \$599 | Custom Fleet Lease | Managed VPC / Dedicated Cluster |
+| **Standard APA Title Transfer** | Track 1 Micro-APA Buyout (\$4,500 anchor) | Track 2 Chassis APA (\$14,500 anchor) | Track 3 Engine APA (\$35,000 – \$65,000) |
+| **Portfolio Cluster APA** | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) |
 | **Exclusive Buyout Anchor** | \$4,500 (\$3,800 – \$6,500 floor) | \$14,500 (\$10,000 – \$18,000 entry) | \$35,000 – \$65,000 Floor / \$75,000 – \$150,000+ Ceiling |
 | **Retention Policy** | Transferable via Micro-APA | Strict 80% Retained Factory Floor | Retained Sovereign Fleet (Curated 35 Units Target) |
 

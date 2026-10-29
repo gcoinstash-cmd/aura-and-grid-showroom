@@ -2,7 +2,7 @@
   "catalogTotal": 160,
   "track1Count": 85,
   "track2Count": 25,
-  "unitRetailPrice": 199,
+  "unitRetailPrice": 4500,
   "retailShelfMSRP": 52915,
   "buildVerified": 110,
   "previewHttp200": 110,
@@ -35,8 +35,8 @@
   "pricingProtocol": {
     "track1": {
       "name": "Lean Rapid-Sale Track (85 Models)",
-      "retailMsrp": 199,
-      "teamSeat": 599,
+      "retailMsrp": 4500,
+      "apaBuyoutAnchor": 4500,
       "buyoutFloor": [
         3800,
         6500

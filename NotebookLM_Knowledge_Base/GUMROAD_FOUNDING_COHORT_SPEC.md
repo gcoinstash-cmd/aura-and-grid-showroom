@@ -5,9 +5,9 @@
 
 ### Basic Information
 * **Product Name**: `Ghost Factory™ — Founding Agency Vault (85 Turnkey OS Blueprints)`
-* **Product Type**: Digital Product (Source Code & Whitelabel Commercial License)
+* **Product Type**: Digital Product (Source Code & Whitelabel Asset Purchase Agreement (APA) title transfer)
 * **Custom URL / Permalink**: `https://auraandgrid.gumroad.com/l/agency-whitelabel-vault`
-* **Price**: `$1,499 USD` (One-Time Purchase / Lifetime Commercial License)
+* **Price**: `$1,499 USD` (One-Time Purchase / Lifetime Asset Purchase Agreement (APA) title transfer)
 * **Suggested Call-to-Action**: `Buy this` / `Get Whitelabel License`
 * **Cover Asset**: `dist/stride-mb/stride-mb-cover.jpg` (or unified 16:9 Agency Vault Banner)
 * **Thumbnail Asset**: `dist/stride-mb/stride-mb-thumbnail.jpg` (1:1 Obsidian Vault Icon)
@@ -51,7 +51,7 @@ Instead of writing repetitive authentication, PostgreSQL schemas, and booking ma
 - **100% Billing Retention**: Keep 100% of all client setup fees ($3,500+), retainers ($250/mo+), and implementation charges.
 - **Full Source Ownership**: Modify, extend, and adapt the codebase to any client requirement.
 - **Zero Attribution**: No "Powered by Aura & Grid" or vendor watermarks required.
-- **License Boundary**: Non-exclusive commercial license. You cannot resell raw source code or `.zip` archives on public template marketplaces (ThemeForest, Envato, etc.).
+- **License Boundary**: Non-exclusive Asset Purchase Agreement (APA) title transfer. You cannot resell raw source code or `.zip` archives on public template marketplaces (ThemeForest, Envato, etc.).
 
 ---
 

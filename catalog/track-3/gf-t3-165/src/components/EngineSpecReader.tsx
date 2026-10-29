@@ -66,7 +66,7 @@ SPECIFICATION CARD:
               <div className="text-xs text-zinc-400 mt-1">DUAL_VECTOR_TORQUE HyperGrid</div>
             </div>
             <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
-              <div className="text-xs font-mono uppercase text-zinc-400">Retail License</div>
+              <div className="text-xs font-mono uppercase text-zinc-400">Track 1 Micro-APA Buyout ($4,500 anchor)</div>
               <div className="text-2xl font-bold font-mono text-white">Deterministic Raft State</div>
               <div className="text-xs text-zinc-400 mt-1">Single-tenant deployment</div>
             </div>

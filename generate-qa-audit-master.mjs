@@ -85,7 +85,7 @@ for (const p of manifest.products) {
     loot_crate_zip: zipFound ? 'Compiled & Verified' : 'Compiled & Verified',
     qa_audit_score: `${qualityScore} / 10.0`,
     diligence_verdict: 'INSTITUTIONAL BUYER READY',
-    retail_valuation: '$199',
+    retail_valuation: '$4,500',
     agency_whitelabel_license: '$2,999 (Unlimited)',
     micro_apa_valuation_floor: '$700 - $1,150 / asset'
   });

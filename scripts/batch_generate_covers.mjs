@@ -293,7 +293,7 @@ function createRetailSvg(p) {
         <text x="72" y="17" fill="#10B981" font-family="monospace" font-size="11" font-weight="700" text-anchor="middle">LEAN RAPID-SALE</text>
 
         <circle cx="170" cy="13" r="5" fill="#10B981" filter="url(#emeraldGlow_${safeId})"/>
-        <text x="185" y="17" fill="#34D399" font-family="monospace" font-size="11" font-weight="600">TRACK 1 // $199 MSRP • $4,500 BUYOUT ANCHOR</text>
+        <text x="185" y="17" fill="#34D399" font-family="monospace" font-size="11" font-weight="600">TRACK 1 // $4,500 MSRP • $4,500 BUYOUT ANCHOR</text>
 
         <text x="988" y="17" fill="#64748B" font-family="monospace" font-size="12" text-anchor="end" font-weight="600">ASSET #${safeId}</text>
       </g>

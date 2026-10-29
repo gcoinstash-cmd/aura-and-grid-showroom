@@ -87,7 +87,7 @@ Every digital asset within the portfolio is governed by a three-stage release ga
 
 ### 3. TIER 3: COMMERCIALLY TRANSFERABLE
 - Clean IP chain of title with documented code ownership.
-- Complete dependency SBOM and verified open-source / font commercial license compliance.
+- Complete dependency SBOM and verified open-source / font Asset Purchase Agreement (APA) title transfer compliance.
 - Full packaging crate: Source repository, `.env.example`, database migrations, seed scripts, README deployment guide, and registered asset manifest in `dist/<slug>/`.
 
 ---
@@ -113,7 +113,7 @@ Every digital asset within the portfolio is governed by a three-stage release ga
 1. **Orderly Fair-Market Valuation Standard**:
    $$\text{Catalog Fair-Market Value} = \$935,000 – \$1,600,000 \quad (\text{Strategic Buyout Anchor: } \sim\$1,112,000)$$
    Every template certified at **🟢 S-Tier (9.6–10.0)** satisfies the baseline technical floor, eliminating technical due diligence discounts.
-   - **Track 1 — Lean Rapid-Sale (Default)**: $199 Retail / $599 Team Seat / Exclusive Buyout Floor: $3,800–$6,500 (Anchor: **$4,500**).
+   - **Track 1 — Lean Rapid-Sale (Default)**: $4,500 Retail / $4,500 Team Seat / Exclusive Buyout Floor: $3,800–$6,500 (Anchor: **$4,500**).
    - **Track 2 — Flagship $10K+ (Selective Tier-1)**: $1,500–$3,500 Flagship License / Entry Exclusive Buyout Anchor: **$14,500** ($10,000–$18,000 range) / Full Buyout: $18,000–$35,000 / Strategic Acquisition: $35,000–$75,000+.
    - **80% Minimum Retained Floor**: Always retain at least 80% of the collection (Current: 109 assets permanently kept / max 27 transfer capacity; at 500 assets: 400 permanently kept / max 100 transfer capacity).
    - **Micro-APA Scope**: Transfers defined rights/code to **one specific asset only**. A micro-APA never transfers GhostFactoryOS, Aura & Grid, shared IP, or the full portfolio.
@@ -199,7 +199,7 @@ To permanently eliminate external audit friction and guarantee that every bluepr
 2. **Gate 2 (Database Schema Topology)**: Non-empty `supabase/schema.sql` (with RLS enabled) and `supabase/seed.sql`.
 3. **Gate 3 (Chain-of-Title & Permissive IP)**: Root `LICENSE` file with MIT text, `"license": "MIT"` in package manifest, and 0% copyleft exposure.
 4. **Gate 4 (DOM Claim Normalization)**: Mandatory Level 3 Blueprint lexicon; strict ban on "100% Production Ready" or "WCAG AA Certified".
-5. **Gate 5 (Telemetry & Denominator Invariants)**: Strict Retail Shelf MSRP = $N \times \$199$, internal sectors sum to total $N$, HTTP 200 on live preview.
+5. **Gate 5 (Telemetry & Denominator Invariants)**: Strict Retail Shelf MSRP = $N \times \$4,500$, internal sectors sum to total $N$, HTTP 200 on live preview.
 6. **Gate 6 (APA Schedule A Ingestion)**: 13-column row added to `docs/APA_SCHEDULE_A.csv` and `docs/TECHNICAL_DATA_ROOM.md` with repo-relative `supabase/` paths.
 7. **Gate 7 (Track 2 Mandatory Compliance Gate — NIST SP 800-218 SSDF v1.1)**: Every Track 2 flagship created MUST automatically instantiate with:
    - a) `COMPLIANCE.md` (detailing NIST SP 800-218 SSDF v1.1 alignment, SBOM tracking, and access controls)
@@ -213,7 +213,7 @@ Automated verification command: `node scripts/verify_institutional_standard.mjs 
 
 ## PART 8: TRACK 2 MANDATORY COMPLIANCE GATE (NIST SP 800-218 SSDF v1.1)
 
-Every Track 2 flagship model ($14,500 Buyout Anchor / $1,500–$3,500 Commercial License) manufactured within GhostFactoryOS must instantiate from `templates/compliance/COMPLIANCE.template.md` and satisfy the 4 mandatory compliance deliverables:
+Every Track 2 flagship model ($14,500 Buyout Anchor / Asset Purchase Agreement (APA) title transfer ($14,500 anchor)) manufactured within GhostFactoryOS must instantiate from `templates/compliance/COMPLIANCE.template.md` and satisfy the 4 mandatory compliance deliverables:
 1. **`COMPLIANCE.md`**: Dedicated supply chain security specification covering NIST SP 800-218 SSDF v1.1 practices (PO, PS, PW, RV), SBOM integration, and access controls.
 2. **Sanitized `.env.example`**: Strict environment variable schema documenting all required tokens with non-functional placeholders and zero hardcoded secrets.
 3. **`README.md` Security Specification**: Permanent top-fold block declaring framework alignment, maturity level, secrets management, and dependency audit standards.

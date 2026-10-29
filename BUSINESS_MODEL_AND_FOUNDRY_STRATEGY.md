@@ -1,8 +1,8 @@
 # BUSINESS_MODEL_AND_FOUNDRY_STRATEGY.md — GhostFactoryOS × Aura & Grid Strategic Blueprint v2
 
 ## 1. Executive Summary & Brand Architecture
-- **GhostFactoryOS**: Private digital factory, portfolio command center, inventory system, licensing ledger, maintenance tracker, and operations dashboard.
-- **Aura & Grid**: Public premium showroom and digital dealership for interactive demos, source-code licenses, managed leases, agency fleet licenses, bespoke deployments, support plans, and selective micro-APAs.
+- **GhostFactoryOS**: Private digital factory, portfolio command center, inventory system, APA title transfer ledger, maintenance tracker, and operations dashboard.
+- **Aura & Grid**: Public premium showroom and digital dealership for interactive demos, standalone Asset Purchase Agreement (APA) title transfers, 50-unit portfolio cluster carve-outs, bespoke deployments, support plans, and selective micro-APAs.
 - **Digital Asset Metaphor**: The portfolio is managed as an elite "digital car collection" inside a video game—manufactured with high precision and leased, licensed, or selectively transferred.
 - **Crew Chief Command & Safety Invariant**: Lead Systems Engineer & Dealership Crew Chief operating under Executive Dealership Principal authority. Explicit terminal approval required before executing package installs, migrations, git pushes, or cloud deployments (`gcloud run deploy`).
 - **Target Scale**: 500 cataloged assets.
@@ -58,19 +58,19 @@ Every asset in the portfolio is strictly assigned to one of three execution and 
  [ MULTI-TRACK PRICING PROTOCOL ]
     │
     ├── TRACK 1: LEAN RAPID-SALE (Lean Tuner / Daily Driver)
-    │   ├── Retail License: $199
-    │   ├── Commercial Team Seat: $599
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
     │   ├── Exclusive Buyout Floor: $3,800 – $6,500
     │   └── Exclusive Buyout Anchor: $4,500
     │
     ├── TRACK 2: FLAGSHIP $10K+ (Hypercar Flagship)
-    │   ├── Flagship License: $1,500 – $3,500
+    │   ├── Track 2 Chassis APA Title Transfer: $14,500 anchor
     │   ├── Entry Exclusive Buyout Anchor: $14,500 ($10,000 – $18,000 range)
     │   ├── Full Asset Buyout: $18,000 – $35,000
     │   └── Strategic Acquisition: $35,000 – $75,000+
     │
     └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine)
-        ├── Monthly Enterprise Seat License: $1,500/mo (5.0x ARR SaaS multiple)
+        ├── Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers). (5.0x ARR SaaS multiple)
         ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($1.225M – $2.275M fleet floor)
         └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($2.625M – $5.250M fleet ceiling)
 ```
@@ -79,8 +79,8 @@ Every asset in the portfolio is strictly assigned to one of three execution and 
 Applied to standard turn-key single-view interactive telemetry prototypes with PostgreSQL schema and seed datasets:
 - **Focus:** Rapid assembly, clean UI modularity, zero external dependencies.
 - **Output:** Single-bundle frontend components, verified asset packaging, minimal test verification.
-- **Retail License**: $199
-- **Commercial Team Seat**: $599
+- **Track 1 Micro-APA Buyout ($4,500 anchor)**: $4,500
+- **Commercial Team Seat**: $4,500
 - **Exclusive Buyout Floor**: $3,800 – $6,500
 - **Exclusive Buyout Anchor**: **$4,500**
 
@@ -88,7 +88,7 @@ Applied to standard turn-key single-view interactive telemetry prototypes with P
 Reserved exclusively for elite, domain-heavy assets that satisfy the Flagship Qualification Gate:
 - **Focus:** High-density interactive UI, canvas/WebGL state, mock telemetry stability.
 - **Output:** Fully clickable client-side prototypes, simulated WebSocket/state engines, responsive telemetry HUDs.
-- **Flagship Commercial License**: $1,500 – $3,500
+- **Flagship Asset Purchase Agreement (APA) title transfer**: $1,500 – $3,500
 - **Entry Exclusive Buyout Anchor**: **$14,500** ($10,000 – $18,000 range)
 - **Full Asset Buyout**: $18,000 – $35,000
 - **Strategic Acquisition**: $35,000 – $75,000+
@@ -141,7 +141,7 @@ Execute the remaining 30% of the production pipeline by ingesting `ENGINE_SPEC.m
 
 A **micro-APA** is a small asset purchase agreement where a buyer acquires ownership or exclusive rights to **one defined asset**:
 - **Strict Single-Asset Scope**: A micro-APA transfers defined rights/code to one specific asset. It **NEVER** transfers GhostFactoryOS, Aura & Grid, shared IP, or the full portfolio.
-- **Default to Non-Exclusive Licensing**: Prioritize recurring cash flow from hosted leases, commercial licenses, and agency fleet agreements.
+- **Default to Non-Exclusive Licensing**: Prioritize recurring cash flow from hosted leases, Asset Purchase Agreement (APA) title transfer, and agency fleet agreements.
 - **Permanent Exclusions**:
   - GhostFactoryOS brand, factory prompts, and management systems.
   - Aura & Grid showroom, branding, and dealership portal.
@@ -170,6 +170,6 @@ To maintain institutional diligence standards, all public copy and documentation
 ---
 
 ## 7. Next 3 Moves
-1. **Enforce Dual-Track Pricing in All Offers**: Default all standard assets to Track 1 ($4,500 buyout anchor / $199 retail).
+1. **Enforce Dual-Track Pricing in All Offers**: Default all standard assets to Track 1 ($4,500 buyout anchor / $4,500 retail).
 2. **Audit Flagship Candidates Against Qualification Gate**: Qualify Candidate 109 through 114 (heavy aerospace, fusion, quantum, and lunar ISRU industrial SCADA prototypes) prior to Flagship Track 2 pricing.
 3. **Protect 80% Retained Floor**: Continuously track and enforce the 91-asset retention floor in GhostFactoryOS console telemetry.

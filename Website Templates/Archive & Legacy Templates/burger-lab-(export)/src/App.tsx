@@ -919,7 +919,7 @@ export default function App() {
               <div>
                 <h5 className="font-bold uppercase tracking-wider text-white mb-3">LICENSE DETAILS</h5>
                 <ul className="space-y-1.5 text-[11px] text-zinc-500 font-sans">
-                  <li>Single Commercial License</li>
+                  <li>Single Asset Purchase Agreement (APA) title transfer</li>
                   <li>Editable source files included</li>
                   <li>Designed for one brand or project</li>
                   <li>Documentation included for easy setup</li>

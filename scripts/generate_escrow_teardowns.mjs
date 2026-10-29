@@ -81,7 +81,7 @@ sealedClusters.forEach(cluster => {
 | **Asking Anchor Buyout** | **${cluster.carve_out_apa_asking_anchor_formatted} USD** |
 | **Reserve Walk-Away Floor** | **${cluster.reserve_floor_formatted} USD** *(Firm minimum; offers below this floor are rejected without counter)* |
 | **Cumulative Standalone Retail MSRP** | **${cluster.combined_agency_replacement_formatted} USD** (Agency Replacement Benchmark Basis) |
-| **Implied Portfolio Discount** | **${cluster.discount_vs_standalone_pct || '70-80%'} Discount** vs. standalone retail licensing. |
+| **Implied Portfolio Discount** | **${cluster.discount_vs_standalone_pct || '70-80%'} Discount** vs. standalone single-chassis Micro-APA acquisition. |
 | **Closing Mechanism** | 100% Escrow-protected title transfer via **Escrow.com** or institutional attorney escrow. |
 
 ---

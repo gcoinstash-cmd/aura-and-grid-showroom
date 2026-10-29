@@ -20,7 +20,7 @@
    - `EVENT-CORPUS-DELTA (AUDIT-SNAPSHOT-VAULT)`
 
 3. **Absence of Copyleft Infection**:
-   A comprehensive static license scanner has verified that 100% of runtime and testing dependencies reside under MIT, Apache 2.0, or BSD licenses. No GPL, AGPL, LGPL, SSPL, or restrictive non-commercial licenses exist in any dependency layer.
+   A comprehensive static license scanner has verified that 100% of runtime and testing dependencies reside under MIT, Apache 2.0, or BSD licenses. No GPL, AGPL, LGPL, SSPL, or restrictive restrictive non-permissive terms exist in any dependency layer.
 
 ---
 

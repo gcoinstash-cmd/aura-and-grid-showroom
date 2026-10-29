@@ -43,7 +43,7 @@ const portfolioMetrics = {
     track_2: TRACK_2_COUNT,
     track_3: TRACK_3_COUNT
   },
-  valuation_basis: "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Zero Licensing",
+  valuation_basis: "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer (Zero Seat Tiers)",
   valuation: {
     total_retail_price: RETAIL_MSRP,
     certified_fair_market_value: FMV_AMOUNT,

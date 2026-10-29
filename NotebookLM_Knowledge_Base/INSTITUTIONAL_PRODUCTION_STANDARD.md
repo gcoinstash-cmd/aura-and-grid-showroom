@@ -36,7 +36,7 @@
               ▼                                  ▼
 ┌───────────────────────────┐      ┌───────────────────────────┐
 │ GATE 5: TELEMETRY & MATH  │ ───► │ GATE 6: DATA ROOM ROW     │
-│ • MSRP = N × $199         │      │ • 13-Column APA Entry     │
+│ • MSRP = N × $4,500         │      │ • 13-Column APA Entry     │
 │ • Sectors sum to Total N  │      │ • Relative File Paths     │
 │ • HTTP 200 on Live Demo   │      │ • Zero 404 Remote Endpoints│
 └───────────────────────────┘      └───────────────────────────┘
@@ -69,7 +69,7 @@
 
 ### 🔢 Gate 5: Telemetry & Denominator Invariants (Pillar 1 & 5 Protection)
 1. **Strict Arithmetic Rule**:
-   $$\text{Retail Shelf MSRP} = N_{\text{assets}} \times \$199$$
+   $$\text{Retail Shelf MSRP} = N_{\text{assets}} \times \$4,500$$
    No static or legacy numbers (such as $13,930 or $16,915) may remain hardcoded when $N$ increases.
 2. **Sector Balance**: The sum of internal sector counts must equal the catalog total $N$.
 3. **Preview Verification**: Live preview endpoints on Render must respond with HTTP/2 200.

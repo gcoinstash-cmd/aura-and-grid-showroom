@@ -19,7 +19,7 @@ Just like an elite exotic car dealership with Formula 1 prototypes in the back w
 
 | Execution Track | Car Metaphor | Total Units | Core Focus | Retail / Seat MSRP | Exclusive Buyout Floor |
 | :--- | :--- | :---: | :--- | :---: | :---: |
-| **Track 1: Lean Rapid-Sale** | *Lean Tuner / Daily Driver* | **86 Units** | Rapid marketplace sales, modular single-bundle UI, zero external dependencies | \$199 / \$599 | \$3,800 – \$6,500 (Anchor: \$4,500) |
+| **Track 1: Lean Rapid-Sale** | *Lean Tuner / Daily Driver* | **86 Units** | Rapid marketplace sales, modular single-bundle UI, zero external dependencies | Track 1 Micro-APA Buyout ($4,500 anchor) | \$3,800 – \$6,500 (Anchor: \$4,500) |
 | **Track 2: Hypercar Flagships** | *Hypercar Showroom Flagship* | **51 Units** | High-density SCADA dashboards, canvas/WebGL state, mock telemetry HUDs | \$1,500 – \$3,500 | \$10,000 – \$18,000 (Anchor: \$14,500) |
 | **Track 3: F1 Skunkworks Engines** | *F1 Power Units / Service Engines* | **23 Units** | Containerized backend service engines, custom math state machines, zero mock state | \$1,500/mo seat | \$35,000 – \$65,000 (Monopoly: \$85K–\$150K) |
 | **MASTER COLLECTION TOTAL** | **Full Dealership Fleet** | **160 Units** | **Complete Full-Stack Digital Portfolio** | — | **\$1.75M Hard Floor / \$3.63M Asking** |

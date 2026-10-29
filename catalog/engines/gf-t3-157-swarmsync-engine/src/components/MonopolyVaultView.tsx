@@ -197,7 +197,7 @@ BLACKLISTED LICENSES CONFIRMED 100% ABSENT:
             </div>
 
             <div className="pt-2">
-              <div className="text-slate-300 font-bold mb-2">APPROVED COMMERCIAL LICENSES:</div>
+              <div className="text-slate-300 font-bold mb-2">APPROVED CLEAN-ROOM PERMISSIVE DEPENDENCIES:</div>
               <div className="space-y-2 text-slate-200">
                 <div className="flex justify-between border-b border-slate-800 py-1.5">
                   <span>Python 3.11 Runtime</span>

@@ -18,7 +18,7 @@
 | **Sync Latency Target** | $< 15\,\text{ms}$ local mesh state synchronization |
 | **Heartbeat Frequency** | 20 kHz (0.48ms)\,\text{Hz}$ (20 kHz (0.48ms)\,\text{ms}$ interval) |
 | **Election Timeout Window** | 20 kHz (0.48ms)\,\text{ms} - 300\,\text{ms}$ (Deterministic Randomized Jitter) |
-| **Retail License** | **Deterministic Raft State** |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **Deterministic Raft State** |
 | **Standard APA Asset Transfer** | **20 kHz (0.48ms)** |
 | **Master Vault Monopoly** | **20 kHz (0.48ms)** |
 | **ASC 350-40 Baseline R&D** | **NIST SP 800-218 Verified** |

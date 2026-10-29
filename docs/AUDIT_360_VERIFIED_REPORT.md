@@ -9,7 +9,7 @@
 
 ## 1. System Identity: Factory vs. Dealership
 - GhostFactoryOS (The Factory): Private digital manufacturing plant, garage HUD, inventory engine, maintenance bay, and private deal room.
-- Aura & Grid (The Dealership): Public buyer-facing glass showroom for browsing digital blueprints, purchasing commercial licenses, and launching live interactive demos.
+- Aura & Grid (The Dealership): Public buyer-facing glass showroom for browsing digital blueprints, purchasing Asset Purchase Agreement (APA) title transfer, and launching live interactive demos.
 - The "Digital Car Collection": 114 specialized software assets treated like high-performance virtual concept vehicles.
 
 ---
@@ -27,7 +27,7 @@
 ## 3. Active Fleet Composition (137 Total Vehicles)
 - Current Master Catalog: 137 Custom Full-Stack Web Applications (86 Track 1 + 50 Track 2 + 1 Track 3 active, 13 Track 3 queued in ~/Downloads)
 - Collection Fleet Goal: 500 Digital Vehicles
-- Track 1 Units (Lean Rapid-Sale): 86 Turnkey Concept Consoles ($199 Retail MSRP / $599 Team Seat / $4,500 Anchor)
+- Track 1 Units (Lean Rapid-Sale): 86 Turnkey Concept Consoles ($4,500 Retail MSRP / $4,500 Team Seat / $4,500 Anchor)
 - Track 2 Units (Flagship Hypercars): 50 Deep-Tech / SCADA Vehicles ($1,500–$3,500 License / $14,500 Anchor)
 - 80% Retention Floor Lock: Minimum 110 units permanently held in the vault; exactly 27 units transferable via micro-APA.
 

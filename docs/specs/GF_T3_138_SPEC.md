@@ -927,7 +927,7 @@ components:
 
 ## 6. CLEAN-ROOM DEPENDENCY WHITELIST & COMPLIANCE
 
-All dependencies are certified and restricted to non-viral permissive software licenses (MIT, Apache 2.0, BSD-3-Clause). **GPL, AGPL, SSPL, and LGPL packages are strictly blacklisted from the build pipeline.**
+All dependencies are certified and restricted to non-viral permissive open-source terms (MIT, Apache 2.0, BSD-3-Clause). **GPL, AGPL, SSPL, and LGPL packages are strictly blacklisted from the build pipeline.**
 
 ### Permissive Whitelist Table
 | Package | Version | License | Justification |

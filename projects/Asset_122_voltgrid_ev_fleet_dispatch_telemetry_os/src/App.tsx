@@ -2447,8 +2447,8 @@ export default function EVFleetDashboard() {
                   {/* Pricing Tiers Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div className="p-3 rounded bg-slate-950 border border-slate-800 text-center">
-                      <span className="text-[10px] text-slate-400 uppercase font-bold block">Retail Single License</span>
-                      <span className="text-xl font-bold text-white my-1 block font-mono">$199</span>
+                      <span className="text-[10px] text-slate-400 uppercase font-bold block">Track 1 Micro-APA Buyout ($4,500 anchor)</span>
+                      <span className="text-xl font-bold text-white my-1 block font-mono">$4,500</span>
                       <p className="text-[10px] text-slate-400 leading-tight">Single commercial project. Full React 19 source code, Supabase schema &amp; seed fixtures.</p>
                     </div>
 
@@ -2457,7 +2457,7 @@ export default function EVFleetDashboard() {
                         POPULAR
                       </span>
                       <span className="text-[10px] text-emerald-400 uppercase font-bold block">Team Seat License</span>
-                      <span className="text-xl font-bold text-emerald-300 my-1 block font-mono">$599</span>
+                      <span className="text-xl font-bold text-emerald-300 my-1 block font-mono">$4,500</span>
                       <p className="text-[10px] text-slate-300 leading-tight">Up to 10 engineers, unlimited commercial apps, future blueprint revisions included.</p>
                     </div>
 

@@ -167,7 +167,7 @@ This codebase and architectural specification were architected from first princi
 - Clean-room audit trail: All mathematical equations and algorithmic state machines derived directly from published peer-reviewed academic literature on non-contiguous memory management.
 
 ### 2. Dependency Whitelist & License Permissiveness Manifest
-All integrated runtime and dev-dependencies have been verified under permissive commercial licenses:
+All integrated runtime and dev-dependencies have been verified under permissive MIT/Apache-2.0/BSD terms:
 
 | Package Identifier | Declared Version | Permissible License | Copyleft Risk |
 | :--- | :--- | :--- | :--- |

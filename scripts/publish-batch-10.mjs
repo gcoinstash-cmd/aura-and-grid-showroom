@@ -231,7 +231,7 @@ function buildDescription(p) {
   <li><strong>Turnkey PostgreSQL Database:</strong> Production-ready <code>schema.sql</code> (with strict Row Level Security policies) and <code>seed.sql</code> mock data for immediate Supabase wiring.</li>
   <li><strong>3-Minute Setup Documentation:</strong> <code>SUPABASE_SETUP.md</code> with turnkey copy-paste SQL and environment templates.</li>
   <li><strong>Zero SaaS Server Debt:</strong> Single-tenant architecture with client-side state engines; deploy anywhere (Vercel, Render, GitHub Pages, Netlify) with zero recurring hosting liabilities.</li>
-  <li><strong>Commercial Whitelabel Rights:</strong> Unlimited commercial client deployments under the ZoMae Media LLC Commercial License.</li>
+  <li><strong>Commercial Whitelabel Rights:</strong> Unlimited commercial client deployments under the ZoMae Media LLC Asset Purchase Agreement (APA) title transfer.</li>
 </ul>
 
 <h3>COMMERCIAL NICHE VALUE & APPOINTMENT ECONOMICS</h3>
@@ -239,8 +239,8 @@ function buildDescription(p) {
 
 <h3>TIER BREAKDOWN & PRICING</h3>
 <ul>
-  <li><strong>Tier 1 — Starter UI Edition ($79):</strong> Complete React + Vite + TypeScript front-end repository and interactive UI components.</li>
-  <li><strong>Tier 2 — Full-Stack Supabase Edition ($199):</strong> Complete UI + Supabase PostgreSQL schema, seed data, Row Level Security policies, and /admin passkey demonstration door.</li>
+  <li><strong>Tier 1 — Starter UI Edition ($4,500):</strong> Complete React + Vite + TypeScript front-end repository and interactive UI components.</li>
+  <li><strong>Tier 2 — Full-Stack Supabase Edition ($4,500):</strong> Complete UI + Supabase PostgreSQL schema, seed data, Row Level Security policies, and /admin passkey demonstration door.</li>
   <li><strong>Tier 3 — White-Glove VIP Implementation ($3,500):</strong> Turnkey setup by Aura & Grid engineers including custom domain DNS, Supabase cloud instance configuration, custom branding integration, and 60 days of architectural support.</li>
 </ul>
 `.trim();
@@ -304,7 +304,7 @@ async function publishBatch() {
         const createParams = new URLSearchParams({
           name: p.name,
           description,
-          price: '7900', // $79 base
+          price: '7900', // $4,500 base
           custom_permalink: p.slug,
           shown_on_profile: 'true'
         });
@@ -354,7 +354,7 @@ async function publishBatch() {
       }
 
       // 3. Configure Variant Tiers
-      console.log(`  Configuring variant tiers ($79 / $199 / $3,500)...`);
+      console.log(`  Configuring variant tiers (Track 1 Micro-APA Buyout ($4,500 anchor))...`);
       try {
         const catRes = await apiRequest(`/products/${product.id}/variant_categories`, {
           method: 'POST',
@@ -363,23 +363,23 @@ async function publishBatch() {
         });
         const catId = catRes.variant_category.id;
 
-        // Tier 1: $79 Starter UI
+        // Tier 1: $4,500 Starter UI
         await apiRequest(`/products/${product.id}/variant_categories/${catId}/variants`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({
-            name: 'Tier 1: Starter UI License ($79)',
+            name: 'Tier 1: Starter UI License ($4,500)',
             price_difference_cents: '0'
           }).toString()
         });
 
-        // Tier 2: $199 Full-Stack Edition
+        // Tier 2: $4,500 Full-Stack Edition
         await apiRequest(`/products/${product.id}/variant_categories/${catId}/variants`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({
-            name: 'Tier 2: Full-Stack Supabase Edition ($199)',
-            price_difference_cents: '12000' // $79 + $120 = $199
+            name: 'Tier 2: Full-Stack Supabase Edition ($4,500)',
+            price_difference_cents: '0' // Pure APA ($4,500 anchor)
           }).toString()
         });
 
@@ -389,7 +389,7 @@ async function publishBatch() {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({
             name: 'Tier 3: White-Glove VIP Implementation ($3,500)',
-            price_difference_cents: '342100' // $79 + $3421 = $3500
+            price_difference_cents: '342100' // $4,500 + $3421 = $3500
           }).toString()
         });
         console.log(`  ✅ Configured all 3 commercial tiers!`);

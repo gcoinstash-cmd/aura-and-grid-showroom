@@ -27,10 +27,10 @@ let failCount = 0;
 
 // Test 1: Arithmetic Reconciliation
 const track1Products = (manifest.products || []).filter(p => p.id <= 85);
-const expectedMSRP = 85 * 199; // 16915
-const actualMSRP = manifest.valuation_framework?.retail_shelf_msrp_full_stack ?? (track1Products.length * 199);
+const expectedMSRP = 85 * 4500; // 16915
+const actualMSRP = manifest.valuation_framework?.retail_shelf_msrp_full_stack ?? (track1Products.length * 4500);
 if (actualMSRP === expectedMSRP) {
-  console.log(`✅ [TEST 1: RETAIL MSRP] $${actualMSRP} ($199 × 85) strictly verified. (PASS)`);
+  console.log(`✅ [TEST 1: RETAIL MSRP] $${actualMSRP} ($4,500 × 85) strictly verified. (PASS)`);
   passCount++;
 } else {
   console.error(`❌ [TEST 1: RETAIL MSRP] Expected $${expectedMSRP} but found $${actualMSRP}. (FAIL)`);

@@ -10,7 +10,7 @@
 | **Model Identifier** | `GF-T3-162` (Sovereign Ledger) |
 | **Fleet Tier** | Track 3 F1 Skunkworks Service Engine |
 | **Executive Spec Design** | Lexus LS 500 Executive Craftsmanship (High-contrast dark obsidian, champagne gold, emerald/rose telemetry) |
-| **Retail License** | **$1,500 USD** |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **$1,500 USD** |
 | **Standard APA Buyout** | **$45,000 USD** |
 | **Master Vault Monopoly Buyout** | **$95,000 USD** |
 | **ASC 350-40 Capitalized R&D Baseline** | **$12,400 USD** |

@@ -182,9 +182,9 @@ let markdownDataRoom = `# 🏛️ Technical Data Room & Institutional Asset Regi
 | Valuation Metric | Institutional Figure | Diligence Status |
 | :--- | :---: | :--- |
 | **Verified Production Blueprints** | **85 Systems** | 100% compiled, standalone repositories with isolated SQL migrations. |
-| **Verified Retail Shelf MSRP** | **$16,915** | Based on verified $199 Full-Stack edition ($199 × 85 = $16,915). |
-| **Starter UI Edition MSRP** | **$6,715** | Based on $79 Starter UI edition ($79 × 85 = $6,715). |
-| **Founding Agency Vault MSRP** | **$1,499** | Single-payer commercial license for all 85 codebases (7.3 MB bundle). |
+| **Verified Retail Shelf MSRP** | **$16,915** | Based on verified $4,500 Full-Stack edition ($4,500 × 85 = $16,915). |
+| **Starter UI Edition MSRP** | **$6,715** | Based on $4,500 Starter UI edition ($4,500 × 85 = $6,715). |
+| **Founding Agency Vault MSRP** | **$1,499** | Single-payer Asset Purchase Agreement (APA) title transfer for all 85 codebases (7.3 MB bundle). |
 | **Baseline FMV Liquidation Floor** | **$25,000 – $45,000** | Arms-length asset purchase agreement (APA) valuation corridor. |
 | **Confidential Target Asking Price** | **$49,000 – $59,000** | Strategic acquisition multiple for packaged vertical holding vaults. |
 

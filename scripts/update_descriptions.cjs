@@ -41,8 +41,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete 8-screen responsive frontend codebase, dark obsidian streetwear styling, filterable catalog, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete 8-screen responsive frontend codebase, dark obsidian streetwear styling, filterable catalog, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -75,8 +75,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete 6-screen responsive frontend codebase, obsidian and gold atelier styling, digital waiver pad, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete 6-screen responsive frontend codebase, obsidian and gold atelier styling, digital waiver pad, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -109,8 +109,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete responsive frontend codebase, obsidian theme, filterable fleet cards, booking calculator, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete responsive frontend codebase, obsidian theme, filterable fleet cards, booking calculator, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -143,8 +143,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete responsive frontend codebase, high-contrast dark fight club styling, trainer scheduler, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete responsive frontend codebase, high-contrast dark fight club styling, trainer scheduler, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -177,8 +177,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete React 19 + TypeScript + Tailwind frontend codebase, dark obsidian institutional theme, Kanban pipeline, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete React 19 + TypeScript + Tailwind frontend codebase, dark obsidian institutional theme, Kanban pipeline, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -211,8 +211,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete React 19 + TypeScript + Tailwind frontend codebase, dark obsidian slow-bar aesthetic, micro-lot reserve cards, and mock storage.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete React 19 + TypeScript + Tailwind frontend codebase, dark obsidian slow-bar aesthetic, micro-lot reserve cards, and mock storage.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -245,8 +245,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete Obsidian React 19 + Tailwind CSS frontend codebase with pre-loaded mock architectural portfolio and scheduler.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete Obsidian React 19 + Tailwind CSS frontend codebase with pre-loaded mock architectural portfolio and scheduler.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -279,8 +279,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete Obsidian React 19 + Tailwind CSS frontend codebase with pre-loaded mock clinical data and booking flow.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete Obsidian React 19 + Tailwind CSS frontend codebase with pre-loaded mock clinical data and booking flow.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`,
 
@@ -313,8 +313,8 @@ const DESCRIPTIONS = {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete responsive frontend codebase, lookbook zoom engine, mock chair booking flow, and responsive components.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete responsive frontend codebase, lookbook zoom engine, mock chair booking flow, and responsive components.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, admin telemetry, and real-time database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, domain DNS setup, brand styling customization, and VIP concierge onboarding.</li>
 </ul>`
 };

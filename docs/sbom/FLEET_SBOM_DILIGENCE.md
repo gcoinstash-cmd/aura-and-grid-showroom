@@ -9,7 +9,7 @@
 
 ## Executive Legal & Due Diligence Declaration
 
-> **Legal Declaration**: "Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure. 100% of third-party software dependencies across the entire 85-blueprint catalog utilize standardized permissive commercial licenses (MIT, Apache-2.0, ISC, BSD-2-Clause, BSD-3-Clause). All intellectual property is unencumbered and immediately transferable under standard Asset Purchase Agreement representations and warranties."
+> **Legal Declaration**: "Inventoried shared and direct dependency sets contain 0% GPL/AGPL copyleft exposure. 100% of third-party software dependencies across the entire 85-blueprint catalog utilize standardized permissive MIT/Apache-2.0/BSD terms (MIT, Apache-2.0, ISC, BSD-2-Clause, BSD-3-Clause). All intellectual property is unencumbered and immediately transferable under standard Asset Purchase Agreement representations and warranties."
 
 ---
 

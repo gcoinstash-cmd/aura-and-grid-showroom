@@ -18,7 +18,7 @@
 | **Sync Latency Target** | $< 15\,\text{ms}$ local mesh state synchronization |
 | **Heartbeat Frequency** | $20\,\text{Hz}$ ($50\,\text{ms}$ interval) |
 | **Election Timeout Window** | $150\,\text{ms} - 300\,\text{ms}$ (Deterministic Randomized Jitter) |
-| **Retail License** | **$1,500** |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **$1,500** |
 | **Standard APA Buyout** | **$45,000** |
 | **Master Vault Monopoly** | **$95,000** |
 | **ASC 350-40 Baseline R&D** | **$12,600** |

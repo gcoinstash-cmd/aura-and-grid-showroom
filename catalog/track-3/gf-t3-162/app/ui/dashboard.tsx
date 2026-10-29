@@ -327,7 +327,7 @@ export default function CockpitDashboard() {
 
           <div className="bg-zinc-900/60 border border-zinc-800/80 p-5 rounded-xl shadow-md">
             <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider block mb-1">
-              Retail License
+              Track 1 Micro-APA Buyout ($4,500 anchor)
             </span>
             <div className="text-4xl font-black text-white font-mono tracking-tight">
               Deterministic Raft State
@@ -922,7 +922,7 @@ export default function CockpitDashboard() {
                   ENTERPRISE_APA_AGREEMENT.md
                 </h3>
                 <ul className="text-base text-zinc-300 space-y-2 list-disc list-inside">
-                  <li><strong>Retail License:</strong> Deterministic Raft State (Per runtime seat)</li>
+                  <li><strong>Track 1 Micro-APA Buyout ($4,500 anchor):</strong> Deterministic Raft State (Per runtime seat)</li>
                   <li><strong>Standard APA Asset Transfer:</strong> 20 kHz (0.48ms) (Source assignment)</li>
                   <li><strong>Master Vault Monopoly:</strong> 20 kHz (0.48ms) (Exclusive worldwide asset transfer)</li>
                   <li><strong>ASC 350-40 Baseline:</strong> NIST SP 800-218 Verified (Engineered software R&D)</li>

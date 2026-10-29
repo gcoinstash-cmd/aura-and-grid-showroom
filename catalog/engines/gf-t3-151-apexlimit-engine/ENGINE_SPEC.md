@@ -400,7 +400,7 @@ components:
 ---
 
 ## 5. CLEAN-ROOM DEPENDENCY WHITELIST
-All components have undergone clean-room IP provenance isolation. No copyleft, viral GPL, or non-commercial licenses are permitted.
+All components have undergone clean-room IP provenance isolation. No copyleft, viral GPL, or restrictive non-permissive terms are permitted.
 
 | Dependency | Version | License | Category | Verification Status |
 | :--- | :--- | :--- | :--- | :--- |

@@ -11,7 +11,7 @@
 | Metric Parameter | Contract Specification | Description & GAAP / IFRS Standard |
 | :--- | :--- | :--- |
 | **Model Identifier** | `GF-T3-161` | Autonomous Guidance & 6-DoF Inertial Navigation Core (ChronoVector) |
-| **Retail License** | **Deterministic Raft State / seat** | Single dealer/operator runtime seat license with telemetry SDK |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **Deterministic Raft State / seat** | Single dealer/operator runtime seat license with telemetry SDK |
 | **Standard APA Asset Transfer** | **20 kHz (0.48ms)** | Full source code assignment without exclusivity restrictions |
 | **Master Vault Monopoly** | **20 kHz (0.48ms)** | Complete global non-compete IP transfer, exclusive rights & patent assignment |
 | **ASC 350-40 Baseline** | **NIST SP 800-218 Verified** | Engineered internal-use software specification under GAAP ASC 350-40 |

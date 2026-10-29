@@ -420,5 +420,5 @@ All runtime and test dependencies must meet institutional clean-room standards w
 ### Strict Blacklist (Prohibited from Source and Binary Artifacts):
 - **GPL v2 / GPL v3:** PROHIBITED (Copyleft taint hazard).
 - **AGPL v3:** PROHIBITED (Network copyleft risk).
-- **SSPL:** PROHIBITED (Restrictive cloud commercial license).
+- **SSPL:** PROHIBITED (Restrictive cloud copyleft terms).
 - **CPAL:** PROHIBITED (Attribution encumbrance).

@@ -18,7 +18,7 @@
  *    - Zero "Production-grade OS"
  * 5. Verify Dual-Track Pricing Alignment:
  *    - Zero "$1,499" unlimited vault buyout
- *    - Track 1 $199 & $599 active
+ *    - Track 1 Track 1 Micro-APA Buyout ($4,500 anchor) active
  *    - Track 2 $14,500 Buyout Anchor active
  */
 

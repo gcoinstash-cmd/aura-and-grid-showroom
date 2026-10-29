@@ -780,7 +780,7 @@ export default function Dashboard() {
           {/* Card 3: Retail Edge License */}
           <div className="bg-zinc-900/90 border border-zinc-800 rounded p-4 flex flex-col justify-between shadow-lg">
             <div className="text-sm font-mono text-zinc-400 uppercase tracking-wider flex items-center justify-between">
-              <span>Retail License</span>
+              <span>Track 1 Micro-APA Buyout ($4,500 anchor)</span>
               <Radio className="w-4 h-4 text-amber-400" />
             </div>
             <div className="text-3xl md:text-4xl font-black text-white my-2 tracking-tight">
@@ -1231,7 +1231,7 @@ export default function Dashboard() {
                         <td className="p-3">Ghost FactoryOS Track 3 Fleet Spec</td>
                       </tr>
                       <tr>
-                        <td className="p-3 font-bold text-white">Retail License</td>
+                        <td className="p-3 font-bold text-white">Track 1 Micro-APA Buyout ($4,500 anchor)</td>
                         <td className="p-3 text-white font-bold">Deterministic Raft State / node / yr</td>
                         <td className="p-3">Single-chassis edge deployment runtime</td>
                       </tr>

@@ -67,7 +67,7 @@ Every system includes a built-in 1-click `/admin` demonstration switch. During s
 - **Unlimited Commercial Deployments**: Re-skin, re-brand, customize, and deploy for an unlimited number of paying commercial clients.
 - **100% Billing Retention**: Keep 100% of all client setup fees ($3,500+), retainers ($250/mo+), and maintenance billings.
 - **Zero Attribution**: No "Powered by Aura & Grid" or vendor watermarks required.
-- **License Boundary**: Non-exclusive commercial license. You cannot resell raw source code or `.zip` archives on public template marketplaces (ThemeForest, Envato, etc.).
+- **License Boundary**: Non-exclusive Asset Purchase Agreement (APA) title transfer. You cannot resell raw source code or `.zip` archives on public template marketplaces (ThemeForest, Envato, etc.).
 
 ---
 

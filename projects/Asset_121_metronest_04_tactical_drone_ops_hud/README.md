@@ -57,6 +57,6 @@ The application will be accessible at `http://localhost:3000`.
 
 | License Tier | Price | Inclusions |
 | :--- | :--- | :--- |
-| **Retail Single License** | **$199** | Single-project commercial rights, full source code (`src/App.tsx`, `src/DroneNestOps.tsx`), Tailwind styling, and lifetime minor updates. |
-| **Team Seat License** | **$599** | Multi-seat internal team usage (up to 10 engineers), database schemas (`supabase/schema.sql`, `supabase/seed.sql`), and priority architectural support. |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **$4,500** | Single-project commercial rights, full source code (`src/App.tsx`, `src/DroneNestOps.tsx`), Tailwind styling, and lifetime minor updates. |
+| **Team Seat License** | **$4,500** | Multi-seat internal team usage (up to 10 engineers), database schemas (`supabase/schema.sql`, `supabase/seed.sql`), and priority architectural support. |
 | **Exclusive Buyout Anchor** | **$4,500** | Full intellectual property assignment, complete storefront exclusivity, white-label rights, and removal from public distribution. |

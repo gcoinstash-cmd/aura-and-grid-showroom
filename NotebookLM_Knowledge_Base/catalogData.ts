@@ -5562,14 +5562,14 @@ export const CATALOG_DATA: CatalogData = {
     "master_agency_vault_85": {
       "name": "Aura & Grid Master Agency Whitelabel Vault (85 Flagships)",
       "total_apps": 85,
-      "license_price": 2999,
+      "apa_buyout_anchor": 1250000,
       "archive_path": "dist/vaults/master-agency-vault-85.zip",
-      "description": "Complete 85-asset production catalog with turnkey Supabase PostgreSQL schemas, RLS policies, and commercial whitelabel deployment license."
+      "description": "Complete 85-asset production catalog with turnkey Supabase PostgreSQL schemas, RLS policies, and Asset Purchase Agreement (APA) title transfer."
     },
     "phase_1_agency_vault_50": {
       "name": "Phase 1 Agency Whitelabel Vault (50 Flagships)",
       "total_apps": 50,
-      "license_price": 1999,
+      "apa_buyout_anchor": 1250000,
       "archive_path": "dist/vaults/phase-1-agency-vault-50.zip"
     },
     "vertical_slices": [

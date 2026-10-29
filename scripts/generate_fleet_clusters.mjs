@@ -135,7 +135,7 @@ const clusterDefs = [
     apa_anchor_formatted: '$1,100,000',
     primary_vertical: 'Creative Production, Luxury Hospitality & Automation Services',
     acquirer_profile: 'Global digital media conglomerates, creative production networks, boutique luxury agency collectives, B2B workflow SaaS roll-up private equity firms, and hospitality operating system platforms seeking high-velocity client portals and operations suites.',
-    turnkey_deployment_spec: 'Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding licenses.'
+    turnkey_deployment_spec: 'Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding architecture under full Asset Purchase Agreement (APA) title transfer.'
   },
   {
     cluster_id: 'cluster-05',

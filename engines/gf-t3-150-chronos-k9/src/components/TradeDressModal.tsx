@@ -77,7 +77,7 @@ export const TradeDressModal: React.FC<TradeDressModalProps> = ({ isOpen, onClos
                 <div className="text-base font-bold text-white mt-1">STANDARD APA ASSET TRANSFER</div>
                 <div className="text-3xl font-black text-purple-400 mt-2">$14,500 <span className="text-xs font-normal text-zinc-400">USD</span></div>
                 <p className="text-xs sm:text-sm text-zinc-300 mt-2.5 leading-relaxed font-medium">
-                  Full Asset Purchase Agreement (APA) with clean-room codebase transfer, royalty-free perpetual commercial license.
+                  Full Asset Purchase Agreement (APA) with clean-room codebase transfer, royalty-free perpetual Asset Purchase Agreement (APA) title transfer.
                 </p>
               </div>
 

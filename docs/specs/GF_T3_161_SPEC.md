@@ -11,7 +11,7 @@
 | Metric Parameter | Contract Valuation | Description & GAAP / IFRS Standard |
 | :--- | :--- | :--- |
 | **Model Identifier** | `GF-T3-161` | Autonomous Guidance & 6-DoF Inertial Navigation Core (ChronoVector) |
-| **Retail License** | **$1,500 / seat** | Single dealer/operator runtime seat license with telemetry SDK |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **$1,500 / seat** | Single dealer/operator runtime seat license with telemetry SDK |
 | **Standard APA Buyout** | **$45,000** | Full source code assignment without exclusivity restrictions |
 | **Master Vault Monopoly** | **$85,000** | Complete global non-compete IP transfer, exclusive rights & patent assignment |
 | **ASC 350-40 Baseline** | **$11,200** | Capitalized internal-use software valuation under GAAP ASC 350-40 |

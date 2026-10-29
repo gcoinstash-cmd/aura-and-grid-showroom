@@ -11,7 +11,7 @@
 
 ## 1. System Overview & Product Truth
 
-Ghost Factory Command Console (GFCC) is the private operations dashboard, portfolio valuation engine, and licensing ledger for the 136-asset digital vehicle fleet.
+Ghost Factory Command Console (GFCC) is the private operations dashboard, portfolio valuation engine, and APA title transfer ledger for the 136-asset digital vehicle fleet.
 
 > [!IMPORTANT]
 > **SIMULATION & PROTOTYPE NOTICE:**

@@ -23,7 +23,7 @@
 | **Asking Anchor Buyout** | **$1,250,000 USD** |
 | **Reserve Walk-Away Floor** | **$750,000 USD** *(Firm minimum; offers below this floor are rejected without counter)* |
 | **Cumulative Standalone Retail MSRP** | **$647,500 USD** (Agency Replacement Benchmark Basis) |
-| **Implied Portfolio Discount** | **70-80% Discount** vs. standalone retail licensing. |
+| **Implied Portfolio Discount** | **70-80% Discount** vs. standalone single-chassis Micro-APA acquisition. |
 | **Closing Mechanism** | 100% Escrow-protected title transfer via **Escrow.com** or institutional attorney escrow. |
 
 ---
@@ -38,7 +38,7 @@
 
 ### Turnkey Deployment Spec
 ```
-Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding licenses.
+Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding architecture under full Asset Purchase Agreement (APA) title transfer.
 ```
 
 ### Primary Acquirer Profile

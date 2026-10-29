@@ -33,7 +33,7 @@ const LEGAL_WEALTH_PRODUCTS = [
     previewUrl: 'https://gcoinstash-cmd.github.io/boutique-law-os/',
     moduleTitle: 'COMMERCIAL CLIENT RETAINERS & IOLTA ESCROW',
     mockupRows: [
-      { col1: 'MATTER #BL-1044', col2: 'Cross-Border Tech Licensing Agreement', col3: 'RETAINER ACTIVE', col4: '$35,000 IOLTA' },
+      { col1: 'MATTER #BL-1044', col2: 'Cross-Border Tech Asset Purchase Agreement (APA) title transfer', col3: 'RETAINER ACTIVE', col4: '$35,000 IOLTA' },
       { col1: 'MATTER #BL-1051', col2: 'Commercial Lease Dispute & Arbitral Tribunal', col3: 'ESCROW VERIFIED', col4: '$50,000 IOLTA' },
       { col1: 'MATTER #BL-1060', col2: 'Founder Equity Restructuring & RSU Allocation', col3: 'DRAFTING MATTERS', col4: '$25,000 IOLTA' }
     ],

@@ -109,15 +109,15 @@ async function main() {
 
 <h3>TIER BREAKDOWN</h3>
 <ul>
-  <li><strong>Tier 1 — Starter Rig ($79):</strong> Complete React + TypeScript front-end codebase, editorial magazine styling system, and application portal.</li>
-  <li><strong>Tier 2 — Full-Stack Rig ($199):</strong> Complete UI + Supabase PostgreSQL schema, seed data, RLS security policies, and 3-minute setup documentation.</li>
+  <li><strong>Tier 1 — Starter Rig ($4,500):</strong> Complete React + TypeScript front-end codebase, editorial magazine styling system, and application portal.</li>
+  <li><strong>Tier 2 — Full-Stack Rig ($4,500):</strong> Complete UI + Supabase PostgreSQL schema, seed data, RLS security policies, and 3-minute setup documentation.</li>
   <li><strong>Tier 3 — White-Glove VIP Setup ($3,500):</strong> Custom domain deployment, Supabase cloud configuration, Stripe payment integration, and 60 days of priority architectural support.</li>
 </ul>`;
 
   const createParams = new URLSearchParams({
     name: 'AURA RETREAT OS — Boutique Sanctuary, Cohort Ledger & Masterclass Expedition OS',
     description,
-    price: '7900', // $79 base
+    price: '7900', // $4,500 base
     custom_permalink: 'retreat-os',
     shown_on_profile: 'true'
   });
@@ -154,7 +154,7 @@ async function main() {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Tier 1: Starter Rig ($79) - Front-End Codebase & Editorial Application Portal',
+      name: 'Tier 1: Starter Rig ($4,500) - Front-End Codebase & Editorial Application Portal',
       price_difference_cents: '0'
     }).toString()
   });
@@ -163,8 +163,8 @@ async function main() {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Tier 2: Full-Stack Rig ($199) - UI + Supabase DB + Cohort Ledger',
-      price_difference_cents: '12000' // $79 + $120 = $199
+      name: 'Tier 2: Full-Stack Rig ($4,500) - UI + Supabase DB + Cohort Ledger',
+      price_difference_cents: '0' // Pure APA ($4,500 anchor)
     }).toString()
   });
 
@@ -173,7 +173,7 @@ async function main() {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
       name: 'Tier 3: White-Glove VIP ($3,500) - Turnkey Setup & Custom Domain Hosting',
-      price_difference_cents: '342100' // $79 + $3421 = $3500
+      price_difference_cents: '342100' // $4,500 + $3421 = $3500
     }).toString()
   });
 

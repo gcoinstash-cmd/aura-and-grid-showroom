@@ -53,11 +53,11 @@ If you are talking to a buyer or investor right now, here are the immutable rule
 
 ### D. Dual-Track Pricing Protocol (Never Mix Tracks)
 1. **TRACK 1 — LEAN RAPID-SALE (DEFAULT FOR MOST APPS)**:
-   * Retail MSRP: **$199**
-   * Team Seat: **$599**
+   * Track 1 Micro-APA Buyout: **$4,500 anchor**
+   * Track 1 Micro-APA Buyout ($4,500 anchor)
    * Exclusive Buyout Floor: **$3,800 – $6,500** (Anchor: **$4,500**)
 2. **TRACK 2 — FLAGSHIP $10K+ (SELECTIVE TIER-1 ONLY)**:
-   * Flagship Commercial License: **$1,500 – $3,500**
+   * Track 2 Chassis APA Title Transfer: $14,500 anchor
    * Entry Exclusive Buyout Anchor: **$14,500** ($10,000 – $18,000 range)
    * Full Asset Buyout: **$18,000 – $35,000**
    * Strategic Acquisition: **$35,000 – $75,000+**

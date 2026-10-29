@@ -7,7 +7,7 @@
 - **Assigned Transport Cluster**: CLUSTER-006 (Units #252 to #300)
 - **Track Classification**: Track 3 (F1 Skunkworks Engine)
 - **Transaction Architecture**: 100% Pure Asset Purchase Agreement (APA) with complete sovereign Intellectual Property title transfer.
-- **Zero Licensing Policy**: No retail licensing, no commercial seat tiers, no recurring subscriptions, and zero parent holding company equity dilution.
+- **Zero Licensing Policy**: No seat-tier rentals, no commercial seat tiers, no recurring subscriptions, and zero parent holding company equity dilution.
 - **Retail Price Benchmark**: 75,000 to 150,000 Sovereign Valuation Units (Full Engine APA Buyout Anchor: 35,000 to 65,000 Sovereign Valuation Units).
 
 ---

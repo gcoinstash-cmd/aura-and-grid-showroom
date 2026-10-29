@@ -15,7 +15,7 @@ The Aura & Grid catalog is not a collection of consumer hobbyist templates. It i
 ```
  [ THE 3 DISTRIBUTION PILLARS ]
     │
-    ├── 1. RETAIL & TEAM LICENSES ($199 – $599) ──> Direct solo & commercial team codebase downloads.
+    ├── 1. RETAIL & TEAM LICENSES (Track 1 Micro-APA Buyout ($4,500 anchor)) ──> Direct solo & commercial team codebase downloads.
     ├── 2. AGENCY FLEET LEASE ($1,499 – $2,999) ──> Non-exclusive whitelabel client deployment rights.
     └── 3. SELECTIVE MICRO-APAS (SINGLE ASSETS) ──> Track 1 ($4,500 anchor) / Track 2 ($14,500 anchor).
 ```
@@ -34,7 +34,7 @@ Imagine owning an ultra-luxury automotive showroom holding **114 precision-engin
   > **Technical Security Distinction**: The 1-click `/admin` passkey (`<slug>2026`) is strictly engineered as a **Buyer Showcase Valet Key**—a frictionless demonstration switch allowing prospective agency buyers to inspect administrative telemetry without creating an account. In live client production, access is locked down via encrypted Supabase Auth, JWT verification, and strict role-based access control (RBAC).
 
 ### 2.2 The 3 Monetization Channels:
-1. **Solo Retail & Team Licensing ($199 Retail / $599 Team Seat)**:
+1. **Solo Retail & Team Licensing ($4,500 Retail / $4,500 Team Seat)**:
    * A solo operator or development team buys the keys to 1 vehicle for internal deployment.
 2. **Commercial Fleet Lease (The Agency Vault — $1,499 to $2,999)**:
    * A boutique web agency or marketing firm signs a **Non-Exclusive Commercial Fleet License**.
@@ -59,7 +59,7 @@ Imagine owning an ultra-luxury automotive showroom holding **114 precision-engin
 
 ## 4. Analogy 3: The Music Producer Beat Vault (BeatStars Model)
 
-* **The Non-Exclusive Lease ($199 – $2,999)**: A platinum producer maintains a vault of 86 fully mixed and mastered instrumentals. Multiple independent artists license the same beat for their songs. The producer retains 100% ownership of the master track while generating recurring cash flow. (Identical to your Agency Whitelabel License).
+* **The Non-Exclusive Lease ($4,500 – $2,999)**: A platinum producer maintains a vault of 86 fully mixed and mastered instrumentals. Multiple independent artists license the same beat for their songs. The producer retains 100% ownership of the master track while generating recurring cash flow. (Identical to your Agency Whitelabel License).
 * **The Exclusive Buyout ($4,500 Track 1 Anchor / $14,500 Track 2 Anchor)**: A record label or artist buys 100% exclusive master rights to **one specific track**, taking only that single track off the commercial shelf.
 
 ---

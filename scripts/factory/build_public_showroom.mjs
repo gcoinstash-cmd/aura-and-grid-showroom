@@ -8,7 +8,7 @@
  * Top Telemetry Nav (AURA & GRID // REPOSITORY ENGINE V2.0 // STATUS: OPERATIONAL),
  * 3D CAD/Wireframe Dyno Viewport with Track 1 / Track 2 / Track 3 Selector Tabs,
  * and Inspection Bay Sidebar (14ms SVG API Latency Wave, commit b787061 readout, 0% uncommitted drift).
- * COMMERCIAL MODEL: Pure Asset Purchase Agreements (APA) / Title Transfers Only (Zero Retail Licensing).
+ * COMMERCIAL MODEL: Pure Asset Purchase Agreements (APA) / Title Transfers Only (Zero Seat Tiers (Pure APA Title Transfer)).
  */
 
 import fs from 'node:fs';

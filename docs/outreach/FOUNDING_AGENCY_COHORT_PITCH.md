@@ -131,7 +131,7 @@ FOUNDING AGENCY COHORT PILOT PRICING:
 * **Answer**: *"Zero. The license is a perpetual, non-exclusive commercial grant. You host the application on your or your client's own cloud accounts (Vercel, Supabase, Render, Netlify). You collect 100% of setup fees and monthly retainers from your clients."*
 
 ### Objection 3: "Can we rebrand everything?"
-* **Answer**: *"Yes, 100%. The commercial license authorizes unlimited customization, rebranding, logo replacement, and custom feature extension for paying clients."*
+* **Answer**: *"Yes, 100%. The Asset Purchase Agreement (APA) title transfer authorizes unlimited customization, rebranding, logo replacement, and custom feature extension for paying clients."*
 
 ---
 *ZoMae Media LLC © 2026. All Rights Reserved.*

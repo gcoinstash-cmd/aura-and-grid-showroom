@@ -19,7 +19,7 @@
 
 ### 1.1 Digital Vehicle Metaphor & Brand Architecture
 GhostFactoryOS operates as a specialized digital car manufacturer, and Aura & Grid serves as the premium showroom dealership:
-- **GhostFactoryOS (Private Foundry)**: Portfolio command center, inventory system, licensing ledger, maintenance tracker, build health monitor, and operations dashboard.
+- **GhostFactoryOS (Private Foundry)**: Portfolio command center, inventory system, APA title transfer ledger, maintenance tracker, build health monitor, and operations dashboard.
 - **Aura & Grid (Public Dealership)**: Public showroom where clients test-drive hosted interactive demos, purchase non-exclusive licenses, lease managed deployments, license agency fleets, commission bespoke setups, and acquire selective non-core assets via micro-APAs.
 - **Digital Vehicle Inventory**: Web-app templates, interactive prototypes, hosted demos, deployable source-code blueprints, and SCADA-grade concept consoles.
 
@@ -69,19 +69,19 @@ Assets are strictly categorized into one of three execution and pricing tracks. 
  [ MULTI-TRACK PRICING PROTOCOL ]
     │
     ├── TRACK 1: LEAN RAPID-SALE (Lean Tuner / Daily Driver)
-    │   ├── Retail License: $199
-    │   ├── Commercial Team Seat: $599
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
     │   ├── Exclusive Buyout Floor: $3,800 – $6,500
     │   └── Exclusive Buyout Anchor: $4,500
     │
     ├── TRACK 2: FLAGSHIP $10K+ (Hypercar Flagship)
-    │   ├── Flagship Commercial License: $1,500 – $3,500
+    │   ├── Track 2 Chassis APA Title Transfer: $14,500 anchor
     │   ├── Entry Exclusive Buyout Anchor: $14,500 ($10,000 – $18,000 range)
     │   ├── Full Asset Buyout: $18,000 – $35,000
     │   └── Strategic Acquisition: $35,000 – $75,000+
     │
     └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine)
-        ├── Monthly Enterprise Seat License: $1,500/mo (5.0x ARR SaaS multiple)
+        ├── Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers). (5.0x ARR SaaS multiple)
         ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($1.225M – $2.275M fleet floor)
         └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($2.625M – $5.250M fleet ceiling)
 ```
@@ -90,8 +90,8 @@ Assets are strictly categorized into one of three execution and pricing tracks. 
 Applies to turn-key single-view interactive telemetry prototypes with PostgreSQL schema and seed datasets:
 - **Focus:** Rapid assembly, clean UI modularity, zero external dependencies.
 - **Output:** Single-bundle frontend components, verified asset packaging, minimal test verification.
-- **Retail License**: $199
-- **Commercial Team Seat**: $599
+- **Track 1 Micro-APA Buyout ($4,500 anchor)**: $4,500
+- **Commercial Team Seat**: $4,500
 - **Exclusive Buyout Floor**: $3,800 – $6,500
 - **Exclusive Buyout Anchor**: **$4,500**
 
@@ -99,7 +99,7 @@ Applies to turn-key single-view interactive telemetry prototypes with PostgreSQL
 Applies strictly to complex, domain-heavy systems qualifying under the Flagship Gate:
 - **Focus:** High-density interactive UI, canvas/WebGL state, mock telemetry stability.
 - **Output:** Fully clickable client-side prototypes, simulated WebSocket/state engines, responsive telemetry HUDs.
-- **Flagship Commercial License**: $1,500 – $3,500
+- **Flagship Asset Purchase Agreement (APA) title transfer**: $1,500 – $3,500
 - **Entry Exclusive Buyout Anchor**: **$14,500** (Entry range: $10,000 – $18,000)
 - **Full Asset Buyout**: $18,000 – $35,000
 - **Strategic Acquisition**: $35,000 – $75,000+
@@ -204,6 +204,6 @@ All marketing copy, sales offers, and technical data sheets must strictly employ
 ---
 
 ## 8. Next 3 Moves
-1. **Deploy Track 1 Pricing as Default Across Showroom**: Re-align all active storefront SKUs to $199 retail / $599 team seat / $4,500 exclusive buyout anchor.
+1. **Deploy Track 1 Pricing as Default Across Showroom**: Re-align all active storefront SKUs to $4,500 retail / $4,500 team seat / $4,500 exclusive buyout anchor.
 2. **Execute Flagship Gate Diligence on Top Candidates**: Verify 8–15 screens, physics solvers, and simulation disclosures before offering Track 2 pricing.
 3. **Mirror Telemetry to GhostFactoryOS Console**: Ensure the console dashboard displays the 80% retained floor (109 assets retained) and current strategic buyout anchor ($1,112,000 / $2.15M–$3.85M+ ceiling).

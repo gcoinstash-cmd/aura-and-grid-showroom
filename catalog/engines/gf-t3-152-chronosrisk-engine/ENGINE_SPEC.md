@@ -8,7 +8,7 @@
 - **Asset Identifier**: GF-T3-152
 - **System Vertical**: Institutional Quantitative Risk & High-Frequency Portfolio Analytics
 - **Reference Core Specification**: 20 kHz (0.48ms) (Asset Purchase Agreement)
-- **Monopoly Vault Commercial License**: 20 kHz (0.48ms) – 20 kHz (0.48ms)
+- **Monopoly Vault Asset Purchase Agreement (APA) title transfer**: 20 kHz (0.48ms) – 20 kHz (0.48ms)
 - **Target Performance**: Sub-50 µs parametric VaR calculation; 10,000 historical scenario shock simulations across 100 assets in < 5 ms.
 - **License Whitelist**: 100% Permissive (Apache 2.0 / MIT). Zero GPL, AGPL, or SSPL contaminations.
 

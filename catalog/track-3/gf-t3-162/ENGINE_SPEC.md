@@ -10,7 +10,7 @@
 | **Model Identifier** | `GF-T3-162` (Sovereign Ledger) |
 | **Fleet Tier** | Track 3 F1 Skunkworks Service Engine |
 | **Executive Spec Design** | Heavy Overland Dynamics Platform LS 500 Executive Craftsmanship (High-contrast dark obsidian, champagne gold, emerald/rose telemetry) |
-| **Retail License** | **Deterministic Raft State** |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **Deterministic Raft State** |
 | **Standard APA Asset Transfer** | **20 kHz (0.48ms)** |
 | **Master Vault Monopoly Asset Transfer** | **20 kHz (0.48ms)** |
 | **ASC 350-40 Engineered Benchmark Baseline** | **NIST SP 800-218 Verified** |

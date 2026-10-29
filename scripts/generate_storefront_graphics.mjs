@@ -84,7 +84,7 @@ const PRODUCTS = [
     previewUrl: 'https://gcoinstash-cmd.github.io/boutique-law-os/',
     moduleTitle: 'COMMERCIAL CLIENT RETAINERS & TRUST LEDGERS',
     mockupRows: [
-      { col1: 'MATTER #BL-1044', col2: 'Cross-Border Tech Licensing Agreement', col3: 'RETAINER FUNDED', col4: '$35,000 Trust' },
+      { col1: 'MATTER #BL-1044', col2: 'Cross-Border Tech Asset Purchase Agreement (APA) title transfer', col3: 'RETAINER FUNDED', col4: '$35,000 Trust' },
       { col1: 'MATTER #BL-1051', col2: 'Commercial Lease Dispute (50k sq ft)', col3: 'SETTLEMENT CONFERRED', col4: '$50,000 Trust' },
       { col1: 'MATTER #BL-1060', col2: 'Founder Equity Restructuring & RSUs', col3: 'DRAFTING IN PROGRESS', col4: '$25,000 Trust' }
     ]

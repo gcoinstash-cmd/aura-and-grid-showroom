@@ -96,7 +96,7 @@
   </section>
 
   <section class="panel" id="cta" hidden style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-    <span>Title transfer is by private micro-APA for this single asset only. License, not ownership transfer, unless an APA is executed.</span>
+    <span>Title transfer is strictly by private Asset Purchase Agreement (APA) for this single chassis unit only (100% sovereign IP title transfer; zero seat-tier rentals).</span>
     <button class="btn amber" id="acquireBottom">[ACQUIRE TITLE (APA)]</button>
   </section>
 </main>
@@ -111,7 +111,7 @@
     <textarea id="fMsg" rows="3" placeholder="Intended use (optional)"></textarea>
     <div style="display:flex;gap:8px;justify-content:flex-end">
       <button type="button" class="btn" id="mCancel">[CANCEL]</button>
-      <button type="submit" class="btn amber">[SUBMIT INQUIRY]</button>
+      <button type="submit" class="btn amber">[INQUIRE VAULT BUYOUT]</button>
     </div>
   </form>
 </div>
@@ -154,7 +154,7 @@ if (!unit) {
     api: () => ['GET  /health  -> 200 {"status":"ok"}']
       .concat(tables.flatMap(t => ['GET  ' + base + '/' + t, 'POST ' + base + '/' + t, 'GET  ' + base + '/' + t + '/{id}']))
       .concat(['GET  /openapi.json']).join('\n') + '\n\n-- illustrative contract; sample data only',
-    sql: () => tables.map(t => 'CREATE TABLE ' + t + ' (\n  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  payload     JSONB NOT NULL,\n  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()\n);').join('\n\n') + '\n\n-- illustrative schema; see licensed deliverables for actual DDL',
+    sql: () => tables.map(t => 'CREATE TABLE ' + t + ' (\n  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  payload     JSONB NOT NULL,\n  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()\n);').join('\n\n') + '\n\n-- illustrative schema; see APA title transfer deliverables for actual DDL',
     gates: () => ['[PASS] Gate 1 — Custom state machine / math core','[PASS] Gate 2 — Clean-room permissive licenses','[PASS] Gate 3 — Strict .env separation + RBAC structure','[PASS] Gate 4 — Pytest branch score ' + unit.pytestScore + '%','','Gate statuses are catalog metadata for this simulation page, not an independent audit.'].join('\n')
   };
   const showTab = k => { $('tabBody').textContent = tabs[k](); document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === k)); };

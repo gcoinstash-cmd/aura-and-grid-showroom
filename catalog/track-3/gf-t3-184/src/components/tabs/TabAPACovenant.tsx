@@ -47,7 +47,7 @@ export const TabAPACovenant: React.FC = () => {
             Includes full perpetual commercial exclusivity, patent non-assertion covenant, and custom hardware ECU integration rights.
           </p>
           <div className="mt-3.5 flex items-center justify-between text-base font-mono">
-            <span className="text-slate-400">Commercial License:</span>
+            <span className="text-slate-400">Asset Purchase Agreement (APA) title transfer:</span>
             <span className="text-emerald-400 font-bold">Unrestricted Worldwide</span>
           </div>
         </div>

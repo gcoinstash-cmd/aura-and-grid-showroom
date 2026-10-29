@@ -21,7 +21,7 @@
 
 | Track Classification | Unit Count | Unit ID Range | Retail / Monroney Baseline | Enterprise Replacement Ceiling | Clean-Room Status |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Track 1 — Lean Rapid-Sale** | 86 | `#001–#085, #112` | $199 Retail / $4,500 Buyout Anchor | $45,000 Monroney / $125,000 Ceiling | Certified MIT/Apache-2.0 |
+| **Track 1 — Lean Rapid-Sale** | 86 | `#001–#085, #112` | $4,500 Retail / $4,500 Buyout Anchor | $45,000 Monroney / $125,000 Ceiling | Certified MIT/Apache-2.0 |
 | **Track 2 — Hypercar Flagships** | 51 | `#086–#137 (excl #112)` | $1,500–$3,500 License / $14,500 Anchor | $45,000 Monroney / $125,000 Ceiling | Certified MIT/Apache-2.0 |
 | **Track 3 — F1 Skunkworks Engines** | 63 | `GF-T3-138` – `GF-T3-200` | **$45,000** ($15K–$25K Liquidity Floor) | **$125,000** | Certified MIT/Apache-2.0 |
 | **TOTAL MASTER CATALOG** | **200** | **`#001` – `GF-T3-200`** | **$9,000,000 Monroney Sum** | **$25,000,000 ASC 350-40 Ceiling** | **Production Ready** |

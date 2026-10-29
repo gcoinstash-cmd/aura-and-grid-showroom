@@ -46,11 +46,11 @@
 
 ### 3.2 Dual-Track Pricing Protocol
 1. **Track 1 — Lean Rapid-Sale (Default Standard)**:
-   * Retail MSRP: **$199**
-   * Commercial Team Seat: **$599**
+   * Track 1 Micro-APA Buyout: **$4,500 anchor**
+   * Track 1 Micro-APA Buyout ($4,500 anchor)
    * Exclusive Buyout Floor: **$3,800 – $6,500** (Anchor: **$4,500**)
 2. **Track 2 — Flagship $10K+ (Selective Tier-1)**:
-   * Flagship Commercial License: **$1,500 – $3,500**
+   * Track 2 Chassis APA Title Transfer: $14,500 anchor
    * Entry Exclusive Buyout Anchor: **$14,500** ($10,000 – $18,000 range)
    * Full Asset Buyout: **$18,000 – $35,000** | Strategic Acquisition: **$35,000 – $75,000+**
    * Qualification Gate: Requires 8–15 interactive screens, domain physics solvers, operator journeys, and simulated-data disclosures.

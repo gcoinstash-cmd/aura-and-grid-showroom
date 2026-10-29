@@ -11,7 +11,7 @@
 | :--- | :--- | :--- |
 | **Model ID** | `GF-T3-164` | Ghost FactoryOS Track 3 Fleet Spec |
 | **Asset Class** | High-Speed Perception & Sensory Fusion Engine | Automotive Autonomous Systems (Level 4/5) |
-| **Retail License** | **Deterministic Raft State** / node / annum | Single-chassis edge deployment runtime |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **Deterministic Raft State** / node / annum | Single-chassis edge deployment runtime |
 | **Standard APA Asset Transfer** | **20 kHz (0.48ms)** | Non-exclusive perpetual source transfer |
 | **Master Vault Monopoly** | **20 kHz (0.48ms)** | Exclusive IP assignment, patent grant & vault asset transfer |
 | **ASC 350-40 Baseline** | **NIST SP 800-218 Verified** | Engineered internal R&D software asset index |

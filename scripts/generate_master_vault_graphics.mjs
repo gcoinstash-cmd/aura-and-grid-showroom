@@ -288,7 +288,7 @@ function generateCoverHtml() {
       </div>
       <div class="edition-badge">
         <div class="edition-val">85 SYSTEMS</div>
-        <div class="edition-sub">UNLIMITED COMMERCIAL LICENSE</div>
+        <div class="edition-sub">UNLIMITED Asset Purchase Agreement (APA) title transfer</div>
       </div>
     </div>
 

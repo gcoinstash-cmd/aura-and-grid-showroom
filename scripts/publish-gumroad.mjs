@@ -126,10 +126,10 @@ export async function uploadFileToGumroad(filePath) {
 export async function publishProduct({
   name,
   description,
-  priceInCents = 19900, // $199.00
+  priceInCents = 450000, // $4,500
   shownOnProfile = false, // Draft mode default
   customSummary = 'Editorial & Zen-Minimalist B2B Web Application Systems',
-  upsellDifferenceInCents = 330100, // $3,500 total ($199 + $3,301)
+  upsellDifferenceInCents = 330100, // $3,500 total ($4,500 + $3,301)
   fileBundlePath = null
 }) {
   console.log('\n========================================');
@@ -187,27 +187,27 @@ export async function publishProduct({
 
   const catId = catRes.variant_category.id;
 
-  // Tier 1: Starter UI License ($79)
+  // Tier 1: Starter UI License ($4,500)
   await apiRequest(`/products/${product.id}/variant_categories/${catId}/variants`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Starter UI License ($79)',
+      name: 'Starter UI License ($4,500)',
       price_difference_cents: '0'
     }).toString()
   });
-  console.log(' Added: Tier 1 - Starter UI License ($79)');
+  console.log(' Added: Tier 1 - Starter UI License ($4,500)');
 
-  // Tier 2: Full-Stack Supabase Edition ($199)
+  // Tier 2: Full-Stack Supabase Edition ($4,500)
   await apiRequest(`/products/${product.id}/variant_categories/${catId}/variants`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Full-Stack Supabase Edition ($199)',
+      name: 'Full-Stack Supabase Edition ($4,500)',
       price_difference_cents: '12000'
     }).toString()
   });
-  console.log(' Added: Tier 2 - Full-Stack Supabase Edition ($199)');
+  console.log(' Added: Tier 2 - Full-Stack Supabase Edition ($4,500)');
 
   // Tier 3: White-Glove Deployment & Domain Hookup ($3,500)
   await apiRequest(`/products/${product.id}/variant_categories/${catId}/variants`, {
@@ -263,19 +263,19 @@ Built with a high-contrast aesthetic merging coastal California luxury with Toky
 - **Component Design System & Styleguide**
 - **Webflow CMS Collection Blueprint**
 - **Interactive JavaScript Modules (Slide-out cart, live counters)**
-- **Commercial License**
+- **Asset Purchase Agreement (APA) title transfer**
 
 ---
 
 ###  Choose Your Tier:
-- **Single Commercial License ($199)**: Full source code, CMS schema, assets, and documentation for self-hosting.
+- **Single Asset Purchase Agreement (APA) title transfer ($4,500)**: Full source code, CMS schema, assets, and documentation for self-hosting.
 - **Done-For-You White-Glove Deployment ($3,500)**: Complete end-to-end setup by Aura & Grid engineers including custom domain configuration, CMS data population, staging verification, and deployment to Netlify/Render.
 `.trim();
 
       await publishProduct({
         name: 'STRIDE MB — Luxury Boutique & E-Commerce System',
         description: productDescription,
-        priceInCents: 19900,
+        priceInCents: 450000,
         shownOnProfile: isLive,
         customSummary: 'Luxury E-Commerce & Sneaker Boutique Web Application Template'
       });

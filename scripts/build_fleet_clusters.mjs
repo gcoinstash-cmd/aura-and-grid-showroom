@@ -133,7 +133,7 @@ const VERTICAL_THEMES = [
     anchor: 1250000,
     reserve: 750000,
     acquirer_profile: 'Global digital media conglomerates, creative production networks, boutique luxury agency collectives, B2B workflow SaaS roll-up private equity firms, and hospitality operating system platforms.',
-    turnkey_deployment_spec: 'Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding licenses.'
+    turnkey_deployment_spec: 'Modular Next.js/React responsive control centers, automated operational triage drawers, asset pipeline automation microservices, PostgreSQL schemas with schema migrations, and turnkey agency white-label re-branding architecture under full Asset Purchase Agreement (APA) title transfer.'
   },
   {
     theme: 'HealthTech',

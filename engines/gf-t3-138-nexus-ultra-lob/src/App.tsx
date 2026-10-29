@@ -1356,7 +1356,7 @@ CREATE TABLE IF NOT EXISTS trades (
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-neutral-900 border border-neutral-800 rounded-lg p-6 space-y-4">
-                <div className="text-neutral-400 font-mono text-sm uppercase font-semibold">Retail License</div>
+                <div className="text-neutral-400 font-mono text-sm uppercase font-semibold">Track 1 Micro-APA Buyout ($4,500 anchor)</div>
                 <div className="text-3xl font-mono font-bold text-white">$2,500 <span className="text-sm text-neutral-400 font-normal">USD</span></div>
                 <ul className="text-sm text-neutral-300 font-mono space-y-2.5">
                   <li className="flex items-center gap-2.5">

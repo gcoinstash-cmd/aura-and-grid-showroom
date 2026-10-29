@@ -102,7 +102,7 @@ The **4 Dyno Integrity Gates** constitute non-negotiable architectural law for a
 ```
 
 ### 1. In-Repo Digital Title Receipt Standard
-No chassis may be offered for commercial license, test drive, or micro-APA title assignment unless it contains two physical in-repo audit artifacts generated directly at its repository root:
+No chassis may be offered for Asset Purchase Agreement (APA) title transfer, test drive, or micro-APA title assignment unless it contains two physical in-repo audit artifacts generated directly at its repository root:
 - **`DYNO_AUDIT_RECEIPT.json`:** Immutable structured telemetry recording unit identifier, timestamp, cryptographic git commit SHA anchor, test pass percentage, and individual gate PASS findings.
 - **`AUDIT_SEAL.md`:** Formal Certificate of Title & Dyno Integrity Seal displaying clean-room MIT/Apache-2.0 permissive provenance, zero copyleft warranty, and ASC 350-40 capitalization tier.
 - **Transfer Invariant:** These receipts remain inside the engine repository permanently and transfer directly to acquiring parties upon micro-APA execution.

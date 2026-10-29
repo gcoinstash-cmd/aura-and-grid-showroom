@@ -1,6 +1,6 @@
 # =============================================================================
 # GF-T3-142 AEGIS-ORBIT: Permissive Clean-Room Whitelist
-# STRICT BAN: No GPL, AGPL, SSPL, or Non-Commercial Licenses Allowed
+# STRICT BAN: No GPL, AGPL, SSPL, or Restrictive Non-Permissive Terms Allowed
 # =============================================================================
 fastapi==0.115.0            # MIT License
 uvicorn[standard]==0.31.0   # BSD-3-Clause License

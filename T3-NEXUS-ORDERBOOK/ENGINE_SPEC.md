@@ -4,7 +4,7 @@
 **License Baseline:** MIT / Apache 2.0 Permissive Clean Room (Strict Copyleft Blacklist Enforced)  
 **Target Ingestion Platform:** Google Antigravity Autonomous Scaffolding Agent (70% Architecture / 30% Assembly)  
 **Specification Benchmark:** PostgreSQL 16 + RLS Institutional Monopoly Vault Replacement Benchmark  
-**Primary Pre-Throughput Turnkey Acquisition Price:** $19,500 Direct Asset Purchase (Turnkey Commercial License & IP Transfer via Acquire.com)  
+**Primary Pre-Throughput Turnkey Acquisition Price:** $19,500 Direct Asset Purchase (Turnkey Asset Purchase Agreement (APA) title transfer & IP Transfer via Acquire.com)  
 
 ---
 
@@ -1344,7 +1344,7 @@ To ensure instant institutional acquisition, all project dependencies must be ve
 ```text
 # =============================================================================
 # T3-NEXUS-ORDERBOOK: Permissive Clean-Room Whitelist
-# STRICT BAN: No GPL, AGPL, SSPL, or Non-Commercial Licenses Allowed
+# STRICT BAN: No GPL, AGPL, SSPL, or Restrictive Non-Permissive Terms Allowed
 # =============================================================================
 fastapi==0.115.0            # MIT License
 uvicorn[standard]==0.31.0   # BSD-3-Clause License

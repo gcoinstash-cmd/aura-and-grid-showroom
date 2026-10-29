@@ -270,8 +270,8 @@ export function runMasterSync() {
     },
     pricing_protocol: {
       track_1_lean_rapid_sale: {
-        retail_msrp: 199,
-        team_seat: 599,
+        retail_msrp: 4500,
+        apa_buyout_anchor: 4500,
         exclusive_buyout_floor_avg: 5150,
         exclusive_buyout_anchor: 4500,
       },

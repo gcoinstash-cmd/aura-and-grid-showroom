@@ -400,7 +400,7 @@ components:
 ---
 
 ## 5. CLEAN-ROOM DEPENDENCY WHITELIST
-All components have undergone clean-room IP provenance isolation. Strictly Permissive Clean-Room licenses (`MIT`, `Apache-2.0`, `BSD-3-Clause`) are enforced; zero viral copyleft or non-commercial licenses are permitted.
+All components have undergone clean-room IP provenance isolation. Strictly Permissive Clean-Room licenses (`MIT`, `Apache-2.0`, `BSD-3-Clause`) are enforced; zero viral copyleft or restrictive non-permissive terms are permitted.
 
 | Dependency | Version | License | Category | Verification Status |
 | :--- | :--- | :--- | :--- | :--- |

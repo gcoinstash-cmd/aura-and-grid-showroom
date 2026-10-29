@@ -6,8 +6,8 @@
 
 ## 1. Executive Summary & Brand Identity
 - **Entity**: ZoMae Media LLC (Parent Holding Entity).
-- **Private Foundry Engine**: **GhostFactoryOS** — Private digital factory, portfolio command center, inventory system, licensing ledger, maintenance tracker, and operations dashboard.
-- **Commercial Showroom & Dealership**: **Aura & Grid** — Public premium showroom and digital dealership for interactive demos, source-code licenses, managed leases, agency fleet licenses, bespoke deployments, support plans, and selective micro-APAs.
+- **Private Foundry Engine**: **GhostFactoryOS** — Private digital factory, portfolio command center, inventory system, APA title transfer ledger, maintenance tracker, and operations dashboard.
+- **Commercial Showroom & Dealership**: **Aura & Grid** — Public premium showroom and digital dealership for interactive demos, standalone Asset Purchase Agreement (APA) title transfers, 50-unit portfolio cluster carve-outs, bespoke deployments, support plans, and selective micro-APAs.
 - **Mental Model**: The digital software portfolio is an elite **"digital car collection"** inside a video game—manufactured with high precision and leased, licensed, or selectively transferred.
 - **Catalog Status**: **150 custom full-stack web applications & production engines** (86 Track 1 Lean + 50 Track 2 Flagship + 14 Track 3 Working Service Engines active and standardized via the Universal Track 2 Telemetry Harness; target: 500 assets).
 
@@ -39,7 +39,7 @@ The full 136-asset collection is currently **pre-revenue**:
 | **Direct B2B Ask (Data Room)** | **$195,000 – $265,000** | **$225,000** | Asking target for enterprise / PE strategic acquirers |
 | **Realistic Accepted Offer** | **$135,000 – $175,000** | **$150,000** | Quick-close wire / cash-in-hand negotiated buyout |
 | **Distress / Quick-Sale Floor** | **$95,000 – $145,000** | **$120,000** | 50–70% buyer liquidation cash floor (below negotiated targets) |
-| **Retail Shelf Replacement MSRP** | **$92,114** | $199 T1 / $1,500 T2 | Catalog MSRP sum (86 × $199 + 50 × $1,500) |
+| **Retail Shelf Replacement MSRP** | **$92,114** | $4,500 T1 / $1,500 T2 | Catalog MSRP sum (86 × $4,500 + 50 × $1,500) |
 
 > [!CAUTION]
 > Do not present the collection as 136 proven SaaS businesses. No verified revenue, customers, retention, profit, uptime, security audits, compliance, or live production operations may be claimed without deterministic proof.
@@ -54,19 +54,19 @@ Never mix tracks in the same offer. Default to Track 1.
  [ MULTI-TRACK PRICING PROTOCOL ]
     │
     ├── TRACK 1: LEAN RAPID-SALE (Lean Tuner / Daily Driver)
-    │   ├── Retail License: $199
-    │   ├── Commercial Team Seat: $599
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
+    │   ├── Track 1 Micro-APA Buyout ($4,500 anchor)
     │   ├── Exclusive Buyout Floor: $3,800 – $6,500
     │   └── Exclusive Buyout Anchor: $4,500
     │
     ├── TRACK 2: FLAGSHIP $10K+ (Hypercar Flagship)
-    │   ├── Flagship License: $1,500 – $3,500
+    │   ├── Track 2 Chassis APA Title Transfer: $14,500 anchor
     │   ├── Entry Exclusive Buyout Anchor: $14,500 ($10,000 – $18,000 range)
     │   ├── Full Asset Buyout: $18,000 – $35,000
     │   └── Strategic Acquisition: $35,000 – $75,000+
     │
     └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine)
-        ├── Monthly Enterprise Seat License: $1,500/mo (5.0x ARR SaaS multiple)
+        ├── Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers). (5.0x ARR SaaS multiple)
         ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($1.225M – $2.275M fleet floor)
         └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($2.625M – $5.250M fleet ceiling)
 ```
@@ -75,8 +75,8 @@ Never mix tracks in the same offer. Default to Track 1.
 Standard prototypes and fast marketplace sales:
 - **Focus:** Rapid assembly, clean UI modularity, zero external dependencies.
 - **Output:** Single-bundle frontend components, verified asset packaging, minimal test verification.
-- **Retail License**: $199
-- **Commercial Team Seat**: $599
+- **Track 1 Micro-APA Buyout ($4,500 anchor)**: $4,500
+- **Commercial Team Seat**: $4,500
 - **Exclusive Buyout Floor**: $3,800 – $6,500
 - **Exclusive Buyout Anchor**: **$4,500**
 
@@ -84,7 +84,7 @@ Standard prototypes and fast marketplace sales:
 Elite, domain-heavy assets passing the Flagship Qualification Gate (including the NIST SP 800-218 Compliance Gate):
 - **Focus:** High-density interactive UI, canvas/WebGL state, mock telemetry stability.
 - **Output:** Fully clickable client-side prototypes, simulated WebSocket/state engines, responsive telemetry HUDs.
-- **Flagship Commercial License**: $1,500 – $3,500
+- **Flagship Asset Purchase Agreement (APA) title transfer**: $1,500 – $3,500
 - **Entry Exclusive Buyout Anchor**: **$14,500** ($10,000 – $18,000 range)
 - **Full Asset Buyout**: $18,000 – $35,000
 - **Strategic Acquisition**: $35,000 – $75,000+
@@ -112,7 +112,7 @@ Working Service Engines / Production Reference Architectures (Curated 35 Units t
 
 ## 5. Current Flagship Fleet (Track 2 — 28 Elite Models)
 
-These 28 assets are classified under the Flagship $10K+ Track ($14,500 Buyout Anchor / $1,500–$3,500 Commercial License):
+These 28 assets are classified under the Flagship $10K+ Track ($14,500 Buyout Anchor / Asset Purchase Agreement (APA) title transfer ($14,500 anchor)):
 
 | Asset | Flagship License | Entry Exclusive Buyout | Full Asset Buyout | Strategic Acquisition |
 |:---|---:|---:|---:|---:|
@@ -163,7 +163,7 @@ Imagine an exotic dealership showroom holding **114 high-performance supercar ch
 - **Engine**: Turnkey PostgreSQL database (Supabase with Row-Level Security).
 - **Valet Key**: Frictionless 1-click `/admin` passkey demo gate (`<slug>2026`).
 - **Monetization Paths**:
-  1. *Solo Drive-Off (Retail)*: $199 for personal deployment.
+  1. *Solo Drive-Off (Retail)*: $4,500 for personal deployment.
   2. *Commercial Fleet Lease (Agency)*: $1,499 – $2,999 non-exclusive fleet license to deploy re-skinned portals for clients at $3,500+ setup fees.
   3. *Selective Micro-APA (Non-Core Only)*: A buyer buys the pink slip to **one single vehicle** (e.g., $4,500 Track 1 anchor or $14,500 Track 2 anchor). The buyer NEVER buys the dealership, the factory, or the full fleet.
 

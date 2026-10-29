@@ -11,7 +11,7 @@
 | :--- | :--- | :--- |
 | **Model ID** | `GF-T3-164` | Ghost FactoryOS Track 3 Fleet Spec |
 | **Asset Class** | High-Speed Perception & Sensory Fusion Engine | Automotive Autonomous Systems (Level 4/5) |
-| **Retail License** | **$1,500** / node / annum | Single-chassis edge deployment runtime |
+| **Track 1 Micro-APA Buyout ($4,500 anchor)** | **$1,500** / node / annum | Single-chassis edge deployment runtime |
 | **Standard APA Buyout** | **$45,000** | Non-exclusive perpetual source transfer |
 | **Master Vault Monopoly** | **$95,000** | Exclusive IP assignment, patent grant & vault buyout |
 | **ASC 350-40 Baseline** | **$12,800** | Capitalized internal R&D software asset value |

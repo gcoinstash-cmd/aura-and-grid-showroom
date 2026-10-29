@@ -10,7 +10,7 @@
 
 ## 1. Commercial Whitelabel Grant & Scope
 
-Subject to the terms and restrictive covenants of this Agreement, ZoMae Media LLC grants the licensee ("Agency" or "Licensee") a non-exclusive, worldwide, perpetual commercial license to access, customize, deploy, and operate the software repositories contained within the Aura & Grid™ Whitelabel Vault.
+Subject to the terms and restrictive covenants of this Agreement, ZoMae Media LLC grants the licensee ("Agency" or "Licensee") a non-exclusive, worldwide, perpetual Asset Purchase Agreement (APA) title transfer to access, customize, deploy, and operate the software repositories contained within the Aura & Grid™ Whitelabel Vault.
 
 ### 1.1 Permitted Commercial Uses
 * **Unlimited Client Deployments**: Agency may customize, rebrand, re-skin, and deploy an unlimited number of client web applications using the codebase for paying commercial clients.
@@ -42,7 +42,7 @@ Any violation of Section 2 constitutes immediate and automatic termination of th
      ┌────────────────────┴────────────────────┐
      ▼                                         ▼
 [ MASTER ASSET REPUTATION ]            [ ACTIVE CASH PIPELINE ]
-• 100-App Replacement Narrative        • Direct Retail Storefront ($79 / $199)
+• 100-App Replacement Narrative        • Direct Retail Storefront (Track 1 Micro-APA Buyout ($4,500 anchor))
 • Replacement Anchor: $400k–$1M        • Founding Agency Cohort ($1,499 Pilot)
 • Internal Walk-Away Reserve: $35,000  • High-Ticket Client Builds ($3,500+)
 ```

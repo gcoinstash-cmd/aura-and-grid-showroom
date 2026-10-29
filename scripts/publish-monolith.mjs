@@ -114,15 +114,15 @@ async function main() {
 
 <h4>📦 Choose Your Rig Tier</h4>
 <ul>
-  <li><strong>Tier 1: Starter UI Rig ($79)</strong> — Complete responsive frontend codebase, obsidian and concrete styling, project showcases, and local drafting chamber.</li>
-  <li><strong>Tier 2: Full-Stack Working Rig ($199)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, BIM revision tracker, and live database hooks.</li>
+  <li><strong>Tier 1: Starter UI Rig ($4,500)</strong> — Complete responsive frontend codebase, obsidian and concrete styling, project showcases, and local drafting chamber.</li>
+  <li><strong>Tier 2: Full-Stack Working Rig ($4,500)</strong> — Everything in Tier 1 + full Supabase PostgreSQL schemas, seed data, SQL migration scripts, BIM revision tracker, and live database hooks.</li>
   <li><strong>Tier 3: White-Glove VIP Deployment ($3,500)</strong> — Complete custom server provisioning, custom domain DNS configuration, bespoke architectural branding, and VIP concierge onboarding.</li>
 </ul>`;
 
   const createParams = new URLSearchParams({
     name: 'MONOLITH STUDIO — Brutalist Architecture & BIM Project Portal OS',
     description,
-    price: '7900', // $79 base
+    price: '7900', // $4,500 base
     custom_permalink: 'monolith-studio-os',
     shown_on_profile: 'true'
   });
@@ -159,7 +159,7 @@ async function main() {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Tier 1: Starter Rig ($79) - Front-End UI Codebase & Design Chamber',
+      name: 'Tier 1: Starter Rig ($4,500) - Front-End UI Codebase & Design Chamber',
       price_difference_cents: '0'
     }).toString()
   });
@@ -168,8 +168,8 @@ async function main() {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      name: 'Tier 2: Full-Stack Rig ($199) - UI + Supabase DB + BIM Repository OS',
-      price_difference_cents: '12000' // $79 + $120 = $199
+      name: 'Tier 2: Full-Stack Rig ($4,500) - UI + Supabase DB + BIM Repository OS',
+      price_difference_cents: '0' // Pure APA ($4,500 anchor)
     }).toString()
   });
 
@@ -178,7 +178,7 @@ async function main() {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
       name: 'Tier 3: White-Glove VIP ($3,500) - Turnkey Setup & Custom Domain Hosting',
-      price_difference_cents: '342100' // $79 + $3421 = $3500
+      price_difference_cents: '342100' // $4,500 + $3421 = $3500
     }).toString()
   });
 

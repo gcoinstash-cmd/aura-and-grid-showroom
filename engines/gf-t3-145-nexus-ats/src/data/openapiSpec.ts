@@ -17,7 +17,7 @@ export const OPENAPI_SPEC_JSON = {
       "email": "skunkworks@ghostfactory.internal"
     },
     "license": {
-      "name": "Ghost FactoryOS Enterprise Commercial License",
+      "name": "Ghost FactoryOS Enterprise Asset Purchase Agreement (APA) title transfer",
       "url": "https://ghostfactory.internal/licenses/gf-t3-145"
     }
   },

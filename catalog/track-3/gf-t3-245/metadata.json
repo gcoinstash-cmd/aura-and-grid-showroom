@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-245",
+  "description": "Paged KV Cache, FlashAttention Ring-Block Eviction, and Zero Fragmentation Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

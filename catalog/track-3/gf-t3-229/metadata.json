@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-229",
+  "description": "Pipeline-Parallel 1F1B Engine \u00b7 Micro-Batch Staging \u00b7 Zero Bubble Interleaved",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

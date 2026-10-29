@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-257",
+  "description": "Track 3 Flagship Speculative Decoding and Draft Model Verification Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-202",
+  "description": "High-frequency limit order book and liquidity matching engine with deterministic price-time FIFO priority, integer micro-unit math, and institutional L2 book.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

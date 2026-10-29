@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-225",
+  "description": "FP8 Mixed-Precision GEMM, Dynamic Microscaling, E4M3/E5M2 Core, and FP32 Accumulation Engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-300",
+  "description": "Dynamic Asynchronous MoE Tensor Parallelism and Expert Load Balancer Flagship Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

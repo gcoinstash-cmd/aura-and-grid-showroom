@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-234",
+  "description": "Direct KV-Cache P2P Transfer and RDMA RoCEv2 Fabric Cockpit Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

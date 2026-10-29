@@ -1,0 +1,1148 @@
+{
+  "manifest_title": "GhostFactoryOS Cluster 006 Intake Pipeline Specification",
+  "schema_version": "1.0.0-INTAKE-QUEUE",
+  "timestamp": "2026-10-28T01:16:08.905Z",
+  "cluster_id": "CLUSTER-006",
+  "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+  "seal_threshold": 50,
+  "units_currently_sealed_in_cluster": 1,
+  "units_remaining_to_seal": 49,
+  "target_fleet_capacity_at_seal": 300,
+  "commercial_parameters": {
+    "asking_anchor_usd": 1250000,
+    "asking_anchor_formatted": "$1,250,000",
+    "reserve_walk_away_floor_usd": 750000,
+    "reserve_walk_away_floor_formatted": "$750,000",
+    "minimum_pof_gate_usd": 1000000,
+    "escrow_protocol": "Escrow.com / Acquire.com Institutional Desk"
+  },
+  "queue_slots": [
+    {
+      "slot_index": 2,
+      "target_unit_id": "GF-T3-252",
+      "unit_number": 252,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-252",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 3,
+      "target_unit_id": "GF-T3-253",
+      "unit_number": 253,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-253",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 4,
+      "target_unit_id": "GF-T3-254",
+      "unit_number": 254,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-254",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 5,
+      "target_unit_id": "GF-T3-255",
+      "unit_number": 255,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-255",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 6,
+      "target_unit_id": "GF-T3-256",
+      "unit_number": 256,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-256",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 7,
+      "target_unit_id": "GF-T3-257",
+      "unit_number": 257,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-257",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 8,
+      "target_unit_id": "GF-T3-258",
+      "unit_number": 258,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-258",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 9,
+      "target_unit_id": "GF-T3-259",
+      "unit_number": 259,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-259",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 10,
+      "target_unit_id": "GF-T3-260",
+      "unit_number": 260,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-260",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 11,
+      "target_unit_id": "GF-T3-261",
+      "unit_number": 261,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-261",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 12,
+      "target_unit_id": "GF-T3-262",
+      "unit_number": 262,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-262",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 13,
+      "target_unit_id": "GF-T3-263",
+      "unit_number": 263,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-263",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 14,
+      "target_unit_id": "GF-T3-264",
+      "unit_number": 264,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-264",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 15,
+      "target_unit_id": "GF-T3-265",
+      "unit_number": 265,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-265",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 16,
+      "target_unit_id": "GF-T3-266",
+      "unit_number": 266,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-266",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 17,
+      "target_unit_id": "GF-T3-267",
+      "unit_number": 267,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-267",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 18,
+      "target_unit_id": "GF-T3-268",
+      "unit_number": 268,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-268",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 19,
+      "target_unit_id": "GF-T3-269",
+      "unit_number": 269,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-269",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 20,
+      "target_unit_id": "GF-T3-270",
+      "unit_number": 270,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-270",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 21,
+      "target_unit_id": "GF-T3-271",
+      "unit_number": 271,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-271",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 22,
+      "target_unit_id": "GF-T3-272",
+      "unit_number": 272,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-272",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 23,
+      "target_unit_id": "GF-T3-273",
+      "unit_number": 273,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-273",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 24,
+      "target_unit_id": "GF-T3-274",
+      "unit_number": 274,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-274",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 25,
+      "target_unit_id": "GF-T3-275",
+      "unit_number": 275,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-275",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 26,
+      "target_unit_id": "GF-T3-276",
+      "unit_number": 276,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-276",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 27,
+      "target_unit_id": "GF-T3-277",
+      "unit_number": 277,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-277",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 28,
+      "target_unit_id": "GF-T3-278",
+      "unit_number": 278,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-278",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 29,
+      "target_unit_id": "GF-T3-279",
+      "unit_number": 279,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-279",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 30,
+      "target_unit_id": "GF-T3-280",
+      "unit_number": 280,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-280",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 31,
+      "target_unit_id": "GF-T3-281",
+      "unit_number": 281,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-281",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 32,
+      "target_unit_id": "GF-T3-282",
+      "unit_number": 282,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-282",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 33,
+      "target_unit_id": "GF-T3-283",
+      "unit_number": 283,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-283",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 34,
+      "target_unit_id": "GF-T3-284",
+      "unit_number": 284,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-284",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 35,
+      "target_unit_id": "GF-T3-285",
+      "unit_number": 285,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-285",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 36,
+      "target_unit_id": "GF-T3-286",
+      "unit_number": 286,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-286",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 37,
+      "target_unit_id": "GF-T3-287",
+      "unit_number": 287,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-287",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 38,
+      "target_unit_id": "GF-T3-288",
+      "unit_number": 288,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-288",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 39,
+      "target_unit_id": "GF-T3-289",
+      "unit_number": 289,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-289",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 40,
+      "target_unit_id": "GF-T3-290",
+      "unit_number": 290,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-290",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 41,
+      "target_unit_id": "GF-T3-291",
+      "unit_number": 291,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-291",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 42,
+      "target_unit_id": "GF-T3-292",
+      "unit_number": 292,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-292",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 43,
+      "target_unit_id": "GF-T3-293",
+      "unit_number": 293,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-293",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 44,
+      "target_unit_id": "GF-T3-294",
+      "unit_number": 294,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-294",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 45,
+      "target_unit_id": "GF-T3-295",
+      "unit_number": 295,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-295",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 46,
+      "target_unit_id": "GF-T3-296",
+      "unit_number": 296,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-296",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 47,
+      "target_unit_id": "GF-T3-297",
+      "unit_number": 297,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-297",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 48,
+      "target_unit_id": "GF-T3-298",
+      "unit_number": 298,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-298",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 49,
+      "target_unit_id": "GF-T3-299",
+      "unit_number": 299,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-299",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    },
+    {
+      "slot_index": 50,
+      "target_unit_id": "GF-T3-300",
+      "unit_number": 300,
+      "cluster_id": "CLUSTER-006",
+      "cluster_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+      "tier_classification": "Track 3 — F1 Skunkworks Engine",
+      "status": "PENDING_INTAKE",
+      "auto_tag_rule": {
+        "on_dyno_pass": {
+          "cluster_id": "CLUSTER-006",
+          "tag": "GF-T3-300",
+          "commercial_theme": "Next-Gen Autonomous Telemetry / FinTech Series 2",
+          "clean_room_standard": "NIST-SP-800-218-SSDF-v1.1"
+        }
+      },
+      "dyno_verification_criteria": {
+        "gate_1_state_machine": "REQUIRED (Deterministic math / Kalman filtering / order book)",
+        "gate_2_clean_room_ip": "REQUIRED (100% Permissive MIT/Apache-2.0, Zero Copyleft)",
+        "gate_3_hardened_schema": "REQUIRED (PostgreSQL DDL + Row Level Security)",
+        "gate_4_turnkey_deploy": "REQUIRED (Cloud Run Docker Container + OpenAPI 3.1 contract)"
+      }
+    }
+  ]
+}

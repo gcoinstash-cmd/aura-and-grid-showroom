@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-301",
+  "description": "Ultra-Wide Dynamic Asynchronous Cluster-006 Master Orchestration and Sovereign APA Vault Gateway",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

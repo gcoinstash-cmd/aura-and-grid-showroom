@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-295",
+  "description": "Ultra-Wide Dynamic Asynchronous Distributed Checkpointing and Zero-Downtime State Synchronization Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

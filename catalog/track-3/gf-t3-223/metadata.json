@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-223",
+  "description": "Speculative Decoding Harness \u00b7 Draft Verification \u00b7 Rejection Sampling \u00b7 Dynamic K Horizon",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

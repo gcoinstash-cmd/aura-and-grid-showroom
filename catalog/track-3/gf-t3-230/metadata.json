@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-230",
+  "description": "Tensor-Parallel Ring-AllReduce NVLink 900 GB/s Fabric and Zero-Copy Pinned Staging Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

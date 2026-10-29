@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-217",
+  "description": "Deterministic semantic intent classifier, UCB1 multi-armed bandit balancer, and zero-drop circuit breaker cascade gateway for multi-tier model topologies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

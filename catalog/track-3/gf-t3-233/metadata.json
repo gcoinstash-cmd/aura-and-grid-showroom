@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-233",
+  "description": "Asynchronous Kernel Stream Concurrency & Priority Scheduler Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,19 @@
+name: GF-T3-296 Verification Pipeline
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Backend Dependencies
+        run: pip install fastapi==0.115.0 uvicorn==0.30.6 pydantic==2.9.2 pytest==8.3.3 httpx==0.27.2
+      - name: Run Dyno Gate 04 Pytest Suite
+        run: pytest test_fp8_quantization_engine.py

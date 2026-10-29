@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-256",
+  "description": "Track 3 Flagship FlashDecoding and Multi-Block Attention Parallel Reduction Engine Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

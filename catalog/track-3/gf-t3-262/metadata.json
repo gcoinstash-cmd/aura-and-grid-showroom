@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-262",
+  "description": "Track 3 Flagship MoE Expert Parallelism and Dynamic Token Routing Cockpit Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

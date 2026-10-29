@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-290",
+  "description": "Dynamic Asynchronous Tensor Parallelism and All-Reduce Ring-Topology Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

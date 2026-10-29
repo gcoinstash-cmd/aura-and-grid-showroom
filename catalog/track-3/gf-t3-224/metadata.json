@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-224",
+  "description": "Tensor-Parallel Fabric, Ring All-Reduce Topology, and Comm-Comp Stream Overlap Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

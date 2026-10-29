@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-265",
+  "description": "KV-Cache Pooling · Zero-Copy Arenas · Zero Redundancy",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

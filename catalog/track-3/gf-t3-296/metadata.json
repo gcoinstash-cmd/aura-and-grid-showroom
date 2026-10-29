@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-296",
+  "description": "FP8 Quantization and Calibration Matrix Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

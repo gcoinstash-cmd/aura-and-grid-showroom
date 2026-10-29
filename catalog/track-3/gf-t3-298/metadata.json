@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-298",
+  "description": "Dynamic Asynchronous KV Cache Compression and Quantization Ring Engine Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

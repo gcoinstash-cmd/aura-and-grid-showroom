@@ -1,0 +1,74 @@
+-- ============================================================================
+-- GF-T3-234: DIRECT KV-CACHE P2P TRANSFER & RDMA ROCEV2 FABRIC SCHEMA
+-- PostgreSQL 16 / Supabase Production Persistence Layer (Zero-Trust RLS)
+-- ============================================================================
+
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+-- 1. RDMA Fabric Nodes Registry Table
+CREATE TABLE IF NOT EXISTS public.rdma_worker_nodes (
+    node_id INTEGER PRIMARY KEY CHECK (node_id >= 0 AND node_id <= 7),
+    node_label VARCHAR(8) NOT NULL UNIQUE,
+    tenant_org_id UUID NOT NULL,
+    target_node_id INTEGER NOT NULL CHECK (target_node_id >= 0 AND target_node_id <= 7),
+    kv_blocks_allocated INTEGER NOT NULL DEFAULT 128 CHECK (kv_blocks_allocated >= 0),
+    transfer_size_mb INTEGER NOT NULL DEFAULT 16 CHECK (transfer_size_mb BETWEEN 4 AND 512),
+    dma_pointer_hex VARCHAR(16) NOT NULL,
+    rkey_crc32_hex VARCHAR(16) NOT NULL,
+    queue_depth INTEGER NOT NULL DEFAULT 8 CHECK (queue_depth BETWEEN 1 AND 128),
+    completion_latency_us NUMERIC(6, 2) NOT NULL DEFAULT 0.12,
+    bandwidth_gbs NUMERIC(6, 1) NOT NULL DEFAULT 200.0,
+    cq_state VARCHAR(32) NOT NULL DEFAULT 'RDMA_WRITE_ACTIVE',
+    parity_verified BOOLEAN NOT NULL DEFAULT TRUE,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- 2. Partitioned P2P KV-Cache Transfer Telemetry Ledger (Range Partitioned by Epoch)
+CREATE TABLE IF NOT EXISTS public.rdma_kv_transfer_ledger (
+    transfer_id UUID NOT NULL DEFAULT gen_random_uuid(),
+    ring_epoch BIGINT NOT NULL,
+    tenant_org_id UUID NOT NULL,
+    corridor_code VARCHAR(80) NOT NULL,
+    source_node_id INTEGER NOT NULL REFERENCES public.rdma_worker_nodes(node_id),
+    target_node_id INTEGER NOT NULL REFERENCES public.rdma_worker_nodes(node_id),
+    transfer_size_mb INTEGER NOT NULL,
+    dma_pointer_hex VARCHAR(16) NOT NULL,
+    crc32_parity_hex VARCHAR(16) NOT NULL,
+    measured_latency_us NUMERIC(6, 2) NOT NULL,
+    fabric_bandwidth_gbs NUMERIC(6, 1) NOT NULL,
+    packet_drop_recovered BOOLEAN NOT NULL DEFAULT FALSE,
+    recorded_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (transfer_id, ring_epoch)
+) PARTITION BY RANGE (ring_epoch);
+
+CREATE TABLE IF NOT EXISTS public.rdma_kv_transfer_ledger_p1
+    PARTITION OF public.rdma_kv_transfer_ledger FOR VALUES FROM (1) TO (100000);
+
+CREATE TABLE IF NOT EXISTS public.rdma_kv_transfer_ledger_p2
+    PARTITION OF public.rdma_kv_transfer_ledger FOR VALUES FROM (100000) TO (1000000);
+
+-- 3. High-Selectivity Indexes for Low-Latency Telemetry Lookups
+CREATE INDEX IF NOT EXISTS idx_rdma_nodes_tenant ON public.rdma_worker_nodes(tenant_org_id, cq_state);
+CREATE INDEX IF NOT EXISTS idx_rdma_ledger_epoch ON public.rdma_kv_transfer_ledger(ring_epoch DESC, source_node_id);
+CREATE INDEX IF NOT EXISTS idx_rdma_ledger_tenant ON public.rdma_kv_transfer_ledger(tenant_org_id, recorded_at DESC);
+
+-- 4. Strict Row-Level Security (RLS) Policies
+ALTER TABLE public.rdma_worker_nodes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.rdma_kv_transfer_ledger ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "tenant_isolation_select_nodes" ON public.rdma_worker_nodes
+    FOR SELECT TO authenticated
+    USING (tenant_org_id = (auth.jwt() ->> 'org_id')::uuid);
+
+CREATE POLICY "tenant_isolation_modify_nodes" ON public.rdma_worker_nodes
+    FOR ALL TO authenticated
+    USING (tenant_org_id = (auth.jwt() ->> 'org_id')::uuid)
+    WITH CHECK (tenant_org_id = (auth.jwt() ->> 'org_id')::uuid);
+
+CREATE POLICY "tenant_isolation_select_ledger" ON public.rdma_kv_transfer_ledger
+    FOR SELECT TO authenticated
+    USING (tenant_org_id = (auth.jwt() ->> 'org_id')::uuid);
+
+CREATE POLICY "tenant_isolation_insert_ledger" ON public.rdma_kv_transfer_ledger
+    FOR INSERT TO authenticated
+    WITH CHECK (tenant_org_id = (auth.jwt() ->> 'org_id')::uuid);

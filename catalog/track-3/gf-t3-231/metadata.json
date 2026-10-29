@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-231",
+  "description": "Track 3 FP8 E4M3/E5M2 Quantization and Dynamic Scaling Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

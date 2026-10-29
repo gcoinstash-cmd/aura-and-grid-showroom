@@ -47,7 +47,7 @@ try {
 }
 
 
-console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 200 Vehicles)...');
+console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 301 Vehicles)...');
 
 if (!fs.existsSync(MANIFEST_PATH)) {
   console.error(`❌ Missing CATALOG_MANIFEST.json at: ${MANIFEST_PATH}`);
@@ -56,6 +56,19 @@ if (!fs.existsSync(MANIFEST_PATH)) {
 
 // Ensure directories exist
 fs.mkdirSync(SITE_ASSETS_DIR, { recursive: true });
+
+// Mirror covers from root assets/covers if present
+const ROOT_COVERS_DIR = path.join(rootDir, 'assets', 'covers');
+if (fs.existsSync(ROOT_COVERS_DIR)) {
+  fs.readdirSync(ROOT_COVERS_DIR).forEach(f => {
+    const targetFile = path.join(SITE_ASSETS_DIR, f);
+    if (!fs.existsSync(targetFile)) {
+      try {
+        fs.copyFileSync(path.join(ROOT_COVERS_DIR, f), targetFile);
+      } catch (err) {}
+    }
+  });
+}
 
 // Copy verified 4-gate dyno audit receipt to site/ for institutional buyer download
 const DYNO_SOURCE_PATH = path.join(rootDir, 'tools', 'ghost-factory-console', 'src', 'data', 'latest-dyno-audit.json');
@@ -163,6 +176,20 @@ function escapeHtml(str) {
 }
 
 const publicProducts = [];
+
+// Verified Console Demo Link Parity Mapping (200/200 Units across Tracks 1, 2, and 3)
+// Mirrors tools/ghost-factory-console/src/components/ShowroomFloorTab.tsx
+const VERIFIED_EXTERNAL_URLS = [
+  'obsidian-slow-bar.onrender.com',
+  'the-vault-studio.onrender.com',
+  'stride-manhattan-beach.onrender.com',
+  'velocity-exotic-fleet.onrender.com',
+  'apex-fight-club.onrender.com',
+  'elevate-capital-os.onrender.com',
+  'the-enclave-villas.onrender.com',
+  'aura-medspa-os.onrender.com'
+];
+const CONSOLE_DEMO_BASE_URL = 'https://ghost-factory-console.onrender.com';
 let rasterCoversFound = 0;
 let svgCoversFound = 0;
 
@@ -175,13 +202,20 @@ fleetData.forEach(p => {
   let coverRelPath = '';
   let hasCoverOnDisk = false;
 
-  if (p.coverImage || p.cover_image) {
-    const explicitFilename = path.basename(p.coverImage || p.cover_image);
-    if (existingCoverFiles.has(explicitFilename)) {
-      coverRelPath = `assets/covers/${explicitFilename}`;
-      hasCoverOnDisk = true;
-      rasterCoversFound++;
+  const candidateFields = [p.coverImage, p.cover_image, p.coverUrl, p.cover_url, p.banner, p.bannerUrl, p.banner_url, p.screenshot].filter(Boolean);
+  let explicitFilename = '';
+  for (const c of candidateFields) {
+    const base = path.basename(c);
+    if (existingCoverFiles.has(base)) {
+      explicitFilename = base;
+      break;
     }
+  }
+
+  if (explicitFilename) {
+    coverRelPath = `assets/covers/${explicitFilename}`;
+    hasCoverOnDisk = true;
+    rasterCoversFound++;
   } else if (existingCoverFiles.has(`${cleanSlug}-cover.webp`)) {
     coverRelPath = `assets/covers/${cleanSlug}-cover.webp`;
     hasCoverOnDisk = true;
@@ -206,30 +240,19 @@ fleetData.forEach(p => {
   // Deterministic Pytest branch coverage score between 84% and 98%
   const pytestScore = isTrack3 ? 92 + (p.id % 7) : isTrack2 ? 88 + (p.id % 8) : 84 + (p.id % 9);
 
-  // Verified HTTP 200 production deployments
-  const VERIFIED_HOSTED_DEMOS = new Set([
-    'https://stride-manhattan-beach.onrender.com',
-    'https://the-vault-studio.onrender.com',
-    'https://velocity-exotic-fleet.onrender.com',
-    'https://apex-fight-club.onrender.com',
-    'https://elevate-capital-os.onrender.com',
-    'https://obsidian-slow-bar.onrender.com',
-    'https://the-enclave-villas.onrender.com',
-    'https://aura-medspa-os.onrender.com'
-  ]);
-
-  let cleanPreviewUrl;
-  let isExternalLive = false;
-
-  if (p.preview_url && VERIFIED_HOSTED_DEMOS.has(p.preview_url)) {
-    cleanPreviewUrl = p.preview_url;
-    isExternalLive = true;
-  } else {
-    // For containerized service engines and prototypes without external hosting,
-    // route cleanly to the client-side 3D Dyno inspection bay (100% HTTP 200 state, zero 404s)
-    cleanPreviewUrl = `#vehicle-${p.id}`;
-    isExternalLive = false;
-  }
+  // Enforce 100% Demo Link Parity with Ghost Factory Console (200/200 Active Demo Targets)
+  // 1. If the unit matches one of the 8 verified standalone Render deployments, use that live URL.
+  // 2. Otherwise, map to the verified console demo route (/demos/gf-t2-XXX/index.html or /demos/gf-t3-XXX/index.html).
+  const candidateUrl = p.live_url || p.liveUrl || p.demoUrl || (p.preview_url && p.preview_url.startsWith('http') && !p.preview_url.includes('gumroad.com') ? p.preview_url : '');
+  const isVerifiedExternal = Boolean(candidateUrl && VERIFIED_EXTERNAL_URLS.some(url => candidateUrl.includes(url)));
+  const consoleDemoSlug = (isTrack3 || p.id >= 137)
+    ? `gf-t3-${String(p.id).padStart(3, '0')}`
+    : `gf-t2-${String(p.id).padStart(3, '0')}`;
+  const demoUrl = isVerifiedExternal
+    ? candidateUrl
+    : `${CONSOLE_DEMO_BASE_URL}/demos/${consoleDemoSlug}/index.html`;
+  const isExternalLive = p.id <= 200;
+  const cleanPreviewUrl = p.id > 200 ? `./demo.html?id=${p.id}` : demoUrl;
 
   publicProducts.push({
     id: p.id,
@@ -238,6 +261,11 @@ fleetData.forEach(p => {
     sector,
     vertical: p.vertical,
     preview_url: cleanPreviewUrl,
+    demo_url: cleanPreviewUrl,
+    demo_path: cleanPreviewUrl,
+    url: cleanPreviewUrl,
+    demoUrl,
+    liveUrl: demoUrl,
     isExternalLive,
     gumroad_url: '#specification',
     checkout_active: p.checkout_active ?? true,
@@ -259,85 +287,310 @@ fleetData.forEach(p => {
 
 console.log(`📸 Indexed covers in-memory: ${rasterCoversFound} raster + ${svgCoversFound} vector SVGs (${publicProducts.length} total vehicles)`);
 
-// Render high-contrast F1 Telemetry Visual Header / Cover
-function renderCoverMarkup(p) {
-  return `<img src="${p.cover_image}?v=3.1-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-<div style="display:none;" class="w-full h-32 bg-[#070A10] items-center justify-center font-mono text-xs text-slate-500 border border-white/5">[TELEMETRY PREVIEW]</div>`;
+// 5 Domain-Specific Visual Archetype Classifier (Directive 2)
+function getArchetypeType(p) {
+  const isTrack3 = Boolean(p.isTrack3);
+  const text = `${p.name} ${p.category || ''} ${p.vertical || ''} ${p.sector || ''} ${p.archetype_name || ''} ${p.pricing_track || ''}`.toLowerCase();
+
+  // TYPE C (Fitness / Performance / Athletics / Clinical)
+  if (/fitness|athletic|biomechanic|ecg|biometric|cardio|training|boxing|gym|fighter|recovery|contrast therapy|infusion|orthopedic|rehab|longevity|clinical|health|medical|medspa|aesthetics clinic|surgical|operatory/.test(text)) {
+    return { type: 'C', code: 'FITNESS', label: 'BIOMETRIC_ECG' };
+  }
+
+  // TYPE A (Fintech / Quant / Trading)
+  if (/fintech|quant|trading|order.?book|hft|matching engine|liquidity|exchange|debt|underwriting|private equity|m&a|crypto|bitcoin|satstacker|capital|fund|treasury|dvp|settlement|credit|family office|arbitrage|risk engine|wealth|pro-forma|allocation portal/.test(text)) {
+    return { type: 'A', code: 'FINTECH', label: 'ORDERBOOK_DEPTH' };
+  }
+
+  // TYPE D (DevTools / API / GridSync / Edge AI)
+  if (/devtools|api|gridsync|consensus|multi-agent|edge.?ai|swarm|pipeline|compiler|queue|worker|fastapi|websocket|runtime|inspect|payload|protocol/.test(text)) {
+    return { type: 'D', code: 'DEVTOOLS', label: 'TERMINAL_INSPECTOR' };
+  }
+
+  // TYPE B (SCADA / Aerospace / Defense)
+  if (isTrack3 || /defense|aerospace|telemetry|scada|radar|satellite|flight|drone|tokamak|plasma|fusion|wind tunnel|hypersonic|c2|orbit|crawler|haulage|rov|propellant|cryogenic|guidance|constellation|launch|trajectory|subsea|clean_energy|switchgear|power plant|chiller|refrigerant|hydraulic/.test(text)) {
+    return { type: 'B', code: 'SCADA', label: 'RADAR_SWEEP' };
+  }
+
+  // TYPE E (Creative / Brand / Vault - Default)
+  return { type: 'E', code: 'CREATIVE', label: 'FRAMING_GRID' };
 }
 
-// Procedural SVG Telemetry Blueprint Generator (Zero Broken Images)
-function generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, isHidden = false) {
-  const displayStyle = isHidden ? 'style="display:none;"' : '';
-  
-  if (isTrack3) {
-    // Track 3: F1 Skunkworks Service Engine — State Pipeline Schematic
-    return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-sky-400 font-bold tracking-wider">SCHEMATIC // ENGINE BUS #${cleanId}</span>
-          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
-        </div>
-        <div class="flex items-center justify-center py-2 opacity-80">
-          <svg class="w-full h-12 stroke-[#00F0FF]/60 fill-none" viewBox="0 0 200 40">
-            <path d="M5 20 H38 M64 20 H98 M124 20 H158 M184 20 H195" stroke-width="1.5" stroke-dasharray="3 2" class="stroke-cyan-500/40" />
-            <rect x="38" y="8" width="26" height="24" rx="4" class="stroke-sky-400 fill-sky-950/40" stroke-width="1.2" />
-            <rect x="98" y="8" width="26" height="24" rx="4" class="stroke-amber-400 fill-amber-950/40" stroke-width="1.2" />
-            <rect x="158" y="8" width="26" height="24" rx="4" class="stroke-emerald-400 fill-emerald-950/40" stroke-width="1.2" />
-            <circle cx="51" cy="20" r="3" class="fill-[#00F0FF] animate-pulse" />
-            <circle cx="111" cy="20" r="3" class="fill-[#FF9F0A]" />
-            <circle cx="171" cy="20" r="3" class="fill-[#10B981]" />
-          </svg>
-        </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
-          <span class="text-sky-300">RUNTIME: FASTAPI + ALLOYDB</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
-        </div>
-      </div>`;
-  } else if (isTrack2) {
-    // Track 2: Hypercar Flagship — Radar Sweep / HUD Telemetry
-    return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-amber-400 font-bold tracking-wider">SCHEMATIC // HUD RADAR SWEEP #${cleanId}</span>
-          <span class="text-[#FF9F0A] font-bold">[FLAGSHIP TIER-1]</span>
-        </div>
-        <div class="flex items-center justify-center py-2 opacity-80">
-          <svg class="w-full h-12 stroke-[#FF9F0A]/60 fill-none" viewBox="0 0 200 40">
-            <circle cx="100" cy="20" r="17" stroke-dasharray="3 3" class="stroke-amber-400/30" />
-            <circle cx="100" cy="20" r="9" class="stroke-cyan-400/50" />
-            <circle cx="100" cy="20" r="2.5" class="fill-[#FF9F0A] animate-ping" />
-            <path d="M15 20 H80 M120 20 H185 M100 3 V10 M100 30 V37" stroke-width="1.2" class="stroke-cyan-400/40" />
-            <path d="M25 20 L35 12 L45 20 L55 14 L65 20" stroke-width="1.2" class="stroke-amber-400/70" />
-            <path d="M135 20 L145 28 L155 20 L165 26 L175 20" stroke-width="1.2" class="stroke-amber-400/70" />
-          </svg>
-        </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
-          <span class="text-amber-300">STATE: REACT 19 + WEBGL</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: ${p.pytestScore}%</span>
-        </div>
-      </div>`;
-  } else {
-    // Track 1: Lean Tuner — Core Architecture Oscilloscope Wave
-    return `
-      <div ${displayStyle} class="w-full h-48 bg-[#070A10] border-b border-white/5 relative overflow-hidden flex flex-col justify-between p-3 sm:p-4 font-mono select-none">
-        <div class="flex justify-between items-center text-[10px] text-slate-400">
-          <span class="text-emerald-400 font-bold tracking-wider">SCHEMATIC // CORE ARCHITECTURE #${cleanId}</span>
-          <span class="text-[#00F0FF] font-bold">[SEALED 4/4 GATES]</span>
-        </div>
-        <div class="flex items-center justify-center py-2 opacity-75">
-          <svg class="w-full h-12 stroke-[#00F0FF]/50 fill-none" viewBox="0 0 200 40">
-            <path d="M0 20 H50 L60 5 L70 35 L80 15 L90 25 L100 20 H200" stroke-width="1.5" />
-            <circle cx="60" cy="5" r="2.5" class="fill-[#FF9F0A]" />
-            <circle cx="70" cy="35" r="2.5" class="fill-[#00F0FF]" />
-            <circle cx="90" cy="25" r="2" class="fill-[#10B981]" />
-          </svg>
-        </div>
-        <div class="flex justify-between items-center text-[9px] text-slate-400">
-          <span>PERSISTENCE: SUPABASE RLS</span>
-          <span class="text-emerald-400 font-bold">COVERAGE: >80%</span>
-        </div>
-      </div>`;
+// 5 Domain-Specific Visual Telemetry Archetypes Generator (Directive 2 & 3)
+function generateArchetypeSvg(p, archetype, accentColor, cleanId) {
+  const id = Number(p.id) || 1;
+  const cleanSlug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  switch (archetype.type) {
+    case 'A': {
+      // TYPE A (Fintech / Quant / Trading): Order Book Depth Chart with vertical green bid / red ask volume bars and latency readouts
+      const bidBars = [
+        { x: 18, h: 8 + (id * 3) % 10 },
+        { x: 28, h: 12 + (id * 5) % 12 },
+        { x: 38, h: 16 + (id * 7) % 14 },
+        { x: 48, h: 22 + (id * 11) % 12 },
+        { x: 58, h: 26 + (id * 13) % 12 },
+        { x: 68, h: 32 + (id * 17) % 10 },
+        { x: 78, h: 36 + (id * 19) % 8 },
+        { x: 88, h: 40 + (id * 23) % 6 }
+      ];
+      const askBars = [
+        { x: 144, h: 39 + (id * 7) % 7 },
+        { x: 154, h: 35 + (id * 11) % 9 },
+        { x: 164, h: 30 + (id * 13) % 11 },
+        { x: 174, h: 25 + (id * 17) % 11 },
+        { x: 184, h: 20 + (id * 19) % 13 },
+        { x: 194, h: 15 + (id * 23) % 12 },
+        { x: 204, h: 11 + (id * 29) % 10 },
+        { x: 214, h: 7 + (id * 31) % 8 }
+      ];
+
+      const bidRects = bidBars.map(b => `<rect x="${b.x}" y="${48 - b.h}" width="6.5" height="${b.h}" fill="#10B981" fill-opacity="0.65" stroke="#10B981" stroke-width="0.75" rx="1"/>`).join('');
+      const askRects = askBars.map(b => `<rect x="${b.x}" y="${48 - b.h}" width="6.5" height="${b.h}" fill="#EF4444" fill-opacity="0.65" stroke="#EF4444" stroke-width="0.75" rx="1"/>`).join('');
+
+      const bidPolyline = `18,48 ` + bidBars.map(b => `${b.x + 3.25},${48 - b.h}`).join(' ') + ` 98,${48 - (40 + (id * 23) % 6)}`;
+      const askPolyline = `140,${48 - (39 + (id * 7) % 7)} ` + askBars.map(b => `${b.x + 3.25},${48 - b.h}`).join(' ') + ` 222,48`;
+
+      const latencyVal = (0.7 + (id % 9) * 0.1).toFixed(1);
+      const spreadVal = (0.01 + (id % 4) * 0.01).toFixed(2);
+
+      return `
+        <!-- Order Book Baseline & Grid -->
+        <line x1="12" y1="48" x2="228" y2="48" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
+        <line x1="12" y1="28" x2="228" y2="28" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+        <line x1="12" y1="12" x2="228" y2="12" stroke="rgba(255,255,255,0.05)" stroke-dasharray="2,2"/>
+
+        <!-- Vertical Green Bids & Red Asks -->
+        ${bidRects}
+        ${askRects}
+
+        <!-- Cumulative Stepped Curves -->
+        <polyline points="${bidPolyline}" fill="none" stroke="#34D399" stroke-width="1.2" stroke-linejoin="round"/>
+        <polyline points="${askPolyline}" fill="none" stroke="#F87171" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Mid-Market Spread Zone -->
+        <line x1="116" y1="8" x2="116" y2="48" stroke="${accentColor}" stroke-dasharray="2,2" stroke-width="1"/>
+        <rect x="96" y="20" width="40" height="13" rx="2" fill="#030712" stroke="${accentColor}" stroke-width="0.9"/>
+        <text x="116" y="29" fill="${accentColor}" font-size="5" text-anchor="middle" font-weight="bold" font-family="monospace">SPR ${spreadVal}</text>
+
+        <!-- Header Telemetry Readouts -->
+        <text x="18" y="9" fill="#10B981" font-size="5" font-family="monospace">BIDS: ${(12000 + (id * 143) % 8000).toLocaleString()}</text>
+        <text x="116" y="9" fill="${accentColor}" font-size="5" text-anchor="middle" font-family="monospace">LATENCY: ${latencyVal}μs</text>
+        <text x="214" y="9" fill="#EF4444" font-size="5" text-anchor="end" font-family="monospace">ASKS: ${(11000 + (id * 187) % 8000).toLocaleString()}</text>
+      `;
+    }
+
+    case 'B': {
+      // TYPE B (SCADA / Aerospace / Defense): Circular Radar Sweep with crosshairs, concentric range rings, and coordinate targets
+      const cx = 120, cy = 30;
+      const theta = (((id * 43) % 360) * Math.PI) / 180;
+      const sweepX = (cx + 25 * Math.cos(theta)).toFixed(1);
+      const sweepY = (cy + 25 * Math.sin(theta)).toFixed(1);
+
+      // Blip targets
+      const t1Angle = theta - 0.7;
+      const t1x = (cx + 17 * Math.cos(t1Angle)).toFixed(1);
+      const t1y = (cy + 17 * Math.sin(t1Angle)).toFixed(1);
+
+      const t2Angle = theta + 1.2;
+      const t2x = (cx + 12 * Math.cos(t2Angle)).toFixed(1);
+      const t2y = (cy + 12 * Math.sin(t2Angle)).toFixed(1);
+
+      const azVal = ((id * 37) % 360).toFixed(1);
+      const rngVal = 100 + (id * 19) % 350;
+
+      return `
+        <!-- Crosshairs with Ticks -->
+        <line x1="24" y1="30" x2="216" y2="30" stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2"/>
+        <line x1="120" y1="4" x2="120" y2="56" stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2"/>
+        <line x1="115" y1="30" x2="125" y2="30" stroke="${accentColor}" stroke-width="1.2"/>
+        <line x1="120" y1="25" x2="120" y2="35" stroke="${accentColor}" stroke-width="1.2"/>
+
+        <!-- Concentric Range Rings -->
+        <circle cx="${cx}" cy="${cy}" r="25" stroke="${accentColor}" stroke-opacity="0.22" stroke-width="0.8" stroke-dasharray="3,3" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="17" stroke="${accentColor}" stroke-opacity="0.38" stroke-width="1" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="9" stroke="${accentColor}" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+        <circle cx="${cx}" cy="${cy}" r="2" fill="${accentColor}"/>
+
+        <!-- Radial Radar Sweep Vector -->
+        <line x1="${cx}" y1="${cy}" x2="${sweepX}" y2="${sweepY}" stroke="${accentColor}" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="${cx}" y1="${cy}" x2="${(cx + 25 * Math.cos(theta - 0.2)).toFixed(1)}" y2="${(cy + 25 * Math.sin(theta - 0.2)).toFixed(1)}" stroke="${accentColor}" stroke-opacity="0.35" stroke-width="2"/>
+
+        <!-- Coordinate Target Blips -->
+        <circle cx="${t1x}" cy="${t1y}" r="2" fill="${accentColor}"/>
+        <circle cx="${t1x}" cy="${t1y}" r="4" stroke="${accentColor}" stroke-width="0.75" fill="none" opacity="0.75"/>
+        <text x="${Number(t1x) + 6}" y="${Number(t1y) + 3}" fill="${accentColor}" font-size="4.5" font-family="monospace">TGT-1</text>
+
+        <circle cx="${t2x}" cy="${t2y}" r="1.6" fill="#00F0FF"/>
+        <rect x="${Number(t2x) - 3}" y="${Number(t2y) - 3}" width="6" height="6" stroke="#00F0FF" stroke-width="0.6" fill="none"/>
+
+        <!-- Telemetry Readouts -->
+        <text x="18" y="11" fill="${accentColor}" font-size="5" font-family="monospace">AZ: ${azVal}° // RNG: ${rngVal}KM</text>
+        <text x="222" y="11" fill="${accentColor}" font-size="5" text-anchor="end" font-family="monospace">LOCK: ACQ-P2</text>
+        <text x="18" y="53" fill="rgba(255,255,255,0.4)" font-size="4.5" font-family="monospace">RADAR: L-BAND 12.4 GHz</text>
+        <text x="222" y="53" fill="rgba(255,255,255,0.4)" font-size="4.5" text-anchor="end" font-family="monospace">SYS: ACTIVE_PHASED</text>
+      `;
+    }
+
+    case 'C': {
+      // TYPE C (Fitness / Performance / Athletics): ECG biometric pulse line paired with dual segmented arc dials
+      const bpm = 65 + (id * 5) % 85;
+      const vo2 = (52.0 + (id % 16) * 0.9).toFixed(1);
+      const hrv = 45 + (id * 7) % 45;
+
+      return `
+        <!-- Left Segmented Arc Dial (Heart Rate) -->
+        <circle cx="42" cy="30" r="16" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"/>
+        <circle cx="42" cy="30" r="16" stroke="${accentColor}" stroke-width="3" stroke-dasharray="72 28" stroke-dashoffset="${15 + (id * 5) % 40}" stroke-linecap="round" fill="none"/>
+        <text x="42" y="28" fill="#FFFFFF" font-size="6.5" font-weight="bold" text-anchor="middle" font-family="monospace">${bpm}</text>
+        <text x="42" y="36" fill="${accentColor}" font-size="4" text-anchor="middle" font-family="monospace">BPM</text>
+
+        <!-- Right Segmented Arc Dial (VO2 Max / Metric) -->
+        <circle cx="198" cy="30" r="16" stroke="rgba(255,255,255,0.08)" stroke-width="3" fill="none"/>
+        <circle cx="198" cy="30" r="16" stroke="${accentColor}" stroke-width="3" stroke-dasharray="64 36" stroke-dashoffset="${20 + (id * 9) % 35}" stroke-linecap="round" fill="none"/>
+        <text x="198" y="28" fill="#FFFFFF" font-size="6.5" font-weight="bold" text-anchor="middle" font-family="monospace">${vo2}</text>
+        <text x="198" y="36" fill="${accentColor}" font-size="4" text-anchor="middle" font-family="monospace">VO2 MAX</text>
+
+        <!-- ECG Biometric Pulse Line in Center -->
+        <path d="M 66 30 L 78 30 Q 82 27 85 30 L 89 30 L 92 33 L 97 10 L 102 42 L 105 30 L 110 30 Q 116 23 122 30 L 132 30 Q 136 27 139 30 L 143 30 L 146 33 L 151 10 L 156 42 L 159 30 L 164 30 Q 170 23 174 30"
+              fill="none" stroke="${accentColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Active Cardiac Pulse Peak Indicators -->
+        <circle cx="97" cy="10" r="2" fill="${accentColor}"/>
+        <circle cx="151" cy="10" r="2" fill="${accentColor}"/>
+
+        <!-- Biometric Telemetry Readouts -->
+        <text x="120" y="11" fill="${accentColor}" font-size="5" text-anchor="middle" font-family="monospace">ECG BIOMETRIC STREAM // HRV: ${hrv}ms</text>
+        <text x="120" y="52" fill="rgba(255,255,255,0.45)" font-size="4.5" text-anchor="middle" font-family="monospace">ZONE 4 THRESHOLD // METABOLIC: OPTIMAL</text>
+      `;
+    }
+
+    case 'D': {
+      // TYPE D (DevTools / API / GridSync): Dark terminal code inspector showing formatted JSON payloads and hash checkmarks
+      const hashVal = (id * 7919).toString(16).padStart(6, '0');
+      const latencyVal = (1.1 + (id % 6) * 0.3).toFixed(1);
+
+      return `
+        <!-- Dark Terminal Frame -->
+        <rect x="14" y="6" width="212" height="48" rx="4" fill="#030611" stroke="${accentColor}" stroke-opacity="0.35" stroke-width="0.8"/>
+        <rect x="14" y="6" width="212" height="10" rx="4" fill="#080F20"/>
+        <line x1="14" y1="16" x2="226" y2="16" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+
+        <!-- Window Control Dots -->
+        <circle cx="22" cy="11" r="1.6" fill="#EF4444"/>
+        <circle cx="28" cy="11" r="1.6" fill="#F59E0B"/>
+        <circle cx="34" cy="11" r="1.6" fill="#10B981"/>
+        <text x="42" y="12.5" fill="rgba(255,255,255,0.45)" font-size="4.5" font-family="monospace">gridsync@runtime:~/${cleanSlug}</text>
+
+        <!-- Formatted JSON Payloads with Syntax Highlighting -->
+        <text x="20" y="24" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">{ <tspan fill="${accentColor}">"service"</tspan>: <tspan fill="#F59E0B">"Unit-${cleanId}"</tspan>, <tspan fill="${accentColor}">"status"</tspan>: <tspan fill="#10B981">200</tspan> }</text>
+        <text x="20" y="32" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">  <tspan fill="${accentColor}">"hash"</tspan>: <tspan fill="#94A3B8">"sha256:${hashVal}...b7"</tspan> <tspan fill="#10B981" font-weight="bold">[✓ PASS]</tspan></text>
+        <text x="20" y="40" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">  <tspan fill="${accentColor}">"cluster"</tspan>: <tspan fill="#38BDF8">"raft-consensus"</tspan>, <tspan fill="${accentColor}">"latency"</tspan>: <tspan fill="#10B981">"${latencyVal}ms"</tspan></text>
+        <text x="20" y="48" font-size="4.6" font-family="monospace" fill="rgba(255,255,255,0.65)">} <tspan fill="${accentColor}" font-weight="bold">✓ COMMITTED</tspan> <tspan fill="${accentColor}">_</tspan></text>
+
+        <!-- Hash Checkmark Verified Badge -->
+        <rect x="178" y="20" width="42" height="13" rx="2" fill="${accentColor}18" stroke="${accentColor}" stroke-opacity="0.45" stroke-width="0.8"/>
+        <text x="199" y="29" fill="${accentColor}" font-size="4.8" text-anchor="middle" font-weight="bold" font-family="monospace">SHA-256 ✓</text>
+      `;
+    }
+
+    case 'E':
+    default: {
+      // TYPE E (Creative / Brand / Vault): Architectural framing grid with rule-of-thirds crosshairs and monospace metadata blocks
+      const isoVal = 100 * ((id % 4) + 1);
+      const elevVal = 10 + (id * 3) % 40;
+
+      return `
+        <!-- Corner Viewfinder Brackets -->
+        <path d="M 16 16 V 8 H 24" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 224 16 V 8 H 216" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 16 44 V 52 H 24" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+        <path d="M 224 44 V 52 H 216" stroke="${accentColor}" stroke-width="1.2" fill="none"/>
+
+        <!-- Rule-of-Thirds Grid Lines -->
+        <line x1="85" y1="8" x2="85" y2="52" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="155" y1="8" x2="155" y2="52" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="16" y1="22" x2="224" y2="22" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+        <line x1="16" y1="38" x2="224" y2="38" stroke="rgba(255,255,255,0.07)" stroke-dasharray="2,2"/>
+
+        <!-- Crosshair Intersections at Rule-of-Thirds Points -->
+        <path d="M 82 22 H 88 M 85 19 V 25" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 152 22 H 158 M 155 19 V 25" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 82 38 H 88 M 85 35 V 41" stroke="${accentColor}" stroke-width="1"/>
+        <path d="M 152 38 H 158 M 155 35 V 41" stroke="${accentColor}" stroke-width="1"/>
+
+        <!-- Center Architectural Frame -->
+        <rect x="94" y="24" width="52" height="12" stroke="${accentColor}" stroke-opacity="0.5" stroke-width="0.8" fill="rgba(3, 7, 18, 0.65)"/>
+        <text x="120" y="32.5" fill="${accentColor}" font-size="5" text-anchor="middle" font-weight="bold" font-family="monospace">VAULT #${cleanId}</text>
+
+        <!-- Monospace Metadata Blocks -->
+        <text x="30" y="12" fill="${accentColor}" font-size="4.8" font-family="monospace">APERTURE: f/1.4 // FL: 35mm // ISO: ${isoVal}</text>
+        <text x="210" y="12" fill="${accentColor}" font-size="4.8" text-anchor="end" font-family="monospace">GRID: 3×3 RAW</text>
+        <text x="30" y="49" fill="rgba(255,255,255,0.4)" font-size="4.5" font-family="monospace">SCALE: 1:50 // ELEV: +${elevVal}.0m</text>
+        <text x="210" y="49" fill="rgba(255,255,255,0.4)" font-size="4.5" text-anchor="end" font-family="monospace">CAD REF: ARCH-2026</text>
+      `;
+    }
   }
+}
+
+// Precision Vehicle Hero Renderer (Directive 1: Real Screenshots First + Directive 2/3: Domain Fallback)
+function renderVehicleHero(p) {
+  const isTrack3 = Boolean(p.isTrack3);
+  const isTrack2 = Boolean(p.isTrack2);
+  const cleanId = String(p.id).padStart(3, '0');
+  const trackNum = isTrack3 ? '3' : isTrack2 ? '2' : '1';
+  const trackName = isTrack3 ? 'SKUNKWORKS ENGINE' : isTrack2 ? 'HYPERCAR FLAGSHIP' : 'LEAN TUNER';
+
+  // Dynamic Color Coding by Track (Directive 3)
+  // Track 1 (Lean Tuner): Cyber-Cyan (#00F0FF) telemetry accents.
+  // Track 2 (Hypercar Flagship): Cyber-Amber (#FF9F0A) radar and telemetry accents.
+  // Track 3 (Skunkworks Engine): Matrix Emerald (#00FF88) quantitative terminal accents.
+  const accentColor = isTrack3 ? '#00FF88' : isTrack2 ? '#FF9F0A' : '#00F0FF';
+  const trackTextColor = isTrack3 ? 'text-[#00FF88] font-bold' : isTrack2 ? 'text-[#FF9F0A]' : 'text-[#00F0FF]/80';
+
+  const archetype = getArchetypeType(p);
+  const svgContent = generateArchetypeSvg(p, archetype, accentColor, cleanId);
+
+  const hasImage = Boolean(p.cover_image);
+
+  return `
+      <!-- Hero Preview / Blueprint Container (Directive 1 & 2: 16:9 Aspect Video) -->
+      <div class="w-full aspect-video bg-[#070A11] relative overflow-hidden border-b border-white/5 font-mono select-none group/hero">
+        ${hasImage ? `
+        <!-- Restored Real Image (Directive 1) -->
+        <img src="${escapeHtml(p.cover_image)}" 
+             alt="${escapeHtml(p.name)}" 
+             class="object-cover object-top w-full h-full absolute inset-0 z-10 transition-transform duration-500 group-hover:scale-105" 
+             loading="lazy" 
+             onerror="this.style.display='none'; var fb=this.parentElement.querySelector('.svg-blueprint-fallback'); if(fb) fb.classList.remove('hidden');" />
+        ` : ''}
+
+        <!-- Domain-Specific Fallback SVG Blueprint (Directive 2 & 3) -->
+        <div class="svg-blueprint-fallback ${hasImage ? 'hidden ' : ''}absolute inset-0 w-full h-full flex flex-col justify-between p-3.5 z-0 bg-[#070A11]">
+          <!-- Grid Overlay Background -->
+          <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:12px_12px] pointer-events-none"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,7,11,0.85))] pointer-events-none"></div>
+          
+          <!-- HUD Top Bar -->
+          <div class="flex justify-between items-center z-10 text-[9px] tracking-widest font-bold" style="color: ${accentColor}cc;">
+            <span>TELEMETRY DIAGNOSTIC // [ARCH-${archetype.type}: ${archetype.label}]</span>
+            <span class="font-extrabold uppercase" style="color: ${accentColor};">UNIT #${cleanId}</span>
+          </div>
+          
+          <!-- Middle Core Blueprint Graphic -->
+          <div class="flex-1 flex items-center justify-center relative my-1 z-10 w-full overflow-hidden">
+            <svg class="w-full h-full max-h-20" viewBox="0 0 240 60" preserveAspectRatio="xMidYMid meet">
+              ${svgContent}
+            </svg>
+          </div>
+          
+          <!-- HUD Bottom Bar -->
+          <div class="flex justify-between items-center z-10 text-[8px] tracking-wide text-slate-400">
+            <span class="uppercase ${trackTextColor}">TRACK #${trackNum} // ${trackName}</span>
+            <span class="font-bold border px-1 py-0.5" style="color: ${accentColor}; border-color: ${accentColor}40; background-color: ${accentColor}10;">4/4 GATES</span>
+          </div>
+        </div>
+      </div>`;
 }
 
 const renderedCardsHtml = publicProducts.map((p, idx) => {
@@ -369,15 +622,13 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
-  // Thumbnail preview: renders image with object-top and fallback if on disk, else renders procedural SVG schematic directly
-  const thumbnailPreviewMarkup = p.hasCoverOnDisk && p.cover_image
-    ? `<img src="${p.cover_image}?v=3.2-APA" alt="${escapeHtml(p.name)}" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-       ${generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, true)}`
-    : generateTelemetrySchematic(p, isTrack3, isTrack2, cleanId, false);
+  // Directive 2: Card Action Buttons strictly [ ⚡ MOUNT CHASSIS ON DYNO ] and [ ACQUIRE TITLE (APA) ]
+  const topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border ${isTrack3 ? 'border-[#00FF88]/40 text-[#00FF88] bg-[#00FF88]/10 hover:bg-[#00FF88] hover:text-black' : 'border-[#00F0FF]/50 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black'} transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
+  const bottomActionBtn = `<button onclick="event.stopPropagation(); openApaModal('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ACQUIRE TITLE (APA) ]</button>`;
 
   return `
       <!-- F1 Spec Card #${p.id} -->
-      <div class="product-card${initialHidden} min-h-[580px] h-full rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-sky-500/35 hover:border-sky-400' : isTrack2 ? 'border-amber-500/35 hover:border-amber-400' : 'border-white/10 hover:border-emerald-400/70'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
+      <div class="product-card${initialHidden} min-h-[580px] h-full rounded-2xl bg-[#111724]/90 border ${isTrack3 ? 'border-emerald-500/35 hover:border-[#00FF88]' : isTrack2 ? 'border-amber-500/35 hover:border-[#FF9F0A]' : 'border-cyan-500/25 hover:border-[#00F0FF]'} overflow-hidden card-glow transition-all flex flex-col justify-between group cursor-pointer shadow-lg"
            onclick="loadVehicleIntoDyno(${p.id}, false)"
            id="vehicle-${p.id}"
            data-id="${p.id}"
@@ -400,18 +651,16 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           <!-- Flex Chassis Card Header (No Absolute Positioning) -->
           <div class="flex items-center justify-between w-full p-3 border-b border-white/5 bg-[#080C14]">
             <span class="font-mono text-xs font-bold text-slate-200 truncate pr-2">UNIT #${cleanId} // ${escapeHtml(p.name).toUpperCase()}</span>
-            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10 uppercase font-bold">${trackBadgeLabel}</span>
+            <span class="shrink-0 text-[10px] font-mono px-2 py-0.5 rounded border ${isTrack3 ? 'border-[#00FF88]/30 text-[#00FF88] bg-[#00FF88]/10' : isTrack2 ? 'border-[#FF9F0A]/30 text-[#FF9F0A] bg-[#FF9F0A]/10' : 'border-[#00F0FF]/30 text-[#00F0FF] bg-[#00F0FF]/10'} uppercase font-bold">${trackBadgeLabel}</span>
           </div>
 
-          <!-- Hero Preview Image Bay (Directive 3: w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden) -->
-          <div class="w-full h-48 bg-slate-950 border border-slate-800 rounded-lg overflow-hidden flex items-center justify-center relative shrink-0">
-            ${thumbnailPreviewMarkup}
-          </div>
+          <!-- Hero Preview (Directive 1: Real Screenshots First + Directive 2/3: Domain Fallback) -->
+          ${renderVehicleHero(p)}
 
           <!-- Card Telemetry Body (Directive 4: multi-line title wrapping & reduced subtitle font) -->
           <div class="p-4 sm:p-5 flex flex-col justify-between flex-1">
             <!-- Top Row: Archetype Subtitle + Main Title + Pytest Gauge -->
-            <div class="flex items-start justify-between gap-2 mb-2">
+            <div class="flex items-start justify-between gap-2 mb-1">
               <div class="min-w-0 flex-1">
                 <div class="text-[11px] font-mono text-cyan-400 tracking-wider truncate">${escapeHtml(p.archetype_name)}</div>
                 <h3 class="text-lg font-mono font-bold text-white tracking-wide mt-0.5 leading-snug group-hover:text-cyan-300 transition-colors">${escapeHtml(p.name)}</h3>
@@ -423,6 +672,7 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
                 <span class="text-[9px] font-mono uppercase text-slate-400">TEST</span>
               </div>
             </div>
+            <div class="text-[11px] font-mono font-bold text-amber-400/90 tracking-wide mb-2 uppercase">[ WORKING PROTOTYPE DEMO ]</div>
 
             <!-- Subtle Telemetry Status Pill Tag -->
             <div class="text-[10px] font-mono ${isTrack3 ? 'text-sky-400/80 bg-sky-500/10 border-sky-500/20' : 'text-amber-400/80 bg-amber-500/10 border-amber-500/20'} border px-2.5 py-1 rounded-md text-center my-2 font-medium">
@@ -441,11 +691,11 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           </div>
         </div>
 
-        <!-- Showroom Action Container (Directive 5: full-width vertical container) -->
+        <!-- Showroom Action Container (Directive 5: dual-button operational stack) -->
         <div class="p-4 bg-[#080C14] border-t border-white/5 font-mono">
-          <div class="flex flex-col gap-2 w-full pt-3 border-t border-slate-800/80">
+          <div class="flex flex-col gap-2 w-full pt-1">
             <!-- Allocation Status Badge -->
-            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender" title="Open Secure APA Title Tender">
+            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender mb-0.5" title="Open Secure APA Title Tender">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
                 <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px] group-hover/tender:text-[#FF9F0A] transition-colors">${primaryApaLabel}</span>
@@ -453,14 +703,54 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider group-hover/tender:text-amber-300">TITLE TENDER ↗</span>
             </div>
 
-            <!-- Standardized Full-Width CTA Target -->
-            <button onclick="event.stopPropagation(); loadVehicleIntoDyno(${p.id}, true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded bg-cyan-950/40 border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all cursor-pointer shadow-[0_0_10px_rgba(0,240,255,0.15)] hover:shadow-[0_0_20px_rgba(0,240,255,0.5)]">
-              [⚡ MOUNT CHASSIS ON DYNO]
-            </button>
+            <!-- Action Button Stack: Launch Demo, Mount Dyno & Acquire APA -->
+            <a href="${p.demo_url || p.preview_url || p.demo_path || '#'}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="demo-btn btn-demo-launch w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-emerald-400/50 text-emerald-300 bg-emerald-500/15 hover:bg-emerald-400 hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+              [LAUNCH DEMO ↗]
+            </a>
+            ${topActionBtn}
+            ${bottomActionBtn}
           </div>
         </div>
       </div>`;
 }).filter(Boolean).join('\n');
+
+// Global Catalog JSON Payload for Client Runtime Dyno Mounting (Directive 1)
+const fleetDataPayload = publicProducts.map(p => {
+  const isTrack3 = Boolean(p.isTrack3);
+  const isTrack2 = Boolean(p.isTrack2);
+  const trackLabel = isTrack3 ? 'Track 3 Skunkworks' : isTrack2 ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
+  const schemaVal = p.tables && p.tables.length > 0
+    ? `PostgreSQL 16 + RLS (${p.tables.slice(0, 3).join(', ')})`
+    : 'PostgreSQL 16 + RLS';
+  const gateVal = isTrack3 ? '1-Click Cloud Run (Containerized)' : isTrack2 ? '1-Click Cloud Run (Full-Stack Blueprint)' : '1-Click Cloud Run';
+  return {
+    id: p.id,
+    name: p.name,
+    title: p.name,
+    tagline: p.best_for || p.category || '',
+    description: (p.best_for ? p.best_for + '. ' : '') + (p.category ? p.category + ' (' + p.sector + ').' : ''),
+    category: p.category,
+    sector: p.sector,
+    track: trackLabel,
+    pricing_track: p.pricing_track,
+    schema: schemaVal,
+    database: schemaVal,
+    gate: gateVal,
+    deployment: gateVal,
+    pytest: p.pytestScore,
+    pytestScore: p.pytestScore,
+    title_status: 'Zero-Copyleft (MIT)',
+    status: 'Zero-Copyleft (MIT)',
+    archetype_name: p.archetype_name,
+    demo_url: p.preview_url,
+    preview_url: p.preview_url,
+    demo_path: p.preview_url,
+    url: p.preview_url,
+    isTrack2,
+    isTrack3
+  };
+});
+const fleetDataJson = JSON.stringify(fleetDataPayload).replace(/</g, '\\u003c');
 
 const showroomHtml = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -471,7 +761,7 @@ const showroomHtml = `<!DOCTYPE html>
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Aura & Grid — F1 Pit Wall Telemetry & Pure APA Title Configurator // GhostFactoryOS</title>
-  <meta name="description" content="200 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 63 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
+  <meta name="description" content="301 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 164 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
   <meta name="version" content="v3.2-TELEMETRY-BLUEPRINT">
   <meta name="telemetry:sync" content="GhostFactoryOS v1.6.0 // v3.2-TELEMETRY-BLUEPRINT">
   <link rel="canonical" href="https://auraandgrid.com/">
@@ -626,23 +916,26 @@ const showroomHtml = `<!DOCTYPE html>
           <span class="w-6 h-6 rounded bg-emerald-500/15 border border-emerald-400/50 flex items-center justify-center text-emerald-400 text-xs shadow-[0_0_10px_rgba(16,185,129,0.4)]">A&amp;G</span>
           <span class="tracking-wide">AURA &amp; GRID</span>
         </a>
-        <span class="hidden sm:inline-flex text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 uppercase font-bold tracking-wider">v3.2 // TELEMETRY BLUEPRINTS</span>
+        <span class="hidden sm:inline-flex text-xs sm:text-sm font-mono px-2.5 py-1 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 uppercase font-bold tracking-wider">v3.2 // TELEMETRY BLUEPRINTS</span>
       </div>
 
-      <!-- Center: 200 VERIFIED UNITS BADGE -->
-      <div class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-        <span>200 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (63)</span>
+      <!-- Center: 251 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="hidden xl:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm sm:text-base font-bold font-mono uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>301 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (164)</span>
+        </div>
+        <div class="px-3 py-1 text-xs sm:text-sm font-mono font-bold tracking-wider rounded border border-[#FF9F0A]/40 text-[#FF9F0A] bg-[#FF9F0A]/10 flex items-center gap-1.5">[ ⚡ WORKING PROTOTYPE DEMOS // ARCHITECTURAL FLEET ]</div>
       </div>
 
       <!-- Right: DYNO INTEGRITY BADGE -->
       <div class="flex items-center gap-3">
-        <a href="#fleetLotSection" class="hidden sm:inline-flex text-xs text-cyan-300 hover:text-white transition-colors cursor-pointer font-bold">
+        <a href="#fleetLotSection" class="hidden sm:inline-flex text-sm sm:text-[15px] font-mono font-bold text-cyan-300 hover:text-white px-3.5 py-1.5 rounded-lg hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/30 transition-all cursor-pointer">
           [JUMP TO FLEET LOT ▾]
         </a>
-        <div class="flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/50 px-3 py-1 rounded-lg text-xs shadow-[0_0_10px_rgba(16,185,129,0.25)]">
+        <div class="flex items-center gap-2 bg-emerald-950/40 border border-emerald-500/50 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-mono shadow-[0_0_10px_rgba(16,185,129,0.25)]">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10B981]"></span>
-          <span class="text-emerald-300 font-bold uppercase tracking-wider text-[11px]">DYNO INTEGRITY: 4/4 GATES</span>
+          <span class="text-emerald-300 font-bold uppercase tracking-wider">DYNO INTEGRITY: 4/4 GATES</span>
         </div>
       </div>
 
@@ -650,39 +943,42 @@ const showroomHtml = `<!DOCTYPE html>
   </header>
 
   <!-- ================= STAGE 1: COMMAND DECK (DYNO SCANNER + MOUNTED SPEC) ================= -->
-  <section id="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6">
+  <section id="dyno-bay" data-alias="commandDeck" class="max-w-[1700px] w-full mx-auto px-4 md:px-6 py-6 flex flex-col gap-6 scroll-mt-20">
+    <div id="commandDeck" class="hidden" aria-hidden="true"></div>
     
     <!-- 4-Card Telemetry Ribbon -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-xs">
-      <!-- Card 1: FLEET UNITS: 200 VERIFIED -->
-      <div class="p-4 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
-        <div class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">FLEET UNITS</div>
-        <div class="text-xl font-black text-cyan-300 mono-metric-crisp mt-1">200 VERIFIED</div>
-        <div class="text-xs text-slate-500 mt-0.5">86 T1 • 51 T2 • 63 T3</div>
+      <!-- Card 1: TOTAL RETAIL PRICE -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
+        <div class="text-cyan-400 text-base sm:text-lg font-bold font-mono uppercase tracking-wider mb-3">TOTAL RETAIL PRICE</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-cyan-300 mono-metric-crisp">$23,787,000</div>
+        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis.</div>
       </div>
 
-      <!-- Card 2: DYNO INTEGRITY: 4/4 GATES -->
-      <div class="p-4 rounded-2xl bg-[#0A0D14] border border-emerald-500/40 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(16,185,129,0.2)]">
-        <div class="text-emerald-400 text-[10px] uppercase font-bold tracking-wider flex items-center justify-between">
-          <span>DYNO INTEGRITY</span>
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <!-- Card 2: INDIVIDUAL RETAIL PRICE -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-[#0A0D14] border border-emerald-500/40 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(16,185,129,0.2)]">
+        <div class="text-[#F8FAFC] text-base sm:text-lg font-bold font-mono uppercase tracking-wider mb-3 flex items-center justify-between">
+          <span>INDIVIDUAL RETAIL PRICE</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10B981]"></span>
         </div>
-        <div class="text-xl font-black text-emerald-400 mono-metric-crisp mt-1">4/4 GATES PASSED</div>
-        <div class="text-xs text-slate-400 mt-0.5">Deterministic Math &amp; RLS</div>
+        <div class="text-lg sm:text-2xl lg:text-3xl font-bold font-mono text-emerald-400 mono-metric-crisp leading-snug">
+          $4.5K – $14.5K <span class="text-xs sm:text-sm font-bold text-emerald-300/80">[STD]</span> <span class="text-slate-500">//</span> $35K – $65K+ <span class="text-xs sm:text-sm font-bold text-emerald-300/80">[FLAGSHIP]</span>
+        </div>
+        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Standalone Turnkey APA Buyout per Chassis • Track 1, 2 &amp; 3</div>
       </div>
 
-      <!-- Card 3: IP TITLE: 100% PERMISSIVE -->
-      <div class="p-4 rounded-2xl bg-[#0A0D14] border border-amber-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(255,159,10,0.15)]">
-        <div class="text-amber-400 text-[10px] uppercase font-bold tracking-wider">IP TITLE</div>
-        <div class="text-xl font-black text-amber-300 mono-metric-crisp mt-1">100% PERMISSIVE</div>
-        <div class="text-xs text-slate-500 mt-0.5">Zero Copyleft • MIT / Apache</div>
+      <!-- Card 3: ENGINEERING REPLACEMENT SCOPE -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-[#0A0D14] border border-amber-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(255,159,10,0.15)]">
+        <div class="text-amber-400 text-base sm:text-lg font-bold font-mono uppercase tracking-wider mb-3">ENGINEERING REPLACEMENT SCOPE</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-amber-300 mono-metric-crisp">20,000+ HRS</div>
+        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Audited Clean-Room Deterministic Architecture</div>
       </div>
 
-      <!-- Card 4: ACQUISITION: PURE APA -->
-      <div class="p-4 rounded-2xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(56,189,248,0.15)]">
-        <div class="text-sky-400 text-[10px] uppercase font-bold tracking-wider">ACQUISITION</div>
-        <div class="text-xl font-black text-sky-300 mono-metric-crisp mt-1">PURE APA TENDER</div>
-        <div class="text-xs text-slate-500 mt-0.5">Direct Sovereign Handover</div>
+      <!-- Card 4: ACQUISITION STANDARD -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-[#0A0D14] border border-sky-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(56,189,248,0.15)]">
+        <div class="text-cyan-400 text-base sm:text-lg font-bold font-mono uppercase tracking-wider mb-3">ACQUISITION STANDARD</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-sky-300 mono-metric-crisp">100% APA</div>
+        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Sovereign IP Title Transfer • Zero Licensing • Zero Seat Tiers</div>
       </div>
     </div>
 
@@ -732,7 +1028,7 @@ const showroomHtml = `<!DOCTYPE html>
           </div>
           <div>
             <span class="text-slate-400 text-[10px] block uppercase tracking-wider">IP TITLE STATUS</span>
-            <span class="text-white font-bold text-xs truncate block mt-0.5">Zero-Copyleft (MIT)</span>
+            <span class="text-white font-bold text-xs truncate block mt-0.5" id="dynoIpTitleReadout">Zero-Copyleft (MIT)</span>
           </div>
           <div>
             <span class="text-slate-400 text-[10px] block uppercase tracking-wider">TELEMETRY LOCK</span>
@@ -746,14 +1042,14 @@ const showroomHtml = `<!DOCTYPE html>
       <div class="lg:col-span-5 rounded-2xl bg-[#111724]/95 border border-white/15 p-5 sm:p-6 flex flex-col justify-between shadow-2xl font-mono">
         <div class="space-y-4">
           <div class="flex items-center justify-between border-b border-white/10 pb-3">
-            <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Mounted Chassis Spec</span>
-            <span class="text-xs font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-2.5 py-0.5 rounded font-bold">100% Clean Title</span>
+            <span class="text-sm sm:text-[15px] font-mono uppercase tracking-wider text-amber-400 font-bold">MOUNTED CHASSIS SPEC</span>
+            <span class="text-xs sm:text-sm font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 px-3 py-1 rounded font-bold">100% Clean Title</span>
           </div>
 
           <div>
-            <div class="text-xs font-mono text-cyan-400 uppercase tracking-widest" id="leftLoadedUnitArchetype">Dense Operational Console</div>
-            <h2 class="text-xl sm:text-2xl font-bold text-white font-sans tracking-tight mt-1 truncate" id="leftLoadedUnitName">UNIT #001 // STRIDE MB</h2>
-            <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2" id="leftLoadedUnitDesc">Supercharged operational telemetry prototype: real-time Kalman filtering, automated AlloyDB persistent schemas, and OpenAPI 3.1 contract endpoints.</p>
+            <div class="text-sm sm:text-[15px] font-mono text-cyan-400 uppercase tracking-wider font-bold" id="leftLoadedUnitArchetype">Dense Operational Console</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-sans tracking-tight mt-1.5 truncate" id="dyno-unit-title" data-alias="leftLoadedUnitName">UNIT #001 // STRIDE MB</h2>
+            <p class="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed mt-2" id="dyno-unit-desc" data-alias="leftLoadedUnitDesc">Supercharged operational telemetry prototype: real-time Kalman filtering, automated AlloyDB persistent schemas, and OpenAPI 3.1 contract endpoints.</p>
           </div>
 
           <!-- Institutional Tender Badge -->
@@ -770,17 +1066,20 @@ const showroomHtml = `<!DOCTYPE html>
           <div class="grid grid-cols-2 gap-2 text-xs">
             <div class="p-2.5 rounded-lg bg-[#05070B] border border-white/10">
               <span class="text-slate-400 block text-[10px]">DATABASE SCHEMA</span>
-              <span class="text-slate-200 font-bold">PostgreSQL 16 + RLS</span>
+              <span class="text-slate-200 font-bold" id="dyno-unit-schema">PostgreSQL 16 + RLS</span>
             </div>
             <div class="p-2.5 rounded-lg bg-[#05070B] border border-white/10">
               <span class="text-slate-400 block text-[10px]">DEPLOYMENT GATE</span>
-              <span class="text-emerald-400 font-bold">1-Click Cloud Run</span>
+              <span class="text-emerald-400 font-bold" id="dyno-unit-gate">1-Click Cloud Run</span>
             </div>
           </div>
         </div>
 
         <!-- Full-Width Vertical CTA Stack -->
         <div class="flex flex-col gap-2.5 w-full mt-6 pt-4 border-t border-white/10">
+          <a id="dynoLaunchDemoBtn" href="https://stride-manhattan-beach.onrender.com" target="_blank" rel="noopener noreferrer" class="demo-btn btn-demo-launch w-full py-3 px-4 bg-emerald-500/20 hover:bg-emerald-400 hover:text-black border border-emerald-400/60 text-emerald-300 font-mono font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(16,185,129,0.35)] flex items-center justify-center gap-2">
+            <span>[LAUNCH WORKING DEMO ↗]</span>
+          </a>
           <button id="leftCtaAcquireBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'acquire')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
             ACQUIRE TITLE (APA) →
           </button>
@@ -801,7 +1100,7 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-white/10 pb-4">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
-          VAULT INVENTORY // 200 VERIFIED UNITS
+          VAULT INVENTORY // 301 VERIFIED UNITS
         </span>
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight font-sans">
           Fleet Telemetry Lot
@@ -817,10 +1116,10 @@ const showroomHtml = `<!DOCTYPE html>
           [ TRACK 2 // HYPERCAR (51) ]
         </button>
         <button onclick="setTrackNav('track3')" id="navPill-track3" class="track-pill px-4 py-2 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
-          [ TRACK 3 // SKUNKWORKS (63) ]
+          [ TRACK 3 // SKUNKWORKS (114) ]
         </button>
         <button onclick="setTrackNav('all')" id="navPill-all" class="track-pill px-3 py-2 rounded-xl border border-white/10 bg-[#111724]/60 text-slate-400 hover:text-white font-medium uppercase tracking-wider transition-all cursor-pointer text-xs">
-          [ ALL LOTS (200) ]
+          [ ALL LOTS (301) ]
         </button>
       </div>
     </div>
@@ -832,7 +1131,7 @@ const showroomHtml = `<!DOCTYPE html>
         <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (86 UNITS)</span>
       </div>
       
-      <input type="text" id="searchInput" placeholder="Search 200 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
+      <input type="text" id="searchInput" placeholder="Search 301 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
     </div>
 
     <!-- Spacious 6-Unit Lot Grid (Comfortable Padding p-4 md:p-6 & Gap-6) -->
@@ -859,8 +1158,21 @@ ${renderedCardsHtml}
 
   </section>
 
+  <!-- ================= LEGAL & ARCHITECTURAL NOTICE // PROVENANCE SPEC CARD ================= -->
+  <section class="max-w-[1700px] w-full mx-auto px-4 md:px-6 mt-14 mb-4 font-mono">
+    <div class="p-6 rounded-2xl bg-[#0A0D14] border border-cyan-500/30 shadow-[0_0_25px_-5px_rgba(0,240,255,0.12)] space-y-2.5">
+      <div class="flex items-center gap-2 text-cyan-300 font-bold text-sm sm:text-base tracking-wider uppercase">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>[ LEGAL &amp; ARCHITECTURAL NOTICE // PROVENANCE SPEC ]</span>
+      </div>
+      <p class="text-sm sm:text-base text-[#F8FAFC] font-mono leading-relaxed">
+        Interactive demos reflect production-grade architecture, deterministic state logic, and relational schemas. Delivered strictly as sovereign software IP prototypes under Pure Asset Purchase Agreements (APA) with 100% full title transfer.
+      </p>
+    </div>
+  </section>
+
   <!-- ================= STICKY PIT WALL FOOTER ================= -->
-  <footer class="w-full border-t border-white/10 bg-[#05070B] px-4 md:px-6 py-3 flex items-center justify-between font-mono text-xs shrink-0 max-w-[1700px] mx-auto mt-12">
+  <footer class="w-full border-t border-white/10 bg-[#05070B] px-4 md:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs shrink-0 max-w-[1700px] mx-auto mt-6">
     <div class="flex items-center gap-2 overflow-hidden truncate">
       <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold shrink-0 text-xs">PIT WALL</span>
       <span class="text-slate-300 truncate" id="commsMsgText">🟢 CREW CHIEF: 2-Stage Modern Cockpit Active • Dyno Coupled • Zero Public Pricing</span>
@@ -955,6 +1267,8 @@ ${renderedCardsHtml}
 
         <div id="tenderStatusNotice" class="hidden text-center text-xs font-mono py-1"></div>
 
+        <p class="text-xs font-mono text-slate-400 mt-2">Notice: 100% clean title IP transfer includes verified source code and architecture. Assets are production-grade prototypes for enterprise deployment.</p>
+
         <!-- Primary CTAs: Full-width vertical button stack -->
         <div class="flex flex-col gap-2 w-full pt-2">
           <button type="submit" id="tenderSubmitBtn" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg text-center transition-all cursor-pointer shadow-[0_0_20px_rgba(255,159,10,0.4)] hover:shadow-[0_0_30px_rgba(255,159,10,0.6)] flex items-center justify-center gap-1.5">
@@ -971,6 +1285,8 @@ ${renderedCardsHtml}
 
   <!-- ================= PIT WALL CLIENT TELEMETRY RUNTIME ================= -->
   <script>
+    // Global Catalog Data Payload (Directive 1)
+    window.FLEET_DATA = ${fleetDataJson};
     // ================= ZERO-DEPENDENCY NATIVE WEB AUDIO TELEMETRY SYNTHESIZER =================
     let audioCtx = null;
     function getAudioContext() {
@@ -1473,8 +1789,8 @@ ${renderedCardsHtml}
       if (lotTitle) {
         if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (86 UNITS)';
         else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (51 UNITS)';
-        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (63 UNITS)';
-        else lotTitle.innerText = 'ALL LOTS // 200 VERIFIED UNITS';
+        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (114 UNITS)';
+        else lotTitle.innerText = 'ALL LOTS // 301 VERIFIED UNITS';
       }
 
       filterCards();
@@ -1562,59 +1878,86 @@ ${renderedCardsHtml}
       });
     }
 
-    // Directive 2: SYNCHRONIZE LOT SELECTION TO 3D DYNO BAY
-    function loadVehicleIntoDyno(id, shouldScroll = false) {
-      const card = document.getElementById('vehicle-' + id);
-      if (!card) return;
-      currentLoadedUnitId = id;
-      const name = card.dataset.name || 'Vehicle #' + id;
-      const trackAttr = card.dataset.track || 'track1';
-      const pytest = card.dataset.pytest || '88';
-      const sector = card.dataset.sector || 'Software Architecture';
-      const archetype = card.dataset.archetype || 'Dense Operational Console';
-      const cleanId = String(id).padStart(3, '0');
+    // Directive 1 & 3: Global Dyno Bay Mounting Runtime
+    window.mountChassisToDyno = function(unitId, shouldScroll = true) {
+      console.log('Mounting unit:', unitId);
+      const unit = (window.FLEET_DATA || []).find(u => String(u.id) === String(unitId));
+      if (!unit) {
+        console.error('Unit not found in catalog:', unitId);
+        return;
+      }
+      currentLoadedUnitId = unit.id;
 
-      // 1. Highlight that card with a glowing cyber-amber border
+      // Update DOM elements inside the dyno deck
+      const titleEl = document.getElementById('dyno-unit-title');
+      if (titleEl) titleEl.textContent = 'UNIT #' + String(unit.id).padStart(3, '0') + ' // ' + (unit.name || unit.title);
+      const leftName = document.getElementById('leftLoadedUnitName');
+      if (leftName && leftName !== titleEl) leftName.textContent = 'UNIT #' + String(unit.id).padStart(3, '0') + ' // ' + (unit.name || unit.title || '').toUpperCase();
+      
+      const descEl = document.getElementById('dyno-unit-desc');
+      if (descEl) descEl.textContent = unit.tagline || unit.description || '';
+      const leftDesc = document.getElementById('leftLoadedUnitDesc');
+      if (leftDesc && leftDesc !== descEl) leftDesc.textContent = unit.description || unit.tagline || '';
+
+      const schemaEl = document.getElementById('dyno-unit-schema');
+      if (schemaEl) schemaEl.textContent = unit.schema || unit.database || 'PostgreSQL 16 + RLS';
+
+      const gateEl = document.getElementById('dyno-unit-gate');
+      if (gateEl) gateEl.textContent = unit.gate || unit.deployment || '1-Click Cloud Run';
+
+      const dynoDemoBtn = document.getElementById('dynoLaunchDemoBtn');
+      if (dynoDemoBtn) {
+        dynoDemoBtn.href = unit.demo_url || unit.preview_url || unit.demo_path || unit.url || '#';
+      }
+
+      // Stage 1 telemetry panel updates: Track, Pytest, IP Title Status, Archetype
+      const trackEl = document.getElementById('dynoPowertrainReadout');
+      if (trackEl) trackEl.textContent = (unit.track || 'Track 1 Lean Tuner') + ' // PRIVATE APA';
+
+      const pytestEl = document.getElementById('dynoPytestReadout');
+      if (pytestEl) pytestEl.textContent = (unit.pytest || unit.pytestScore || 88) + '% Branch Pass';
+
+      const ipEl = document.getElementById('dynoIpTitleReadout');
+      if (ipEl) ipEl.textContent = unit.title_status || unit.status || 'Zero-Copyleft (MIT)';
+
+      const archetypeEl = document.getElementById('leftLoadedUnitArchetype');
+      if (archetypeEl) archetypeEl.textContent = unit.archetype_name || (unit.isTrack3 ? 'Enterprise Reference Core' : 'Dense Operational Console');
+
+      // Audio click & 3D canvas scan pulse
+      if (typeof playTelemetryClick === 'function') playTelemetryClick();
+      if (typeof triggerDynoPulseAndScan === 'function') triggerDynoPulseAndScan();
+      if (typeof targetYaw !== 'undefined') targetYaw += 0.52;
+
+      // Card highlight in the fleet lot
       document.querySelectorAll('.product-card').forEach(c => {
         c.classList.remove('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
-        const defaultBorder = c.dataset.track === 'track3' ? 'border-sky-500/35' : c.dataset.track === 'track2' ? 'border-amber-500/35' : 'border-white/10';
+        const defaultBorder = c.dataset.track === 'track3' ? 'border-emerald-500/35' : c.dataset.track === 'track2' ? 'border-amber-500/35' : 'border-cyan-500/25';
         c.classList.add(defaultBorder);
       });
-      card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35');
-      card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
-
-      // 2. Update Dyno Bay header on the left to display UNIT #[ID] // [TITLE] — MOUNTED ON DYNO
-      // Dyno Bay header is clean 2-sided bar; unit title renders in Mounted Chassis Spec Card
-      // const title = document.getElementById('dynoUnitTitle');
-
-      // Updates telemetry readouts
-      const pytestEl = document.getElementById('dynoPytestReadout');
-      if (pytestEl) pytestEl.innerText = pytest + '% Branch Pass';
-
-      const powertrainEl = document.getElementById('dynoPowertrainReadout');
-      if (powertrainEl) {
-        const trackLabel = trackAttr === 'track3' ? 'Track 3 Skunkworks' : trackAttr === 'track2' ? 'Track 2 Hypercar' : 'Track 1 Lean Tuner';
-        powertrainEl.innerText = trackLabel + ' // PRIVATE APA';
+      const card = document.getElementById('vehicle-' + unit.id);
+      if (card) {
+        card.classList.remove('border-white/10', 'border-sky-500/35', 'border-amber-500/35', 'border-emerald-500/35', 'border-cyan-500/25');
+        card.classList.add('border-[#FF9F0A]', 'ring-1', 'ring-[#FF9F0A]', 'shadow-[0_0_20px_rgba(255,159,10,0.35)]');
       }
 
-      // Update Mounted Unit Spec Card details on the right of Command Deck
-      const leftName = document.getElementById('leftLoadedUnitName');
-      if (leftName) leftName.innerText = 'UNIT #' + cleanId + ' // ' + name.toUpperCase();
-      const leftArchetype = document.getElementById('leftLoadedUnitArchetype');
-      if (leftArchetype) leftArchetype.innerText = archetype;
-      const leftDesc = document.getElementById('leftLoadedUnitDesc');
-      if (leftDesc) leftDesc.innerText = (card.dataset.category || '') + ' (' + sector + ')';
-
-      // 3. Trigger 1.2-second pulse animation on 3D wireframe car and green horizontal laser sweep
-      triggerDynoPulseAndScan();
-      targetYaw += 0.52;
-
-      // 4. Smooth scroll to Command Deck if explicitly triggered
       if (shouldScroll) {
-        const deck = document.getElementById('commandDeck');
-        if (deck) deck.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const target = document.getElementById('dyno-bay');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
+    };
+
+    function mountChassisToDyno(unitId, shouldScroll = true) {
+      return window.mountChassisToDyno(unitId, shouldScroll);
     }
+
+    function loadVehicleIntoDyno(id, shouldScroll = false) {
+      window.mountChassisToDyno(id, shouldScroll);
+    }
+    window.loadVehicleIntoDyno = loadVehicleIntoDyno;
+    window.openApaModal = function (id) { return openApaTenderModal(parseInt(id, 10) || id, 'acquire'); };
+    window.loadVehicleIntoDyno = loadVehicleIntoDyno;
 
     function openApaTenderModal(id, intent = 'acquire') {
       playEngageBeep();
@@ -1764,3 +2107,29 @@ if (fs.existsSync(STYLE_CSS_PATH)) {
   fs.copyFileSync(STYLE_CSS_PATH, path.join(ROOT_ASSETS_DIR, 'style.css'));
 }
 console.log('🏁 [Aura & Grid] Pure APA F1 Pit Wall Showroom Rebuild Complete.');
+
+// Universal Demo Runner: inject the public catalog (no pricing fields) into demo_template.html
+// and mirror demo.html to site/, repository root, dist/ and public/.
+const DEMO_TEMPLATE_PATH = path.join(__dirname, 'demo_template.html');
+if (fs.existsSync(DEMO_TEMPLATE_PATH)) {
+  const demoCatalog = publicProducts.map(p => ({
+    id: p.id,
+    name: p.name,
+    category: p.category,
+    sector: p.sector,
+    pricing_track: p.pricing_track,
+    isTrack2: p.isTrack2,
+    isTrack3: p.isTrack3,
+    pytestScore: p.pytestScore,
+    tables: p.tables,
+    archetype_name: p.archetype_name
+  }));
+  const catalogJson = JSON.stringify(demoCatalog).replace(/</g, '\\u003c');
+  const demoHtml = fs.readFileSync(DEMO_TEMPLATE_PATH, 'utf-8').replace('/*__CATALOG_JSON__*/[]', () => catalogJson);
+  for (const dir of [SITE_DIR, rootDir, DIST_DIR, PUBLIC_DIR]) {
+    fs.writeFileSync(path.join(dir, 'demo.html'), demoHtml, 'utf-8');
+  }
+  console.log(`🏎️ [Aura & Grid] Universal Demo Runner compiled for ${demoCatalog.length} units -> demo.html (site, root, dist, public)`);
+} else {
+  console.warn('⚠️ Warning: scripts/site/demo_template.html not found; demo.html not generated');
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-232",
+  "description": "CUDA Graph Capture, CPU Launch Acceleration, and Zero Overhead Replay Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

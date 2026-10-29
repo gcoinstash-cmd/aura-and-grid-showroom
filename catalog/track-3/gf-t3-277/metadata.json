@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-277",
+  "description": "Track 3 Ultra-Wide Multi-GPU Pipeline Partitioning and Layer-Wise Tensor Sharding Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-264",
+  "description": "Dual-Stream Async Disaggregated Prefill and Decode Engine Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

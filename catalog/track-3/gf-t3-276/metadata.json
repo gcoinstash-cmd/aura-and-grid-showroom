@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-276",
+  "description": "Track 3 Flagship KV-Cache Direct Memory Access and PCIe Gen-6 Offloading Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

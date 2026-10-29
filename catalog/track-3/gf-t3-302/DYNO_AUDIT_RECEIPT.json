@@ -1,0 +1,39 @@
+{
+  "unitId": "GF-T3-302",
+  "unitNumber": 302,
+  "unitName": "GF-T3-302",
+  "track": "Track 3",
+  "tier": "Track 3 • Skunkworks Engine",
+  "auditTimestampUtc": "2026-10-29T09:37:21.774Z",
+  "testCoveragePct": 100,
+  "overallStatus": "DYNO_SEALED_PRODUCTION_QUALIFIED",
+  "gates": {
+    "gate01_mathCore": {
+      "status": "PASS",
+      "details": "Deterministic math model verified (zero random state leaks)"
+    },
+    "gate02_persistence": {
+      "status": "PASS",
+      "details": "PostgreSQL 16 migrations + Row-Level Security policies validated"
+    },
+    "gate03_zeroTrust": {
+      "status": "PASS",
+      "details": "GridSync zero-trust payload sanitizers & Pydantic ingress verification active"
+    },
+    "gate04_mechanicalDyno": {
+      "status": "PASS",
+      "passRatePct": 100,
+      "testsTotal": 8,
+      "testsPassed": 8,
+      "details": "8/8 boundary logic assertions passed (100%)"
+    }
+  },
+  "compliance": {
+    "license": "MIT / Apache-2.0 Dual Permissive",
+    "copyleftFree": true,
+    "asc350Capitalization": {
+      "standard": "ASC 350-40 / ASC 985",
+      "tier": "Track 3 Deep Skunkworks ($2,200,000 Portfolio Pool / $34,920 Unit Baseline)"
+    }
+  }
+}

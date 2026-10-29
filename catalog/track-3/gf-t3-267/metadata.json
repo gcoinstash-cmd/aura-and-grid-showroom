@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-267",
+  "description": "Dynamic LoRA Swapping, Zero-Copy Adapter Weight Fusion, and Multi-Tenant Execution Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-286",
+  "description": "Asynchronous Attention Sink Ring-Buffer and Infinite Context Retention Engine Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

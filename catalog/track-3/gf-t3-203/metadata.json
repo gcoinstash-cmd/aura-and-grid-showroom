@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-203",
+  "description": "Real-time Multi-Asset Kalman Filter & Statistical Arbitrage Signal Generator with dynamic Beta hedge ratio, Welford Z-Score, Ornstein-Uhlenbeck half-life estimation, and SHA-256 audit logs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

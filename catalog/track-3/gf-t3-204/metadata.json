@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-204",
+  "description": "Institutional Smart Order Router & Algorithmic Execution Engine implementing TWAP, VWAP, and Almgren-Chriss optimal liquidation trajectories with real-time slippage telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

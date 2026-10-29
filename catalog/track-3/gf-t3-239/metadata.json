@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-239",
+  "description": "Tensor Parallelism Column/Row Weight Sharding and Ring All-Reduce Accelerator Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-282",
+  "description": "Track 3 Flagship Ultra-Wide Dynamic Quantization Calibration and Hardware-Accelerated FP8 Weight-Activation Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

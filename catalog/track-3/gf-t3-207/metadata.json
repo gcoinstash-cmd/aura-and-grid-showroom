@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-207",
+  "description": "Institutional Automated Market Maker (AMM) dynamic liquidity and impermanent loss simulation engine with concentrated virtual reserve bounds, volatility-scaled fees, and SHA-256 state ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

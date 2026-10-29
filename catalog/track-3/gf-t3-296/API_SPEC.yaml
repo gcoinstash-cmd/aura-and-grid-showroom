@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  title: GF-T3-296
+  version: 3.296.0
+  description: Asynchronous FP8 Quantization and Calibration Matrix API
+paths:
+  /health:
+    get:
+      summary: Health and FP8 state probe
+      responses:
+        "200":
+          description: Healthy status payload
+  /api/v1/telemetry:
+    get:
+      summary: Full 8-scale calibration matrix telemetry snapshot
+      responses:
+        "200":
+          description: Telemetry snapshot
+  /api/v1/quantize:
+    post:
+      summary: Deterministic FP8 quantization pass
+      responses:
+        "200":
+          description: Quantized tensor response
+  /api/v1/trigger:
+    post:
+      summary: Execute calibration stress trigger
+      responses:
+        "200":
+          description: Updated matrix snapshot

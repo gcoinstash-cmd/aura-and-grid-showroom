@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GF-T3-229</title>
+    <script>
+      (function () {
+        var LOCKED_TITLE = 'GF-T3-229';
+        document.title = LOCKED_TITLE;
+        try {
+          var desc =
+            Object.getOwnPropertyDescriptor(Document.prototype, 'title') ||
+            Object.getOwnPropertyDescriptor(HTMLDocument.prototype, 'title');
+          if (desc && desc.set && desc.get) {
+            Object.defineProperty(document, 'title', {
+              configurable: true,
+              enumerable: true,
+              get: function () {
+                return LOCKED_TITLE;
+              },
+              set: function () {
+                desc.set.call(document, LOCKED_TITLE);
+              },
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="application-name" content="GF-T3-229" />
+    <meta name="apple-mobile-web-app-title" content="GF-T3-229" />
+    <meta name="description" content="Pipeline-Parallel 1F1B Engine · Micro-Batch Staging · Zero Bubble Interleaved" />
+    <meta property="og:title" content="GF-T3-229" />
+    <meta property="og:site_name" content="GF-T3-229" />
+    <meta property="og:description" content="Pipeline-Parallel 1F1B Engine · Micro-Batch Staging · Zero Bubble Interleaved" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GF-T3-229" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

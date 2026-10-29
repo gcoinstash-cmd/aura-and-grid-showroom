@@ -1,0 +1,971 @@
+[
+  {
+    "id": 252,
+    "unitId": "GF-T3-252",
+    "meta": {
+      "name": "GF-T3-252",
+      "description": "Track 3 Speculative Decoding and Draft-Target Verification Cockpit Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 253,
+    "unitId": "GF-T3-253",
+    "meta": {
+      "name": "GF-T3-253",
+      "description": "Continuous In-Flight Batching and PagedAttention Dynamic Memory Fabric Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 254,
+    "unitId": "GF-T3-254",
+    "meta": {
+      "name": "GF-T3-254",
+      "description": "FP8 Quantization and Dynamic Scaling Factor Calibration Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 255,
+    "unitId": "GF-T3-255",
+    "meta": {
+      "name": "GF-T3-255",
+      "description": "Track 3 Flagship Grouped-Query Attention and KV Cache Compression Tensor Fabric Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 256,
+    "unitId": "GF-T3-256",
+    "meta": {
+      "name": "GF-T3-256",
+      "description": "Track 3 Flagship FlashDecoding and Multi-Block Attention Parallel Reduction Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 257,
+    "unitId": "GF-T3-257",
+    "meta": {
+      "name": "GF-T3-257",
+      "description": "Track 3 Flagship Speculative Decoding and Draft Model Verification Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 258,
+    "unitId": "GF-T3-258",
+    "meta": {
+      "name": "GF-T3-258",
+      "description": "GF-T3-258 Flagship Chunked Prefill and Iterative Scheduling Hybrid Pipeline Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 259,
+    "unitId": "GF-T3-259",
+    "meta": {
+      "name": "GF-T3-259",
+      "description": "Track 3 flagship backend engine and institutional gamified Dynamic FP4 Quantization and Block-Scaled Quantization cockpit.",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 260,
+    "unitId": "GF-T3-260",
+    "meta": {
+      "name": "GF-T3-260",
+      "description": "Track 3 Flagship Non-Uniform 1F1B Micro-Batch Pipeline Parallelism and Interleaved Stage Memory Balancing Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 261,
+    "unitId": "GF-T3-261",
+    "meta": {
+      "name": "GF-T3-261",
+      "description": "Track 3 Flagship Context Parallelism and Ring-Attention Distributed Sequence Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 262,
+    "unitId": "GF-T3-262",
+    "meta": {
+      "name": "GF-T3-262",
+      "description": "Track 3 Flagship MoE Expert Parallelism and Dynamic Token Routing Cockpit Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 263,
+    "unitId": "GF-T3-263",
+    "meta": {
+      "name": "GF-T3-263",
+      "description": "Continuous Batching and In-Flight Batch Expansion Flagship Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 264,
+    "unitId": "GF-T3-264",
+    "meta": {
+      "name": "GF-T3-264",
+      "description": "Dual-Stream Async Disaggregated Prefill and Decode Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 265,
+    "unitId": "GF-T3-265",
+    "meta": {
+      "name": "GF-T3-265",
+      "description": "KV-Cache Pooling · Zero-Copy Arenas · Zero Redundancy",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 266,
+    "unitId": "GF-T3-266",
+    "meta": {
+      "name": "GF-T3-266",
+      "description": "Mamba-2 State-Space Model and Hybrid Attention-SSM Concurrency Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 267,
+    "unitId": "GF-T3-267",
+    "meta": {
+      "name": "GF-T3-267",
+      "description": "Dynamic LoRA Swapping, Zero-Copy Adapter Weight Fusion, and Multi-Tenant Execution Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 268,
+    "unitId": "GF-T3-268",
+    "meta": {
+      "name": "GF-T3-268",
+      "description": "Track 3 Flagship Tensor-Parallel Pipeline Interconnect and Ring-Reduce Fabric Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 269,
+    "unitId": "GF-T3-269",
+    "meta": {
+      "name": "GF-T3-269",
+      "description": "Chunked Prefill and Iterative Decode Interleaving Cockpit Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 270,
+    "unitId": "GF-T3-270",
+    "meta": {
+      "name": "GF-T3-270",
+      "description": "Ultra-Wide Context Ring Attention and Hierarchical KV-Cache Compression Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 271,
+    "unitId": "GF-T3-271",
+    "meta": {
+      "name": "GF-T3-271",
+      "description": "Track 3 Asynchronous Expert-Parallelism and Load-Balanced Dynamic Token Routing Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 272,
+    "unitId": "GF-T3-272",
+    "meta": {
+      "name": "GF-T3-272",
+      "description": "Speculative Decoding and Multi-Candidate Tree Verification Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 273,
+    "unitId": "GF-T3-273",
+    "meta": {
+      "name": "GF-T3-273",
+      "description": "Track 3 Ultra-Dense FP4 Quantization and Hardware-Accelerated Mixed-Precision Kernel Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 274,
+    "unitId": "GF-T3-274",
+    "meta": {
+      "name": "GF-T3-274",
+      "description": "Track 3 Flagship Asynchronous Context Window Rolling and Dynamic Memory Eviction Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 275,
+    "unitId": "GF-T3-275",
+    "meta": {
+      "name": "GF-T3-275",
+      "description": "Track 3 Ultra-Wide Dynamic Batching & Continuous In-Flight Request Scheduler Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 276,
+    "unitId": "GF-T3-276",
+    "meta": {
+      "name": "GF-T3-276",
+      "description": "Track 3 Flagship KV-Cache Direct Memory Access and PCIe Gen-6 Offloading Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 277,
+    "unitId": "GF-T3-277",
+    "meta": {
+      "name": "GF-T3-277",
+      "description": "Track 3 Ultra-Wide Multi-GPU Pipeline Partitioning and Layer-Wise Tensor Sharding Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 278,
+    "unitId": "GF-T3-278",
+    "meta": {
+      "name": "GF-T3-278",
+      "description": "Track 3 Flagship Continuous LoRA Parameter Warm-Swapping and Zero-Downtime Adapter Fabric Engine.",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 279,
+    "unitId": "GF-T3-279",
+    "meta": {
+      "name": "GF-T3-279",
+      "description": "Ultra-Wide Dynamic Speculative Draft Tree Sharding & Parallel Candidate Scoring Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 280,
+    "unitId": "GF-T3-280",
+    "meta": {
+      "name": "GF-T3-280",
+      "description": "Track 3 Continuous Paged Attention and Hardware-Accelerated Block Allocation Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 281,
+    "unitId": "GF-T3-281",
+    "meta": {
+      "name": "GF-T3-281",
+      "description": "Dynamic Speculative Draft-Target Verification & Multi-Token Parallel Acceptance Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 282,
+    "unitId": "GF-T3-282",
+    "meta": {
+      "name": "GF-T3-282",
+      "description": "Track 3 Flagship Ultra-Wide Dynamic Quantization Calibration and Hardware-Accelerated FP8 Weight-Activation Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 283,
+    "unitId": "GF-T3-283",
+    "meta": {
+      "name": "GF-T3-283",
+      "description": "Prefill-Decode Disaggregation and Distributed KV-Streaming Cockpit Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 284,
+    "unitId": "GF-T3-284",
+    "meta": {
+      "name": "GF-T3-284",
+      "description": "KV-Cache Compression, Quantized Block Merging, and Zero-Loss Telemetry Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 285,
+    "unitId": "GF-T3-285",
+    "meta": {
+      "name": "GF-T3-285",
+      "description": "Dynamic Ephemeral Speculative Tree Pruning and Hardware-Accelerated Branch Scoring Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 286,
+    "unitId": "GF-T3-286",
+    "meta": {
+      "name": "GF-T3-286",
+      "description": "Asynchronous Attention Sink Ring-Buffer and Infinite Context Retention Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 287,
+    "unitId": "GF-T3-287",
+    "meta": {
+      "name": "GF-T3-287",
+      "description": "Dynamic Multiplexer Token-Merging and KV-Cache Redundancy Elimination Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 288,
+    "unitId": "GF-T3-288",
+    "meta": {
+      "name": "GF-T3-288",
+      "description": "Dynamic Multiplexer Token-Merging and KV-Cache Redundancy Elimination Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 289,
+    "unitId": "GF-T3-289",
+    "meta": {
+      "name": "GF-T3-289",
+      "description": "Ultra-Wide Dynamic Asynchronous Pipeline Interconnect and Layer-Partitioned Micro-Batch Streaming Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 290,
+    "unitId": "GF-T3-290",
+    "meta": {
+      "name": "GF-T3-290",
+      "description": "Dynamic Asynchronous Tensor Parallelism and All-Reduce Ring-Topology Engine",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 291,
+    "unitId": "GF-T3-291",
+    "meta": {
+      "name": "GF-T3-291",
+      "description": "GF-T3-291 Ultra-Wide Dynamic Asynchronous Context Parallelism and Ring-Attention KV-Chunk Partitioning Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 292,
+    "unitId": "GF-T3-292",
+    "meta": {
+      "name": "GF-T3-292",
+      "description": "Ultra-Wide Dynamic Asynchronous MoE Top-K Expert Routing and Load-Balanced Token Dispatch Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 293,
+    "unitId": "GF-T3-293",
+    "meta": {
+      "name": "GF-T3-293",
+      "description": "Ultra-Wide Dynamic Speculative Decoding and Verification Tree Concurrency Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 294,
+    "unitId": "GF-T3-294",
+    "meta": {
+      "name": "GF-T3-294",
+      "description": "Track 3 Flagship Ultra-Wide Dynamic Asynchronous FlashAttention-4 and Hardware-Accelerated Block-Sparse Kernel Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 295,
+    "unitId": "GF-T3-295",
+    "meta": {
+      "name": "GF-T3-295",
+      "description": "Ultra-Wide Dynamic Asynchronous Distributed Checkpointing and Zero-Downtime State Synchronization Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 296,
+    "unitId": "GF-T3-296",
+    "meta": {
+      "name": "GF-T3-296",
+      "description": "FP8 Quantization and Calibration Matrix Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 297,
+    "unitId": "GF-T3-297",
+    "meta": {
+      "name": "GF-T3-297",
+      "description": "Ultra-Wide Dynamic Asynchronous Continuous Batching & In-Flight Token Scheduler Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 298,
+    "unitId": "GF-T3-298",
+    "meta": {
+      "name": "GF-T3-298",
+      "description": "Dynamic Asynchronous KV Cache Compression and Quantization Ring Engine Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 299,
+    "unitId": "GF-T3-299",
+    "meta": {
+      "name": "GF-T3-299",
+      "description": "Ultra-Wide Dynamic Asynchronous Multi-GPU Pipeline Parallelism and Activation Sharding Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 300,
+    "unitId": "GF-T3-300",
+    "meta": {
+      "name": "GF-T3-300",
+      "description": "Dynamic Asynchronous MoE Tensor Parallelism and Expert Load Balancer Flagship Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 301,
+    "unitId": "GF-T3-301",
+    "meta": {
+      "name": "GF-T3-301",
+      "description": "Ultra-Wide Dynamic Asynchronous Cluster-006 Master Orchestration and Sovereign APA Vault Gateway",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  },
+  {
+    "id": 302,
+    "unitId": "GF-T3-302",
+    "meta": {
+      "name": "GF-T3-302",
+      "description": "Track 3 Asynchronous Speculative Decoding and Draft Verification Flagship Cockpit",
+      "requestFramePermissions": [],
+      "majorCapabilities": [
+        "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+      ]
+    },
+    "allGatesPassed": true,
+    "gate01": true,
+    "gate02": true,
+    "gate03": true,
+    "gate04": true,
+    "passRate": 100,
+    "gate04Detail": "8/8 boundary logic assertions passed (100%)"
+  }
+]

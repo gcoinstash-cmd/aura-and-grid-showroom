@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-285",
+  "description": "Dynamic Ephemeral Speculative Tree Pruning and Hardware-Accelerated Branch Scoring Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

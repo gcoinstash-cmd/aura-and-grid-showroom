@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-209",
+  "description": "Institutional quantitative risk engine implementing Peaks-Over-Threshold Extreme Value Theory (EVT), Cornish-Fisher expansion, Hull-White volatility updating, and Kupiec backtesting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

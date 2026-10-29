@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-289",
+  "description": "Ultra-Wide Dynamic Asynchronous Pipeline Interconnect and Layer-Partitioned Micro-Batch Streaming Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

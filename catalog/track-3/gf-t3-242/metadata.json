@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-242",
+  "description": "FP4 / INT4 Mixed-Precision Block Quantization & Outlier-Aware Scale Calibration Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

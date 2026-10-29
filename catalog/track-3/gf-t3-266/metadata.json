@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-266",
+  "description": "Mamba-2 State-Space Model and Hybrid Attention-SSM Concurrency Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

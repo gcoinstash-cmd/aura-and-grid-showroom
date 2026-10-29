@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-226",
+  "description": "FlashAttention-3 Kernel, Tiled Online Softmax, and Paged KV-Cache Allocator Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "sync_timestamp": "2026-10-11T06:14:51.164Z",
+  "sync_timestamp": "2026-10-26T19:40:26.963Z",
   "version": "v2.0-master-sync",
   "status": "ALL_SYNCED",
   "backup_filter_policy": {
@@ -61,14 +61,14 @@
     "AGENT.md": "c99c78213b93dae8dbf8fd2a3b61e34f90af7a1015c304bdaf8e2959d378f31d",
     "GEMINI.md": "c99c78213b93dae8dbf8fd2a3b61e34f90af7a1015c304bdaf8e2959d378f31d",
     "instructions.txt": "d36f0f081a939449e9823b872810412d94639aeed746ce57f30d01ee9ac1ac6e",
-    "ghostfactory-master.md": "d36f0f081a939449e9823b872810412d94639aeed746ce57f30d01ee9ac1ac6e",
+    "ghostfactory-master.md": "dcb72cba0aa9f8581d57d7ee4bb959f2b905a7d4bbc1366b8bec9a8dc6c0e694",
     "GHOSTFACTORY_V2_MASTER_SYNC.md": "2ac688c5cd429fbc14cd6e46f2d1130eb8129167ad8f378a1307f8ed7a65d494",
     "BUSINESS_MODEL_AND_FOUNDRY_STRATEGY.md": "3f6281379253a8dc098f2ccb94b4bd6e9a9e46ab64d497218bdaf4dddbd89d8e",
     "MASTER_BUSINESS_PLAN.md": "c66e3a3694690414a805b15fae942f3e51e1871e5942293045d5df76bc8594bd",
     "NOTEBOOKLM_MASTER_FOUNDRY_BRIEF.md": "b2bbcf19ddad2ea165c5cd9fe8e1d16d2414f88b91a9bb63be94b3500afdcc9b",
     "COMMERCIAL_AGENCY_LICENSE.md": "9190e32534791b87a92a86fb5a22b0ae9bf31929926395a706841a341b57fd79",
     "QUALITY_GATE.md": "d43d2eabbba24f9e3c67942ba5e50e73e2890ce91b9619378f1f2a7b1505224d",
-    "CATALOG_MANIFEST.json": "55b51dc8136131e9b2ebefe512f344d6369676331ea8820f8c2f94e153f70bf5",
+    "CATALOG_MANIFEST.json": "9ede7500f3b9f92c12677f80cd2de752889523f8edcd3e5ccef1ae54b9bce711",
     "EMERGENCY_RECOVERY_README.md": "3bbcb99f9453aceab4d3163b6f3ddc404268cb3287aa85c69c90dc8bc66ca2ac",
     "AUDIT_SNAPSHOT.md": "c88756e5840c6f0ec0e861ca7991e2c73645ba446e131b7de31f094705545322",
     "COMMERCIAL_POSITIONING.md": "328fd416c08a16b6347f1621a2f149062adb4bd2093e956e59142f382ed75666",
@@ -79,10 +79,10 @@
     "ACQUIRE_TIER1_STRATEGY.md": "8d15b0e9c1bdf572d28fcf3ec8a1b9427867b4b7fdb8ebba1f2c6ffe8c73b19c",
     "COMPLIANCE.template.md": "f0c342e26ba280915fd532b7ade387dfc8044bda936749cba843606d982a73f5",
     "INSTITUTIONAL_PRODUCTION_STANDARD.md": "8e6daf5d900cb1b2343c707b006548bf80bfa7ee414b29d92a6c814420ba5d27",
-    "track3Engines.ts": "ad1952ccbfe4ba1a9b9f107bc9f1d82497f5b6e1c3621ceddea6aa6dc6bda582",
+    "track3Engines.ts": "4eeb2b322eddb8a68f5ded2479398e723e4d26ba38f806756a4a20360259a4c5",
     "Track2Harness.tsx": "622b1e36e699ca7355df4da9e3e77aaba1e7d51f029c8512360a4d51eb12b206",
-    "catalogData.ts": "8bea2da59ede952dd2f3da0522a40657a20345ae0a3c6f2fbf700fa892cf581f",
-    "licenseMatrix.ts": "12ed8d0e32840cb14256e0faa46381f5d00a0a0db96ae3dff61cb0000e0f1d73"
+    "catalogData.ts": "0a3dbfac269501780f2a234d8f0f562ba5ffdaa22fe9ba1bc9b41aa0335c8c7d",
+    "licenseMatrix.ts": "19b69e91e2ea1f71a53c1b22bc1ed4940e4a3940bd092ea6424d081262c7a053"
   },
   "synced_destinations": [
     "/Users/gmane/Documents/ZoMae Media LLC/Aura & Grid/MASTER_BLUEPRINT_BACKUP",

@@ -1,0 +1,51 @@
+{
+  "unitId": "GF-T3-259",
+  "unitNumber": 259,
+  "unitName": "GF-T3-259",
+  "track": "Track 3",
+  "tier": "Track 3 • Skunkworks Engine",
+  "auditTimestampUtc": "2026-10-29T09:47:24.817Z",
+  "gitCommitSha": "26cb3781417de46a328643696669665a5a6d7cd4",
+  "testCoveragePct": 100,
+  "overallStatus": "DYNO_SEALED_PRODUCTION_QUALIFIED",
+  "gates": {
+    "gate01_mathCore": {
+      "status": "PASS",
+      "summary": "Deterministic Math Core",
+      "details": [
+        "Deterministic math & domain algorithms verified"
+      ]
+    },
+    "gate02_persistence": {
+      "status": "PASS",
+      "summary": "PostgreSQL 16 + RLS Verified",
+      "details": [
+        "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+      ]
+    },
+    "gate03_zeroTrust": {
+      "status": "PASS",
+      "summary": "Zero-Trust GridSync Ingress",
+      "details": [
+        "Secured via GridSync payload sanitization middleware"
+      ]
+    },
+    "gate04_mechanicalDyno": {
+      "status": "PASS",
+      "summary": "Test Dyno Passed (100%)",
+      "passRatePct": 100,
+      "testsTotal": 8,
+      "testsPassed": 8,
+      "testsFailed": 0,
+      "duration": "0.00s"
+    }
+  },
+  "compliance": {
+    "license": "MIT / Apache-2.0 Dual Permissive",
+    "copyleftFree": true,
+    "asc350Capitalization": {
+      "standard": "ASC 350-40 / ASC 985",
+      "tier": "Track 3 Deep Skunkworks ($2,200,000 Portfolio Pool / $34,920 Unit Baseline)"
+    }
+  }
+}

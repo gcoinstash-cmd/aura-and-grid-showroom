@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-294",
+  "description": "Track 3 Flagship Ultra-Wide Dynamic Asynchronous FlashAttention-4 and Hardware-Accelerated Block-Sparse Kernel Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-210",
+  "description": "Institutional Level 2 / Level 3 Limit Order Book matching engine, Hawkes process intensity modeling, queue position tracker, and cryptographic audit trail.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

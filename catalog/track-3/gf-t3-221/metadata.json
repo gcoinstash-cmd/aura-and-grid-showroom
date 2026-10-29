@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-221",
+  "description": "Continuous Batching Iteration-Level Scheduler and GPU Bubble Minimization Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

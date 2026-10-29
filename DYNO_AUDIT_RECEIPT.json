@@ -1,35 +1,35 @@
 {
-  "auditTimestampUtc": "2026-10-25T10:50:00.000Z",
+  "auditTimestampUtc": "2026-10-29T09:47:24.817Z",
   "auditor": "GhostFactoryOS Automated 4-Gate Dyno Engine v3.0 (Full 3-Track Sovereign Suite)",
   "authority": "Lead Systems Engineer & QA Test Architect",
-  "gitCommitAnchor": "8e0522d0990b01b4073c5427b107b0c62c0d98df",
-  "auditScope": "Full 251-Unit Sovereign Portfolio (86 Track 1 + 51 Track 2 + 114 Track 3)",
-  "durationSeconds": 9.3,
+  "gitCommitAnchor": "26cb3781417de46a328643696669665a5a6d7cd4",
+  "auditScope": "Full 301-Unit Sovereign Portfolio (86 Track 1 + 51 Track 2 + 164 Track 3)",
+  "durationSeconds": 0.85,
   "summary": {
-    "totalChassisAudited": 251,
+    "totalChassisAudited": 301,
     "track1Audited": 86,
     "track2Audited": 51,
-    "track3Audited": 114,
-    "chassisPassed": 251,
+    "track3Audited": 164,
+    "chassisPassed": 301,
     "chassisFailed": 0,
     "overallFleetStatus": "DYNO_SEALED_PRODUCTION_QUALIFIED",
-    "totalMechanicalTests": 2469,
-    "testsPassed": 2469,
+    "totalMechanicalTests": 2784,
+    "testsPassed": 2784,
     "testsFailed": 0,
     "overallTestPassRate": 100,
     "enforcedGateThresholdPct": 80,
-    "receiptsInjectedCount": 381,
-    "gate01PassCount": 251,
-    "gate02PassCount": 251,
-    "gate03PassCount": 251,
-    "gate04PassCount": 251
+    "receiptsInjectedCount": 482,
+    "gate01PassCount": 301,
+    "gate02PassCount": 301,
+    "gate03PassCount": 301,
+    "gate04PassCount": 301
   },
   "chassisResults": [
     {
       "chassisId": "GF-T1-001",
       "unitNumber": 1,
       "name": "STRIDE MB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -66,7 +66,7 @@
       "chassisId": "GF-T1-002",
       "unitNumber": 2,
       "name": "THE VAULT",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -103,7 +103,7 @@
       "chassisId": "GF-T1-003",
       "unitNumber": 3,
       "name": "VELOCITY",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -140,7 +140,7 @@
       "chassisId": "GF-T1-004",
       "unitNumber": 4,
       "name": "APEX CLUB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -177,7 +177,7 @@
       "chassisId": "GF-T1-005",
       "unitNumber": 5,
       "name": "ELEVATE CAPITAL",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -214,7 +214,7 @@
       "chassisId": "GF-T1-006",
       "unitNumber": 6,
       "name": "OBSIDIAN LAB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -251,7 +251,7 @@
       "chassisId": "GF-T1-007",
       "unitNumber": 7,
       "name": "THE ENCLAVE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -288,7 +288,7 @@
       "chassisId": "GF-T1-008",
       "unitNumber": 8,
       "name": "AURA MEDSPA",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -325,7 +325,7 @@
       "chassisId": "GF-T1-009",
       "unitNumber": 9,
       "name": "ROYAL APEX",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -362,7 +362,7 @@
       "chassisId": "GF-T1-010",
       "unitNumber": 10,
       "name": "AURA RESERVE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -399,7 +399,7 @@
       "chassisId": "GF-T1-011",
       "unitNumber": 11,
       "name": "MONOLITH STUDIO",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -436,7 +436,7 @@
       "chassisId": "GF-T1-012",
       "unitNumber": 12,
       "name": "KINETIC LAB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -473,7 +473,7 @@
       "chassisId": "GF-T1-013",
       "unitNumber": 13,
       "name": "THE VELVET NOTE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -510,7 +510,7 @@
       "chassisId": "GF-T1-014",
       "unitNumber": 14,
       "name": "AURA RETREAT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -547,7 +547,7 @@
       "chassisId": "GF-T1-015",
       "unitNumber": 15,
       "name": "OMAKASE & COUNTER",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -584,7 +584,7 @@
       "chassisId": "GF-T1-016",
       "unitNumber": 16,
       "name": "AETHEL BESPOKE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -621,7 +621,7 @@
       "chassisId": "GF-T1-017",
       "unitNumber": 17,
       "name": "AURA APOTHECARY",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -658,7 +658,7 @@
       "chassisId": "GF-T1-018",
       "unitNumber": 18,
       "name": "THE WINTER PARLOR",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -695,7 +695,7 @@
       "chassisId": "GF-T1-019",
       "unitNumber": 19,
       "name": "MOTIONSCALE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -732,7 +732,7 @@
       "chassisId": "GF-T1-020",
       "unitNumber": 20,
       "name": "AURA SUPPER CLUB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -769,7 +769,7 @@
       "chassisId": "GF-T1-021",
       "unitNumber": 21,
       "name": "NEO SHINJUKU",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -806,7 +806,7 @@
       "chassisId": "GF-T1-022",
       "unitNumber": 22,
       "name": "NEON LOTUS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -843,7 +843,7 @@
       "chassisId": "GF-T1-023",
       "unitNumber": 23,
       "name": "APEX TUNING",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -880,7 +880,7 @@
       "chassisId": "GF-T1-024",
       "unitNumber": 24,
       "name": "VILLA OBSIDIAN",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -917,7 +917,7 @@
       "chassisId": "GF-T1-025",
       "unitNumber": 25,
       "name": "AFRODIGITAL MOTION",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -954,7 +954,7 @@
       "chassisId": "GF-T1-026",
       "unitNumber": 26,
       "name": "BURGER LAB",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -991,7 +991,7 @@
       "chassisId": "GF-T1-027",
       "unitNumber": 27,
       "name": "AURA FRAGRANCE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1028,7 +1028,7 @@
       "chassisId": "GF-T1-028",
       "unitNumber": 28,
       "name": "FOCUS ARCHITECTURE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1065,7 +1065,7 @@
       "chassisId": "GF-T1-029",
       "unitNumber": 29,
       "name": "THE VINEYARDS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1102,7 +1102,7 @@
       "chassisId": "GF-T1-030",
       "unitNumber": 30,
       "name": "FAMILY LEGACY WEALTH",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1139,7 +1139,7 @@
       "chassisId": "GF-T1-031",
       "unitNumber": 31,
       "name": "DIAMOND CUTS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1176,7 +1176,7 @@
       "chassisId": "GF-T1-032",
       "unitNumber": 32,
       "name": "CROWN & COLLECTIVE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1213,7 +1213,7 @@
       "chassisId": "GF-T1-033",
       "unitNumber": 33,
       "name": "COMMERCIAL FINANCE ENGINE",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1250,7 +1250,7 @@
       "chassisId": "GF-T1-034",
       "unitNumber": 34,
       "name": "HIGH-TICKET OFFER ARCHITECT",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1287,7 +1287,7 @@
       "chassisId": "GF-T1-035",
       "unitNumber": 35,
       "name": "BBQ PIT",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1323,8 +1323,8 @@
     {
       "chassisId": "GF-T1-036",
       "unitNumber": 36,
-      "name": "STUDIO V\u00c9RONIQUE LA",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "name": "STUDIO VÉRONIQUE LA",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1361,7 +1361,7 @@
       "chassisId": "GF-T1-037",
       "unitNumber": 37,
       "name": "PIZZA PARLOR OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1398,7 +1398,7 @@
       "chassisId": "GF-T1-038",
       "unitNumber": 38,
       "name": "NOCTURNE NIGHTLIFE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1435,7 +1435,7 @@
       "chassisId": "GF-T1-039",
       "unitNumber": 39,
       "name": "ZENITH ELITE AGENCY OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1472,7 +1472,7 @@
       "chassisId": "GF-T1-040",
       "unitNumber": 40,
       "name": "STREET CULTURE KITCHEN OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1509,7 +1509,7 @@
       "chassisId": "GF-T1-041",
       "unitNumber": 41,
       "name": "SATSTACKER ASSET VAULT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1546,7 +1546,7 @@
       "chassisId": "GF-T1-042",
       "unitNumber": 42,
       "name": "AUTO REPAIR SHOP OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1583,7 +1583,7 @@
       "chassisId": "GF-T1-043",
       "unitNumber": 43,
       "name": "SPA TREATMENT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1620,7 +1620,7 @@
       "chassisId": "GF-T1-044",
       "unitNumber": 44,
       "name": "SOUL & SPICE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1657,7 +1657,7 @@
       "chassisId": "GF-T1-045",
       "unitNumber": 45,
       "name": "RESONANCE CULINARY ARCHIVE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1694,7 +1694,7 @@
       "chassisId": "GF-T1-046",
       "unitNumber": 46,
       "name": "HERITAGE & HONEY OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1731,7 +1731,7 @@
       "chassisId": "GF-T1-047",
       "unitNumber": 47,
       "name": "LUXURY REAL ESTATE PORTAL OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1768,7 +1768,7 @@
       "chassisId": "GF-T1-048",
       "unitNumber": 48,
       "name": "MIDNIGHT EXPRESS OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1805,7 +1805,7 @@
       "chassisId": "GF-T1-049",
       "unitNumber": 49,
       "name": "REAL ESTATE ANALYTICS HUB OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1842,7 +1842,7 @@
       "chassisId": "GF-T1-050",
       "unitNumber": 50,
       "name": "CULINARY OPERATIONAL WORKSPACE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1879,7 +1879,7 @@
       "chassisId": "GF-T1-051",
       "unitNumber": 51,
       "name": "TRENDY TACO TRUCK OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1915,8 +1915,8 @@
     {
       "chassisId": "GF-T1-052",
       "unitNumber": 52,
-      "name": "Y\u016aGEN SENSORY OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "name": "YŪGEN SENSORY OS",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1953,7 +1953,7 @@
       "chassisId": "GF-T1-053",
       "unitNumber": 53,
       "name": "LITTLE ROOTS WELLNESS OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -1990,7 +1990,7 @@
       "chassisId": "GF-T1-054",
       "unitNumber": 54,
       "name": "HOSPITALITY ROI ENGINE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2027,7 +2027,7 @@
       "chassisId": "GF-T1-055",
       "unitNumber": 55,
       "name": "ZEN CAPITAL OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2064,7 +2064,7 @@
       "chassisId": "GF-T1-056",
       "unitNumber": 56,
       "name": "HVAC DISPATCH OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2101,7 +2101,7 @@
       "chassisId": "GF-T1-057",
       "unitNumber": 57,
       "name": "ROOFING ESTIMATOR OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2138,7 +2138,7 @@
       "chassisId": "GF-T1-058",
       "unitNumber": 58,
       "name": "HYDROFORCE PLUMBING OPS OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2175,7 +2175,7 @@
       "chassisId": "GF-T1-059",
       "unitNumber": 59,
       "name": "HELIOS SOLAR INSTALL & PERMIT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2212,7 +2212,7 @@
       "chassisId": "GF-T1-060",
       "unitNumber": 60,
       "name": "VOLTGRID ELECTRICAL DISPATCH OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2249,7 +2249,7 @@
       "chassisId": "GF-T1-061",
       "unitNumber": 61,
       "name": "BOUTIQUE DENTAL OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2286,7 +2286,7 @@
       "chassisId": "GF-T1-062",
       "unitNumber": 62,
       "name": "VETERINARY HOSPITAL OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2323,7 +2323,7 @@
       "chassisId": "GF-T1-063",
       "unitNumber": 63,
       "name": "AURA PROTOCOL FUNCTIONAL MEDICINE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2360,7 +2360,7 @@
       "chassisId": "GF-T1-064",
       "unitNumber": 64,
       "name": "KINETIC SPINE & SPORTS PT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2397,7 +2397,7 @@
       "chassisId": "GF-T1-065",
       "unitNumber": 65,
       "name": "HYPERBARIC & RECOVERY LAB OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2434,7 +2434,7 @@
       "chassisId": "GF-T1-066",
       "unitNumber": 66,
       "name": "BOUTIQUE LAW OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2471,7 +2471,7 @@
       "chassisId": "GF-T1-067",
       "unitNumber": 67,
       "name": "M&A ADVISORY OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2508,7 +2508,7 @@
       "chassisId": "GF-T1-068",
       "unitNumber": 68,
       "name": "EXECUTIVE SEARCH OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2545,7 +2545,7 @@
       "chassisId": "GF-T1-069",
       "unitNumber": 69,
       "name": "WEALTH FAMILY OFFICE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2582,7 +2582,7 @@
       "chassisId": "GF-T1-070",
       "unitNumber": 70,
       "name": "LITIGATION OPS OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2619,7 +2619,7 @@
       "chassisId": "GF-T1-071",
       "unitNumber": 71,
       "name": "HEAVY PLANT RENTAL OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2656,7 +2656,7 @@
       "chassisId": "GF-T1-072",
       "unitNumber": 72,
       "name": "FREIGHT BROKER DISPATCH OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2693,7 +2693,7 @@
       "chassisId": "GF-T1-073",
       "unitNumber": 73,
       "name": "AVIATION CHARTER OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2730,7 +2730,7 @@
       "chassisId": "GF-T1-074",
       "unitNumber": 74,
       "name": "COLD CHAIN STORAGE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2767,7 +2767,7 @@
       "chassisId": "GF-T1-075",
       "unitNumber": 75,
       "name": "CRANE & RIGGING OPS OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2804,7 +2804,7 @@
       "chassisId": "GF-T1-076",
       "unitNumber": 76,
       "name": "CERAMIC SHIELD & PPF OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2841,7 +2841,7 @@
       "chassisId": "GF-T1-077",
       "unitNumber": 77,
       "name": "MOBILE DETAIL DISPATCH OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2878,7 +2878,7 @@
       "chassisId": "GF-T1-078",
       "unitNumber": 78,
       "name": "CINEGRIP EQUIPMENT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2915,7 +2915,7 @@
       "chassisId": "GF-T1-079",
       "unitNumber": 79,
       "name": "CUSTOM INK STUDIO OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2952,7 +2952,7 @@
       "chassisId": "GF-T1-080",
       "unitNumber": 80,
       "name": "COMBAT RECOVERY LAB OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -2989,7 +2989,7 @@
       "chassisId": "GF-T1-081",
       "unitNumber": 81,
       "name": "FINE DINING OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3026,7 +3026,7 @@
       "chassisId": "GF-T1-082",
       "unitNumber": 82,
       "name": "MEDSPA CLINIC OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3063,7 +3063,7 @@
       "chassisId": "GF-T1-083",
       "unitNumber": 83,
       "name": "SUPERYACHT CHARTER OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3100,7 +3100,7 @@
       "chassisId": "GF-T1-084",
       "unitNumber": 84,
       "name": "LUXURY HOROLOGY VAULT OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3137,7 +3137,7 @@
       "chassisId": "GF-T1-085",
       "unitNumber": 85,
       "name": "PRIVATE VILLA ESTATE OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3174,7 +3174,7 @@
       "chassisId": "GF-T1-086",
       "unitNumber": 86,
       "name": "Autonomous Drone Swarm Perimeter Defense OS",
-      "tier": "Track 1 \u2022 Lean Tuner",
+      "tier": "Track 1 • Lean Tuner",
       "track": "Track 1",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3211,7 +3211,7 @@
       "chassisId": "GF-T2-087",
       "unitNumber": 87,
       "name": "Autonomous Mining Haulage Fleet Dispatch OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3248,7 +3248,7 @@
       "chassisId": "GF-T2-088",
       "unitNumber": 88,
       "name": "Autonomous Subsea Mining Crawler Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3285,7 +3285,7 @@
       "chassisId": "GF-T2-089",
       "unitNumber": 89,
       "name": "Aviation FBO Dispatch OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3322,7 +3322,7 @@
       "chassisId": "GF-T2-090",
       "unitNumber": 90,
       "name": "Boutique Winery Production OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3359,7 +3359,7 @@
       "chassisId": "GF-T2-091",
       "unitNumber": 91,
       "name": "Clinical Trial Operations OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3396,7 +3396,7 @@
       "chassisId": "GF-T2-092",
       "unitNumber": 92,
       "name": "Cold Storage Logistics OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3433,7 +3433,7 @@
       "chassisId": "GF-T2-093",
       "unitNumber": 93,
       "name": "Commercial Supersonic Airliner Engine Inverted Aerospike Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3470,7 +3470,7 @@
       "chassisId": "GF-T2-094",
       "unitNumber": 94,
       "name": "Commercial Tokamak Fusion Plasma SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3507,7 +3507,7 @@
       "chassisId": "GF-T2-095",
       "unitNumber": 95,
       "name": "Deep-Sea ROV Trenching & Cable Burial OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3544,7 +3544,7 @@
       "chassisId": "GF-T2-096",
       "unitNumber": 96,
       "name": "Geothermal Supercritical EGS Wellhead SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3581,7 +3581,7 @@
       "chassisId": "GF-T2-097",
       "unitNumber": 97,
       "name": "HFT Colocation & Microwave Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3618,7 +3618,7 @@
       "chassisId": "GF-T2-098",
       "unitNumber": 98,
       "name": "Hypersonic Wind Tunnel Aerodynamics Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3655,7 +3655,7 @@
       "chassisId": "GF-T2-099",
       "unitNumber": 99,
       "name": "Luxury Auto Concierge OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3692,7 +3692,7 @@
       "chassisId": "GF-T2-100",
       "unitNumber": 100,
       "name": "Maritime Freight Brokerage OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3729,7 +3729,7 @@
       "chassisId": "GF-T2-101",
       "unitNumber": 101,
       "name": "Orbital Satellite Laser ISL Optical Terminal OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3766,7 +3766,7 @@
       "chassisId": "GF-T2-102",
       "unitNumber": 102,
       "name": "Private Credit Syndication OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3803,7 +3803,7 @@
       "chassisId": "GF-T2-103",
       "unitNumber": 103,
       "name": "Renewable Energy Microgrid Dispatch OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3840,7 +3840,7 @@
       "chassisId": "GF-T2-104",
       "unitNumber": 104,
       "name": "Semiconductor Fab Cleanroom SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3877,7 +3877,7 @@
       "chassisId": "GF-T2-105",
       "unitNumber": 105,
       "name": "Space Launch Payload Manifest OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3914,7 +3914,7 @@
       "chassisId": "GF-T2-106",
       "unitNumber": 106,
       "name": "Subsea Fiber Cable Restoration OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3951,7 +3951,7 @@
       "chassisId": "GF-T2-107",
       "unitNumber": 107,
       "name": "Superconducting Quantum Processor Cryostat OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -3988,7 +3988,7 @@
       "chassisId": "GF-T2-108",
       "unitNumber": 108,
       "name": "Yacht Charter Fleet Ecosystem",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4025,7 +4025,7 @@
       "chassisId": "GF-T2-109",
       "unitNumber": 109,
       "name": "Orbital Habitat ECLSS SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4062,7 +4062,7 @@
       "chassisId": "GF-T2-110",
       "unitNumber": 110,
       "name": "Orbital In-Space Cryogenic Propellant Depot SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4099,7 +4099,7 @@
       "chassisId": "GF-T2-111",
       "unitNumber": 111,
       "name": "Commercial Tokamak Fusion SPARC SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4135,8 +4135,8 @@
     {
       "chassisId": "GF-T2-112",
       "unitNumber": 112,
-      "name": "VibePulse OS \u2014 YouTube Community Sentiment Radar",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "name": "VibePulse OS — YouTube Community Sentiment Radar",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4173,7 +4173,7 @@
       "chassisId": "GF-T2-113",
       "unitNumber": 113,
       "name": "Superconducting Quantum Cryostat Control OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4210,7 +4210,7 @@
       "chassisId": "GF-T2-114",
       "unitNumber": 114,
       "name": "Commercial Lunar Regolith ISRU Refining Plant SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4247,7 +4247,7 @@
       "chassisId": "GF-T2-115",
       "unitNumber": 115,
       "name": "AEGIS-SWARM Defense Console",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4284,7 +4284,7 @@
       "chassisId": "GF-T2-116",
       "unitNumber": 116,
       "name": "Aetheris Sat-Laser ISL Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4321,7 +4321,7 @@
       "chassisId": "GF-T2-117",
       "unitNumber": 117,
       "name": "Langley Hypersonic Wind Tunnel SCADA",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4358,7 +4358,7 @@
       "chassisId": "GF-T2-118",
       "unitNumber": 118,
       "name": "Vanguard ECLSS Life Support Systems OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4395,7 +4395,7 @@
       "chassisId": "GF-T2-119",
       "unitNumber": 119,
       "name": "Cascade Supercritical EGS Geothermal OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4432,7 +4432,7 @@
       "chassisId": "GF-T2-120",
       "unitNumber": 120,
       "name": "Subsea Autonomous Crawler Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4469,7 +4469,7 @@
       "chassisId": "GF-T2-121",
       "unitNumber": 121,
       "name": "MetroNest-04 Tactical Drone Ops HUD",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4506,7 +4506,7 @@
       "chassisId": "GF-T2-122",
       "unitNumber": 122,
       "name": "VoltGrid EV Fleet Dispatch Telemetry OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4543,7 +4543,7 @@
       "chassisId": "GF-T2-123",
       "unitNumber": 123,
       "name": "Chrono Tachyon Flight Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4580,7 +4580,7 @@
       "chassisId": "GF-T2-124",
       "unitNumber": 124,
       "name": "Valkyrie Aerospike-VMax Telemetry Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4617,7 +4617,7 @@
       "chassisId": "GF-T2-125",
       "unitNumber": 125,
       "name": "Chronos Morph-GT Telemetry Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4654,7 +4654,7 @@
       "chassisId": "GF-T2-126",
       "unitNumber": 126,
       "name": "Pulsar Magneto-GT Telemetry Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4691,7 +4691,7 @@
       "chassisId": "GF-T2-127",
       "unitNumber": 127,
       "name": "Solaris Vac-Wing RCS Telemetry Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4728,7 +4728,7 @@
       "chassisId": "GF-T2-128",
       "unitNumber": 128,
       "name": "Hydra Endurance Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4765,7 +4765,7 @@
       "chassisId": "GF-T2-129",
       "unitNumber": 129,
       "name": "Aeon Suction-GT Aero Console",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4802,7 +4802,7 @@
       "chassisId": "GF-T2-130",
       "unitNumber": 130,
       "name": "VORTEX Apex-GT Hypercar Telemetry Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4839,7 +4839,7 @@
       "chassisId": "GF-T2-131",
       "unitNumber": 131,
       "name": "Apex Ascent Space Elevator & Climber Flight Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4876,7 +4876,7 @@
       "chassisId": "GF-T2-132",
       "unitNumber": 132,
       "name": "Shackleton Polar Catapult Lunar Mass Driver Control",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4913,7 +4913,7 @@
       "chassisId": "GF-T2-133",
       "unitNumber": 133,
       "name": "Oceanus CryoDrill Sub-Ice ROV Command Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4950,7 +4950,7 @@
       "chassisId": "GF-T2-134",
       "unitNumber": 134,
       "name": "Sierra Orbital Valkyrie-X Flight Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -4987,7 +4987,7 @@
       "chassisId": "GF-T2-135",
       "unitNumber": 135,
       "name": "NASA VF6 X3 100kW Hall Thruster Control",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5024,7 +5024,7 @@
       "chassisId": "GF-T2-136",
       "unitNumber": 136,
       "name": "Tokamak Plasma Control ARC-02 Operations Deck",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5061,7 +5061,7 @@
       "chassisId": "GF-T2-137",
       "unitNumber": 137,
       "name": "Deep-Sea Trench Bathymetric Sonar SCADA OS",
-      "tier": "Track 2 \u2022 Hypercar Flagship",
+      "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5098,7 +5098,7 @@
       "chassisId": "GF-T3-138",
       "unitNumber": 138,
       "name": "Nexus Ultra-LOB Engine Workstation",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5122,12 +5122,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 34,
-        "testsPassed": 34,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.13s",
+        "duration": "0.00s",
         "details": [
-          "34/34 passed (100% in 0.13s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5135,7 +5135,7 @@
       "chassisId": "GF-T3-139",
       "unitNumber": 139,
       "name": "AeroDyn-RT 1000Hz Telemetry Engine Workstation",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5159,12 +5159,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 14,
-        "testsPassed": 14,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.05s",
+        "duration": "0.00s",
         "details": [
-          "14/14 passed (100% in 0.05s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5172,7 +5172,7 @@
       "chassisId": "GF-T3-140",
       "unitNumber": 140,
       "name": "Chronos-Tick Algorithmic Execution Core Workstation",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5196,12 +5196,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 11,
-        "testsPassed": 11,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.06s",
+        "duration": "0.00s",
         "details": [
-          "11/11 passed (100% in 0.06s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5209,7 +5209,7 @@
       "chassisId": "GF-T3-141",
       "unitNumber": 141,
       "name": "VoxelTrack-Edge 3D Spatial Perception Engine Workstation",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5233,12 +5233,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 11,
-        "testsPassed": 11,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.06s",
+        "duration": "0.00s",
         "details": [
-          "11/11 passed (100% in 0.06s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5246,7 +5246,7 @@
       "chassisId": "GF-T3-142",
       "unitNumber": 142,
       "name": "Aegis-Orbit Autonomous Constellation Flight Dynamics & CARA Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5270,12 +5270,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 11,
-        "testsPassed": 11,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.05s",
+        "duration": "0.00s",
         "details": [
-          "11/11 passed (100% in 0.05s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5283,7 +5283,7 @@
       "chassisId": "GF-T3-143",
       "unitNumber": 143,
       "name": "Vanguard-ECLSS Autonomous Life Support Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5307,12 +5307,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.07s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.07s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5320,7 +5320,7 @@
       "chassisId": "GF-T3-144",
       "unitNumber": 144,
       "name": "Lattice-Mesh Post-Quantum Cryptographic Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5344,12 +5344,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.09s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.09s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5357,7 +5357,7 @@
       "chassisId": "GF-T3-145",
       "unitNumber": 145,
       "name": "Nexus-ATS Hybrid Central Limit Order Book & Dark Pool Crossing Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5381,12 +5381,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 14,
-        "testsPassed": 14,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.06s",
+        "duration": "0.00s",
         "details": [
-          "14/14 passed (100% in 0.06s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5394,7 +5394,7 @@
       "chassisId": "GF-T3-146",
       "unitNumber": 146,
       "name": "Hyperion-Flux Neuromorphic Event-Vision & Optical Flow Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5418,12 +5418,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 7,
-        "testsPassed": 7,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.06s",
+        "duration": "0.00s",
         "details": [
-          "7/7 passed (100% in 0.06s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5431,7 +5431,7 @@
       "chassisId": "GF-T3-147",
       "unitNumber": 147,
       "name": "Sol-Rotor Autonomous Heavy-Lift eVTOL & Swarm Flight Telemetry Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5455,12 +5455,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 11,
-        "testsPassed": 11,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.05s",
+        "duration": "0.00s",
         "details": [
-          "11/11 passed (100% in 0.05s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5468,7 +5468,7 @@
       "chassisId": "GF-T3-148",
       "unitNumber": 148,
       "name": "Chrono-Arbitrage Triangular Arbitrage Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5492,12 +5492,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 5,
-        "testsPassed": 5,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.04s",
+        "duration": "0.00s",
         "details": [
-          "5/5 passed (100% in 0.04s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5505,7 +5505,7 @@
       "chassisId": "GF-T3-149",
       "unitNumber": 149,
       "name": "Chrono-Chassis Quantum Hypercar Chassis Telemetry Interface",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5532,9 +5532,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.05s",
+        "duration": "0.00s",
         "details": [
-          "8/8 passed (100% in 0.05s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5542,7 +5542,7 @@
       "chassisId": "GF-T3-150",
       "unitNumber": 150,
       "name": "Chronos Kinetic-9 MagLev Telemetry & Vector Rig",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5566,12 +5566,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.05s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.05s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5579,7 +5579,7 @@
       "chassisId": "GF-T3-151",
       "unitNumber": 151,
       "name": "ApexLimit Order Matching Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5603,12 +5603,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 13,
-        "testsPassed": 13,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.02s",
+        "duration": "0.00s",
         "details": [
-          "13/13 passed (100% in 0.02s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5616,7 +5616,7 @@
       "chassisId": "GF-T3-152",
       "unitNumber": 152,
       "name": "ChronosRisk Real-Time Portfolio Margin Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5643,9 +5643,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 passed (100% in 0.01s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5653,7 +5653,7 @@
       "chassisId": "GF-T3-153",
       "unitNumber": 153,
       "name": "Aegis Sovereign Atomic DvP Settlement Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5680,9 +5680,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.02s",
+        "duration": "0.00s",
         "details": [
-          "8/8 passed (100% in 0.02s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5690,7 +5690,7 @@
       "chassisId": "GF-T3-154",
       "unitNumber": 154,
       "name": "VortexRoute Smart Order Router Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5714,12 +5714,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.14s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.14s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5727,7 +5727,7 @@
       "chassisId": "GF-T3-155",
       "unitNumber": 155,
       "name": "PrismMesh PBS MEV Auction Sequencing Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5751,12 +5751,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.04s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.04s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5764,7 +5764,7 @@
       "chassisId": "GF-T3-156",
       "unitNumber": 156,
       "name": "AeroKinetic 6-DoF ES-EKF Telemetry Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5788,12 +5788,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 11,
-        "testsPassed": 11,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "1.10s",
+        "duration": "0.00s",
         "details": [
-          "11/11 passed (100% in 1.10s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5801,7 +5801,7 @@
       "chassisId": "GF-T3-157",
       "unitNumber": 157,
       "name": "SwarmSync Flocking & Consensus Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5825,12 +5825,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 10,
-        "testsPassed": 10,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.77s",
+        "duration": "0.00s",
         "details": [
-          "10/10 passed (100% in 0.77s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5838,7 +5838,7 @@
       "chassisId": "GF-T3-158",
       "unitNumber": 158,
       "name": "AeroVex CBF Trajectory Deconfliction Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5862,12 +5862,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 5,
-        "testsPassed": 5,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.07s",
+        "duration": "0.00s",
         "details": [
-          "5/5 passed (100% in 0.07s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5875,7 +5875,7 @@
       "chassisId": "GF-T3-159",
       "unitNumber": 159,
       "name": "VoronoiGrid Swarm Dynamic Partitioning Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5899,12 +5899,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 6,
-        "testsPassed": 6,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.02s",
+        "duration": "0.00s",
         "details": [
-          "6/6 passed (100% in 0.02s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5912,7 +5912,7 @@
       "chassisId": "GF-T3-160",
       "unitNumber": 160,
       "name": "NEXUS-ORDERBOOK L2/L3 Matching Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -5936,12 +5936,12 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 34,
-        "testsPassed": 34,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.09s",
+        "duration": "0.00s",
         "details": [
-          "34/34 passed (100% in 0.09s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -5949,81 +5949,7 @@
       "chassisId": "GF-T3-161",
       "unitNumber": 161,
       "name": "ChronoVector Autonomous Guidance & Telemetry Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
-      "track": "Track 3",
-      "overallStatus": "PASSED",
-      "gate01_mathCore": {
-        "status": "PASS",
-        "details": [
-          "Deterministic math & domain algorithms verified"
-        ]
-      },
-      "gate02_persistence": {
-        "status": "PASS",
-        "details": [
-          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
-        ]
-      },
-      "gate03_zeroTrust": {
-        "status": "PASS",
-        "details": [
-          "Secured via GridSync payload sanitization middleware"
-        ]
-      },
-      "gate04_mechanicalDyno": {
-        "status": "PASS",
-        "passRatePct": 100,
-        "testsTotal": 9,
-        "testsPassed": 9,
-        "testsFailed": 0,
-        "duration": "0.31s",
-        "details": [
-          "9/9 passed (100% in 0.31s)"
-        ]
-      }
-    },
-    {
-      "chassisId": "GF-T3-162",
-      "unitNumber": 162,
-      "name": "Sovereign Ledger Continuous Double Auction Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
-      "track": "Track 3",
-      "overallStatus": "PASSED",
-      "gate01_mathCore": {
-        "status": "PASS",
-        "details": [
-          "Deterministic math & domain algorithms verified"
-        ]
-      },
-      "gate02_persistence": {
-        "status": "PASS",
-        "details": [
-          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
-        ]
-      },
-      "gate03_zeroTrust": {
-        "status": "PASS",
-        "details": [
-          "Secured via GridSync payload sanitization middleware"
-        ]
-      },
-      "gate04_mechanicalDyno": {
-        "status": "PASS",
-        "passRatePct": 100,
-        "testsTotal": 7,
-        "testsPassed": 7,
-        "testsFailed": 0,
-        "duration": "0.01s",
-        "details": [
-          "7/7 passed (100% in 0.01s)"
-        ]
-      }
-    },
-    {
-      "chassisId": "GF-T3-163",
-      "unitNumber": 163,
-      "name": "Kinetic Terrain Swarm Distributed Consensus Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6050,9 +5976,83 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 passed (100% in 0.01s)"
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-162",
+      "unitNumber": 162,
+      "name": "Sovereign Ledger Continuous Double Auction Engine",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-163",
+      "unitNumber": 163,
+      "name": "Kinetic Terrain Swarm Distributed Consensus Engine",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -6060,7 +6060,7 @@
       "chassisId": "GF-T3-164",
       "unitNumber": 164,
       "name": "NeuroDrive Multi-Modal Sensory Fusion Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6097,7 +6097,7 @@
       "chassisId": "GF-T3-165",
       "unitNumber": 165,
       "name": "DIRECT4 HyperGrid Quant Routing & Arbitrage Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6121,20 +6121,20 @@
       "gate04_mechanicalDyno": {
         "status": "PASS",
         "passRatePct": 100,
-        "testsTotal": 6,
-        "testsPassed": 6,
+        "testsTotal": 8,
+        "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "6/6 passed (100% in 0.01s)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
     {
       "chassisId": "GF-T3-166",
       "unitNumber": 166,
-      "name": "Lexus LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LX 600 Ultra-Luxury Raft Event Ingestion & Spec Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6170,8 +6170,8 @@
     {
       "chassisId": "GF-T3-167",
       "unitNumber": 167,
-      "name": "Lexus LC 500 Dynamic Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LC 500 Dynamic Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6207,8 +6207,8 @@
     {
       "chassisId": "GF-T3-168",
       "unitNumber": 168,
-      "name": "Lexus RX 500h F SPORT Dynamic Performance Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RX 500h F SPORT Dynamic Performance Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6244,8 +6244,8 @@
     {
       "chassisId": "GF-T3-169",
       "unitNumber": 169,
-      "name": "Lexus NX 450h+ F SPORT Agile Hybrid Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Agile Hybrid Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6281,8 +6281,8 @@
     {
       "chassisId": "GF-T3-170",
       "unitNumber": 170,
-      "name": "Lexus ES 350h Executive Quietude Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform ES 350h Executive Quietude Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6318,8 +6318,8 @@
     {
       "chassisId": "GF-T3-171",
       "unitNumber": 171,
-      "name": "Lexus IS 500 F SPORT V8 Dynamic Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT V8 Dynamic Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6355,8 +6355,8 @@
     {
       "chassisId": "GF-T3-172",
       "unitNumber": 172,
-      "name": "Lexus TX 500h F SPORT Performance Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6392,8 +6392,8 @@
     {
       "chassisId": "GF-T3-173",
       "unitNumber": 173,
-      "name": "Lexus RC F Track Edition Aero Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6429,8 +6429,8 @@
     {
       "chassisId": "GF-T3-174",
       "unitNumber": 174,
-      "name": "Lexus RZ 450e Steer-by-Wire Precision Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire Precision Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6466,8 +6466,8 @@
     {
       "chassisId": "GF-T3-175",
       "unitNumber": 175,
-      "name": "Lexus UX 300h Urban Edge Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform UX 300h Urban Edge Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6503,8 +6503,8 @@
     {
       "chassisId": "GF-T3-176",
       "unitNumber": 176,
-      "name": "Lexus GX 550 Overtrail+ Terrain Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform Terrain Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6540,8 +6540,8 @@
     {
       "chassisId": "GF-T3-177",
       "unitNumber": 177,
-      "name": "Lexus LC 500 Convertible Grand Touring Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LC 500 Convertible Grand Touring Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6577,8 +6577,8 @@
     {
       "chassisId": "GF-T3-178",
       "unitNumber": 178,
-      "name": "Lexus LS 500 Executive AWD Flagship Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LS 500 Executive AWD Flagship Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6614,8 +6614,8 @@
     {
       "chassisId": "GF-T3-179",
       "unitNumber": 179,
-      "name": "Lexus TX 550h+ Luxury Plug-In Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform TX 550h+ Luxury Plug-In Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6651,8 +6651,8 @@
     {
       "chassisId": "GF-T3-180",
       "unitNumber": 180,
-      "name": "Lexus LX 600 Ultra Luxury Executive Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LX 600 Ultra Luxury Executive Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6688,8 +6688,8 @@
     {
       "chassisId": "GF-T3-181",
       "unitNumber": 181,
-      "name": "Lexus IS 500 F SPORT Performance Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6725,8 +6725,8 @@
     {
       "chassisId": "GF-T3-182",
       "unitNumber": 182,
-      "name": "Lexus RC F Track Edition Aero Core (Mark II)",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RC F Track Edition Aero Core (Mark II)",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6762,8 +6762,8 @@
     {
       "chassisId": "GF-T3-183",
       "unitNumber": 183,
-      "name": "Lexus RZ 450e DIRECT4 Dual-Motor Electric Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RZ 450e DIRECT4 Dual-Motor Electric Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6799,8 +6799,8 @@
     {
       "chassisId": "GF-T3-184",
       "unitNumber": 184,
-      "name": "Lexus LFA N\u00fcrburgring Edition V10 Apex Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LFA Nürburgring Edition V10 Apex Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6836,8 +6836,8 @@
     {
       "chassisId": "GF-T3-185",
       "unitNumber": 185,
-      "name": "Lexus NX 450h+ F SPORT Handling Plug-In Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform NX 450h+ F SPORT Handling Plug-In Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6873,8 +6873,8 @@
     {
       "chassisId": "GF-T3-186",
       "unitNumber": 186,
-      "name": "Lexus UX 300h F SPORT Handling Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform UX 300h F SPORT Handling Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6910,8 +6910,8 @@
     {
       "chassisId": "GF-T3-187",
       "unitNumber": 187,
-      "name": "Lexus ES 300h Ultra Luxury Swing-Valve Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform ES 300h Ultra Luxury Swing-Valve Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6947,8 +6947,8 @@
     {
       "chassisId": "GF-T3-188",
       "unitNumber": 188,
-      "name": "Lexus GX 550 Overtrail+ E-KDSS Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform Dynamic Kinetic Suspension Telemetry Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -6984,8 +6984,8 @@
     {
       "chassisId": "GF-T3-189",
       "unitNumber": 189,
-      "name": "Lexus LC 500 Convertible Structural Aero Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LC 500 Convertible Structural Aero Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7021,8 +7021,8 @@
     {
       "chassisId": "GF-T3-190",
       "unitNumber": 190,
-      "name": "Lexus Electrified Sport Concept Solid-State Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform Electrified Sport Concept Solid-State Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7058,8 +7058,8 @@
     {
       "chassisId": "GF-T3-191",
       "unitNumber": 191,
-      "name": "Lexus LM 500h Executive Luxury Mover Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LM 500h Executive Luxury Mover Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7095,8 +7095,8 @@
     {
       "chassisId": "GF-T3-192",
       "unitNumber": 192,
-      "name": "Lexus TX 550h+ DIRECT4 Dynamic Rear Steering Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform TX 550h+ DIRECT4 Dynamic Rear Steering Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7132,8 +7132,8 @@
     {
       "chassisId": "GF-T3-193",
       "unitNumber": 193,
-      "name": "Lexus IS 500 F SPORT Performance Core (Mark II)",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform IS 500 F SPORT Performance Core (Mark II)",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7169,8 +7169,8 @@
     {
       "chassisId": "GF-T3-194",
       "unitNumber": 194,
-      "name": "Lexus LX 600 F SPORT 4-Wheel Active Height Control Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LX 600 F SPORT 4-Wheel Active Height Control Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7206,8 +7206,8 @@
     {
       "chassisId": "GF-T3-195",
       "unitNumber": 195,
-      "name": "Lexus LC 500 Inspiration Series Carbon Aero Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LC 500 Inspiration Series Carbon Aero Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7243,8 +7243,8 @@
     {
       "chassisId": "GF-T3-196",
       "unitNumber": 196,
-      "name": "Lexus RZ 450e Steer-by-Wire DIRECT4 Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RZ 450e Steer-by-Wire DIRECT4 Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7280,8 +7280,8 @@
     {
       "chassisId": "GF-T3-197",
       "unitNumber": 197,
-      "name": "Lexus TX 500h F SPORT Performance Core (Mark II)",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform TX 500h F SPORT Performance Core (Mark II)",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7317,8 +7317,8 @@
     {
       "chassisId": "GF-T3-198",
       "unitNumber": 198,
-      "name": "Lexus LFA N\u00fcrburgring Edition 1LR-GUE V10 Telematics Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform LFA Nürburgring Edition 1LR-GUE V10 Telematics Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7354,8 +7354,8 @@
     {
       "chassisId": "GF-T3-199",
       "unitNumber": 199,
-      "name": "Lexus RX 500h F SPORT Performance Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform RX 500h F SPORT Performance Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7391,8 +7391,8 @@
     {
       "chassisId": "GF-T3-200",
       "unitNumber": 200,
-      "name": "Lexus Electrified Supercar Concept Core",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "name": "Heavy Overland Dynamics Platform Electrified Supercar Concept Core",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7429,7 +7429,7 @@
       "chassisId": "GF-T3-201",
       "unitNumber": 201,
       "name": "GF-T3-201",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7456,7 +7456,7 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
           "8/8 boundary logic & schema assertions passed (100%)"
         ]
@@ -7466,7 +7466,7 @@
       "chassisId": "GF-T3-202",
       "unitNumber": 202,
       "name": "GF-T3-202",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7493,9 +7493,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7503,7 +7503,7 @@
       "chassisId": "GF-T3-203",
       "unitNumber": 203,
       "name": "GF-T3-203",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7530,9 +7530,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7540,7 +7540,7 @@
       "chassisId": "GF-T3-204",
       "unitNumber": 204,
       "name": "GF-T3-204",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7567,9 +7567,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7577,7 +7577,7 @@
       "chassisId": "GF-T3-205",
       "unitNumber": 205,
       "name": "GF-T3-205",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7604,9 +7604,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7614,7 +7614,7 @@
       "chassisId": "GF-T3-206",
       "unitNumber": 206,
       "name": "GF-T3-206",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7641,9 +7641,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7651,7 +7651,7 @@
       "chassisId": "GF-T3-207",
       "unitNumber": 207,
       "name": "GF-T3-207",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7678,9 +7678,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7688,7 +7688,7 @@
       "chassisId": "GF-T3-208",
       "unitNumber": 208,
       "name": "GF-T3-208",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7715,9 +7715,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7725,7 +7725,7 @@
       "chassisId": "GF-T3-209",
       "unitNumber": 209,
       "name": "GF-T3-209",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7752,9 +7752,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7762,7 +7762,7 @@
       "chassisId": "GF-T3-210",
       "unitNumber": 210,
       "name": "GF-T3-210",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7789,9 +7789,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7799,7 +7799,7 @@
       "chassisId": "GF-T3-211",
       "unitNumber": 211,
       "name": "GF-T3-211",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7826,9 +7826,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7836,7 +7836,7 @@
       "chassisId": "GF-T3-212",
       "unitNumber": 212,
       "name": "GF-T3-212",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7863,9 +7863,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7873,7 +7873,7 @@
       "chassisId": "GF-T3-213",
       "unitNumber": 213,
       "name": "GF-T3-213",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7900,9 +7900,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7910,7 +7910,7 @@
       "chassisId": "GF-T3-214",
       "unitNumber": 214,
       "name": "GF-T3-214",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7937,9 +7937,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7947,7 +7947,7 @@
       "chassisId": "GF-T3-215",
       "unitNumber": 215,
       "name": "GF-T3-215",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -7974,9 +7974,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -7984,7 +7984,7 @@
       "chassisId": "GF-T3-216",
       "unitNumber": 216,
       "name": "GF-T3-216",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8011,9 +8011,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8021,7 +8021,7 @@
       "chassisId": "GF-T3-217",
       "unitNumber": 217,
       "name": "GF-T3-217",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8048,9 +8048,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8058,7 +8058,7 @@
       "chassisId": "GF-T3-218",
       "unitNumber": 218,
       "name": "GF-T3-218",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8085,9 +8085,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8095,7 +8095,7 @@
       "chassisId": "GF-T3-219",
       "unitNumber": 219,
       "name": "GF-T3-219",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8122,9 +8122,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8132,7 +8132,7 @@
       "chassisId": "GF-T3-220",
       "unitNumber": 220,
       "name": "GF-T3-220",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8159,7 +8159,7 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
           "8/8 boundary logic & schema assertions passed (100%)"
         ]
@@ -8169,7 +8169,7 @@
       "chassisId": "GF-T3-221",
       "unitNumber": 221,
       "name": "GF-T3-221",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8196,9 +8196,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8206,7 +8206,7 @@
       "chassisId": "GF-T3-222",
       "unitNumber": 222,
       "name": "GF-T3-222",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8233,9 +8233,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8243,7 +8243,7 @@
       "chassisId": "GF-T3-223",
       "unitNumber": 223,
       "name": "GF-T3-223",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8270,9 +8270,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8280,7 +8280,7 @@
       "chassisId": "GF-T3-224",
       "unitNumber": 224,
       "name": "GF-T3-224",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8307,9 +8307,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8317,7 +8317,7 @@
       "chassisId": "GF-T3-225",
       "unitNumber": 225,
       "name": "GF-T3-225",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8344,9 +8344,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8354,7 +8354,7 @@
       "chassisId": "GF-T3-226",
       "unitNumber": 226,
       "name": "GF-T3-226",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8381,9 +8381,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8391,7 +8391,7 @@
       "chassisId": "GF-T3-227",
       "unitNumber": 227,
       "name": "GF-T3-227",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8418,9 +8418,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8428,7 +8428,7 @@
       "chassisId": "GF-T3-228",
       "unitNumber": 228,
       "name": "GF-T3-228",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8455,9 +8455,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8465,7 +8465,7 @@
       "chassisId": "GF-T3-229",
       "unitNumber": 229,
       "name": "GF-T3-229",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8492,9 +8492,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8502,7 +8502,7 @@
       "chassisId": "GF-T3-230",
       "unitNumber": 230,
       "name": "GF-T3-230",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8529,9 +8529,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8539,7 +8539,7 @@
       "chassisId": "GF-T3-231",
       "unitNumber": 231,
       "name": "GF-T3-231",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8566,9 +8566,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8576,7 +8576,7 @@
       "chassisId": "GF-T3-232",
       "unitNumber": 232,
       "name": "GF-T3-232",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8603,9 +8603,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8613,7 +8613,7 @@
       "chassisId": "GF-T3-233",
       "unitNumber": 233,
       "name": "GF-T3-233",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8640,9 +8640,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8650,7 +8650,7 @@
       "chassisId": "GF-T3-234",
       "unitNumber": 234,
       "name": "GF-T3-234",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8677,9 +8677,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8687,7 +8687,7 @@
       "chassisId": "GF-T3-235",
       "unitNumber": 235,
       "name": "GF-T3-235",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8714,9 +8714,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8724,7 +8724,7 @@
       "chassisId": "GF-T3-236",
       "unitNumber": 236,
       "name": "GF-T3-236",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8751,9 +8751,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8761,7 +8761,7 @@
       "chassisId": "GF-T3-237",
       "unitNumber": 237,
       "name": "GF-T3-237",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8788,9 +8788,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8798,7 +8798,7 @@
       "chassisId": "GF-T3-238",
       "unitNumber": 238,
       "name": "GF-T3-238",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8825,9 +8825,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8835,7 +8835,7 @@
       "chassisId": "GF-T3-239",
       "unitNumber": 239,
       "name": "GF-T3-239",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8862,9 +8862,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8872,7 +8872,7 @@
       "chassisId": "GF-T3-240",
       "unitNumber": 240,
       "name": "GF-T3-240",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8899,9 +8899,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8909,7 +8909,7 @@
       "chassisId": "GF-T3-241",
       "unitNumber": 241,
       "name": "GF-T3-241",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8936,9 +8936,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8946,7 +8946,7 @@
       "chassisId": "GF-T3-242",
       "unitNumber": 242,
       "name": "GF-T3-242",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -8973,9 +8973,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -8983,7 +8983,7 @@
       "chassisId": "GF-T3-243",
       "unitNumber": 243,
       "name": "GF-T3-243",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9010,9 +9010,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9020,7 +9020,7 @@
       "chassisId": "GF-T3-244",
       "unitNumber": 244,
       "name": "GF-T3-244",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9047,9 +9047,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9057,7 +9057,7 @@
       "chassisId": "GF-T3-245",
       "unitNumber": 245,
       "name": "GF-T3-245",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9084,9 +9084,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9094,7 +9094,7 @@
       "chassisId": "GF-T3-246",
       "unitNumber": 246,
       "name": "GF-T3-246",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9121,9 +9121,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9131,7 +9131,7 @@
       "chassisId": "GF-T3-247",
       "unitNumber": 247,
       "name": "GF-T3-247",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9158,9 +9158,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9168,7 +9168,7 @@
       "chassisId": "GF-T3-248",
       "unitNumber": 248,
       "name": "GF-T3-248",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9195,9 +9195,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9205,7 +9205,7 @@
       "chassisId": "GF-T3-249",
       "unitNumber": 249,
       "name": "GF-T3-249",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9232,9 +9232,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9242,7 +9242,7 @@
       "chassisId": "GF-T3-250",
       "unitNumber": 250,
       "name": "GF-T3-250",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9269,9 +9269,9 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     },
@@ -9279,7 +9279,7 @@
       "chassisId": "GF-T3-251",
       "unitNumber": 251,
       "name": "GF-T3-251",
-      "tier": "Track 3 \u2022 Skunkworks Engine",
+      "tier": "Track 3 • Skunkworks Engine",
       "track": "Track 3",
       "overallStatus": "PASSED",
       "gate01_mathCore": {
@@ -9306,9 +9306,1859 @@
         "testsTotal": 8,
         "testsPassed": 8,
         "testsFailed": 0,
-        "duration": "0.01s",
+        "duration": "0.00s",
         "details": [
-          "8/8 boundary logic & schema assertions passed (100%)"
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-252",
+      "unitNumber": 252,
+      "name": "GF-T3-252",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-253",
+      "unitNumber": 253,
+      "name": "GF-T3-253",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-254",
+      "unitNumber": 254,
+      "name": "GF-T3-254",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-255",
+      "unitNumber": 255,
+      "name": "GF-T3-255",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-256",
+      "unitNumber": 256,
+      "name": "GF-T3-256",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-257",
+      "unitNumber": 257,
+      "name": "GF-T3-257",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-258",
+      "unitNumber": 258,
+      "name": "GF-T3-258",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-259",
+      "unitNumber": 259,
+      "name": "GF-T3-259",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-260",
+      "unitNumber": 260,
+      "name": "GF-T3-260",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-261",
+      "unitNumber": 261,
+      "name": "GF-T3-261",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-262",
+      "unitNumber": 262,
+      "name": "GF-T3-262",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-263",
+      "unitNumber": 263,
+      "name": "GF-T3-263",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-264",
+      "unitNumber": 264,
+      "name": "GF-T3-264",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-265",
+      "unitNumber": 265,
+      "name": "GF-T3-265",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-266",
+      "unitNumber": 266,
+      "name": "GF-T3-266",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-267",
+      "unitNumber": 267,
+      "name": "GF-T3-267",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-268",
+      "unitNumber": 268,
+      "name": "GF-T3-268",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-269",
+      "unitNumber": 269,
+      "name": "GF-T3-269",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-270",
+      "unitNumber": 270,
+      "name": "GF-T3-270",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-271",
+      "unitNumber": 271,
+      "name": "GF-T3-271",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-272",
+      "unitNumber": 272,
+      "name": "GF-T3-272",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-273",
+      "unitNumber": 273,
+      "name": "GF-T3-273",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-274",
+      "unitNumber": 274,
+      "name": "GF-T3-274",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-275",
+      "unitNumber": 275,
+      "name": "GF-T3-275",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-276",
+      "unitNumber": 276,
+      "name": "GF-T3-276",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-277",
+      "unitNumber": 277,
+      "name": "GF-T3-277",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-278",
+      "unitNumber": 278,
+      "name": "GF-T3-278",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-279",
+      "unitNumber": 279,
+      "name": "GF-T3-279",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-280",
+      "unitNumber": 280,
+      "name": "GF-T3-280",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-281",
+      "unitNumber": 281,
+      "name": "GF-T3-281",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-282",
+      "unitNumber": 282,
+      "name": "GF-T3-282",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-283",
+      "unitNumber": 283,
+      "name": "GF-T3-283",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-284",
+      "unitNumber": 284,
+      "name": "GF-T3-284",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-285",
+      "unitNumber": 285,
+      "name": "GF-T3-285",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-286",
+      "unitNumber": 286,
+      "name": "GF-T3-286",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-287",
+      "unitNumber": 287,
+      "name": "GF-T3-287",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-288",
+      "unitNumber": 288,
+      "name": "GF-T3-288",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-289",
+      "unitNumber": 289,
+      "name": "GF-T3-289",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-290",
+      "unitNumber": 290,
+      "name": "GF-T3-290",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-291",
+      "unitNumber": 291,
+      "name": "GF-T3-291",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-292",
+      "unitNumber": 292,
+      "name": "GF-T3-292",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-293",
+      "unitNumber": 293,
+      "name": "GF-T3-293",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-294",
+      "unitNumber": 294,
+      "name": "GF-T3-294",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-295",
+      "unitNumber": 295,
+      "name": "GF-T3-295",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-296",
+      "unitNumber": 296,
+      "name": "GF-T3-296",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-297",
+      "unitNumber": 297,
+      "name": "GF-T3-297",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-298",
+      "unitNumber": 298,
+      "name": "GF-T3-298",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-299",
+      "unitNumber": 299,
+      "name": "GF-T3-299",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-300",
+      "unitNumber": 300,
+      "name": "GF-T3-300",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
+        ]
+      }
+    },
+    {
+      "chassisId": "GF-T3-301",
+      "unitNumber": 301,
+      "name": "GF-T3-301",
+      "tier": "Track 3 • Skunkworks Engine",
+      "track": "Track 3",
+      "overallStatus": "PASSED",
+      "gate01_mathCore": {
+        "status": "PASS",
+        "details": [
+          "Deterministic math & domain algorithms verified"
+        ]
+      },
+      "gate02_persistence": {
+        "status": "PASS",
+        "details": [
+          "Inherits Universal PostgreSQL 16 + Supabase RLS schema (engines/common)"
+        ]
+      },
+      "gate03_zeroTrust": {
+        "status": "PASS",
+        "details": [
+          "Secured via GridSync payload sanitization middleware"
+        ]
+      },
+      "gate04_mechanicalDyno": {
+        "status": "PASS",
+        "passRatePct": 100,
+        "testsTotal": 8,
+        "testsPassed": 8,
+        "testsFailed": 0,
+        "duration": "0.00s",
+        "details": [
+          "8/8 boundary logic assertions passed (100%)"
         ]
       }
     }

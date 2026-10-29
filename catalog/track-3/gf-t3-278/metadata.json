@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-278",
+  "description": "Track 3 Flagship Continuous LoRA Parameter Warm-Swapping and Zero-Downtime Adapter Fabric Engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-268",
+  "description": "Track 3 Flagship Tensor-Parallel Pipeline Interconnect and Ring-Reduce Fabric Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

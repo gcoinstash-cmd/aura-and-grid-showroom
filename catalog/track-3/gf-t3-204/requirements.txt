@@ -1,0 +1,8 @@
+# APEX-204 Clean-Room Permissive Dependencies (MIT / Apache-2.0 / BSD Only)
+# Strict Zero GPL / AGPL copyleft licenses
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.8.0
+numpy>=1.26.0
+pytest>=8.3.0
+python-multipart>=0.0.9

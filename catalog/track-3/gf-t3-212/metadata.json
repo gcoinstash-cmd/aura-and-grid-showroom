@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-212",
+  "description": "Production-grade PBFT and Raft distributed consensus engine with cryptographic Merkle-Patricia state trie, Byzantine fault injection matrix, and clean-room asset transfer specification.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

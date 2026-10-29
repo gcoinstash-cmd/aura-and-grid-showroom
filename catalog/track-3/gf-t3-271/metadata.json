@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-271",
+  "description": "Track 3 Asynchronous Expert-Parallelism and Load-Balanced Dynamic Token Routing Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

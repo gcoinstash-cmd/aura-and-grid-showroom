@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-299",
+  "description": "Ultra-Wide Dynamic Asynchronous Multi-GPU Pipeline Parallelism and Activation Sharding Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

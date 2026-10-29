@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-235",
+  "description": "Track 3 Tensor Core Asynchronous MMA Interleaved Pipeline Engine and Telemetry Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

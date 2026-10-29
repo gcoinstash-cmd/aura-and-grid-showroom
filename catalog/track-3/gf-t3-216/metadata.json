@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-216",
+  "description": "Institutional-grade lock-free ring buffer telemetry cockpit and sequencing engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

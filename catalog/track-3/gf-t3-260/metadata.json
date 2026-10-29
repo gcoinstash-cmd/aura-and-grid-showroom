@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-260",
+  "description": "Track 3 Flagship Non-Uniform 1F1B Micro-Batch Pipeline Parallelism and Interleaved Stage Memory Balancing Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

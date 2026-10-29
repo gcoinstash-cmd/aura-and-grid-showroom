@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-238",
+  "description": "Pipeline Parallelism 1F1B Micro-Batch Interleaved Scheduling and Activation Checkpointing Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

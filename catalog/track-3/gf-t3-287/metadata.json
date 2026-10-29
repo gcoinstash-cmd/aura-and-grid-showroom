@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-287",
+  "description": "Dynamic Multiplexer Token-Merging and KV-Cache Redundancy Elimination Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

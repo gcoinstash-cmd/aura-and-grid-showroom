@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-248",
+  "description": "Track 3 Multi-GPU Tensor Parallelism and All-Reduce Interconnect Fabric Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

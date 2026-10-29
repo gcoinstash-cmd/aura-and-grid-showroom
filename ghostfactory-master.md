@@ -22,18 +22,18 @@ Aura & Grid is the public dealership: test drives, non-exclusive licenses, lease
 A micro-APA transfers defined rights/code to one specific asset. It NEVER transfers GhostFactoryOS, Aura & Grid, shared IP, or the full portfolio.
 
 ## PORTFOLIO STATUS & RETENTION FLOOR
-- Total Master Vault Catalog: 251 custom full-stack digital assets & production engines (86 Track 1 Lean + 51 Track 2 Flagships + 114 Track 3 Working Service Engines & Reference Cores fully onboarded and standardized via the Universal Track 2 Telemetry Harness).
+- Total Master Vault Catalog: 301 custom full-stack digital assets & production engines (86 Track 1 Lean + 51 Track 2 Flagships + 164 Track 3 Working Service Engines & Reference Cores fully onboarded and standardized via the Universal Track 2 Telemetry Harness).
 - Target: 500 cataloged assets.
-- Minimum Retained Floor: Always retain at least 80% of the collection (currently 201 assets retained of 251; max 50 micro-APA transferable capacity).
+- Minimum Retained Floor: Always retain at least 80% of the collection (currently 241 assets retained of 301; max 60 micro-APA transferable capacity).
 - Never treat micro-APA maximum capacity as a sales target.
 - Permanently protect: GhostFactoryOS/Aura & Grid brands, shared design tokens, component libraries, factory prompts, and core architectures.
 - Technical Standard: Deterministic Clean-Room Architecture Standard (zero copyleft, deterministic state machines, isolated micro-runtimes, idempotent relational schemas).
 
 ## ASC 350-40 REPLACEMENT APPRAISAL & DEALERSHIP VALUATION
-- Total Retail Price: $20,037,000 (Combined Agency Replacement Benchmark across all 251 upgraded chassis).
-- Certified Fair Market Value (FMV): $8,307,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
-- Wholesale Price / Floor: $5,116,500 (Institutional Bulk Tender / Bulk Floor).
-- Walk-Away Floor: $2,500,000 (Sovereign Reserve Liquidation Floor).
+- Total Retail Price: $23,787,000 (Combined Agency Replacement Benchmark across all 301 upgraded chassis).
+- Certified Fair Market Value (FMV): $9,864,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
+- Wholesale Price / Floor: $6,073,500 (Institutional Bulk Tender / Bulk Floor).
+- Walk-Away Floor: $2,968,000 (Sovereign Reserve Liquidation Floor).
 - Valuation Legend: Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer.
 
 ## MULTI-TRACK PRICING PROTOCOL
@@ -77,15 +77,15 @@ Never mix tracks. Default to Track 1.
 
 | Milestone Stage | Fleet Units | Sealed 50-Unit Clusters | Cumulative Retail MSRP | Carve-Out Value (~20% APA Capacity) | 80% Retained Vault Floor |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Baseline (Current)** | **251 Units** | **5 Clusters** | **$20,037,000** | **~$6.25M Carve-Out Value** | 201 Units Vaulted |
+| **Baseline (Cluster 006 Sealed)** | **301 Units** | **6 Clusters** | **$23,787,000** | **~$7.65M Carve-Out Value** | 241 Units Vaulted |
 | **Milestone 1** | **500 Units** | **10 Clusters** | **$40,000,000 ($40M)** | **$12.5M Carve-Out Value** | 400 Units Vaulted |
 | **Milestone 2** | **1,000 Units** | **20 Clusters** | **$80,000,000 ($80M)** | **$25.0M Carve-Out Value** | 800 Units Vaulted |
 | **Milestone 3** | **5,000 Units** | **100 Clusters** | **$400,000,000 ($400M)** | **$125.0M Carve-Out Value** | 4,000 Units Vaulted |
 | **Milestone 4** | **10,000 Units** | **200 Clusters** | **$800,000,000 ($800M)** | **$250.0M Carve-Out Value** | 8,000 Units Vaulted |
 | **Milestone 5** | **25,000 Units** | **500 Clusters** | **$2,000,000,000 ($2B)** | **$625.0M Carve-Out Value** | 20,000 Units Vaulted |
 
-### Current 251-Unit Active Cluster Partition
-The 251-unit fleet is partitioned into 5 Discrete Sealed Vertical Clusters + 1 Active Fabrication Queue:
+### Current 301-Unit Active Cluster Partition
+The 301-unit fleet is partitioned into 6 Discrete Sealed Vertical Clusters + 1 Active Fabrication Queue:
 
 | Cluster ID | Cluster Name | Units | Status | Cumulative Standalone Retail | APA Asking Anchor | Reserve Walk-Away Floor | Primary Acquirer Profile |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -94,12 +94,13 @@ The 251-unit fleet is partitioned into 5 Discrete Sealed Vertical Clusters + 1 A
 | **CLUSTER-003** | **Autonomous AI Orchestration & Ingress** | 50 | SEALED | $7,000,000 | **$1,400,000** | $750,000 | Enterprise AI platforms, robotics labs, multi-agent framework operators, edge compute firms |
 | **CLUSTER-004** | **Dense Media & Automation Workflows** | 50 | SEALED | $647,500 | **$1,250,000** | $750,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
 | **CLUSTER-005** | **HealthTech & Operational Consoles** | 50 | SEALED | $3,572,500 | **$1,250,000** | $750,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
-| **CLUSTER-006** | **Active Ingestion Queue // Emerging Tech** | 1 | UNSEALED | $125,000 | **$1,250,000** | $750,000 | Active assembly lot (1/50 units assembled, awaiting 49 units to seal threshold) |
+| **CLUSTER-006** | **Next-Gen Autonomous Telemetry / FinTech Series 2** | 50 | SEALED | $3,800,000 | **$1,400,000** | $750,000 | Quantitative trading desks, HFT liquidity providers, autonomous telemetry & sovereign AI networks |
+| **CLUSTER-007** | **Sovereign APA Vault & Master Orchestration** | 1 | UNSEALED | $75,000 | **$1,500,000** | $750,000 | Active assembly lot (1/50 units assembled, awaiting 49 units to seal threshold) |
 
 ### Cluster Technical Due Diligence & Clean-Room Standards
 - **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.
 - **Deterministic State & Isolation**: Each chassis features isolated database schema migrations, Row-Level Security (RLS) policies, and discrete micro-runtime execution boundaries (zero cross-runtime state pollution).
-- **Cryptographic Audit Seal**: Full 251-unit catalog sealed with SHA-256 tamper-proof ledger hash recorded in `cleanroom_audit_receipt.json`.
+- **Cryptographic Audit Seal**: Full 301-unit catalog sealed with SHA-256 tamper-proof ledger hash recorded in `cleanroom_audit_receipt.json`.
 - **Turnkey Turn-Time**: Turnkey deployment into isolated customer infrastructure (Cloud Run, Kubernetes, Supabase/PostgreSQL) with full OpenAPI 3.1 contracts and >80% test coverage.
 - **Strict APA Boundary**: Transfer of a cluster conveys sole title, repository codebase, and schema for the specified cluster units only. GhostFactoryOS core architectures, Aura & Grid showroom trademarks, shared tooling, and all retained vault assets remain 100% retained by the Dealership Principal.
 

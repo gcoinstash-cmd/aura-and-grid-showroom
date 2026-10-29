@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-259",
+  "description": "Track 3 flagship backend engine and institutional gamified Dynamic FP4 Quantization and Block-Scaled Quantization cockpit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

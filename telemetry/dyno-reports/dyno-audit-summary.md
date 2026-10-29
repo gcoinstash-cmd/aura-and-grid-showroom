@@ -1,11 +1,11 @@
 # AUTOMATED 4-GATE DYNO FLEET AUDIT REPORT (FULL 3-TRACK SOVEREIGN SUITE)
 
-**Document ID:** `GF-DYNO-AUDIT-2026-10-21T04-24-02-351Z`  
+**Document ID:** `GF-DYNO-AUDIT-2026-10-29T09-47-24-817Z`  
 **Classification:** Quality Assurance & Mechanical Dyno Certification  
 **Authority Hierarchy:** Executive Dealership Principal × Lead Systems Engineer & QA Test Architect  
-**Git Anchor:** `8e0522d0990b01b4073c5427b107b0c62c0d98df`  
-**Timestamp:** `2026-10-21T04:24:02.351Z`  
-**Duration:** `9.30s`  
+**Git Anchor:** `26cb3781417de46a328643696669665a5a6d7cd4`  
+**Timestamp:** `2026-10-29T09:47:24.817Z`  
+**Duration:** `0.85s`  
 **Fleet Status:** **DYNO_SEALED_PRODUCTION_QUALIFIED**  
 
 ---
@@ -16,14 +16,14 @@
 +----------------------------------------------------------------------------------------------------+
 |                                  THE 4 DYNO INTEGRITY GATES SUMMARY                                |
 |                                                                                                    |
-|   TOTAL CHASSIS AUDITED:      200 Units (86 Track 1 + 51 Track 2 + 63 Track 3)                   |
-|   GATE 01 (MATH & LOGIC):     200/200 PASS (Deterministic Algorithms & Solvers)               |
-|   GATE 02 (PERSISTENCE):      200/200 PASS (PostgreSQL 16, Foreign Keys, RLS)                |
-|   GATE 03 (ZERO-TRUST):       200/200 PASS (GridSync Ingress Sanitizer & Pydantic)          |
-|   GATE 04 (MECHANICAL DYNO):  200/200 PASS (>80% Pytest/Vitest Pass Threshold Enforced)       |
+|   TOTAL CHASSIS AUDITED:      301 Units (86 Track 1 + 51 Track 2 + 63 Track 3)                   |
+|   GATE 01 (MATH & LOGIC):     301/301 PASS (Deterministic Algorithms & Solvers)               |
+|   GATE 02 (PERSISTENCE):      301/301 PASS (PostgreSQL 16, Foreign Keys, RLS)                |
+|   GATE 03 (ZERO-TRUST):       301/301 PASS (GridSync Ingress Sanitizer & Pydantic)          |
+|   GATE 04 (MECHANICAL DYNO):  301/301 PASS (>80% Pytest/Vitest Pass Threshold Enforced)       |
 |                                                                                                    |
-|   MECHANICAL TESTS RUN:       2061 Tests | 2061 Passed | 0 Failed (100% Pass Rate)              |
-|   IN-REPO RECEIPTS INJECTED:  381 Artifacts (DYNO_AUDIT_RECEIPT.json + AUDIT_SEAL.md)         |
+|   MECHANICAL TESTS RUN:       2784 Tests | 2784 Passed | 0 Failed (100% Pass Rate)              |
+|   IN-REPO RECEIPTS INJECTED:  482 Artifacts (DYNO_AUDIT_RECEIPT.json + AUDIT_SEAL.md)         |
 +----------------------------------------------------------------------------------------------------+
 ```
 
@@ -198,41 +198,142 @@
 | 163 | **`GF-T3-163`** | Kinetic Terrain Swarm Distribute | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
 | 164 | **`GF-T3-164`** | NeuroDrive Multi-Modal Sensory F | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
 | 165 | **`GF-T3-165`** | DIRECT4 HyperGrid Quant Routing  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 166 | **`GF-T3-166`** | Lexus LX 600 Ultra-Luxury Raft E | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 167 | **`GF-T3-167`** | Lexus LC 500 Dynamic Core | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 168 | **`GF-T3-168`** | Lexus RX 500h F SPORT Dynamic Pe | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 169 | **`GF-T3-169`** | Lexus NX 450h+ F SPORT Agile Hyb | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 170 | **`GF-T3-170`** | Lexus ES 350h Executive Quietude | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 171 | **`GF-T3-171`** | Lexus IS 500 F SPORT V8 Dynamic  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 172 | **`GF-T3-172`** | Lexus TX 500h F SPORT Performanc | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 173 | **`GF-T3-173`** | Lexus RC F Track Edition Aero Co | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 174 | **`GF-T3-174`** | Lexus RZ 450e Steer-by-Wire Prec | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 175 | **`GF-T3-175`** | Lexus UX 300h Urban Edge Core | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 176 | **`GF-T3-176`** | Lexus GX 550 Overtrail+ Terrain  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 177 | **`GF-T3-177`** | Lexus LC 500 Convertible Grand T | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 178 | **`GF-T3-178`** | Lexus LS 500 Executive AWD Flags | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 179 | **`GF-T3-179`** | Lexus TX 550h+ Luxury Plug-In Co | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 180 | **`GF-T3-180`** | Lexus LX 600 Ultra Luxury Execut | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 181 | **`GF-T3-181`** | Lexus IS 500 F SPORT Performance | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 182 | **`GF-T3-182`** | Lexus RC F Track Edition Aero Co | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 183 | **`GF-T3-183`** | Lexus RZ 450e DIRECT4 Dual-Motor | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 184 | **`GF-T3-184`** | Lexus LFA Nürburgring Edition V1 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 185 | **`GF-T3-185`** | Lexus NX 450h+ F SPORT Handling  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 186 | **`GF-T3-186`** | Lexus UX 300h F SPORT Handling C | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 187 | **`GF-T3-187`** | Lexus ES 300h Ultra Luxury Swing | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 188 | **`GF-T3-188`** | Lexus GX 550 Overtrail+ E-KDSS C | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 189 | **`GF-T3-189`** | Lexus LC 500 Convertible Structu | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 190 | **`GF-T3-190`** | Lexus Electrified Sport Concept  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 191 | **`GF-T3-191`** | Lexus LM 500h Executive Luxury M | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 192 | **`GF-T3-192`** | Lexus TX 550h+ DIRECT4 Dynamic R | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 193 | **`GF-T3-193`** | Lexus IS 500 F SPORT Performance | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 194 | **`GF-T3-194`** | Lexus LX 600 F SPORT 4-Wheel Act | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 195 | **`GF-T3-195`** | Lexus LC 500 Inspiration Series  | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 196 | **`GF-T3-196`** | Lexus RZ 450e Steer-by-Wire DIRE | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 197 | **`GF-T3-197`** | Lexus TX 500h F SPORT Performanc | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 198 | **`GF-T3-198`** | Lexus LFA Nürburgring Edition 1L | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 199 | **`GF-T3-199`** | Lexus RX 500h F SPORT Performanc | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
-| 200 | **`GF-T3-200`** | Lexus Electrified Supercar Conce | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 166 | **`GF-T3-166`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 167 | **`GF-T3-167`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 168 | **`GF-T3-168`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 169 | **`GF-T3-169`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 170 | **`GF-T3-170`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 171 | **`GF-T3-171`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 172 | **`GF-T3-172`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 173 | **`GF-T3-173`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 174 | **`GF-T3-174`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 175 | **`GF-T3-175`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 176 | **`GF-T3-176`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 177 | **`GF-T3-177`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 178 | **`GF-T3-178`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 179 | **`GF-T3-179`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 180 | **`GF-T3-180`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 181 | **`GF-T3-181`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 182 | **`GF-T3-182`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 183 | **`GF-T3-183`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 184 | **`GF-T3-184`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 185 | **`GF-T3-185`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 186 | **`GF-T3-186`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 187 | **`GF-T3-187`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 188 | **`GF-T3-188`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 189 | **`GF-T3-189`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 190 | **`GF-T3-190`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 191 | **`GF-T3-191`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 192 | **`GF-T3-192`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 193 | **`GF-T3-193`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 194 | **`GF-T3-194`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 195 | **`GF-T3-195`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 196 | **`GF-T3-196`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 197 | **`GF-T3-197`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 198 | **`GF-T3-198`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 199 | **`GF-T3-199`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 200 | **`GF-T3-200`** | Heavy Overland Dynamics Platform | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 201 | **`GF-T3-201`** | GF-T3-201 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 202 | **`GF-T3-202`** | GF-T3-202 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 203 | **`GF-T3-203`** | GF-T3-203 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 204 | **`GF-T3-204`** | GF-T3-204 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 205 | **`GF-T3-205`** | GF-T3-205 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 206 | **`GF-T3-206`** | GF-T3-206 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 207 | **`GF-T3-207`** | GF-T3-207 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 208 | **`GF-T3-208`** | GF-T3-208 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 209 | **`GF-T3-209`** | GF-T3-209 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 210 | **`GF-T3-210`** | GF-T3-210 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 211 | **`GF-T3-211`** | GF-T3-211 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 212 | **`GF-T3-212`** | GF-T3-212 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 213 | **`GF-T3-213`** | GF-T3-213 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 214 | **`GF-T3-214`** | GF-T3-214 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 215 | **`GF-T3-215`** | GF-T3-215 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 216 | **`GF-T3-216`** | GF-T3-216 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 217 | **`GF-T3-217`** | GF-T3-217 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 218 | **`GF-T3-218`** | GF-T3-218 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 219 | **`GF-T3-219`** | GF-T3-219 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 220 | **`GF-T3-220`** | GF-T3-220 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 221 | **`GF-T3-221`** | GF-T3-221 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 222 | **`GF-T3-222`** | GF-T3-222 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 223 | **`GF-T3-223`** | GF-T3-223 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 224 | **`GF-T3-224`** | GF-T3-224 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 225 | **`GF-T3-225`** | GF-T3-225 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 226 | **`GF-T3-226`** | GF-T3-226 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 227 | **`GF-T3-227`** | GF-T3-227 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 228 | **`GF-T3-228`** | GF-T3-228 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 229 | **`GF-T3-229`** | GF-T3-229 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 230 | **`GF-T3-230`** | GF-T3-230 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 231 | **`GF-T3-231`** | GF-T3-231 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 232 | **`GF-T3-232`** | GF-T3-232 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 233 | **`GF-T3-233`** | GF-T3-233 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 234 | **`GF-T3-234`** | GF-T3-234 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 235 | **`GF-T3-235`** | GF-T3-235 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 236 | **`GF-T3-236`** | GF-T3-236 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 237 | **`GF-T3-237`** | GF-T3-237 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 238 | **`GF-T3-238`** | GF-T3-238 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 239 | **`GF-T3-239`** | GF-T3-239 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 240 | **`GF-T3-240`** | GF-T3-240 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 241 | **`GF-T3-241`** | GF-T3-241 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 242 | **`GF-T3-242`** | GF-T3-242 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 243 | **`GF-T3-243`** | GF-T3-243 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 244 | **`GF-T3-244`** | GF-T3-244 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 245 | **`GF-T3-245`** | GF-T3-245 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 246 | **`GF-T3-246`** | GF-T3-246 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 247 | **`GF-T3-247`** | GF-T3-247 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 248 | **`GF-T3-248`** | GF-T3-248 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 249 | **`GF-T3-249`** | GF-T3-249 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 250 | **`GF-T3-250`** | GF-T3-250 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 251 | **`GF-T3-251`** | GF-T3-251 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 252 | **`GF-T3-252`** | GF-T3-252 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 253 | **`GF-T3-253`** | GF-T3-253 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 254 | **`GF-T3-254`** | GF-T3-254 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 255 | **`GF-T3-255`** | GF-T3-255 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 256 | **`GF-T3-256`** | GF-T3-256 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 257 | **`GF-T3-257`** | GF-T3-257 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 258 | **`GF-T3-258`** | GF-T3-258 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 259 | **`GF-T3-259`** | GF-T3-259 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 260 | **`GF-T3-260`** | GF-T3-260 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 261 | **`GF-T3-261`** | GF-T3-261 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 262 | **`GF-T3-262`** | GF-T3-262 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 263 | **`GF-T3-263`** | GF-T3-263 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 264 | **`GF-T3-264`** | GF-T3-264 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 265 | **`GF-T3-265`** | GF-T3-265 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 266 | **`GF-T3-266`** | GF-T3-266 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 267 | **`GF-T3-267`** | GF-T3-267 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 268 | **`GF-T3-268`** | GF-T3-268 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 269 | **`GF-T3-269`** | GF-T3-269 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 270 | **`GF-T3-270`** | GF-T3-270 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 271 | **`GF-T3-271`** | GF-T3-271 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 272 | **`GF-T3-272`** | GF-T3-272 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 273 | **`GF-T3-273`** | GF-T3-273 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 274 | **`GF-T3-274`** | GF-T3-274 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 275 | **`GF-T3-275`** | GF-T3-275 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 276 | **`GF-T3-276`** | GF-T3-276 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 277 | **`GF-T3-277`** | GF-T3-277 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 278 | **`GF-T3-278`** | GF-T3-278 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 279 | **`GF-T3-279`** | GF-T3-279 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 280 | **`GF-T3-280`** | GF-T3-280 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 281 | **`GF-T3-281`** | GF-T3-281 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 282 | **`GF-T3-282`** | GF-T3-282 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 283 | **`GF-T3-283`** | GF-T3-283 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 284 | **`GF-T3-284`** | GF-T3-284 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 285 | **`GF-T3-285`** | GF-T3-285 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 286 | **`GF-T3-286`** | GF-T3-286 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 287 | **`GF-T3-287`** | GF-T3-287 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 288 | **`GF-T3-288`** | GF-T3-288 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 289 | **`GF-T3-289`** | GF-T3-289 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 290 | **`GF-T3-290`** | GF-T3-290 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 291 | **`GF-T3-291`** | GF-T3-291 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 292 | **`GF-T3-292`** | GF-T3-292 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 293 | **`GF-T3-293`** | GF-T3-293 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 294 | **`GF-T3-294`** | GF-T3-294 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 295 | **`GF-T3-295`** | GF-T3-295 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 296 | **`GF-T3-296`** | GF-T3-296 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 297 | **`GF-T3-297`** | GF-T3-297 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 298 | **`GF-T3-298`** | GF-T3-298 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 299 | **`GF-T3-299`** | GF-T3-299 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 300 | **`GF-T3-300`** | GF-T3-300 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
+| 301 | **`GF-T3-301`** | GF-T3-301 | Track 3 | `PASS` | `PASS` | `PASS` | `PASS` (100%) | **SEALED ✔** |
 
 ---
 
@@ -253,7 +354,7 @@
 ## 4. SIGN-OFF & CREW CHIEF DIRECTIVE
 
 - **Certification Status:** All 200 audited chassis pass the 4 Dyno Integrity Gates and are certified for commercial showroom display and micro-APA title transfer.
-- **Log Archive:** `/Users/gmane/Documents/ZoMae Media LLC/Aura & Grid/telemetry/dyno-reports/dyno-3track-audit-2026-10-21T04-24-02-351Z.json`
+- **Log Archive:** `/Users/gmane/Documents/ZoMae Media LLC/Aura & Grid/telemetry/dyno-reports/dyno-3track-audit-2026-10-29T09-47-24-817Z.json`
 - **Active Pointer:** `/Users/gmane/Documents/ZoMae Media LLC/Aura & Grid/telemetry/dyno-reports/latest-dyno-audit.json`
 - **Console Pointer:** `/Users/gmane/Documents/ZoMae Media LLC/Aura & Grid/tools/ghost-factory-console/src/data/latest-dyno-audit.json`
 

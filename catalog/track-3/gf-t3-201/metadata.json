@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-201",
+  "description": "High-performance affirmation and gratitude engine designed for smart gamers with ADHD featuring cyber cockpit HUD, mythic perk drops, 3-slot loadout, reactor core breathing recharge, and gamer card exporter.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-280",
+  "description": "Track 3 Continuous Paged Attention and Hardware-Accelerated Block Allocation Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

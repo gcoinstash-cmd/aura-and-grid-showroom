@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-240",
+  "description": "Zero-Copy NCCL Point-to-Point Ring Stream and GPUDirect P2P Cockpit Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-206",
+  "description": "Institutional execution terminal and dual-leg rolling cointegration engine with real-time Ornstein-Uhlenbeck calibration and cryptographic SHA-256 state ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

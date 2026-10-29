@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-208",
+  "description": "Institutional quantitative derivatives volatility surface engine featuring SABR model calibration, Black-76 inversion, arbitrage-free verification, and cryptographic state ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

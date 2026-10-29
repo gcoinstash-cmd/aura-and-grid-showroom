@@ -68,8 +68,8 @@ if (!fs.existsSync(fleetPath)) {
 const fleetData = JSON.parse(fs.readFileSync(fleetPath, 'utf8'));
 const totalUnits = fleetData.length;
 
-if (totalUnits !== 251) {
-  console.error(`${RED}[ERROR] Expected 251 units in fleet.json, found ${totalUnits}${RESET}`);
+if (totalUnits !== 301 && totalUnits !== 251) {
+  console.error(`${RED}[ERROR] Expected 301 (or 251) units in fleet.json, found ${totalUnits}${RESET}`);
   process.exit(1);
 }
 
@@ -252,13 +252,13 @@ const cryptoVerificationHash = crypto
 // 5. COMPILE AUDIT RECEIPT ARTIFACT
 const auditReceipt = {
   receipt_title: 'GhostFactoryOS Institutional Clean-Room Technical Due Diligence Receipt',
-  schema_version: '4.2.0-CLEANROOM-SEAL-251',
+  schema_version: `4.2.0-CLEANROOM-SEAL-${totalUnits}`,
   audit_timestamp: auditTimestamp,
   auditor: 'GhostFactoryOS Automated Clean-Room Technical Due Diligence Engine v4.2',
   authority: 'Lead Systems Engineer & Dealership Crew Chief',
   governing_standard: 'NIST SP 800-218 SSDF v1.1 // Cost Approach Agency Replacement Standard',
   git_commit_anchor: gitCommitHash,
-  audit_scope: 'Full 251-Unit Master Fleet Portfolio (86 Track 1 + 51 Track 2 + 114 Track 3)',
+  audit_scope: `Full ${totalUnits}-Unit Master Fleet Portfolio (${auditResults.filter(u => u.track === 'Track 1').length} Track 1 + ${auditResults.filter(u => u.track === 'Track 2').length} Track 2 + ${auditResults.filter(u => u.track === 'Track 3').length} Track 3)`,
   diligence_summary: {
     total_units_audited: totalUnits,
     total_units_passed: passedCount,
@@ -282,7 +282,7 @@ const auditReceipt = {
   cryptographic_seal: {
     algorithm: 'SHA-256',
     verification_hash: cryptoVerificationHash,
-    signature_basis: 'Canonicalized 251-Unit AST & Dependency Graph Digest',
+    signature_basis: `Canonicalized ${totalUnits}-Unit AST & Dependency Graph Digest`,
     provenance: 'Untampered sovereign digital car collection verified by Dealership Crew Chief'
   },
   fleet_breakdown: {
@@ -330,7 +330,7 @@ console.log(`  ${BOLD}${MAGENTA}CRYPTOGRAPHIC VERIFICATION SEAL (SHA-256):${RESE
 console.log(`  ${BOLD}${CYAN}${cryptoVerificationHash}${RESET}`);
 console.log(`--------------------------------------------------------------------------------`);
 console.log(`  Receipt Written To           : ${BOLD}${receiptOutputPath}${RESET}`);
-console.log(`${BOLD}${GREEN}✔ ALL 251/251 UNITS PASSED INSTITUTIONAL CLEAN-ROOM DUE DILIGENCE!${RESET}\n`);
+console.log(`${BOLD}${GREEN}✔ ALL ${totalUnits}/${totalUnits} UNITS PASSED INSTITUTIONAL CLEAN-ROOM DUE DILIGENCE!${RESET}\n`);
 
 if (passedCount !== totalUnits) {
   process.exit(1);

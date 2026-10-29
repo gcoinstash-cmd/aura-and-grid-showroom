@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-253",
+  "description": "Continuous In-Flight Batching and PagedAttention Dynamic Memory Fabric Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-292",
+  "description": "Ultra-Wide Dynamic Asynchronous MoE Top-K Expert Routing and Load-Balanced Token Dispatch Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

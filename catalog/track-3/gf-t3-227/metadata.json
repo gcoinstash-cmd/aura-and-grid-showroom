@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-227",
+  "description": "Prefix-Tree Radix KV Cache, Speculative Tree Verification, and Dynamic LRU Pruning Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

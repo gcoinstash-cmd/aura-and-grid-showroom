@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-291",
+  "description": "GF-T3-291 Ultra-Wide Dynamic Asynchronous Context Parallelism and Ring-Attention KV-Chunk Partitioning Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

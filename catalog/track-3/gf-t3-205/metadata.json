@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-205",
+  "description": "Production-grade institutional liquidity sweep and smart order routing engine with KKT optimization, nonlinear impact models, and SHA-256 execution ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

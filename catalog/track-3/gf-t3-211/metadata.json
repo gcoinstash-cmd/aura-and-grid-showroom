@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-211",
+  "description": "Cross-asset cointegration and copula stat-arb quantitative trading terminal",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

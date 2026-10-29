@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-274",
+  "description": "Track 3 Flagship Asynchronous Context Window Rolling and Dynamic Memory Eviction Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

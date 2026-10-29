@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-222",
+  "description": "Prefix-Tree (Radix) KV Cache \u00b7 Dynamic Multi-Turn Reuse \u00b7 Zero-Copy LRU Eviction \u00b7 O(L) Prefix Matching",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

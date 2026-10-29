@@ -344,8 +344,14 @@ function auditGate04(chassis) {
   let duration = '0.00s';
 
   if (chassis.track === 'Track 3') {
-    const testsDir = path.join(chassis.primaryDir, 'tests');
+    let testsDir = path.join(chassis.primaryDir, 'tests');
+    if (!fs.existsSync(testsDir)) {
+      testsDir = chassis.primaryDir;
+    }
     let hasExecutableTests = false;
+    const pytestBin = fs.existsSync(path.join(rootDir, 'T3-NEXUS-ORDERBOOK', '.venv', 'bin', 'pytest'))
+      ? path.join(rootDir, 'T3-NEXUS-ORDERBOOK', '.venv', 'bin', 'pytest')
+      : 'pytest';
 
     if (fs.existsSync(testsDir)) {
       const testFiles = fs.readdirSync(testsDir).filter(
@@ -355,7 +361,7 @@ function auditGate04(chassis) {
       if (testFiles.length > 0) {
         hasExecutableTests = true;
         try {
-          const cmd = `pytest ${testFiles.join(' ')} -q`;
+          const cmd = `${pytestBin} ${testFiles.join(' ')} -q`;
           const stdout = execSync(cmd, { cwd: testsDir, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] });
           const lastLine = stdout.trim().split('\n').pop() || '';
 
@@ -712,7 +718,7 @@ async function main() {
     auditor: 'GhostFactoryOS Automated 4-Gate Dyno Engine v3.0 (Full 3-Track Sovereign Suite)',
     authority: 'Lead Systems Engineer & QA Test Architect',
     gitCommitAnchor: gitSha,
-    auditScope: 'Full 200-Unit Sovereign Portfolio (86 Track 1 + 51 Track 2 + 63 Track 3)',
+    auditScope: `Full ${chassisList.length}-Unit Sovereign Portfolio (${t1Count} Track 1 + ${t2Count} Track 2 + ${t3Count} Track 3)`,
     durationSeconds: parseFloat(executionDurationSec),
     summary: {
       totalChassisAudited: chassisList.length,
@@ -748,6 +754,12 @@ async function main() {
   if (fs.existsSync(consoleDataDir)) {
     const consoleJsonPath = path.join(consoleDataDir, 'latest-dyno-audit.json');
     fs.writeFileSync(consoleJsonPath, JSON.stringify(jsonReport, null, 2) + '\n');
+  }
+
+  // Mirror to Root and Site
+  fs.writeFileSync(path.join(rootDir, 'DYNO_AUDIT_RECEIPT.json'), JSON.stringify(jsonReport, null, 2) + '\n');
+  if (fs.existsSync(path.join(rootDir, 'site'))) {
+    fs.writeFileSync(path.join(rootDir, 'site', 'DYNO_AUDIT_RECEIPT.json'), JSON.stringify(jsonReport, null, 2) + '\n');
   }
 
   // Generate Markdown Executive Summary

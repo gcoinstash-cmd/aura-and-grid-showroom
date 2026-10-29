@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-255",
+  "description": "Track 3 Flagship Grouped-Query Attention and KV Cache Compression Tensor Fabric Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

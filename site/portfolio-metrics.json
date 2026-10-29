@@ -1,65 +1,43 @@
 {
-  "catalogTotal": 160,
-  "track1LeanTotal": 86,
-  "track2FlagshipTotal": 51,
-  "retainedFloorMinimum": 128,
-  "maxOwnershipTransferCapacity": 32,
-  "syncVersion": "v2.0-PROD",
-  "diligenceGrade": "L3-SUPABASE-READY",
-  "buildIntegrity": "160/160 VERIFIED (AUDIT 360 INSTITUTIONAL PASS)",
-  "sectors": {
-    "hospitality": 28,
-    "creative": 18,
-    "wealth": 15,
-    "heavy_fleet": 9,
-    "medical": 8,
-    "aerospace": 8,
-    "automotive": 6,
-    "fitness": 5,
-    "home_services": 5,
-    "clean_energy": 5,
-    "subsea": 4,
-    "deep_tech": 2,
-    "defense": 1,
-    "total": 114
+  "total_assets": 301,
+  "retained_floor": 241,
+  "max_apa_capacity": 60,
+  "tracks": {
+    "track_1": 86,
+    "track_2": 51,
+    "track_3": 164
   },
-  "archetypes": {
-    "A": 23,
-    "B": 21,
-    "C": 30,
-    "D": 26,
-    "E": 14,
-    "total": 114
-  },
-  "dualTrackPricing": {
-    "track1RetailSourceLicense": 199,
-    "track1CommercialTeamSeat": 599,
-    "track1ExclusiveBuyoutFloor": 3800,
-    "track1ExclusiveBuyoutAnchor": 4500,
-    "track2FlagshipCommercialLicenseRange": [
-      1500,
-      3500
-    ],
-    "track2EntryExclusiveBuyoutAnchor": 14500,
-    "track2EntryExclusiveBuyoutRange": [
-      10000,
-      18000
-    ],
-    "track2FullAssetBuyoutRange": [
-      18000,
-      35000
-    ],
-    "track2StrategicBuyoutRange": [
-      35000,
-      75000
-    ]
-  },
-  "verifiedTimestamp": "2026-10-03T19:50:00Z",
-  "track3ServiceEngineTotal": 23,
+  "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Zero Licensing",
   "valuation": {
-    "asc350ReplacementFloor": 1751840,
-    "commercialAgencyBuildReplacement": 2280000,
-    "masterVaultCollectionAskingPrice": 3630000,
-    "distressedFloorCard4": 1050000
+    "total_retail_price": 23787000,
+    "certified_fair_market_value": 9864000,
+    "wholesale_price": 6073500,
+    "walk_away_floor": 2968000
+  },
+  "pillars": {
+    "total_retail_price": {
+      "label": "TOTAL RETAIL PRICE",
+      "amount_usd": 23787000,
+      "formatted": "$23,787,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis."
+    },
+    "certified_fair_market_value": {
+      "label": "CERTIFIED FAIR MARKET VALUE",
+      "amount_usd": 9864000,
+      "formatted": "$9,864,000",
+      "subtitle": "Direct Mid-Market Appraisal"
+    },
+    "wholesale_price": {
+      "label": "WHOLESALE PRICE",
+      "amount_usd": 6073500,
+      "formatted": "$6,073,500",
+      "subtitle": "Institutional Bulk Floor"
+    },
+    "walk_away_floor": {
+      "label": "WALK-AWAY FLOOR",
+      "amount_usd": 2968000,
+      "formatted": "$2,968,000",
+      "subtitle": "Sovereign Liquidation Reserve"
+    }
   }
 }

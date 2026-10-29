@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-250",
+  "description": "Chunked Prefill \u00b7 Async Generation Overlap \u00b7 Zero Stall",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-297",
+  "description": "Ultra-Wide Dynamic Asynchronous Continuous Batching & In-Flight Token Scheduler Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

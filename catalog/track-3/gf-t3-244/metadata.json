@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-244",
+  "description": "FP8 / INT8 Dual-Stream Hybrid Quantization & Dynamic Outlier-Gated Calibration Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

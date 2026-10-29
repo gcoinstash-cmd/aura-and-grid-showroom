@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-261",
+  "description": "Track 3 Flagship Context Parallelism and Ring-Attention Distributed Sequence Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

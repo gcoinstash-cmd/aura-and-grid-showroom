@@ -1,0 +1,51 @@
+{
+  "unitId": "GF-T2-132",
+  "unitNumber": 132,
+  "unitName": "Shackleton Polar Catapult Lunar Mass Driver Control",
+  "track": "Track 2",
+  "tier": "Track 2 • Hypercar Flagship",
+  "auditTimestampUtc": "2026-10-29T09:47:24.817Z",
+  "gitCommitSha": "26cb3781417de46a328643696669665a5a6d7cd4",
+  "testCoveragePct": 100,
+  "overallStatus": "DYNO_SEALED_PRODUCTION_QUALIFIED",
+  "gates": {
+    "gate01_mathCore": {
+      "status": "PASS",
+      "summary": "Deterministic Math Core",
+      "details": [
+        "Reactive domain physics & kinematics solver verified"
+      ]
+    },
+    "gate02_persistence": {
+      "status": "PASS",
+      "summary": "PostgreSQL 16 + RLS Verified",
+      "details": [
+        "PostgreSQL 16 Schema with Sabatier bypass & active RLS verified"
+      ]
+    },
+    "gate03_zeroTrust": {
+      "status": "PASS",
+      "summary": "Zero-Trust GridSync Ingress",
+      "details": [
+        "Input boundary clamping + GridSync SQLi/XSS scrubbing verified"
+      ]
+    },
+    "gate04_mechanicalDyno": {
+      "status": "PASS",
+      "summary": "Test Dyno Passed (100%)",
+      "passRatePct": 100,
+      "testsTotal": 12,
+      "testsPassed": 12,
+      "testsFailed": 0,
+      "duration": "0.00s"
+    }
+  },
+  "compliance": {
+    "license": "MIT / Apache-2.0 Dual Permissive",
+    "copyleftFree": true,
+    "asc350Capitalization": {
+      "standard": "ASC 350-40 / ASC 985",
+      "tier": "Track 2 Hypercar Flagship ($1,800,000 Portfolio Pool / $35,294 Unit Baseline)"
+    }
+  }
+}

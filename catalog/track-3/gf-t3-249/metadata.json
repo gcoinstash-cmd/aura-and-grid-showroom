@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-249",
+  "description": "Expert Parallelism \u00b7 Top-2 Routing \u00b7 Zero Drop",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

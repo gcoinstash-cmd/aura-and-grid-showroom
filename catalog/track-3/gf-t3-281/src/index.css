@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  body {
+    background-color: #05070B;
+    color: #F1F5F9;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-284",
+  "description": "KV-Cache Compression, Quantized Block Merging, and Zero-Loss Telemetry Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

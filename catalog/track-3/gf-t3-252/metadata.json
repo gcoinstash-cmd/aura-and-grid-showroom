@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-252",
+  "description": "Track 3 Speculative Decoding and Draft-Target Verification Cockpit Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

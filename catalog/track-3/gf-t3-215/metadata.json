@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-215",
+  "description": "Production-grade Track 3 vector index terminal featuring multi-layer HNSW graph traversal, Product Quantization (PQ), Asymmetric Distance Computation (ADC), and deterministic recall telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-279",
+  "description": "Ultra-Wide Dynamic Speculative Draft Tree Sharding & Parallel Candidate Scoring Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

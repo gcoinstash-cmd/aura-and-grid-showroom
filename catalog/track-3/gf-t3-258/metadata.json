@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-258",
+  "description": "GF-T3-258 Flagship Chunked Prefill and Iterative Scheduling Hybrid Pipeline Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

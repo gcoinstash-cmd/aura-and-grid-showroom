@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-213",
+  "description": "Institutional distributed CQRS, event sourcing, and projection engine with optimistic concurrency control, cryptographic SHA-256 audit chain, and dimensionless telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

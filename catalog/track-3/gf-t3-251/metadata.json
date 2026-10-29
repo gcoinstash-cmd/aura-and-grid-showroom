@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-251",
+  "description": "Track 3 Capacity Factor and Zero Token Dropping Load Balancer Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

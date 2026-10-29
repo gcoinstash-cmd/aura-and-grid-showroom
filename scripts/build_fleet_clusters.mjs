@@ -143,6 +143,24 @@ const VERTICAL_THEMES = [
     reserve: 750000,
     acquirer_profile: 'Healthcare technology providers, clinical diagnostics networks, boutique wellness clinic operators, medical logistics networks, athletic performance academies, and high-performance biomechanics research institutions.',
     turnkey_deployment_spec: 'HIPAA-architected data models (ready for customer BAA configuration), appointment/patient triage queues, isolated tenant database schemas with strict RLS policies, HMAC request signing middleware, and modern responsive operator HUDs.'
+  },
+  {
+    theme: 'Next-Gen Autonomous Telemetry / FinTech Series 2',
+    title: 'Autonomous Telemetry & Skunkworks Service Engines (Series 2)',
+    short_name: 'Autonomous Telemetry & FinTech',
+    anchor: 1400000,
+    reserve: 750000,
+    acquirer_profile: 'Institutional quantitative trading desks, high-frequency liquidity providers, autonomous telemetry infrastructure operators, and sovereign AI compute networks.',
+    turnkey_deployment_spec: '50 containerized F1 Skunkworks production reference engines featuring continuous in-flight batching, speculative decoding verification, FP8/FP4 quantization, and multi-GPU tensor parallelism. PostgreSQL 16 migrations with strict Row-Level Security.'
+  },
+  {
+    theme: 'Sovereign APA Vault & Orchestration',
+    title: 'Sovereign APA Vault & Master Orchestration',
+    short_name: 'Sovereign APA Vault',
+    anchor: 1500000,
+    reserve: 750000,
+    acquirer_profile: 'Sovereign wealth desks, institutional private equity roll-up sponsors, and multi-asset autonomous orchestration platforms.',
+    turnkey_deployment_spec: 'Sovereign master vault orchestration gateways, distributed cluster state synchronization, dynamic APA carve-out verification harnesses, and multi-tenant telemetry pipelines.'
   }
 ];
 
@@ -369,14 +387,14 @@ const finalManifest = {
     cleanroom_guarantee: '100% Verified Permissive MIT/Apache-2.0 (Zero Copyleft)',
     tiers: [
       {
-        milestone_name: 'Baseline',
-        units: 251,
-        clusters_count: 5,
-        retail_msrp_usd: 20037000,
-        retail_msrp_formatted: '$20,037,000 Retail MSRP',
-        carve_out_value_usd: 6250000,
-        carve_out_value_formatted: '~$6.25M Carve-Out Value',
-        retained_vault_units: 201,
+        milestone_name: 'Baseline (Cluster 006 Sealed)',
+        units: 301,
+        clusters_count: 6,
+        retail_msrp_usd: 23787000,
+        retail_msrp_formatted: '$23,787,000 Retail MSRP',
+        carve_out_value_usd: 7650000,
+        carve_out_value_formatted: '~$7.65M Carve-Out Value',
+        retained_vault_units: 241,
         retained_vault_pct: 80
       },
       {
@@ -462,7 +480,7 @@ compiledClusters.forEach(c => {
 });
 console.log(`--------------------------------------------------------------------------------`);
 console.log(`  Total Chassis Partitioned : ${BOLD}${totalUnits} / ${totalUnits}${RESET}`);
-console.log(`  Active Sealed Clusters    : ${BOLD}${GREEN}${sealedCount} Sealed Batches (250 Units)${RESET}`);
+console.log(`  Active Sealed Clusters    : ${BOLD}${GREEN}${sealedCount} Sealed Batches (${sealedCount * BATCH_SIZE} Units)${RESET}`);
 console.log(`  Active Unsealed Remainder : ${BOLD}${YELLOW}${unsealedCount} Unsealed Batch (${compiledClusters[compiledClusters.length - 1].unit_count} Unit)${RESET}`);
 console.log(`  Manifest Written To       : ${BOLD}${rootClustersPath}${RESET}\n`);
 console.log(`${BOLD}${GREEN}✔ ROLLING 50-UNIT CLUSTER ENGINE COMPILED SUCCESSFULLY!${RESET}\n`);

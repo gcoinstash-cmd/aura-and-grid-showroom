@@ -1,48 +1,43 @@
 {
-  "catalogTotal": 160,
-  "unitRetailPrice": 199,
-  "retailShelfMSRP": 16915,
-  "buildVerified": 85,
-  "previewHttp200": 85,
-  "diligenceGrade": "L3-SUPABASE-READY",
-  "buildIntegrity": "85/85 PASSED (EXIT 0)",
-  "sectors": {
-    "hospitality": 23,
-    "wealth": 16,
-    "medical": 13,
-    "creative": 12,
-    "automotive": 6,
-    "fitness": 5,
-    "home_services": 5,
-    "heavy_fleet": 5,
-    "total": 85
+  "total_assets": 301,
+  "retained_floor": 241,
+  "max_apa_capacity": 60,
+  "tracks": {
+    "track_1": 86,
+    "track_2": 51,
+    "track_3": 164
   },
-  "archetypes": {
-    "A": 15,
-    "B": 17,
-    "C": 17,
-    "D": 22,
-    "E": 14,
-    "total": 85
-  },
-  "commercialTiers": {
-    "singleBlueprint": 150,
-    "starterUI": 79,
-    "fullStack": 199,
-    "agencyVaultPilot": 1499,
-    "agencyVaultStandard": 1999,
-    "agencyVaultMaster": 2999
-  },
-  "verifiedTimestamp": "2026-09-26T23:00:00Z",
-  "track1LeanTotal": 86,
-  "track2FlagshipTotal": 51,
-  "track3ServiceEngineTotal": 23,
-  "retainedFloorMinimum": 128,
-  "maxOwnershipTransferCapacity": 32,
+  "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Zero Licensing",
   "valuation": {
-    "asc350ReplacementFloor": 1751840,
-    "commercialAgencyBuildReplacement": 2280000,
-    "masterVaultCollectionAskingPrice": 3630000,
-    "distressedFloorCard4": 1050000
+    "total_retail_price": 23787000,
+    "certified_fair_market_value": 9864000,
+    "wholesale_price": 6073500,
+    "walk_away_floor": 2968000
+  },
+  "pillars": {
+    "total_retail_price": {
+      "label": "TOTAL RETAIL PRICE",
+      "amount_usd": 23787000,
+      "formatted": "$23,787,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis."
+    },
+    "certified_fair_market_value": {
+      "label": "CERTIFIED FAIR MARKET VALUE",
+      "amount_usd": 9864000,
+      "formatted": "$9,864,000",
+      "subtitle": "Direct Mid-Market Appraisal"
+    },
+    "wholesale_price": {
+      "label": "WHOLESALE PRICE",
+      "amount_usd": 6073500,
+      "formatted": "$6,073,500",
+      "subtitle": "Institutional Bulk Floor"
+    },
+    "walk_away_floor": {
+      "label": "WALK-AWAY FLOOR",
+      "amount_usd": 2968000,
+      "formatted": "$2,968,000",
+      "subtitle": "Sovereign Liquidation Reserve"
+    }
   }
 }

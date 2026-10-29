@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-219",
+  "description": "GF-T3-219: Production-grade speculative decoding, parallel rejection sampling, and KV-cache rollback verification cockpit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

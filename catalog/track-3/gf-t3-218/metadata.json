@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-218",
+  "description": "Production-grade high-velocity semantic vector cache, LSH bucketing, and dual-score speculative decay eviction engine with real-time telemetry cockpit.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-283",
+  "description": "Prefill-Decode Disaggregation and Distributed KV-Streaming Cockpit Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -23,22 +23,22 @@
     },
     "certified_fair_market_value": {
       "label": "CERTIFIED FAIR MARKET VALUE",
-      "formatted": "$9,864,000",
-      "amount_usd": 9864000,
+      "formatted": "$9,500,000",
+      "amount_usd": 9500000,
       "basis": "Direct Mid-Market Appraisal",
       "subtitle": "Verified mid-market enterprise appraisal benchmark across all 301 software engines."
     },
     "wholesale_acquisition_reserve_floor": {
       "label": "WHOLESALE PRICE",
-      "formatted": "$6,073,500",
-      "amount_usd": 6073500,
+      "formatted": "$6,166,500",
+      "amount_usd": 6166500,
       "basis": "Institutional Bulk Floor",
       "subtitle": "Institutional baseline portfolio buyout floor reflecting standard anchor tenders."
     },
     "distressed_panic_floor": {
       "label": "WALK-AWAY FLOOR",
-      "formatted": "$2,968,000",
-      "amount_usd": 2968000,
+      "formatted": "$3,000,000",
+      "amount_usd": 3000000,
       "basis": "Sovereign Liquidation Reserve",
       "subtitle": "Absolute turnkey walk-away liquidation floor for immediate full IP title transfer."
     }
@@ -226,16 +226,16 @@
         "short_name": "Sovereign APA Vault & Orchestration",
         "slug": "cluster-007",
         "status": "ACTIVE_UNSEALED",
-        "unit_count": 1,
-        "carve_out_pct": "0.33%",
+        "unit_count": 2,
+        "carve_out_pct": "0.66%",
         "apa_anchor_price": 1500000,
         "apa_anchor_formatted": "$1,500,000",
-        "cumulative_standalone_retail_price": 75000,
-        "cumulative_standalone_retail_formatted": "$75,000",
+        "cumulative_standalone_retail_price": 150000,
+        "cumulative_standalone_retail_formatted": "$150,000",
         "track_distribution": {
           "track_1_lean_tuner": 0,
           "track_2_hypercar_flagship": 0,
-          "track_3_f1_skunkworks": 1
+          "track_3_f1_skunkworks": 2
         },
         "primary_vertical": "Sovereign APA Vault & Orchestration",
         "acquirer_profile": "Sovereign wealth desks, institutional private equity roll-up sponsors, and multi-asset autonomous orchestration platforms.",

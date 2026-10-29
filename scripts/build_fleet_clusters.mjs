@@ -261,6 +261,23 @@ fleet.forEach(u => {
   }
 });
 
+// Stage GF-T3-302 into open unsealed Cluster 007 if present in catalog
+const t3302Dir = path.join(ROOT_DIR, 'catalog', 'track-3', 'gf-t3-302');
+if (fs.existsSync(t3302Dir) && !remainingUnits.some(u => u.unit_id === 'GF-T3-302')) {
+  remainingUnits.push({
+    id: 302,
+    unit_id: 'GF-T3-302',
+    name: 'GF-T3-302 Speculative Decoding Verification Engine',
+    track: 'Track 3',
+    pricing_track: 'Track 3 — F1 Skunkworks Engine',
+    vertical: 'edge ai',
+    tables: ['speculative_drafts', 'verification_batches', 'dyno_receipts', 'engine_telemetry'],
+    security_architecture: 'Level 3: Full-Stack Blueprint (RLS + Isolated Schemas)',
+    retail_valuation: 75000,
+    status: 'STAGED'
+  });
+}
+
 // Combine into canonical ordered batches
 const orderedBatches = [
   { units: b1Units, themeIndex: 0 },

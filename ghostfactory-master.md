@@ -31,9 +31,9 @@ A micro-APA transfers defined rights/code to one specific asset. It NEVER transf
 
 ## ASC 350-40 REPLACEMENT APPRAISAL & DEALERSHIP VALUATION
 - Total Retail Price: $23,787,000 (Combined Agency Replacement Benchmark across all 301 upgraded chassis).
-- Certified Fair Market Value (FMV): $9,864,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
-- Wholesale Price / Floor: $6,073,500 (Institutional Bulk Tender / Bulk Floor).
-- Walk-Away Floor: $2,968,000 (Sovereign Reserve Liquidation Floor).
+- Certified Fair Market Value (FMV): $9,500,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
+- Wholesale Price / Floor: $6,166,500 (Institutional Bulk Tender / Bulk Floor).
+- Walk-Away Floor: $3,000,000 (Sovereign Reserve Liquidation Floor).
 - Valuation Legend: Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer.
 
 ## MULTI-TRACK PRICING PROTOCOL
@@ -95,7 +95,7 @@ The 301-unit fleet is partitioned into 6 Discrete Sealed Vertical Clusters + 1 A
 | **CLUSTER-004** | **Dense Media & Automation Workflows** | 50 | SEALED | $647,500 | **$1,250,000** | $750,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
 | **CLUSTER-005** | **HealthTech & Operational Consoles** | 50 | SEALED | $3,572,500 | **$1,250,000** | $750,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
 | **CLUSTER-006** | **Next-Gen Autonomous Telemetry / FinTech Series 2** | 50 | SEALED | $3,800,000 | **$1,400,000** | $750,000 | Quantitative trading desks, HFT liquidity providers, autonomous telemetry & sovereign AI networks |
-| **CLUSTER-007** | **Sovereign APA Vault & Master Orchestration** | 1 | UNSEALED | $75,000 | **$1,500,000** | $750,000 | Active assembly lot (1/50 units assembled, awaiting 49 units to seal threshold) |
+| **CLUSTER-007** | **Sovereign APA Vault & Master Orchestration** | 2 | UNSEALED | $150,000 | **$1,500,000** | $750,000 | Active assembly lot (2/50 units assembled: GF-T3-301 & GF-T3-302, awaiting 48 units to seal threshold) |
 
 ### Cluster Technical Due Diligence & Clean-Room Standards
 - **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.

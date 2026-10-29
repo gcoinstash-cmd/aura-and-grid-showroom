@@ -10,9 +10,9 @@
   "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Zero Licensing",
   "valuation": {
     "total_retail_price": 23787000,
-    "certified_fair_market_value": 9864000,
-    "wholesale_price": 6073500,
-    "walk_away_floor": 2968000
+    "certified_fair_market_value": 9500000,
+    "wholesale_price": 6166500,
+    "walk_away_floor": 3000000
   },
   "pillars": {
     "total_retail_price": {
@@ -23,20 +23,20 @@
     },
     "certified_fair_market_value": {
       "label": "CERTIFIED FAIR MARKET VALUE",
-      "amount_usd": 9864000,
-      "formatted": "$9,864,000",
+      "amount_usd": 9500000,
+      "formatted": "$9,500,000",
       "subtitle": "Direct Mid-Market Appraisal"
     },
     "wholesale_price": {
       "label": "WHOLESALE PRICE",
-      "amount_usd": 6073500,
-      "formatted": "$6,073,500",
+      "amount_usd": 6166500,
+      "formatted": "$6,166,500",
       "subtitle": "Institutional Bulk Floor"
     },
     "walk_away_floor": {
       "label": "WALK-AWAY FLOOR",
-      "amount_usd": 2968000,
-      "formatted": "$2,968,000",
+      "amount_usd": 3000000,
+      "formatted": "$3,000,000",
       "subtitle": "Sovereign Liquidation Reserve"
     }
   }

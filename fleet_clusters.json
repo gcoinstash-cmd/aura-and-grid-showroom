@@ -1,7 +1,7 @@
 {
   "manifest_title": "GhostFactoryOS Rolling 50-Unit Commercial Fleet Clusters",
   "schema_version": "5.0.0-ROLLING-50-CARVEOUT-PROTOCOL",
-  "timestamp": "2026-10-29T09:40:39.746Z",
+  "timestamp": "2026-10-29T09:56:03.464Z",
   "governing_protocol": {
     "protocol_name": "Rolling 50-Unit Portfolio APA Carve-Out Protocol",
     "protocol_version": "1.0.0",
@@ -18,8 +18,8 @@
   "financial_summary": {
     "cumulative_apa_anchors_usd": 9550000,
     "cumulative_apa_anchors_formatted": "$9,550,000",
-    "cumulative_agency_replacement_usd": 22135000,
-    "cumulative_agency_replacement_formatted": "$22,135,000",
+    "cumulative_agency_replacement_usd": 22210000,
+    "cumulative_agency_replacement_formatted": "$22,210,000",
     "standard_reserve_floor_usd": 750000,
     "standard_reserve_floor_formatted": "$750,000"
   },
@@ -4811,15 +4811,16 @@
       "commercial_vertical_theme": "Sovereign APA Vault & Orchestration",
       "status": "ACTIVE_UNSEALED",
       "seal_threshold": 50,
-      "unit_count": 1,
-      "carve_out_pct": "0.33%",
+      "unit_count": 2,
+      "carve_out_pct": "0.66%",
       "unit_ids": [
-        "GF-T3-301"
+        "GF-T3-301",
+        "GF-T3-302"
       ],
-      "combined_agency_replacement_value": 75000,
-      "combined_agency_replacement_formatted": "$75,000",
-      "cumulative_retail_benchmark": 75000,
-      "cumulative_retail_benchmark_formatted": "$75,000",
+      "combined_agency_replacement_value": 150000,
+      "combined_agency_replacement_formatted": "$150,000",
+      "cumulative_retail_benchmark": 150000,
+      "cumulative_retail_benchmark_formatted": "$150,000",
       "carve_out_apa_asking_anchor": 1500000,
       "carve_out_apa_asking_anchor_formatted": "$1,500,000",
       "carve_out_valuation_range": [
@@ -4832,7 +4833,7 @@
       "track_distribution": {
         "track_1_lean_tuner": 0,
         "track_2_hypercar_flagship": 0,
-        "track_3_f1_skunkworks": 1
+        "track_3_f1_skunkworks": 2
       },
       "acquirer_profile": "Sovereign wealth desks, institutional private equity roll-up sponsors, and multi-asset autonomous orchestration platforms.",
       "turnkey_deployment_spec": "Sovereign master vault orchestration gateways, distributed cluster state synchronization, dynamic APA carve-out verification harnesses, and multi-tenant telemetry pipelines.",
@@ -4845,6 +4846,20 @@
           "track": "Track 3",
           "vertical": "Autonomous Telemetry & Vault",
           "working_demo_url": "/demos/gf-t3-301/index.html",
+          "standalone_retail_price": 75000,
+          "standalone_retail_formatted": "$75,000",
+          "tables_count": 4,
+          "clean_room_verified": true,
+          "security_architecture": "Level 3: Full-Stack Blueprint (RLS + Isolated Schemas)"
+        },
+        {
+          "id": "GF-T3-302",
+          "unit_number": 302,
+          "title": "GF-T3-302 Speculative Decoding Verification Engine",
+          "track_tier": "Track 3 — F1 Skunkworks Engine",
+          "track": "Track 3",
+          "vertical": "edge ai",
+          "working_demo_url": "/demos/gf-t3-302/index.html",
           "standalone_retail_price": 75000,
           "standalone_retail_formatted": "$75,000",
           "tables_count": 4,

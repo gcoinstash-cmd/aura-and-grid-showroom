@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHASSIS-OMEGA-01 // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased select-none">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const INITIAL_POPS = [
+      { id: "POP-US-EAST-01", location: "Ashburn (IAD)", rps: "1,240,000", lat: "0.8ms", status: "NOMINAL", load: 68 },
+      { id: "POP-EU-CENTRAL-01", location: "Frankfurt (FRA)", rps: "980,000", lat: "1.1ms", status: "NOMINAL", load: 74 },
+      { id: "POP-AP-NORTHEAST-01", location: "Tokyo (NRT)", rps: "840,000", lat: "1.4ms", status: "BALANCED", load: 62 },
+      { id: "POP-AP-SOUTH-01", location: "Singapore (SIN)", rps: "620,000", lat: "1.6ms", status: "BALANCED", load: 58 },
+      { id: "POP-US-WEST-01", location: "San Jose (SJC)", rps: "1,140,000", lat: "0.9ms", status: "NOMINAL", load: 71 }
+    ];
+
+    function GlobalEdgeCdnCockpit() {
+      const [pulsePhase, setPulsePhase] = useState(0);
+      const [ingressThroughput, setIngressThroughput] = useState("4.82");
+      const [edgeP99Latency, setEdgeP99Latency] = useState("1.34");
+      const [eventStream, setEventStream] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setPulsePhase(p => (p + 1) % 100);
+          setIngressThroughput((4.75 + Math.random() * 0.15).toFixed(2));
+          setEdgeP99Latency((1.25 + Math.random() * 0.18).toFixed(2));
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            metric: 'ANYCAST-EDGE-ROUTING',
+            status: 'OPTIMAL',
+            lat: (0.8 + Math.random() * 0.7).toFixed(2) + 'ms'
+          };
+          setEventStream(prev => [newEvt, ...prev.slice(0, 4)]);
+        }, 1000);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-OMEGA-01</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2 uppercase">
+                    CHASSIS-OMEGA-01 <span className="text-xs text-[#FF9F0A] font-normal">// Global Edge CDN Traffic Load Balancer</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">GLOBAL POPS:</span>
+                  <span className="text-green-400 font-bold">184 EDGE NODES</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">BGP ROUTING:</span>
+                  <span className="text-[#00F0FF] font-bold">99.999% MESH</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN GRID */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRIC CARDS, SVG VISUALIZER, DATA TABLE */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">AGGREGATE EDGE THROUGHPUT</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">LIVE ANYCAST</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{ingressThroughput}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">Tbps</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-400">4,820,000 HTTP/3 STREAM REQ/SEC</div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">P99 GLOBAL DNS RESOLUTION</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">SUB-2MS HUD</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{edgeP99Latency}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">ms</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-400">GEO-OPTIMIZED FIBER MULTIPLEXING</div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG VISUALIZER */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      GLOBAL EDGE FIBER TOPOLOGY // REALTIME SCADA TRAFFIC SCOPE
+                    </h3>
+                    <span className="text-xs font-mono text-[#00F0FF]">HTTP/3 QUIC 0-RTT</span>
+                  </div>
+
+                  <div className="relative h-64 bg-[#05070B] rounded-lg border border-[#1F2937] flex items-center justify-center overflow-hidden">
+                    <svg className="w-full h-full" viewBox="0 0 700 240" fill="none">
+                      {/* Grid background */}
+                      <defs>
+                        <pattern id="grid-cdn" width="35" height="35" patternUnits="userSpaceOnUse">
+                          <path d="M 35 0 L 0 0 0 35" fill="none" stroke="#1F2937" strokeWidth="0.8" opacity="0.3" />
+                        </pattern>
+                        <linearGradient id="cdn-grad" x1="0" y1="0" x2="1" y2="0">
+                          <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.8" />
+                          <stop offset="50%" stopColor="#FF9F0A" stopOpacity="0.8" />
+                          <stop offset="100%" stopColor="#00F0FF" stopOpacity="0.8" />
+                        </linearGradient>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#grid-cdn)" />
+
+                      {/* Global Fiber Mesh Lines */}
+                      <path d="M 90 120 C 180 70, 240 70, 320 110 S 480 160, 610 110" stroke="url(#cdn-grad)" strokeWidth="2.5" strokeDasharray="6,4" fill="none">
+                        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+                      </path>
+                      <path d="M 90 120 C 200 170, 300 180, 420 130 S 520 60, 610 110" stroke="#00F0FF" strokeWidth="1.5" strokeOpacity="0.6" strokeDasharray="4,4" fill="none">
+                        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="6s" repeatCount="indefinite" />
+                      </path>
+                      <path d="M 320 110 L 420 130" stroke="#FF9F0A" strokeWidth="2" strokeOpacity="0.8" />
+
+                      {/* Edge Nodes */}
+                      <g transform="translate(90, 120)">
+                        <circle r="14" fill="#00F0FF" fillOpacity="0.15" stroke="#00F0FF" strokeWidth="1.5" />
+                        <circle r="4" fill="#00F0FF" />
+                        <text y="24" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono" textAnchor="middle">SJC (WEST)</text>
+                      </g>
+                      <g transform="translate(200, 85)">
+                        <circle r="16" fill="#00F0FF" fillOpacity="0.2" stroke="#00F0FF" strokeWidth="1.5" />
+                        <circle r="5" fill="#00F0FF" />
+                        <text y="24" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono" textAnchor="middle">IAD (EAST)</text>
+                      </g>
+                      <g transform="translate(350, 105)">
+                        <circle r="18" fill="#FF9F0A" fillOpacity="0.2" stroke="#FF9F0A" strokeWidth="2" />
+                        <circle r="5" fill="#FF9F0A" />
+                        <text y="26" fill="#FF9F0A" fontSize="10" fontFamily="JetBrains Mono" textAnchor="middle">FRA (CENTRAL)</text>
+                      </g>
+                      <g transform="translate(500, 140)">
+                        <circle r="14" fill="#00F0FF" fillOpacity="0.15" stroke="#00F0FF" strokeWidth="1.5" />
+                        <circle r="4" fill="#00F0FF" />
+                        <text y="24" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono" textAnchor="middle">SIN (SOUTH)</text>
+                      </g>
+                      <g transform="translate(610, 110)">
+                        <circle r="16" fill="#00F0FF" fillOpacity="0.2" stroke="#00F0FF" strokeWidth="1.5" />
+                        <circle r="5" fill="#00F0FF" />
+                        <text y="24" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono" textAnchor="middle">NRT (EAST)</text>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* POP STATUS TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center mb-1">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">
+                      PRIMARY ANYCAST INGRESS HUBS
+                    </h4>
+                    <span className="text-xs font-mono text-green-400">100% HEALTHY</span>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead>
+                        <tr className="border-b border-[#1F2937] text-slate-500">
+                          <th className="pb-2">HUB IDENTIFIER</th>
+                          <th className="pb-2">METROPOLITAN POP</th>
+                          <th className="pb-2">INGRESS RPS</th>
+                          <th className="pb-2">EDGE LATENCY</th>
+                          <th className="pb-2 text-right">NODE LOAD</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/50">
+                        {INITIAL_POPS.map(pop => (
+                          <tr key={pop.id} className="hover:bg-white/[0.02]">
+                            <td className="py-2.5 font-bold text-white">{pop.id}</td>
+                            <td className="py-2.5 text-slate-400">{pop.location}</td>
+                            <td className="py-2.5 text-[#00F0FF]">{pop.rps}</td>
+                            <td className="py-2.5 text-green-400">{pop.lat}</td>
+                            <td className="py-2.5 text-right font-bold text-slate-300">{pop.load}%</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT 1 COLUMN: COMMERCIAL PROVENANCE & REALTIME EVENT STREAM */}
+              <div className="space-y-6">
+
+                {/* COMMERCIAL PROVENANCE CARD */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#00F0FF]/5 rounded-full blur-2xl pointer-events-none" />
+
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold text-[#00F0FF] uppercase tracking-widest">COMMERCIAL SPECIFICATION</span>
+                    <h3 className="text-base font-mono font-black text-white mt-0.5">APA ASSET ACQUISITION</h3>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL CTAS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE EVENT FEED */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE TELEMETRY FEED
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">REALTIME</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {eventStream.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.metric}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-slate-300">
+                          <span className="text-[#00F0FF]">{evt.status}</span>
+                          <span className="text-green-400 font-bold">{evt.lat}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<GlobalEdgeCdnCockpit />);
+  </script>
+</body>
+</html>

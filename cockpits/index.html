@@ -37,7 +37,7 @@
         </h1>
 
         <p class="text-base sm:text-lg md:text-xl text-zinc-300 font-sans font-medium max-w-3xl pt-1">
-          113 Standalone SCADA Cockpits // 100% Pure APA Buyout Title Transfer // Zero Ongoing Seat Licenses
+          117 Standalone SCADA Cockpits // Historic 500-Unit Capstone Series // 100% Pure APA Buyout Title Transfer // Zero Ongoing Seat Licenses
         </p>
       </div>
 
@@ -141,6 +141,18 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="grid-golf">
+        <!-- Injected via manifest -->
+      </div>
+    </div>
+
+    <!-- BATCH CAPSTONE DECK (UNITS #497 TO #500) -->
+    <div class="space-y-4">
+      <div class="text-sm md:text-base font-mono font-black text-[#EAB308] uppercase tracking-wider flex items-center gap-2.5">
+        <span class="w-3 h-3 rounded-full bg-[#EAB308] shadow-[0_0_10px_#EAB308]"></span>
+        BATCH CAPSTONE // 500-UNIT HISTORIC FLEET MILESTONE SUITE (4 UNITS)
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4" id="grid-capstone">
         <!-- Injected via manifest -->
       </div>
     </div>
@@ -311,7 +323,13 @@
       { id: 'GF-T2-TLS-25', name: 'TLS-SESSION-RESUMPTION-RIG', subtitle: '0-RTT PSK & Ticket Cache', batch: 'GOLF', path: './batch-golf/25-tls-session-resumption-rig/index.html', accent: '#FF9F0A' },
       { id: 'GF-T2-RAFT-26', name: 'RAFT-LOG-COMPACTION-DYNO', subtitle: 'State Snapshot Truncation', batch: 'GOLF', path: './batch-golf/26-raft-log-compaction-dyno/index.html', accent: '#00F0FF' },
       { id: 'GF-T2-MPOOL-27', name: 'MEMORY-POOL-FRAGMENTATION', subtitle: 'Arena Slab Allocation Waveform', batch: 'GOLF', path: './batch-golf/27-memory-pool-fragmentation/index.html', accent: '#FF9F0A' },
-      { id: 'GF-T2-CANARY-28', name: 'ZERO-DOWNTIME-CANARY-GATE', subtitle: 'Canary Traffic Shift Console', batch: 'GOLF', path: './batch-golf/28-zero-downtime-canary-gate/index.html', accent: '#00F0FF' }
+      { id: 'GF-T2-CANARY-28', name: 'ZERO-DOWNTIME-CANARY-GATE', subtitle: 'Canary Traffic Shift Console', batch: 'GOLF', path: './batch-golf/28-zero-downtime-canary-gate/index.html', accent: '#00F0FF' },
+
+      // BATCH CAPSTONE // 500-UNIT HISTORIC FLEET MILESTONE SUITE (4 UNITS #497 TO #500)
+      { id: 'GF-T2-OMEGA-01', name: 'CHASSIS-OMEGA-01', subtitle: 'Global Edge CDN Load Balancer', batch: 'CAPSTONE', path: './batch-capstone/01-chassis-omega-01/index.html', accent: '#00F0FF' },
+      { id: 'GF-T2-OMEGA-02', name: 'CHASSIS-OMEGA-02', subtitle: 'Post-Quantum TLS Key Inspector', batch: 'CAPSTONE', path: './batch-capstone/02-chassis-omega-02/index.html', accent: '#FF9F0A' },
+      { id: 'GF-T2-OMEGA-03', name: 'CHASSIS-OMEGA-03', subtitle: 'Distributed Event-Bus Tachometer', batch: 'CAPSTONE', path: './batch-capstone/03-chassis-omega-03/index.html', accent: '#00F0FF' },
+      { id: 'GF-T2-VALUATION-500', name: 'CHASSIS-VALUATION-500', subtitle: 'Historic 500-Unit Master Dyno', batch: 'CAPSTONE', path: './batch-capstone/04-chassis-valuation-500/index.html', accent: '#EAB308' }
     ];
 
     let currentSelectedId = 'GF-T2-APEX-01';
@@ -325,7 +343,8 @@
         DELTA: document.getElementById('grid-delta'),
         ECHO: document.getElementById('grid-echo'),
         FOXTROT: document.getElementById('grid-foxtrot'),
-        GOLF: document.getElementById('grid-golf')
+        GOLF: document.getElementById('grid-golf'),
+        CAPSTONE: document.getElementById('grid-capstone')
       };
 
       COCKPITS_MANIFEST.forEach(unit => {
@@ -386,7 +405,9 @@
       const activeBtn = document.getElementById('btn-' + unit.id);
       if (activeBtn) {
         activeBtn.classList.remove('border-[#1F2937]', 'bg-[#0D1117]');
-        if (unit.accent === '#FF9F0A') {
+        if (unit.accent === '#EAB308') {
+          activeBtn.classList.add('border-2', 'border-[#EAB308]', 'bg-[#EAB308]/15', 'shadow-[0_0_20px_rgba(234,179,8,0.25)]', 'ring-1', 'ring-[#EAB308]');
+        } else if (unit.accent === '#FF9F0A') {
           activeBtn.classList.add('border-2', 'border-[#FF9F0A]', 'bg-[#FF9F0A]/15', 'shadow-[0_0_20px_rgba(255,159,10,0.25)]', 'ring-1', 'ring-[#FF9F0A]');
         } else {
           activeBtn.classList.add('border-2', 'border-[#00F0FF]', 'bg-[#00F0FF]/15', 'shadow-[0_0_20px_rgba(0,240,255,0.25)]', 'ring-1', 'ring-[#00F0FF]');

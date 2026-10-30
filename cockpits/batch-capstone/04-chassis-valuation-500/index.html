@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHASSIS-VALUATION-500 // Historic 500-Unit Gold-Plated Fleet Master Dyno</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased select-none">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const FLEET_CLUSTERS = [
+      { id: "CLUSTER-001", name: "Autonomous Telemetry & Avionics", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-002", name: "SCADA & Industrial Edge Systems", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-003", name: "Algorithmic Liquidity & Orderbooks", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-004", name: "Quantitative Risk & Derivatives", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-005", name: "Distributed Edge AI & Multi-Agent", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-006", name: "Cryptographic Security & Zero-Trust", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-007", name: "Cloud Mesh & BGP Infrastructure", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-008", name: "High-Throughput Streaming & IO", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-009", name: "Microsecond FinTech Execution", t1: 17, t2: 17, t3: 16, total: 50, status: "SEALED 50/50" },
+      { id: "CLUSTER-010", name: "500-Unit Capstone & Core Vault", t1: 15, t2: 15, t3: 20, total: 50, status: "SEALED 50/50" }
+    ];
+
+    function ChassisValuation500Cockpit() {
+      const [pulsePhase, setPulsePhase] = useState(0);
+      const [eventStream, setEventStream] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setPulsePhase(p => (p + 1) % 100);
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            metric: 'CAPSTONE-500-TELEMETRY',
+            status: 'GOLD_SEALED',
+            lat: '0.00ms'
+          };
+          setEventStream(prev => [newEvt, ...prev.slice(0, 4)]);
+        }, 1000);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#EAB308]/40 pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937] shadow-[0_0_30px_rgba(234,179,8,0.12)]">
+              <div className="flex items-center gap-3">
+                <div className="w-3.5 h-3.5 rounded-full bg-[#EAB308] animate-pulse shadow-[0_0_12px_#EAB308]" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#EAB308] uppercase">HISTORIC CAPSTONE // CHASSIS #500</span>
+                    <span className="text-[10px] bg-[#EAB308]/20 border border-[#EAB308]/40 text-[#FACC15] px-2 py-0.5 rounded font-mono font-bold">GF-T2-VALUATION-500</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2 uppercase">
+                    CHASSIS-VALUATION-500 <span className="text-xs text-[#00F0FF] font-normal">// Historic 500-Unit Gold-Plated Fleet Master Dyno</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#EAB308]/40 px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">MASTER FLEET:</span>
+                  <span className="text-[#FACC15] font-bold">500 UNITS SEALED</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#00F0FF]/40 px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">CLUSTERS:</span>
+                  <span className="text-[#00F0FF] font-bold">10 / 10 AT 50/50</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN GRID */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRIC CARDS, SVG VISUALIZER, DATA TABLE */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#EAB308]/50 p-5 rounded-xl relative overflow-hidden shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-[#EAB308]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-[#FACC15] uppercase tracking-wider font-bold">TOTAL RETAIL PRICE</span>
+                      <span className="text-xs font-mono text-[#EAB308] bg-[#EAB308]/15 px-2 py-0.5 rounded border border-[#EAB308]/30">MASTER REPLACEMENT</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">$32,450,000</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-300">Combined Standalone Agency Replacement Benchmark across all 500 upgraded chassis.</div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#00F0FF]/40 p-5 rounded-xl relative overflow-hidden shadow-[0_0_20px_rgba(0,240,255,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-[#00F0FF] uppercase tracking-wider font-bold">CERTIFIED FAIR MARKET VALUE</span>
+                      <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">ENTERPRISE APPRAISAL</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">$13,000,000</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-300">Verified mid-market enterprise appraisal benchmark across all 500 software engines.</div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG GOLD-PLATED MASTER DYNO */}
+                <div className="bg-[#0D1117] border border-[#EAB308]/40 p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#EAB308] animate-pulse" />
+                      500-UNIT HISTORIC FLEET MASTER DYNO // 10 CLUSTERS FULL PARITY
+                    </h3>
+                    <span className="text-xs font-mono font-bold text-[#EAB308] bg-[#EAB308]/15 px-2.5 py-0.5 rounded border border-[#EAB308]/30">CAPSTONE COMPLETE</span>
+                  </div>
+
+                  <div className="relative h-64 bg-[#05070B] rounded-lg border border-[#1F2937] flex items-center justify-center overflow-hidden">
+                    <svg className="w-full h-full" viewBox="0 0 700 240" fill="none">
+                      <defs>
+                        <radialGradient id="dyno-gold-glow" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stopColor="#EAB308" stopOpacity="0.25" />
+                          <stop offset="60%" stopColor="#00F0FF" stopOpacity="0.08" />
+                          <stop offset="100%" stopColor="#05070B" stopOpacity="0" />
+                        </radialGradient>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#dyno-gold-glow)" />
+
+                      {/* 10 Sealed Cluster Rings */}
+                      <g transform="translate(350, 120)">
+                        {[100, 88, 76, 64, 52, 40].map((radius, idx) => (
+                          <circle key={idx} r={radius} stroke={idx % 2 === 0 ? "#EAB308" : "#00F0FF"} strokeWidth="1" strokeOpacity={0.25 + idx * 0.08} strokeDasharray={idx % 2 === 0 ? "8,4" : "4,4"}>
+                            <animateTransform attributeName="transform" type="rotate" from={idx % 2 === 0 ? "0" : "360"} to={idx % 2 === 0 ? "360" : "0"} dur={`${16 + idx * 4}s`} repeatCount="indefinite" />
+                          </circle>
+                        ))}
+
+                        {/* F1 Monocoque Chassis Silhouette Wireframe */}
+                        <path d="M -45 -10 L -25 -22 L 25 -22 L 45 -10 L 60 0 L 45 10 L 25 22 L -25 22 L -45 10 Z" fill="#0D1117" stroke="#EAB308" strokeWidth="2.5" />
+                        <line x1="-35" y1="-30" x2="-35" y2="30" stroke="#00F0FF" strokeWidth="3" />
+                        <line x1="35" y1="-28" x2="35" y2="28" stroke="#00F0FF" strokeWidth="3" />
+                        <circle cx="0" cy="0" r="10" fill="#EAB308" className="animate-pulse" />
+                        <text y="4" fill="#05070B" fontSize="9" fontWeight="900" fontFamily="JetBrains Mono" textAnchor="middle">500</text>
+                      </g>
+
+                      {/* Laser Dyno Sweep Bar */}
+                      <line x1="120" y1="20" x2="120" y2="220" stroke="#00F0FF" strokeWidth="2" strokeOpacity="0.8">
+                        <animate attributeName="x1" from="100" to="600" dur="3s" repeatCount="indefinite" />
+                        <animate attributeName="x2" from="100" to="600" dur="3s" repeatCount="indefinite" />
+                      </line>
+
+                      {/* Telemetry Corner Badges */}
+                      <text x="50" y="45" fill="#EAB308" fontSize="12" fontWeight="bold" fontFamily="JetBrains Mono">10/10 CLUSTERS SEALED</text>
+                      <text x="50" y="65" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono">168 T1 • 168 T2 • 164 T3</text>
+                      <text x="490" y="45" fill="#00F0FF" fontSize="12" fontWeight="bold" fontFamily="JetBrains Mono">VALUATION: $32.45M</text>
+                      <text x="490" y="65" fill="#94A3B8" fontSize="10" fontFamily="JetBrains Mono">HISTORIC RETENTION: 80%</text>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* 10-CLUSTER BREAKDOWN TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center mb-1">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider">
+                      MASTER COMMERCIAL FLEET CLUSTERS (10 / 10 SEALED)
+                    </h4>
+                    <span className="text-xs font-mono font-bold text-[#EAB308]">500 / 500 TOTAL ASSETS</span>
+                  </div>
+                  <div className="overflow-x-auto max-h-56">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="sticky top-0 bg-[#0D1117]">
+                        <tr className="border-b border-[#1F2937] text-slate-500">
+                          <th className="pb-2">CLUSTER ID</th>
+                          <th className="pb-2">DOMAIN VERTICAL</th>
+                          <th className="pb-2">T1</th>
+                          <th className="pb-2">T2</th>
+                          <th className="pb-2">T3</th>
+                          <th className="pb-2 text-right">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/50">
+                        {FLEET_CLUSTERS.map(cluster => (
+                          <tr key={cluster.id} className="hover:bg-white/[0.02]">
+                            <td className="py-2 font-bold text-[#FACC15]">{cluster.id}</td>
+                            <td className="py-2 text-slate-300">{cluster.name}</td>
+                            <td className="py-2 text-[#00F0FF]">{cluster.t1}</td>
+                            <td className="py-2 text-[#FF9F0A]">{cluster.t2}</td>
+                            <td className="py-2 text-emerald-400">{cluster.t3}</td>
+                            <td className="py-2 text-right font-bold text-green-400">{cluster.status}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT 1 COLUMN: COMMERCIAL PROVENANCE & REALTIME EVENT STREAM */}
+              <div className="space-y-6">
+
+                {/* COMMERCIAL PROVENANCE CARD */}
+                <div className="bg-[#0D1117] border border-[#EAB308]/40 p-5 rounded-xl space-y-4 relative overflow-hidden shadow-[0_0_25px_rgba(234,179,8,0.1)]">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#EAB308]/10 rounded-full blur-2xl pointer-events-none" />
+
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold text-[#EAB308] uppercase tracking-widest">HISTORIC CAPSTONE SPECIFICATION</span>
+                    <h3 className="text-base font-mono font-black text-white mt-0.5">APA ASSET ACQUISITION</h3>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#EAB308] font-bold">$35,000 – $75,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL CTAS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#EAB308] hover:bg-[#FACC15] text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#EAB308]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Historic Capstone Dyno]
+                  </div>
+                </div>
+
+                {/* LIVE EVENT FEED */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-ping" />
+                      CAPSTONE TELEMETRY FEED
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">REALTIME</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {eventStream.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.metric}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-slate-300">
+                          <span className="text-[#EAB308]">{evt.status}</span>
+                          <span className="text-green-400 font-bold">{evt.lat}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<ChassisValuation500Cockpit />);
+  </script>
+</body>
+</html>

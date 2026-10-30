@@ -1,42 +1,42 @@
 {
-  "total_assets": 492,
-  "retained_floor": 394,
-  "max_apa_capacity": 98,
+  "total_assets": 500,
+  "retained_floor": 400,
+  "max_apa_capacity": 100,
   "tracks": {
-    "track_1": 164,
-    "track_2": 164,
+    "track_1": 168,
+    "track_2": 168,
     "track_3": 164
   },
   "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer (Zero Seat Tiers)",
   "valuation": {
-    "total_retail_price": 31850000,
-    "certified_fair_market_value": 12750000,
-    "wholesale_price": 8250000,
-    "walk_away_floor": 4050000
+    "total_retail_price": 32450000,
+    "certified_fair_market_value": 13000000,
+    "wholesale_price": 8400000,
+    "walk_away_floor": 4200000
   },
   "pillars": {
     "total_retail_price": {
       "label": "TOTAL RETAIL PRICE",
-      "amount_usd": 31850000,
-      "formatted": "$31,850,000",
-      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 492 upgraded chassis."
+      "amount_usd": 32450000,
+      "formatted": "$32,450,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 500 upgraded chassis."
     },
     "certified_fair_market_value": {
       "label": "CERTIFIED FAIR MARKET VALUE",
-      "amount_usd": 12750000,
-      "formatted": "$12,750,000",
-      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 492 software engines."
+      "amount_usd": 13000000,
+      "formatted": "$13,000,000",
+      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 500 software engines."
     },
     "wholesale_price": {
       "label": "WHOLESALE PRICE",
-      "amount_usd": 8250000,
-      "formatted": "$8,250,000",
+      "amount_usd": 8400000,
+      "formatted": "$8,400,000",
       "subtitle": "Institutional baseline portfolio buyout floor reflecting standard anchor tenders."
     },
     "walk_away_floor": {
       "label": "WALK-AWAY FLOOR",
-      "amount_usd": 4050000,
-      "formatted": "$4,050,000",
+      "amount_usd": 4200000,
+      "formatted": "$4,200,000",
       "subtitle": "Absolute turnkey walk-away liquidation floor for immediate full IP title transfer."
     }
   }

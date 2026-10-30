@@ -1,45 +1,45 @@
 {
-  "schema_version": "5.0.0-SCALING-MILESTONES-301",
-  "audit_timestamp": "2026-10-29T09:43:17.497Z",
+  "schema_version": "5.0.0-SCALING-MILESTONES-492",
+  "audit_timestamp": "2026-10-30T23:07:38.835Z",
   "governing_standard": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer",
   "portfolio_classification": "Sovereign Full-Stack Software Asset Vault (Zero Mock State)",
-  "active_fleet_size": 301,
+  "active_fleet_size": 492,
   "target_fleet_capacity": 500,
   "fleet_breakdown": {
-    "total_active_units": 301,
-    "tuner_hypercar_units": 137,
-    "track_1_lean_tuner": 86,
-    "track_2_hypercar_flagship": 51,
+    "total_active_units": 492,
+    "tuner_hypercar_units": 328,
+    "track_1_lean_tuner": 164,
+    "track_2_hypercar_flagship": 164,
     "track_3_reference_cores": 164,
-    "description": "301 Active Units (86 Track 1, 51 Track 2, 164 Track 3)"
+    "description": "492 Active Units (164 Track 1, 164 Track 2, 164 Track 3)"
   },
   "portfolio_valuation_pillars": {
     "retail_showroom_baseline": {
       "label": "TOTAL RETAIL PRICE",
-      "formatted": "$23,787,000",
-      "amount_usd": 23787000,
+      "formatted": "$31,850,000",
+      "amount_usd": 31850000,
       "basis": "Agency Replacement Benchmark",
-      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis."
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 492 upgraded chassis."
     },
     "certified_fair_market_value": {
       "label": "CERTIFIED FAIR MARKET VALUE",
-      "formatted": "$9,500,000",
-      "amount_usd": 9500000,
+      "formatted": "$12,750,000",
+      "amount_usd": 12750000,
       "basis": "Direct Mid-Market Appraisal",
-      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 301 software engines."
+      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 492 software engines."
     },
     "wholesale_acquisition_reserve_floor": {
       "label": "WHOLESALE PRICE",
-      "formatted": "$6,166,500",
-      "amount_usd": 6166500,
+      "formatted": "$8,250,000",
+      "amount_usd": 8250000,
       "basis": "Institutional Bulk Floor",
       "subtitle": "Institutional baseline portfolio buyout floor reflecting standard anchor tenders."
     },
     "distressed_panic_floor": {
       "label": "WALK-AWAY FLOOR",
-      "formatted": "$3,000,000",
-      "amount_usd": 3000000,
-      "basis": "Sovereign Liquidation Reserve",
+      "formatted": "$4,050,000",
+      "amount_usd": 4050000,
+      "basis": "Absolute Turnkey Walk-Away Floor",
       "subtitle": "Absolute turnkey walk-away liquidation floor for immediate full IP title transfer."
     }
   },
@@ -69,8 +69,8 @@
   },
   "retention_governance": {
     "minimum_retained_floor_pct": 80,
-    "minimum_retained_units": 241,
-    "maximum_apa_transfer_units": 60,
+    "minimum_retained_units": 394,
+    "maximum_apa_transfer_units": 98,
     "target_500_retained_units": 400,
     "target_500_apa_transfer_units": 100
   },

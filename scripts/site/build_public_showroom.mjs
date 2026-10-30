@@ -761,7 +761,7 @@ const showroomHtml = `<!DOCTYPE html>
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Aura & Grid — F1 Pit Wall Telemetry & Pure APA Title Configurator // GhostFactoryOS</title>
-  <meta name="description" content="301 Production Software Assets (86 Track 1 Lean Tuners + 51 Track 2 Hypercars + 164 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
+  <meta name="description" content="492 Production Software Assets (164 Track 1 Lean Tuners + 164 Track 2 Hypercars + 164 Track 3 Skunkworks Engines) structured strictly for Direct Asset Purchase Agreements (APA) on a dark carbon #05070B F1 Pit Wall Telemetry & 3D CAD Spec Configurator.">
   <meta name="version" content="v3.2-TELEMETRY-BLUEPRINT">
   <meta name="telemetry:sync" content="GhostFactoryOS v1.6.0 // v3.2-TELEMETRY-BLUEPRINT">
   <link rel="canonical" href="https://auraandgrid.com/">
@@ -919,11 +919,11 @@ const showroomHtml = `<!DOCTYPE html>
         <span class="hidden sm:inline-flex text-xs sm:text-sm font-mono px-2.5 py-1 rounded bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 uppercase font-bold tracking-wider">v3.2 // TELEMETRY BLUEPRINTS</span>
       </div>
 
-      <!-- Center: 251 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
+      <!-- Center: 492 VERIFIED UNITS BADGE + WORKING PROTOTYPE DEMOS BADGE -->
       <div class="flex flex-wrap items-center gap-2">
         <div class="hidden xl:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-sm sm:text-base font-bold font-mono uppercase tracking-wider">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-          <span>301 VERIFIED UNITS // TRACK 1 (86) • TRACK 2 (51) • TRACK 3 (164)</span>
+          <span>492 VERIFIED UNITS // TRACK 1 (164) • TRACK 2 (164) • TRACK 3 (164)</span>
         </div>
         <div class="px-3 py-1 text-xs sm:text-sm font-mono font-bold tracking-wider rounded border border-[#FF9F0A]/40 text-[#FF9F0A] bg-[#FF9F0A]/10 flex items-center gap-1.5">[ ⚡ WORKING PROTOTYPE DEMOS // ARCHITECTURAL FLEET ]</div>
       </div>
@@ -951,8 +951,8 @@ const showroomHtml = `<!DOCTYPE html>
       <!-- Card 1: TOTAL RETAIL PRICE -->
       <div class="p-5 sm:p-6 rounded-2xl bg-[#0A0D14] border border-cyan-500/35 flex flex-col justify-between shadow-[0_0_15px_-4px_rgba(0,240,255,0.15)]">
         <div class="text-cyan-400 text-base sm:text-lg font-bold font-mono uppercase tracking-wider mb-3">TOTAL RETAIL PRICE</div>
-        <div class="text-2xl sm:text-3xl font-bold font-mono text-cyan-300 mono-metric-crisp">$23,787,000</div>
-        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis.</div>
+        <div class="text-2xl sm:text-3xl font-bold font-mono text-cyan-300 mono-metric-crisp">$31,850,000</div>
+        <div class="text-sm font-medium text-[#E2E8F0] mt-2 leading-relaxed">Combined Standalone Agency Replacement Benchmark across all 492 upgraded chassis.</div>
       </div>
 
       <!-- Card 2: INDIVIDUAL RETAIL PRICE -->
@@ -1100,7 +1100,7 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-white/10 pb-4">
       <div>
         <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
-          VAULT INVENTORY // 301 VERIFIED UNITS
+          VAULT INVENTORY // 492 VERIFIED UNITS
         </span>
         <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight font-sans">
           Fleet Telemetry Lot
@@ -1110,16 +1110,16 @@ const showroomHtml = `<!DOCTYPE html>
       <!-- High-Tactility Track Navigation Bar -->
       <div class="flex items-center gap-2 overflow-x-auto py-1 font-mono text-xs" role="tablist">
         <button onclick="setTrackNav('track1')" id="navPill-track1" class="track-pill px-4 py-2 rounded-xl border border-emerald-400 bg-emerald-500/20 text-emerald-300 font-extrabold uppercase tracking-wider transition-all cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.4)]">
-          [ TRACK 1 // LEAN TUNER (86) ]
+          [ TRACK 1 // LEAN TUNER (164) ]
         </button>
         <button onclick="setTrackNav('track2')" id="navPill-track2" class="track-pill px-4 py-2 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-amber-300 hover:border-amber-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
-          [ TRACK 2 // HYPERCAR (51) ]
+          [ TRACK 2 // HYPERCAR (164) ]
         </button>
         <button onclick="setTrackNav('track3')" id="navPill-track3" class="track-pill px-4 py-2 rounded-xl border border-white/15 bg-[#111724] text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 font-bold uppercase tracking-wider transition-all cursor-pointer">
-          [ TRACK 3 // SKUNKWORKS (114) ]
+          [ TRACK 3 // SKUNKWORKS (164) ]
         </button>
         <button onclick="setTrackNav('all')" id="navPill-all" class="track-pill px-3 py-2 rounded-xl border border-white/10 bg-[#111724]/60 text-slate-400 hover:text-white font-medium uppercase tracking-wider transition-all cursor-pointer text-xs">
-          [ ALL LOTS (301) ]
+          [ ALL LOTS (492) ]
         </button>
       </div>
     </div>
@@ -1128,10 +1128,10 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#0A0D14] border border-white/10 rounded-xl p-3 sm:px-4 font-mono">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-        <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (86 UNITS)</span>
+        <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (164 UNITS)</span>
       </div>
       
-      <input type="text" id="searchInput" placeholder="Search 301 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
+      <input type="text" id="searchInput" placeholder="Search 492 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
     </div>
 
     <!-- Spacious 6-Unit Lot Grid (Comfortable Padding p-4 md:p-6 & Gap-6) -->
@@ -1787,10 +1787,10 @@ ${renderedCardsHtml}
       // Update lot header title
       const lotTitle = document.getElementById('activeLotHeaderTitle');
       if (lotTitle) {
-        if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (86 UNITS)';
-        else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (51 UNITS)';
-        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (114 UNITS)';
-        else lotTitle.innerText = 'ALL LOTS // 301 VERIFIED UNITS';
+        if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (164 UNITS)';
+        else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (164 UNITS)';
+        else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (164 UNITS)';
+        else lotTitle.innerText = 'ALL LOTS // 492 VERIFIED UNITS';
       }
 
       filterCards();

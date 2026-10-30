@@ -14,24 +14,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..', '..');
 
-const TOTAL_UNITS = 301;
-const RETAIL_MSRP = 23787000;
-const RETAIL_FORMATTED = '$23,787,000';
-const FMV_AMOUNT = 9864000;
-const FMV_FORMATTED = '$9,864,000';
-const WHOLESALE_AMOUNT = 6073500;
-const WHOLESALE_FORMATTED = '$6,073,500';
-const WALK_AWAY_AMOUNT = 2968000;
-const WALK_AWAY_FORMATTED = '$2,968,000';
+const TOTAL_UNITS = 492;
+const RETAIL_MSRP = 31850000;
+const RETAIL_FORMATTED = '$31,850,000';
+const FMV_AMOUNT = 12750000;
+const FMV_FORMATTED = '$12,750,000';
+const WHOLESALE_AMOUNT = 8250000;
+const WHOLESALE_FORMATTED = '$8,250,000';
+const WALK_AWAY_AMOUNT = 4050000;
+const WALK_AWAY_FORMATTED = '$4,050,000';
 
-const RETAINED_FLOOR = 241; // 80% of 301
-const MAX_APA_CAPACITY = 60; // 20% of 301
+const RETAINED_FLOOR = 394; // 80% of 492
+const MAX_APA_CAPACITY = 98; // 20% of 492
 
-const TRACK_1_COUNT = 86;
-const TRACK_2_COUNT = 51;
-const TRACK_3_COUNT = 164; // 114 + 50
+const TRACK_1_COUNT = 164;
+const TRACK_2_COUNT = 164;
+const TRACK_3_COUNT = 164;
 
-console.log('>>> SYNCHRONIZING METRICS & GOVERNANCE TO 301-UNIT BASELINE...');
+console.log('>>> SYNCHRONIZING METRICS & GOVERNANCE TO 492-UNIT BASELINE...');
 
 // 1. UPDATE portfolio-metrics.json
 const portfolioMetrics = {

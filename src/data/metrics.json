@@ -1,68 +1,43 @@
 {
-  "schema_version": "3.1.0",
-  "verified_timestamp": "2026-10-19T16:00:00Z",
-  "operating_model": "Sole Proprietorship - Direct Asset Purchase Agreement (APA)",
-  "transfer_instrument": "Turnkey Software Asset Purchase Agreement",
-  "active_fleet_size": 200,
-  "fleet_breakdown": {
-    "total_active_units": 200,
-    "tuner_hypercar_units": 137,
-    "track_1_lean_tuner": 86,
-    "track_2_hypercar_flagship": 51,
-    "track_3_reference_cores": 63,
-    "description": "200 units (86 Track 1 Full-Stack + 51 Track 2 Flagships + 63 Track 3 Reference Cores)"
+  "total_assets": 492,
+  "retained_floor": 394,
+  "max_apa_capacity": 98,
+  "tracks": {
+    "track_1": 164,
+    "track_2": 164,
+    "track_3": 164
   },
-  "portfolio_valuation_pillars": {
-    "retail_showroom_baseline": {
-      "pillar_id": "Pillar 01",
-      "label": "TOTAL INTEGRATED PORTFOLIO // 200 Upgraded Chassis + Ghost Factory Toolchain",
-      "formatted": ",650,000",
-      "amount_usd": 6650000,
-      "subtitle": "TOTAL INTEGRATED PORTFOLIO // 200 Upgraded Chassis + Ghost Factory Toolchain"
+  "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer (Zero Seat Tiers)",
+  "valuation": {
+    "total_retail_price": 31850000,
+    "certified_fair_market_value": 12750000,
+    "wholesale_price": 8250000,
+    "walk_away_floor": 4050000
+  },
+  "pillars": {
+    "total_retail_price": {
+      "label": "TOTAL RETAIL PRICE",
+      "amount_usd": 31850000,
+      "formatted": "$31,850,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 492 upgraded chassis."
     },
-    "capitalized_build_cost_asc_350_40": {
-      "pillar_id": "Pillar 02",
-      "label": "ASC 350-40 Audited Full-Stack Replacement Baseline",
-      "formatted": ",200,000",
-      "amount_usd": 4200000,
-      "subtitle": "ASC 350-40 Audited Full-Stack Replacement Baseline"
+    "certified_fair_market_value": {
+      "label": "CERTIFIED FAIR MARKET VALUE",
+      "amount_usd": 12750000,
+      "formatted": "$12,750,000",
+      "subtitle": "Verified mid-market enterprise appraisal benchmark across all 492 software engines."
     },
-    "wholesale_acquisition_reserve_floor": {
-      "pillar_id": "Pillar 03",
-      "label": "Integrated Reserve Price (~49% Bulk Asset Discount)",
-      "formatted": ",240,000",
-      "amount_usd": 3240000,
-      "subtitle": "Integrated Reserve Price (~49% Bulk Asset Discount)"
+    "wholesale_price": {
+      "label": "WHOLESALE PRICE",
+      "amount_usd": 8250000,
+      "formatted": "$8,250,000",
+      "subtitle": "Institutional baseline portfolio buyout floor reflecting standard anchor tenders."
     },
-    "distressed_panic_floor": {
-      "pillar_id": "Pillar 04",
-      "label": "Absolute Turnkey Walk-Away Floor",
-      "formatted": ",000,000",
-      "amount_usd": 2000000,
-      "subtitle": "Absolute Turnkey Walk-Away Floor"
+    "walk_away_floor": {
+      "label": "WALK-AWAY FLOOR",
+      "amount_usd": 4050000,
+      "formatted": "$4,050,000",
+      "subtitle": "Absolute turnkey walk-away liquidation floor for immediate full IP title transfer."
     }
-  },
-  "portfolio_sub_breakout": {
-    "upgraded_fleet_alone": {
-      "label": "Upgraded Fleet Alone",
-      "msrp": ".45M MSRP",
-      "wholesale_floor": ".69M Wholesale Floor",
-      "amount_msrp_usd": 5450000,
-      "amount_wholesale_floor_usd": 2690000,
-      "description": "200 Upgraded Chassis (86 Track 1 + 51 Track 2 + 63 Track 3)"
-    },
-    "ghost_factory_toolchain": {
-      "label": "Ghost Factory Toolchain",
-      "msrp": ".20M MSRP",
-      "wholesale_floor": "k Wholesale Floor",
-      "amount_msrp_usd": 1200000,
-      "amount_wholesale_floor_usd": 550000,
-      "description": "Proprietary OS, Factory CLI, Universal Telemetry Harness, Ingestion Pipelines & Build Matrix"
-    }
-  },
-  "retention_governance": {
-    "minimum_retained_floor_pct": 80,
-    "minimum_retained_units": 160,
-    "maximum_apa_transfer_units": 40
   }
 }

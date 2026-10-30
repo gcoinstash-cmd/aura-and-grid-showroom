@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HYPER-COMPACT // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const SERIALIZERS = [
+      { name: 'FLATBUFFERS', encodeTime: '0.04µs', decodeTime: '0.00µs (zero-copy)', memory: '64 B', l1Miss: '0.04%', speedup: '32.4x', status: 'OPTIMAL' },
+      { name: 'CAPN_PROTO', encodeTime: '0.08µs', decodeTime: '0.00µs (zero-copy)', memory: '80 B', l1Miss: '0.06%', speedup: '28.1x', status: 'OPTIMAL' },
+      { name: 'APACHE_ARROW', encodeTime: '0.12µs', decodeTime: '0.02µs (columnar)', memory: '96 B', l1Miss: '0.09%', speedup: '21.0x', status: 'OPTIMAL' },
+      { name: 'PROTOBUF_V3', encodeTime: '0.85µs', decodeTime: '0.92µs (parsing)', memory: '240 B', l1Miss: '1.42%', speedup: '4.2x', status: 'NOMINAL' },
+      { name: 'JSON_STANDARD', encodeTime: '3.40µs', decodeTime: '4.10µs (string)', memory: '1024 B', l1Miss: '8.80%', speedup: '1.0x (base)', status: 'HIGH_OVERHEAD' }
+    ];
+
+    function HyperCompactCockpit() {
+      const [activeSerializer, setActiveSerializer] = useState('FLATBUFFERS');
+      const [throughputGbps, setThroughputGbps] = useState(14.8);
+      const [zeroCopyRatio, setZeroCopyRatio] = useState(100);
+      const [bufferLogs, setBufferLogs] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setThroughputGbps(Number((14.4 + Math.random() * 0.8).toFixed(1)));
+
+          const schemas = ['TelemetryPacket', 'OrderBookUpdate', 'AuditLogEntry', 'GpsCoordinateTuple', 'SensorMatrixArray'];
+          const actions = [
+            'BUFFER_POINTER_OFFHEAP_ALIGNED',
+            'ZERO_COPY_TRAVERSAL_COMPLETE',
+            'SIMD_VECTOR_DESERIALIZATION',
+            'NO_HEAP_ALLOCATION_VERIFIED',
+            'CACHE_LINE_PREFETCH_SUCCESS'
+          ];
+
+          const schema = schemas[Math.floor(Math.random() * schemas.length)];
+          const act = actions[Math.floor(Math.random() * actions.length)];
+
+          const newLog = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            schema,
+            act
+          };
+
+          setBufferLogs(prev => [newLog, ...prev.slice(0, 5)]);
+        }, 850);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      const selectSerializer = (name) => {
+        setActiveSerializer(name);
+        if (name === 'JSON_STANDARD') {
+          setThroughputGbps(1.2);
+          setZeroCopyRatio(0);
+        } else if (name === 'PROTOBUF_V3') {
+          setThroughputGbps(4.8);
+          setZeroCopyRatio(0);
+        } else {
+          setThroughputGbps(14.8);
+          setZeroCopyRatio(100);
+        }
+      };
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-HYPER-10</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                    HYPER-COMPACT <span className="text-xs text-[#FF9F0A] font-normal">// ZERO-COPY MEMORY SERIALIZATION PROFILER</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">MEMORY ARCH:</span>
+                  <span className="text-green-400 font-bold">DIRECT OFF-HEAP SLICES</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">GC PRESSURE:</span>
+                  <span className="text-[#00F0FF] font-bold">0.00 B HEAP ALLOC</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN TELEMETRY LAYOUT */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRICS, PROFILER MATRIX, BENCHMARKS */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">SERIALIZATION THROUGHPUT</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">MEMORY BUS</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{throughputGbps}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">GB/s</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>PROFILE: {activeSerializer}</span>
+                      <span className="text-green-400">LINE RATE SATURATION</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">ZERO-COPY PASSTHROUGH</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">NO COPY/PARSE</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{zeroCopyRatio}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">%</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>L1 CACHE MISS: 0.04%</span>
+                      <span className="text-green-400">SIMD ALIGNED</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ANIMATED BUFFER MEMORY SLICE POOL */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      OFF-HEAP BYTE BUFFER SLICE TRAVERSAL
+                    </h3>
+                    <span className="text-xs font-mono text-[#00F0FF]">DIRECT POINTER READ</span>
+                  </div>
+
+                  <div className="bg-[#05070B] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                    <div className="flex justify-between text-xs font-mono">
+                      <span className="text-slate-400">64-BYTE ALIGNED STRUCT</span>
+                      <span className="text-green-400 font-bold">VTABLE_OFFSET: 0x0004</span>
+                    </div>
+
+                    <div className="grid grid-cols-8 gap-1.5 text-center font-mono text-[10px]">
+                      {['HDR', 'LEN', 'VTB', 'PTR1', 'PTR2', 'FLD1', 'FLD2', 'CRC'].map((block, idx) => (
+                        <div key={idx} className="p-2 rounded bg-[#0D1117] border border-[#00F0FF]/40 text-[#00F0FF] font-bold">
+                          {block}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="text-[10px] font-mono text-slate-500 text-center">
+                      Buffer Address: 0x7ffd98b42000 // In-place dereference with zero memory allocation
+                    </div>
+                  </div>
+                </div>
+
+                {/* BENCHMARK COMPARISON TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      SERIALIZATION BENCHMARK MATRIX
+                    </h3>
+                    <div className="flex gap-1 text-xs font-mono">
+                      {['FLATBUFFERS', 'CAPN_PROTO', 'APACHE_ARROW', 'PROTOBUF_V3', 'JSON_STANDARD'].map(name => (
+                        <button
+                          key={name}
+                          onClick={() => selectSerializer(name)}
+                          className={`px-2 py-1 rounded text-[10px] font-bold transition-colors ${
+                            activeSerializer === name
+                              ? 'bg-[#00F0FF] text-black'
+                              : 'bg-[#05070B] text-slate-400 hover:text-white border border-[#1F2937]'
+                          }`}
+                        >
+                          {name.split('_')[0]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="bg-[#05070B] text-slate-400 border-b border-[#1F2937]">
+                        <tr>
+                          <th className="py-2.5 px-3">FORMAT</th>
+                          <th className="py-2.5 px-3">ENCODE</th>
+                          <th className="py-2.5 px-3">DECODE</th>
+                          <th className="py-2.5 px-3">PAYLOAD</th>
+                          <th className="py-2.5 px-3">L1 MISS</th>
+                          <th className="py-2.5 px-3">SPEEDUP</th>
+                          <th className="py-2.5 px-3">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/60">
+                        {SERIALIZERS.map(s => (
+                          <tr
+                            key={s.name}
+                            className={`transition-colors ${activeSerializer === s.name ? 'bg-[#00F0FF]/10' : 'hover:bg-[#05070B]/50'}`}
+                          >
+                            <td className="py-2.5 px-3 text-white font-bold">{s.name}</td>
+                            <td className="py-2.5 px-3 text-[#00F0FF]">{s.encodeTime}</td>
+                            <td className="py-2.5 px-3 text-green-400 font-bold">{s.decodeTime}</td>
+                            <td className="py-2.5 px-3 text-slate-300">{s.memory}</td>
+                            <td className="py-2.5 px-3 text-slate-400">{s.l1Miss}</td>
+                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{s.speedup}</td>
+                            <td className="py-2.5 px-3">
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                                s.status === 'OPTIMAL' ? 'bg-green-500/10 text-green-400 border-green-500/30' :
+                                s.status === 'NOMINAL' ? 'bg-[#00F0FF]/10 text-[#00F0FF] border-[#00F0FF]/30' :
+                                'bg-red-500/10 text-red-400 border-red-500/30'
+                              }`}>
+                                {s.status}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: MONRONEY SPEC CARD & BUFFER LOG */}
+              <div className="space-y-6">
+
+                {/* TRACK 2 MONRONEY COMMERCIAL SPECIFICATION */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#FF9F0A] uppercase">DEALERSHIP MONRONEY SPEC</span>
+                    <h3 className="text-lg font-black font-mono text-white">HYPER-COMPACT</h3>
+                    <p className="text-xs text-slate-400">Zero-Copy Memory Serialization Profiler</p>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">CHASSIS ID</span>
+                      <span className="text-white font-bold">GF-T2-HYPER-10</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE BUFFER DISPATCH STREAM */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE BUFFER ALLOCATION STREAM
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">OFF-HEAP FEED</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {bufferLogs.map((log) => (
+                      <div key={log.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{log.schema}</span>
+                          <span className="text-slate-500">{log.time}</span>
+                        </div>
+                        <div className="text-[#00F0FF] text-[10px]">
+                          {log.act}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<HyperCompactCockpit />);
+  </script>
+</body>
+</html>

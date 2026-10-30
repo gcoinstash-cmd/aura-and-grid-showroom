@@ -1,42 +1,42 @@
 {
-  "total_assets": 301,
-  "retained_floor": 241,
-  "max_apa_capacity": 60,
+  "total_assets": 492,
+  "retained_floor": 394,
+  "max_apa_capacity": 98,
   "tracks": {
-    "track_1": 86,
-    "track_2": 51,
+    "track_1": 164,
+    "track_2": 164,
     "track_3": 164
   },
   "valuation_basis": "Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer (Zero Seat Tiers)",
   "valuation": {
-    "total_retail_price": 23787000,
-    "certified_fair_market_value": 9500000,
-    "wholesale_price": 6166500,
-    "walk_away_floor": 3000000
+    "total_retail_price": 23079000,
+    "certified_fair_market_value": 10496000,
+    "wholesale_price": 8213900,
+    "walk_away_floor": 8213900
   },
   "pillars": {
     "total_retail_price": {
       "label": "TOTAL RETAIL PRICE",
-      "amount_usd": 23787000,
-      "formatted": "$23,787,000",
-      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 301 upgraded chassis."
+      "amount_usd": 23079000,
+      "formatted": "$23,079,000",
+      "subtitle": "Combined Standalone Agency Replacement Benchmark across all 492 upgraded chassis."
     },
     "certified_fair_market_value": {
       "label": "CERTIFIED FAIR MARKET VALUE",
-      "amount_usd": 9500000,
-      "formatted": "$9,500,000",
-      "subtitle": "Direct Mid-Market Appraisal"
+      "amount_usd": 10496000,
+      "formatted": "$10,496,000",
+      "subtitle": "Grand Total Garage Valuation Floor Anchor"
     },
     "wholesale_price": {
       "label": "WHOLESALE PRICE",
-      "amount_usd": 6166500,
-      "formatted": "$6,166,500",
-      "subtitle": "Institutional Bulk Floor"
+      "amount_usd": 8213900,
+      "formatted": "$8,213,900",
+      "subtitle": "Institutional Wholesale Reserve Floor"
     },
     "walk_away_floor": {
       "label": "WALK-AWAY FLOOR",
-      "amount_usd": 3000000,
-      "formatted": "$3,000,000",
+      "amount_usd": 8213900,
+      "formatted": "$8,213,900",
       "subtitle": "Sovereign Liquidation Reserve"
     }
   }

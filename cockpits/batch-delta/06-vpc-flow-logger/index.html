@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPC-FLOW-LOGGER // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased select-none">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const INITIAL_ITEMS = [
+  {
+    "id": "FLOW-01",
+    "src": "10.0.1.44:5432",
+    "dst": "10.0.2.89:48102",
+    "proto": "TCP",
+    "bytes": "4.8 GB",
+    "action": "ACCEPT"
+  },
+  {
+    "id": "FLOW-02",
+    "src": "198.51.100.9:443",
+    "dst": "10.0.1.10:8080",
+    "proto": "TCP",
+    "bytes": "12.4 MB",
+    "action": "ACCEPT"
+  },
+  {
+    "id": "FLOW-03",
+    "src": "203.0.113.77:22",
+    "dst": "10.0.1.4:22",
+    "proto": "TCP",
+    "bytes": "64 B",
+    "action": "REJECT"
+  },
+  {
+    "id": "FLOW-04",
+    "src": "10.0.3.15:9092",
+    "dst": "10.0.2.11:51200",
+    "proto": "TCP",
+    "bytes": "1.2 GB",
+    "action": "ACCEPT"
+  },
+  {
+    "id": "FLOW-05",
+    "src": "192.0.2.88:123",
+    "dst": "10.0.0.1:123",
+    "proto": "UDP",
+    "bytes": "128 B",
+    "action": "REJECT"
+  }
+];
+
+    function VpcFlowLoggerCockpit() {
+      const [filter, setFilter] = useState('ALL');
+      const [pulsePhase, setPulsePhase] = useState(0);
+      const [val1, setVal1] = useState("8.4");
+      const [val2, setVal2] = useState("0.02");
+      const [eventStream, setEventStream] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setPulsePhase(p => (p + 1) % 100);
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            metric: 'VPC-FLOW-LOGGER',
+            status: 'HEALTHY',
+            lat: (0.2 + Math.random() * 0.8).toFixed(2) + 'ms'
+          };
+          setEventStream(prev => [newEvt, ...prev.slice(0, 4)]);
+        }, 1000);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-VPC-06</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2 uppercase">
+                    VPC-FLOW-LOGGER <span className="text-xs text-[#FF9F0A] font-normal">// Packet Matrix & Security Group Traffic Flow</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">TELEMETRY:</span>
+                  <span className="text-green-400 font-bold">100% OPERATIONAL</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">CLASS:</span>
+                  <span className="text-[#00F0FF] font-bold">SCADA TIER-1</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN GRID */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRIC CARDS, SVG VISUALIZER, DATA TABLE */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">PACKET THROUGHPUT</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">LIVE HUD</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{val1}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">Mpps</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-400">ACCEPTED: 99.8%</div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">REJECTED FLOW RATIO</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">BENCHMARK</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{val2}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">%</span>
+                    </div>
+                    <div className="mt-4 text-xs font-mono text-slate-400">SG VIOLATIONS: 142/s</div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG VISUALIZER */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      VPC-FLOW-LOGGER // REALTIME SCADA TELEMETRY CANVASES
+                    </h3>
+                    <span className="text-xs font-mono text-slate-400">ACTIVE WAVEFORM</span>
+                  </div>
+
+                  <div className="relative h-64 bg-[#05070B] border border-[#1F2937] rounded-xl flex items-center justify-center overflow-hidden">
+                    
+        <svg className="w-full h-full" viewBox="0 0 600 240">
+          <line x1="50" y1="60" x2="550" y2="60" stroke="#1F2937" strokeWidth="2" />
+          <line x1="50" y1="120" x2="550" y2="120" stroke="#1F2937" strokeWidth="2" />
+          <line x1="50" y1="180" x2="550" y2="180" stroke="#1F2937" strokeWidth="2" />
+          {/* Animated packets */}
+          <circle cx={50 + ((pulsePhase * 5) % 500)} cy="60" r="5" fill="#00F0FF" />
+          <circle cx={100 + ((pulsePhase * 7) % 450)} cy="120" r="4" fill="#FF9F0A" />
+          <circle cx={70 + ((pulsePhase * 4) % 480)} cy="180" r="6" fill="#22C55E" />
+          <text x="60" y="45" fill="#94A3B8" fontSize="8" fontFamily="monospace">SUBNET-A (10.0.1.0/24)</text>
+          <text x="60" y="105" fill="#94A3B8" fontSize="8" fontFamily="monospace">SUBNET-B (10.0.2.0/24)</text>
+          <text x="60" y="165" fill="#94A3B8" fontSize="8" fontFamily="monospace">EGRESS-GW (NAT)</text>
+        </svg>
+      
+                  </div>
+                </div>
+
+                {/* INTERACTIVE ROWS TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] rounded-xl overflow-hidden">
+                  <div className="px-5 py-3.5 border-b border-[#1F2937] flex justify-between items-center bg-[#090D14]">
+                    <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">TELEMETRY MATRIX ROW DISPATCH</span>
+                    <span className="text-[11px] font-mono text-slate-400">{INITIAL_ITEMS.length} REGISTERED TARGETS</span>
+                  </div>
+                  <div className="divide-y divide-[#1F2937]/60 text-xs font-mono">
+                    {INITIAL_ITEMS.map((item, idx) => (
+                      <div key={idx} className="p-3.5 flex items-center justify-between hover:bg-[#121721] transition-colors">
+                        <div className="flex items-center gap-3">
+                          <span className="text-[#00F0FF] font-bold">{item.id}</span>
+                          <span className="text-slate-200 truncate max-w-[280px]">{item.rule || item.principal || item.target || item.domain || item.userAgent || item.src || item.sidecar || item.asn || item.node || item.az || item.relation || item.type || item.tier || item.group || item.engine || item.reason || item.name || item.endpoint}</span>
+                        </div>
+                        <div className="flex items-center gap-4 text-slate-400">
+                          <span>{item.action || item.status || item.state || item.rating || item.duration || item.total || item.egress || item.lag || item.ratio || item.score}</span>
+                          <span className="text-green-400 font-bold">{item.latency || item.p99 || item.rtt || item.avgDuration || item.warmRtt || '0.4ms'}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT 1 COLUMN: COMMERCIAL PROVENANCE & REALTIME EVENT STREAM */}
+              <div className="space-y-6">
+
+                {/* COMMERCIAL PROVENANCE CARD */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#00F0FF]/5 rounded-full blur-2xl pointer-events-none" />
+
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold text-[#00F0FF] uppercase tracking-widest">COMMERCIAL SPECIFICATION</span>
+                    <h3 className="text-base font-mono font-black text-white mt-0.5">APA ASSET ACQUISITION</h3>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL CTAS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE EVENT FEED */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE TELEMETRY FEED
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">REALTIME</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {eventStream.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.metric}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-slate-300">
+                          <span className="text-[#00F0FF]">{evt.status}</span>
+                          <span className="text-green-400 font-bold">{evt.lat}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<VpcFlowLoggerCockpit />);
+  </script>
+</body>
+</html>

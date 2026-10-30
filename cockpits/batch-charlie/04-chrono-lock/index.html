@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHRONO-LOCK // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const INITIAL_LEASES = [
+      { key: 'lock:billing:batch:991', holder: 'worker-node-04', ttlSec: 18, maxTtl: 30, contention: 2, consensus: 'RAFT-3/3', state: 'HELD' },
+      { key: 'lock:sku:inventory:5502', holder: 'api-checkout-01', ttlSec: 4, maxTtl: 10, contention: 8, consensus: 'REDLOCK-5/5', state: 'CONTENTION' },
+      { key: 'lock:ledger:reconcile', holder: 'cron-settle-02', ttlSec: 45, maxTtl: 60, contention: 0, consensus: 'RAFT-3/3', state: 'HELD' },
+      { key: 'lock:cluster:failover', holder: 'leader-elector-01', ttlSec: 12, maxTtl: 15, contention: 1, consensus: 'ETCD-QUORUM', state: 'HELD' },
+      { key: 'lock:schema:ddl:deploy', holder: 'ci-migrator-03', ttlSec: 2, maxTtl: 20, contention: 4, consensus: 'RAFT-3/3', state: 'EXPIRING' }
+    ];
+
+    function ChronoLockCockpit() {
+      const [leases, setLeases] = useState(INITIAL_LEASES);
+      const [contentionFilter, setContentionFilter] = useState('ALL');
+      const [lockLatency, setLockLatency] = useState(0.85);
+      const [activeLocksCount, setActiveLocksCount] = useState(1480);
+      const [leaseEvents, setLeaseEvents] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setLockLatency(Number((0.75 + Math.random() * 0.25).toFixed(2)));
+          setActiveLocksCount(prev => prev + Math.floor((Math.random() - 0.5) * 20));
+
+          setLeases(prev => prev.map(l => {
+            const nextTtl = l.ttlSec <= 1 ? l.maxTtl : l.ttlSec - 1;
+            const state = nextTtl < 3 ? 'EXPIRING' : (l.contention > 4 ? 'CONTENTION' : 'HELD');
+            return { ...l, ttlSec: nextTtl, state };
+          }));
+
+          const holders = ['worker-node-04', 'api-checkout-01', 'cron-settle-02', 'leader-elector-01', 'ci-migrator-03'];
+          const actions = ['ACQUIRED (FENCE-ID: 4819)', 'HEARTBEAT_RENEWED', 'RELEASED_CLEAN', 'EXTENDED_TTL (OK)', 'MUTEX_QUEUED (WAIT)'];
+
+          const holder = holders[Math.floor(Math.random() * holders.length)];
+          const act = actions[Math.floor(Math.random() * actions.length)];
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            holder,
+            act,
+            isWait: act.includes('WAIT')
+          };
+
+          setLeaseEvents(prev => [newEvt, ...prev.slice(0, 5)]);
+        }, 1000);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      const extendAllTtl = () => {
+        setLeases(prev => prev.map(l => ({ ...l, ttlSec: l.maxTtl, state: 'HELD' })));
+      };
+
+      const filteredLeases = contentionFilter === 'ALL'
+        ? leases
+        : leases.filter(l => l.state === contentionFilter);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-CHRONO-04</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                    CHRONO-LOCK <span className="text-xs text-[#FF9F0A] font-normal">// DISTRIBUTED LEASE & MUTEX DEADLOCK MONITOR</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">CONSENSUS:</span>
+                  <span className="text-green-400 font-bold">RAFT + REDLOCK QUORUM</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">DEADLOCK RISK:</span>
+                  <span className="text-[#00F0FF] font-bold">0.00% (DAG VERIFIED)</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN TELEMETRY LAYOUT */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRICS, LEASE TIMERS, ACTIVE LEASES TABLE */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">ACQUISITION LATENCY</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">SUB-MILLI</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{lockLatency}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">ms</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>ACTIVE LEASES: {activeLocksCount.toLocaleString()}</span>
+                      <span className="text-green-400">FENCING: STRICT MONOTONIC</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">MUTEX CONTENTION INDEX</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">FAIR FIFO</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">3.2</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">waiters/lock</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>STARVATION: ZERO</span>
+                      <button onClick={extendAllTtl} className="text-[#FF9F0A] hover:underline font-bold">
+                        ⚡ RENEW ALL LEASES
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG LEASE HORIZON & CONTENTION BARS */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      DISTRIBUTED LEASE TTL COUNTDOWN & EXPIRATION HORIZON
+                    </h3>
+                    <span className="text-xs font-mono text-slate-400">HEARTBEAT: 1.0s TICK</span>
+                  </div>
+
+                  <div className="space-y-3 bg-[#05070B] border border-[#1F2937] p-5 rounded-xl">
+                    {leases.map(l => {
+                      const pct = Math.floor((l.ttlSec / l.maxTtl) * 100);
+                      return (
+                        <div key={l.key} className="space-y-1">
+                          <div className="flex justify-between text-xs font-mono">
+                            <span className="text-white font-bold">{l.key}</span>
+                            <span className="text-slate-400">
+                              TTL: <span className="text-[#00F0FF] font-bold">{l.ttlSec}s</span> / {l.maxTtl}s ({pct}%)
+                            </span>
+                          </div>
+                          <div className="w-full h-2.5 bg-[#0D1117] rounded-full border border-[#1F2937] overflow-hidden">
+                            <div
+                              className={`h-full transition-all duration-500 rounded-full ${
+                                pct < 20 ? 'bg-red-400' : (pct < 50 ? 'bg-[#FF9F0A]' : 'bg-[#00F0FF]')
+                              }`}
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* DISTRIBUTED LEASE DIRECTORY TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      ACTIVE LEASE QUORUM TABLE ({filteredLeases.length})
+                    </h3>
+                    <div className="flex gap-1 text-xs font-mono">
+                      {['ALL', 'HELD', 'CONTENTION', 'EXPIRING'].map(st => (
+                        <button
+                          key={st}
+                          onClick={() => setContentionFilter(st)}
+                          className={`px-2.5 py-1 rounded text-[11px] font-bold transition-colors ${
+                            contentionFilter === st
+                              ? 'bg-[#00F0FF] text-black'
+                              : 'bg-[#05070B] text-slate-400 hover:text-white border border-[#1F2937]'
+                          }`}
+                        >
+                          {st}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="bg-[#05070B] text-slate-400 border-b border-[#1F2937]">
+                        <tr>
+                          <th className="py-2.5 px-3">RESOURCE KEY</th>
+                          <th className="py-2.5 px-3">HOLDER</th>
+                          <th className="py-2.5 px-3">CONSENSUS</th>
+                          <th className="py-2.5 px-3">TTL</th>
+                          <th className="py-2.5 px-3">WAITERS</th>
+                          <th className="py-2.5 px-3">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/60">
+                        {filteredLeases.map(l => (
+                          <tr key={l.key} className="hover:bg-[#05070B]/50 transition-colors">
+                            <td className="py-2.5 px-3 text-white font-bold">{l.key}</td>
+                            <td className="py-2.5 px-3 text-[#00F0FF]">{l.holder}</td>
+                            <td className="py-2.5 px-3 text-slate-300">{l.consensus}</td>
+                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{l.ttlSec}s</td>
+                            <td className="py-2.5 px-3 text-slate-400">{l.contention}</td>
+                            <td className="py-2.5 px-3">
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                                l.state === 'HELD' ? 'bg-green-500/10 text-green-400 border-green-500/30' :
+                                l.state === 'CONTENTION' ? 'bg-[#FF9F0A]/10 text-[#FF9F0A] border-[#FF9F0A]/30' :
+                                'bg-red-500/10 text-red-400 border-red-500/30'
+                              }`}>
+                                {l.state}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: MONRONEY SPEC CARD & LEASE EVENT STREAM */}
+              <div className="space-y-6">
+
+                {/* TRACK 2 MONRONEY COMMERCIAL SPECIFICATION */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#FF9F0A] uppercase">DEALERSHIP MONRONEY SPEC</span>
+                    <h3 className="text-lg font-black font-mono text-white">CHRONO-LOCK</h3>
+                    <p className="text-xs text-slate-400">Distributed Lease & Mutex Deadlock Monitor</p>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">CHASSIS ID</span>
+                      <span className="text-white font-bold">GF-T2-CHRONO-04</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE LEASE MUTEX STREAM */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE DISTRIBUTED LOCK LOG
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">REDLOCK STREAM</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {leaseEvents.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.holder}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className={`font-bold ${evt.isWait ? 'text-[#FF9F0A]' : 'text-green-400'}`}>
+                            {evt.act}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<ChronoLockCockpit />);
+  </script>
+</body>
+</html>

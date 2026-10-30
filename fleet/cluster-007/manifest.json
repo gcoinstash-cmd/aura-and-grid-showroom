@@ -1,0 +1,158 @@
+{
+  "cluster_id": "CLUSTER-007",
+  "cohort_name": "Cluster-007 (High-Velocity Utility Swarm & Forward Staging)",
+  "track": "Track 1 — Lean Tuner",
+  "commercial_protocol": "100% Pure APA Buyout Title Transfer (Zero Licenses)",
+  "action_target": "ACQUIRE TITLE (APA)",
+  "retail_price_anchor_usd": 4500,
+  "exclusive_buyout_floor_usd": 3800,
+  "exclusive_buyout_ceiling_usd": 6500,
+  "total_units_fabricated": 16,
+  "dyno_verification_status": "ALL_GREEN_PASSED",
+  "units": [
+    {
+      "unit_id": "GF-T1-303",
+      "name": "JSON/CSV Telemetry Stream Normalizer",
+      "path": "units/303-telemetry-normalizer",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "290,000+ records/sec (3.44 µs/record)"
+    },
+    {
+      "unit_id": "GF-T1-304",
+      "name": "Ed25519 Token Signer & Verification Rig",
+      "path": "units/304-ed25519-token-rig",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "11,000+ ops/sec (81.1 µs sign / 98.4 µs verify)"
+    },
+    {
+      "unit_id": "GF-T1-305",
+      "name": "Regex Pattern Shield & Sanitizer",
+      "path": "units/305-regex-pattern-shield",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "68,000+ checks/sec (14.6 µs/check)"
+    },
+    {
+      "unit_id": "GF-T1-306",
+      "name": "Markdown Vault Metadata Extractor & Formatter",
+      "path": "units/306-markdown-metadata-extractor",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "100,000 docs/sec (10.0 µs/doc)"
+    },
+    {
+      "unit_id": "GF-T1-307",
+      "name": "Cron-Ready HTTP Ping & Uptime Telemetry Beacon",
+      "path": "units/307-uptime-beacon",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "Sub-millisecond internal processing overhead"
+    },
+    {
+      "unit_id": "GF-T1-308",
+      "name": "Base64 / Hex Telemetry Packet Encoder",
+      "path": "units/308-telemetry-packet-encoder",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "120,000+ ops/sec (8.33 µs/packet)"
+    },
+    {
+      "unit_id": "GF-T1-309",
+      "name": "Semantic Version Semver Resolver & Bumper",
+      "path": "units/309-semver-resolver-bumper",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "314,000+ ops/sec (3.18 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-310",
+      "name": "Fast SHA-256 Checksum Integrity Guard",
+      "path": "units/310-sha256-checksum-guard",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "61,000+ ops/sec (16.32 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-311",
+      "name": "Exponential Backoff Retry Dispatcher",
+      "path": "units/311-retry-dispatcher",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "3,200,000+ ops/sec (0.30 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-312",
+      "name": "JSON Schema Type Validator Rig",
+      "path": "units/312-json-schema-validator",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "299,000+ ops/sec (3.34 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-313",
+      "name": "ANSI Terminal Telemetry Colorizer & Formatter",
+      "path": "units/313-ansi-telemetry-colorizer",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "367,000+ ops/sec (2.72 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-314",
+      "name": "Nano-ID Cryptographic Identifier Generator",
+      "path": "units/314-nanoid-generator",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "872,000+ ops/sec (1.15 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-315",
+      "name": "URL Query Parameter Serializer & Parser",
+      "path": "units/315-url-query-serializer",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "134,000+ ops/sec (7.46 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-316",
+      "name": "Memory RSS Footprint Sampler Beacon",
+      "path": "units/316-memory-sampler-beacon",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "292,000+ ops/sec (3.42 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-317",
+      "name": "ISO 8601 Timestamp Normalizer & Drift Checker",
+      "path": "units/317-timestamp-drift-checker",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "335,000+ ops/sec (2.98 µs/op)"
+    },
+    {
+      "unit_id": "GF-T1-318",
+      "name": "Key-Value In-Memory LRU Cache Cache-Box",
+      "path": "units/318-lru-cache-box",
+      "engine": "engine.js",
+      "test": "test.js",
+      "readme": "README.md",
+      "benchmark": "1,350,000+ ops/sec (0.74 µs/op)"
+    }
+  ]
+}

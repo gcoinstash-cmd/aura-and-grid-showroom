@@ -1,0 +1,311 @@
+import React, { useState, useEffect } from 'react';
+
+const SCHEDULED_TASKS = [
+  { id: 'JOB-SYNC-01', name: 'Telemetry Pulse Beacon', cron: '*/5 * * * * *', type: 'HIGH-FREQ', status: 'RUNNING', avgDuration: '14ms', nextRun: '2s' },
+  { id: 'JOB-ROLL-02', name: 'KMS Epoch Key Rotator', cron: '0 * * * *', type: 'BATCH-CRON', status: 'QUEUED', avgDuration: '120ms', nextRun: '34m' },
+  { id: 'JOB-PURG-03', name: 'LRU Cache Pruner', cron: '*/30 * * * * *', type: 'HIGH-FREQ', status: 'NOMINAL', avgDuration: '4.2ms', nextRun: '18s' },
+  { id: 'JOB-AGGR-04', name: 'Cluster Telemetry Rollover', cron: '0 0 * * *', type: 'BATCH-CRON', status: 'STANDBY', avgDuration: '1,420ms', nextRun: '11h' },
+  { id: 'JOB-AUDT-05', name: 'NIST SSDF Signature Sweep', cron: '0 */6 * * *', type: 'BATCH-CRON', status: 'NOMINAL', avgDuration: '340ms', nextRun: '2h 15m' }
+];
+
+export default function ChronoPulseCockpit() {
+  const [filterType, setFilterType] = useState('ALL');
+  const [jitterMs, setJitterMs] = useState(1.8);
+  const [activeWorkers, setActiveWorkers] = useState(14);
+  const [executionLogs, setExecutionLogs] = useState([]);
+  const [tickEpoch, setTickEpoch] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTickEpoch(prev => (prev + 1) % 60);
+      setJitterMs(Number((1.2 + Math.random() * 1.5).toFixed(2)));
+      setActiveWorkers(prev => Math.min(20, Math.max(8, prev + (Math.random() > 0.5 ? 1 : -1))));
+
+      // Job execution event
+      const jobs = ['JOB-SYNC-01', 'JOB-PURG-03', 'JOB-SYNC-01', 'JOB-ROLL-02', 'JOB-SYNC-01'];
+      const workers = ['WORKER-TH-02', 'WORKER-TH-07', 'WORKER-TH-11', 'WORKER-TH-19'];
+      const job = jobs[Math.floor(Math.random() * jobs.length)];
+      const worker = workers[Math.floor(Math.random() * workers.length)];
+      const duration = (2.1 + Math.random() * 18.0).toFixed(1);
+
+      const newLog = {
+        id: Math.random().toString(36).substring(2, 9).toUpperCase(),
+        time: new Date().toISOString().split('T')[1].slice(0, 12),
+        job,
+        worker,
+        duration: `${duration}ms`,
+        exitCode: 0,
+        status: 'SUCCESS'
+      };
+
+      setExecutionLogs(prev => [newLog, ...prev.slice(0, 7)]);
+    }, 900);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const filteredTasks = filterType === 'ALL' ? SCHEDULED_TASKS : SCHEDULED_TASKS.filter(t => t.type === filterType);
+
+  return (
+    <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+      <div className="max-w-7xl mx-auto space-y-6">
+
+        {/* TOP STATUS BAR */}
+        <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 rounded-full bg-[#FF9F0A] animate-pulse" />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-CHRONO-04</span>
+              </div>
+              <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                CHRONO-PULSE <span className="text-xs text-[#FF9F0A] font-normal">// SCHEDULED JOB & CRON TELEMETRY BOARD</span>
+              </h1>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">DISPATCH LOOP:</span>
+              <span className="text-green-400 font-bold">EVENT-DRIVEN</span>
+            </div>
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">TICK EPOCH:</span>
+              <span className="text-[#00F0FF] font-bold">SEC :{tickEpoch < 10 ? `0${tickEpoch}` : tickEpoch}</span>
+            </div>
+          </div>
+        </header>
+
+        {/* MAIN TELEMETRY LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* LEFT 2 COLUMNS: METRICS & TIMELINE & TASK MATRIX */}
+          <div className="lg:col-span-2 space-y-6">
+
+            {/* DUAL METRIC CARDS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">DISPATCH JITTER & DRIFT</span>
+                  <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">SUB-3MS SLA</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">±{jitterMs}</span>
+                  <span className="text-sm font-mono text-[#FF9F0A]">ms</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>MAX JITTER ALLOWED: 5.0ms</span>
+                  <span className="text-green-400 font-bold">100% IN SPEC</span>
+                </div>
+              </div>
+
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">WORKER POOL CONCURRENCY</span>
+                  <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">{Math.round((activeWorkers / 20) * 100)}% SATURATION</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{activeWorkers}</span>
+                  <span className="text-sm font-mono text-slate-400">/ 20 workers</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>AVAILABLE SLOTS: {20 - activeWorkers}</span>
+                  <span className="text-[#00F0FF]">THREAD LOCK: CLEAR</span>
+                </div>
+              </div>
+            </div>
+
+            {/* VISUAL CRON GANTT TIMELINE STRIP */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="flex justify-between items-center">
+                <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                  CRON EXECUTION HORIZON (60-SECOND SWEEP)
+                </h3>
+                <span className="text-xs font-mono text-[#00F0FF]">LIVE TICK T={tickEpoch}s</span>
+              </div>
+
+              <div className="relative h-14 bg-[#05070B] border border-[#1F2937] rounded-lg p-2 flex items-center overflow-hidden">
+                {/* 60s Grid lines */}
+                {[0, 10, 20, 30, 40, 50, 60].map((sec) => (
+                  <div
+                    key={sec}
+                    className="absolute top-0 bottom-0 border-l border-[#1F2937]/60 text-[9px] font-mono text-slate-600 pl-1 pt-1"
+                    style={{ left: `${(sec / 60) * 100}%` }}
+                  >
+                    {sec}s
+                  </div>
+                ))}
+
+                {/* Sweep Head */}
+                <div
+                  className="absolute top-0 bottom-0 w-0.5 bg-[#FF9F0A] shadow-[0_0_8px_#FF9F0A] z-20 transition-all duration-300"
+                  style={{ left: `${(tickEpoch / 60) * 100}%` }}
+                />
+
+                {/* Scheduled Pulse Markers */}
+                <div className="absolute top-6 left-0 right-0 flex justify-between px-3 z-10">
+                  <span className="text-[10px] font-mono bg-[#00F0FF]/20 text-[#00F0FF] px-2 py-0.5 rounded border border-[#00F0FF]/40">BEACON (5s)</span>
+                  <span className="text-[10px] font-mono bg-[#FF9F0A]/20 text-[#FF9F0A] px-2 py-0.5 rounded border border-[#FF9F0A]/40">CACHE PRUNE (30s)</span>
+                  <span className="text-[10px] font-mono bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded border border-purple-500/40">EPOCH ROLL (60m)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* SCHEDULED TASK MATRIX TABLE */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="flex flex-wrap justify-between items-center gap-3">
+                <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#FF9F0A]" />
+                  SCHEDULED TASK INVENTORY
+                </h3>
+                <div className="flex gap-2">
+                  {['ALL', 'HIGH-FREQ', 'BATCH-CRON', 'STANDBY'].map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => setFilterType(type)}
+                      className={`px-3 py-1 rounded text-xs font-mono font-bold uppercase transition-colors ${
+                        filterType === type
+                          ? 'bg-[#FF9F0A] text-black'
+                          : 'bg-[#1F2937] text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-[#1F2937] text-slate-400">
+                      <th className="py-2 px-3">JOB ID</th>
+                      <th className="py-2 px-3">TASK NAME</th>
+                      <th className="py-2 px-3">CRON SPEC</th>
+                      <th className="py-2 px-3">TYPE</th>
+                      <th className="py-2 px-3">AVG DURATION</th>
+                      <th className="py-2 px-3">NEXT RUN</th>
+                      <th className="py-2 px-3 text-right">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#1F2937]/50">
+                    {filteredTasks.map((task) => (
+                      <tr key={task.id} className="hover:bg-[#1F2937]/30 transition-colors">
+                        <td className="py-2.5 px-3 text-[#00F0FF] font-bold">{task.id}</td>
+                        <td className="py-2.5 px-3 text-white">{task.name}</td>
+                        <td className="py-2.5 px-3 text-slate-400 font-mono">{task.cron}</td>
+                        <td className="py-2.5 px-3 text-slate-400">{task.type}</td>
+                        <td className="py-2.5 px-3 text-slate-300">{task.avgDuration}</td>
+                        <td className="py-2.5 px-3 text-[#FF9F0A]">{task.nextRun}</td>
+                        <td className="py-2.5 px-3 text-right">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                            task.status === 'RUNNING' ? 'bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30' :
+                            task.status === 'NOMINAL' ? 'bg-green-500/10 text-green-400 border border-green-500/30' :
+                            task.status === 'QUEUED' ? 'bg-[#FF9F0A]/10 text-[#FF9F0A] border border-[#FF9F0A]/30' :
+                            'bg-slate-700 text-slate-300'
+                          }`}>
+                            {task.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT COLUMN: MONRONEY DEALERSHIP STICKER & LIVE EXECUTION LOG */}
+          <div className="space-y-6">
+
+            {/* DEALERSHIP MONRONEY SPECIFICATION STICKER */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="border-b border-[#1F2937] pb-3">
+                <span className="text-[10px] font-mono text-[#00F0FF] font-bold tracking-widest uppercase">SPECIFICATION MONRONEY</span>
+                <h2 className="text-lg font-black text-white font-mono mt-1">GF-T2-CHRONO-04</h2>
+                <p className="text-xs text-slate-400 font-sans">Track 2 Hypercar Flagship Cron Cockpit</p>
+              </div>
+
+              <div className="space-y-3 font-mono text-xs">
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">MODEL</span>
+                  <span className="text-white font-bold">CHRONO-PULSE</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">COMMERCIAL TAG</span>
+                  <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">TITLE ANCHOR</span>
+                  <span className="text-white font-bold">$14,500 USD</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">VAULT BUYOUT</span>
+                  <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">LICENSE RIGHTS</span>
+                  <span className="text-white">OUTRIGHT OWNERSHIP</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">SEAT TIERS</span>
+                  <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                </div>
+              </div>
+
+              {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+              <div className="pt-2">
+                <div className="flex flex-col gap-2 w-full">
+                  <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                    ACQUIRE TITLE (APA)
+                  </button>
+                  <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                    INQUIRE VAULT BUYOUT
+                  </button>
+                </div>
+              </div>
+
+              <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                [Product Truth: Interactive Prototype // Simulated Data Stream]
+              </div>
+            </div>
+
+            {/* LIVE EXECUTION DISPATCH FEED */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+              <div className="flex justify-between items-center">
+                <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF9F0A] animate-ping" />
+                  DISPATCH EVENT LOG
+                </h4>
+                <span className="text-[10px] font-mono text-slate-500">THREAD POOL</span>
+              </div>
+
+              <div className="space-y-2">
+                {executionLogs.map((log) => (
+                  <div key={log.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                    <div className="flex justify-between items-center text-slate-400">
+                      <span className="text-[#00F0FF] font-bold">{log.job}</span>
+                      <span className="text-slate-500">{log.time}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-slate-300">
+                      <span>{log.worker}</span>
+                      <span className="text-green-400 font-bold">{log.duration}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}

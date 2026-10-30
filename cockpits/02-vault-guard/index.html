@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAULT-GUARD // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect, useRef } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+
+const KMS_KEYS = [
+  { id: 'KEY-ED25519-01', type: 'Asymmetric Ed25519', purpose: 'Telemetry Token Signing', status: 'ACTIVE', age: '14d 6h', entropy: '99.9%' },
+  { id: 'KEY-AES256-GCM', type: 'Symmetric AES-256', purpose: 'At-Rest Payload Cipher', status: 'ACTIVE', age: '3d 12h', entropy: '99.8%' },
+  { id: 'KEY-RSA-4096-R', type: 'Asymmetric RSA-4096', purpose: 'Root Enclave Anchor', status: 'LOCKED', age: '88d 2h', entropy: '100.0%' },
+  { id: 'KEY-HMAC-SHA25', type: 'HMAC-SHA256 Auth', purpose: 'Ingress Frame Checksum', status: 'ROTATING', age: '29d 23h', entropy: '99.6%' }
+];
+
+function VaultGuardCockpit() {
+  const [filterAction, setFilterAction] = useState('ALL');
+  const [activeSessions, setActiveSessions] = useState(148);
+  const [entropyRate, setEntropyRate] = useState(99.84);
+  const [sessionLogs, setSessionLogs] = useState([]);
+  const [rotationCountdown, setRotationCountdown] = useState(3600);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Rotation countdown
+      setRotationCountdown(prev => (prev > 0 ? prev - 1 : 3600));
+
+      // Fluctuations
+      setActiveSessions(prev => prev + (Math.random() > 0.5 ? 1 : -1));
+      setEntropyRate(prev => Number((99.8 + Math.random() * 0.15).toFixed(2)));
+
+      // Random cryptographic session event
+      const clients = ['OPERATOR-CHIEF', 'SERVICE-ENGINE-138', 'INGRESS-GATEWAY-07', 'DRONE-SWARM-BETA', 'ANOMALY-SCANNER'];
+      const actions = ['ALLOW', 'ALLOW', 'ALLOW', 'DENY'];
+      const ciphers = ['Ed25519 / HMAC', 'AES-256-GCM', 'TLS 1.3 / ECDHE'];
+      const action = actions[Math.floor(Math.random() * actions.length)];
+      const client = clients[Math.floor(Math.random() * clients.length)];
+      const cipher = ciphers[Math.floor(Math.random() * ciphers.length)];
+
+      const newLog = {
+        id: Math.random().toString(36).substring(2, 9).toUpperCase(),
+        time: new Date().toISOString().split('T')[1].slice(0, 12),
+        client,
+        action,
+        cipher,
+        nonce: `0x${Math.random().toString(16).slice(2, 10).toUpperCase()}`
+      };
+
+      setSessionLogs(prev => [newLog, ...prev.slice(0, 7)]);
+    }, 900);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const filteredLogs = filterAction === 'ALL' ? sessionLogs : sessionLogs.filter(l => l.action === filterAction);
+
+  return (
+    <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+      <div className="max-w-7xl mx-auto space-y-6">
+
+        {/* TOP STATUS BAR */}
+        <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 rounded-full bg-[#FF9F0A] animate-pulse" />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-VAULT-02</span>
+              </div>
+              <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                VAULT-GUARD <span className="text-xs text-[#FF9F0A] font-normal">// ZERO-TRUST CRYPTOGRAPHIC CONSOLE</span>
+              </h1>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">ENCLAVE:</span>
+              <span className="text-green-400 font-bold">HARDENED (AES-NI)</span>
+            </div>
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">ROTATION IN:</span>
+              <span className="text-[#00F0FF] font-bold">{Math.floor(rotationCountdown / 60)}m {rotationCountdown % 60}s</span>
+            </div>
+          </div>
+        </header>
+
+        {/* MAIN TELEMETRY LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* LEFT 2 COLUMNS: GAUGES & KEY REGISTRY */}
+          <div className="lg:col-span-2 space-y-6">
+
+            {/* DUAL METRIC CARDS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">ACTIVE ZERO-TRUST SESSIONS</span>
+                  <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">LIVE MUTUAL TLS</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{activeSessions}</span>
+                  <span className="text-sm font-mono text-[#00F0FF]">tunnels</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>REVOCATION LIST: 0</span>
+                  <span className="text-green-400 font-bold">ALL VERIFIED</span>
+                </div>
+              </div>
+
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">CSPRNG ENTROPY DENSITY</span>
+                  <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">HARDWARE ENCLAVE</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{entropyRate}</span>
+                  <span className="text-sm font-mono text-[#FF9F0A]">%</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>FIPS 140-3 COMPLIANT</span>
+                  <span className="text-[#FF9F0A] font-bold">100% UNBIASED</span>
+                </div>
+              </div>
+            </div>
+
+            {/* KMS KEY REGISTRY TABLE */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+              <div className="flex items-center justify-between border-b border-[#1F2937] pb-3">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                  <h2 className="text-sm font-mono font-bold uppercase text-white tracking-wider">ACTIVE KMS KEY PAIRS</h2>
+                </div>
+                <button 
+                  onClick={() => alert('Initiating zero-downtime key rotation epoch for KEY-ED25519-01...')}
+                  className="px-3 py-1 bg-[#1F2937] hover:bg-slate-700 text-[#00F0FF] text-xs font-mono rounded transition">
+                  ROTATE KEYS NOW
+                </button>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left font-mono text-xs">
+                  <thead>
+                    <tr className="border-b border-[#1F2937] text-slate-400">
+                      <th className="py-2">KEY IDENTIFIER</th>
+                      <th className="py-2">ALGORITHM</th>
+                      <th className="py-2">PURPOSE</th>
+                      <th className="py-2">AGE</th>
+                      <th className="py-2">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#1F2937]">
+                    {KMS_KEYS.map(k => (
+                      <tr key={k.id} className="hover:bg-slate-800/30">
+                        <td className="py-2.5 text-white font-bold">{k.id}</td>
+                        <td className="py-2.5 text-[#00F0FF]">{k.type}</td>
+                        <td className="py-2.5 text-slate-300">{k.purpose}</td>
+                        <td className="py-2.5 text-slate-400">{k.age}</td>
+                        <td className="py-2.5">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                            k.status === 'ACTIVE' ? 'bg-green-500/10 text-green-400' :
+                            k.status === 'ROTATING' ? 'bg-[#FF9F0A]/10 text-[#FF9F0A]' : 'bg-slate-800 text-slate-400'
+                          }`}>
+                            {k.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* AUDIT LOGS WITH INTERACTIVE FILTER */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1F2937] pb-3">
+                <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider">LIVE RBAC PERMISSION STREAMS</h3>
+                <div className="flex gap-1.5 font-mono text-xs">
+                  {['ALL', 'ALLOW', 'DENY'].map(act => (
+                    <button
+                      key={act}
+                      onClick={() => setFilterAction(act)}
+                      className={`px-3 py-1 rounded transition ${filterAction === act ? 'bg-[#FF9F0A] text-black font-bold' : 'bg-[#1F2937] text-slate-300 hover:bg-slate-700'}`}>
+                      {act}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-2 font-mono text-xs">
+                {filteredLogs.map(log => (
+                  <div key={log.id} className="bg-[#05070B] border border-[#1F2937] p-2.5 rounded-lg flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${log.action === 'ALLOW' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
+                        {log.action}
+                      </span>
+                      <div>
+                        <span className="text-white font-bold">{log.client}</span>
+                        <span className="text-slate-500 text-[10px] ml-2">[{log.cipher}]</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-slate-400 text-[10px]">{log.nonce}</div>
+                      <div className="text-slate-500 text-[10px]">{log.time}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT COLUMN: DEALERSHIP APA TITLE TRANSFER SPEC */}
+          <div className="space-y-6">
+
+            {/* COMMERCIAL WINDOW STICKER */}
+            <div className="bg-[#0D1117] border-2 border-[#00F0FF] p-5 rounded-xl space-y-4 shadow-[0_0_20px_rgba(0,240,255,0.1)]">
+              <div className="flex justify-between items-start border-b border-[#1F2937] pb-3">
+                <div>
+                  <div className="text-[10px] font-mono tracking-widest text-[#00F0FF] uppercase font-bold">100% PURE APA TITLE TRANSFER</div>
+                  <h3 className="text-base font-mono font-black text-white">DEALERSHIP MONRONEY</h3>
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-black font-mono text-[#FF9F0A]">$14,500</div>
+                  <div className="text-[10px] font-mono text-slate-400">RETAIL BUYOUT ANCHOR</div>
+                </div>
+              </div>
+
+              <div className="space-y-2 text-xs font-mono text-slate-300">
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">Asset Class:</span>
+                  <span className="text-white">Track 2 (Hypercar Flagship)</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">Code Rights:</span>
+                  <span className="text-white">100% Outright IP Transfer</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">Vault Buyout Range:</span>
+                  <span className="text-[#00F0FF]">$25,000 – $50,000</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">Cryptographic Standard:</span>
+                  <span className="text-green-400">FIPS 140-3 & Ed25519</span>
+                </div>
+              </div>
+
+              {/* STRICT ACTION TARGET CTAs IN VERTICAL CONTAINER */}
+              <div className="flex flex-col gap-2 w-full pt-2">
+                <button 
+                  onClick={() => alert('Initiating APA Title Transfer for GF-T2-VAULT-02 ($14,500 Anchor).')}
+                  className="w-full py-3 bg-[#00F0FF] hover:bg-[#00c8d6] text-black font-mono font-black tracking-wider text-xs uppercase rounded-lg transition transform active:scale-95 shadow-lg shadow-[#00F0FF]/20">
+                  ACQUIRE TITLE (APA)
+                </button>
+                <button 
+                  onClick={() => alert('Vault Buyout inquiry submitted for VAULT-GUARD ($25k - $50k Exclusive Range).')}
+                  className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold tracking-wider text-xs uppercase rounded-lg border border-slate-600 transition">
+                  INQUIRE VAULT BUYOUT
+                </button>
+              </div>
+            </div>
+
+            {/* ZERO-TRUST SECURITY ENCLAVE SPECS */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3 font-mono text-xs">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider border-b border-[#1F2937] pb-2">ENCLAVE SPECIFICATION</h4>
+              <div className="text-slate-400 space-y-2 text-[11px]">
+                <p>• Zero hardcoded keys or static authentication strings.</p>
+                <p>• Hardware-accelerated AES-NI & Curve25519 primitives.</p>
+                <p>• Continuous audit ledger with HMAC integrity stamping.</p>
+                <p>• NIST SP 800-218 SSDF v1.1 verified clean-room pipeline.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<VaultGuardCockpit />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEGIS-GATEWAY // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const RATE_POLICIES = [
+      { tier: 'ENTERPRISE', fillRate: '10,000 / sec', capacity: '25,000 burst', currentTokens: 24150, dropRate: '0.00%', state: 'PASS' },
+      { tier: 'PRO', fillRate: '1,200 / sec', capacity: '3,000 burst', currentTokens: 2840, dropRate: '0.02%', state: 'PASS' },
+      { tier: 'STARTER', fillRate: '120 / sec', capacity: '300 burst', currentTokens: 210, dropRate: '0.41%', state: 'THROTTLED' },
+      { tier: 'ANONYMOUS', fillRate: '20 / sec', capacity: '50 burst', currentTokens: 12, dropRate: '3.14%', state: 'LIMITING' },
+      { tier: 'BOT_QUARANTINE', fillRate: '0 / sec', capacity: '0 tokens', currentTokens: 0, dropRate: '100.0%', state: 'BLOCKED' }
+    ];
+
+    function AegisGatewayCockpit() {
+      const [tokenCapacity, setTokenCapacity] = useState(84.5);
+      const [ingressRps, setIngressRps] = useState(38420);
+      const [droppedRps, setDroppedRps] = useState(142);
+      const [policyFilter, setPolicyFilter] = useState('ALL');
+      const [bucketEvents, setBucketEvents] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setTokenCapacity(prev => {
+            const next = prev + (Math.random() - 0.48) * 4.2;
+            return Math.min(100, Math.max(15, Number(next.toFixed(1))));
+          });
+          setIngressRps(prev => prev + Math.floor((Math.random() - 0.5) * 850));
+          setDroppedRps(Math.floor(100 + Math.random() * 85));
+
+          const ips = ['198.51.100.44', '203.0.113.19', '192.0.2.88', '185.199.108.153', '45.33.32.156'];
+          const paths = ['/api/v1/telemetry/stream', '/api/v1/auth/jwt', '/api/v1/vault/keys', '/api/v1/graphql', '/v1/order/execute'];
+          const actions = ['TOKEN_CONSUMED (PASS)', 'BURST_ALLOWED (PASS)', 'TOKEN_EXHAUSTED (429)', 'IP_COOLDOWN_ACTIVE'];
+
+          const ip = ips[Math.floor(Math.random() * ips.length)];
+          const path = paths[Math.floor(Math.random() * paths.length)];
+          const act = actions[Math.floor(Math.random() * actions.length)];
+          const isDrop = act.includes('429') || act.includes('COOLDOWN');
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            ip,
+            path,
+            act,
+            isDrop
+          };
+
+          setBucketEvents(prev => [newEvt, ...prev.slice(0, 5)]);
+        }, 850);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      const simulateBurst = () => {
+        setTokenCapacity(prev => Math.max(5, prev - 25));
+        setDroppedRps(prev => prev + 350);
+      };
+
+      const filteredPolicies = policyFilter === 'ALL'
+        ? RATE_POLICIES
+        : RATE_POLICIES.filter(p => p.state === policyFilter);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-AEGIS-02</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                    AEGIS-GATEWAY <span className="text-xs text-[#FF9F0A] font-normal">// EDGE RATE-LIMITER & TOKEN BUCKET</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">ALGORITHM:</span>
+                  <span className="text-green-400 font-bold">DISTRIBUTED TOKEN BUCKET</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">STATE STORE:</span>
+                  <span className="text-[#00F0FF] font-bold">REDIS CLUSTER CELL</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN TELEMETRY LAYOUT */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRICS, BUCKET GAUGE, POLICIES */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">AGGREGATE EDGE INGRESS</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">NORMAL FLOW</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{ingressRps.toLocaleString()}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">rps</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>HTTP 429 SHED: {droppedRps} rps</span>
+                      <span className="text-green-400">PASSTHROUGH 99.6%</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">GLOBAL TOKEN BUCKET LEVEL</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">AUTO-REFILL</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{tokenCapacity}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">%</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>REFILL: +50k tokens/sec</span>
+                      <button onClick={simulateBurst} className="text-[#FF9F0A] hover:underline font-bold">
+                        ⚡ SIMULATE BURST
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG TOKEN BUCKET RESERVOIR */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      TOKEN RESERVOIR FLUID DYNAMICS (LEAKY BUCKET GAUGE)
+                    </h3>
+                    <span className="text-xs font-mono text-slate-400">BURST HEADROOM: {(tokenCapacity * 0.8).toFixed(1)}k TOKENS</span>
+                  </div>
+
+                  <div className="relative h-44 bg-[#05070B] border border-[#1F2937] rounded-xl flex items-center justify-center p-6 overflow-hidden">
+                    {/* Bucket Chamber */}
+                    <div className="w-full max-w-lg space-y-3">
+                      <div className="flex justify-between text-xs font-mono">
+                        <span className="text-slate-400">0% DEPLETED</span>
+                        <span className="text-[#00F0FF] font-bold">CURRENT FILL: {tokenCapacity}%</span>
+                        <span className="text-slate-400">100% MAXIMUM BURST</span>
+                      </div>
+
+                      {/* Main Level Progress */}
+                      <div className="w-full h-8 bg-[#0D1117] rounded-lg border border-[#1F2937] overflow-hidden p-1 relative">
+                        <div
+                          className="h-full rounded bg-gradient-to-r from-[#00F0FF] via-[#FF9F0A] to-green-400 transition-all duration-500 relative"
+                          style={{ width: `${tokenCapacity}%` }}
+                        >
+                          <div className="absolute right-0 top-0 h-full w-2 bg-white/60 animate-pulse" />
+                        </div>
+                      </div>
+
+                      {/* Tick Marks */}
+                      <div className="flex justify-between text-[10px] font-mono text-slate-500 px-1">
+                        <span>| QUARANTINE</span>
+                        <span>| THROTTLED (25%)</span>
+                        <span>| NOMINAL (50%)</span>
+                        <span>| OPTIMAL (75%)</span>
+                        <span>| FULL CAPACITY</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RATE LIMITING TIER TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      POLICY TIER ALLOCATIONS ({filteredPolicies.length})
+                    </h3>
+                    <div className="flex gap-1 text-xs font-mono">
+                      {['ALL', 'PASS', 'THROTTLED', 'LIMITING', 'BLOCKED'].map(st => (
+                        <button
+                          key={st}
+                          onClick={() => setPolicyFilter(st)}
+                          className={`px-2.5 py-1 rounded text-[11px] font-bold transition-colors ${
+                            policyFilter === st
+                              ? 'bg-[#00F0FF] text-black'
+                              : 'bg-[#05070B] text-slate-400 hover:text-white border border-[#1F2937]'
+                          }`}
+                        >
+                          {st}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="bg-[#05070B] text-slate-400 border-b border-[#1F2937]">
+                        <tr>
+                          <th className="py-2.5 px-3">TIER NAME</th>
+                          <th className="py-2.5 px-3">REFILL RATE</th>
+                          <th className="py-2.5 px-3">BURST CEILING</th>
+                          <th className="py-2.5 px-3">AVAILABLE</th>
+                          <th className="py-2.5 px-3">DROP RATIO</th>
+                          <th className="py-2.5 px-3">ENFORCEMENT</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/60">
+                        {filteredPolicies.map(pol => (
+                          <tr key={pol.tier} className="hover:bg-[#05070B]/50 transition-colors">
+                            <td className="py-2.5 px-3 text-white font-bold">{pol.tier}</td>
+                            <td className="py-2.5 px-3 text-[#00F0FF]">{pol.fillRate}</td>
+                            <td className="py-2.5 px-3 text-slate-300">{pol.capacity}</td>
+                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{pol.currentTokens.toLocaleString()}</td>
+                            <td className="py-2.5 px-3 text-slate-400">{pol.dropRate}</td>
+                            <td className="py-2.5 px-3">
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                                pol.state === 'PASS' ? 'bg-green-500/10 text-green-400 border-green-500/30' :
+                                pol.state === 'THROTTLED' ? 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30' :
+                                pol.state === 'LIMITING' ? 'bg-[#FF9F0A]/10 text-[#FF9F0A] border-[#FF9F0A]/30' :
+                                'bg-red-500/10 text-red-400 border-red-500/30'
+                              }`}>
+                                {pol.state}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: MONRONEY SPEC CARD & BUCKET ACTIVITY STREAM */}
+              <div className="space-y-6">
+
+                {/* TRACK 2 MONRONEY COMMERCIAL SPECIFICATION */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#FF9F0A] uppercase">DEALERSHIP MONRONEY SPEC</span>
+                    <h3 className="text-lg font-black font-mono text-white">AEGIS-GATEWAY</h3>
+                    <p className="text-xs text-slate-400">Edge Rate-Limiter & Token Bucket Diagnostics</p>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">CHASSIS ID</span>
+                      <span className="text-white font-bold">GF-T2-AEGIS-02</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE TOKEN INGRESS / DROP FEED */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE RATE ENFORCEMENT FEED
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">GATEWAY STREAM</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {bucketEvents.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.ip}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-slate-400 truncate max-w-[150px]">{evt.path}</span>
+                          <span className={`font-bold ${evt.isDrop ? 'text-red-400' : 'text-green-400'}`}>
+                            {evt.act}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<AegisGatewayCockpit />);
+  </script>
+</body>
+</html>

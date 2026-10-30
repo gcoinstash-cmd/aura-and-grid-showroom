@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS-FABRIC // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const MESH_NODES = [
+      { id: 'NODE-AWS-01', provider: 'AWS', region: 'us-east-1', tunnel: 'eBPF-WG0', latency: '4.2ms', egress: '48.2 Gbps', status: 'HEALTHY' },
+      { id: 'NODE-GCP-02', provider: 'GCP', region: 'us-central1', tunnel: 'eBPF-WG1', latency: '6.8ms', egress: '39.4 Gbps', status: 'HEALTHY' },
+      { id: 'NODE-AZR-03', provider: 'AZURE', region: 'eastus2', tunnel: 'eBPF-WG2', latency: '5.1ms', egress: '31.8 Gbps', status: 'HEALTHY' },
+      { id: 'NODE-BM-04', provider: 'METAL', region: 'eqx-ash-01', tunnel: 'DPDK-RAW', latency: '1.2ms', egress: '92.4 Gbps', status: 'OPTIMAL' },
+      { id: 'NODE-EU-05', provider: 'AWS', region: 'eu-central-1', tunnel: 'eBPF-WG3', latency: '14.6ms', egress: '24.1 Gbps', status: 'HEALTHY' }
+    ];
+
+    function NexusFabricCockpit() {
+      const [filterProvider, setFilterProvider] = useState('ALL');
+      const [pulsePhase, setPulsePhase] = useState(0);
+      const [totalThroughput, setTotalThroughput] = useState(235.9);
+      const [avgMeshRTT, setAvgMeshRTT] = useState(5.4);
+      const [activePackets, setActivePackets] = useState(148200);
+      const [routeEvents, setRouteEvents] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setPulsePhase(p => (p + 1) % 100);
+          setTotalThroughput(Number((230 + Math.random() * 12.5).toFixed(1)));
+          setAvgMeshRTT(Number((5.1 + Math.random() * 0.7).toFixed(2)));
+          setActivePackets(prev => prev + Math.floor((Math.random() - 0.5) * 2400));
+
+          const sources = ['NODE-AWS-01', 'NODE-GCP-02', 'NODE-AZR-03', 'NODE-BM-04', 'NODE-EU-05'];
+          const dests = ['NODE-BM-04', 'NODE-AWS-01', 'NODE-GCP-02', 'NODE-EU-05', 'NODE-AZR-03'];
+          const actions = ['ROUTE_OPTIMIZED', 'PATH_VALIDATED', 'BGP_CONVERGED', 'TUNNEL_REKEY'];
+
+          const src = sources[Math.floor(Math.random() * sources.length)];
+          let dst = dests[Math.floor(Math.random() * dests.length)];
+          if (dst === src) dst = 'NODE-BM-04';
+          const act = actions[Math.floor(Math.random() * actions.length)];
+          const rtt = (2.1 + Math.random() * 6.5).toFixed(1);
+
+          const newEvt = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            src,
+            dst,
+            act,
+            rtt: `${rtt}ms`
+          };
+
+          setRouteEvents(prev => [newEvt, ...prev.slice(0, 5)]);
+        }, 900);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      const filteredNodes = filterProvider === 'ALL'
+        ? MESH_NODES
+        : MESH_NODES.filter(n => n.provider === filterProvider);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER STATUS */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-NEXUS-01</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                    NEXUS-FABRIC <span className="text-xs text-[#FF9F0A] font-normal">// MULTI-CLOUD MESH TOPOLOGY VISUALIZER</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">DATA PLANE:</span>
+                  <span className="text-green-400 font-bold">eBPF + DPDK MESH</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">CROSS-CLOUD:</span>
+                  <span className="text-[#00F0FF] font-bold">ZERO-TRUST WG</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN TELEMETRY LAYOUT */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRIC CARDS, TOPOLOGY CANVAS, NODE MATRIX */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">FABRIC AGGREGATE EGRESS</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">LINE RATE</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{totalThroughput}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">Gbps</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>PACKETS: {activePackets.toLocaleString()} pps</span>
+                      <span className="text-green-400">LOSS: 0.00%</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">INTER-CLOUD MESH RTT</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">P99.9 BENCH</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{avgMeshRTT}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">ms</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>eBPF BYPASS: ACTIVE</span>
+                      <span className="text-[#00F0FF]">JITTER &lt; 0.4ms</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG MESH TOPOLOGY CANVAS */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      MULTI-CLOUD MESH INTERCONNECT TOPOLOGY
+                    </h3>
+                    <span className="text-xs font-mono text-slate-400">STATUS: CONVERGED</span>
+                  </div>
+
+                  <div className="relative h-64 bg-[#05070B] border border-[#1F2937] rounded-xl flex items-center justify-center overflow-hidden">
+                    <svg className="w-full h-full" viewBox="0 0 600 240">
+                      {/* Grid guidelines */}
+                      <line x1="0" y1="120" x2="600" y2="120" stroke="#1F2937" strokeDasharray="4 4" />
+                      <line x1="300" y1="0" x2="300" y2="240" stroke="#1F2937" strokeDasharray="4 4" />
+
+                      {/* Interconnect Links */}
+                      <line x1="120" y1="60" x2="300" y2="120" stroke="#00F0FF" strokeWidth="2" strokeOpacity="0.6" />
+                      <line x1="480" y1="60" x2="300" y2="120" stroke="#00F0FF" strokeWidth="2" strokeOpacity="0.6" />
+                      <line x1="120" y1="180" x2="300" y2="120" stroke="#FF9F0A" strokeWidth="2" strokeOpacity="0.6" />
+                      <line x1="480" y1="180" x2="300" y2="120" stroke="#00F0FF" strokeWidth="2" strokeOpacity="0.6" />
+                      <line x1="120" y1="60" x2="480" y2="60" stroke="#1F2937" strokeWidth="1.5" />
+                      <line x1="120" y1="180" x2="480" y2="180" stroke="#1F2937" strokeWidth="1.5" />
+
+                      {/* Animated traveling packets */}
+                      <circle cx={120 + (300 - 120) * (pulsePhase / 100)} cy={60 + (120 - 60) * (pulsePhase / 100)} r="4" fill="#00F0FF" />
+                      <circle cx={480 - (480 - 300) * (pulsePhase / 100)} cy={60 + (120 - 60) * (pulsePhase / 100)} r="4" fill="#00F0FF" />
+                      <circle cx={120 + (300 - 120) * (pulsePhase / 100)} cy={180 - (180 - 120) * (pulsePhase / 100)} r="4" fill="#FF9F0A" />
+
+                      {/* Node AWS us-east-1 */}
+                      <g transform="translate(120, 60)">
+                        <circle r="18" fill="#0D1117" stroke="#00F0FF" strokeWidth="2" />
+                        <text textAnchor="middle" dy="4" fill="#00F0FF" fontSize="9" fontFamily="monospace" fontWeight="bold">AWS</text>
+                        <text textAnchor="middle" dy="28" fill="#94A3B8" fontSize="8" fontFamily="monospace">us-east-1</text>
+                      </g>
+
+                      {/* Node GCP us-central1 */}
+                      <g transform="translate(480, 60)">
+                        <circle r="18" fill="#0D1117" stroke="#00F0FF" strokeWidth="2" />
+                        <text textAnchor="middle" dy="4" fill="#00F0FF" fontSize="9" fontFamily="monospace" fontWeight="bold">GCP</text>
+                        <text textAnchor="middle" dy="28" fill="#94A3B8" fontSize="8" fontFamily="monospace">us-cen-1</text>
+                      </g>
+
+                      {/* Center Metal Spine */}
+                      <g transform="translate(300, 120)">
+                        <circle r="24" fill="#0D1117" stroke="#FF9F0A" strokeWidth="2.5" />
+                        <circle r="30" fill="none" stroke="#FF9F0A" strokeWidth="1" opacity="0.4" className="animate-ping" />
+                        <text textAnchor="middle" dy="4" fill="#FF9F0A" fontSize="10" fontFamily="monospace" fontWeight="bold">METAL</text>
+                        <text textAnchor="middle" dy="40" fill="#E2E8F0" fontSize="9" fontFamily="monospace">DPDK-SPINE</text>
+                      </g>
+
+                      {/* Node Azure eastus2 */}
+                      <g transform="translate(120, 180)">
+                        <circle r="18" fill="#0D1117" stroke="#00F0FF" strokeWidth="2" />
+                        <text textAnchor="middle" dy="4" fill="#00F0FF" fontSize="9" fontFamily="monospace" fontWeight="bold">AZR</text>
+                        <text textAnchor="middle" dy="28" fill="#94A3B8" fontSize="8" fontFamily="monospace">eastus2</text>
+                      </g>
+
+                      {/* Node EU Frankfurt */}
+                      <g transform="translate(480, 180)">
+                        <circle r="18" fill="#0D1117" stroke="#00F0FF" strokeWidth="2" />
+                        <text textAnchor="middle" dy="4" fill="#00F0FF" fontSize="9" fontFamily="monospace" fontWeight="bold">EU</text>
+                        <text textAnchor="middle" dy="28" fill="#94A3B8" fontSize="8" fontFamily="monospace">eu-cen-1</text>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* MESH NODE STATUS TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      ACTIVE MESH ENDPOINTS ({filteredNodes.length})
+                    </h3>
+                    <div className="flex gap-1 text-xs font-mono">
+                      {['ALL', 'AWS', 'GCP', 'AZURE', 'METAL'].map(prov => (
+                        <button
+                          key={prov}
+                          onClick={() => setFilterProvider(prov)}
+                          className={`px-2.5 py-1 rounded text-[11px] font-bold transition-colors ${
+                            filterProvider === prov
+                              ? 'bg-[#00F0FF] text-black'
+                              : 'bg-[#05070B] text-slate-400 hover:text-white border border-[#1F2937]'
+                          }`}
+                        >
+                          {prov}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead className="bg-[#05070B] text-slate-400 border-b border-[#1F2937]">
+                        <tr>
+                          <th className="py-2.5 px-3">NODE ID</th>
+                          <th className="py-2.5 px-3">CLOUD</th>
+                          <th className="py-2.5 px-3">REGION</th>
+                          <th className="py-2.5 px-3">TUNNEL PROTO</th>
+                          <th className="py-2.5 px-3">EGRESS</th>
+                          <th className="py-2.5 px-3">RTT</th>
+                          <th className="py-2.5 px-3">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/60">
+                        {filteredNodes.map(node => (
+                          <tr key={node.id} className="hover:bg-[#05070B]/50 transition-colors">
+                            <td className="py-2.5 px-3 text-white font-bold">{node.id}</td>
+                            <td className="py-2.5 px-3 text-[#00F0FF]">{node.provider}</td>
+                            <td className="py-2.5 px-3 text-slate-400">{node.region}</td>
+                            <td className="py-2.5 px-3 text-slate-300">{node.tunnel}</td>
+                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{node.egress}</td>
+                            <td className="py-2.5 px-3 text-green-400">{node.latency}</td>
+                            <td className="py-2.5 px-3">
+                              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/30">
+                                {node.status}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: MONRONEY SPEC CARD & ROUTE EVENT STREAM */}
+              <div className="space-y-6">
+
+                {/* TRACK 2 MONRONEY COMMERCIAL SPECIFICATION */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#FF9F0A] uppercase">DEALERSHIP MONRONEY SPEC</span>
+                    <h3 className="text-lg font-black font-mono text-white">NEXUS-FABRIC</h3>
+                    <p className="text-xs text-slate-400">Multi-Cloud Mesh Network Topology Visualizer</p>
+                  </div>
+
+                  <div className="space-y-2 text-xs font-mono">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">CHASSIS ID</span>
+                      <span className="text-white font-bold">GF-T2-NEXUS-01</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE MESH ROUTE EVENT FEED */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE MESH ROUTE CONVERGENCE
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">eBPF TELEMETRY</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {routeEvents.map((evt) => (
+                      <div key={evt.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold">{evt.src} → {evt.dst}</span>
+                          <span className="text-slate-500">{evt.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-slate-300">
+                          <span className="text-[#00F0FF]">{evt.act}</span>
+                          <span className="text-green-400 font-bold">{evt.rtt}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<NexusFabricCockpit />);
+  </script>
+</body>
+</html>

@@ -79,6 +79,9 @@ export interface BlueprintPricing {
  */
 export function getBlueprintPricing(product: {
   id: number;
+  track?: string;
+  unit_id?: string;
+  tag?: string;
   pricing_track?: string;
   flagship_qualified?: boolean;
   buyoutEligible?: boolean;
@@ -86,35 +89,42 @@ export function getBlueprintPricing(product: {
   exclusive_buyout_anchor?: number;
   exclusive_buyout_range?: number[];
 }): BlueprintPricing {
-  const isTrack3 = product.pricing_track?.includes('Track 3') || product.id >= 138;
+  const isTrack3 = product.track
+    ? product.track === 'Track 3'
+    : Boolean(product.pricing_track?.includes('Track 3')) ||
+      Boolean(product.unit_id?.startsWith('GF-T3')) ||
+      Boolean(product.tag?.startsWith('GF-T3')) ||
+      (!product.pricing_track && product.id >= 138);
   const isBuyoutEligible = Boolean((product.buyoutEligible ?? true) && !product.permanent);
 
   if (isTrack3) {
     return {
-      standardPrice: 'Retail Price: $35,000–$150,000',
-      proPrice: 'Wholesale Price: $17,500–$35,000',
-      buyoutPrice: '$35,000–$150,000',
-      buyoutAnchor: 'Retail Price: $35,000–$150,000',
-      buyoutRange: 'Wholesale Price: $17,500–$35,000',
-      ctaLabel: 'ACQUIRE TITLE (APA)',
+      standardPrice: 'Retail Price: $50,000 ($35k–$150k)',
+      proPrice: 'Wholesale Price: $35,000',
+      buyoutPrice: '$50,000',
+      buyoutAnchor: 'Retail Price: $50,000',
+      buyoutRange: 'Wholesale Price: $35,000',
+      ctaLabel: 'ACQUIRE TITLE (APA) - $50,000',
       secondaryCtaLabel: 'MOUNT CHASSIS ON DYNO',
       isBuyoutEligible,
     };
   }
 
-  const isTrack2 = product.pricing_track?.includes('Track 1')
+  const isTrack2 = product.track
+    ? product.track === 'Track 2'
+    : product.pricing_track?.includes('Track 1')
     ? false
     : Boolean(product.flagship_qualified) ||
       (product.pricing_track?.includes('Track 2') ?? false) ||
-      (product.id >= 86 && product.id !== 112);
+      (product.id >= 86 && product.id < 138 && product.id !== 112);
 
   if (isTrack2) {
     return {
       standardPrice: 'Retail Price: $14,500',
-      proPrice: 'Wholesale Price: $7,250',
+      proPrice: 'Wholesale Price: $10,000',
       buyoutPrice: '$14,500',
       buyoutAnchor: 'Retail Price: $14,500',
-      buyoutRange: 'Wholesale Price: $7,250',
+      buyoutRange: 'Wholesale Price: $10,000',
       ctaLabel: 'ACQUIRE TITLE (APA) - $14,500',
       secondaryCtaLabel: 'INQUIRE VAULT BUYOUT',
       isBuyoutEligible,
@@ -122,12 +132,12 @@ export function getBlueprintPricing(product: {
   }
 
   return {
-    standardPrice: 'Retail Price: $12,500',
-    proPrice: 'Wholesale Price: $6,250',
-    buyoutPrice: '$12,500',
-    buyoutAnchor: 'Retail Price: $12,500',
-    buyoutRange: 'Wholesale Price: $6,250',
-    ctaLabel: 'ACQUIRE TITLE (APA) - $12,500',
+    standardPrice: 'Retail Price: $4,500',
+    proPrice: 'Wholesale Price: $3,800',
+    buyoutPrice: '$4,500',
+    buyoutAnchor: 'Retail Price: $4,500',
+    buyoutRange: 'Wholesale Price: $3,800',
+    ctaLabel: 'ACQUIRE TITLE (APA) - $4,500',
     isBuyoutEligible,
   };
 }

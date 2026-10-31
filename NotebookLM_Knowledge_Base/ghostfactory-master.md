@@ -22,43 +22,44 @@ Aura & Grid is the public dealership: test drives, standalone Asset Purchase Agr
 A micro-APA transfers defined rights/code to one specific asset. It NEVER transfers GhostFactoryOS, Aura & Grid, shared IP, or the full portfolio.
 
 ## PORTFOLIO STATUS & RETENTION FLOOR
-- Total Master Vault Catalog: 301 custom full-stack digital assets & production engines (86 Track 1 Lean + 51 Track 2 Flagships + 164 Track 3 Working Service Engines & Reference Cores fully onboarded and standardized via the Universal Track 2 Telemetry Harness).
-- Target: 500 cataloged assets.
-- Minimum Retained Floor: Always retain at least 80% of the collection (currently 241 assets retained of 301; max 60 micro-APA transferable capacity).
+- Total Master Vault Catalog: 500 custom full-stack digital assets & production engines — **500-Unit Capstone Milestone Sealed** (168 Track 1 Lean Tuners + 168 Track 2 Hypercar Flagships + 164 Track 3 Working Service Engines & Reference Cores standardized across 10 Sealed 50-Unit Clusters: `CLUSTER-001`–`009` at 17/17/16 and `CLUSTER-010` at 15/15/20).
+- Milestone Status: 500/500 Capstone Sealed (Next scaling horizon: 1,000 cataloged assets / 20 clusters).
+- Minimum Retained Floor: Always retain at least 80% of the collection (currently 400 assets permanently retained of 500; max 100 assets / 2 clusters transferable via selective micro-APAs or 50-unit cluster carve-outs).
 - Never treat micro-APA maximum capacity as a sales target.
 - Permanently protect: GhostFactoryOS/Aura & Grid brands, shared design tokens, component libraries, factory prompts, and core architectures.
 - Technical Standard: Deterministic Clean-Room Architecture Standard (zero copyleft, deterministic state machines, isolated micro-runtimes, idempotent relational schemas).
 
-## ASC 350-40 REPLACEMENT APPRAISAL & DEALERSHIP VALUATION
-- Total Retail Price: $23,787,000 (Combined Agency Replacement Benchmark across all 301 upgraded chassis).
-- Certified Fair Market Value (FMV): $9,864,000 (Direct Labor Appraisal / Mid-Market Enterprise Appraisal).
-- Wholesale Price / Floor: $6,073,500 (Institutional Bulk Tender / Bulk Floor).
-- Walk-Away Floor: $2,968,000 (Sovereign Reserve Liquidation Floor).
-- Valuation Legend: Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer.
+## ASC 350-40 REPLACEMENT APPRAISAL & DEALERSHIP VALUATION (500-UNIT CAPSTONE)
+- Total Retail Price: $32,450,000 ($32.45M — Combined Agency Replacement Benchmark across all 500 vaulted chassis).
+- Certified Fair Market Value (FMV): $13,000,000 ($13.0M — Orderly Enterprise / Mid-Market Fair Market Appraisal).
+- Wholesale Price / Floor: $8,400,000 ($8.4M — Institutional Bulk Tender / Bulk Floor).
+- Walk-Away Floor: $4,200,000 ($4.2M — Sovereign Reserve Liquidation Floor).
+- Valuation Legend: ASC 350-40 / ASC 985 Cost Approach (Replacement Cost Basis) — Verified Agency-Equivalent Engineering Hours & Outright IP Title Transfer.
 
 ## MULTI-TRACK PRICING PROTOCOL
 Never mix tracks. Default to Track 1.
-1. TRACK 1 — LEAN RAPID-SALE (Lean Tuner / Daily Driver):
-   - Track 1 Micro-APA Buyout ($4,500 anchor) | Exclusive Buyout Floor: $3,800–$6,500 (100% Pure APA Title Transfer)
+1. TRACK 1 — LEAN RAPID-SALE (Lean Tuner / Daily Driver — 168 Sealed Units):
+   - Track 1 Micro-APA Buyout ($4,500 Retail anchor | $3,800 Wholesale floor) | Exclusive Buyout Floor: $3,800–$6,500 (100% Pure APA Title Transfer)
    - Focus: Rapid assembly, clean UI modularity, zero external dependencies.
    - Output: Single-bundle frontend components, verified asset packaging, minimal test verification.
-2. TRACK 2 — FLAGSHIP $10K+ (Hypercar Flagship):
-   - Track 2 Chassis APA Title Transfer: $14,500 anchor | Entry Buyout Anchor: $14,500 ($10,000–$18,000 range) | Full Buyout: $18,000–$35,000 | Strategic: $35,000–$75,000+
+2. TRACK 2 — FLAGSHIP $10K+ (Hypercar Flagship — 168 Sealed Units + 117 Live SCADA Cockpits):
+   - Track 2 Chassis APA Title Transfer: $14,500 Retail anchor ($10,000 Wholesale floor) | Entry Buyout Anchor: $14,500 ($10,000–$18,000 range) | Full Buyout: $18,000–$35,000 | Strategic: $35,000–$75,000+
    - Focus: High-density interactive UI, canvas/WebGL state, mock telemetry stability.
    - Output: Fully clickable client-side prototypes, simulated WebSocket/state engines, responsive telemetry HUDs.
    - Requires full Flagship Gate qualification pass & NIST SP 800-218 Compliance Gate (COMPLIANCE.md, .env.example, README security block, Product Truth badge).
-3. TRACK 3 — F1 SKUNKWORKS WORKING SERVICE ENGINE:
-   - Tier Classification: Working Service Engines / Production Reference Architectures (Curated 114 Units total).
+3. TRACK 3 — F1 SKUNKWORKS WORKING SERVICE ENGINE (164 Sealed Units):
+   - Tier Classification: Working Service Engines / Production Reference Architectures (164 Sealed Units total).
    - Core Moat: R&D bypass value. Zero mock client state. Full-stack containerized deployments with live ingestion and persistent data schemas.
    - Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers).
-   - Baseline APA Buyout Floor: $35,000 – $65,000 per engine ($3.990M Floor for Track 3 cores).
-   - Monopoly / Vault Buyout Ceiling: $75,000 – $150,000+ per engine ($17.100M Retail Ceiling for Track 3 cores).
+   - Retail Anchor: $50,000 per engine ($35,000 Wholesale floor).
+   - Baseline APA Buyout Floor: $35,000 – $65,000 per engine ($5.74M – $10.66M Track 3 baseline floor).
+   - Monopoly / Vault Buyout Ceiling: $75,000 – $150,000+ per engine ($12.30M – $24.60M+ Track 3 ceiling).
    - Allocation: Autonomous Telemetry & C2, FinTech & Quant Risk, Edge AI & Multi-Agent Consensus.
    - Track 3 Monopoly Gates:
      * Gate 1: Custom math/state machines (Kalman filtering, order books, multi-agent consensus).
      * Gate 2: Clean-room IP (strictly MIT/Apache 2.0/BSD, zero copyleft/AGPL).
      * Gate 3: Hardened production structure (database migrations, RBAC, strict .env config).
-     * Gate 4: Curated core verticals: Autonomous Telemetry, FinTech/Quant, Edge AI.
+     * Gate 4: Curated core verticals: Autonomous Telemetry, FinTech/Quant, Edge AI (164 Sealed Engines).
      * Gate 5: Turnkey deployment (pytest >80%, OpenAPI 3.1, container ready).
    - Architecture Split (70/30 Protocol):
      * 70% in Google AI Studio: Core math proofs/models, SQL schemas, OpenAPI 3.1 contracts, and APA legal manifests compiled into ENGINE_SPEC.md.
@@ -69,38 +70,40 @@ Never mix tracks. Default to Track 1.
 ### Core Operating Rules
 1. **Zero Company Equity Sales**: 100% corporate equity of GhostFactoryOS, Aura & Grid, and ZoMae Media LLC stays permanently with the Dealership Principal. No cap table dilution, no SAFEs, no venture equity.
 2. **Transaction Unit**: Strict 50-chassis standalone Asset Purchase Agreement (APA) carve-outs with outright IP title transfer, code repositories, and database schemas under 100% clean-room zero-copyleft guarantees (MIT/Apache-2.0). Shared factory tooling, design tokens, and future catalog rights remain 100% retained.
-3. **Dynamic Cluster Generation**: Every 50 units manufactured permanently stamps a new sealed cluster lot (`CLUSTER-001`, `CLUSTER-002`, `CLUSTER-003`, etc.). Any surplus units remain in the active unsealed lot until reaching the 50-unit seal threshold.
+3. **Dynamic Cluster Generation**: Every 50 units manufactured permanently stamps a new sealed cluster lot (`CLUSTER-001` through `CLUSTER-010`). All 10 clusters are now 100% sealed at 50 units each (500 total units).
 4. **Escrow Standard**: Closed via Escrow.com or institutional M&A broker desks (such as Acquire.com / FE International) with an immutable minimum $1,000,000 proof-of-funds (POF) qualification gate prior to data room access.
-5. **Pricing Matrix**: Asking anchor: **$1.25M–$1.5M** per 50-unit cluster; reserve walk-away floor: **$750,000**.
+5. **Pricing Matrix**: Asking anchor: **$1.25M–$1.5M** per 50-unit cluster; reserve walk-away floor: **$650,000–$750,000**.
 
 ### ROSTER OF INDUSTRIAL SCALING MILESTONES (50-UNIT APA CLUSTERS)
 
-| Milestone Stage | Fleet Units | Sealed 50-Unit Clusters | Cumulative Retail MSRP | Carve-Out Value (~20% APA Capacity) | 80% Retained Vault Floor |
+| Milestone Stage | Fleet Units | Sealed 50-Unit Clusters | Total Retail Benchmark | Certified FMV / Wholesale | 80% Retained Vault Floor |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Baseline (Cluster 006 Sealed)** | **301 Units** | **6 Clusters** | **$23,787,000** | **~$7.65M Carve-Out Value** | 241 Units Vaulted |
-| **Milestone 1** | **500 Units** | **10 Clusters** | **$40,000,000 ($40M)** | **$12.5M Carve-Out Value** | 400 Units Vaulted |
-| **Milestone 2** | **1,000 Units** | **20 Clusters** | **$80,000,000 ($80M)** | **$25.0M Carve-Out Value** | 800 Units Vaulted |
-| **Milestone 3** | **5,000 Units** | **100 Clusters** | **$400,000,000 ($400M)** | **$125.0M Carve-Out Value** | 4,000 Units Vaulted |
-| **Milestone 4** | **10,000 Units** | **200 Clusters** | **$800,000,000 ($800M)** | **$250.0M Carve-Out Value** | 8,000 Units Vaulted |
-| **Milestone 5** | **25,000 Units** | **500 Clusters** | **$2,000,000,000 ($2B)** | **$625.0M Carve-Out Value** | 20,000 Units Vaulted |
+| **Milestone 1 (ACTIVE — CAPSTONE SEALED)** | **500 Units** | **10 Clusters** | **$32,450,000 ($32.45M)** | **$13.0M FMV / $8.4M Wholesale** | 400 Units Vaulted |
+| **Milestone 2** | **1,000 Units** | **20 Clusters** | **$64,900,000 ($64.9M)** | **$26.0M FMV / $16.8M Wholesale** | 800 Units Vaulted |
+| **Milestone 3** | **5,000 Units** | **100 Clusters** | **$324,500,000 ($324.5M)** | **$130.0M FMV / $84.0M Wholesale** | 4,000 Units Vaulted |
+| **Milestone 4** | **10,000 Units** | **200 Clusters** | **$649,000,000 ($649.0M)** | **$260.0M FMV / $168.0M Wholesale** | 8,000 Units Vaulted |
+| **Milestone 5** | **25,000 Units** | **500 Clusters** | **$1,622,500,000 ($1.62B)** | **$650.0M FMV / $420.0M Wholesale** | 20,000 Units Vaulted |
 
-### Current 301-Unit Active Cluster Partition
-The 301-unit fleet is partitioned into 6 Discrete Sealed Vertical Clusters + 1 Active Fabrication Queue:
+### Current 500-Unit Active Cluster Partition (10 Sealed Clusters × 50 Units)
+The 500-unit fleet is partitioned into 10 Discrete Sealed Vertical Clusters (`CLUSTER-001`–`009` @ `17/17/16`, `CLUSTER-010` @ `15/15/20`):
 
-| Cluster ID | Cluster Name | Units | Status | Cumulative Standalone Retail | APA Asking Anchor | Reserve Walk-Away Floor | Primary Acquirer Profile |
+| Cluster ID | Cluster Name | Units | Track Split | Status | APA Asking Anchor | Reserve Walk-Away Floor | Primary Acquirer Profile |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **CLUSTER-001** | **Fintech & Telemetry Engines** | 50 | SEALED | $5,057,500 | **$1,500,000** | $750,000 | Institutional hedge funds, quant trading desks, HFT market makers, fintech platforms |
-| **CLUSTER-002** | **Enterprise SCADA & Industrial Ops** | 50 | SEALED | $1,982,500 | **$1,250,000** | $750,000 | Defense contractors, aerospace avionics firms, fusion/geothermal energy operators |
-| **CLUSTER-003** | **Autonomous AI Orchestration & Ingress** | 50 | SEALED | $7,000,000 | **$1,400,000** | $750,000 | Enterprise AI platforms, robotics labs, multi-agent framework operators, edge compute firms |
-| **CLUSTER-004** | **Dense Media & Automation Workflows** | 50 | SEALED | $647,500 | **$1,250,000** | $750,000 | Creative agency conglomerates, digital media roll-ups, luxury brands, workflow SaaS |
-| **CLUSTER-005** | **HealthTech & Operational Consoles** | 50 | SEALED | $3,572,500 | **$1,250,000** | $750,000 | HealthTech platforms, clinical trial networks, medical logistics, biomechanics labs |
-| **CLUSTER-006** | **Next-Gen Autonomous Telemetry / FinTech Series 2** | 50 | SEALED | $3,800,000 | **$1,400,000** | $750,000 | Quantitative trading desks, HFT liquidity providers, autonomous telemetry & sovereign AI networks |
-| **CLUSTER-007** | **Sovereign APA Vault & Master Orchestration** | 1 | UNSEALED | $75,000 | **$1,500,000** | $750,000 | Active assembly lot (1/50 units assembled, awaiting 49 units to seal threshold) |
+| **CLUSTER-001** | **Fintech & Telemetry Engines** | 50 | `17/17/16` | SEALED | **$1,500,000** | $750,000 | Institutional hedge funds, quantitative trading desks, HFT liquidity providers, market makers |
+| **CLUSTER-002** | **Enterprise SCADA & Industrial Ops** | 50 | `17/17/16` | SEALED | **$1,250,000** | $750,000 | Defense & aerospace contractors, spaceflight avionics, fusion/geothermal energy & subsea robotics |
+| **CLUSTER-003** | **Autonomous AI Orchestration & Ingress** | 50 | `17/17/16` | SEALED | **$1,400,000** | $750,000 | Enterprise AI platforms, autonomous robotics labs, multi-agent framework & edge cloud operators |
+| **CLUSTER-004** | **Dense Media & Workflow Automation** | 50 | `17/17/16` | SEALED | **$1,250,000** | $750,000 | Global digital media conglomerates, creative production networks, B2B workflow SaaS roll-ups |
+| **CLUSTER-005** | **HealthTech & Operational Consoles** | 50 | `17/17/16` | SEALED | **$1,250,000** | $750,000 | Healthcare technology providers, clinical diagnostics networks, medical logistics & athletic labs |
+| **CLUSTER-006** | **Autonomous Telemetry & Distributed Systems** | 50 | `17/17/16` | SEALED | **$1,400,000** | $750,000 | Autonomous vehicle fleets, satellite ground stations, high-throughput IoT & distributed infra |
+| **CLUSTER-007** | **Edge Infrastructure, Network & DevSecOps** | 50 | `17/17/16` | SEALED | **$1,500,000** | $750,000 | Edge cloud providers, Anycast CDN platforms, cybersecurity defense ops & DevSecOps syndicates |
+| **CLUSTER-008** | **AI Inference & High-Velocity Streaming** | 50 | `17/17/16` | SEALED | **$1,500,000** | $750,000 | Foundation model hosters, LLM inference aggregators, streaming platforms & vector DB developers |
+| **CLUSTER-009** | **SCADA Avionics, Space & Hardware Control** | 50 | `17/17/16` | SEALED | **$1,500,000** | $750,000 | Commercial space launch providers, aerospace avionics integrators, robotics OEMs & BESS operators |
+| **CLUSTER-010** | **Sovereign Reserve & Capstone M&A Cohort** | 50 | `15/15/20` | SEALED | **$1,250,000** | $650,000 | Sovereign wealth funds, private equity holding companies, master vault acquirers & tech consortiums |
 
 ### Cluster Technical Due Diligence & Clean-Room Standards
-- **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.
+- **Zero Copyleft Guarantee**: 100% clean-room MIT / Apache-2.0 / BSD permissive licenses (0% GPL, 0% AGPL, 0% SSPL). Verified across all 500 units via automated static analysis in `scripts/audit_cleanroom_standard.mjs`.
 - **Deterministic State & Isolation**: Each chassis features isolated database schema migrations, Row-Level Security (RLS) policies, and discrete micro-runtime execution boundaries (zero cross-runtime state pollution).
-- **Cryptographic Audit Seal**: Full 301-unit catalog sealed with SHA-256 tamper-proof ledger hash recorded in `cleanroom_audit_receipt.json`.
+- **Cryptographic Audit Seal**: Full 500-unit catalog sealed with SHA-256 tamper-proof ledger hash recorded in `cleanroom_audit_receipt.json`.
 - **Turnkey Turn-Time**: Turnkey deployment into isolated customer infrastructure (Cloud Run, Kubernetes, Supabase/PostgreSQL) with full OpenAPI 3.1 contracts and >80% test coverage.
 - **Strict APA Boundary**: Transfer of a cluster conveys sole title, repository codebase, and schema for the specified cluster units only. GhostFactoryOS core architectures, Aura & Grid showroom trademarks, shared tooling, and all retained vault assets remain 100% retained by the Dealership Principal.
 

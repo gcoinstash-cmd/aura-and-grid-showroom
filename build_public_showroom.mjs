@@ -4,7 +4,7 @@
  * Ghost Factory™ — Public Brand Showroom Compiler (F1 Pit Wall Telemetry & Pure APA Title Configurator)
  * Builds an isolated, decoupled public showroom for Aura & Grid (site/index.html & root index.html)
  * Extracts public metadata from src/data/fleet.json and CATALOG_MANIFEST.json.
- * Statically pre-renders all 200 digital vehicle cards with visible Truth Badges, >80% Pytest Gauges, Zero-Copyleft Stamps,
+ * Statically pre-renders all 500 digital vehicle cards with visible Truth Badges, >80% Pytest Gauges, Zero-Copyleft Stamps,
  * Top Telemetry Nav (AURA & GRID // REPOSITORY ENGINE V2.0 // STATUS: OPERATIONAL),
  * 3D CAD/Wireframe Dyno Viewport with Track 1 / Track 2 / Track 3 Selector Tabs,
  * and Inspection Bay Sidebar (14ms SVG API Latency Wave, commit b787061 readout, 0% uncommitted drift).
@@ -47,7 +47,7 @@ try {
 }
 
 
-console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 301 Vehicles)...');
+console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 500 Vehicles)...');
 
 if (!fs.existsSync(MANIFEST_PATH)) {
   console.error(`❌ Missing CATALOG_MANIFEST.json at: ${MANIFEST_PATH}`);
@@ -194,8 +194,12 @@ let rasterCoversFound = 0;
 let svgCoversFound = 0;
 
 fleetData.forEach(p => {
-  const isTrack3 = Boolean(p.pricing_track && p.pricing_track.includes('Track 3')) || (p.id >= 138);
-  const isTrack2 = !isTrack3 && (Boolean(p.flagship_qualified) || (p.pricing_track && p.pricing_track.includes('Track 2')) || (p.id >= 86 && p.id !== 112));
+  const isTrack3 = p.track
+    ? p.track === 'Track 3'
+    : Boolean(p.pricing_track && p.pricing_track.includes('Track 3')) || (p.id >= 138);
+  const isTrack2 = !isTrack3 && (p.track
+    ? p.track === 'Track 2'
+    : (Boolean(p.flagship_qualified) || (p.pricing_track && p.pricing_track.includes('Track 2')) || (p.id >= 86 && p.id !== 112)));
   const cleanSlug = p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const sector = sectorMap[p.vertical] || (isTrack3 || isTrack2 ? 'Deep Tech & SCADA' : 'Specialized Operations');
 
@@ -1128,7 +1132,7 @@ const showroomHtml = `<!DOCTYPE html>
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#0A0D14] border border-white/10 rounded-xl p-3 sm:px-4 font-mono">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-        <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (164 UNITS)</span>
+        <span class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider" id="activeLotHeaderTitle">TRACK 1 LOT // LEAN TUNER (168 UNITS)</span>
       </div>
       
       <input type="text" id="searchInput" placeholder="Search 500 units by name, stack, SQL table..." class="w-full sm:w-72 bg-[#05070B] border border-white/15 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400">
@@ -1149,7 +1153,7 @@ ${renderedCardsHtml}
         [ &lt; PREV LOT ]
       </button>
       <span class="text-amber-300 font-extrabold tracking-wider bg-black/60 px-4 py-1.5 rounded-lg border border-white/10" id="paginationIndicator">
-        PAGE 1 OF 15 (86 UNITS)
+        PAGE 1 OF 28 (168 UNITS)
       </span>
       <button id="nextPageBtn" class="px-4 py-2 rounded-lg bg-[#111724] border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/20 hover:border-cyan-400 font-bold transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">
         [ NEXT LOT &gt; ]
@@ -1787,8 +1791,8 @@ ${renderedCardsHtml}
       // Update lot header title
       const lotTitle = document.getElementById('activeLotHeaderTitle');
       if (lotTitle) {
-        if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (164 UNITS)';
-        else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (164 UNITS)';
+        if (track === 'track1') lotTitle.innerText = 'TRACK 1 LOT // LEAN TUNER (168 UNITS)';
+        else if (track === 'track2') lotTitle.innerText = 'TRACK 2 LOT // HYPERCAR FLAGSHIP (168 UNITS)';
         else if (track === 'track3') lotTitle.innerText = 'TRACK 3 LOT // SKUNKWORKS ENGINE (164 UNITS)';
         else lotTitle.innerText = 'ALL LOTS // 500 VERIFIED UNITS';
       }
@@ -2110,7 +2114,9 @@ console.log('🏁 [Aura & Grid] Pure APA F1 Pit Wall Showroom Rebuild Complete.'
 
 // Universal Demo Runner: inject the public catalog (no pricing fields) into demo_template.html
 // and mirror demo.html to site/, repository root, dist/ and public/.
-const DEMO_TEMPLATE_PATH = path.join(__dirname, 'demo_template.html');
+const DEMO_TEMPLATE_PATH = fs.existsSync(path.join(__dirname, 'demo_template.html'))
+  ? path.join(__dirname, 'demo_template.html')
+  : path.join(rootDir, 'scripts', 'site', 'demo_template.html');
 if (fs.existsSync(DEMO_TEMPLATE_PATH)) {
   const demoCatalog = publicProducts.map(p => ({
     id: p.id,

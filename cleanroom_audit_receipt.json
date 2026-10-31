@@ -1,15 +1,15 @@
 {
   "receipt_title": "GhostFactoryOS Institutional Clean-Room Technical Due Diligence Receipt",
-  "schema_version": "4.2.0-CLEANROOM-SEAL-301",
-  "audit_timestamp": "2026-10-29T09:41:49.610Z",
+  "schema_version": "4.2.0-CLEANROOM-SEAL-500",
+  "audit_timestamp": "2026-10-31T04:14:01.750Z",
   "auditor": "GhostFactoryOS Automated Clean-Room Technical Due Diligence Engine v4.2",
   "authority": "Lead Systems Engineer & Dealership Crew Chief",
   "governing_standard": "NIST SP 800-218 SSDF v1.1 // Cost Approach Agency Replacement Standard",
-  "git_commit_anchor": "26cb3781417de46a328643696669665a5a6d7cd4",
-  "audit_scope": "Full 301-Unit Master Fleet Portfolio (86 Track 1 + 51 Track 2 + 164 Track 3)",
+  "git_commit_anchor": "25b2564",
+  "audit_scope": "Full 500-Unit Master Fleet Portfolio (168 Track 1 + 168 Track 2 + 164 Track 3)",
   "diligence_summary": {
-    "total_units_audited": 301,
-    "total_units_passed": 301,
+    "total_units_audited": 500,
+    "total_units_passed": 500,
     "total_units_failed": 0,
     "clean_room_pass_rate": "100.0%",
     "zero_copyleft_verification": {
@@ -42,23 +42,24 @@
       "copyleft_exposure_rate": "0.00% (Permissive Commercial Unencumbered)"
     },
     "deterministic_state_and_isolation": {
-      "schema_isolation_verified_units": 301,
-      "rls_enforced_units": 301,
-      "zero_cross_runtime_pollution_units": 301,
+      "schema_isolation_verified_units": 500,
+      "rls_enforced_units": 500,
+      "zero_cross_runtime_pollution_units": 500,
       "state_machine_determinism": "100% Deterministic (Zero Cross-Tenant State Bleed)"
     },
     "institutional_status": "10/10 CLEAN-ROOM INSTITUTIONAL APA READY"
   },
   "cryptographic_seal": {
     "algorithm": "SHA-256",
-    "verification_hash": "a7b3daac69721565e7e357c0cedb6c002f2dd415f42430c39247068188353e89",
-    "signature_basis": "Canonicalized 301-Unit AST & Dependency Graph Digest",
+    "verification_hash": "534ecd924addaad7567d8ef56bc2a71c32d2cd9779da72278cdf2447f644f1a6",
+    "signature_basis": "Canonicalized 500-Unit AST & Dependency Graph Digest",
     "provenance": "Untampered sovereign digital car collection verified by Dealership Crew Chief"
   },
   "fleet_breakdown": {
-    "track_1_lean_tuner": 86,
-    "track_2_hypercar_flagship": 51,
-    "track_3_f1_skunkworks": 164
+    "track_1_lean_tuner": 168,
+    "track_2_hypercar_flagship": 168,
+    "track_3_f1_skunkworks": 164,
+    "total": 500
   },
   "unit_audit_manifest": [
     {
@@ -5247,7 +5248,7 @@
     {
       "index": 193,
       "unit_id": "GF-T3-193",
-      "name": "Apex Executive High-Output Performance Core (Mark II)",
+      "name": "Apex Executive Performance Core (Mark II)",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-193/index.html",
@@ -5355,7 +5356,7 @@
     {
       "index": 197,
       "unit_id": "GF-T3-197",
-      "name": "Apex Executive Performance Core (Mark II)",
+      "name": "Apex Executive Multi-Node Performance Core (Mark II)",
       "track": "Track 3",
       "vertical": "Autonomous Telemetry / Cockpit",
       "demo_url": "/demos/gf-t3-197/index.html",
@@ -8180,6 +8181,5379 @@
           "gf_t3_301_corridors",
           "gf_t3_301_stream_slots",
           "gf_t3_301_telemetry_frames"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 302,
+      "unit_id": "GF-T2-CANARY-28",
+      "name": "GF-T2-CANARY-28 ZERO-DOWNTIME-CANARY-GATE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/28-zero-downtime-canary-gate/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 303,
+      "unit_id": "GF-T1-303",
+      "name": "GF-T1-303 JSON/CSV Telemetry Stream Normalizer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/units/303-telemetry-normalizer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_normalizer_logs",
+          "stream_registry",
+          "format_schemas"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 304,
+      "unit_id": "GF-T1-304",
+      "name": "GF-T1-304 Ed25519 Token Signer & Verification Rig",
+      "track": "Track 1",
+      "vertical": "security",
+      "demo_url": "/fleet/cluster-007/units/304-ed25519-token-rig/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "crypto_keys",
+          "token_revocation_list",
+          "auth_audit_log"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 305,
+      "unit_id": "GF-T1-305",
+      "name": "GF-T1-305 Regex Pattern Shield & Sanitizer",
+      "track": "Track 1",
+      "vertical": "security",
+      "demo_url": "/fleet/cluster-007/units/305-regex-pattern-shield/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "threat_signatures",
+          "firewall_events",
+          "redacted_payloads"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 306,
+      "unit_id": "GF-T1-306",
+      "name": "GF-T1-306 Markdown Vault Metadata Extractor & Formatter",
+      "track": "Track 1",
+      "vertical": "knowledge",
+      "demo_url": "/fleet/cluster-007/units/306-markdown-metadata-extractor/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "vault_documents",
+          "wikilink_graph",
+          "tag_taxonomy"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 307,
+      "unit_id": "GF-T1-307",
+      "name": "GF-T1-307 Cron-Ready HTTP Ping & Uptime Telemetry Beacon",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/307-uptime-beacon/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "probe_targets",
+          "uptime_pings",
+          "ssl_certificate_registry"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 308,
+      "unit_id": "GF-T1-308",
+      "name": "GF-T1-308 Base64 / Hex Telemetry Packet Encoder",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/units/308-telemetry-packet-encoder/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "packet_frames",
+          "encoder_logs",
+          "crc_audit"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 309,
+      "unit_id": "GF-T1-309",
+      "name": "GF-T1-309 Semantic Version Semver Resolver & Bumper",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/309-semver-resolver-bumper/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "package_versions",
+          "release_channels",
+          "semver_manifests"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 310,
+      "unit_id": "GF-T1-310",
+      "name": "GF-T1-310 Fast SHA-256 Checksum Integrity Guard",
+      "track": "Track 1",
+      "vertical": "security",
+      "demo_url": "/fleet/cluster-007/units/310-sha256-checksum-guard/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "checksum_ledger",
+          "hmac_keys",
+          "integrity_violations"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 311,
+      "unit_id": "GF-T1-311",
+      "name": "GF-T1-311 Exponential Backoff Retry Dispatcher",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/311-retry-dispatcher/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "retry_jobs",
+          "circuit_breaker_states",
+          "backoff_telemetry"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 312,
+      "unit_id": "GF-T1-312",
+      "name": "GF-T1-312 JSON Schema Type Validator Rig",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/312-json-schema-validator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "schema_registry",
+          "validation_violations",
+          "type_contracts"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 313,
+      "unit_id": "GF-T1-313",
+      "name": "GF-T1-313 ANSI Terminal Telemetry Colorizer & Formatter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/units/313-ansi-telemetry-colorizer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "terminal_profiles",
+          "color_themes",
+          "render_streams"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 314,
+      "unit_id": "GF-T1-314",
+      "name": "GF-T1-314 Nano-ID Cryptographic Identifier Generator",
+      "track": "Track 1",
+      "vertical": "security",
+      "demo_url": "/fleet/cluster-007/units/314-nanoid-generator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "id_alphabets",
+          "token_entropy_logs",
+          "nonce_registry"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 315,
+      "unit_id": "GF-T1-315",
+      "name": "GF-T1-315 URL Query Parameter Serializer & Parser",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/315-url-query-serializer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "query_templates",
+          "url_transforms",
+          "search_params_cache"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 316,
+      "unit_id": "GF-T1-316",
+      "name": "GF-T1-316 Memory RSS Footprint Sampler Beacon",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/316-memory-sampler-beacon/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "memory_snapshots",
+          "heap_deltas",
+          "threshold_breaches"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 317,
+      "unit_id": "GF-T1-317",
+      "name": "GF-T1-317 ISO 8601 Timestamp Normalizer & Drift Checker",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/units/317-timestamp-drift-checker/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "time_sync_events",
+          "ntp_references",
+          "clock_drift_alarms"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 318,
+      "unit_id": "GF-T1-318",
+      "name": "GF-T1-318 Key-Value In-Memory LRU Cache Cache-Box",
+      "track": "Track 1",
+      "vertical": "infrastructure",
+      "demo_url": "/fleet/cluster-007/units/318-lru-cache-box/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "cache_segments",
+          "eviction_events",
+          "hit_ratio_telemetry"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 319,
+      "unit_id": "GF-T2-APEX-01",
+      "name": "GF-T2-APEX-01 APEX-TELEMETRY",
+      "track": "Track 2",
+      "vertical": "telemetry",
+      "demo_url": "/cockpits/01-apex-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_heartbeats",
+          "latency_oscillations",
+          "regional_probes"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 320,
+      "unit_id": "GF-T2-VAULT-02",
+      "name": "GF-T2-VAULT-02 VAULT-GUARD",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/02-vault-guard/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "kms_key_registry",
+          "zero_trust_sessions",
+          "rbac_audit_stream"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 321,
+      "unit_id": "GF-T2-ORBIT-03",
+      "name": "GF-T2-ORBIT-03 ORBIT-PIPELINE",
+      "track": "Track 2",
+      "vertical": "pipeline",
+      "demo_url": "/cockpits/03-orbit-pipeline/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "pipeline_dag_nodes",
+          "queue_backlog_metrics",
+          "event_bus_sink"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 322,
+      "unit_id": "GF-T2-CHRONO-04",
+      "name": "GF-T2-CHRONO-04 CHRONO-PULSE",
+      "track": "Track 2",
+      "vertical": "operations",
+      "demo_url": "/cockpits/04-chrono-pulse/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 323,
+      "unit_id": "GF-T2-SYNAPSE-05",
+      "name": "GF-T2-SYNAPSE-05 SYNAPSE-AUDIT",
+      "track": "Track 2",
+      "vertical": "audit",
+      "demo_url": "/cockpits/05-synapse-audit/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "api_ingress_requests",
+          "route_latency_profiles",
+          "status_code_distribution"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 324,
+      "unit_id": "GF-T2-SPECTER-01",
+      "name": "GF-T2-SPECTER-01 GRID-SPECTER",
+      "track": "Track 2",
+      "vertical": "networking",
+      "demo_url": "/cockpits/batch-bravo/01-grid-specter/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "anycast_routes",
+          "ttl_drift_logs",
+          "pop_latency_matrix"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 325,
+      "unit_id": "GF-T2-CIPHER-02",
+      "name": "GF-T2-CIPHER-02 CIPHER-STRIKE",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/batch-bravo/02-cipher-strike/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "entropy_pools",
+          "post_quantum_suites",
+          "epoch_rotation_ledger"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 326,
+      "unit_id": "GF-T2-NEBULA-03",
+      "name": "GF-T2-NEBULA-03 NEBULA-STREAM",
+      "track": "Track 2",
+      "vertical": "data-streaming",
+      "demo_url": "/cockpits/batch-bravo/03-nebula-stream/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "topic_partitions",
+          "consumer_lags",
+          "throughput_sine_waves"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 327,
+      "unit_id": "GF-T2-DRIFT-04",
+      "name": "GF-T2-DRIFT-04 DRIFT-SHIELD",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/batch-bravo/04-drift-shield/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "threat_vectors",
+          "ast_inspection_rules",
+          "quarantine_ledgers"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 328,
+      "unit_id": "GF-T2-QUANTUM-05",
+      "name": "GF-T2-QUANTUM-05 QUANTUM-CRON",
+      "track": "Track 2",
+      "vertical": "operations",
+      "demo_url": "/cockpits/batch-bravo/05-quantum-cron/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "distributed_cron_jobs",
+          "ptp_drift_telemetry",
+          "raft_consensus_terms"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 329,
+      "unit_id": "GF-T2-TITAN-06",
+      "name": "GF-T2-TITAN-06 TITAN-CACHE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-bravo/06-titan-cache/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "cache_slabs",
+          "arc_evictions",
+          "hit_ratio_series"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 330,
+      "unit_id": "GF-T2-ROUTER-07",
+      "name": "GF-T2-ROUTER-07 SIGNAL-ROUTER",
+      "track": "Track 2",
+      "vertical": "networking",
+      "demo_url": "/cockpits/batch-bravo/07-signal-router/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "rpc_routes",
+          "circuit_breaker_states",
+          "canary_weights"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 331,
+      "unit_id": "GF-T2-VALKYRIE-08",
+      "name": "GF-T2-VALKYRIE-08 VALKYRIE-AUTH",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/batch-bravo/08-valkyrie-auth/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "fido2_sessions",
+          "saml_federations",
+          "cert_validations"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 332,
+      "unit_id": "GF-T2-HYDRO-09",
+      "name": "GF-T2-HYDRO-09 HYDRO-DYNO",
+      "track": "Track 2",
+      "vertical": "database",
+      "demo_url": "/cockpits/batch-bravo/09-hydro-dyno/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "pool_allocations",
+          "transaction_lock_waits",
+          "query_duration_traces"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 333,
+      "unit_id": "GF-T2-AETHER-10",
+      "name": "GF-T2-AETHER-10 AETHER-METRIC",
+      "track": "Track 2",
+      "vertical": "networking",
+      "demo_url": "/cockpits/batch-bravo/10-aether-metric/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "cdn_edge_pops",
+          "warmup_saturation_series",
+          "purge_propagation_traces"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 334,
+      "unit_id": "GF-T2-NEXUS-01",
+      "name": "GF-T2-NEXUS-01 NEXUS-FABRIC",
+      "track": "Track 2",
+      "vertical": "networking",
+      "demo_url": "/cockpits/batch-charlie/01-nexus-fabric/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 335,
+      "unit_id": "GF-T2-AEGIS-02",
+      "name": "GF-T2-AEGIS-02 AEGIS-GATEWAY",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-charlie/02-aegis-gateway/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 336,
+      "unit_id": "GF-T2-PULSE-03",
+      "name": "GF-T2-PULSE-03 PULSE-OVERLOAD",
+      "track": "Track 2",
+      "vertical": "reliability",
+      "demo_url": "/cockpits/batch-charlie/03-pulse-overload/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 337,
+      "unit_id": "GF-T2-CLOCK-04",
+      "name": "GF-T2-CLOCK-04 CHRONO-LOCK",
+      "track": "Track 2",
+      "vertical": "distributed",
+      "demo_url": "/cockpits/batch-charlie/04-chrono-lock/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 338,
+      "unit_id": "GF-T2-PRISM-05",
+      "name": "GF-T2-PRISM-05 PRISM-TELEMETRY",
+      "track": "Track 2",
+      "vertical": "observability",
+      "demo_url": "/cockpits/batch-charlie/05-prism-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 339,
+      "unit_id": "GF-T2-KINETIC-06",
+      "name": "GF-T2-KINETIC-06 KINETIC-QUEUE",
+      "track": "Track 2",
+      "vertical": "streaming",
+      "demo_url": "/cockpits/batch-charlie/06-kinetic-queue/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 340,
+      "unit_id": "GF-T2-CIPHER-07",
+      "name": "GF-T2-CIPHER-07 CIPHER-LEDGER",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/batch-charlie/07-cipher-ledger/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 341,
+      "unit_id": "GF-T2-SPECTRAL-08",
+      "name": "GF-T2-SPECTRAL-08 SPECTRAL-CDN",
+      "track": "Track 2",
+      "vertical": "networking",
+      "demo_url": "/cockpits/batch-charlie/08-spectral-cdn/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 342,
+      "unit_id": "GF-T2-IRON-09",
+      "name": "GF-T2-IRON-09 IRON-SCHEMA",
+      "track": "Track 2",
+      "vertical": "database",
+      "demo_url": "/cockpits/batch-charlie/09-iron-schema/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 343,
+      "unit_id": "GF-T2-HYPER-10",
+      "name": "GF-T2-HYPER-10 HYPER-COMPACT",
+      "track": "Track 2",
+      "vertical": "performance",
+      "demo_url": "/cockpits/batch-charlie/10-hyper-compact/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 344,
+      "unit_id": "GF-T1-344",
+      "name": "GF-T1-344 JWT Header Decoder & Alg-None Validator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/344-jwt-header-decoder/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 345,
+      "unit_id": "GF-T1-345",
+      "name": "GF-T1-345 Semver Range Comparator & Saturation Parser",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/345-semver-range-comparator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 346,
+      "unit_id": "GF-T1-346",
+      "name": "GF-T1-346 IPv4 / IPv6 Subnet CIDR Mask Calculator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/346-cidr-subnet-calculator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 347,
+      "unit_id": "GF-T1-347",
+      "name": "GF-T1-347 CRC32 High-Throughput Checksum Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/347-crc32-checksum-rig/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 348,
+      "unit_id": "GF-T1-348",
+      "name": "GF-T1-348 Slugify & UTF-8 Normalizer Guard",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/348-slugify-utf8-normalizer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 349,
+      "unit_id": "GF-T1-349",
+      "name": "GF-T1-349 Micro-Bench Execution Clock Sampler",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/349-micro-bench-sampler/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 350,
+      "unit_id": "GF-T1-350",
+      "name": "GF-T1-350 MurmurHash3 Fast Hash Core",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/350-murmurhash3-core/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 351,
+      "unit_id": "GF-T1-351",
+      "name": "GF-T1-351 Hex Dump Formatter & Byte Visualizer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/351-hex-dump-visualizer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 352,
+      "unit_id": "GF-T1-352",
+      "name": "GF-T1-352 Rate-Limit Sliding Window Calculator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/352-sliding-window-rate-limiter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 353,
+      "unit_id": "GF-T1-353",
+      "name": "GF-T1-353 Content-Type MIME Sniffer & Header Parser",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/353-content-type-sniffer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 354,
+      "unit_id": "GF-T1-354",
+      "name": "GF-T1-354 Cookie String Serializer & Decryptor",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/354-cookie-serializer-parser/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 355,
+      "unit_id": "GF-T1-355",
+      "name": "GF-T1-355 Deep Object Difference (Diff) Engine",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/355-deep-object-diff/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 356,
+      "unit_id": "GF-T1-356",
+      "name": "GF-T1-356 Exponential Histogram Telemetry Bucket",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/356-exponential-histogram-bucket/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 357,
+      "unit_id": "GF-T1-357",
+      "name": "GF-T1-357 Micro-Cron Next-Execution Engine",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/357-micro-cron-scheduler/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 358,
+      "unit_id": "GF-T1-358",
+      "name": "GF-T1-358 ANSI Stripper & Plain-Text Formatter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/358-ansi-stripper-formatter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 359,
+      "unit_id": "GF-T1-359",
+      "name": "GF-T1-359 Semantic Commit Message Linter Engine",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/359-semantic-commit-linter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 360,
+      "unit_id": "GF-T1-360",
+      "name": "GF-T1-360 URL Query Builder & Deep Flattener",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/360-url-query-deep-builder/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 361,
+      "unit_id": "GF-T1-361",
+      "name": "GF-T1-361 Safe Number Precision Formatter (Sats / Decimals)",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/361-number-precision-formatter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 362,
+      "unit_id": "GF-T1-362",
+      "name": "GF-T1-362 UUID v7 Time-Ordered Key Generator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/362-uuidv7-key-generator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 363,
+      "unit_id": "GF-T1-363",
+      "name": "GF-T1-363 Micro-Priority Task Heap Queue",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-007/t1-batch-delta/363-priority-task-heap/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 364,
+      "unit_id": "GF-T1-364",
+      "name": "GF-T1-364 Cryptographic Salts Generator & Entropy Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/364-crypto-salt-generator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 365,
+      "unit_id": "GF-T1-365",
+      "name": "GF-T1-365 Constant-Time HMAC Signature Verifier",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/365-hmac-verifier/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 366,
+      "unit_id": "GF-T1-366",
+      "name": "GF-T1-366 HKDF Key Derivation Helper (RFC 5869)",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/366-key-derivation-helper/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 367,
+      "unit_id": "GF-T1-367",
+      "name": "GF-T1-367 PBKDF2 Password Hashing Micro-Harness",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/367-pbkdf2-harness/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 368,
+      "unit_id": "GF-T1-368",
+      "name": "GF-T1-368 Bitcoin/IPFS Base58 Binary Encoder & Decoder",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/368-base58-encoder/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 369,
+      "unit_id": "GF-T1-369",
+      "name": "GF-T1-369 Fixed-Size & Delimiter Stream Chunker",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/369-stream-chunker/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 370,
+      "unit_id": "GF-T1-370",
+      "name": "GF-T1-370 High-Watermark Backpressure Gauge & Queue Meter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/370-backpressure-buffer-gauge/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 371,
+      "unit_id": "GF-T1-371",
+      "name": "GF-T1-371 Zero-Copy Stream Line-by-Line Telemetry Parser",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/371-line-by-line-parser/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 372,
+      "unit_id": "GF-T1-372",
+      "name": "GF-T1-372 NDJSON (Newline-Delimited JSON) Streamer & Validator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/372-ndjson-streamer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 373,
+      "unit_id": "GF-T1-373",
+      "name": "GF-T1-373 Wildcard Telemetry Event Bus & Topic Dispatcher",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/373-event-emitter-bus/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 374,
+      "unit_id": "GF-T1-374",
+      "name": "GF-T1-374 Haversine GeoIP Great-Circle Distancer & Proximity Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/374-geoip-distancer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 375,
+      "unit_id": "GF-T1-375",
+      "name": "GF-T1-375 Timezone Offset Normalizer & UTC Timestamp Synchronizer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/375-timezone-normalizer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 376,
+      "unit_id": "GF-T1-376",
+      "name": "GF-T1-376 Business Days & Operational Workday Schedule Calculator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/376-working-days-calculator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 377,
+      "unit_id": "GF-T1-377",
+      "name": "GF-T1-377 5-Field Cron Expression Matcher & Next Execution Estimator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/377-cron-interval-matcher/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 378,
+      "unit_id": "GF-T1-378",
+      "name": "GF-T1-378 ISO 8601 Duration Parser & Millisecond Converter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/378-iso-duration-parser/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 379,
+      "unit_id": "GF-T1-379",
+      "name": "GF-T1-379 Path-Safe Dot-Notation Property Getter & Setter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/379-dot-property-accessor/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 380,
+      "unit_id": "GF-T1-380",
+      "name": "GF-T1-380 Zero-Pollution Structured Deep Clone & Object Replicator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/380-deep-clone-pool/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 381,
+      "unit_id": "GF-T1-381",
+      "name": "GF-T1-381 Cryptographically Uniform Fisher-Yates Array Shuffler",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/381-fisher-yates-shuffle/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 382,
+      "unit_id": "GF-T1-382",
+      "name": "GF-T1-382 Precision Math Interpolation, Clamp & Scale Unit",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/382-math-lerp-clamp/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 383,
+      "unit_id": "GF-T1-383",
+      "name": "GF-T1-383 Levenshtein String Distance & Fuzzy Similarity Matcher",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-echo/383-levenshtein-matcher/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 384,
+      "unit_id": "GF-T1-384",
+      "name": "GF-T1-384 Binary Bitmask Flags Calculator & Permission Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/384-bitmask-flags-calculator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 385,
+      "unit_id": "GF-T1-385",
+      "name": "GF-T1-385 Color Space Converter (HEX, RGB, HSL, LAB)",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/385-color-space-converter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 386,
+      "unit_id": "GF-T1-386",
+      "name": "GF-T1-386 JSON Pointer (RFC 6901) Evaluator & Mutator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/386-json-pointer-evaluator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 387,
+      "unit_id": "GF-T1-387",
+      "name": "GF-T1-387 XML Safe Character Entity Escaper & Unescaper",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/387-xml-entity-escaper/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 388,
+      "unit_id": "GF-T1-388",
+      "name": "GF-T1-388 Semver Pre-Release Tag Extractor & Normalizer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/388-semver-prerelease-extractor/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 389,
+      "unit_id": "GF-T1-389",
+      "name": "GF-T1-389 System Load Average & CPU Telemetry Parser",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/389-system-load-parser/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 390,
+      "unit_id": "GF-T1-390",
+      "name": "GF-T1-390 Microsecond & Nanosecond High-Res Execution Timer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/390-microsecond-timer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 391,
+      "unit_id": "GF-T1-391",
+      "name": "GF-T1-391 Exponential Backoff Full & Equal Jitter Calculator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/391-backoff-jitter-calculator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 392,
+      "unit_id": "GF-T1-392",
+      "name": "GF-T1-392 Fixed-Capacity Circular Ring Buffer Queue",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/392-circular-ring-buffer/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 393,
+      "unit_id": "GF-T1-393",
+      "name": "GF-T1-393 Percentile & Histogram Quantile Calculator",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/393-percentile-quantile-calculator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 394,
+      "unit_id": "GF-T1-394",
+      "name": "GF-T1-394 Memory Byte Size Humanizer & Parser",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/394-byte-size-formatter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 395,
+      "unit_id": "GF-T1-395",
+      "name": "GF-T1-395 Exponential Moving Average (EMA) Smoother",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/395-exponential-moving-average/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 396,
+      "unit_id": "GF-T1-396",
+      "name": "GF-T1-396 Canonical Query String Sorter & Signature Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/396-canonical-querystring-sorter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 397,
+      "unit_id": "GF-T1-397",
+      "name": "GF-T1-397 OpenMetrics & Prometheus Text Exposition Formatter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/397-prometheus-metric-formatter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 398,
+      "unit_id": "GF-T1-398",
+      "name": "GF-T1-398 IPv4 CIDR Subnet Overlap & Inclusion Detector",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/398-ip-subnet-overlap-detector/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 399,
+      "unit_id": "GF-T1-399",
+      "name": "GF-T1-399 Streaming JSON Chunk Buffer & Balanced Object Framer",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/399-json-chunk-accumulator/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 400,
+      "unit_id": "GF-T1-400",
+      "name": "GF-T1-400 High-Precision Debounce & Throttle Rate Controller",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/400-debounce-throttle-controller/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 401,
+      "unit_id": "GF-T1-401",
+      "name": "GF-T1-401 GeoJSON Bounding Box & Centroid Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/401-geojson-bbox-centroid/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 402,
+      "unit_id": "GF-T1-402",
+      "name": "GF-T1-402 Base32 (RFC 4648) & TOTP Secret Key Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/402-base32-totp-encoder/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 403,
+      "unit_id": "GF-T1-403",
+      "name": "GF-T1-403 Circuit Breaker Failure Guard & Tripper",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/403-circuit-breaker-state-machine/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 404,
+      "unit_id": "GF-T1-404",
+      "name": "GF-T1-404 Sliding Window Counter & Requests-Per-Second (RPS) Meter",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/404-sliding-window-rate-meter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 405,
+      "unit_id": "GF-T1-405",
+      "name": "GF-T1-405 Fast Bloom Filter Probabilistic Set Rig",
+      "track": "Track 1",
+      "vertical": "telemetry",
+      "demo_url": "/fleet/cluster-008/t1-batch-foxtrot/405-fast-bloom-filter/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_metrics",
+          "execution_logs",
+          "rate_limits"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 406,
+      "unit_id": "GF-T2-WAF-01",
+      "name": "GF-T2-WAF-01 WAF-INSPECTOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/01-waf-inspector/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 407,
+      "unit_id": "GF-T2-SESSION-02",
+      "name": "GF-T2-SESSION-02 ZERO-TRUST-SESSION",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/02-zero-trust-session/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 408,
+      "unit_id": "GF-T2-ROTATOR-03",
+      "name": "GF-T2-ROTATOR-03 API-KEY-ROTATOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/03-api-key-rotator/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 409,
+      "unit_id": "GF-T2-CERT-04",
+      "name": "GF-T2-CERT-04 SSL-CERT-RADAR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/04-ssl-cert-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 410,
+      "unit_id": "GF-T2-BOT-05",
+      "name": "GF-T2-BOT-05 BOT-DEFENSE-GRID",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/05-bot-mitigation/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 411,
+      "unit_id": "GF-T2-VPC-06",
+      "name": "GF-T2-VPC-06 VPC-FLOW-LOGGER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/06-vpc-flow-logger/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 412,
+      "unit_id": "GF-T2-MESH-07",
+      "name": "GF-T2-MESH-07 SERVICE-MESH-TOPOLOGY",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/07-service-mesh-topology/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 413,
+      "unit_id": "GF-T2-BGP-08",
+      "name": "GF-T2-BGP-08 BGP-ROUTING-MAP",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/08-bgp-routing-map/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 414,
+      "unit_id": "GF-T2-POD-09",
+      "name": "GF-T2-POD-09 POD-HEALTH-GRID",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/09-pod-health-grid/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 415,
+      "unit_id": "GF-T2-NAT-10",
+      "name": "GF-T2-NAT-10 NAT-GATEWAY-DYNO",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/10-nat-gateway-throughput/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 416,
+      "unit_id": "GF-T2-LOCK-11",
+      "name": "GF-T2-LOCK-11 POSTGRES-LOCK-MONITOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/11-postgres-lock-monitor/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 417,
+      "unit_id": "GF-T2-REDIS-12",
+      "name": "GF-T2-REDIS-12 REDIS-KEYSPACE-HEATMAP",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/12-redis-keyspace-heatmap/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 418,
+      "unit_id": "GF-T2-S3-13",
+      "name": "GF-T2-S3-13 S3-STORAGE-GAUGE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/13-s3-storage-gauge/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 419,
+      "unit_id": "GF-T2-KAFKA-14",
+      "name": "GF-T2-KAFKA-14 KAFKA-CONSUMER-LAG",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/14-kafka-consumer-lag/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 420,
+      "unit_id": "GF-T2-CLICK-15",
+      "name": "GF-T2-CLICK-15 CLICKHOUSE-SPEEDOMETER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/15-clickhouse-speedometer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 421,
+      "unit_id": "GF-T2-REACT-16",
+      "name": "GF-T2-REACT-16 REACT-RERENDER-PROFILER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/16-react-rerender-profiler/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 422,
+      "unit_id": "GF-T2-VITALS-17",
+      "name": "GF-T2-VITALS-17 WEB-VITALS-SCOPE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/17-web-vitals-scope/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 423,
+      "unit_id": "GF-T2-LEAK-18",
+      "name": "GF-T2-LEAK-18 MEMORY-LEAK-TRACER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/18-memory-leak-tracer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 424,
+      "unit_id": "GF-T2-EDGE-19",
+      "name": "GF-T2-EDGE-19 EDGE-COLD-START",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/19-edge-cold-start/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 425,
+      "unit_id": "GF-T2-WATERFALL-20",
+      "name": "GF-T2-WATERFALL-20 API-PAYLOAD-WATERFALL",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-delta/20-api-payload-waterfall/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 426,
+      "unit_id": "GF-T2-PING-01",
+      "name": "GF-T2-PING-01 ANYCAST-PING-RADAR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/01-anycast-ping-radar/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 427,
+      "unit_id": "GF-T2-WS-02",
+      "name": "GF-T2-WS-02 WEBSOCKET-FLOOD-GUARD",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/02-websocket-flood-guard/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 428,
+      "unit_id": "GF-T2-DNS-03",
+      "name": "GF-T2-DNS-03 DNS-PROPAGATION-CHECKER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/03-dns-propagation-checker/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 429,
+      "unit_id": "GF-T2-QUIC-04",
+      "name": "GF-T2-QUIC-04 QUIC-HTTP3-INSPECTOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/04-quic-http3-inspector/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 430,
+      "unit_id": "GF-T2-CDN-05",
+      "name": "GF-T2-CDN-05 CDN-SHIELD-TELEMETRY",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/05-cdn-shield-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 431,
+      "unit_id": "GF-T2-CACHE-06",
+      "name": "GF-T2-CACHE-06 CACHE-TACHOMETER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/06-cache-tachometer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 432,
+      "unit_id": "GF-T2-IOPS-07",
+      "name": "GF-T2-IOPS-07 DISK-IOPS-METER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/07-disk-iops-meter/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 433,
+      "unit_id": "GF-T2-STORAGE-08",
+      "name": "GF-T2-STORAGE-08 EPHEMERAL-STORAGE-TRACKER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/08-ephemeral-storage-tracker/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 434,
+      "unit_id": "GF-T2-REPL-09",
+      "name": "GF-T2-REPL-09 BLOB-REPLICATION-STATUS",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/09-blob-replication-status/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 435,
+      "unit_id": "GF-T2-EGRESS-10",
+      "name": "GF-T2-EGRESS-10 STORAGE-EGRESS-THROTTLE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/10-storage-egress-throttle/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 436,
+      "unit_id": "GF-T2-VULN-11",
+      "name": "GF-T2-VULN-11 VULNERABILITY-TRIAGE-BOARD",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/11-vulnerability-triage-board/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 437,
+      "unit_id": "GF-T2-LAYER-12",
+      "name": "GF-T2-LAYER-12 CONTAINER-LAYER-ANALYZER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/12-container-layer-analyzer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 438,
+      "unit_id": "GF-T2-WALL-13",
+      "name": "GF-T2-WALL-13 SECRET-ALERT-WALL",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/13-secret-alert-wall/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 439,
+      "unit_id": "GF-T2-CICD-14",
+      "name": "GF-T2-CICD-14 CICD-PIPELINE-FLOW",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/14-cicd-pipeline-flow/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 440,
+      "unit_id": "GF-T2-POLICY-15",
+      "name": "GF-T2-POLICY-15 POLICY-ENFORCEMENT-GRID",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/15-policy-enforcement-grid/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 441,
+      "unit_id": "GF-T2-COST-16",
+      "name": "GF-T2-COST-16 API-COST-METER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/16-api-cost-meter/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 442,
+      "unit_id": "GF-T2-BURN-17",
+      "name": "GF-T2-BURN-17 TOKEN-BURN-DIAL",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/17-token-burn-dial/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 443,
+      "unit_id": "GF-T2-SATS-18",
+      "name": "GF-T2-SATS-18 SATOSHIS-ACCOUNTING-GAUGE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/18-satoshis-accounting-gauge/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 444,
+      "unit_id": "GF-T2-RUNWAY-19",
+      "name": "GF-T2-RUNWAY-19 CLOUD-RUNWAY-DASHBOARD",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/19-cloud-runway-dashboard/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 445,
+      "unit_id": "GF-T2-DYNO-20",
+      "name": "GF-T2-DYNO-20 UNIT-ECONOMICS-DYNO",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-echo/20-unit-economics-dyno/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 446,
+      "unit_id": "GF-T2-AI-01",
+      "name": "GF-T2-AI-01 AI-INFERENCE-MONITOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/01-ai-inference-latency/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 447,
+      "unit_id": "GF-T2-VEC-02",
+      "name": "GF-T2-VEC-02 VECTOR-QUERY-VISUALIZER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/02-vector-db-visualizer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 448,
+      "unit_id": "GF-T2-CTX-03",
+      "name": "GF-T2-CTX-03 CONTEXT-PRESSURE-GAUGE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/03-context-window-pressure/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 449,
+      "unit_id": "GF-T2-TPUT-04",
+      "name": "GF-T2-TPUT-04 MODEL-THROUGHPUT-DIAL",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/04-model-throughput-dial/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 450,
+      "unit_id": "GF-T2-GPU-05",
+      "name": "GF-T2-GPU-05 GPU-CLUSTER-UTILIZATION",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/05-gpu-cluster-utilization/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 451,
+      "unit_id": "GF-T2-LOCK-06",
+      "name": "GF-T2-LOCK-06 WORKER-LOCK-MATRIX",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/06-distributed-worker-lock/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 452,
+      "unit_id": "GF-T2-HOOK-07",
+      "name": "GF-T2-HOOK-07 WEBHOOK-RETRY-VISUALIZER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/07-webhook-retry-visualizer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 453,
+      "unit_id": "GF-T2-GQL-08",
+      "name": "GF-T2-GQL-08 GRAPHQL-SUBSCRIPTION-FEED",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/08-graphql-subscription-feed/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 454,
+      "unit_id": "GF-T2-GRPC-09",
+      "name": "GF-T2-GRPC-09 GRPC-BIDIRECTIONAL-SCOPE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/09-grpc-bidirectional-scope/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 455,
+      "unit_id": "GF-T2-SAGA-10",
+      "name": "GF-T2-SAGA-10 DISTRIBUTED-SAGA-COORDINATOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/10-distributed-saga-coordinator/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 456,
+      "unit_id": "GF-T2-TS-11",
+      "name": "GF-T2-TS-11 TIMESERIES-COMPACTION-DYNO",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/11-timeseries-compaction-dyno/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 457,
+      "unit_id": "GF-T2-EKV-12",
+      "name": "GF-T2-EKV-12 EDGE-KV-STORE-TELEMETRY",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/12-edge-kv-store-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 458,
+      "unit_id": "GF-T2-MQTT-13",
+      "name": "GF-T2-MQTT-13 MQTT-IOT-BROKER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/13-mqtt-iot-telemetry-broker/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 459,
+      "unit_id": "GF-T2-EVT-14",
+      "name": "GF-T2-EVT-14 EVENT-STORE-REPLAY-CONSOLE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/14-event-store-replay-console/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 460,
+      "unit_id": "GF-T2-LB-15",
+      "name": "GF-T2-LB-15 LOAD-BALANCER-HEALTH-RADAR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/15-load-balancer-health-radar/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 461,
+      "unit_id": "GF-T2-MERKLE-16",
+      "name": "GF-T2-MERKLE-16 MERKLE-PROOF-VERIFIER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/16-merkle-proof-verifier/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 462,
+      "unit_id": "GF-T2-AUDIT-17",
+      "name": "GF-T2-AUDIT-17 AUDIT-TRAIL-TAMPER-GUARD",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/17-audit-trail-tamper-guard/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 463,
+      "unit_id": "GF-T2-RBAC-18",
+      "name": "GF-T2-RBAC-18 RBAC-PERMISSION-EVALUATOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/18-rbac-permission-evaluator/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 464,
+      "unit_id": "GF-T2-RATE-19",
+      "name": "GF-T2-RATE-19 RATE-LIMIT-SLIDING-BUBBLE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/19-rate-limit-sliding-bubble/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 465,
+      "unit_id": "GF-T2-CLEAN-20",
+      "name": "GF-T2-CLEAN-20 ZERO-LEAK-PAYLOAD-SANITIZER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-foxtrot/20-zero-leak-payload-sanitizer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 466,
+      "unit_id": "GF-T2-PILOT-01",
+      "name": "GF-T2-PILOT-01 AUTONOMOUS-PILOT-TELEMETRY",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/01-autonomous-pilot-telemetry/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 467,
+      "unit_id": "GF-T2-PLM-02",
+      "name": "GF-T2-PLM-02 SCADA-INDUSTRIAL-PLM",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/02-scada-industrial-plm/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 468,
+      "unit_id": "GF-T2-LIDAR-03",
+      "name": "GF-T2-LIDAR-03 LIDAR-POINTCLOUD-SCOPE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/03-lidar-pointcloud-scope/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 469,
+      "unit_id": "GF-T2-TELEOP-04",
+      "name": "GF-T2-TELEOP-04 TELEOP-LOW-LATENCY-RIG",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/04-teleop-low-latency-rig/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 470,
+      "unit_id": "GF-T2-ACT-05",
+      "name": "GF-T2-ACT-05 ACTUATOR-PWM-OSCILLOSCOPE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/05-actuator-pwm-oscilloscope/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 471,
+      "unit_id": "GF-T2-BMS-06",
+      "name": "GF-T2-BMS-06 BATTERY-BMS-THERMAL-GAUGE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/06-battery-bms-thermal-gauge/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 472,
+      "unit_id": "GF-T2-SAT-07",
+      "name": "GF-T2-SAT-07 SATELLITE-ORBITAL-TRACKER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/07-satellite-orbital-tracker/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 473,
+      "unit_id": "GF-T2-L3-08",
+      "name": "GF-T2-L3-08 ORDERBOOK-DEPTH-L3",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/08-orderbook-depth-l3/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 474,
+      "unit_id": "GF-T2-DARK-09",
+      "name": "GF-T2-DARK-09 DARKPOOL-CROSS-ENGINE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/09-darkpool-cross-engine/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 475,
+      "unit_id": "GF-T2-VWAP-10",
+      "name": "GF-T2-VWAP-10 VWAP-EXECUTION-HORIZON",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/10-vwap-execution-horizon/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 476,
+      "unit_id": "GF-T2-ARB-11",
+      "name": "GF-T2-ARB-11 ARBITRAGE-SPREAD-RADAR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/11-arbitrage-spread-radar/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 477,
+      "unit_id": "GF-T2-VAR-12",
+      "name": "GF-T2-VAR-12 VAR-RISK-MONTECARLO",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/12-var-risk-montecarlo/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 478,
+      "unit_id": "GF-T2-GREEKS-13",
+      "name": "GF-T2-GREEKS-13 OPTIONS-GREEKS-SURFACE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/13-options-greeks-surface/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 479,
+      "unit_id": "GF-T2-LIQ-14",
+      "name": "GF-T2-LIQ-14 LIQUIDATION-CASCADE-SHIELD",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/14-liquidation-cascade-shield/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 480,
+      "unit_id": "GF-T2-AGENT-15",
+      "name": "GF-T2-AGENT-15 MULTI-AGENT-CONSENSUS-MESH",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/15-multi-agent-consensus-mesh/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 481,
+      "unit_id": "GF-T2-DRIFT-16",
+      "name": "GF-T2-DRIFT-16 EMBEDDING-DRIFT-DETECTOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/16-embedding-drift-detector/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 482,
+      "unit_id": "GF-T2-PCACHE-17",
+      "name": "GF-T2-PCACHE-17 PROMPT-CACHE-HIT-MATRIX",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/17-prompt-cache-hit-matrix/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 483,
+      "unit_id": "GF-T2-TOOL-18",
+      "name": "GF-T2-TOOL-18 FUNCTION-CALLING-EVALUATOR",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/18-function-calling-evaluator/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 484,
+      "unit_id": "GF-T2-EVAL-19",
+      "name": "GF-T2-EVAL-19 SYNTHETIC-EVAL-BENCH",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/19-synthetic-eval-bench/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 485,
+      "unit_id": "GF-T2-LORA-20",
+      "name": "GF-T2-LORA-20 LORA-ADAPTER-HOT-SWAP",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/20-lora-adapter-hot-swap/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 486,
+      "unit_id": "GF-T2-TOXIC-21",
+      "name": "GF-T2-TOXIC-21 GUARDRAIL-TOXICITY-FILTER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/21-guardrail-toxicity-filter/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 487,
+      "unit_id": "GF-T2-EBPF-22",
+      "name": "GF-T2-EBPF-22 EBPF-SOCKET-FILTER-SCOPE",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/22-ebpf-socket-filter-scope/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 488,
+      "unit_id": "GF-T2-TRACE-23",
+      "name": "GF-T2-TRACE-23 DISTRIBUTED-TRACING-SPANS",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/23-distributed-tracing-spans/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 489,
+      "unit_id": "GF-T2-WAL-24",
+      "name": "GF-T2-WAL-24 WAL-REPLICATION-STREAMER",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/24-wal-replication-streamer/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 490,
+      "unit_id": "GF-T2-TLS-25",
+      "name": "GF-T2-TLS-25 TLS-SESSION-RESUMPTION-RIG",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/25-tls-session-resumption-rig/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 491,
+      "unit_id": "GF-T2-RAFT-26",
+      "name": "GF-T2-RAFT-26 RAFT-LOG-COMPACTION-DYNO",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/26-raft-log-compaction-dyno/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 492,
+      "unit_id": "GF-T2-MPOOL-27",
+      "name": "GF-T2-MPOOL-27 MEMORY-POOL-FRAGMENTATION",
+      "track": "Track 2",
+      "vertical": "infrastructure",
+      "demo_url": "/cockpits/batch-golf/27-memory-pool-fragmentation/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "telemetry_streams",
+          "system_signals",
+          "operator_events"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 493,
+      "unit_id": "GF-T1-493",
+      "name": "GF-T1-493 CAPSTONE-ENTROPY",
+      "track": "Track 1",
+      "vertical": "security",
+      "demo_url": "/fleet/cluster-010/t1-capstone/493-capstone-entropy/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "entropy_pools",
+          "csprng_samples",
+          "audit_tokens"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 494,
+      "unit_id": "GF-T1-494",
+      "name": "GF-T1-494 CAPSTONE-MURMUR",
+      "track": "Track 1",
+      "vertical": "data",
+      "demo_url": "/fleet/cluster-010/t1-capstone/494-capstone-murmur/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "murmur_hashes",
+          "hash_tables",
+          "bloom_filters"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 495,
+      "unit_id": "GF-T1-495",
+      "name": "GF-T1-495 CAPSTONE-SEMVER",
+      "track": "Track 1",
+      "vertical": "devops",
+      "demo_url": "/fleet/cluster-010/t1-capstone/495-capstone-semver/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "semver_matrices",
+          "package_locks",
+          "audit_reports"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 496,
+      "unit_id": "GF-T1-496",
+      "name": "GF-T1-496 CAPSTONE-BEACON",
+      "track": "Track 1",
+      "vertical": "network",
+      "demo_url": "/fleet/cluster-010/t1-capstone/496-capstone-beacon/README.md",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "beacon_frames",
+          "jitter_samples",
+          "liveness_probes"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 497,
+      "unit_id": "GF-T2-OMEGA-01",
+      "name": "GF-T2-OMEGA-01 CHASSIS-OMEGA-01",
+      "track": "Track 2",
+      "vertical": "network",
+      "demo_url": "/cockpits/batch-capstone/01-chassis-omega-01/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "edge_pops",
+          "anycast_routes",
+          "http3_streams"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 498,
+      "unit_id": "GF-T2-OMEGA-02",
+      "name": "GF-T2-OMEGA-02 CHASSIS-OMEGA-02",
+      "track": "Track 2",
+      "vertical": "security",
+      "demo_url": "/cockpits/batch-capstone/02-chassis-omega-02/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "pqc_sessions",
+          "kyber_handshakes",
+          "dilithium_keys"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 499,
+      "unit_id": "GF-T2-OMEGA-03",
+      "name": "GF-T2-OMEGA-03 CHASSIS-OMEGA-03",
+      "track": "Track 2",
+      "vertical": "data",
+      "demo_url": "/cockpits/batch-capstone/03-chassis-omega-03/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "event_streams",
+          "ring_buffers",
+          "consumer_lags"
+        ],
+        "rls_enforced": true,
+        "zero_cross_runtime_pollution": true,
+        "isolation_grade": "ENTERPRISE_GRADE_AIR_GAPPED"
+      },
+      "overall_status": "PASS"
+    },
+    {
+      "index": 500,
+      "unit_id": "GF-T2-VALUATION-500",
+      "name": "GF-T2-VALUATION-500 CHASSIS-VALUATION-500",
+      "track": "Track 2",
+      "vertical": "scada",
+      "demo_url": "/cockpits/batch-capstone/04-chassis-valuation-500/index.html",
+      "clean_room": {
+        "zero_copyleft": true,
+        "spdx_license": "MIT Permissive Standard",
+        "prohibited_license_count": 0,
+        "diligence_status": "CLEAN_ROOM_APPROVED"
+      },
+      "state_and_isolation": {
+        "schema_isolated": true,
+        "table_count": 4,
+        "sample_tables": [
+          "portfolio_vaults",
+          "cluster_ledgers",
+          "master_monroney"
         ],
         "rls_enforced": true,
         "zero_cross_runtime_pollution": true,

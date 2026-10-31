@@ -1,10 +1,10 @@
 # Commercial Agency Whitelabel License & Terms of Service
 ## ZoMae Media LLC / Aura & Grid™ Master Foundry
 
-**Document Version**: 2.2 (109-Fleet Calibrated Edition)  
+**Document Version**: 5.0 (500-Unit Capstone Calibrated Edition)  
 **Grantor**: ZoMae Media LLC (Parent Holding Entity)  
 **Licensing Engine**: Aura & Grid™ Digital Commerce Gateway  
-**Catalog Status**: 109 Verified Full-Stack Operating System (OS) Flagships (85 Track 1 + 24 Track 2)  
+**Catalog Status**: 500 Verified Full-Stack Digital Assets & Production Engines (`168` Track 1 + `168` Track 2 + `164` Track 3 across `10` Sealed 50-Unit Clusters)  
 
 ---
 
@@ -60,17 +60,19 @@ Any violation of Section 2 constitutes immediate and automatic termination of th
 
 ---
 
-## 4. Valuation Appraisal & Dual-Track Pricing Protocol
+## 4. Valuation Appraisal & Multi-Track Pricing Protocol (500-Unit Capstone)
 
-For commercial deal architecture, agency discussions, and asset valuation, the portfolio operates under the following grounded v2 protocol:
+For commercial deal architecture, agency discussions, and asset valuation, the portfolio operates under the following grounded Capstone protocol:
 
 | Valuation Layer | Valuation Range / Anchor | Transaction Definition & Market Context |
 |:---|:---:|:---|
-| **Orderly Fair-Market Value** | **$85,500 – $148,375** | Pre-revenue catalog appraisal (Best single planning value: **~$115,000**). |
-| **Track 1 Exclusive Buyout** | **$3,800 – $6,500** | Standard prototype single-asset micro-APA (Anchor: **$4,500**). |
-| **Track 2 Flagship Buyout** | **$10,000 – $18,000** | Elite domain-heavy single-asset micro-APA entry anchor (**$14,500**); full: $18k–$35k; strategic: $35k–$75k+. |
-| **Replacement Labor Benchmark**| **$700,000 – $1,690,000** | Engineering benchmark for 109 custom applications ($4,000–$15,000/app dev cost). |
-| **80% Minimum Retained Floor** | **87 Assets Minimum** | Minimum 80% retained floor enforced; max 22 transfer capacity. Never sell factory or showroom IP. |
+| **Total Retail Price** | **$32,450,000 ($32.45M)** | Combined Agency Replacement Benchmark across all 500 vaulted chassis. |
+| **Certified Fair Market Value (FMV)** | **$13,000,000 ($13.0M)** | Orderly mid-market enterprise appraisal (`$8.4M` Wholesale / `$4.2M` Walk-Away). |
+| **Track 1 Exclusive Buyout** | **$3,800 – $6,500** | Standard prototype single-asset micro-APA (Anchor: **$4,500** / `$3,800` Wholesale). |
+| **Track 2 Flagship Buyout** | **$10,000 – $18,000** | Elite SCADA/deep-tech single-asset micro-APA entry anchor (**$14,500**); full: `$18k–$35k`; strategic: `$35k–$75k+`. |
+| **Track 3 Skunkworks Engine** | **$35,000 – $150,000+** | Working Service Engine pure APA title transfer (Anchor: **$50,000** / `$35,000` Wholesale). |
+| **50-Unit Cluster Carve-Out** | **$1,250,000 – $1,500,000** | Standalone 50-chassis cluster APA (`$650,000 – $750,000` cluster reserve floor). |
+| **80% Minimum Retained Floor** | **400 Assets Minimum** | Minimum 80% retained floor enforced (8 of 10 clusters); max 100 transfer capacity. Never sell factory or showroom IP. |
 
 ---
 

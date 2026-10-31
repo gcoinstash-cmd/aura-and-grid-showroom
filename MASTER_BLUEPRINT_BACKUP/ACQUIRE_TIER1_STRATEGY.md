@@ -3,7 +3,7 @@
 **Document ID:** `GF-STRATEGY-ACQUIRE-T1-2026-v1.0`  
 **Classification:** Institutional Micro-APA Liquidation Roadmap & Escrow Economics Audit  
 **Authority Hierarchy:** Dealership Principal approves gates, capital, and deploys. Lead Systems Engineer architects specs, math, and valuation.  
-**Active Fleet Scope:** 160 Cataloged Units (`86 Track 1 Lean` + `51 Track 2 Flagships` + `23 Track 3 F1 Skunkworks Service Engines`)  
+**Active Fleet Scope:** **500 Cataloged Units — Capstone Sealed** (`168 Track 1 Lean` + `168 Track 2 Flagships` + `164 Track 3 F1 Skunkworks Service Engines` across `10` Sealed 50-Unit Clusters)  
 **Pilot Target Unit:** `GF-T3-151 // ApexLimit Order Matching & Real-Time Risk Liquidation Engine` (`./packages/track3-acquire-pilot/`)  
 
 ---
@@ -17,7 +17,7 @@ This strategic audit establishes the operating doctrine, pricing anchors, avoide
 | **Commercial Model** | **Selective Single-Asset Micro-APA Buyout** settled via **Acquire.com Escrow** (Escrow.com integration) |
 | **Pricing Anchor (Tier 1)** | **`$15,000 – $25,000 USD` Asking Range** · **`$19,500 USD` Pilot Target** · **`$15,000 USD` Hard Walk-Away Floor** |
 | **Market Thesis** | **Avoided-Cost Arbitrage:** Saves buyers **300–400 developer hours @ `$85–$125/hr`** (`$25,500–$50,000` equivalent payroll) with **95.27% verified Pytest coverage**, turnkey **OpenAPI 3.1.0**, and hardened **Docker** |
-| **Liquidation Pacing** | **Low-Velocity Patient Liquidation:** **1–2 units per cycle**, maintaining **>98% active vault retention** (`158–159 of 160 units retained` per cycle) and strictly enforcing the **80% Sovereign Retention Floor (`128 units`)** |
+| **Liquidation Pacing** | **Low-Velocity Patient Liquidation:** **1–2 units per cycle**, maintaining **>99.6% active vault retention** (`498–499 of 500 units retained` per cycle) and strictly enforcing the **80% Sovereign Retention Floor (`400 units / 8 clusters`)** |
 | **Platform Economics** | **8% Acquire.com closing fee** on transactions under `$250,000` + **`$25/mo` marketplace listing fee** |
 
 ---
@@ -72,23 +72,23 @@ Designing, implementing, debugging, and documenting a clean-room deterministic e
 GhostFactoryOS operates a **low-velocity, high-margin patient liquidation model** rather than high-volume fire sales.
 
 ```
-[ 160-Unit Master Fleet Catalog ]
-   ├── 86 Track 1 Lean Rapid-Sale Units
-   ├── 51 Track 2 Hypercar SCADA Flagships
-   └── 23 Track 3 F1 Skunkworks Service Engines
+[ 500-Unit Master Fleet Catalog (10 Sealed 50-Unit Clusters) ]
+   ├── 168 Track 1 Lean Rapid-Sale Units
+   ├── 168 Track 2 Hypercar SCADA Flagships (+ 117 Live Cockpits)
+   └── 164 Track 3 F1 Skunkworks Service Engines
           │
-          ├──> Active Cycle Release: 1–2 Units Max (>98.75% Fleet Retained Per Cycle)
-          └──> Sovereign Vault Floor: 128 Units Permanently Locked (80.00% Hard Floor)
+          ├──> Active Cycle Release: 1–2 Units Max (>99.60% Fleet Retained Per Cycle)
+          └──> Sovereign Vault Floor: 400 Units Permanently Locked (80.00% Hard Floor / 8 Clusters)
 ```
 
 1. **Per-Cycle Release Cap (`1–2 Units`):**
    - Only **1 to 2 non-core units** are listed for Micro-APA acquisition during any single cycle.
-   - Releasing 1–2 units out of the **160-unit Master Fleet** preserves **98.75% to 99.38% (`>98%`) vault retention**, preventing market dilution and protecting showroom scarcity.
-2. **80% Sovereign Retention Floor (`128 Units Minimum`):**
-   - Across the entire lifecycle of the 160-unit catalog, at least **128 units (80%)** remain permanently vaulted inside GhostFactoryOS. Maximum cumulative Micro-APA transfer capacity is strictly capped at **32 units (20%)**.
+   - Releasing 1–2 units out of the **500-unit Master Fleet** preserves **99.60% to 99.80% (`>99.6%`) vault retention**, preventing market dilution and protecting showroom scarcity.
+2. **80% Sovereign Retention Floor (`400 Units Minimum`):**
+   - Across the entire lifecycle of the 500-unit catalog, at least **400 units (80% / 8 sealed clusters)** remain permanently vaulted inside GhostFactoryOS. Maximum cumulative APA transfer capacity is strictly capped at **100 units (20% / 2 clusters)**.
 3. **Strict Carve-Out Ringfence (Schedule B Exclusions):**
    - Every Micro-APA transfers title **solely** to the isolated target package (`./packages/track3-acquire-pilot/`).
-   - **GhostFactoryOS™**, **Aura & Grid™**, the **Ghost Factory Command Console (`ghost-factory-console`)**, the **Universal Track 2 Telemetry Harness (`Track2Harness.tsx`)**, and the remaining **159 cataloged assets** are permanently excluded from transfer.
+   - **GhostFactoryOS™**, **Aura & Grid™**, the **Ghost Factory Command Console (`ghost-factory-console`)**, the **Universal Track 2 Telemetry Harness (`Track2Harness.tsx`)**, and the remaining **499 cataloged assets** are permanently excluded from transfer.
 
 ---
 

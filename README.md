@@ -39,25 +39,24 @@ To ensure secure software development practices under NIST SP 800-218:
 
 ---
 
-## 4. Multi-Track Portfolio Structure & ASC 350-40 Appraisal
+## 4. Multi-Track Portfolio Structure & ASC 350-40 Appraisal (500-Unit Capstone)
 
 | Parameter | Track 1: Lean Rapid-Sale (Default) | Track 2: Flagship Tier-1 (Selective) | Track 3: F1 Skunkworks Engine (Production Ref) |
 |---|---|---|---|
-| **Fleet Count** | 86 Assets | 50 Deep-Tech SCADA Assets | 14 Onboarded & Standardized (`T3-NEXUS-01`, `GF-T3-138` to `GF-T3-150` via Universal Track 2 Telemetry Harness) |
-| **Standard APA Title Transfer** | Track 1 Micro-APA Buyout (\$4,500 anchor) | Track 2 Chassis APA (\$14,500 anchor) | Track 3 Engine APA (\$35,000 – \$65,000) |
+| **Fleet Count (500 Total)** | **168 Sealed Units** | **168 Deep-Tech SCADA Units** (+ **117 Live Cockpits**) | **164 Working Service Engines & Reference Cores** |
+| **Standard APA Title Transfer** | Track 1 Micro-APA Buyout (\$4,500 Retail / \$3,800 Wholesale) | Track 2 Chassis APA (\$14,500 Retail / \$10,000 Wholesale) | Track 3 Engine APA (\$50,000 Retail / \$35,000 Wholesale) |
 | **Portfolio Cluster APA** | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) | 50-Unit Cluster Carve-Out (\$1.25M–\$1.5M) |
-| **Exclusive Buyout Anchor** | \$4,500 (\$3,800 – \$6,500 floor) | \$14,500 (\$10,000 – \$18,000 entry) | \$35,000 – \$65,000 Floor / \$75,000 – \$150,000+ Ceiling |
-| **Retention Policy** | Transferable via Micro-APA | Strict 80% Retained Factory Floor | Retained Sovereign Fleet (Curated 35 Units Target) |
+| **Exclusive Buyout Range** | \$3,800 – \$6,500 (\$4,500 Anchor) | \$10,000 – \$18,000 Entry / \$18k–\$75k+ Strategic | \$35,000 – \$65,000 Floor / \$75,000 – \$150,000+ Ceiling |
+| **Retention Policy** | 80% Fleet Retention Lock (400 Vaulted / 100 Max APA) | 80% Fleet Retention Lock (400 Vaulted / 100 Max APA) | 80% Fleet Retention Lock (10 Sealed 50-Unit Clusters) |
 
-### ASC 350-40 Enterprise Replacement Valuation Ledger (150 Master Vault Assets & Production Engines)
-- **Enterprise Showroom Asking Price:** **\$3,110,000 (~$3.11M)**
-- **Agency Build-Cost Appraisal:** **\$1,950,000 (~$1.95M)**
-- **Senior Architect Hard Floor:** **\$1,500,000 (~$1.50M)** (13,700 direct engineering hrs @ \$109.49/hr)
-- **\"As-Is\" Bare Minimum (Baseline Trim Floor):** **\$1,150,000 (~$1.15M reserve)** (41% bulk asset discount applied to \$1.95M)
-- **The Hard Walk-Away Floor:** **\$1,150,000 – \$1,500,000** (Internal reserve threshold; bids below rejected)
-- **The Panic Floor Price:** **\$95,000 – \$145,000** (Distressed 50–70% cash liquidation baseline)
-- **80% Retention Lock:** 120 assets permanently vaulted / max 30 micro-APAs across fleet.
-- **Valuation Legend:** ASC 350/985 enterprise replacement cost methodologies applied with 41% bulk asset discount.
+### ASC 350-40 Enterprise Replacement Valuation Ledger (500 Master Vault Assets & Production Engines)
+- **Total Retail Price (Combined Agency Replacement Benchmark):** **\$32,450,000 (\$32.45M)**
+- **Certified Fair Market Value (FMV):** **\$13,000,000 (\$13.0M)**
+- **Wholesale Price / Institutional Bulk Floor:** **\$8,400,000 (\$8.4M)**
+- **The Hard Walk-Away Floor (Sovereign Reserve Liquidation Floor):** **\$4,200,000 (\$4.2M)** (Internal reserve threshold; bids below rejected)
+- **50-Unit Sealed Cluster Carve-Out APA Anchor:** **\$1,250,000 – \$1,500,000** per cluster (\$650,000 – \$750,000 cluster reserve floor across `CLUSTER-001`–`010`)
+- **80% Retention Lock:** **400 assets** (8 clusters) permanently vaulted / max **100 assets** (2 clusters) transferable via selective micro-APAs or cluster carve-outs.
+- **Valuation Legend:** ASC 350-40 / ASC 985 Cost Approach (Replacement Cost Basis) applied across all 500 vaulted chassis (168 T1 @ \$4.5k | 168 T2 @ \$14.5k | 164 T3 @ \$50k).
 
 ---
 

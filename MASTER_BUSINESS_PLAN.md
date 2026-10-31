@@ -4,14 +4,14 @@
 **Confidential Strategic Blueprint & Operational Memorandum**  
 **Entity**: ZoMae Media LLC (Parent Holding Entity)  
 **Private Foundry Engine**: GhostFactoryOS (Autonomous Digital Vehicle Foundry & Command Center)  
-**Commercial Dealership**: Aura & Grid™ (Public Dealership for Interactive Demos, Leases, Licenses & Selective Micro-APAs)  
-**Current Portfolio Status**: 150 Custom Full-Stack Web Applications & Production Engines (86 Track 1 Lean + 50 Track 2 Flagship + 14 Track 3 Service Engines active and wired to Track 2 Telemetry Harness)  
-**Retention Floor**: Minimum 80% Retained Floor Enforced at Every Stage (Current Floor: 120 Assets Retained / Max 30 Micro-APAs)  
-**Senior Architect Hard Floor**: $1,500,000 (~$1.50M) (13,700 engineering hrs @ $109.49/hr)  
-**Agency Build-Cost Appraisal**: $1,950,000 (~$1.95M)  
-**Enterprise Showroom Asking Price**: $3,110,000 (~$3.11M)  
-**"As-Is" Bare Minimum (Baseline Trim Floor)**: $1,150,000 (~$1.15M reserve) | **The Hard Walk-Away Floor**: $1,150,000 – $1,500,000  
-**Valuation Legend**: ASC 350/985 enterprise replacement cost methodologies applied with 41% bulk asset discount.  
+**Commercial Dealership**: Aura & Grid™ (Public Dealership for Interactive Demos, Leases, Licenses, 50-Unit Cluster Carve-Outs & Selective Micro-APAs)  
+**Current Portfolio Status**: **500 Custom Full-Stack Digital Assets & Production Engines — 500-Unit Capstone Sealed** (`168` Track 1 Lean Tuners + `168` Track 2 Hypercar Flagships + `164` Track 3 F1 Skunkworks Engines across `10` Sealed 50-Unit APA Clusters + `117` Live SCADA Cockpits)  
+**Retention Floor**: Minimum 80% Retained Floor Enforced at Every Stage (**400 Assets / 8 Clusters Permanently Vaulted** / Max **100 Assets / 2 Clusters** Transferable)  
+**Total Retail Price (Combined Agency Replacement Benchmark)**: **$32,450,000 ($32.45M)**  
+**Certified Fair Market Value (FMV)**: **$13,000,000 ($13.0M)**  
+**Wholesale Price / Institutional Bulk Floor**: **$8,400,000 ($8.4M)**  
+**Hard Walk-Away Floor (Sovereign Reserve Liquidation Floor)**: **$4,200,000 ($4.2M)** | **50-Unit Cluster Carve-Out Ask**: **$1,250,000 – $1,500,000**  
+**Valuation Legend**: ASC 350-40 / ASC 985 Cost Approach (Replacement Cost Basis) applied across all 500 vaulted chassis (`168 T1 @ $4,500` | `168 T2 @ $14,500` | `164 T3 @ $50,000`).  
 
 ---
 
@@ -20,29 +20,25 @@
 ### 1.1 Digital Vehicle Metaphor & Brand Architecture
 GhostFactoryOS operates as a specialized digital car manufacturer, and Aura & Grid serves as the premium showroom dealership:
 - **GhostFactoryOS (Private Foundry)**: Portfolio command center, inventory system, APA title transfer ledger, maintenance tracker, build health monitor, and operations dashboard.
-- **Aura & Grid (Public Dealership)**: Public showroom where clients test-drive hosted interactive demos, purchase non-exclusive licenses, lease managed deployments, license agency fleets, commission bespoke setups, and acquire selective non-core assets via micro-APAs.
-- **Digital Vehicle Inventory**: Web-app templates, interactive prototypes, hosted demos, deployable source-code blueprints, and SCADA-grade concept consoles.
+- **Aura & Grid (Public Dealership)**: Public showroom where clients test-drive hosted interactive demos, purchase non-exclusive licenses, lease managed deployments, license agency fleets, commission bespoke setups, and acquire selective non-core assets or 50-unit vertical clusters via APAs.
+- **Digital Vehicle Inventory**: Web-app templates, interactive prototypes, hosted demos, deployable source-code blueprints, SCADA-grade concept consoles, and containerized working service engines.
 
 ### 1.2 Portfolio Retention Floor & IP Defense
 The foundry strictly operates under an **80% Minimum Retained Floor**:
-- **Current Fleet (150 Assets)**: At least **120 assets** remain permanently in the foundry; maximum transfer capacity is **30 assets**.
-- **Target Fleet (500 Assets)**: At least **400 assets** remain permanently in the foundry; maximum transfer capacity is **100 assets**.
-- **Permanent IP Boundary**: Micro-APAs transfer defined rights/code to **one specific asset only**. Micro-APAs **NEVER** transfer GhostFactoryOS core infrastructure, Aura & Grid brand/showroom, shared design tokens, component libraries, deployment pipelines, factory prompts, or future catalog rights.
-- **Capacity is Not a Sales Target**: Never treat micro-APA maximum capacity as a sales target.
+- **Sealed Capstone Fleet (500 Assets / 10 Clusters)**: At least **400 assets (8 clusters)** remain permanently in the foundry; maximum transfer capacity is **100 assets (max 20% / up to 2 clusters)**.
+- **Next Horizon (1,000 Assets / 20 Clusters)**: At least **800 assets** remain permanently in the foundry; maximum transfer capacity is **200 assets**.
+- **Permanent IP Boundary**: Micro-APAs transfer defined rights/code to **one specific asset** (or one defined 50-unit cluster schedule). APAs **NEVER** transfer GhostFactoryOS core infrastructure, Aura & Grid brand/showroom, shared design tokens, component libraries, deployment pipelines, factory prompts, or future catalog rights.
+- **Capacity is Not a Sales Target**: Never treat maximum APA capacity as a sales target.
 
-### 1.3 Grounded Valuation Reality & ASC 350-40 Replacement Appraisal
-The entire 150-asset collection is currently **pre-revenue**.
-- **Enterprise Showroom Asking Price:** **$3,110,000 (~$3.11M)**.
-- **Agency Build-Cost Appraisal:** **$1,950,000 (~$1.95M)**.
-- **Senior Architect Hard Floor:** **$1,500,000 (~$1.50M)** (13,700 engineering hrs @ $109.49/hr).
-- **"As-Is" Bare Minimum (Baseline Trim Floor):** **$1,150,000 (~$1.15M reserve)** (41% bulk asset discount applied to $1.95M).
-- **The Hard Walk-Away Floor:** **$1,150,000 – $1,500,000** (Internal reserve threshold; bids below rejected).
-- **The Panic Floor Price:** **$95,000 – $145,000** (Distressed 50–70% buyer liquidation cash floor).
-- **Strategic Acquisition Ceiling:** **$2,150,000 – $3,850,000+** (Deep-tech niche monopoly premium).
-- **Direct B2B Ask Target:** **$195,000 – $265,000**.
-- **Realistic Accepted Offer (LOI):** **$135,000 – $175,000**.
-- **Valuation Legend:** ASC 350/985 enterprise replacement cost methodologies applied with 41% bulk asset discount.
-- **Truth Standard**: We do not present the collection as proven SaaS businesses. No verified revenue, paying users, retention, uptime, security audits, compliance, or live production operations may be claimed without deterministic proof.
+### 1.3 Grounded Valuation Reality & ASC 350-40 Replacement Appraisal (500-Unit Capstone)
+The entire 500-asset collection is currently **pre-revenue**.
+- **Total Retail Price (Combined Agency Replacement Benchmark):** **$32,450,000 ($32.45M)**.
+- **Certified Fair Market Value (FMV):** **$13,000,000 ($13.0M)**.
+- **Wholesale Price / Institutional Bulk Floor:** **$8,400,000 ($8.4M)**.
+- **The Hard Walk-Away Floor (Sovereign Reserve Liquidation Floor):** **$4,200,000 ($4.2M)** (Internal reserve threshold; bids below rejected).
+- **50-Unit Sealed Cluster Carve-Out APA Anchor:** **$1,250,000 – $1,500,000** per cluster (`$650,000 – $750,000` cluster reserve floor across `CLUSTER-001`–`010`).
+- **Valuation Legend:** ASC 350-40 / ASC 985 Cost Approach (Replacement Cost Basis) applied across all 500 vaulted chassis (`168 T1` + `168 T2` + `164 T3`).
+- **Truth Standard**: We do not present the collection as proven SaaS businesses with recurring cash flow. No verified revenue, paying users, retention, uptime, security audits, compliance, or live production operations may be claimed without deterministic proof.
 
 ---
 
@@ -80,10 +76,10 @@ Assets are strictly categorized into one of three execution and pricing tracks. 
     │   ├── Full Asset Buyout: $18,000 – $35,000
     │   └── Strategic Acquisition: $35,000 – $75,000+
     │
-    └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine)
-        ├── Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers). (5.0x ARR SaaS multiple)
-        ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($1.225M – $2.275M fleet floor)
-        └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($2.625M – $5.250M fleet ceiling)
+    └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine — 164 Sealed Units)
+        ├── Pure APA Title Standard: 100% Outright IP Title Transfer ($50,000 Retail Anchor / $35,000 Wholesale)
+        ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($5.74M – $10.66M Track 3 floor)
+        └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($12.30M – $24.60M+ Track 3 ceiling)
 ```
 
 ### 3.1 Track 1 — Lean Rapid-Sale Track (Lean Tuner / Daily Driver)
@@ -119,16 +115,17 @@ An asset must strictly satisfy all 10 criteria before receiving Track 2 pricing:
 
 ### 3.4 Track 3 — F1 Skunkworks Service Engine Protocol
 Reserved exclusively for production reference architectures and working service engines:
-- **Tier Classification:** Working Service Engines / Production Reference Architectures (Curated 35 Units total).
+- **Tier Classification:** Working Service Engines / Production Reference Architectures (**164 Sealed Units total across 10 Clusters**).
 - **Core Moat:** R&D bypass value. Zero mock client state. Full-stack containerized deployments with live ingestion and persistent data schemas.
-- **Allocation Matrix (Curated 35 Units total):**
-  * **Vertical A (12 Units):** Autonomous Telemetry, Aerospace & C2 Infrastructure.
-  * **Vertical B (12 Units):** Algorithmic Liquidity & Institutional FinTech Risk Engines.
-  * **Vertical C (11 Units):** Edge AI & Autonomous Multi-Agent Consensus Loops.
+- **Allocation Matrix (164 Sealed Units across 3 Core Verticals):**
+  * **Vertical A:** Autonomous Telemetry, Aerospace & C2 Infrastructure.
+  * **Vertical B:** Algorithmic Liquidity & Institutional FinTech Risk Engines.
+  * **Vertical C:** Edge AI & Autonomous Multi-Agent Consensus Loops.
 - **Valuation & Pricing Gates:**
+  * **Retail Buyout Anchor:** **$50,000 per engine** (`$35,000` Wholesale Floor).
   * **Monthly Enterprise Seat License:** $1,500/mo (Valued at 5.0x ARR SaaS multiple).
-  * **Baseline APA Buyout Floor:** $35,000 – $65,000 per engine ($1.225M – $2.275M pre-revenue fleet floor).
-  * **Monopoly / Vault Buyout Ceiling:** $75,000 – $150,000+ per engine ($2.625M – $5.250M fleet ceiling).
+  * **Baseline APA Buyout Floor:** $35,000 – $65,000 per engine ($5.74M – $10.66M Track 3 baseline floor).
+  * **Monopoly / Vault Buyout Ceiling:** $75,000 – $150,000+ per engine ($12.30M – $24.60M+ Track 3 ceiling).
 
 #### The 5 Monopoly Vault Requirements
 1. **Proprietary Algorithmic Logic:** Deterministic state machines, mathematical models (Kalman filtering, order-book reconstruction, multi-agent consensus).
@@ -197,13 +194,14 @@ All marketing copy, sales offers, and technical data sheets must strictly employ
 ## 7. Operational Roadmap & Milestone Tracking
 
 - **Phase 1: 50 Assets (Archive Clearance & Standards Lock)**: Complete ✅ (All schemas standardized, dark obsidian aesthetic enforced).
-- **Phase 2: 100 Assets (Century Milestone & Multi-Track Launch)**: Complete ✅ (136 assets cataloged: 86 Track 1 Lean Rapid-Sale + 50 Track 2 Flagship Tier-1 models).
-- **Phase 3: 350 Assets (Niche Depth & Vertical Expansion)**: In Progress 🟢 Expansion into specialized technical and industrial workflows.
-- **Phase 4: 500 Assets (Full Catalog Saturation & Retention Maturity)**: 400 assets permanently retained in the foundry, up to 100 maximum cumulative micro-APAs.
+- **Phase 2: 100–150 Assets (Multi-Track & Founding Skunkworks Launch)**: Complete ✅ (Track 1, Track 2 Flagships, and Founding Track 3 Engines operational).
+- **Phase 3: 300–350 Assets (Cluster Partition & SCADA Expansion)**: Complete ✅ (117 live SCADA cockpits and rolling 50-unit APA cluster model deployed).
+- **Phase 4: 500 Assets (Capstone Milestone Sealed — ACTIVE)**: Complete ✅ (**500 units sealed across 10 vertical clusters**: `168` Track 1 + `168` Track 2 + `164` Track 3; **400 assets** permanently retained in the foundry, max **100** cumulative APA capacity).
+- **Phase 5: 1,000 Assets (Next Industrial Horizon)**: Planned 🔵 (20 sealed 50-unit clusters; 800 retained floor / 200 max APA capacity).
 
 ---
 
 ## 8. Next 3 Moves
-1. **Deploy Track 1 Pricing as Default Across Showroom**: Re-align all active storefront SKUs to $4,500 retail / $4,500 team seat / $4,500 exclusive buyout anchor.
-2. **Execute Flagship Gate Diligence on Top Candidates**: Verify 8–15 screens, physics solvers, and simulation disclosures before offering Track 2 pricing.
-3. **Mirror Telemetry to GhostFactoryOS Console**: Ensure the console dashboard displays the 80% retained floor (109 assets retained) and current strategic buyout anchor ($1,112,000 / $2.15M–$3.85M+ ceiling).
+1. **Enforce Capstone Multi-Track Pricing Across All Offers**: Quote `$4,500` (Track 1), `$14,500` (Track 2), `$50,000` (Track 3), and `$1.25M–$1.50M` (50-Unit Sealed Cluster Carve-Out).
+2. **Execute Low-Velocity Patient APA Pacing**: Release non-core micro-APAs or single 50-unit cluster carve-outs selectively while guarding 100% of core factory & showroom IP.
+3. **Maintain 500-Unit Telemetry Parity**: Keep GhostFactoryOS console, Aura & Grid showroom, and NotebookLM Knowledge Base locked to the **400-unit (80%) retained floor** and **`$32.45M / $13.0M / $8.4M / $4.2M`** valuation benchmarks.

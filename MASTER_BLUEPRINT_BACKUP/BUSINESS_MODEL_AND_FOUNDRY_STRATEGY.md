@@ -5,20 +5,20 @@
 - **Aura & Grid**: Public premium showroom and digital dealership for interactive demos, standalone Asset Purchase Agreement (APA) title transfers, 50-unit portfolio cluster carve-outs, bespoke deployments, support plans, and selective micro-APAs.
 - **Digital Asset Metaphor**: The portfolio is managed as an elite "digital car collection" inside a video game—manufactured with high precision and leased, licensed, or selectively transferred.
 - **Crew Chief Command & Safety Invariant**: Lead Systems Engineer & Dealership Crew Chief operating under Executive Dealership Principal authority. Explicit terminal approval required before executing package installs, migrations, git pushes, or cloud deployments (`gcloud run deploy`).
-- **Target Scale**: 500 cataloged assets.
-- **Current Portfolio Scale**: **137 custom full-stack web applications** (86 Track 1 Lean Rapid-Sale + 50 Track 2 Flagship Tier-1 + 1 Track 3 Engine active, 13 Track 3 engines in ~/Downloads queued).
+- **Capstone Milestone Status**: **500-Unit Capstone Sealed** (Next scaling horizon: 1,000 cataloged assets / 20 clusters).
+- **Current Portfolio Scale**: **500 custom full-stack digital assets & production engines** (**168 Track 1 Lean Rapid-Sale** + **168 Track 2 Flagship Tier-1** + **164 Track 3 F1 Skunkworks Working Service Engines**, partitioned across **10 Sealed 50-Unit APA Clusters**: `CLUSTER-001`–`009` at `17/17/16` and `CLUSTER-010` at `15/15/20`, plus **117 live SCADA cockpits**).
 
 ---
 
 ## 2. Portfolio Status & 80% Retention Floor Rule
 
 The portfolio strictly enforces an **80% Minimum Retained Floor** across all operational phases:
-- **Current Master Vault Collection (137 assets)**:
-  - Minimum Retained Floor: **110 assets** permanently vaulted in the foundry.
-  - Maximum Transfer Capacity: **27 assets** eligible for selective micro-APAs.
-- **At 500 Assets Target**:
-  - Minimum Retained Floor: **400 assets** permanently kept.
-  - Maximum Transfer Capacity: **100 assets** max cumulative transfer capacity.
+- **Sealed Master Vault Collection (500 Assets / 10 Clusters)**:
+  - Minimum Retained Floor: **400 assets (8 clusters)** permanently vaulted in the foundry.
+  - Maximum Transfer Capacity: **100 assets (max 20% / up to 2 clusters)** eligible for selective micro-APAs or 50-unit cluster carve-outs.
+- **At 1,000 Assets Horizon (20 Clusters)**:
+  - Minimum Retained Floor: **800 assets** permanently kept.
+  - Maximum Transfer Capacity: **200 assets** max cumulative transfer capacity.
 
 > [!IMPORTANT]
 > **Capacity is Not a Sales Target**: Never treat micro-APA maximum capacity as a sales target.
@@ -26,27 +26,23 @@ The portfolio strictly enforces an **80% Minimum Retained Floor** across all ope
 
 ---
 
-## 3. Current Pre-Revenue Portfolio Valuation & ASC 350-40 Replacement Appraisal
+## 3. Current Pre-Revenue Portfolio Valuation & ASC 350-40 Replacement Appraisal (500-Unit Capstone)
 
-The master vault collection (137 sovereign applications) is currently **pre-revenue**. It is valued in accordance with ASC 350-40 (*Internal-Use Software Capitalization*) and ASC 985 (*Software to Be Sold, Leased, or Marketed*):
+The master vault collection (500 sovereign digital assets & engines) is currently **pre-revenue**. It is valued in accordance with ASC 350-40 (*Internal-Use Software Capitalization*) and ASC 985 (*Software to Be Sold, Leased, or Marketed*) using the Cost Approach (Replacement Cost Basis):
 
-| Metric / Dealership Role | Valuation Range / Anchor | Formula / Capitalization Basis | Commercial Notes |
+| Metric / Dealership Role | Locked 500-Unit Benchmark | Formula / Capitalization Basis | Commercial Notes |
 |:---|:---:|:---:|:---|
-| **Enterprise Showroom Asking Price** | **$3,110,000 (~$3.11M)** | Outbound listing ask | Public Showroom & Strategic Outbound Benchmark |
-| **Agency Build-Cost Appraisal** | **$1,950,000 (~$1.95M)** | Blended agency replacement quotes | Independent third-party custom dev quotes ($12k–$25k/app) |
-| **Senior Architect Hard Floor** | **$1,500,000 (~$1.50M)** | **13,700 hrs @ $109.49/hr** | 100 direct senior engineering hrs/app @ $109.49/hr |
-| **"As-Is" Bare Minimum (Baseline Trim Floor)** | **$1,150,000 (~$1.15M)** | 41% bulk asset discount on $1.95M | Baseline Trim reserve floor for bulk asset buyout |
-| **The Hard Walk-Away Floor** | **$1,150,000 – $1,500,000** | Internal reserve threshold | Transactions below rejected unconditionally |
-| **The Panic Floor Price** | **$95,000 – $145,000** | Distressed cash floor | 50–70% buyer liquidation cash baseline |
-| **Strategic Acquisition Ceiling** | **$2,150,000 – $3,850,000+** | Deep-tech monopoly premium | SCADA, Aerospace, FinTech & F1 Skunkworks engines |
-| **Direct B2B Ask (Data Room)** | **$195,000 – $265,000** | Enterprise licensing target | Enterprise / private equity annual license ask |
-| **Realistic Accepted Offer** | **$135,000 – $175,000** | Quick-close wire target | LOI / immediate cash transaction close |
+| **Total Retail Price** | **$32,450,000 ($32.45M)** | `168×$4.5k + 168×$14.5k + 164×$50k` (+ enterprise replacement) | Combined Agency Replacement Benchmark across all 500 vaulted chassis |
+| **Certified Fair Market Value (FMV)** | **$13,000,000 ($13.0M)** | Orderly mid-market enterprise appraisal | Primary Planning & Institutional FMV Benchmark |
+| **Wholesale Price / Bulk Floor** | **$8,400,000 ($8.4M)** | `168×$3.8k + 168×$10k + 164×$35k` | Institutional Bulk Tender / Wholesale Floor |
+| **The Hard Walk-Away Floor** | **$4,200,000 ($4.2M)** | Sovereign internal reserve threshold | Transactions below rejected unconditionally |
+| **50-Unit Sealed Cluster Carve-Out** | **$1,250,000 – $1,500,000** | 50 units/cluster (`$650k–$750k` reserve floor) | Outright IP title transfer for 1 sealed 50-unit cluster |
 
 > [!NOTE]
-> **Valuation Legend**: ASC 350/985 enterprise replacement cost methodologies applied with 41% bulk asset discount.
+> **Valuation Legend**: ASC 350-40 / ASC 985 Cost Approach (Replacement Cost Basis) applied across all 500 vaulted chassis (`168 T1` + `168 T2` + `164 T3`).
 
 > [!CAUTION]
-> Do not present the collection as 137 proven SaaS businesses. No verified revenue, customers, retention, profit, uptime, security audits, compliance, or production status may be claimed without deterministic proof.
+> Do not present the collection as 500 proven SaaS businesses with recurring cash flow. No verified revenue, customers, retention, profit, uptime, security audits, compliance, or production status may be claimed without deterministic proof.
 
 ---
 
@@ -69,10 +65,10 @@ Every asset in the portfolio is strictly assigned to one of three execution and 
     │   ├── Full Asset Buyout: $18,000 – $35,000
     │   └── Strategic Acquisition: $35,000 – $75,000+
     │
-    └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine)
-        ├── Pure APA Title Standard: 100% Outright IP Title Transfer (Zero Seat Tiers). (5.0x ARR SaaS multiple)
-        ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($1.225M – $2.275M fleet floor)
-        └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($2.625M – $5.250M fleet ceiling)
+    └── TRACK 3: F1 SKUNKWORKS SERVICE ENGINE (Working Service Engine — 164 Sealed Units)
+        ├── Pure APA Title Standard: 100% Outright IP Title Transfer ($50,000 Retail Anchor / $35,000 Wholesale)
+        ├── Baseline APA Buyout Floor: $35,000 – $65,000 ($5.74M – $10.66M Track 3 floor)
+        └── Monopoly Vault Buyout Ceiling: $75,000 – $150,000+ ($12.30M – $24.60M+ Track 3 ceiling)
 ```
 
 ### 4.1 Track 1 — Lean Rapid-Sale Track (Lean Tuner / Daily Driver)
@@ -108,16 +104,17 @@ An asset may ONLY be classified as Flagship Tier-2 if it passes all criteria:
 
 ### 4.4 Track 3 — F1 Skunkworks Service Engine Protocol
 Reserved exclusively for production reference architectures and working service engines:
-- **Tier Classification:** Working Service Engines / Production Reference Architectures (Curated 35 Units total).
+- **Tier Classification:** Working Service Engines / Production Reference Architectures (**164 Sealed Units total across 10 Clusters**).
 - **Core Moat:** R&D bypass value. Zero mock client state. Full-stack containerized deployments with live ingestion and persistent data schemas.
-- **Allocation Matrix (Curated 35 Units total):**
-  * **Vertical A (12 Units):** Autonomous Telemetry, Aerospace & C2 Infrastructure.
-  * **Vertical B (12 Units):** Algorithmic Liquidity & Institutional FinTech Risk Engines.
-  * **Vertical C (11 Units):** Edge AI & Autonomous Multi-Agent Consensus Loops.
+- **Allocation Matrix (164 Sealed Units across 3 Core Verticals):**
+  * **Vertical A:** Autonomous Telemetry, Aerospace & C2 Infrastructure.
+  * **Vertical B:** Algorithmic Liquidity & Institutional FinTech Risk Engines.
+  * **Vertical C:** Edge AI & Autonomous Multi-Agent Consensus Loops.
 - **Valuation & Pricing Gates:**
+  * **Retail Buyout Anchor:** **$50,000 per engine** (`$35,000` Wholesale Floor).
   * **Monthly Enterprise Seat License:** $1,500/mo (Valued at 5.0x ARR SaaS multiple).
-  * **Baseline APA Buyout Floor:** $35,000 – $65,000 per engine ($1.225M – $2.275M pre-revenue fleet floor).
-  * **Monopoly / Vault Buyout Ceiling:** $75,000 – $150,000+ per engine ($2.625M – $5.250M fleet ceiling).
+  * **Baseline APA Buyout Floor:** $35,000 – $65,000 per engine ($5.74M – $10.66M Track 3 baseline floor).
+  * **Monopoly / Vault Buyout Ceiling:** $75,000 – $150,000+ per engine ($12.30M – $24.60M+ Track 3 ceiling).
 
 #### The 5 Monopoly Vault Requirements
 1. **Proprietary Algorithmic Logic:** Deterministic state machines, mathematical models (Kalman filtering, order-book reconstruction, multi-agent consensus).
@@ -170,6 +167,6 @@ To maintain institutional diligence standards, all public copy and documentation
 ---
 
 ## 7. Next 3 Moves
-1. **Enforce Dual-Track Pricing in All Offers**: Default all standard assets to Track 1 ($4,500 buyout anchor / $4,500 retail).
-2. **Audit Flagship Candidates Against Qualification Gate**: Qualify Candidate 109 through 114 (heavy aerospace, fusion, quantum, and lunar ISRU industrial SCADA prototypes) prior to Flagship Track 2 pricing.
-3. **Protect 80% Retained Floor**: Continuously track and enforce the 91-asset retention floor in GhostFactoryOS console telemetry.
+1. **Enforce Multi-Track Pricing in All Offers**: Default standard assets to Track 1 (`$4,500` anchor), Flagship SCADA chassis to Track 2 (`$14,500` anchor), and Working Service Engines to Track 3 (`$50,000` anchor).
+2. **Market Sealed 50-Unit Cluster Carve-Outs Selectively**: Position `CLUSTER-001` through `CLUSTER-010` at `$1.25M–$1.50M` per cluster (`$650k–$750k` reserve floor) under strict clean-room MIT/Apache-2.0 guarantees.
+3. **Protect 80% Retained Floor**: Continuously enforce the **400-asset (8-cluster) permanent retention floor** across GhostFactoryOS console telemetry.

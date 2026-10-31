@@ -1,3 +1,6 @@
+> **[HISTORICAL PHASE-1 ARCHIVE — SEPTEMBER 2026 (85-UNIT COHORT)]**  
+> *Note for Google NotebookLM: This file is an archived Phase-1 QA log from September 2026. The active portfolio has since reached the **500-Unit Capstone Milestone** (168 Track 1 + 168 Track 2 + 164 Track 3 = 500 Units across 10 Sealed Clusters; $32.45M Retail / $13.0M FMV / $8.4M Wholesale / $4.2M Walk-Away). Refer to `NOTEBOOKLM_500_CAPSTONE_MEGA_SOURCE.md` and `AUDIT_360_VERIFIED_REPORT.md` for current fleet state.*
+
 # GHOST FACTORY™ MASTER QA & INSTITUTIONAL DILIGENCE AUDIT
 
 > **Audit Date**: September 24, 2026  

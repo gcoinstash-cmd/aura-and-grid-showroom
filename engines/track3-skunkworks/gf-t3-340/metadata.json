@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-340 (export) ",
+  "description": "GF-T3-340 Ultra-Wide Dynamic Asynchronous Flash-Decoding and Multi-Block Attention Partitioning Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

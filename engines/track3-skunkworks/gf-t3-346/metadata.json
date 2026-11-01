@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-346 (export)",
+  "description": "Asynchronous Continuous Batching and In-Flight Request Scheduling Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

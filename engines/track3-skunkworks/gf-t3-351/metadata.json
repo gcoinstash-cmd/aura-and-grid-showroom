@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-351 (export) ",
+  "description": "GF-T3-351: Dynamic Asynchronous Zero-Copy Unified Memory & Host-Device Zero-Stall Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

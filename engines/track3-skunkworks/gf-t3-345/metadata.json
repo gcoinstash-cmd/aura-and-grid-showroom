@@ -1,0 +1,6 @@
+{
+  "name": "GF-T3-345",
+  "description": "Ultra-Wide Dynamic Asynchronous Paged Attention Memory Pool & Dynamic Block Allocator Interlock",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

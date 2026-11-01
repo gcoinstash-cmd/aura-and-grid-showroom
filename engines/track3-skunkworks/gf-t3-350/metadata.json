@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-350 (export)",
+  "description": "Asynchronous Multi-GPU Pipeline Parallelism and Activation Checkpointing Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

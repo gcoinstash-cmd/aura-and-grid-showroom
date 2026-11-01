@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-338 (export) ",
+  "description": "Dynamic Asynchronous Prefix Caching and Radix Tree KV Hash Indexing Engine",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

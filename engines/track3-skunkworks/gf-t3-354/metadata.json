@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-354 (export) ",
+  "description": "Asynchronous Multi-Query Attention and Grouped-Query Attention Flash-Decoding Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-341 (export) ",
+  "description": "Ultra-Wide Dynamic Asynchronous Context Parallelism and Ring-Attention Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

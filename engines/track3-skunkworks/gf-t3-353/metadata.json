@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-353 (export) ",
+  "description": "GF-T3-353 Ultra-Wide Dynamic Asynchronous FP6 Mixed-Precision Tensor Core and Compressed Dot-Product Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

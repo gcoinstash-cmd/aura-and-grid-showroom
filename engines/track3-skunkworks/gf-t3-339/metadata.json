@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-339 (export) ",
+  "description": "Ultra-Wide Dynamic Asynchronous Expert Parallelism and MoE Token Routing Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

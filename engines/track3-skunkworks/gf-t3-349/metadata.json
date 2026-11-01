@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-349 (export) ",
+  "description": "Asynchronous FP8 Mixed-Precision Tensor Core and Scaled Dot-Product Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

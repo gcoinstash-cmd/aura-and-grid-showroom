@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-348 (export)",
+  "description": "Ultra-Wide Dynamic Asynchronous Speculative Decoding and Draft Verification Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-344 (export) ",
+  "description": "Ultra-Wide Dynamic Asynchronous Zero-Overhead CUDA Graph Capture & Kernel Launch Serialization Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

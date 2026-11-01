@@ -1,0 +1,8 @@
+{
+  "name": "GF-T3-352 (export)",
+  "description": "Asynchronous FP4 Quantization and 4-Bit Weight-Only Dequantization Interlock Cockpit",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

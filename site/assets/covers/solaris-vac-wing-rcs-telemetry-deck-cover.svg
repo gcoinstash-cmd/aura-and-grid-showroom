@@ -38,7 +38,7 @@
   <text x="840" y="365" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="bold">Supabase PostgreSQL + Active RLS</text>
   
   <text x="90" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">BENCHMARK</text>
-  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">SpaceX Dragon Cold-Gas Thruster Matrix &amp; Gemini RCS Deck</text>
+  <text x="260" y="450" fill="#C5A880" font-family="'JetBrains Mono', monospace" font-size="14">SpaceX Dragon Cold-Gas Thruster Matrix &amp; Orbiter RCS Deck</text>
   
   <text x="680" y="450" fill="#6B7280" font-family="'JetBrains Mono', monospace" font-size="13">RELATIONAL TABLES</text>
   <text x="840" y="450" fill="#93C5FD" font-family="'JetBrains Mono', monospace" font-size="14">rcs_hypercar_vehicles, thruster_telemetry_snapshots, nitrogen_gas_logs, sector_dynamics_records</text>

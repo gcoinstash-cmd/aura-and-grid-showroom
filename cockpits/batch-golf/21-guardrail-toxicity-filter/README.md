@@ -8,7 +8,7 @@
    GHOST FACTORY OS // TRACK 2 HYPERCAR FLAGSHIP MONRONEY SPECIFICATION
 ================================================================================
 UNIT IDENTIFIER:        GF-T2-TOXIC-21
-CHASSIS MODEL NAME:     GUARDRAIL-TOXICITY-FILTER (Real-Time Jailbreak & Prompt Injection Defense Mesh)
+CHASSIS MODEL NAME:     GUARDRAIL-TOXICITY-FILTER (Real-Time Payload Sanitization & Input Injection Defense Mesh)
 COHORT:                 Cluster-008 Flagship Series (Batch Golf)
 COMMERCIAL TAG:         100% Pure APA Buyout Title Transfer (Zero Licenses)
 RETAIL PRICE ANCHOR:    $14,500 USD (Chassis Title Transfer Anchor)

@@ -17825,7 +17825,7 @@
     {
       "chassisId": "GF-T2-PCACHE-17",
       "unitNumber": 482,
-      "name": "GF-T2-PCACHE-17 PROMPT-CACHE-HIT-MATRIX",
+      "name": "GF-T2-PCACHE-17 PREFIX-CACHE-HIT-MATRIX",
       "tier": "Track 2 • Hypercar Flagship",
       "track": "Track 2",
       "overallStatus": "PASSED",

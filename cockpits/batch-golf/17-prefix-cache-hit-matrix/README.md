@@ -1,14 +1,14 @@
 # 🏷️ DEALERSHIP TELEMETRY WINDOW STICKER
-## Chassis G-17: PROMPT-CACHE-HIT-MATRIX
+## Chassis G-17: PREFIX-CACHE-HIT-MATRIX
 **Asset Classification:** Track 2 (Hypercar Flagship Tier-1 Interactive Cockpit)  
-**Parent Fleet Registry:** GhostFactoryOS × Aura & Grid (`cockpits/batch-golf/17-prompt-cache-hit-matrix/`)
+**Parent Fleet Registry:** GhostFactoryOS × Aura & Grid (`cockpits/batch-golf/17-prefix-cache-hit-matrix/`)
 
 ```
 ================================================================================
    GHOST FACTORY OS // TRACK 2 HYPERCAR FLAGSHIP MONRONEY SPECIFICATION
 ================================================================================
 UNIT IDENTIFIER:        GF-T2-PCACHE-17
-CHASSIS MODEL NAME:     PROMPT-CACHE-HIT-MATRIX (Context Prefix Caching & Hash Invalidation Dyno)
+CHASSIS MODEL NAME:     PREFIX-CACHE-HIT-MATRIX (Context Prefix Caching & Hash Invalidation Dyno)
 COHORT:                 Cluster-008 Flagship Series (Batch Golf)
 COMMERCIAL TAG:         100% Pure APA Buyout Title Transfer (Zero Licenses)
 RETAIL PRICE ANCHOR:    $14,500 USD (Chassis Title Transfer Anchor)

@@ -20,14 +20,14 @@ Ghost Factory OS is a pre-revenue, zero-churn, institutional software engine fle
 
 ### Fleet Inventory & Architectural Parity
 - **Track 1 (Lean Tuner):** 168 Units — Single-bundle React 19 + TypeScript telemetry engines (<15ms latency, PostgreSQL 16 RLS).
-- **Track 2 (Hypercar Flagship):** 168 Units — High-density interactive SCADA consoles with Three.js/WebGL telemetry and 113 live preview cockpits.
-- **Track 3 (F1 Skunkworks):** 164 Units — Containerized Python 3.11 / FastAPI algorithmic micro-engines with deterministic math state machines.
+- **Track 2 (Hypercar Flagship):** 168 Units — High-density SCADA telemetry consoles with Three.js/WebGL telemetry and 113 live preview cockpits.
+- **Track 3 (F1 Skunkworks):** 164 Units — Containerized Python 3.11 / FastAPI micro-engine architecture with deterministic math state machines.
 - **Total Fleet Parity:** 500 Active Units across 10 sealed clusters (Clusters 001 through 010).
 
 ### Mandatory Dyno Verification Gates (100% Pass Rate Across 500 Chassis)
 1. **Gate 01: Math** — Deterministic state algorithms, physics solvers, zero unverified mock randoms.
 2. **Gate 02: Persistence + RLS** — Automated idempotent migrations, strict Row-Level Security.
-3. **Gate 03: Zero-Trust Ingress** — GridSync payload sanitization, SQL/XSS scrubbers.
+3. **Gate 03: Zero-Trust Ingress** — GridSync payload sanitization, automated AST validation pipeline, SQL/XSS scrubbers.
 4. **Gate 04: >80% Test Coverage** — Automated dyno verification across Vitest, Jest, and Pytest suites.
 
 ### Turnkey Post-Closing Deliverables

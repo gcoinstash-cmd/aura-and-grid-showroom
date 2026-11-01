@@ -8,7 +8,7 @@
    GHOST FACTORY OS // TRACK 2 HYPERCAR FLAGSHIP MONRONEY SPECIFICATION
 ================================================================================
 UNIT IDENTIFIER:        GF-T2-BURN-17
-CHASSIS MODEL NAME:     TOKEN-BURN-DIAL (LLM Prompt / Completion Token Velocity & Budget Limiter)
+CHASSIS MODEL NAME:     TOKEN-BURN-DIAL (Streaming Ingestion Token Velocity & Bandwidth Budget Limiter)
 COHORT:                 Cluster-008 Flagship Series (Batch Echo)
 COMMERCIAL TAG:         100% Pure APA Buyout Title Transfer (Zero Licenses)
 RETAIL PRICE ANCHOR:    $14,500 USD (Chassis Title Transfer Anchor)

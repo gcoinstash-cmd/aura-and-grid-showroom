@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROMPT-CACHE-HIT-MATRIX // Track 2 Hypercar Flagship Cockpit</title>
+  <title>PREFIX-CACHE-HIT-MATRIX // Track 2 Hypercar Flagship Cockpit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
 
     const INITIAL_ITEMS = [
   {
-    "id": "PREFIX-SYSTEM-PROMPT-GF",
+    "id": "PREFIX-SYSTEM-HASH-GF",
     "val": "Len 42,000 tok // 14,800 hits // Age 4.2h",
     "status": "WARM_CACHE",
     "lat": "0 Evictions"
@@ -62,7 +62,7 @@
   }
 ];
 
-    function PromptCacheHitMatrixCockpit() {
+    function PrefixCacheHitMatrixCockpit() {
       const [pulsePhase, setPulsePhase] = useState(0);
       const [val1, setVal1] = useState("92.4");
       const [val2, setVal2] = useState("4.82");
@@ -75,7 +75,7 @@
           const newEvt = {
             id: Math.random().toString(36).substring(2, 8).toUpperCase(),
             time: new Date().toISOString().split('T')[1].slice(0, 12),
-            metric: 'PROMPT-CACHE-HIT-MATRIX',
+            metric: 'PREFIX-CACHE-HIT-MATRIX',
             status: 'OPTIMAL',
             lat: (0.12 + Math.random() * 0.6).toFixed(2) + 'ms'
           };
@@ -99,7 +99,7 @@
                     <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-PCACHE-17</span>
                   </div>
                   <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2 uppercase">
-                    PROMPT-CACHE-HIT-MATRIX <span className="text-xs text-[#FF9F0A] font-normal">// Context Prefix Caching & Hash Invalidation Dyno</span>
+                    PREFIX-CACHE-HIT-MATRIX <span className="text-xs text-[#FF9F0A] font-normal">// Context Prefix Caching & Hash Invalidation Dyno</span>
                   </h1>
                 </div>
               </div>
@@ -156,7 +156,7 @@
                   <div className="flex justify-between items-center">
                     <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
-                      PROMPT-CACHE-HIT-MATRIX // REALTIME SCADA TELEMETRY CANVASES
+                      PREFIX-CACHE-HIT-MATRIX // REALTIME SCADA TELEMETRY CANVASES
                     </h3>
                     <span className="text-xs font-mono text-slate-400">ACTIVE WAVEFORM</span>
                   </div>
@@ -169,7 +169,7 @@
           <line x1="300" y1="64" x2="220" y2="110" stroke="#1F2937" strokeWidth="1.5" />
           <line x1="300" y1="64" x2="380" y2="110" stroke="#1F2937" strokeWidth="1.5" />
           <circle cx="220" cy="120" r="14" fill="#0D1117" stroke="#22C55E" strokeWidth="2" />
-          <text x="220" y="124" textAnchor="middle" fill="#22C55E" fontSize="7" fontFamily="monospace">PROMPT</text>
+          <text x="220" y="124" textAnchor="middle" fill="#22C55E" fontSize="7" fontFamily="monospace">PREFIX</text>
           <circle cx="380" cy="120" r="14" fill="#0D1117" stroke="#22C55E" strokeWidth="2" />
           <text x="380" y="124" textAnchor="middle" fill="#22C55E" fontSize="7" fontFamily="monospace">APA_DOC</text>
           <text x="300" y="180" textAnchor="middle" fill="#00F0FF" fontSize="10" fontFamily="monospace" fontWeight="bold">RADIX PREFIX CACHE HIT RATIO: 92.4% // 4.82M TOKENS</text>
@@ -286,7 +286,7 @@
       );
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<PromptCacheHitMatrixCockpit />);
+    ReactDOM.createRoot(document.getElementById('root')).render(<PrefixCacheHitMatrixCockpit />);
   </script>
 </body>
 </html>

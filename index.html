@@ -21,10 +21,11 @@
     /* utilities used by the CTA stack */
     .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.w-full{width:100%}
     /* typography utilities (Tailwind-equivalent scale) */
-    .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
-    .font-mono{font-family:var(--mono)}.font-medium{font-weight:500}.font-extrabold{font-weight:800}
+    .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
+    .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-extrabold{font-weight:800}
     .text-white{color:#fff}.text-zinc-200{color:var(--zinc200)}.text-zinc-300{color:var(--zinc300)}.text-zinc-400{color:var(--mute)}
-    .leading-relaxed{line-height:1.625}
+    .leading-relaxed{line-height:1.625}.tracking-wide{letter-spacing:.025em}
+    .border{border-width:1px;border-style:solid}.border-zinc-800{border-color:#27272A}.bg-[#080B10]{background:#080B10}.rounded-xl{border-radius:.75rem}.p-6{padding:1.5rem}
 
     /* header */
     .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -95,9 +96,16 @@
     .btn-amber{background:var(--amber);color:#05070B;border:1px solid var(--amber)}
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
 
-    footer{border-top:1px solid var(--line);margin-top:24px}
-    .foot-in{max-width:1440px;margin:0 auto;padding:28px 24px 48px;color:var(--mute);font-size:.875rem;line-height:1.65;display:flex;flex-direction:column;gap:10px}
-    .foot-in b{color:var(--text)}
+    footer{border-top:1px solid var(--line);margin-top:16px}
+    .foot-in{max-width:1440px;margin:0 auto;padding:36px 24px 64px}
+    .foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .foot-card{display:flex;flex-direction:column;gap:14px;background:#080B10;border:1px solid #27272A;border-radius:.75rem;padding:1.5rem}
+    .foot-badge-row{display:flex;align-items:center}
+    .foot-title{font-family:var(--mono);line-height:1.4}
+    .foot-list{display:flex;flex-direction:column;gap:10px}
+    .foot-list li{position:relative;padding-left:18px}
+    .foot-list li::before{content:'';position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px rgba(0,240,255,.55)}
+    .foot-card.fc-amber .foot-list li::before{background:var(--amber);box-shadow:0 0 8px rgba(255,159,10,.55)}
 
     @media (max-width:1180px){
       .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}
@@ -106,11 +114,15 @@
       .cluster,.cluster:nth-child(n+4){grid-column:span 1}
       .cluster:last-child{grid-column:span 2}
     }
+    @media (max-width:960px){
+      .foot-grid{grid-template-columns:minmax(0,1fr)}
+    }
     @media (max-width:700px){
       .metrics{grid-template-columns:minmax(0,1fr)}
       .grid{grid-template-columns:minmax(0,1fr)}
       .cluster,.cluster:last-child{grid-column:span 1}
       main{padding:28px 16px 48px}
+      .foot-in{padding:28px 16px 48px}
       .nav-in{padding:12px 16px}
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
@@ -306,11 +318,41 @@
     </section>
   </main>
 
-  <footer>
+  <footer aria-labelledby="foot-label">
     <div class="foot-in">
-      <p><b>Transaction:</b> standalone Asset Purchase Agreement (micro-APA) via Acquire.com with escrow settlement; 5-business-day technical inspection window. Conveys defined source code, schemas and deployment rights for the listed units only.</p>
-      <p><b>Excluded from every transfer:</b> the GhostFactoryOS and Aura &amp; Grid brands, shared design tokens, component libraries, build systems and future catalog rights. No corporate equity is conveyed.</p>
-      <p><b>Product truth:</b> pre-revenue assets; no customers, revenue or uptime are claimed. Cockpit previews are interactive prototypes running on simulated sample data. Gate figures reflect 105 of 105 automated tests passing across the 17 engines; no third-party security audit or compliance certification is claimed. Prices are asking prices, not appraisals or advice. Not legal, financial, or compliance advice.</p>
+      <p class="section-label" id="foot-label">// DEAL TERMS &amp; COMMERCIAL GOVERNANCE</p>
+      <div class="foot-grid">
+        <div class="foot-card fc-amber border border-zinc-800 bg-[#080B10] rounded-xl p-6">
+          <div class="foot-badge-row"><span class="pill pill-amber">ESCROW &amp; TITLE</span></div>
+          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// THE TRANSACTION (100% PURE APA)</h2>
+          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+            <li>Sovereign IP Title Transfer via Acquire.com Escrow</li>
+            <li>5-Business-Day Technical Dyno Inspection Period</li>
+            <li>Full source code, deployment scripts, and database schemas included</li>
+            <li>Zero recurring seat fees or software licensing traps</li>
+          </ul>
+        </div>
+        <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
+          <div class="foot-badge-row"><span class="pill pill-cyan">IP BOUNDARY</span></div>
+          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// RESERVED INTELLECTUAL PROPERTY</h2>
+          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+            <li>Carve-out applies strictly to the acquired micro-cluster units</li>
+            <li>Ghost Factory OS and Aura &amp; Grid master brands remain private</li>
+            <li>Shared design tokens and future platform roadmaps are excluded</li>
+            <li>Clean asset sale: zero corporate equity or liabilities conveyed</li>
+          </ul>
+        </div>
+        <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
+          <div class="foot-badge-row"><span class="pill pill-cyan">105/105 DYNO GATES</span></div>
+          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// THE SPEC SHEET &amp; PRODUCT TRUTH</h2>
+          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+            <li>Turnkey pre-revenue software engineering assets</li>
+            <li>105/105 automated unit and dyno test gates verified passing</li>
+            <li>Cockpits run interactive deterministic previews with simulated data</li>
+            <li>All listed asking prices are pure asset buyout anchors</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </footer>
 </body>

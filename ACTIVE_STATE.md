@@ -18,7 +18,7 @@
 
 ## 2. PUBLIC COMMERCIAL SCOPE & VALUATION ANCHORS
 
-- **Public Scope**: **5 Sealed Micro-Clusters (`MC-01` through `MC-05`) — 51 Units / 17 Triads** (Units `#338`–`#354`)
+- **Public Scope**: **5 Sealed Micro-Clusters (`MC-01` through `MC-05`) — 51 Units / 17 Triads** *(internal directory mapping `#338`–`#354` is strictly private; all public assets use `MC-01`–`MC-05` identifiers only per §5 Rule 3)*
   - Each triad pairs: (1) a containerized FastAPI Python 3.11 compute engine, (2) an interactive SCADA telemetry cockpit preview, and (3) a React 19 operator utility backed by PostgreSQL 16 RLS schemas.
 - **Portfolio Batch Asking Price**: **$805,000 USD** (5-Cluster Portfolio APA)
 - **Standalone Micro-Cluster Asking Range**: **$145K–$185K** (**$145,000 – $185,000 USD** individual turnkey buyout)
@@ -59,3 +59,15 @@ All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/in
   - Showroom Compiler: `scripts/site/build_commercial_showroom.mjs`
   - Manifest Cross-Check Source: `docs/deal-room/MICRO_CLUSTERS_COMMERCIAL_MANIFEST.md`
   - Render CI/CD Gate (`render.yaml`): `npm run build && npm run audit:commercial` (`staticPublishPath: ./site`)
+
+---
+
+## 5. ZERO-LEAK COMMERCIAL GOVERNANCE STANDARD (PERMANENT RULEBOOK)
+
+Every build and CI/CD run (`npm run audit:commercial`) recursively inspects `site/` and `docs/deal-room/` and fails with exit code `1` on any violation of the five permanent rules below:
+
+- **Rule 1 — Internal Engine Isolation**: Zero public exposure of `"Ghost Factory OS"` or `"GhostFactoryOS"` (strictly internal development engine). Public assets reference **Aura & Grid** and **Independent Systems Architect** only.
+- **Rule 2 — Prohibited Buzzwords & Automotive Brands**: Zero inclusion of `"AI"` (including `LLM`, `inference`, `agent`/`agents`, `unsupervised agent`), `"autonomous"`, `"automated"`, or automotive brand names (e.g., `Lexus`).
+- **Rule 3 — Public Identifier Anonymization**: Zero internal unit serial numbers (`#338`, etc.) or internal registry prefixes (`GF-T1`/`GF-T2`/`GF-T3`, `T1-`/`T2-`) on public showroom or deal-room assets; use **`MC-01` through `MC-05`** (and sub-triad labels `MC-01.1`–`MC-05.3`) only.
+- **Rule 4 — Unencumbered Sole-Proprietor APA Framing**: Sole Proprietor **100% Pure APA** software asset sale framing only (zero corporate equity, zero debt, zero assumed corporate liabilities, zero `LLC` or corporate entity claims).
+- **Rule 5 — Strict Pricing Parity & Floor Redaction**: Strict pricing parity across showroom and deal-room collateral (**`$805,000`** 5-cluster batch ask, **`$145,000–$185,000`** standalone range, and **`MC-05` locked at `$145,000`**), with zero exposure of internal reserve, wholesale, or walk-away figures.

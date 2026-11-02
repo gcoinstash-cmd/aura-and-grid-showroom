@@ -112,15 +112,18 @@ const PUBLIC_COCKPIT_ALIAS = {
 };
 const publicCockpitPath = (p) => PUBLIC_COCKPIT_ALIAS[p] ?? p;
 
-// Public mirror of a cockpit: skip internal README specs and replace prohibited vocabulary in text assets.
-const MIRROR_TEXT_EXT = new Set(['.html', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.md']);
+// Public mirror of a cockpit: skip internal README specs, strip internal registry prefixes (GF-T#-) and replace prohibited vocabulary in text assets.
+const MIRROR_TEXT_EXT = new Set(['.html', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.md', '.example']);
 function sanitizeMirroredText(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) { sanitizeMirroredText(full); continue; }
     if (!MIRROR_TEXT_EXT.has(path.extname(entry.name).toLowerCase())) continue;
     const before = fs.readFileSync(full, 'utf8');
-    const after = before.replace(/autonomous/g, 'distributed').replace(/Autonomous/g, 'Distributed').replace(/AUTONOMOUS/g, 'DISTRIBUTED');
+    const after = before
+      .replace(/autonomous/g, 'distributed').replace(/Autonomous/g, 'Distributed').replace(/AUTONOMOUS/g, 'DISTRIBUTED')
+      .replace(/automated/g, 'scripted').replace(/Automated/g, 'Scripted').replace(/AUTOMATED/g, 'SCRIPTED')
+      .replace(/\bgf-t[123]-/gi, '');
     if (after !== before) fs.writeFileSync(full, after);
   }
 }
@@ -141,11 +144,13 @@ let askSum = 0, triadCount = 0, testSum = 0;
 for (const c of CLUSTERS) {
   askSum += c.ask;
   const sec = manifest.split(`MICRO-CLUSTER ${c.id}:`)[1]?.split('### 📦')[0] ?? fail(`${c.id} missing in manifest`);
-  const ids = [...sec.matchAll(/\*\*Unit #(\d{3})\*\*/g)].map(m => +m[1]);
-  if (ids.join() !== c.triads.map(t => t.n).join()) fail(`${c.id} unit IDs differ from manifest: ${ids} vs ${c.triads.map(t => t.n)}`);
+  const ids = [...sec.matchAll(/\*\*(MC-0\d\.\d+)\*\*/g)].map(m => m[1]);
+  const expectedIds = c.triads.map((t, i) => `${c.id}.${i + 1}`);
+  if (ids.join() !== expectedIds.join()) fail(`${c.id} triad IDs differ from manifest: ${ids} vs ${expectedIds}`);
   if (!sec.includes(`**Standalone Micro-Cluster APA Asking Anchor**: **${fmt(c.ask)} USD**`)) fail(`${c.id} asking price differs from manifest`);
-  for (const t of c.triads) {
-    if (!sec.includes(`(${t.tests}/${t.tests} Passed`)) fail(`#${t.n} test count ${t.tests} differs from manifest`);
+  for (const [i, t] of c.triads.entries()) {
+    const row = sec.split('\n').find(l => l.startsWith(`| **${c.id}.${i + 1}**`)) ?? '';
+    if (!row.includes(`(${t.tests}/${t.tests} Passed`)) fail(`${c.id}.${i + 1} test count ${t.tests} differs from manifest`);
     if (!fs.existsSync(path.join(rootDir, 'cockpits', t.cockpit, 'index.html'))) fail(`cockpit missing on disk: ${t.cockpit}`);
     triadCount++; testSum += t.tests;
   }
@@ -155,6 +160,8 @@ if (triadCount !== 17 || testSum !== 105) fail(`expected 17 triads / 105 tests, 
 const MIN_CLUSTER_ASK = Math.min(...CLUSTERS.map(c => c.ask));
 const MAX_CLUSTER_ASK = Math.max(...CLUSTERS.map(c => c.ask));
 if (MIN_CLUSTER_ASK !== 145000 || MAX_CLUSTER_ASK !== 185000) fail(`unexpected cluster ask range: ${MIN_CLUSTER_ASK}–${MAX_CLUSTER_ASK}`);
+// Rule 5 price locks (Zero-Leak Commercial Governance Standard)
+if (CLUSTERS.find(c => c.id === 'MC-05')?.ask !== 145000) fail('Rule 5: MC-05 asking price is locked at $145,000');
 
 /* ------------------------------------------------------------------ */
 /* Markup                                                              */
@@ -174,7 +181,7 @@ const clusterCard = (c) => {
         </header>
         <h3 class="text-xl font-extrabold text-white">${esc(c.title)}</h3>
         <p class="blurb text-sm text-zinc-300 leading-relaxed">${esc(c.blurb)}</p>
-        <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS // #${c.triads.map(t => t.n).join(' #')}</p>
+        <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS</p>
         <ul class="pills" aria-label="Domain tags">${c.tags.map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
         <ul class="pills" aria-label="Tech stack">${STACK.map(t => `<li class="pill pill-amber">${esc(t)}</li>`).join('')}</ul>
         <dl class="stats">
@@ -184,8 +191,8 @@ const clusterCard = (c) => {
         <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
-          <ol>${c.triads.map(t => `
-            <li><span class="uid">#${t.n}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">T2-${t.t2} SCADA cockpit &rarr;</a></li>`).join('')}
+          <ol>${c.triads.map((t, i) => `
+            <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
           </ol>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -878,18 +885,35 @@ const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b
 for (const re of FORBIDDEN_COPY) if (re.test(htmlCopy)) fail(`forbidden terminology ${re} found in showroom copy`);
 
 /* ------------------------------------------------------------------ */
-/* Repository-wide deal-room + showroom prohibited-string gate         */
-/* Recursively scans every text file under site/ and docs/deal-room/.   */
+/* Zero-Leak Commercial Governance Standard (ACTIVE_STATE.md) gate     */
+/* Every `npm run audit:commercial` run recursively scans every text    */
+/* file under site/ and docs/deal-room/ and enforces Rules 1-5.         */
 /* ------------------------------------------------------------------ */
 const SCAN_DIRS = [SITE_DIR, path.join(rootDir, 'docs', 'deal-room')];
+const CAR_BRANDS = 'lexus|ferrari|porsche|lamborghini|bugatti|mclaren|maserati|bentley|rolls-?royce|aston martin|tesla|toyota|honda|bmw|mercedes|audi|ford|chevrolet|corvette|mustang|jaguar|nissan|mazda|subaru|volkswagen';
 const SCAN_FORBIDDEN = [
-  { label: 'GhostFactory / GHOSTFACTORYOS', re: /ghostfactory/i },
-  { label: 'Ghost Factory OS', re: /ghost\s+factory/i },
-  { label: 'Lexus', re: /lexus/i },
-  { label: 'autonomous', re: /autonomous/i },
-  { label: 'unsupervised agent', re: /unsupervised\s+agents?/i },
+  // Rule 1 — internal development engine never public
+  { rule: 1, label: 'GhostFactory / GHOSTFACTORYOS', re: /ghostfactory/i },
+  { rule: 1, label: 'Ghost Factory OS', re: /ghost\s+factory/i },
+  // Rule 2 — no AI / autonomous / automated vocabulary, no automotive brand names
+  { rule: 2, label: 'AI', re: /\bai\b/i },
+  { rule: 2, label: 'LLM', re: /\bllm\b/i },
+  { rule: 2, label: 'inference', re: /\binference\b/i },
+  { rule: 2, label: 'autonomous', re: /autonomous/i },
+  { rule: 2, label: 'automated', re: /automated/i },
+  { rule: 2, label: 'agent / agents', re: /\bagents?\b/i },
+  { rule: 2, label: 'unsupervised agent', re: /unsupervised\s+agents?/i },
+  { rule: 2, label: 'automotive brand', re: new RegExp(`\\b(?:${CAR_BRANDS})\\b`, 'i') },
+  // Rule 3 — no internal unit serials / registry tags (use MC-01 .. MC-05 only)
+  { rule: 3, label: 'unit serial (#10-#500 / Unit #)', re: /#\s?(?:0*[1-9]\d|[1-4]\d{2}|500)\b(?![0-9a-fA-F])|\bUnit\s*#\s*\d+\b/i },
+  { rule: 3, label: 'registry tag (GF-T1/T2/T3)', re: /\bgf-t[123]\b/i },
+  { rule: 3, label: 'registry tag (T1-/T2- serial)', re: /\bT[12]-(?:\d{3}|[A-Z]+-\d+)\b/ },
+  // Rule 4 — sole-proprietor framing only (no corporate seller entity)
+  { rule: 4, label: 'corporate seller entity (LLC / ZoMae)', re: /\bLLC\b|zomae/i },
+  // Rule 5 — internal reserve / wholesale / walk-away figures never public
+  { rule: 5, label: 'internal reserve/wholesale/walk-away leak', re: /wholesale|walk[-_]?away|retained_floor|\bpanic\b/i },
 ];
-const SCAN_TEXT_EXT = new Set(['.html', '.htm', '.md', '.txt', '.json', '.js', '.mjs', '.cjs', '.ts', '.tsx', '.css', '.svg', '.xml', '.yml', '.yaml', '.csv', '.sql', '.webmanifest', '.sample', '']);
+const SCAN_TEXT_EXT = new Set(['.html', '.htm', '.md', '.txt', '.json', '.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.css', '.svg', '.xml', '.yml', '.yaml', '.csv', '.sql', '.webmanifest', '.sample', '.example', '']);
 
 function* walkTextFiles(dir) {
   if (!fs.existsSync(dir)) return;
@@ -900,29 +924,67 @@ function* walkTextFiles(dir) {
   }
 }
 
-function scanForbiddenTree() {
-  const hits = [];
+// Rule 5 — strict pricing parity: only these dollar figures may appear in public assets.
+const ALLOWED_PRICES = new Set(['$805,000', '$145,000', '$185,000', '$1,173,000', '$276,000', '$207,000', '$69,000', '$50,000', '$14,500', '$4,500', '$145K', '$185K']);
+const PRICE_RE = /\$\s?\d[\d,]*(?:\.\d+)?[KkMm]?\b/g;
+
+function scanGovernance() {
+  const hits = []; // { file, line, rule, label }
   let filesScanned = 0;
+  const priceScanTargets = new Set();
   for (const dir of SCAN_DIRS) for (const file of walkTextFiles(dir)) {
     filesScanned++;
-    const lines = fs.readFileSync(file, 'utf8').split('\n');
-    lines.forEach((line, i) => {
-      for (const { label, re } of SCAN_FORBIDDEN) if (re.test(line)) hits.push({ file: path.relative(rootDir, file), line: i + 1, label });
+    const rel = path.relative(rootDir, file);
+    const isPriceScoped = rel === path.join('site', 'index.html') || rel.startsWith(path.join('docs', 'deal-room') + path.sep);
+    if (isPriceScoped) priceScanTargets.add(file);
+    fs.readFileSync(file, 'utf8').split('\n').forEach((line, i) => {
+      for (const { rule, label, re } of SCAN_FORBIDDEN) if (re.test(line)) hits.push({ file: rel, line: i + 1, rule, label });
+      if (isPriceScoped) for (const m of line.match(PRICE_RE) ?? []) {
+        const norm = m.replace(/\s/g, '').replace(/k$/, 'K');
+        if (!ALLOWED_PRICES.has(norm)) hits.push({ file: rel, line: i + 1, rule: 5, label: `off-ledger price ${norm}` });
+      }
     });
   }
+
+  // Rule 4 (required framing) + Rule 5 (per-cluster ask parity) on the deal-room documents.
+  const dealRoom = path.join(rootDir, 'docs', 'deal-room');
+  const requiredFraming = [/sole[- ]proprietorship/i, /100% Pure/i, /zero (?:corporate )?equity/i, /zero debt/i, /zero assumed/i];
+  for (const name of ['MICRO_CLUSTERS_ONE_PAGER.md', 'MICRO_CLUSTERS_COMMERCIAL_MANIFEST.md']) {
+    const file = path.join(dealRoom, name);
+    const rel = path.relative(rootDir, file);
+    if (!fs.existsSync(file)) { hits.push({ file: rel, line: 0, rule: 4, label: 'required deal-room document missing' }); continue; }
+    const text = fs.readFileSync(file, 'utf8');
+    for (const re of requiredFraming) if (!re.test(text)) hits.push({ file: rel, line: 0, rule: 4, label: `required framing missing ${re}` });
+    for (const c of CLUSTERS) {
+      const rows = text.split('\n').filter(l => l.startsWith(`| **${c.id}** |`));
+      if (!rows.length) hits.push({ file: rel, line: 0, rule: 5, label: `${c.id} price row missing` });
+      for (const row of rows) if (!row.includes(`**${fmt(c.ask)}`)) hits.push({ file: rel, line: 0, rule: 5, label: `${c.id} ask must be ${fmt(c.ask)}` });
+    }
+  }
+  const onePager = fs.readFileSync(path.join(dealRoom, 'MICRO_CLUSTERS_ONE_PAGER.md'), 'utf8');
+  if (!onePager.includes('**$805,000**')) hits.push({ file: 'docs/deal-room/MICRO_CLUSTERS_ONE_PAGER.md', line: 0, rule: 5, label: 'batch ask $805,000 missing' });
+  if (!onePager.includes('**$145,000 – $185,000**')) hits.push({ file: 'docs/deal-room/MICRO_CLUSTERS_ONE_PAGER.md', line: 0, rule: 5, label: 'range $145,000 – $185,000 missing' });
+  // The compiled showroom must carry the same APA framing and no corporate seller entity.
+  if (!/Asset Purchase Agreement|\bAPA\b/.test(html)) hits.push({ file: 'site/index.html', line: 0, rule: 4, label: 'APA framing missing' });
   return { hits, filesScanned };
 }
 
 if (CHECK_ONLY) {
-  const { hits, filesScanned } = scanForbiddenTree();
+  const { hits, filesScanned } = scanGovernance();
   if (hits.length) {
-    const byFile = new Map();
-    for (const h of hits) byFile.set(h.file, [...(byFile.get(h.file) ?? []), `${h.label}@L${h.line}`]);
-    console.error(`❌ [commercial audit] ${hits.length} prohibited string hit(s) in ${byFile.size} file(s) under site/ and docs/deal-room/ (${filesScanned} files scanned):`);
-    for (const [file, tags] of [...byFile].slice(0, 25)) console.error(`   ${file}: ${[...new Set(tags.map(t => t.split('@')[0]))].join(', ')}`);
-    if (byFile.size > 25) console.error(`   … and ${byFile.size - 25} more file(s)`);
+    const byRule = new Map();
+    for (const h of hits) byRule.set(h.rule, [...(byRule.get(h.rule) ?? []), h]);
+    console.error(`❌ [commercial audit] Zero-Leak Governance Standard violated: ${hits.length} hit(s) across ${filesScanned} files under site/ and docs/deal-room/`);
+    for (const [rule, list] of [...byRule].sort((a, b) => a[0] - b[0])) {
+      const byFile = new Map();
+      for (const h of list) byFile.set(h.file, new Set([...(byFile.get(h.file) ?? []), h.label]));
+      console.error(`   Rule ${rule}: ${list.length} hit(s) in ${byFile.size} file(s)`);
+      for (const [file, labels] of [...byFile].slice(0, 10)) console.error(`     ${file}: ${[...labels].join(', ')}`);
+      if (byFile.size > 10) console.error(`     … and ${byFile.size - 10} more file(s)`);
+    }
     process.exit(1);
   }
+  globalThis.__governanceScanned = filesScanned;
 }
 
 if (CHECK_ONLY) {
@@ -931,7 +993,7 @@ if (CHECK_ONLY) {
   for (const c of CLUSTERS) for (const t of c.triads) {
     if (!fs.existsSync(path.join(SITE_DIR, 'cockpits', publicCockpitPath(t.cockpit), 'index.html'))) fail(`site/cockpits/${publicCockpitPath(t.cockpit)} missing — run: npm run build`);
   }
-  console.log(`✅ [commercial audit] ${CLUSTERS.length} clusters / ${triadCount} triads / ${testSum} tests match manifest; asks sum to ${fmt(BATCH_ASK)}; redaction scan clean; site/index.html is current`);
+  console.log(`✅ [commercial audit] ${CLUSTERS.length} clusters / ${triadCount} triads / ${testSum} tests match manifest; asks sum to ${fmt(BATCH_ASK)}; redaction scan clean; zero-leak governance rules 1-5 clean across ${globalThis.__governanceScanned} files; site/index.html is current`);
   process.exit(0);
 }
 

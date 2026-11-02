@@ -78,7 +78,7 @@ export default function SynapseAuditCockpit() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
-                <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-SYNAPSE-05</span>
+                <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">SYNAPSE-05</span>
               </div>
               <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
                 SYNAPSE-AUDIT <span className="text-xs text-[#FF9F0A] font-normal">// API REQUEST INSPECTOR & PROFILER COCKPIT</span>
@@ -208,7 +208,7 @@ export default function SynapseAuditCockpit() {
             <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
               <div className="border-b border-[#1F2937] pb-3">
                 <span className="text-[10px] font-mono text-[#00F0FF] font-bold tracking-widest uppercase">SPECIFICATION MONRONEY</span>
-                <h2 className="text-lg font-black text-white font-mono mt-1">GF-T2-SYNAPSE-05</h2>
+                <h2 className="text-lg font-black text-white font-mono mt-1">SYNAPSE-05</h2>
                 <p className="text-xs text-slate-400 font-sans">Track 2 Hypercar Flagship API Cockpit</p>
               </div>
 

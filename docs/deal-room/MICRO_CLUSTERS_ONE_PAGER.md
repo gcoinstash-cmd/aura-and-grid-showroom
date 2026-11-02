@@ -9,7 +9,7 @@
 ---
 
 ### Executive Acquisition Summary
-The **Turnkey Multi-Cluster High-Performance Distributed Systems Suite** is a collection of **51 verified units** organized into **17 high-performance Triads (#338–#354)** across **5 sealed commercial Micro-Clusters (`MC-01` through `MC-05`)**. 
+The **Turnkey Multi-Cluster High-Performance Distributed Systems Suite** is a collection of **51 verified units** organized into **17 high-performance Triads** across **5 sealed commercial Micro-Clusters (`MC-01` through `MC-05`)**. 
 
 Engineered for software aggregators and infrastructure holding firms, this transaction represents an outright acquisition of verified deep-tech software IP. Each triad pairs a containerized **Python 3.11/FastAPI compute engine** with a **React 19 operator utility** and a **SCADA telemetry cockpit preview** (simulated sample data), allowing acquirers to bypass 24+ months of specialized distributed-systems engineering.
 
@@ -42,11 +42,11 @@ Each of the 17 triads is engineered as a full-stack, vertically integrated stack
 
 | Cluster ID | Domain & Architectural Moat | Units Included | Triad Composition | Carve-Out Asking |
 | :--- | :--- | :---: | :--- | :---: |
-| **MC-01** | **Ultra-Low Latency Attention & KV Memory Fabrics**<br>Radix tree prefix hashing, multi-block flash decoding, paged memory pools & MQA/GQA engines. | 4 Triads<br>(12 Units) | `#338` Prefix Cache<br>`#340` Flash-Decode<br>`#345` Paged Memory<br>`#354` MQA/GQA Engine | **$185,000** |
-| **MC-02** | **Distributed High-Throughput & Speculative Scheduling**<br>Continuous iteration batching, chunked prefill scheduling & speculative draft verification. | 3 Triads<br>(9 Units) | `#346` Continuous Batch<br>`#347` Chunked Prefill<br>`#348` Speculative Decode | **$145,000** |
-| **MC-03** | **Extreme Quantization & Sub-Byte Compression Cores**<br>Hierarchical KV cache FP8/INT4 compression, 4-bit weight dequantization & FP6 tensor cores. | 3 Triads<br>(9 Units) | `#342` KV Quantization<br>`#352` FP4 Dequant<br>`#353` FP6 Tensor Core | **$145,000** |
-| **MC-04** | **Distributed Mesh Parallelism & Inter-Node Interconnects**<br>MoE expert routing, ring-attention context parallelism & activation checkpointing pipelines. | 4 Triads<br>(12 Units) | `#339` MoE Dispatch<br>`#341` Ring Attention<br>`#343` Multi-Node Hybrid<br>`#350` Activation Checkpoint | **$185,000** |
-| **MC-05** | **Zero-Overhead Hardware Acceleration & Host-GPU Fabrics**<br>CUDA graph capture & launch serialization, FP8 tensor math & zero-copy unified memory. | 3 Triads<br>(9 Units) | `#344` CUDA Graph<br>`#349` FP8 Tensor Core<br>`#351` Zero-Copy Memory | **$145,000** |
+| **MC-01** | **Ultra-Low Latency Attention & KV Memory Fabrics**<br>Radix tree prefix hashing, multi-block flash decoding, paged memory pools & MQA/GQA engines. | 4 Triads<br>(12 Units) | `MC-01.1` Prefix Cache<br>`MC-01.2` Flash-Decode<br>`MC-01.3` Paged Memory<br>`MC-01.4` MQA/GQA Engine | **$185,000** |
+| **MC-02** | **Distributed High-Throughput & Speculative Scheduling**<br>Continuous iteration batching, chunked prefill scheduling & speculative draft verification. | 3 Triads<br>(9 Units) | `MC-02.1` Continuous Batch<br>`MC-02.2` Chunked Prefill<br>`MC-02.3` Speculative Decode | **$145,000** |
+| **MC-03** | **Extreme Quantization & Sub-Byte Compression Cores**<br>Hierarchical KV cache FP8/INT4 compression, 4-bit weight dequantization & FP6 tensor cores. | 3 Triads<br>(9 Units) | `MC-03.1` KV Quantization<br>`MC-03.2` FP4 Dequant<br>`MC-03.3` FP6 Tensor Core | **$145,000** |
+| **MC-04** | **Distributed Mesh Parallelism & Inter-Node Interconnects**<br>MoE expert routing, ring-attention context parallelism & activation checkpointing pipelines. | 4 Triads<br>(12 Units) | `MC-04.1` MoE Dispatch<br>`MC-04.2` Ring Attention<br>`MC-04.3` Multi-Node Hybrid<br>`MC-04.4` Activation Checkpoint | **$185,000** |
+| **MC-05** | **Zero-Overhead Hardware Acceleration & Host-GPU Fabrics**<br>CUDA graph capture & launch serialization, FP8 tensor math & zero-copy unified memory. | 3 Triads<br>(9 Units) | `MC-05.1` CUDA Graph<br>`MC-05.2` FP8 Tensor Core<br>`MC-05.3` Zero-Copy Memory | **$145,000** |
 
 ---
 

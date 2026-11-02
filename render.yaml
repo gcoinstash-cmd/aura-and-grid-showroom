@@ -2,7 +2,7 @@ services:
   - type: web
     name: aura-and-grid-showroom
     env: static
-    buildCommand: npm run build || true
+    buildCommand: npm run build && npm run audit:commercial
     staticPublishPath: ./site
     routes:
       - type: rewrite

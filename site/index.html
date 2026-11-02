@@ -19,10 +19,12 @@
     a{color:inherit;text-decoration:none}
     ul,ol{list-style:none}
     /* utilities used by layout & CTA stack */
-    .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.gap-4{gap:1rem}.w-full{width:100%}
+    .flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.w-full{width:100%}
     .grid{display:grid}.grid-cols-1{grid-template-columns:minmax(0,1fr)}
+    .relative{position:relative}.overflow-hidden{overflow:hidden}.p-4{padding:1rem}.bg-\[\#06080C\]{background:#06080C}
     @media (min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media (min-width:1280px){.xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media (min-width:1024px){.lg\:grid-cols-1{grid-template-columns:minmax(0,1fr)}.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (min-width:1280px){.xl\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
     /* typography & spacing utilities (Tailwind-equivalent scale) */
     .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
     .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-black{font-weight:900}
@@ -49,11 +51,35 @@
 
     main{max-width:1480px;margin:0 auto;padding:44px 24px 72px}
     .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
-    h1{font-size:clamp(2rem,4vw,3.15rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;color:#fff}
+    h1{font-size:clamp(2rem,3.6vw,3.05rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:22ch;color:#fff}
     h1 span{color:var(--amber)}
-    .lede{max-width:68ch;margin-top:16px}
+    .lede{max-width:60ch;margin-top:16px}
+    .hero-actions{margin-top:24px}
+    .hero-actions .btn{padding:12px 12px;font-size:.84rem;letter-spacing:.035em}
+    @media (min-width:1440px){.hero-actions .btn{padding:12px 16px;font-size:.9rem;letter-spacing:.06em}}
     section{margin-top:44px}
     .section-label{font-family:var(--mono);font-size:.8125rem;letter-spacing:.16em;color:var(--mute);margin-bottom:16px}
+
+    /* 3D holo-bay */
+    .holo-bay{display:flex;flex-direction:column;gap:12px;box-shadow:0 0 36px -8px rgba(0,240,255,.18)}
+    .holo-hud-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .holo-sealed{font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:5px 10px;border-radius:6px;color:#34D399;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);box-shadow:0 0 12px rgba(16,185,129,.2);white-space:nowrap}
+    .holo-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    .holo-btn{appearance:none;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:6px;background:#101622;color:var(--zinc200);border:1px solid rgba(255,255,255,.16);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s;white-space:nowrap}
+    .holo-btn:hover{background:rgba(0,240,255,.16);border-color:rgba(0,240,255,.55);color:var(--cyan)}
+    .holo-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .holo-btn-scan{background:rgba(0,240,255,.14);border-color:rgba(0,240,255,.55);color:var(--cyan);font-weight:800;box-shadow:0 0 12px rgba(0,240,255,.25)}
+    .holo-btn-scan:hover{background:rgba(0,240,255,.24);box-shadow:0 0 18px rgba(0,240,255,.4)}
+    .holo-btn-scan.is-scanning{background:rgba(16,185,129,.25);border-color:#34D399;color:#A7F3D0;box-shadow:0 0 16px rgba(16,185,129,.45)}
+    .holo-stage{position:relative;width:100%;height:310px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden}
+    #dynoHoloCanvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+    #dynoHoloCanvas:active{cursor:grabbing}
+    .holo-hud-bot{display:grid;grid-template-columns:1.18fr 1.12fr .92fr .78fr;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
+    .holo-hud-bot span{display:block;font-size:.6875rem;letter-spacing:.06em;color:var(--mute);white-space:nowrap}
+    .holo-hud-bot b{display:block;font-size:.75rem;color:#fff;margin-top:2px;white-space:nowrap}
+    .holo-hud-bot b.c-cyan{color:var(--cyan)}.holo-hud-bot b.c-emerald{color:#34D399}.holo-hud-bot b.c-amber{color:var(--amber)}
+    @media (max-width:1240px){.holo-hud-bot{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}}
+    @media (max-width:767px){.holo-bay{display:none}}
 
     /* bento */
     .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:24px}
@@ -168,9 +194,37 @@
   </header>
 
   <main>
-    <p class="eyebrow">GHOSTFACTORYOS × AURA &amp; GRID // COMMERCIAL ACQUISITION SHOWROOM</p>
-    <h1>Next-gen inference infrastructure, <span>sold as clean title.</span></h1>
-    <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
+    <div class="hero-deck grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="hero-copy">
+        <p class="eyebrow">GHOSTFACTORYOS × AURA &amp; GRID // COMMERCIAL ACQUISITION SHOWROOM</p>
+        <h1>Next-gen inference infrastructure, <span>sold as clean title.</span></h1>
+        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
+        <div class="hero-actions grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
+          <a class="btn btn-amber" href="https://acquire.com/" target="_blank" rel="noopener" aria-label="Acquire full 5-cluster portfolio via Acquire.com"><span class="nowrap">[ ACQUIRE 5-CLUSTER BATCH ]</span><small class="text-xs font-mono">Acquire.com Escrow // $805,000 APA</small></a>
+          <a class="btn btn-cyan" href="#mc-label" aria-label="Inspect 5 sealed micro-clusters"><span class="nowrap">[ INSPECT 5 MICRO-CLUSTERS ]</span><small class="text-xs font-mono">MC-01 through MC-05 // $145,000&ndash;$185,000</small></a>
+        </div>
+      </div>
+
+      <div class="holo-bay border border-zinc-800 bg-[#06080C] rounded-xl relative overflow-hidden p-4" aria-label="Interactive 3D wireframe chassis holo-projector">
+        <div class="holo-hud-top">
+          <span class="holo-sealed">[DYNO SEALED 4/4 GATES]</span>
+          <div class="holo-controls">
+            <button type="button" class="holo-btn" data-yaw="-15" title="Rotate Chassis Left 15 degrees">[YAW -15&deg;]</button>
+            <button type="button" class="holo-btn holo-btn-scan" id="scanSchematicBtn" title="Trigger Laser Chassis Schematic Scan">[SCAN SCHEMATIC]</button>
+            <button type="button" class="holo-btn" data-yaw="15" title="Rotate Chassis Right 15 degrees">[YAW +15&deg;]</button>
+          </div>
+        </div>
+        <div class="holo-stage">
+          <canvas id="dynoHoloCanvas" aria-label="Rotating 3D F1 cyber-chassis CAD wireframe"></canvas>
+        </div>
+        <div class="holo-hud-bot">
+          <div><span>FLEET PAYLOAD</span><b class="c-cyan">17 TRIADS // 51 UNITS</b></div>
+          <div><span>DYNO VERIFICATION</span><b class="c-emerald">105/105 PYTEST PASS</b></div>
+          <div><span>CLEAN-ROOM IP</span><b>MIT / APACHE-2.0</b></div>
+          <div><span>CHASSIS YAW</span><b class="c-amber" id="holoYawReadout">+32&deg; // 60 FPS</b></div>
+        </div>
+      </div>
+    </div>
 
     <section aria-labelledby="fin-label">
       <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
@@ -384,5 +438,370 @@
       </div>
     </div>
   </footer>
+  <script>
+  (function () {
+    var canvas = document.getElementById('dynoHoloCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    var yawReadout = document.getElementById('holoYawReadout');
+    var scanBtn = document.getElementById('scanSchematicBtn');
+    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var dynoYaw = 0.56;
+    var targetYaw = 0.56;
+    var wheelSpin = 0;
+    var isScanning = false;
+    var scanProgress = 0;
+    var pulseTimer = 0;
+    var pulseIntensity = 0;
+    var isDragging = false;
+    var lastX = 0;
+    var inView = true;
+    var rafId = 0;
+    var frameTick = 0;
+
+    // Legacy CAD Metric Wireframe F1 Cyber-Chassis Nodes
+    var f1Nodes = {
+      nose_tip:    { x: 0,     y: -0.10, z: 2.45 },
+      nose_mid:    { x: 0,     y: 0.12,  z: 1.60 },
+      nose_bulk_t: { x: 0,     y: 0.28,  z: 0.85 },
+      nose_bulk_b: { x: 0,     y: -0.15, z: 0.85 },
+      fw_l_tip:    { x: -1.65, y: -0.22, z: 2.15 },
+      fw_r_tip:    { x: 1.65,  y: -0.22, z: 2.15 },
+      fw_l_top:    { x: -1.65, y: 0.10,  z: 2.05 },
+      fw_r_top:    { x: 1.65,  y: 0.10,  z: 2.05 },
+      fw_flap_l:   { x: -1.55, y: -0.05, z: 1.95 },
+      fw_flap_r:   { x: 1.55,  y: -0.05, z: 1.95 },
+      fw_pylon_l:  { x: -0.25, y: -0.20, z: 2.25 },
+      fw_pylon_r:  { x: 0.25,  y: -0.20, z: 2.25 },
+      hub_fl:      { x: -1.35, y: -0.02, z: 1.35 },
+      hub_fr:      { x: 1.35,  y: -0.02, z: 1.35 },
+      cp_rim_f:    { x: 0,     y: 0.42,  z: 0.65 },
+      cp_rim_l:    { x: -0.32, y: 0.38,  z: 0.15 },
+      cp_rim_r:    { x: 0.32,  y: 0.38,  z: 0.15 },
+      cp_rim_b:    { x: 0,     y: 0.42,  z: -0.25 },
+      halo_pylon:  { x: 0,     y: 0.68,  z: 0.62 },
+      halo_apex:   { x: 0,     y: 0.74,  z: 0.45 },
+      halo_l:      { x: -0.38, y: 0.72,  z: 0.05 },
+      halo_r:      { x: 0.38,  y: 0.72,  z: 0.05 },
+      airbox:      { x: 0,     y: 0.95,  z: -0.18 },
+      shark_fin:   { x: 0,     y: 0.88,  z: -1.15 },
+      engine_deck: { x: 0,     y: 0.38,  z: -1.55 },
+      sp_in_tl:    { x: -0.90, y: 0.32,  z: 0.65 },
+      sp_in_tr:    { x: 0.90,  y: 0.32,  z: 0.65 },
+      sp_in_bl:    { x: -0.75, y: -0.08, z: 0.65 },
+      sp_in_br:    { x: 0.75,  y: -0.08, z: 0.65 },
+      sp_mid_l:    { x: -0.95, y: 0.38,  z: -0.10 },
+      sp_mid_r:    { x: 0.95,  y: 0.38,  z: -0.10 },
+      sp_coke_l:   { x: -0.58, y: 0.24,  z: -1.05 },
+      sp_coke_r:   { x: 0.58,  y: 0.24,  z: -1.05 },
+      hub_rl:      { x: -1.45, y: 0.02,  z: -1.15 },
+      hub_rr:      { x: 1.45,  y: 0.02,  z: -1.15 },
+      rw_end_tl:   { x: -0.95, y: 0.92,  z: -1.85 },
+      rw_end_tr:   { x: 0.95,  y: 0.92,  z: -1.85 },
+      rw_end_bl:   { x: -0.95, y: 0.30,  z: -1.78 },
+      rw_end_br:   { x: 0.95,  y: 0.30,  z: -1.78 },
+      rw_main_l:   { x: -0.90, y: 0.72,  z: -1.82 },
+      rw_main_r:   { x: 0.90,  y: 0.72,  z: -1.82 },
+      rw_drs_l:    { x: -0.88, y: 0.88,  z: -1.84 },
+      rw_drs_r:    { x: 0.88,  y: 0.88,  z: -1.84 },
+      diffuser:    { x: 0,     y: -0.18, z: -1.85 }
+    };
+
+    var f1Edges = [
+      ['nose_tip', 'nose_mid'], ['nose_mid', 'nose_bulk_t'], ['nose_tip', 'nose_bulk_b'],
+      ['nose_tip', 'fw_pylon_l'], ['nose_tip', 'fw_pylon_r'],
+      ['fw_pylon_l', 'fw_l_tip'], ['fw_pylon_r', 'fw_r_tip'],
+      ['fw_l_tip', 'fw_l_top'], ['fw_r_tip', 'fw_r_top'],
+      ['fw_l_tip', 'fw_flap_l'], ['fw_r_tip', 'fw_flap_r'],
+      ['fw_flap_l', 'nose_mid'], ['fw_flap_r', 'nose_mid'],
+      ['nose_bulk_t', 'hub_fl'], ['nose_bulk_b', 'hub_fl'],
+      ['nose_bulk_t', 'hub_fr'], ['nose_bulk_b', 'hub_fr'],
+      ['nose_bulk_t', 'cp_rim_f'],
+      ['cp_rim_f', 'cp_rim_l'], ['cp_rim_f', 'cp_rim_r'],
+      ['cp_rim_l', 'cp_rim_b'], ['cp_rim_r', 'cp_rim_b'],
+      ['cp_rim_f', 'halo_pylon'], ['halo_pylon', 'halo_apex'],
+      ['halo_apex', 'halo_l'], ['halo_apex', 'halo_r'],
+      ['halo_l', 'cp_rim_l'], ['halo_r', 'cp_rim_r'],
+      ['cp_rim_b', 'airbox'], ['airbox', 'shark_fin'], ['shark_fin', 'engine_deck'],
+      ['cp_rim_f', 'sp_in_tl'], ['cp_rim_f', 'sp_in_tr'],
+      ['nose_bulk_b', 'sp_in_bl'], ['nose_bulk_b', 'sp_in_br'],
+      ['sp_in_tl', 'sp_in_bl'], ['sp_in_tr', 'sp_in_br'],
+      ['sp_in_tl', 'sp_mid_l'], ['sp_in_tr', 'sp_mid_r'],
+      ['sp_in_bl', 'sp_mid_l'], ['sp_in_br', 'sp_mid_r'],
+      ['sp_mid_l', 'sp_coke_l'], ['sp_mid_r', 'sp_coke_r'],
+      ['sp_coke_l', 'engine_deck'], ['sp_coke_r', 'engine_deck'],
+      ['engine_deck', 'hub_rl'], ['diffuser', 'hub_rl'],
+      ['engine_deck', 'hub_rr'], ['diffuser', 'hub_rr'],
+      ['engine_deck', 'diffuser'],
+      ['engine_deck', 'rw_end_bl'], ['engine_deck', 'rw_end_br'],
+      ['rw_end_bl', 'rw_end_tl'], ['rw_end_br', 'rw_end_tr'],
+      ['rw_end_tl', 'rw_end_tr'],
+      ['rw_main_l', 'rw_main_r'],
+      ['rw_drs_l', 'rw_drs_r'],
+      ['rw_main_l', 'rw_end_bl'], ['rw_main_r', 'rw_end_br']
+    ];
+
+    var f1Wheels = [
+      { cx: -1.45, cy: -0.05, cz: 1.35,  r: 0.44, w: 0.38 },
+      { cx: 1.45,  cy: -0.05, cz: 1.35,  r: 0.44, w: 0.38 },
+      { cx: -1.55, cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 },
+      { cx: 1.55,  cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 }
+    ];
+
+    function project3D(x, y, z, width, height, yaw, pitch) {
+      var cz = z - 0.22;
+      var cosY = Math.cos(yaw), sinY = Math.sin(yaw);
+      var x1 = x * cosY + cz * sinY;
+      var z1 = -x * sinY + cz * cosY;
+      var cosP = Math.cos(pitch), sinP = Math.sin(pitch);
+      var y2 = y * cosP - z1 * sinP;
+      var z2 = y * sinP + z1 * cosP;
+      var pulseMult = 1 + (pulseIntensity * 0.07);
+      var depth = 6.2 - z2;
+      var scale = (4.2 / Math.max(depth, 0.1)) * (Math.min(width, height) / 3.45) * pulseMult;
+      return {
+        px: width / 2 + x1 * scale,
+        py: height / 2 - y2 * scale + (height * 0.05)
+      };
+    }
+
+    function canAnimate() {
+      return !document.hidden && inView && window.innerWidth >= 768 && canvas.offsetParent !== null;
+    }
+
+    function renderFrame() {
+      var w = canvas.clientWidth || 560;
+      var h = canvas.clientHeight || 300;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var cw = Math.round(w * dpr), ch = Math.round(h * dpr);
+      if (canvas.width !== cw || canvas.height !== ch) {
+        canvas.width = cw;
+        canvas.height = ch;
+      }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      if (!reducedMotion && !isDragging) {
+        targetYaw += 0.0028;
+      }
+      dynoYaw += (targetYaw - dynoYaw) * 0.09;
+      if (!reducedMotion) wheelSpin += 0.055;
+
+      if (pulseTimer > 0) {
+        pulseTimer -= 16.6;
+        pulseIntensity = Math.sin((1 - (Math.max(0, pulseTimer) / 1200)) * Math.PI);
+      } else {
+        pulseIntensity = 0;
+      }
+
+      var pitch = 0.38;
+      ctx.fillStyle = '#05070B';
+      ctx.fillRect(0, 0, w, h);
+
+      // 1. Pit-lane roller grid deck
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(0, 240, 255, 0.13)';
+      ctx.beginPath();
+      for (var gz = -3.2; gz <= 3.21; gz += 0.8) {
+        var g1 = project3D(-2.4, -0.52, gz, w, h, dynoYaw, pitch);
+        var g2 = project3D(2.4, -0.52, gz, w, h, dynoYaw, pitch);
+        ctx.moveTo(g1.px, g1.py);
+        ctx.lineTo(g2.px, g2.py);
+      }
+      for (var gx = -2.4; gx <= 2.41; gx += 0.8) {
+        var g3 = project3D(gx, -0.52, -3.2, w, h, dynoYaw, pitch);
+        var g4 = project3D(gx, -0.52, 3.2, w, h, dynoYaw, pitch);
+        ctx.moveTo(g3.px, g3.py);
+        ctx.lineTo(g4.px, g4.py);
+      }
+      ctx.stroke();
+
+      // 2. Project nodes
+      var proj = {};
+      var keys = Object.keys(f1Nodes);
+      for (var k = 0; k < keys.length; k++) {
+        var nk = keys[k], n = f1Nodes[nk];
+        proj[nk] = project3D(n.x, n.y, n.z, w, h, dynoYaw, pitch);
+      }
+
+      // 3. Structural wireframe edges (batched by color for low GPU overhead)
+      ctx.lineWidth = 1.6 + (pulseIntensity * 1.1);
+      ctx.shadowBlur = 6 + (pulseIntensity * 12);
+      ctx.strokeStyle = '#00F0FF';
+      ctx.shadowColor = '#00F0FF';
+      ctx.beginPath();
+      for (var e = 0; e < f1Edges.length; e++) {
+        var fk = f1Edges[e][0], tk = f1Edges[e][1];
+        if (fk.indexOf('halo') === 0 || tk.indexOf('halo') === 0 || fk.indexOf('rw_drs') === 0 || tk.indexOf('rw_drs') === 0) continue;
+        ctx.moveTo(proj[fk].px, proj[fk].py);
+        ctx.lineTo(proj[tk].px, proj[tk].py);
+      }
+      ctx.stroke();
+
+      ctx.strokeStyle = '#FF9F0A';
+      ctx.shadowColor = '#FF9F0A';
+      ctx.beginPath();
+      for (var ea = 0; ea < f1Edges.length; ea++) {
+        var fka = f1Edges[ea][0], tka = f1Edges[ea][1];
+        if (!(fka.indexOf('halo') === 0 || tka.indexOf('halo') === 0 || fka.indexOf('rw_drs') === 0 || tka.indexOf('rw_drs') === 0)) continue;
+        ctx.moveTo(proj[fka].px, proj[fka].py);
+        ctx.lineTo(proj[tka].px, proj[tka].py);
+      }
+      ctx.stroke();
+
+      // 4. Rotating wireframe wheels
+      for (var wi = 0; wi < f1Wheels.length; wi++) {
+        var wh = f1Wheels[wi], segs = 12, pIn = [], pOut = [];
+        for (var si = 0; si < segs; si++) {
+          var th = (si / segs) * Math.PI * 2 + wheelSpin;
+          var wy = Math.sin(th) * wh.r, wz = Math.cos(th) * wh.r;
+          pIn.push(project3D(wh.cx - wh.w / 2, wh.cy + wy, wh.cz + wz, w, h, dynoYaw, pitch));
+          pOut.push(project3D(wh.cx + wh.w / 2, wh.cy + wy, wh.cz + wz, w, h, dynoYaw, pitch));
+        }
+        ctx.strokeStyle = '#00F0FF';
+        ctx.shadowColor = '#00F0FF';
+        ctx.lineWidth = 1.35;
+        ctx.beginPath();
+        for (var o = 0; o < segs; o++) {
+          var no = (o + 1) % segs;
+          ctx.moveTo(pOut[o].px, pOut[o].py);
+          ctx.lineTo(pOut[no].px, pOut[no].py);
+        }
+        ctx.stroke();
+
+        ctx.strokeStyle = '#FF9F0A';
+        ctx.shadowColor = '#FF9F0A';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        for (var ii = 0; ii < segs; ii++) {
+          var ni = (ii + 1) % segs;
+          ctx.moveTo(pIn[ii].px, pIn[ii].py);
+          ctx.lineTo(pIn[ni].px, pIn[ni].py);
+          ctx.moveTo(pIn[ii].px, pIn[ii].py);
+          ctx.lineTo(pOut[ii].px, pOut[ii].py);
+        }
+        ctx.stroke();
+      }
+
+      // 5. Vertex glow nodes
+      ctx.shadowBlur = 7 + (pulseIntensity * 10);
+      var rad = 2.1 + (pulseIntensity * 0.8);
+      for (var vk = 0; vk < keys.length; vk++) {
+        var key = keys[vk], pt = proj[key];
+        var warm = key.indexOf('halo') === 0 || key.indexOf('hub') === 0 || key === 'airbox';
+        ctx.fillStyle = warm ? '#FF9F0A' : '#00F0FF';
+        ctx.shadowColor = ctx.fillStyle;
+        ctx.beginPath();
+        ctx.arc(pt.px, pt.py, rad, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 6. Emerald laser schematic scan sweep
+      if (isScanning) {
+        scanProgress += 0.022;
+        if (scanProgress > 1) {
+          isScanning = false;
+          scanProgress = 0;
+          if (scanBtn) scanBtn.classList.remove('is-scanning');
+        } else {
+          var sy = h * scanProgress;
+          ctx.shadowBlur = 16;
+          ctx.shadowColor = '#10B981';
+          ctx.strokeStyle = 'rgba(16, 185, 129, 0.92)';
+          ctx.lineWidth = 2.4;
+          ctx.beginPath();
+          ctx.moveTo(0, sy);
+          ctx.lineTo(w, sy);
+          ctx.stroke();
+
+          var grad = ctx.createLinearGradient(0, sy - 26, 0, sy + 4);
+          grad.addColorStop(0, 'rgba(16, 185, 129, 0)');
+          grad.addColorStop(1, 'rgba(16, 185, 129, 0.28)');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, sy - 26, w, 26);
+
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = '#34D399';
+          ctx.font = '700 11px "JetBrains Mono", monospace';
+          ctx.fillText('LASER SCANNING CHASSIS CAD // ' + Math.round(scanProgress * 100) + '%', 12, Math.max(sy - 7, 18));
+        }
+      }
+
+      ctx.shadowBlur = 0;
+      frameTick++;
+      if (yawReadout && (frameTick % 6 === 0)) {
+        var deg = Math.round(((dynoYaw * 180) / Math.PI) % 360);
+        if (deg > 180) deg -= 360;
+        if (deg < -180) deg += 360;
+        yawReadout.textContent = (deg >= 0 ? '+' : '') + deg + '° // 60 FPS';
+      }
+    }
+
+    function loop() {
+      rafId = 0;
+      if (!canAnimate()) return;
+      renderFrame();
+      if (!reducedMotion || isScanning || pulseTimer > 0 || Math.abs(targetYaw - dynoYaw) > 0.002) {
+        rafId = requestAnimationFrame(loop);
+      }
+    }
+
+    function kick() {
+      if (!rafId && canAnimate()) rafId = requestAnimationFrame(loop);
+    }
+
+    document.querySelectorAll('[data-yaw]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var delta = parseFloat(btn.getAttribute('data-yaw') || '0');
+        targetYaw += (delta * Math.PI) / 180;
+        kick();
+      });
+    });
+
+    if (scanBtn) {
+      scanBtn.addEventListener('click', function () {
+        isScanning = true;
+        scanProgress = 0;
+        pulseTimer = 1200;
+        scanBtn.classList.add('is-scanning');
+        kick();
+      });
+    }
+
+    canvas.addEventListener('pointerdown', function (ev) {
+      isDragging = true;
+      lastX = ev.clientX;
+      if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
+    });
+    canvas.addEventListener('pointermove', function (ev) {
+      if (!isDragging) return;
+      var dx = ev.clientX - lastX;
+      lastX = ev.clientX;
+      targetYaw += dx * 0.009;
+      dynoYaw = targetYaw;
+      kick();
+    });
+    function endDrag() { isDragging = false; }
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        inView = entries[0] ? entries[0].isIntersecting : true;
+        if (inView) kick();
+      }, { threshold: 0.05 });
+      io.observe(canvas);
+    }
+    document.addEventListener('visibilitychange', kick);
+    window.addEventListener('resize', kick, { passive: true });
+
+    if (window.innerWidth >= 768) {
+      renderFrame();
+      kick();
+    }
+  })();
+  </script>
 </body>
 </html>

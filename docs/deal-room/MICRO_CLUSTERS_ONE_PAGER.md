@@ -64,6 +64,7 @@ GATE 04: MECHANICAL TEST DYNO        [100% PASSED] 105/105 Passed (100.0% Pass R
 
 - **Clean-Room License Standard:** 100% of underlying code, dependencies, and scaffolds adhere to permissive commercial open-source licenses (**MIT / Apache-2.0 / BSD**). Exactly **0% GPL, AGPL, LGPL, or SSPL copyleft exposure** for pristine M&A diligence.
 - **Dyno Gate Clearance:** All 17 engine test suites scored 100% on automated pytest verification (105 passed out of 105 assertions), confirming rock-solid runtime execution.
+- **One-Step Dyno Replication:** From the repository root, run `source T3-NEXUS-ORDERBOOK/.venv/bin/activate && pytest`. Activating the bundled virtual environment first avoids missing-dependency errors from an unactivated system Python. Expected result: `105 passed`, exit code 0.
 - **Turnkey Production Deployability:** Containerized microservices deployable within 15 minutes to Google Cloud Run, AWS ECS, or private Kubernetes VPCs.
 
 ---

@@ -205,7 +205,11 @@ engines/track3-skunkworks/gf-t3-[XXX]/
 ```
 
 ### Verification Command
-To reproduce and execute the mechanical test dyno across all 17 engines:
+To reproduce and execute the mechanical test dyno across all 17 engines in one step, activate the bundled virtual environment from the repository root and run bare `pytest` (an unactivated system Python fails with `ModuleNotFoundError: No module named 'fastapi'`):
+```bash
+source T3-NEXUS-ORDERBOOK/.venv/bin/activate && pytest
+```
+Equivalent per-engine loop:
 ```bash
 for i in $(seq 338 354); do
   (cd "engines/track3-skunkworks/gf-t3-$i" && ../../../T3-NEXUS-ORDERBOOK/.venv/bin/pytest test_*.py -q)

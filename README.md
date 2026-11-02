@@ -72,3 +72,13 @@ npm run build
 # Synchronize Blueprints Across Local & Cloud Master Vaults
 npm run sync:master
 ```
+
+### Due-Diligence Test Run (17 Engine Triads, 105 Tests)
+
+Activate the bundled Python 3.11 virtual environment first. Running bare `pytest` against an unactivated system Python fails at collection with `ModuleNotFoundError: No module named 'fastapi'`.
+
+```bash
+source T3-NEXUS-ORDERBOOK/.venv/bin/activate && pytest
+```
+
+**Expected result:** `105 passed`, exit code 0. Root `pytest.ini` and `conftest.py` scope discovery to `gf-t3-338` through `gf-t3-354` and isolate each triad's `engine` module.

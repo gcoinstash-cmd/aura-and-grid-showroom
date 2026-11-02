@@ -142,27 +142,27 @@ const clusterCard = (c) => {
       <article class="card cluster" id="${c.id.toLowerCase()}" data-cluster="${c.id}">
         <header class="cluster-head">
           <span class="mc-id">${c.id}</span>
-          <span class="mc-ask"><small>ASKING</small>${fmt(c.ask)}</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>${fmt(c.ask)}</span>
         </header>
-        <h3>${esc(c.title)}</h3>
-        <p class="blurb">${esc(c.blurb)}</p>
-        <p class="meta-line">${c.triads.length} TRIADS // ${units} UNITS // #${c.triads.map(t => t.n).join(' #')}</p>
+        <h3 class="text-xl font-extrabold text-white">${esc(c.title)}</h3>
+        <p class="blurb text-sm text-zinc-300 leading-relaxed">${esc(c.blurb)}</p>
+        <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS // #${c.triads.map(t => t.n).join(' #')}</p>
         <ul class="pills" aria-label="Domain tags">${c.tags.map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
         <ul class="pills" aria-label="Tech stack">${STACK.map(t => `<li class="pill pill-amber">${esc(t)}</li>`).join('')}</ul>
         <dl class="stats">
-          <div><dt>DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
-          <div><dt>LICENSE</dt><dd>MIT / APACHE-2.0</dd></div>
+          <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
+          <div><dt class="text-xs font-mono text-zinc-400">LICENSE</dt><dd>MIT / APACHE-2.0</dd></div>
         </dl>
-        <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
+        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
         <details class="triads">
-          <summary>VIEW ${c.triads.length} TRIADS</summary>
+          <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
           <ol>${c.triads.map(t => `
             <li><span class="uid">#${t.n}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">GF-T2-${t.t2} cockpit &rarr;</a></li>`).join('')}
           </ol>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
-          <a class="btn btn-cyan" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small>SCADA preview // simulated sample data</small></a>
-          <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" data-cluster="${c.id}" aria-label="Acquire title for ${c.id} via Acquire.com listing inquiry">[ ACQUIRE TITLE (APA) ]<small>Inquire on Acquire.com // ${fmt(c.ask)}</small></a>
+          <a class="btn btn-cyan" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" data-cluster="${c.id}" aria-label="Acquire title for ${c.id} via Acquire.com listing inquiry">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Inquire on Acquire.com // ${fmt(c.ask)}</small></a>
         </div>
       </article>`;
 };
@@ -180,7 +180,7 @@ const html = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#8A96AB;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
+    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#A1A1AA;--zinc200:#E4E4E7;--zinc300:#D4D4D8;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;
@@ -189,69 +189,74 @@ const html = `<!DOCTYPE html>
     ul,ol{list-style:none}
     /* utilities used by the CTA stack */
     .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.w-full{width:100%}
+    /* typography utilities (Tailwind-equivalent scale) */
+    .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
+    .font-mono{font-family:var(--mono)}.font-medium{font-weight:500}.font-extrabold{font-weight:800}
+    .text-white{color:#fff}.text-zinc-200{color:var(--zinc200)}.text-zinc-300{color:var(--zinc300)}.text-zinc-400{color:var(--mute)}
+    .leading-relaxed{line-height:1.625}
 
     /* header */
     .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav-in{max-width:1280px;margin:0 auto;padding:12px 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
-    .nav-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-    .brand{font-family:var(--mono);font-weight:800;letter-spacing:.14em;font-size:1rem}
+    .nav-in{max-width:1440px;margin:0 auto;padding:14px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px}
+    .nav-left{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
+    .brand{font-family:var(--mono);font-weight:800;letter-spacing:.14em;font-size:1.05rem;white-space:nowrap}
     .brand b{color:var(--amber)}
-    .badge{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;font-weight:600;padding:4px 10px;border:1px solid var(--amber);color:var(--amber);border-radius:999px;white-space:nowrap}
-    .nav-status{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--cyan);text-align:center;text-shadow:0 0 12px rgba(0,240,255,.45)}
-    .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
-    .gate{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;font-weight:700;padding:5px 10px;border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;white-space:nowrap}
+    .badge{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;font-weight:600;padding:4px 10px;border:1px solid var(--amber);color:var(--amber);border-radius:999px;white-space:nowrap}
+    .nav-status{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--cyan);text-align:center;text-shadow:0 0 12px rgba(0,240,255,.45)}
+    .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:nowrap}
+    .gate{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;font-weight:700;padding:5px 11px;border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;white-space:nowrap}
     .gate::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:7px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
-    .price-pill{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;font-weight:800;padding:6px 14px;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.35)}
+    .price-pill{font-family:var(--mono);font-size:.8125rem;letter-spacing:.08em;font-weight:800;padding:6px 14px;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.35)}
 
-    main{max-width:1280px;margin:0 auto;padding:40px 24px 64px}
-    .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--cyan);margin-bottom:10px}
-    h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:26ch}
+    main{max-width:1440px;margin:0 auto;padding:44px 24px 72px}
+    .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
+    h1{font-size:clamp(2rem,4vw,3.15rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;color:#fff}
     h1 span{color:var(--amber)}
-    .lede{color:var(--mute);max-width:68ch;margin-top:14px;font-size:1rem}
-    section{margin-top:40px}
-    .section-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--mute);margin-bottom:14px}
+    .lede{max-width:68ch;margin-top:16px}
+    section{margin-top:44px}
+    .section-label{font-family:var(--mono);font-size:.8125rem;letter-spacing:.16em;color:var(--mute);margin-bottom:16px}
 
     /* bento */
-    .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:22px}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.02em}
-    .metric .name{font-weight:600;margin-top:6px}
-    .metric .sub{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--mute);margin-top:4px}
+    .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:24px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em}
+    .metric .name{font-weight:700;font-size:1.1rem;color:#fff;margin-top:8px}
+    .metric .sub{font-size:.8125rem;letter-spacing:.04em;margin-top:6px;line-height:1.5}
     .metric.m-cyan{border-color:rgba(0,240,255,.4)}.metric.m-cyan .val{color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,.35)}
     .metric.m-amber{border-color:rgba(255,159,10,.55);box-shadow:0 0 30px rgba(255,159,10,.08)}.metric.m-amber .val{color:var(--amber);text-shadow:0 0 20px rgba(255,159,10,.35)}
     .metric.m-white .val{color:#fff}
 
     /* clusters */
-    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-    .cluster{grid-column:span 2;display:flex;flex-direction:column;gap:12px}
+    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+    .cluster{grid-column:span 2;display:flex;flex-direction:column;gap:14px}
     .cluster:nth-child(n+4){grid-column:span 3}
     .cluster-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .mc-id{font-family:var(--mono);font-weight:800;font-size:.8rem;letter-spacing:.14em;color:var(--cyan);border:1px solid rgba(0,240,255,.45);border-radius:6px;padding:3px 9px}
-    .mc-ask{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--amber);text-align:right}
-    .mc-ask small{display:block;font-size:.55rem;letter-spacing:.18em;color:var(--mute);font-weight:600}
-    .cluster h3{font-size:1.1rem;font-weight:700;line-height:1.3}
-    .blurb{color:var(--mute);font-size:.88rem}
-    .meta-line{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--cyan);word-break:break-word}
-    .pills{display:flex;flex-wrap:wrap;gap:6px}
-    .pill{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+    .mc-id{font-family:var(--mono);font-weight:800;font-size:.875rem;letter-spacing:.12em;color:var(--cyan);border:1px solid rgba(0,240,255,.45);border-radius:6px;padding:4px 10px}
+    .mc-ask{font-family:var(--mono);font-weight:800;font-size:1.5rem;color:var(--amber);text-align:right;line-height:1.2}
+    .mc-ask small{display:block;font-size:.75rem;letter-spacing:.14em;font-weight:600;margin-bottom:2px}
+    .cluster h3{line-height:1.32;letter-spacing:-.01em}
+    .cluster .blurb{font-size:.9375rem}
+    .meta-line{font-size:.78125rem;letter-spacing:.04em;color:var(--cyan);word-break:break-word;line-height:1.5}
+    .pills{display:flex;flex-wrap:wrap;gap:7px}
+    .pill{font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.02em;padding:4px 11px;border-radius:999px;border:1px solid var(--line)}
     .pill-cyan{color:var(--cyan);border-color:rgba(0,240,255,.35);background:rgba(0,240,255,.05)}
     .pill-amber{color:var(--amber);border-color:rgba(255,159,10,.35);background:rgba(255,159,10,.05)}
-    .stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .stats div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
-    .stats dt{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--mute)}
-    .stats dd{font-family:var(--mono);font-size:.74rem;font-weight:700;margin-top:2px}
-    .buyers{font-size:.8rem;color:var(--mute)}
-    .buyers b{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--text);margin-bottom:2px}
-    .triads{border-top:1px solid var(--line);padding-top:10px}
-    .triads summary{cursor:pointer;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--mute)}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .stats div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+    .stats dt{font-size:.75rem;letter-spacing:.08em}
+    .stats dd{font-family:var(--mono);font-size:.875rem;font-weight:700;color:#fff;margin-top:3px}
+    .buyers{font-size:.9375rem}
+    .buyers b{display:block;font-size:.75rem;letter-spacing:.08em;margin-bottom:3px}
+    .triads{border-top:1px solid var(--line);padding-top:12px}
+    .triads summary{cursor:pointer;font-size:.78125rem;letter-spacing:.08em}
     .triads summary:hover{color:var(--cyan)}
-    .triads ol{margin-top:10px;display:flex;flex-direction:column;gap:10px;font-size:.8rem}
+    .triads ol{margin-top:10px;display:flex;flex-direction:column;gap:12px;font-size:.875rem;line-height:1.55;color:var(--zinc300)}
     .triads .uid{font-family:var(--mono);font-weight:700;color:var(--amber);margin-right:4px}
-    .triads a{font-family:var(--mono);font-size:.68rem;color:var(--cyan)}
+    .triads a{font-family:var(--mono);font-size:.78125rem;color:var(--cyan)}
     .triads a:hover{text-decoration:underline}
-    .cta-stack{margin-top:auto;padding-top:6px}
-    .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;min-height:52px;padding:10px 14px;border-radius:10px;font-family:var(--mono);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-align:center;transition:box-shadow .15s,transform .15s,background .15s}
-    .btn small{font-size:.58rem;font-weight:500;letter-spacing:.04em;opacity:.85}
+    .cta-stack{margin-top:auto;padding-top:8px}
+    .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:62px;padding:12px 16px;border-radius:10px;font-family:var(--mono);font-weight:800;font-size:.9rem;letter-spacing:.06em;text-align:center;transition:box-shadow .15s,transform .15s,background .15s}
+    .btn small{font-size:.75rem;font-weight:500;letter-spacing:.02em;opacity:.92}
     .btn:hover{transform:translateY(-1px)}
     .btn:focus-visible,.triads summary:focus-visible,.triads a:focus-visible{outline:2px solid #fff;outline-offset:2px}
     .btn-cyan{border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06)}
@@ -260,12 +265,12 @@ const html = `<!DOCTYPE html>
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
 
     footer{border-top:1px solid var(--line);margin-top:24px}
-    .foot-in{max-width:1280px;margin:0 auto;padding:28px 24px 48px;color:var(--mute);font-size:.78rem;display:flex;flex-direction:column;gap:8px}
+    .foot-in{max-width:1440px;margin:0 auto;padding:28px 24px 48px;color:var(--mute);font-size:.875rem;line-height:1.65;display:flex;flex-direction:column;gap:10px}
     .foot-in b{color:var(--text)}
 
-    @media (max-width:1024px){
-      .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center}
-      .nav-left,.nav-right{justify-content:center}
+    @media (max-width:1180px){
+      .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}
+      .nav-left,.nav-right{justify-content:center;flex-wrap:wrap}
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .cluster,.cluster:nth-child(n+4){grid-column:span 1}
       .cluster:last-child{grid-column:span 2}
@@ -298,7 +303,7 @@ const html = `<!DOCTYPE html>
   <main>
     <p class="eyebrow">GHOSTFACTORYOS × AURA &amp; GRID // COMMERCIAL ACQUISITION SHOWROOM</p>
     <h1>Next-gen inference infrastructure, <span>sold as clean title.</span></h1>
-    <p class="lede">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
+    <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
 
     <section aria-labelledby="fin-label">
       <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
@@ -306,17 +311,17 @@ const html = `<!DOCTYPE html>
         <div class="card metric m-cyan">
           <div class="val">${fmt(RETAIL_BENCHMARK)}</div>
           <div class="name">Retail Replacement Benchmark</div>
-          <div class="sub">ASC 350-40 SCOPE // COST-TO-REBUILD, 17 TRIADS</div>
+          <div class="sub text-xs font-mono text-zinc-400">ASC 350-40 SCOPE // COST-TO-REBUILD, 17 TRIADS</div>
         </div>
         <div class="card metric m-amber">
           <div class="val">${fmt(BATCH_ASK)}</div>
           <div class="name">Official 5-Cluster Portfolio Asking Price</div>
-          <div class="sub">100% PURE APA</div>
+          <div class="sub text-xs font-mono text-zinc-400">100% PURE APA</div>
         </div>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
           <div class="name">Sovereign Title Transfer</div>
-          <div class="sub">ZERO LICENSES // ZERO SEAT FEES</div>
+          <div class="sub text-xs font-mono text-zinc-400">ZERO LICENSES // ZERO SEAT FEES</div>
         </div>
       </div>
     </section>

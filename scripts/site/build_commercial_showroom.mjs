@@ -29,6 +29,10 @@ const MANIFEST_PATH = path.join(rootDir, 'docs', 'deal-room', 'MICRO_CLUSTERS_CO
 // Acquire.com listing inquiry target. Override with ACQUIRE_LISTING_URL once the live listing URL exists.
 const ACQUIRE_URL = process.env.ACQUIRE_LISTING_URL || 'https://acquire.com/';
 
+// `--check` (npm run audit:commercial): validate only. Writes nothing; exits non-zero if the
+// manifest cross-check or redaction scan fails, or if site/index.html is not the compiled output.
+const CHECK_ONLY = process.argv.includes('--check');
+
 const RETAIL_BENCHMARK = 1173000;
 const BATCH_ASK = 805000;
 
@@ -344,6 +348,16 @@ const FORBIDDEN = [
   /production-ready/i, /enterprise-grade/i,
 ];
 for (const re of FORBIDDEN) if (re.test(html)) fail(`forbidden pattern ${re} found in compiled markup`);
+
+if (CHECK_ONLY) {
+  const current = fs.existsSync(path.join(SITE_DIR, 'index.html')) ? fs.readFileSync(path.join(SITE_DIR, 'index.html'), 'utf8') : '';
+  if (current !== html) fail('site/index.html is not the commercial showroom build (stale or overwritten by the legacy 500-unit generator). Run: npm run build');
+  for (const c of CLUSTERS) for (const t of c.triads) {
+    if (!fs.existsSync(path.join(SITE_DIR, 'cockpits', t.cockpit, 'index.html'))) fail(`site/cockpits/${t.cockpit} missing — run: npm run build`);
+  }
+  console.log(`✅ [commercial audit] ${CLUSTERS.length} clusters / ${triadCount} triads / ${testSum} tests match manifest; asks sum to ${fmt(BATCH_ASK)}; redaction scan clean; site/index.html is current`);
+  process.exit(0);
+}
 
 /* ------------------------------------------------------------------ */
 /* Write outputs + mirror paired cockpits so Test Drive links resolve  */

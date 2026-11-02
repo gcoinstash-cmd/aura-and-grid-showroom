@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID-SPECTER // Track 2 Hypercar Flagship Cockpit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@19",
+        "react-dom/client": "https://esm.sh/react-dom@19/client"
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#05070B] text-slate-100 antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from 'react';
+    import ReactDOM from 'react-dom/client';
+
+    const EDGE_NODES = [
+      { id: 'IAD-01', region: 'NORTH-AMERICA', location: 'Ashburn, VA', latency: '2.8ms', status: 'OPTIMAL', queries: '48.2k qps' },
+      { id: 'LHR-02', region: 'EUROPE', location: 'London, UK', latency: '4.1ms', status: 'OPTIMAL', queries: '39.8k qps' },
+      { id: 'FRA-03', region: 'EUROPE', location: 'Frankfurt, DE', latency: '5.2ms', status: 'OPTIMAL', queries: '31.4k qps' },
+      { id: 'NRT-04', region: 'APAC', location: 'Tokyo, JP', latency: '8.4ms', status: 'NOMINAL', queries: '28.1k qps' },
+      { id: 'SIN-05', region: 'APAC', location: 'Singapore, SG', latency: '11.6ms', status: 'NOMINAL', queries: '22.9k qps' }
+    ];
+
+    function GridSpecterCockpit() {
+      const [filterRegion, setFilterRegion] = useState('ALL');
+      const [radarAngle, setRadarAngle] = useState(0);
+      const [avgLatency, setAvgLatency] = useState(4.2);
+      const [dnsQps, setDnsQps] = useState(170400);
+      const [queryLogs, setQueryLogs] = useState([]);
+
+      useEffect(() => {
+        const interval = setInterval(() => {
+          // Radar rotation
+          setRadarAngle(prev => (prev + 12) % 360);
+
+          // Latency fluctuations
+          setAvgLatency(Number((3.8 + Math.random() * 0.9).toFixed(2)));
+          setDnsQps(prev => prev + Math.floor((Math.random() - 0.5) * 1200));
+
+          // Query logs generator
+          const domains = ['api.mesh.internal', 'auth.vault.cloud', 'telemetry.f1.chassis', 'edge.cdn.routing', 'nodes.cluster007.io'];
+          const types = ['A', 'AAAA', 'HTTPS', 'TXT'];
+          const pops = ['IAD-01', 'LHR-02', 'FRA-03', 'NRT-04', 'SIN-05'];
+          const domain = domains[Math.floor(Math.random() * domains.length)];
+          const qType = types[Math.floor(Math.random() * types.length)];
+          const pop = pops[Math.floor(Math.random() * pops.length)];
+          const lat = (1.8 + Math.random() * 8.2).toFixed(1);
+
+          const newLog = {
+            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
+            time: new Date().toISOString().split('T')[1].slice(0, 12),
+            domain,
+            qType,
+            pop,
+            lat: `${lat}ms`
+          };
+
+          setQueryLogs(prev => [newLog, ...prev.slice(0, 6)]);
+        }, 850);
+
+        return () => clearInterval(interval);
+      }, []);
+
+      const filteredNodes = filterRegion === 'ALL' ? EDGE_NODES : EDGE_NODES.filter(n => n.region === filterRegion);
+
+      return (
+        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+          <div className="max-w-7xl mx-auto space-y-6">
+
+            {/* TOP HEADER STATUS */}
+            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-SPECTER-01</span>
+                  </div>
+                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                    GRID-SPECTER <span className="text-xs text-[#FF9F0A] font-normal">// REALTIME ANYCAST DNS & EDGE RADAR</span>
+                  </h1>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">PROPAGATION:</span>
+                  <span className="text-green-400 font-bold">100% ANYCAST</span>
+                </div>
+                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+                  <span className="text-slate-400">DNSSEC:</span>
+                  <span className="text-[#00F0FF] font-bold">STRICT VALIDATION</span>
+                </div>
+              </div>
+            </header>
+
+            {/* MAIN TELEMETRY LAYOUT */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+              {/* LEFT 2 COLUMNS: METRICS, RADAR, EDGE MATRIX */}
+              <div className="lg:col-span-2 space-y-6">
+
+                {/* DUAL METRIC CARDS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">GLOBAL ANYCAST RESOLUTION</span>
+                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">SUB-5MS SLA</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{avgLatency}</span>
+                      <span className="text-sm font-mono text-[#00F0FF]">ms</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>BGP HOPS: 1.4 AVG</span>
+                      <span className="text-green-400">JITTER &lt; 0.3ms</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">AGGREGATE EDGE DNS VOLUME</span>
+                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">+1.4% PEAK</span>
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{dnsQps.toLocaleString()}</span>
+                      <span className="text-sm font-mono text-[#FF9F0A]">qps</span>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                      <span>BURST LIMIT: 500k qps</span>
+                      <span className="text-[#00F0FF]">ZERO THROTTLE</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ANIMATED SVG RADAR SCOPE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      ANYCAST SWEEP RADAR OSCILLOSCOPE
+                    </h3>
+                    <span className="text-xs font-mono text-[#00F0FF]">BEARING: {radarAngle}°</span>
+                  </div>
+
+                  <div className="relative h-48 bg-[#05070B] border border-[#1F2937] rounded-xl flex items-center justify-center overflow-hidden">
+                    {/* Concentric rings */}
+                    <div className="absolute w-40 h-40 rounded-full border border-[#00F0FF]/20" />
+                    <div className="absolute w-28 h-28 rounded-full border border-[#00F0FF]/30" />
+                    <div className="absolute w-16 h-16 rounded-full border border-[#00F0FF]/40" />
+                    <div className="absolute w-full h-[1px] bg-[#1F2937]" />
+                    <div className="absolute h-full w-[1px] bg-[#1F2937]" />
+
+                    {/* Rotating Sweep Line */}
+                    <div
+                      className="absolute w-20 h-0.5 bg-gradient-to-r from-transparent to-[#00F0FF] origin-left shadow-[0_0_12px_#00F0FF]"
+                      style={{ transform: `rotate(${radarAngle}deg)` }}
+                    />
+
+                    {/* Node Blips */}
+                    <div className="absolute top-10 left-1/4 flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+                      <span className="text-[9px] font-mono text-slate-400">IAD</span>
+                    </div>
+                    <div className="absolute top-16 right-1/3 flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      <span className="text-[9px] font-mono text-slate-400">LHR</span>
+                    </div>
+                    <div className="absolute bottom-12 right-1/4 flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-[#FF9F0A]" />
+                      <span className="text-[9px] font-mono text-slate-400">NRT</span>
+                    </div>
+                    <div className="absolute bottom-8 left-1/3 flex items-center gap-1">
+                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                      <span className="text-[9px] font-mono text-slate-400">FRA</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* EDGE POP LATENCY MATRIX TABLE */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="flex flex-wrap justify-between items-center gap-3">
+                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#FF9F0A]" />
+                      EDGE POP PERFORMANCE MATRIX
+                    </h3>
+                    <div className="flex gap-2">
+                      {['ALL', 'NORTH-AMERICA', 'EUROPE', 'APAC'].map((reg) => (
+                        <button
+                          key={reg}
+                          onClick={() => setFilterRegion(reg)}
+                          className={`px-3 py-1 rounded text-xs font-mono font-bold uppercase transition-colors ${
+                            filterRegion === reg
+                              ? 'bg-[#00F0FF] text-black'
+                              : 'bg-[#1F2937] text-slate-300 hover:bg-slate-700'
+                          }`}
+                        >
+                          {reg}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs font-mono">
+                      <thead>
+                        <tr className="border-b border-[#1F2937] text-slate-400">
+                          <th className="py-2 px-3">NODE ID</th>
+                          <th className="py-2 px-3">LOCATION</th>
+                          <th className="py-2 px-3">REGION</th>
+                          <th className="py-2 px-3">RTT LATENCY</th>
+                          <th className="py-2 px-3">EDGE QPS</th>
+                          <th className="py-2 px-3 text-right">STATUS</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-[#1F2937]/50">
+                        {filteredNodes.map((n) => (
+                          <tr key={n.id} className="hover:bg-[#1F2937]/30 transition-colors">
+                            <td className="py-2.5 px-3 text-[#00F0FF] font-bold">{n.id}</td>
+                            <td className="py-2.5 px-3 text-white">{n.location}</td>
+                            <td className="py-2.5 px-3 text-slate-400">{n.region}</td>
+                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{n.latency}</td>
+                            <td className="py-2.5 px-3 text-slate-300">{n.queries}</td>
+                            <td className="py-2.5 px-3 text-right">
+                              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/30">
+                                {n.status}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN: DEALERSHIP MONRONEY SPECIFICATION & LIVE QUERY LOGS */}
+              <div className="space-y-6">
+
+                {/* MONRONEY WINDOW STICKER */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+                  <div className="border-b border-[#1F2937] pb-3">
+                    <span className="text-[10px] font-mono text-[#00F0FF] font-bold tracking-widest uppercase">SPECIFICATION MONRONEY</span>
+                    <h2 className="text-lg font-black text-white font-mono mt-1">GF-T2-SPECTER-01</h2>
+                    <p className="text-xs text-slate-400 font-sans">Track 2 Hypercar Flagship Anycast Radar</p>
+                  </div>
+
+                  <div className="space-y-3 font-mono text-xs">
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">MODEL</span>
+                      <span className="text-white font-bold">GRID-SPECTER</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">COMMERCIAL TAG</span>
+                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">TITLE ANCHOR</span>
+                      <span className="text-white font-bold">$14,500 USD</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">VAULT BUYOUT</span>
+                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                    </div>
+                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                      <span className="text-slate-400">SEAT TIERS</span>
+                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                    </div>
+                  </div>
+
+                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+                  <div className="pt-2">
+                    <div className="flex flex-col gap-2 w-full">
+                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                        ACQUIRE TITLE (APA)
+                      </button>
+                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                        INQUIRE VAULT BUYOUT
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                    [Product Truth: Interactive Prototype // Simulated Data Stream]
+                  </div>
+                </div>
+
+                {/* LIVE DNS RESOLUTION STREAM */}
+                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+                  <div className="flex justify-between items-center">
+                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                      LIVE ANYCAST RESOLUTION FEED
+                    </h4>
+                    <span className="text-[10px] font-mono text-slate-500">EDGE LOGS</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    {queryLogs.map((log) => (
+                      <div key={log.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                        <div className="flex justify-between items-center text-slate-400">
+                          <span className="text-white font-bold truncate max-w-[150px]">{log.domain}</span>
+                          <span className="text-slate-500">{log.time}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-slate-300">
+                          <span className="text-[#00F0FF]">{log.qType} // {log.pop}</span>
+                          <span className="text-green-400 font-bold">{log.lat}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<GridSpecterCockpit />);
+  </script>
+</body>
+</html>

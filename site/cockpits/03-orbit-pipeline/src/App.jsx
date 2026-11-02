@@ -1,0 +1,314 @@
+import React, { useState, useEffect } from 'react';
+
+const PIPELINE_STAGES = [
+  { id: 'STG-01', name: 'Ingress Gateway', type: 'INGESTION', status: 'NOMINAL', latency: '2.1ms', throughput: '18.4k eps', errorRate: '0.001%' },
+  { id: 'STG-02', name: 'Queue Buffer (Kafka)', type: 'STREAM', status: 'NOMINAL', latency: '4.8ms', throughput: '18.2k eps', errorRate: '0.000%' },
+  { id: 'STG-03', name: 'Schema Validator', type: 'STREAM', status: 'NOMINAL', latency: '1.4ms', throughput: '18.2k eps', errorRate: '0.004%' },
+  { id: 'STG-04', name: 'Vector Transformer', type: 'STREAM', status: 'DEGRADED', latency: '18.9ms', throughput: '17.8k eps', errorRate: '0.021%' },
+  { id: 'STG-05', name: 'Persistent Sink (S3/DB)', type: 'STORAGE', status: 'NOMINAL', latency: '6.3ms', throughput: '17.8k eps', errorRate: '0.000%' }
+];
+
+export default function OrbitPipelineCockpit() {
+  const [filterType, setFilterType] = useState('ALL');
+  const [throughput, setThroughput] = useState(18420);
+  const [queueBacklog, setQueueBacklog] = useState(1420);
+  const [bufferSaturation, setBufferSaturation] = useState(28.4);
+  const [pipelineEvents, setPipelineEvents] = useState([]);
+  const [activeStage, setActiveStage] = useState('STG-01');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Fluctuate throughput & queue
+      setThroughput(prev => prev + Math.floor((Math.random() - 0.5) * 350));
+      setQueueBacklog(prev => Math.max(800, prev + Math.floor((Math.random() - 0.5) * 60)));
+      setBufferSaturation(prev => Number((25 + Math.random() * 8).toFixed(1)));
+
+      // Ingestion events
+      const topics = ['telemetry.raw', 'sensor.f1.chassis', 'audit.access.v2', 'orderbook.stream', 'consensus.votes'];
+      const partitions = ['P-00', 'P-01', 'P-02', 'P-03'];
+      const topic = topics[Math.floor(Math.random() * topics.length)];
+      const partition = partitions[Math.floor(Math.random() * partitions.length)];
+      const bytes = Math.floor(256 + Math.random() * 1024);
+      const hopLatency = (1.2 + Math.random() * 8.5).toFixed(1);
+
+      const newEvent = {
+        id: Math.random().toString(36).substring(2, 9).toUpperCase(),
+        time: new Date().toISOString().split('T')[1].slice(0, 12),
+        topic,
+        partition,
+        bytes: `${bytes} B`,
+        latency: `${hopLatency}ms`,
+        status: Math.random() > 0.05 ? 'ACK' : 'RETRY'
+      };
+
+      setPipelineEvents(prev => [newEvent, ...prev.slice(0, 7)]);
+    }, 850);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const filteredStages = filterType === 'ALL' ? PIPELINE_STAGES : PIPELINE_STAGES.filter(s => s.type === filterType);
+
+  return (
+    <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
+      <div className="max-w-7xl mx-auto space-y-6">
+
+        {/* TOP STATUS BAR */}
+        <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
+          <div className="flex items-center gap-3">
+            <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
+                <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-ORBIT-03</span>
+              </div>
+              <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
+                ORBIT-PIPELINE <span className="text-xs text-[#FF9F0A] font-normal">// INGESTION FLOW & BACKLOG COCKPIT</span>
+              </h1>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">INGESTION TOPOLOGY:</span>
+              <span className="text-green-400 font-bold">5-STAGE DAG</span>
+            </div>
+            <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
+              <span className="text-slate-400">BUFFER HEALTH:</span>
+              <span className="text-[#00F0FF] font-bold">OPTIMAL</span>
+            </div>
+          </div>
+        </header>
+
+        {/* MAIN TELEMETRY LAYOUT */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* LEFT 2 COLUMNS: PIPELINE DAG & METRICS */}
+          <div className="lg:col-span-2 space-y-6">
+
+            {/* DUAL METRIC GAUGES */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">AGGREGATE THROUGHPUT</span>
+                  <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">+3.8% PEAK</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{throughput.toLocaleString()}</span>
+                  <span className="text-sm font-mono text-[#00F0FF]">eps</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>TARGET: 25,000 eps</span>
+                  <span className="text-green-400">BURST CAPACITY OK</span>
+                </div>
+              </div>
+
+              <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
+                <div className="flex justify-between items-start mb-2">
+                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">QUEUE BACKLOG & SATURATION</span>
+                  <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">{bufferSaturation}% BUF</span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{queueBacklog.toLocaleString()}</span>
+                  <span className="text-sm font-mono text-[#FF9F0A]">msgs</span>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span>MAX BUFFER: 5,000 msgs</span>
+                  <span className="text-[#00F0FF]">LOW JITTER DRAIN</span>
+                </div>
+              </div>
+            </div>
+
+            {/* INTERACTIVE 5-STAGE PIPELINE FLOW VISUALIZER */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="flex justify-between items-center">
+                <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                  PIPELINE DAG TOPOLOGY FLOW
+                </h3>
+                <span className="text-xs font-mono text-slate-500">CLICK NODE TO FOCUS</span>
+              </div>
+
+              {/* FLOW DIAGRAM */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 pt-2">
+                {PIPELINE_STAGES.map((stage) => {
+                  const isSelected = activeStage === stage.id;
+                  const isDegraded = stage.status === 'DEGRADED';
+                  return (
+                    <button
+                      key={stage.id}
+                      onClick={() => setActiveStage(stage.id)}
+                      className={`p-3 rounded-lg border text-left transition-all relative ${
+                        isSelected
+                          ? 'border-[#00F0FF] bg-[#00F0FF]/10'
+                          : 'border-[#1F2937] bg-[#05070B] hover:border-slate-600'
+                      }`}
+                    >
+                      <div className="flex justify-between items-start mb-1">
+                        <span className="text-[10px] font-mono text-slate-400">{stage.id}</span>
+                        <span className={`w-2 h-2 rounded-full ${isDegraded ? 'bg-[#FF9F0A] animate-ping' : 'bg-green-400'}`} />
+                      </div>
+                      <div className="text-xs font-mono font-bold text-white truncate">{stage.name}</div>
+                      <div className="mt-2 text-[10px] font-mono text-slate-400 flex justify-between">
+                        <span>LATENCY</span>
+                        <span className={isDegraded ? 'text-[#FF9F0A] font-bold' : 'text-slate-200'}>{stage.latency}</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* PIPELINE STAGE METRICS TABLE */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="flex flex-wrap justify-between items-center gap-3">
+                <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#FF9F0A]" />
+                  STAGE HEALTH & LATENCY MATRIX
+                </h3>
+                <div className="flex gap-2">
+                  {['ALL', 'INGESTION', 'STREAM', 'STORAGE'].map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => setFilterType(type)}
+                      className={`px-3 py-1 rounded text-xs font-mono font-bold uppercase transition-colors ${
+                        filterType === type
+                          ? 'bg-[#00F0FF] text-black'
+                          : 'bg-[#1F2937] text-slate-300 hover:bg-slate-700'
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-[#1F2937] text-slate-400">
+                      <th className="py-2 px-3">STAGE</th>
+                      <th className="py-2 px-3">SUBSYSTEM</th>
+                      <th className="py-2 px-3">TYPE</th>
+                      <th className="py-2 px-3">HOP LATENCY</th>
+                      <th className="py-2 px-3">THROUGHPUT</th>
+                      <th className="py-2 px-3">ERROR RATE</th>
+                      <th className="py-2 px-3 text-right">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#1F2937]/50">
+                    {filteredStages.map((stage) => (
+                      <tr key={stage.id} className="hover:bg-[#1F2937]/30 transition-colors">
+                        <td className="py-2.5 px-3 text-[#00F0FF] font-bold">{stage.id}</td>
+                        <td className="py-2.5 px-3 text-white">{stage.name}</td>
+                        <td className="py-2.5 px-3 text-slate-400">{stage.type}</td>
+                        <td className="py-2.5 px-3">{stage.latency}</td>
+                        <td className="py-2.5 px-3 text-slate-300">{stage.throughput}</td>
+                        <td className="py-2.5 px-3 text-slate-400">{stage.errorRate}</td>
+                        <td className="py-2.5 px-3 text-right">
+                          <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
+                            stage.status === 'NOMINAL' ? 'bg-green-500/10 text-green-400 border border-green-500/30' : 'bg-[#FF9F0A]/10 text-[#FF9F0A] border border-[#FF9F0A]/30'
+                          }`}>
+                            {stage.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT COLUMN: MONRONEY DEALERSHIP STICKER & LIVE INGESTION FEED */}
+          <div className="space-y-6">
+
+            {/* DEALERSHIP MONRONEY SPECIFICATION STICKER */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
+              <div className="border-b border-[#1F2937] pb-3">
+                <span className="text-[10px] font-mono text-[#00F0FF] font-bold tracking-widest uppercase">SPECIFICATION MONRONEY</span>
+                <h2 className="text-lg font-black text-white font-mono mt-1">GF-T2-ORBIT-03</h2>
+                <p className="text-xs text-slate-400 font-sans">Track 2 Hypercar Flagship Ingestion Cockpit</p>
+              </div>
+
+              <div className="space-y-3 font-mono text-xs">
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">MODEL</span>
+                  <span className="text-white font-bold">ORBIT-PIPELINE</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">COMMERCIAL TAG</span>
+                  <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">TITLE ANCHOR</span>
+                  <span className="text-white font-bold">$14,500 USD</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">VAULT BUYOUT</span>
+                  <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">LICENSE RIGHTS</span>
+                  <span className="text-white">OUTRIGHT OWNERSHIP</span>
+                </div>
+                <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
+                  <span className="text-slate-400">SEAT TIERS</span>
+                  <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
+                </div>
+              </div>
+
+              {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+              <div className="pt-2">
+                <div className="flex flex-col gap-2 w-full">
+                  <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
+                    ACQUIRE TITLE (APA)
+                  </button>
+                  <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
+                    INQUIRE VAULT BUYOUT
+                  </button>
+                </div>
+              </div>
+
+              <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
+                [Product Truth: Interactive Prototype // Simulated Data Stream]
+              </div>
+            </div>
+
+            {/* LIVE INGESTION TELEMETRY STREAM */}
+            <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
+              <div className="flex justify-between items-center">
+                <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
+                  LIVE EVENT BUS SINK
+                </h4>
+                <span className="text-[10px] font-mono text-slate-500">KAFKA/REDIS MESH</span>
+              </div>
+
+              <div className="space-y-2">
+                {pipelineEvents.map((ev) => (
+                  <div key={ev.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
+                    <div className="flex justify-between items-center text-slate-400">
+                      <span className="text-[#00F0FF] font-bold">{ev.topic}</span>
+                      <span className="text-slate-500">{ev.time}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-slate-300">
+                      <span>{ev.partition} // {ev.bytes}</span>
+                      <span className="text-green-400">{ev.latency}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  );
+}

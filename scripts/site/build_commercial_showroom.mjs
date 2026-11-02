@@ -1,0 +1,369 @@
+#!/usr/bin/env node
+
+/**
+ * Aura & Grid — 5-Cluster Commercial Acquisition Showroom Compiler
+ * (F1 Pit Wall × Cyberpunk Spec Configurator, for Acquire.com buyers)
+ *
+ * Generates site/index.html (mirrored to root index.html and dist/index.html) as a
+ * dependency-free static page: inline CSS, zero JavaScript, zero external scripts.
+ *
+ * Source of truth: docs/deal-room/MICRO_CLUSTERS_COMMERCIAL_MANIFEST.md
+ * (cluster names, unit IDs, paired cockpits, per-cluster asking prices, dyno test counts).
+ * The build cross-checks the data below against that manifest and aborts on any drift.
+ *
+ * Redaction invariant: the compiled markup must never contain internal reserve, walk-away,
+ * panic or wholesale figures. The build scans its own output and aborts if any are found.
+ *
+ * The legacy 500-unit compiler (build_public_showroom.mjs) and all engine files are untouched.
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, '../..');
+const SITE_DIR = path.join(rootDir, 'site');
+const MANIFEST_PATH = path.join(rootDir, 'docs', 'deal-room', 'MICRO_CLUSTERS_COMMERCIAL_MANIFEST.md');
+
+// Acquire.com listing inquiry target. Override with ACQUIRE_LISTING_URL once the live listing URL exists.
+const ACQUIRE_URL = process.env.ACQUIRE_LISTING_URL || 'https://acquire.com/';
+
+const RETAIL_BENCHMARK = 1173000;
+const BATCH_ASK = 805000;
+
+// cockpit = path (relative to repo-root cockpits/) of the paired Track 2 SCADA cockpit.
+const CLUSTERS = [
+  {
+    id: 'MC-01', ask: 185000,
+    title: 'Ultra-Low Latency Attention & KV Memory Fabrics',
+    blurb: 'Radix tree prefix hashing, multi-block flash decoding, paged memory pools and MQA/GQA engines.',
+    tags: ['KV Cache', 'Flash Decoding', 'Paged Attention', 'MQA / GQA'],
+    buyers: 'AI inference infrastructure, LLM serving platforms, GPU cloud operators',
+    triads: [
+      { n: 338, engine: 'Prefix Caching & Radix Tree KV Hash Indexing', t2: 'EKV-12', cockpit: 'batch-foxtrot/12-edge-kv-store-telemetry', tests: 7 },
+      { n: 340, engine: 'Flash-Decoding & Multi-Block Attention Partitioning', t2: 'GPU-05', cockpit: 'batch-foxtrot/05-gpu-cluster-utilization', tests: 8 },
+      { n: 345, engine: 'Paged Attention Memory Pool & Block Allocator', t2: 'IOPS-07', cockpit: 'batch-echo/07-disk-iops-meter', tests: 7 },
+      { n: 354, engine: 'MQA & GQA Attention Flash-Decoding', t2: 'APEX-01', cockpit: '01-apex-telemetry', tests: 4 },
+    ],
+  },
+  {
+    id: 'MC-02', ask: 145000,
+    title: 'Distributed High-Throughput & Speculative Scheduling',
+    blurb: 'Continuous iteration batching, chunked prefill scheduling and speculative draft verification.',
+    tags: ['Continuous Batching', 'Chunked Prefill', 'Speculative Decoding'],
+    buyers: 'AI orchestration engines, high-concurrency API gateways, quantitative trading desks',
+    triads: [
+      { n: 346, engine: 'Continuous Batching & In-Flight Request Scheduler', t2: 'CHRONO-04', cockpit: '04-chrono-pulse', tests: 7 },
+      { n: 347, engine: 'Chunked Prefill & Mixed-Phase Scheduling', t2: 'NEBULA-03', cockpit: 'batch-bravo/03-nebula-stream', tests: 6 },
+      { n: 348, engine: 'Speculative Decoding & Draft Verification', t2: 'ORBIT-03', cockpit: '03-orbit-pipeline', tests: 6 },
+    ],
+  },
+  {
+    id: 'MC-03', ask: 145000,
+    title: 'Extreme Quantization & Sub-Byte Compression Cores',
+    blurb: 'FP8/INT4 hierarchical KV cache compression, 4-bit weight dequantization and FP6 tensor processing.',
+    tags: ['FP8 / INT4', 'FP4 Dequant', 'FP6 Tensor Core'],
+    buyers: 'Edge AI device makers, embedded robotics, on-premise compute centers',
+    triads: [
+      { n: 342, engine: 'Hierarchical KV Cache Quantization (FP8/INT4)', t2: 'PRISM-05', cockpit: 'batch-charlie/05-prism-telemetry', tests: 5 },
+      { n: 352, engine: 'FP4 Quantization & 4-Bit Weight Dequantization', t2: 'SYNAPSE-05', cockpit: '05-synapse-audit', tests: 6 },
+      { n: 353, engine: 'FP6 Mixed-Precision Tensor Core & Dot-Product', t2: 'SPECTER-01', cockpit: 'batch-bravo/01-grid-specter', tests: 8 },
+    ],
+  },
+  {
+    id: 'MC-04', ask: 185000,
+    title: 'Distributed Mesh Parallelism & Inter-Node Interconnects',
+    blurb: 'MoE expert routing, ring-attention context parallelism, hybrid pipeline and activation checkpointing.',
+    tags: ['Expert Parallelism', 'Ring Attention', 'Pipeline Parallelism', 'Checkpointing'],
+    buyers: 'Hyperscale cluster architects, distributed training operators, decentralized compute networks',
+    triads: [
+      { n: 339, engine: 'Expert Parallelism & MoE Token Routing', t2: 'POD-09', cockpit: 'batch-delta/09-pod-health-grid', tests: 5 },
+      { n: 341, engine: 'Context Parallelism & Ring Attention', t2: 'CDN-05', cockpit: 'batch-echo/05-cdn-shield-telemetry', tests: 7 },
+      { n: 343, engine: 'Multi-Node Tensor & Pipeline Parallelism Hybrid', t2: 'PULSE-03', cockpit: 'batch-charlie/03-pulse-overload', tests: 5 },
+      { n: 350, engine: 'Multi-GPU Pipeline Parallelism & Activation Checkpointing', t2: 'WAL-24', cockpit: 'batch-golf/24-wal-replication-streamer', tests: 6 },
+    ],
+  },
+  {
+    id: 'MC-05', ask: 145000,
+    title: 'Zero-Overhead Hardware Acceleration & Host-GPU Fabrics',
+    blurb: 'CUDA graph capture and launch serialization, FP8 tensor math and zero-copy unified memory.',
+    tags: ['CUDA Graphs', 'FP8 Tensor Core', 'Unified Memory'],
+    buyers: 'Autonomous vehicle systems, mission-critical edge computing, low-latency FinTech',
+    triads: [
+      { n: 344, engine: 'CUDA Graph Capture & Kernel Launch Serializer', t2: 'BOT-05', cockpit: 'batch-delta/05-bot-mitigation', tests: 5 },
+      { n: 349, engine: 'FP8 Mixed-Precision Tensor Core & Scaled Dot-Product', t2: 'POLICY-15', cockpit: 'batch-echo/15-policy-enforcement-grid', tests: 7 },
+      { n: 351, engine: 'Zero-Copy Unified Memory & Host-Device Interlock', t2: 'PILOT-01', cockpit: 'batch-golf/01-autonomous-pilot-telemetry', tests: 6 },
+    ],
+  },
+];
+
+const STACK = ['FastAPI', 'Python 3.11', 'React 19', 'PostgreSQL 16 RLS'];
+
+/* ------------------------------------------------------------------ */
+/* Manifest cross-check (abort on drift)                               */
+/* ------------------------------------------------------------------ */
+function fail(msg) { console.error(`❌ [commercial showroom] ${msg}`); process.exit(1); }
+
+const manifest = fs.readFileSync(MANIFEST_PATH, 'utf8');
+const fmt = (n) => '$' + n.toLocaleString('en-US');
+let askSum = 0, triadCount = 0, testSum = 0;
+for (const c of CLUSTERS) {
+  askSum += c.ask;
+  const sec = manifest.split(`MICRO-CLUSTER ${c.id}:`)[1]?.split('### 📦')[0] ?? fail(`${c.id} missing in manifest`);
+  const ids = [...sec.matchAll(/\*\*GF-T3-(\d{3})\*\*/g)].map(m => +m[1]);
+  if (ids.join() !== c.triads.map(t => t.n).join()) fail(`${c.id} unit IDs differ from manifest: ${ids} vs ${c.triads.map(t => t.n)}`);
+  if (!sec.includes(`**Standalone Micro-Cluster APA Asking Anchor**: **${fmt(c.ask)} USD**`)) fail(`${c.id} asking price differs from manifest`);
+  for (const t of c.triads) {
+    if (!sec.includes(`GF-T2-${t.t2}`)) fail(`${c.id} cockpit GF-T2-${t.t2} not in manifest`);
+    if (!sec.includes(`(${t.tests}/${t.tests} Passed`)) fail(`#${t.n} test count ${t.tests} differs from manifest`);
+    if (!fs.existsSync(path.join(rootDir, 'cockpits', t.cockpit, 'index.html'))) fail(`cockpit missing on disk: ${t.cockpit}`);
+    triadCount++; testSum += t.tests;
+  }
+}
+if (askSum !== BATCH_ASK) fail(`cluster asks sum to ${askSum}, expected ${BATCH_ASK}`);
+if (triadCount !== 17 || testSum !== 105) fail(`expected 17 triads / 105 tests, got ${triadCount} / ${testSum}`);
+
+/* ------------------------------------------------------------------ */
+/* Markup                                                              */
+/* ------------------------------------------------------------------ */
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const cockpitHref = (t) => `./cockpits/${t.cockpit}/index.html`;
+
+const clusterCard = (c) => {
+  const units = c.triads.length * 3;
+  const tests = c.triads.reduce((a, t) => a + t.tests, 0);
+  const lead = c.triads[0];
+  return `
+      <article class="card cluster" id="${c.id.toLowerCase()}" data-cluster="${c.id}">
+        <header class="cluster-head">
+          <span class="mc-id">${c.id}</span>
+          <span class="mc-ask"><small>ASKING</small>${fmt(c.ask)}</span>
+        </header>
+        <h3>${esc(c.title)}</h3>
+        <p class="blurb">${esc(c.blurb)}</p>
+        <p class="meta-line">${c.triads.length} TRIADS // ${units} UNITS // #${c.triads.map(t => t.n).join(' #')}</p>
+        <ul class="pills" aria-label="Domain tags">${c.tags.map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
+        <ul class="pills" aria-label="Tech stack">${STACK.map(t => `<li class="pill pill-amber">${esc(t)}</li>`).join('')}</ul>
+        <dl class="stats">
+          <div><dt>DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
+          <div><dt>LICENSE</dt><dd>MIT / APACHE-2.0</dd></div>
+        </dl>
+        <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
+        <details class="triads">
+          <summary>VIEW ${c.triads.length} TRIADS</summary>
+          <ol>${c.triads.map(t => `
+            <li><span class="uid">#${t.n}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">GF-T2-${t.t2} cockpit &rarr;</a></li>`).join('')}
+          </ol>
+        </details>
+        <div class="cta-stack flex flex-col gap-2 w-full">
+          <a class="btn btn-cyan" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small>SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" data-cluster="${c.id}" aria-label="Acquire title for ${c.id} via Acquire.com listing inquiry">[ ACQUIRE TITLE (APA) ]<small>Inquire on Acquire.com // ${fmt(c.ask)}</small></a>
+        </div>
+      </article>`;
+};
+
+const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura &amp; Grid — 5-Cluster Commercial Acquisition Showroom // Acquire.com</title>
+  <meta name="description" content="5 sealed micro-clusters, 51 units (17 triads) offered as 100% pure Asset Purchase Agreement title transfers. Retail replacement benchmark ${fmt(RETAIL_BENCHMARK)}; portfolio asking price ${fmt(BATCH_ASK)}.">
+  <meta name="theme-color" content="#05070B">
+  <link rel="canonical" href="https://auraandgrid.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#8A96AB;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;
+      background-image:linear-gradient(rgba(0,240,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.035) 1px,transparent 1px);background-size:48px 48px}
+    a{color:inherit;text-decoration:none}
+    ul,ol{list-style:none}
+    /* utilities used by the CTA stack */
+    .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.w-full{width:100%}
+
+    /* header */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{max-width:1280px;margin:0 auto;padding:12px 24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px}
+    .nav-left{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .brand{font-family:var(--mono);font-weight:800;letter-spacing:.14em;font-size:1rem}
+    .brand b{color:var(--amber)}
+    .badge{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;font-weight:600;padding:4px 10px;border:1px solid var(--amber);color:var(--amber);border-radius:999px;white-space:nowrap}
+    .nav-status{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--cyan);text-align:center;text-shadow:0 0 12px rgba(0,240,255,.45)}
+    .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+    .gate{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;font-weight:700;padding:5px 10px;border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;white-space:nowrap}
+    .gate::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:7px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
+    .price-pill{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;font-weight:800;padding:6px 14px;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.35)}
+
+    main{max-width:1280px;margin:0 auto;padding:40px 24px 64px}
+    .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--cyan);margin-bottom:10px}
+    h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:26ch}
+    h1 span{color:var(--amber)}
+    .lede{color:var(--mute);max-width:68ch;margin-top:14px;font-size:1rem}
+    section{margin-top:40px}
+    .section-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--mute);margin-bottom:14px}
+
+    /* bento */
+    .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:22px}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.02em}
+    .metric .name{font-weight:600;margin-top:6px}
+    .metric .sub{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--mute);margin-top:4px}
+    .metric.m-cyan{border-color:rgba(0,240,255,.4)}.metric.m-cyan .val{color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,.35)}
+    .metric.m-amber{border-color:rgba(255,159,10,.55);box-shadow:0 0 30px rgba(255,159,10,.08)}.metric.m-amber .val{color:var(--amber);text-shadow:0 0 20px rgba(255,159,10,.35)}
+    .metric.m-white .val{color:#fff}
+
+    /* clusters */
+    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+    .cluster{grid-column:span 2;display:flex;flex-direction:column;gap:12px}
+    .cluster:nth-child(n+4){grid-column:span 3}
+    .cluster-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .mc-id{font-family:var(--mono);font-weight:800;font-size:.8rem;letter-spacing:.14em;color:var(--cyan);border:1px solid rgba(0,240,255,.45);border-radius:6px;padding:3px 9px}
+    .mc-ask{font-family:var(--mono);font-weight:800;font-size:1.3rem;color:var(--amber);text-align:right}
+    .mc-ask small{display:block;font-size:.55rem;letter-spacing:.18em;color:var(--mute);font-weight:600}
+    .cluster h3{font-size:1.1rem;font-weight:700;line-height:1.3}
+    .blurb{color:var(--mute);font-size:.88rem}
+    .meta-line{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--cyan);word-break:break-word}
+    .pills{display:flex;flex-wrap:wrap;gap:6px}
+    .pill{font-family:var(--mono);font-size:.64rem;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+    .pill-cyan{color:var(--cyan);border-color:rgba(0,240,255,.35);background:rgba(0,240,255,.05)}
+    .pill-amber{color:var(--amber);border-color:rgba(255,159,10,.35);background:rgba(255,159,10,.05)}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .stats div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+    .stats dt{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--mute)}
+    .stats dd{font-family:var(--mono);font-size:.74rem;font-weight:700;margin-top:2px}
+    .buyers{font-size:.8rem;color:var(--mute)}
+    .buyers b{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--text);margin-bottom:2px}
+    .triads{border-top:1px solid var(--line);padding-top:10px}
+    .triads summary{cursor:pointer;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--mute)}
+    .triads summary:hover{color:var(--cyan)}
+    .triads ol{margin-top:10px;display:flex;flex-direction:column;gap:10px;font-size:.8rem}
+    .triads .uid{font-family:var(--mono);font-weight:700;color:var(--amber);margin-right:4px}
+    .triads a{font-family:var(--mono);font-size:.68rem;color:var(--cyan)}
+    .triads a:hover{text-decoration:underline}
+    .cta-stack{margin-top:auto;padding-top:6px}
+    .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;min-height:52px;padding:10px 14px;border-radius:10px;font-family:var(--mono);font-weight:800;font-size:.8rem;letter-spacing:.08em;text-align:center;transition:box-shadow .15s,transform .15s,background .15s}
+    .btn small{font-size:.58rem;font-weight:500;letter-spacing:.04em;opacity:.85}
+    .btn:hover{transform:translateY(-1px)}
+    .btn:focus-visible,.triads summary:focus-visible,.triads a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .btn-cyan{border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06)}
+    .btn-cyan:hover{background:rgba(0,240,255,.14);box-shadow:0 0 20px rgba(0,240,255,.3)}
+    .btn-amber{background:var(--amber);color:#05070B;border:1px solid var(--amber)}
+    .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
+
+    footer{border-top:1px solid var(--line);margin-top:24px}
+    .foot-in{max-width:1280px;margin:0 auto;padding:28px 24px 48px;color:var(--mute);font-size:.78rem;display:flex;flex-direction:column;gap:8px}
+    .foot-in b{color:var(--text)}
+
+    @media (max-width:1024px){
+      .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center}
+      .nav-left,.nav-right{justify-content:center}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cluster,.cluster:nth-child(n+4){grid-column:span 1}
+      .cluster:last-child{grid-column:span 2}
+    }
+    @media (max-width:700px){
+      .metrics{grid-template-columns:minmax(0,1fr)}
+      .grid{grid-template-columns:minmax(0,1fr)}
+      .cluster,.cluster:last-child{grid-column:span 1}
+      main{padding:28px 16px 48px}
+      .nav-in{padding:12px 16px}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-in">
+      <div class="nav-left">
+        <span class="brand">AURA <b>&amp;</b> GRID</span>
+        <span class="badge">COMMERCIAL LOT // ACQUIRE.COM</span>
+      </div>
+      <div class="nav-status">5 SEALED MICRO-CLUSTERS // 51 PRODUCTION UNITS (17 TRIADS)</div>
+      <div class="nav-right">
+        <span class="gate">4/4 VERIFIED GATES</span>
+        <span class="price-pill">${fmt(BATCH_ASK)} BATCH APA</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p class="eyebrow">GHOSTFACTORYOS × AURA &amp; GRID // COMMERCIAL ACQUISITION SHOWROOM</p>
+    <h1>Next-gen inference infrastructure, <span>sold as clean title.</span></h1>
+    <p class="lede">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
+
+    <section aria-labelledby="fin-label">
+      <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
+      <div class="metrics">
+        <div class="card metric m-cyan">
+          <div class="val">${fmt(RETAIL_BENCHMARK)}</div>
+          <div class="name">Retail Replacement Benchmark</div>
+          <div class="sub">ASC 350-40 SCOPE // COST-TO-REBUILD, 17 TRIADS</div>
+        </div>
+        <div class="card metric m-amber">
+          <div class="val">${fmt(BATCH_ASK)}</div>
+          <div class="name">Official 5-Cluster Portfolio Asking Price</div>
+          <div class="sub">100% PURE APA</div>
+        </div>
+        <div class="card metric m-white">
+          <div class="val">100% Pure APA</div>
+          <div class="name">Sovereign Title Transfer</div>
+          <div class="sub">ZERO LICENSES // ZERO SEAT FEES</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="mc-label">
+      <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — BUY ALL FIVE OR ANY ONE</p>
+      <div class="grid">${CLUSTERS.map(clusterCard).join('')}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-in">
+      <p><b>Transaction:</b> standalone Asset Purchase Agreement (micro-APA) via Acquire.com with escrow settlement; 5-business-day technical inspection window. Conveys defined source code, schemas and deployment rights for the listed units only.</p>
+      <p><b>Excluded from every transfer:</b> the GhostFactoryOS and Aura &amp; Grid brands, shared design tokens, component libraries, build systems and future catalog rights. No corporate equity is conveyed.</p>
+      <p><b>Product truth:</b> pre-revenue assets; no customers, revenue or uptime are claimed. Cockpit previews are interactive prototypes running on simulated sample data. Gate figures reflect 105 of 105 automated tests passing across the 17 engines; no third-party security audit or compliance certification is claimed. Prices are asking prices, not appraisals or advice. Not legal, financial, or compliance advice.</p>
+    </div>
+  </footer>
+</body>
+</html>
+`;
+
+/* ------------------------------------------------------------------ */
+/* Redaction + anti-clutter scan on compiled output                    */
+/* ------------------------------------------------------------------ */
+const FORBIDDEN = [
+  /595,?000/, /829,?600/, /\bpanic\b/i, /wholesale/i, /walk-?away/i, /\bfloors?\b/i, /\breserve\b/i,
+  /JUMP TO FLEET LOT/i, /YAW\s*-?\d+/i, /SCAN SCHEMATIC/i, /TELEMETRY BLUEPRINTS/i, /V3\.2/i,
+  /production-ready/i, /enterprise-grade/i,
+];
+for (const re of FORBIDDEN) if (re.test(html)) fail(`forbidden pattern ${re} found in compiled markup`);
+
+/* ------------------------------------------------------------------ */
+/* Write outputs + mirror paired cockpits so Test Drive links resolve  */
+/* ------------------------------------------------------------------ */
+fs.mkdirSync(SITE_DIR, { recursive: true });
+fs.writeFileSync(path.join(SITE_DIR, 'index.html'), html);
+fs.writeFileSync(path.join(rootDir, 'index.html'), html);
+
+const DIST_DIR = path.join(rootDir, 'dist');
+const targets = [SITE_DIR, ...(fs.existsSync(DIST_DIR) ? [DIST_DIR] : [])];
+if (targets.length > 1) fs.writeFileSync(path.join(DIST_DIR, 'index.html'), html);
+
+let copied = 0;
+for (const c of CLUSTERS) for (const t of c.triads) {
+  const src = path.join(rootDir, 'cockpits', t.cockpit);
+  for (const base of targets) {
+    fs.cpSync(src, path.join(base, 'cockpits', t.cockpit), { recursive: true });
+  }
+  copied++;
+}
+
+console.log(`✅ [Aura & Grid] Commercial showroom built: ${CLUSTERS.length} clusters, ${triadCount} triads, ${fmt(BATCH_ASK)} batch APA`);
+console.log(`   ${html.length.toLocaleString()} bytes → site/index.html, index.html${targets.length > 1 ? ', dist/index.html' : ''}; ${copied} cockpits mirrored`);

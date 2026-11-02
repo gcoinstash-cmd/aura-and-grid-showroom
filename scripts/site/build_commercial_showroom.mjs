@@ -44,7 +44,7 @@ const CLUSTERS = [
     title: 'Ultra-Low Latency Attention & KV Memory Fabrics',
     blurb: 'Radix tree prefix hashing, multi-block flash decoding, paged memory pools and MQA/GQA engines.',
     tags: ['KV Cache', 'Flash Decoding', 'Paged Attention', 'MQA / GQA'],
-    buyers: 'AI inference infrastructure, LLM serving platforms, GPU cloud operators',
+    buyers: 'Distributed compute platforms, high-throughput data processing clusters, and GPU cloud operators.',
     triads: [
       { n: 338, engine: 'Prefix Caching & Radix Tree KV Hash Indexing', t2: 'EKV-12', cockpit: 'batch-foxtrot/12-edge-kv-store-telemetry', tests: 7 },
       { n: 340, engine: 'Flash-Decoding & Multi-Block Attention Partitioning', t2: 'GPU-05', cockpit: 'batch-foxtrot/05-gpu-cluster-utilization', tests: 8 },
@@ -57,7 +57,7 @@ const CLUSTERS = [
     title: 'Distributed High-Throughput & Speculative Scheduling',
     blurb: 'Continuous iteration batching, chunked prefill scheduling and speculative draft verification.',
     tags: ['Continuous Batching', 'Chunked Prefill', 'Speculative Decoding'],
-    buyers: 'AI orchestration engines, high-concurrency API gateways, quantitative trading desks',
+    buyers: 'Parallel execution schedulers, high-concurrency API gateways, and quantitative trading desks.',
     triads: [
       { n: 346, engine: 'Continuous Batching & In-Flight Request Scheduler', t2: 'CHRONO-04', cockpit: '04-chrono-pulse', tests: 7 },
       { n: 347, engine: 'Chunked Prefill & Mixed-Phase Scheduling', t2: 'NEBULA-03', cockpit: 'batch-bravo/03-nebula-stream', tests: 6 },
@@ -69,7 +69,7 @@ const CLUSTERS = [
     title: 'Extreme Quantization & Sub-Byte Compression Cores',
     blurb: 'FP8/INT4 hierarchical KV cache compression, 4-bit weight dequantization and FP6 tensor processing.',
     tags: ['FP8 / INT4', 'FP4 Dequant', 'FP6 Tensor Core'],
-    buyers: 'Edge AI device makers, embedded robotics, on-premise compute centers',
+    buyers: 'High-throughput data processing appliances, embedded compute systems, and on-premise compute centers.',
     triads: [
       { n: 342, engine: 'Hierarchical KV Cache Quantization (FP8/INT4)', t2: 'PRISM-05', cockpit: 'batch-charlie/05-prism-telemetry', tests: 5 },
       { n: 352, engine: 'FP4 Quantization & 4-Bit Weight Dequantization', t2: 'SYNAPSE-05', cockpit: '05-synapse-audit', tests: 6 },
@@ -81,7 +81,7 @@ const CLUSTERS = [
     title: 'Distributed Mesh Parallelism & Inter-Node Interconnects',
     blurb: 'MoE expert routing, ring-attention context parallelism, hybrid pipeline and activation checkpointing.',
     tags: ['Expert Parallelism', 'Ring Attention', 'Pipeline Parallelism', 'Checkpointing'],
-    buyers: 'Hyperscale cluster architects, distributed training operators, decentralized compute networks',
+    buyers: 'Hyperscale cluster architects, parallel execution operators, and distributed compute networks.',
     triads: [
       { n: 339, engine: 'Expert Parallelism & MoE Token Routing', t2: 'POD-09', cockpit: 'batch-delta/09-pod-health-grid', tests: 5 },
       { n: 341, engine: 'Context Parallelism & Ring Attention', t2: 'CDN-05', cockpit: 'batch-echo/05-cdn-shield-telemetry', tests: 7 },
@@ -94,7 +94,7 @@ const CLUSTERS = [
     title: 'Zero-Overhead Hardware Acceleration & Host-GPU Fabrics',
     blurb: 'CUDA graph capture and launch serialization, FP8 tensor math and zero-copy unified memory.',
     tags: ['CUDA Graphs', 'FP8 Tensor Core', 'Unified Memory'],
-    buyers: 'Autonomous vehicle systems, mission-critical edge computing, low-latency FinTech',
+    buyers: 'Mission-critical edge computing, real-time distributed telemetry, and low-latency FinTech infrastructure.',
     triads: [
       { n: 344, engine: 'CUDA Graph Capture & Kernel Launch Serializer', t2: 'BOT-05', cockpit: 'batch-delta/05-bot-mitigation', tests: 5 },
       { n: 349, engine: 'FP8 Mixed-Precision Tensor Core & Scaled Dot-Product', t2: 'POLICY-15', cockpit: 'batch-echo/15-policy-enforcement-grid', tests: 7 },
@@ -161,7 +161,7 @@ const clusterCard = (c) => {
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
           <ol>${c.triads.map(t => `
-            <li><span class="uid">#${t.n}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">GF-T2-${t.t2} cockpit &rarr;</a></li>`).join('')}
+            <li><span class="uid">#${t.n}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">T2-${t.t2} SCADA cockpit &rarr;</a></li>`).join('')}
           </ol>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -176,8 +176,8 @@ const html = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura &amp; Grid — 5-Cluster Commercial Acquisition Showroom // Acquire.com</title>
-  <meta name="description" content="5 sealed micro-clusters, 51 units (17 triads) offered as 100% pure Asset Purchase Agreement title transfers. Retail replacement benchmark ${fmt(RETAIL_BENCHMARK)}; portfolio asking price ${fmt(BATCH_ASK)}.">
+  <title>Aura &amp; Grid — Commercial Asset Showroom // Acquire.com</title>
+  <meta name="description" content="5 sealed micro-clusters, 51 units (17 triads) of high-performance distributed systems and compute infrastructure authored by a sole systems architect and offered as a 100% pure Software Asset Purchase Agreement (APA). Retail replacement benchmark ${fmt(RETAIL_BENCHMARK)}; portfolio asking price ${fmt(BATCH_ASK)}.">
   <meta name="theme-color" content="#05070B">
   <link rel="canonical" href="https://auraandgrid.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,7 +224,7 @@ const html = `<!DOCTYPE html>
 
     main{max-width:1480px;margin:0 auto;padding:44px 24px 72px}
     .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
-    h1{font-size:clamp(2rem,3.6vw,3.05rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:22ch;color:#fff}
+    h1{font-size:clamp(1.85rem,2.75vw,2.55rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:25ch;color:#fff}
     h1 span{color:var(--amber)}
     .lede{max-width:60ch;margin-top:16px}
     .hero-actions{margin-top:24px}
@@ -247,7 +247,7 @@ const html = `<!DOCTYPE html>
     .holo-stage{position:relative;width:100%;height:310px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden}
     #dynoHoloCanvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
     #dynoHoloCanvas:active{cursor:grabbing}
-    .holo-hud-bot{display:grid;grid-template-columns:1.18fr 1.12fr .92fr .78fr;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
+    .holo-hud-bot{display:grid;grid-template-columns:1.12fr 1.22fr .88fr .78fr;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
     .holo-hud-bot span{display:block;font-size:.6875rem;letter-spacing:.06em;color:var(--mute);white-space:nowrap}
     .holo-hud-bot b{display:block;font-size:.75rem;color:#fff;margin-top:2px;white-space:nowrap}
     .holo-hud-bot b.c-cyan{color:var(--cyan)}.holo-hud-bot b.c-emerald{color:#34D399}.holo-hud-bot b.c-amber{color:var(--amber)}
@@ -369,9 +369,9 @@ const html = `<!DOCTYPE html>
   <main>
     <div class="hero-deck grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       <div class="hero-copy">
-        <p class="eyebrow">GHOSTFACTORYOS × AURA &amp; GRID // COMMERCIAL ACQUISITION SHOWROOM</p>
-        <h1>Next-gen inference infrastructure, <span>sold as clean title.</span></h1>
-        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each a containerized Track 3 FastAPI engine, a Track 2 SCADA cockpit and a Track 1 React 19 utility — sealed into 5 micro-clusters. One Asset Purchase Agreement. Full source, schemas and deployment rights.</p>
+        <p class="eyebrow">AURA &amp; GRID // COMMERCIAL ASSET SHOWROOM</p>
+        <h1>High-performance distributed systems &amp; compute infrastructure, <span>sold as clean title.</span></h1>
+        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero licensing seats.</p>
         <div class="hero-actions grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
           <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" aria-label="Acquire full 5-cluster portfolio via Acquire.com"><span class="nowrap">[ ACQUIRE 5-CLUSTER BATCH ]</span><small class="text-xs font-mono">Acquire.com Escrow // ${fmt(BATCH_ASK)} APA</small></a>
           <a class="btn btn-cyan" href="#mc-label" aria-label="Inspect 5 sealed micro-clusters"><span class="nowrap">[ INSPECT 5 MICRO-CLUSTERS ]</span><small class="text-xs font-mono">MC-01 through MC-05 // ${fmt(MIN_CLUSTER_ASK)}&ndash;${fmt(MAX_CLUSTER_ASK)}</small></a>
@@ -392,7 +392,7 @@ const html = `<!DOCTYPE html>
         </div>
         <div class="holo-hud-bot">
           <div><span>FLEET PAYLOAD</span><b class="c-cyan">17 TRIADS // 51 UNITS</b></div>
-          <div><span>DYNO VERIFICATION</span><b class="c-emerald">105/105 PYTEST PASS</b></div>
+          <div><span>TEST VERIFICATION</span><b class="c-emerald">105/105 PASSING GATES</b></div>
           <div><span>CLEAN-ROOM IP</span><b>MIT / APACHE-2.0</b></div>
           <div><span>CHASSIS YAW</span><b class="c-amber" id="holoYawReadout">+32&deg; // 60 FPS</b></div>
         </div>
@@ -410,7 +410,7 @@ const html = `<!DOCTYPE html>
         <div class="card metric m-amber">
           <div class="val">${fmt(BATCH_ASK)}</div>
           <div class="name">Official 5-Cluster Portfolio Asking Price</div>
-          <div class="sub text-xs font-mono text-zinc-400">100% PURE APA</div>
+          <div class="sub text-xs font-mono text-zinc-400">100% PURE SOFTWARE ASSET SALE // DIRECT APA</div>
         </div>
         <div class="card metric m-cyan">
           <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
@@ -419,8 +419,8 @@ const html = `<!DOCTYPE html>
         </div>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
-          <div class="name">Sovereign Title Transfer</div>
-          <div class="sub text-xs font-mono text-zinc-400">ZERO LICENSES // ZERO SEAT FEES</div>
+          <div class="name">Direct Sovereign Title Transfer</div>
+          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO SEAT FEES</div>
         </div>
       </div>
     </section>
@@ -440,10 +440,10 @@ const html = `<!DOCTYPE html>
           <div class="foot-badge-row"><span class="foot-pill pill-amber text-xs font-mono font-bold py-1 px-2.5">ESCROW &amp; TITLE</span></div>
           <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// THE TRANSACTION (100% PURE APA)</h2>
           <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
-            <li>Sovereign IP Title Transfer via Acquire.com Escrow</li>
-            <li>5-Business-Day Technical Dyno Inspection Period</li>
+            <li>100% Pure Software Asset Sale (Direct Turnkey APA Title Transfer)</li>
+            <li>Authored and transferred directly by sole developer/systems architect</li>
+            <li>5-Business-Day Technical Dyno Inspection via Acquire.com Escrow</li>
             <li>Full source code, deployment scripts, and database schemas included</li>
-            <li>Zero recurring seat fees or software licensing traps</li>
           </ul>
         </div>
         <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
@@ -451,19 +451,19 @@ const html = `<!DOCTYPE html>
           <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// RESERVED INTELLECTUAL PROPERTY</h2>
           <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
             <li>Carve-out applies strictly to the acquired micro-cluster units</li>
-            <li>Ghost Factory OS and Aura &amp; Grid master brands remain private</li>
-            <li>Shared design tokens and future platform roadmaps are excluded</li>
-            <li>Clean asset sale: zero corporate equity or liabilities conveyed</li>
+            <li>Seller trademarks, creator development tooling, and parent catalog rights remain reserved by independent seller.</li>
+            <li>Shared design tokens and non-conveyed platform roadmaps are excluded</li>
+            <li>Zero debt, zero equity, zero assumed corporate liabilities, zero licensing seats</li>
           </ul>
         </div>
         <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
-          <div class="foot-badge-row"><span class="foot-pill pill-cyan text-xs font-mono font-bold py-1 px-2.5">105/105 DYNO GATES</span></div>
+          <div class="foot-badge-row"><span class="foot-pill pill-cyan text-xs font-mono font-bold py-1 px-2.5">105/105 PASSING GATES</span></div>
           <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// THE SPEC SHEET &amp; PRODUCT TRUTH</h2>
           <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
-            <li>Turnkey pre-revenue software engineering assets</li>
-            <li>105/105 automated unit and dyno test gates verified passing</li>
+            <li>Turnkey pre-revenue high-performance systems engineering assets</li>
+            <li>105/105 passing test gates across verified deterministic test suites</li>
             <li>Cockpits run interactive deterministic previews with simulated data</li>
-            <li>All listed asking prices are pure asset buyout anchors</li>
+            <li>All listed asking prices are pure software asset buyout anchors</li>
           </ul>
         </div>
       </div>
@@ -839,14 +839,19 @@ const html = `<!DOCTYPE html>
 `;
 
 /* ------------------------------------------------------------------ */
-/* Redaction + anti-clutter scan on compiled output                    */
+/* Redaction + brand/terminology scrub scan on compiled output         */
 /* ------------------------------------------------------------------ */
 const FORBIDDEN = [
   /595,?000/, /829,?600/, /\bpanic\b/i, /wholesale/i, /walk-?away/i, /\bfloors?\b/i, /\breserve\b/i,
   /JUMP TO FLEET LOT/i, /TELEMETRY BLUEPRINTS/i, /V3\.2/i,
   /production-ready/i, /enterprise-grade/i,
+  /ghost\s*factory/i, /ghostfactoryos/i, /\bGF-T[123]\b/i,
 ];
 for (const re of FORBIDDEN) if (re.test(html)) fail(`forbidden pattern ${re} found in compiled markup`);
+
+const htmlCopy = html.replace(/href="\.\/cockpits\/[^"]+"/g, '');
+const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i];
+for (const re of FORBIDDEN_COPY) if (re.test(htmlCopy)) fail(`forbidden terminology ${re} found in showroom copy`);
 
 if (CHECK_ONLY) {
   const current = fs.existsSync(path.join(SITE_DIR, 'index.html')) ? fs.readFileSync(path.join(SITE_DIR, 'index.html'), 'utf8') : '';

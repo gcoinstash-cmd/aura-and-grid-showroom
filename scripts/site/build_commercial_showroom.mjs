@@ -850,7 +850,7 @@ const FORBIDDEN = [
 for (const re of FORBIDDEN) if (re.test(html)) fail(`forbidden pattern ${re} found in compiled markup`);
 
 const htmlCopy = html.replace(/href="\.\/cockpits\/[^"]+"/g, '');
-const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i];
+const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i, /\bagents?\b/i];
 for (const re of FORBIDDEN_COPY) if (re.test(htmlCopy)) fail(`forbidden terminology ${re} found in showroom copy`);
 
 if (CHECK_ONLY) {

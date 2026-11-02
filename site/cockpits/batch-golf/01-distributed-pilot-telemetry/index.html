@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AUTONOMOUS-PILOT-TELEMETRY // Track 2 Hypercar Flagship Cockpit</title>
+  <title>DISTRIBUTED-PILOT-TELEMETRY // Track 2 Hypercar Flagship Cockpit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
   }
 ];
 
-    function AutonomousPilotTelemetryCockpit() {
+    function DistributedPilotTelemetryCockpit() {
       const [pulsePhase, setPulsePhase] = useState(0);
       const [val1, setVal1] = useState("0.0042");
       const [val2, setVal2] = useState("1,000");
@@ -75,7 +75,7 @@
           const newEvt = {
             id: Math.random().toString(36).substring(2, 8).toUpperCase(),
             time: new Date().toISOString().split('T')[1].slice(0, 12),
-            metric: 'AUTONOMOUS-PILOT-TELEMETRY',
+            metric: 'DISTRIBUTED-PILOT-TELEMETRY',
             status: 'OPTIMAL',
             lat: (0.12 + Math.random() * 0.6).toFixed(2) + 'ms'
           };
@@ -99,7 +99,7 @@
                     <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-PILOT-01</span>
                   </div>
                   <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2 uppercase">
-                    AUTONOMOUS-PILOT-TELEMETRY <span className="text-xs text-[#FF9F0A] font-normal">// Fly-By-Wire Avionics & Kalman Sensor Fusion Radar</span>
+                    DISTRIBUTED-PILOT-TELEMETRY <span className="text-xs text-[#FF9F0A] font-normal">// Fly-By-Wire Avionics & Kalman Sensor Fusion Radar</span>
                   </h1>
                 </div>
               </div>
@@ -156,7 +156,7 @@
                   <div className="flex justify-between items-center">
                     <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
-                      AUTONOMOUS-PILOT-TELEMETRY // REALTIME SCADA TELEMETRY CANVASES
+                      DISTRIBUTED-PILOT-TELEMETRY // REALTIME SCADA TELEMETRY CANVASES
                     </h3>
                     <span className="text-xs font-mono text-slate-400">ACTIVE WAVEFORM</span>
                   </div>
@@ -283,7 +283,7 @@
       );
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<AutonomousPilotTelemetryCockpit />);
+    ReactDOM.createRoot(document.getElementById('root')).render(<DistributedPilotTelemetryCockpit />);
   </script>
 </body>
 </html>

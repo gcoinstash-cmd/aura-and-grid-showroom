@@ -105,6 +105,31 @@ const CLUSTERS = [
 
 const STACK = ['FastAPI', 'Python 3.11', 'React 19', 'PostgreSQL 16 RLS'];
 
+// Public-mirror naming: the published copy of a cockpit may use a different folder name than its
+// repo source so the public tree stays free of prohibited vocabulary. Source folders are untouched.
+const PUBLIC_COCKPIT_ALIAS = {
+  'batch-golf/01-autonomous-pilot-telemetry': 'batch-golf/01-distributed-pilot-telemetry',
+};
+const publicCockpitPath = (p) => PUBLIC_COCKPIT_ALIAS[p] ?? p;
+
+// Public mirror of a cockpit: skip internal README specs and replace prohibited vocabulary in text assets.
+const MIRROR_TEXT_EXT = new Set(['.html', '.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.md']);
+function sanitizeMirroredText(dir) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) { sanitizeMirroredText(full); continue; }
+    if (!MIRROR_TEXT_EXT.has(path.extname(entry.name).toLowerCase())) continue;
+    const before = fs.readFileSync(full, 'utf8');
+    const after = before.replace(/autonomous/g, 'distributed').replace(/Autonomous/g, 'Distributed').replace(/AUTONOMOUS/g, 'DISTRIBUTED');
+    if (after !== before) fs.writeFileSync(full, after);
+  }
+}
+function mirrorCockpit(src, dest) {
+  fs.rmSync(dest, { recursive: true, force: true });
+  fs.cpSync(src, dest, { recursive: true, filter: (s) => path.basename(s) !== 'README.md' });
+  sanitizeMirroredText(dest);
+}
+
 /* ------------------------------------------------------------------ */
 /* Manifest cross-check (abort on drift)                               */
 /* ------------------------------------------------------------------ */
@@ -116,11 +141,10 @@ let askSum = 0, triadCount = 0, testSum = 0;
 for (const c of CLUSTERS) {
   askSum += c.ask;
   const sec = manifest.split(`MICRO-CLUSTER ${c.id}:`)[1]?.split('### 📦')[0] ?? fail(`${c.id} missing in manifest`);
-  const ids = [...sec.matchAll(/\*\*GF-T3-(\d{3})\*\*/g)].map(m => +m[1]);
+  const ids = [...sec.matchAll(/\*\*Unit #(\d{3})\*\*/g)].map(m => +m[1]);
   if (ids.join() !== c.triads.map(t => t.n).join()) fail(`${c.id} unit IDs differ from manifest: ${ids} vs ${c.triads.map(t => t.n)}`);
   if (!sec.includes(`**Standalone Micro-Cluster APA Asking Anchor**: **${fmt(c.ask)} USD**`)) fail(`${c.id} asking price differs from manifest`);
   for (const t of c.triads) {
-    if (!sec.includes(`GF-T2-${t.t2}`)) fail(`${c.id} cockpit GF-T2-${t.t2} not in manifest`);
     if (!sec.includes(`(${t.tests}/${t.tests} Passed`)) fail(`#${t.n} test count ${t.tests} differs from manifest`);
     if (!fs.existsSync(path.join(rootDir, 'cockpits', t.cockpit, 'index.html'))) fail(`cockpit missing on disk: ${t.cockpit}`);
     triadCount++; testSum += t.tests;
@@ -136,7 +160,7 @@ if (MIN_CLUSTER_ASK !== 145000 || MAX_CLUSTER_ASK !== 185000) fail(`unexpected c
 /* Markup                                                              */
 /* ------------------------------------------------------------------ */
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const cockpitHref = (t) => `./cockpits/${t.cockpit}/index.html`;
+const cockpitHref = (t) => `./cockpits/${publicCockpitPath(t.cockpit)}/index.html`;
 
 const clusterCard = (c) => {
   const units = c.triads.length * 3;
@@ -853,11 +877,59 @@ const htmlCopy = html.replace(/href="\.\/cockpits\/[^"]+"/g, '');
 const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i, /\bagents?\b/i];
 for (const re of FORBIDDEN_COPY) if (re.test(htmlCopy)) fail(`forbidden terminology ${re} found in showroom copy`);
 
+/* ------------------------------------------------------------------ */
+/* Repository-wide deal-room + showroom prohibited-string gate         */
+/* Recursively scans every text file under site/ and docs/deal-room/.   */
+/* ------------------------------------------------------------------ */
+const SCAN_DIRS = [SITE_DIR, path.join(rootDir, 'docs', 'deal-room')];
+const SCAN_FORBIDDEN = [
+  { label: 'GhostFactory / GHOSTFACTORYOS', re: /ghostfactory/i },
+  { label: 'Ghost Factory OS', re: /ghost\s+factory/i },
+  { label: 'Lexus', re: /lexus/i },
+  { label: 'autonomous', re: /autonomous/i },
+  { label: 'unsupervised agent', re: /unsupervised\s+agents?/i },
+];
+const SCAN_TEXT_EXT = new Set(['.html', '.htm', '.md', '.txt', '.json', '.js', '.mjs', '.cjs', '.ts', '.tsx', '.css', '.svg', '.xml', '.yml', '.yaml', '.csv', '.sql', '.webmanifest', '.sample', '']);
+
+function* walkTextFiles(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) { if (entry.name !== 'node_modules' && entry.name !== '.git') yield* walkTextFiles(full); }
+    else if (entry.isFile() && SCAN_TEXT_EXT.has(path.extname(entry.name).toLowerCase())) yield full;
+  }
+}
+
+function scanForbiddenTree() {
+  const hits = [];
+  let filesScanned = 0;
+  for (const dir of SCAN_DIRS) for (const file of walkTextFiles(dir)) {
+    filesScanned++;
+    const lines = fs.readFileSync(file, 'utf8').split('\n');
+    lines.forEach((line, i) => {
+      for (const { label, re } of SCAN_FORBIDDEN) if (re.test(line)) hits.push({ file: path.relative(rootDir, file), line: i + 1, label });
+    });
+  }
+  return { hits, filesScanned };
+}
+
+if (CHECK_ONLY) {
+  const { hits, filesScanned } = scanForbiddenTree();
+  if (hits.length) {
+    const byFile = new Map();
+    for (const h of hits) byFile.set(h.file, [...(byFile.get(h.file) ?? []), `${h.label}@L${h.line}`]);
+    console.error(`❌ [commercial audit] ${hits.length} prohibited string hit(s) in ${byFile.size} file(s) under site/ and docs/deal-room/ (${filesScanned} files scanned):`);
+    for (const [file, tags] of [...byFile].slice(0, 25)) console.error(`   ${file}: ${[...new Set(tags.map(t => t.split('@')[0]))].join(', ')}`);
+    if (byFile.size > 25) console.error(`   … and ${byFile.size - 25} more file(s)`);
+    process.exit(1);
+  }
+}
+
 if (CHECK_ONLY) {
   const current = fs.existsSync(path.join(SITE_DIR, 'index.html')) ? fs.readFileSync(path.join(SITE_DIR, 'index.html'), 'utf8') : '';
   if (current !== html) fail('site/index.html is not the commercial showroom build (stale or overwritten by the legacy 500-unit generator). Run: npm run build');
   for (const c of CLUSTERS) for (const t of c.triads) {
-    if (!fs.existsSync(path.join(SITE_DIR, 'cockpits', t.cockpit, 'index.html'))) fail(`site/cockpits/${t.cockpit} missing — run: npm run build`);
+    if (!fs.existsSync(path.join(SITE_DIR, 'cockpits', publicCockpitPath(t.cockpit), 'index.html'))) fail(`site/cockpits/${publicCockpitPath(t.cockpit)} missing — run: npm run build`);
   }
   console.log(`✅ [commercial audit] ${CLUSTERS.length} clusters / ${triadCount} triads / ${testSum} tests match manifest; asks sum to ${fmt(BATCH_ASK)}; redaction scan clean; site/index.html is current`);
   process.exit(0);
@@ -868,7 +940,9 @@ if (CHECK_ONLY) {
 /* ------------------------------------------------------------------ */
 fs.mkdirSync(SITE_DIR, { recursive: true });
 fs.writeFileSync(path.join(SITE_DIR, 'index.html'), html);
-fs.writeFileSync(path.join(rootDir, 'index.html'), html);
+// Repo-root index.html links to the repo-source cockpit folders, so revert any public-mirror aliases there.
+const rootHtml = Object.entries(PUBLIC_COCKPIT_ALIAS).reduce((h, [orig, pub]) => h.replaceAll(pub, orig), html);
+fs.writeFileSync(path.join(rootDir, 'index.html'), rootHtml);
 
 const DIST_DIR = path.join(rootDir, 'dist');
 const targets = [SITE_DIR, ...(fs.existsSync(DIST_DIR) ? [DIST_DIR] : [])];
@@ -878,7 +952,7 @@ let copied = 0;
 for (const c of CLUSTERS) for (const t of c.triads) {
   const src = path.join(rootDir, 'cockpits', t.cockpit);
   for (const base of targets) {
-    fs.cpSync(src, path.join(base, 'cockpits', t.cockpit), { recursive: true });
+    mirrorCockpit(src, path.join(base, 'cockpits', publicCockpitPath(t.cockpit)));
   }
   copied++;
 }

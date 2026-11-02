@@ -18,8 +18,11 @@
       background-image:linear-gradient(rgba(0,240,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.035) 1px,transparent 1px);background-size:48px 48px}
     a{color:inherit;text-decoration:none}
     ul,ol{list-style:none}
-    /* utilities used by the CTA stack */
-    .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.w-full{width:100%}
+    /* utilities used by layout & CTA stack */
+    .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.gap-4{gap:1rem}.w-full{width:100%}
+    .grid{display:grid}.grid-cols-1{grid-template-columns:minmax(0,1fr)}
+    @media (min-width:640px){.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (min-width:1280px){.xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
     /* typography & spacing utilities (Tailwind-equivalent scale) */
     .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
     .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-black{font-weight:900}
@@ -54,16 +57,17 @@
 
     /* bento */
     .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:24px}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.02em}
-    .metric .name{font-weight:700;font-size:1.1rem;color:#fff;margin-top:8px}
-    .metric .sub{font-size:.8125rem;letter-spacing:.04em;margin-top:6px;line-height:1.5}
+    .metric{padding:22px 20px;display:flex;flex-direction:column}
+    .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.05rem);letter-spacing:-.02em;line-height:1.2}
+    @media (min-width:1280px){.metric .val{font-size:clamp(1.38rem,1.82vw,1.78rem);white-space:nowrap}}
+    .metric .name{font-weight:700;font-size:1.0625rem;color:#fff;margin-top:8px}
+    .metric .sub{font-size:.78125rem;letter-spacing:.03em;margin-top:6px;line-height:1.5}
     .metric.m-cyan{border-color:rgba(0,240,255,.4)}.metric.m-cyan .val{color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,.35)}
     .metric.m-amber{border-color:rgba(255,159,10,.55);box-shadow:0 0 30px rgba(255,159,10,.08)}.metric.m-amber .val{color:var(--amber);text-shadow:0 0 20px rgba(255,159,10,.35)}
     .metric.m-white .val{color:#fff}
 
     /* clusters */
-    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+    .clusters-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
     .cluster{grid-column:span 2;display:flex;flex-direction:column;gap:14px}
     .cluster:nth-child(n+4){grid-column:span 3}
     .cluster-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -118,6 +122,7 @@
       .md\:text-base{font-size:1rem;line-height:1.625}
       .md\:text-lg{font-size:1.125rem;line-height:1.55rem}
     }
+    .nowrap{white-space:nowrap}
     .leading-relaxed{line-height:1.625}
 
     @media (max-width:1420px){
@@ -125,7 +130,7 @@
       .nav-status{grid-column:1 / -1;order:3;justify-self:center}
     }
     @media (max-width:1180px){
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .clusters-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .cluster,.cluster:nth-child(n+4){grid-column:span 1}
       .cluster:last-child{grid-column:span 2}
     }
@@ -138,8 +143,7 @@
       .nav-status{white-space:normal}
     }
     @media (max-width:700px){
-      .metrics{grid-template-columns:minmax(0,1fr)}
-      .grid{grid-template-columns:minmax(0,1fr)}
+      .clusters-grid{grid-template-columns:minmax(0,1fr)}
       .cluster,.cluster:last-child{grid-column:span 1}
       main{padding:28px 16px 48px}
       .foot-in{padding:28px 16px 48px}
@@ -170,7 +174,7 @@
 
     <section aria-labelledby="fin-label">
       <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
-      <div class="metrics">
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="card metric m-cyan">
           <div class="val">$1,173,000</div>
           <div class="name">Retail Replacement Benchmark</div>
@@ -180,6 +184,11 @@
           <div class="val">$805,000</div>
           <div class="name">Official 5-Cluster Portfolio Asking Price</div>
           <div class="sub text-xs font-mono text-zinc-400">100% PURE APA</div>
+        </div>
+        <div class="card metric m-cyan">
+          <div class="val">$145,000 &ndash; $185,000</div>
+          <div class="name">Standalone Cluster Range</div>
+          <div class="sub text-xs font-mono text-zinc-400">Individual Turnkey Buyout // <span class="nowrap">MC-01</span> through <span class="nowrap">MC-05</span></div>
         </div>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
@@ -191,7 +200,7 @@
 
     <section aria-labelledby="mc-label">
       <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — BUY ALL FIVE OR ANY ONE</p>
-      <div class="grid">
+      <div class="clusters-grid">
       <article class="card cluster" id="mc-01" data-cluster="MC-01">
         <header class="cluster-head">
           <span class="mc-id">MC-01</span>

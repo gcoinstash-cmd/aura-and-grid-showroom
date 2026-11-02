@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://auraandgrid.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#A1A1AA;--zinc200:#E4E4E7;--zinc300:#D4D4D8;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box;margin:0;padding:0}
@@ -20,27 +20,30 @@
     ul,ol{list-style:none}
     /* utilities used by the CTA stack */
     .flex{display:flex}.flex-col{flex-direction:column}.gap-2{gap:.5rem}.w-full{width:100%}
-    /* typography utilities (Tailwind-equivalent scale) */
+    /* typography & spacing utilities (Tailwind-equivalent scale) */
     .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
-    .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-extrabold{font-weight:800}
+    .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-black{font-weight:900}
     .text-white{color:#fff}.text-zinc-200{color:var(--zinc200)}.text-zinc-300{color:var(--zinc300)}.text-zinc-400{color:var(--mute)}
-    .leading-relaxed{line-height:1.625}.tracking-wide{letter-spacing:.025em}
-    .border{border-width:1px;border-style:solid}.border-zinc-800{border-color:#27272A}.bg-[#080B10]{background:#080B10}.rounded-xl{border-radius:.75rem}.p-6{padding:1.5rem}
+    .tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}
+    .py-1{padding-top:.25rem;padding-bottom:.25rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}
+    .py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}
+    .mb-3{margin-bottom:.75rem}.space-y-2\.5>*+*{margin-top:.625rem}
+    .border{border-width:1px;border-style:solid}.border-zinc-800{border-color:#27272A}.bg-\[\#080B10\]{background:#080B10}.rounded-xl{border-radius:.75rem}.p-6{padding:1.5rem}
 
     /* header */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav-in{max-width:1440px;margin:0 auto;padding:14px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:20px}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{max-width:1600px;margin:0 auto;padding:14px 24px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px}
     .nav-left{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
-    .brand{font-family:var(--mono);font-weight:800;letter-spacing:.14em;font-size:1.05rem;white-space:nowrap}
+    .brand{font-family:var(--mono);white-space:nowrap}
     .brand b{color:var(--amber)}
-    .badge{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;font-weight:600;padding:4px 10px;border:1px solid var(--amber);color:var(--amber);border-radius:999px;white-space:nowrap}
-    .nav-status{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;color:var(--cyan);text-align:center;text-shadow:0 0 12px rgba(0,240,255,.45)}
+    .badge{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.08);border-radius:999px;white-space:nowrap}
+    .nav-status{font-family:var(--mono);letter-spacing:.04em;color:var(--cyan);background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.32);border-radius:999px;justify-self:center;text-align:center;text-shadow:0 0 12px rgba(0,240,255,.4);white-space:nowrap}
     .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:nowrap}
-    .gate{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;font-weight:700;padding:5px 11px;border:1px solid var(--cyan);color:var(--cyan);border-radius:999px;white-space:nowrap}
-    .gate::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-right:7px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
-    .price-pill{font-family:var(--mono);font-size:.8125rem;letter-spacing:.08em;font-weight:800;padding:6px 14px;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.35)}
+    .gate{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06);border-radius:999px;white-space:nowrap}
+    .gate::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:8px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
+    .price-pill{font-family:var(--mono);letter-spacing:.04em;font-weight:800;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.38)}
 
-    main{max-width:1440px;margin:0 auto;padding:44px 24px 72px}
+    main{max-width:1480px;margin:0 auto;padding:44px 24px 72px}
     .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
     h1{font-size:clamp(2rem,4vw,3.15rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;color:#fff}
     h1 span{color:var(--amber)}
@@ -97,25 +100,41 @@
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
 
     footer{border-top:1px solid var(--line);margin-top:16px}
-    .foot-in{max-width:1440px;margin:0 auto;padding:36px 24px 64px}
-    .foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .foot-card{display:flex;flex-direction:column;gap:14px;background:#080B10;border:1px solid #27272A;border-radius:.75rem;padding:1.5rem}
-    .foot-badge-row{display:flex;align-items:center}
-    .foot-title{font-family:var(--mono);line-height:1.4}
-    .foot-list{display:flex;flex-direction:column;gap:10px}
-    .foot-list li{position:relative;padding-left:18px}
-    .foot-list li::before{content:'';position:absolute;left:0;top:.58em;width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px rgba(0,240,255,.55)}
-    .foot-card.fc-amber .foot-list li::before{background:var(--amber);box-shadow:0 0 8px rgba(255,159,10,.55)}
+    .foot-in{max-width:1480px;margin:0 auto;padding:38px 24px 68px}
+    .foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .foot-card{display:flex;flex-direction:column;background:#080B10;border:1px solid #27272A;border-radius:.75rem;padding:1.5rem}
+    .foot-badge-row{display:flex;align-items:center;margin-bottom:14px}
+    .foot-pill{display:inline-flex;align-items:center;border-radius:999px;letter-spacing:.06em;border:1px solid var(--line)}
+    .foot-pill.pill-amber{color:var(--amber);border-color:rgba(255,159,10,.55);background:rgba(255,159,10,.1)}
+    .foot-pill.pill-cyan{color:var(--cyan);border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.09)}
+    .foot-title{line-height:1.35}
+    .foot-list li{position:relative;padding-left:20px}
+    .foot-list li::before{content:'';position:absolute;left:0;top:.58em;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,240,255,.7)}
+    .foot-card.fc-amber .foot-list li::before{background:var(--amber);box-shadow:0 0 10px rgba(255,159,10,.7)}
 
+    @media (min-width:768px){
+      .md\:text-sm{font-size:.875rem;line-height:1.25rem}
+      .md\:text-base{font-size:1rem;line-height:1.625}
+      .md\:text-lg{font-size:1.125rem;line-height:1.55rem}
+    }
+    .leading-relaxed{line-height:1.625}
+
+    @media (max-width:1420px){
+      .nav-in{grid-template-columns:1fr auto;gap:10px 16px}
+      .nav-status{grid-column:1 / -1;order:3;justify-self:center}
+    }
     @media (max-width:1180px){
-      .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}
-      .nav-left,.nav-right{justify-content:center;flex-wrap:wrap}
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .cluster,.cluster:nth-child(n+4){grid-column:span 1}
       .cluster:last-child{grid-column:span 2}
     }
     @media (max-width:960px){
       .foot-grid{grid-template-columns:minmax(0,1fr)}
+    }
+    @media (max-width:860px){
+      .nav-in{grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}
+      .nav-left,.nav-right{justify-content:center;flex-wrap:wrap}
+      .nav-status{white-space:normal}
     }
     @media (max-width:700px){
       .metrics{grid-template-columns:minmax(0,1fr)}
@@ -132,13 +151,13 @@
   <header class="nav">
     <div class="nav-in">
       <div class="nav-left">
-        <span class="brand">AURA <b>&amp;</b> GRID</span>
-        <span class="badge">COMMERCIAL LOT // ACQUIRE.COM</span>
+        <span class="brand text-lg font-black tracking-wider text-white">AURA <b>&amp;</b> GRID</span>
+        <span class="badge text-xs md:text-sm font-semibold py-1.5 px-3.5">COMMERCIAL LOT // ACQUIRE.COM</span>
       </div>
-      <div class="nav-status">5 SEALED MICRO-CLUSTERS // 51 PRODUCTION UNITS (17 TRIADS)</div>
+      <div class="nav-status text-xs md:text-sm font-semibold py-1.5 px-3.5">5 SEALED MICRO-CLUSTERS // 51 PRODUCTION UNITS (17 TRIADS)</div>
       <div class="nav-right">
-        <span class="gate">4/4 VERIFIED GATES</span>
-        <span class="price-pill">$805,000 BATCH APA</span>
+        <span class="gate text-xs md:text-sm font-semibold py-1.5 px-3.5">4/4 VERIFIED GATES</span>
+        <span class="price-pill text-xs md:text-sm font-semibold py-1.5 px-3.5">$805,000 BATCH APA</span>
       </div>
     </div>
   </header>
@@ -323,9 +342,9 @@
       <p class="section-label" id="foot-label">// DEAL TERMS &amp; COMMERCIAL GOVERNANCE</p>
       <div class="foot-grid">
         <div class="foot-card fc-amber border border-zinc-800 bg-[#080B10] rounded-xl p-6">
-          <div class="foot-badge-row"><span class="pill pill-amber">ESCROW &amp; TITLE</span></div>
-          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// THE TRANSACTION (100% PURE APA)</h2>
-          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+          <div class="foot-badge-row"><span class="foot-pill pill-amber text-xs font-mono font-bold py-1 px-2.5">ESCROW &amp; TITLE</span></div>
+          <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// THE TRANSACTION (100% PURE APA)</h2>
+          <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
             <li>Sovereign IP Title Transfer via Acquire.com Escrow</li>
             <li>5-Business-Day Technical Dyno Inspection Period</li>
             <li>Full source code, deployment scripts, and database schemas included</li>
@@ -333,9 +352,9 @@
           </ul>
         </div>
         <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
-          <div class="foot-badge-row"><span class="pill pill-cyan">IP BOUNDARY</span></div>
-          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// RESERVED INTELLECTUAL PROPERTY</h2>
-          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+          <div class="foot-badge-row"><span class="foot-pill pill-cyan text-xs font-mono font-bold py-1 px-2.5">IP BOUNDARY</span></div>
+          <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// RESERVED INTELLECTUAL PROPERTY</h2>
+          <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
             <li>Carve-out applies strictly to the acquired micro-cluster units</li>
             <li>Ghost Factory OS and Aura &amp; Grid master brands remain private</li>
             <li>Shared design tokens and future platform roadmaps are excluded</li>
@@ -343,9 +362,9 @@
           </ul>
         </div>
         <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
-          <div class="foot-badge-row"><span class="pill pill-cyan">105/105 DYNO GATES</span></div>
-          <h2 class="foot-title text-base font-extrabold text-white tracking-wide">// THE SPEC SHEET &amp; PRODUCT TRUTH</h2>
-          <ul class="foot-list text-sm text-zinc-300 font-normal leading-relaxed">
+          <div class="foot-badge-row"><span class="foot-pill pill-cyan text-xs font-mono font-bold py-1 px-2.5">105/105 DYNO GATES</span></div>
+          <h2 class="foot-title text-base md:text-lg font-black text-white tracking-wide mb-3">// THE SPEC SHEET &amp; PRODUCT TRUTH</h2>
+          <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
             <li>Turnkey pre-revenue software engineering assets</li>
             <li>105/105 automated unit and dyno test gates verified passing</li>
             <li>Cockpits run interactive deterministic previews with simulated data</li>

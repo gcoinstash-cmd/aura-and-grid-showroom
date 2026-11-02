@@ -198,6 +198,7 @@ const html = `<!DOCTYPE html>
     .py-1\\.5{padding-top:.375rem;padding-bottom:.375rem}.px-3\\.5{padding-left:.875rem;padding-right:.875rem}
     .mb-3{margin-bottom:.75rem}.space-y-2\\.5>*+*{margin-top:.625rem}
     .border{border-width:1px;border-style:solid}.border-zinc-800{border-color:#27272A}.bg-\\[\\#080B10\\]{background:#080B10}.rounded-xl{border-radius:.75rem}.p-6{padding:1.5rem}
+    .cursor-pointer{cursor:pointer}.transition-colors{transition-property:color,background-color,border-color;transition-timing-function:cubic-bezier(.4,0,.2,1)}.duration-200{transition-duration:.2s}.hover\\:text-amber-400:hover{color:#FBBF24}
 
     /* header */
     .nav{position:sticky;top:0;z-index:50;background:rgba(5,7,11,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -262,7 +263,7 @@ const html = `<!DOCTYPE html>
     .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:62px;padding:12px 16px;border-radius:10px;font-family:var(--mono);font-weight:800;font-size:.9rem;letter-spacing:.06em;text-align:center;transition:box-shadow .15s,transform .15s,background .15s}
     .btn small{font-size:.75rem;font-weight:500;letter-spacing:.02em;opacity:.92}
     .btn:hover{transform:translateY(-1px)}
-    .btn:focus-visible,.triads summary:focus-visible,.triads a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .btn:focus-visible,.brand:focus-visible,.triads summary:focus-visible,.triads a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px}
     .btn-cyan{border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06)}
     .btn-cyan:hover{background:rgba(0,240,255,.14);box-shadow:0 0 20px rgba(0,240,255,.3)}
     .btn-amber{background:var(--amber);color:#05070B;border:1px solid var(--amber)}
@@ -313,14 +314,14 @@ const html = `<!DOCTYPE html>
       .foot-in{padding:28px 16px 48px}
       .nav-in{padding:12px 16px}
     }
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors{transition:none}}
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="nav-in">
       <div class="nav-left">
-        <span class="brand text-lg font-black tracking-wider text-white">AURA <b>&amp;</b> GRID</span>
+        <a href="#" class="brand text-lg font-black tracking-wider text-white cursor-pointer hover:text-amber-400 transition-colors duration-200">AURA <b>&amp;</b> GRID</a>
         <span class="badge text-xs md:text-sm font-semibold py-1.5 px-3.5">COMMERCIAL LOT // ACQUIRE.COM</span>
       </div>
       <div class="nav-status text-xs md:text-sm font-semibold py-1.5 px-3.5">5 SEALED MICRO-CLUSTERS // 51 PRODUCTION UNITS (17 TRIADS)</div>

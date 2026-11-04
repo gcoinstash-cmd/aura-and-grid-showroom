@@ -247,20 +247,25 @@ const html = `<!DOCTYPE html>
     .brand{font-family:var(--mono);white-space:nowrap}
     .brand b{color:var(--amber)}
     .badge{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.08);border-radius:999px;white-space:nowrap}
-    .nav-status{font-family:var(--mono);letter-spacing:.04em;color:var(--cyan);background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.32);border-radius:999px;justify-self:center;text-align:center;text-shadow:0 0 12px rgba(0,240,255,.4);white-space:nowrap}
+    .nav-status{font-family:var(--mono);letter-spacing:.04em;color:var(--cyan);background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.32);border-radius:999px;justify-self:center;text-align:center;text-shadow:0 0 12px rgba(0,240,255,.4);white-space:nowrap;display:inline-flex;align-items:center}
+    .pulse-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:8px;vertical-align:middle;box-shadow:0 0 8px #10B981;animation:pulse-glow 2s cubic-bezier(.4,0,.6,1) infinite}
+    @keyframes pulse-glow{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
     .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:nowrap}
     .gate{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06);border-radius:999px;white-space:nowrap}
     .gate::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:8px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
     .price-pill{font-family:var(--mono);letter-spacing:.04em;font-weight:800;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.38)}
+    .price-pill-outline{font-family:var(--mono);letter-spacing:.04em;font-weight:700;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.08);border-radius:999px;white-space:nowrap;transition:all .2s ease;text-decoration:none;display:inline-flex;align-items:center}
+    .price-pill-outline:hover{background:rgba(255,159,10,.22);box-shadow:0 0 16px rgba(255,159,10,.4);color:#fff;transform:translateY(-1px)}
+    .price-pill-outline:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
     main{max-width:1480px;margin:0 auto;padding:44px 24px 72px}
     .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
     h1{font-size:clamp(1.85rem,2.75vw,2.55rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:25ch;color:#fff}
     h1 span{color:var(--amber)}
     .lede{max-width:60ch;margin-top:16px}
-    .hero-actions{margin-top:24px}
-    .hero-actions .btn{padding:12px 12px;font-size:.84rem;letter-spacing:.035em}
-    @media (min-width:1440px){.hero-actions .btn{padding:12px 16px;font-size:.9rem;letter-spacing:.06em}}
+    .hero-actions{margin-top:24px;width:100%}
+    .hero-actions .btn{flex:1;min-width:0;padding:12px 14px;font-size:.84rem;letter-spacing:.035em}
+    @media (min-width:1440px){.hero-actions .btn{padding:14px 18px;font-size:.9rem;letter-spacing:.05em}}
     section{margin-top:44px}
     .section-label{font-family:var(--mono);font-size:.8125rem;letter-spacing:.16em;color:var(--mute);margin-bottom:16px}
 
@@ -334,6 +339,15 @@ const html = `<!DOCTYPE html>
     .btn-amber{background:var(--amber);color:#05070B;border:1px solid var(--amber)}
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
 
+    /* rapid-select filter bar */
+    .filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 24px}
+    .filter-pill{appearance:none;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:999px;background:#0B0F17;color:var(--zinc300);border:1px solid var(--line);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s,transform .15s;white-space:nowrap}
+    .filter-pill:hover{border-color:rgba(0,240,255,.5);color:var(--cyan);background:rgba(0,240,255,.08);box-shadow:0 0 12px rgba(0,240,255,.2);transform:translateY(-1px)}
+    .filter-pill.is-active{border-color:var(--amber);color:#05070B;background:var(--amber);box-shadow:0 0 16px rgba(255,159,10,.4);font-weight:800}
+    .filter-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .clusters-grid.is-filtered{display:flex;justify-content:center}
+    .clusters-grid.is-filtered .cluster{max-width:760px;width:100%}
+
     footer{border-top:1px solid var(--line);margin-top:16px}
     .foot-in{max-width:1480px;margin:0 auto;padding:38px 24px 68px}
     .foot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -375,11 +389,12 @@ const html = `<!DOCTYPE html>
     @media (max-width:700px){
       .clusters-grid{grid-template-columns:minmax(0,1fr)}
       .cluster,.cluster:last-child{grid-column:span 1}
+      .filter-bar{justify-content:center}
       main{padding:28px 16px 48px}
       .foot-in{padding:28px 16px 48px}
       .nav-in{padding:12px 16px}
     }
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors{transition:none}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors,.price-pill-outline,.pulse-dot,.filter-pill{transition:none;animation:none}}
   </style>
 </head>
 <body>
@@ -387,12 +402,12 @@ const html = `<!DOCTYPE html>
     <div class="nav-in">
       <div class="nav-left">
         <a href="#" class="brand text-lg font-black tracking-wider text-white cursor-pointer hover:text-amber-400 transition-colors duration-200">AURA <b>&amp;</b> GRID</a>
-        <span class="badge text-xs md:text-sm font-semibold py-1.5 px-3.5">COMMERCIAL LOT // ACQUIRE.COM</span>
+        <span class="badge text-xs md:text-sm font-semibold py-1.5 px-3.5">COMMERCIAL SHOWROOM // DIRECT APA</span>
       </div>
-      <div class="nav-status text-xs md:text-sm font-semibold py-1.5 px-3.5">5 SEALED MICRO-CLUSTERS // 51 PRODUCTION UNITS (17 TRIADS)</div>
+      <div class="nav-status text-xs md:text-sm font-semibold py-1.5 px-3.5"><span class="pulse-dot" aria-hidden="true"></span>LIVE INVENTORY // 5 PRODUCTION CLUSTERS READY</div>
       <div class="nav-right">
         <span class="gate text-xs md:text-sm font-semibold py-1.5 px-3.5">4/4 VERIFIED GATES</span>
-        <span class="price-pill text-xs md:text-sm font-semibold py-1.5 px-3.5">${fmt(BATCH_ASK)} BATCH APA</span>
+        <a href="mailto:garrett@auraandgrid.io?subject=Full%20Fleet%20Vault%20Buyout%20Inquiry" class="price-pill-outline text-xs md:text-sm font-semibold py-1.5 px-3.5" aria-label="Inquire full fleet vault buyout">[ FULL FLEET VAULT BUYOUT AVAILABLE ]</a>
       </div>
     </div>
   </header>
@@ -403,9 +418,9 @@ const html = `<!DOCTYPE html>
         <p class="eyebrow">AURA &amp; GRID // COMMERCIAL ASSET SHOWROOM</p>
         <h1>High-performance distributed systems &amp; compute infrastructure, <span>sold as clean title.</span></h1>
         <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero licensing seats.</p>
-        <div class="hero-actions grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
-          <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" aria-label="Acquire full 5-cluster portfolio via Acquire.com"><span class="nowrap">[ ACQUIRE 5-CLUSTER BATCH ]</span><small class="text-xs font-mono">Acquire.com Escrow // ${fmt(BATCH_ASK)} APA</small></a>
-          <a class="btn btn-cyan" href="#mc-label" aria-label="Inspect 5 sealed micro-clusters"><span class="nowrap">[ INSPECT 5 MICRO-CLUSTERS ]</span><small class="text-xs font-mono">MC-01 through MC-05 // ${fmt(MIN_CLUSTER_ASK)}&ndash;${fmt(MAX_CLUSTER_ASK)}</small></a>
+        <div class="hero-actions flex flex-col sm:flex-row gap-3 w-full">
+          <a class="btn btn-amber flex-1" href="#clusters" aria-label="Acquire standalone cluster (direct sovereign APA)"><span class="nowrap">[ ACQUIRE STANDALONE CLUSTER ]</span><small class="text-xs font-mono">Direct Sovereign APA // From $145,000</small></a>
+          <a class="btn btn-cyan flex-1" href="mailto:garrett@auraandgrid.io?subject=Full%20Fleet%20Vault%20Buyout%20Inquiry" aria-label="Inquire full fleet vault buyout"><span class="nowrap">[ INQUIRE FULL FLEET VAULT ]</span><small class="text-xs font-mono">5-Cluster Monopoly Title // $805,000 Anchor</small></a>
         </div>
       </div>
 
@@ -433,32 +448,40 @@ const html = `<!DOCTYPE html>
     <section aria-labelledby="fin-label">
       <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div class="card metric m-amber">
+          <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
+          <div class="name">Standalone Cluster Range</div>
+          <div class="sub text-xs font-mono text-zinc-400">INDIVIDUAL TURNKEY BUYOUT // <span class="nowrap">MC-01</span> THROUGH <span class="nowrap">MC-05</span></div>
+        </div>
         <div class="card metric m-cyan">
           <div class="val">${fmt(RETAIL_BENCHMARK)}</div>
           <div class="name">Retail Replacement Benchmark</div>
           <div class="sub text-xs font-mono text-zinc-400">ASC 350-40 SCOPE // COST-TO-REBUILD, 17 TRIADS</div>
         </div>
-        <div class="card metric m-amber">
-          <div class="val">${fmt(BATCH_ASK)}</div>
-          <div class="name">Official 5-Cluster Portfolio Asking Price</div>
-          <div class="sub text-xs font-mono text-zinc-400">100% PURE SOFTWARE ASSET SALE // DIRECT APA</div>
-        </div>
-        <div class="card metric m-cyan">
-          <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
-          <div class="name">Standalone Cluster Range</div>
-          <div class="sub text-xs font-mono text-zinc-400">Individual Turnkey Buyout // <span class="nowrap">MC-01</span> through <span class="nowrap">MC-05</span></div>
-        </div>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
           <div class="name">Direct Sovereign Title Transfer</div>
-          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO SEAT FEES</div>
+          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO LICENSING SEATS</div>
+        </div>
+        <div class="card metric m-cyan">
+          <div class="val">${fmt(BATCH_ASK)}</div>
+          <div class="name">Take-All Portfolio APA Anchor</div>
+          <div class="sub text-xs font-mono text-zinc-400">TAKE-ALL 5-CLUSTER PORTFOLIO APA // 51 PRODUCTION UNITS</div>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="mc-label">
+    <section id="clusters" aria-labelledby="mc-label">
       <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — BUY ALL FIVE OR ANY ONE</p>
-      <div class="clusters-grid">${CLUSTERS.map(clusterCard).join('')}
+      <div class="filter-bar" role="group" aria-label="Rapid-select micro-cluster filter">
+        <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ MEMORY FABRICS (MC-01) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-02" aria-pressed="false">[ SCHEDULING (MC-02) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-03" aria-pressed="false">[ COMPRESSION (MC-03) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-04" aria-pressed="false">[ TELEMETRY (MC-04) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-05" aria-pressed="false">[ KERNELS (MC-05) ]</button>
+      </div>
+      <div class="clusters-grid" id="clustersGrid">${CLUSTERS.map(clusterCard).join('')}
       </div>
     </section>
   </main>
@@ -863,6 +886,42 @@ const html = `<!DOCTYPE html>
       renderFrame();
       kick();
     }
+  })();
+
+  // Rapid-select cluster filter logic
+  (function () {
+    var filterBtns = document.querySelectorAll('.filter-pill');
+    var clusterCards = document.querySelectorAll('.card.cluster');
+    var grid = document.getElementById('clustersGrid');
+    if (!filterBtns.length || !clusterCards.length) return;
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter') || 'all';
+
+        filterBtns.forEach(function (b) {
+          var active = (b === btn);
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        clusterCards.forEach(function (card) {
+          var clusterId = card.getAttribute('data-cluster');
+          var match = (filter === 'all' || clusterId === filter);
+          if (match) {
+            card.style.display = '';
+            card.removeAttribute('hidden');
+          } else {
+            card.style.display = 'none';
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        if (grid) {
+          grid.classList.toggle('is-filtered', filter !== 'all');
+        }
+      });
+    });
   })();
   </script>
 </body>

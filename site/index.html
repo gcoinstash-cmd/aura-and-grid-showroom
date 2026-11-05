@@ -69,7 +69,7 @@
     .section-label{font-family:var(--mono);font-size:.8125rem;letter-spacing:.16em;color:var(--mute);margin-bottom:16px}
 
     /* 3D holo-bay */
-    .holo-bay{display:flex;flex-direction:column;gap:12px;box-shadow:0 0 36px -8px rgba(0,240,255,.18)}
+    .holo-bay{display:flex;flex-direction:column;gap:12px;width:100%;min-width:0;box-shadow:0 0 36px -8px rgba(0,240,255,.18)}
     .holo-hud-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
     .holo-sealed{font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:5px 10px;border-radius:6px;color:#34D399;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);box-shadow:0 0 12px rgba(16,185,129,.2);white-space:nowrap}
     .holo-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
@@ -79,15 +79,14 @@
     .holo-btn-scan{background:rgba(0,240,255,.14);border-color:rgba(0,240,255,.55);color:var(--cyan);font-weight:800;box-shadow:0 0 12px rgba(0,240,255,.25)}
     .holo-btn-scan:hover{background:rgba(0,240,255,.24);box-shadow:0 0 18px rgba(0,240,255,.4)}
     .holo-btn-scan.is-scanning{background:rgba(16,185,129,.25);border-color:#34D399;color:#A7F3D0;box-shadow:0 0 16px rgba(16,185,129,.45)}
-    .holo-stage{position:relative;width:100%;height:310px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden}
-    #dynoHoloCanvas{width:100%;height:100%;display:block;cursor:grab;touch-action:none}
+    .holo-stage{position:relative;width:100%;height:320px;min-height:320px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden}
+    #dynoHoloCanvas{width:100%;height:100%;min-height:320px;display:block;cursor:grab;touch-action:none}
     #dynoHoloCanvas:active{cursor:grabbing}
     .holo-hud-bot{display:grid;grid-template-columns:1.12fr 1.22fr .88fr .78fr;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
     .holo-hud-bot span{display:block;font-size:.6875rem;letter-spacing:.06em;color:var(--mute);white-space:nowrap}
     .holo-hud-bot b{display:block;font-size:.75rem;color:#fff;margin-top:2px;white-space:nowrap}
     .holo-hud-bot b.c-cyan{color:var(--cyan)}.holo-hud-bot b.c-emerald{color:#34D399}.holo-hud-bot b.c-amber{color:var(--amber)}
     @media (max-width:1240px){.holo-hud-bot{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}}
-    @media (max-width:767px){.holo-bay{display:none}}
 
     /* bento */
     .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:24px}
@@ -473,45 +472,76 @@
   </footer>
   <script>
   (function () {
-    var canvas = document.getElementById('dynoHoloCanvas');
-    if (!canvas) return;
-    var container = canvas.parentElement;
-    var yawReadout = document.getElementById('holoYawReadout');
-    var scanBtn = document.getElementById('scanSchematicBtn');
-    var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var holoBooted = false;
 
-    function hasWebGL() {
-      try {
-        var c = document.createElement('canvas');
-        return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
-      } catch (e) {
-        return false;
+    function bootHoloBay() {
+      if (holoBooted) return;
+      holoBooted = true;
+
+      var canvas = document.getElementById('dynoHoloCanvas');
+      if (!canvas) return;
+      var container = canvas.parentElement || canvas;
+      var yawReadout = document.getElementById('holoYawReadout');
+      var scanBtn = document.getElementById('scanSchematicBtn');
+      var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function hasWebGL() {
+        try {
+          var c = document.createElement('canvas');
+          return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+        } catch (err) {
+          console.error('[HOLO-BAY TELEMETRY FAULT]:', err);
+          return false;
+        }
       }
-    }
 
-    if (typeof THREE !== 'undefined' && hasWebGL()) {
-      initThreeViewport();
-    } else {
-      initCanvas2DFallback();
-    }
+      function launchHoloViewport() {
+        try {
+          if (typeof window.THREE === 'undefined' || !hasWebGL()) {
+            throw new Error('WebGL context or THREE runtime unavailable');
+          }
+          initThreeViewport();
+        } catch (err) {
+          console.error('[HOLO-BAY TELEMETRY FAULT]:', err);
+          initCanvas2DFallback();
+        }
+      }
 
-    function initThreeViewport() {
-      var width = (container && container.clientWidth) || canvas.clientWidth || 560;
-      var height = (container && container.clientHeight) || canvas.clientHeight || 310;
+      if (typeof window.THREE === 'undefined') {
+        var cdnScript = document.createElement('script');
+        cdnScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+        cdnScript.async = true;
+        cdnScript.onload = function () {
+          launchHoloViewport();
+        };
+        cdnScript.onerror = function (err) {
+          console.error('[HOLO-BAY TELEMETRY FAULT]:', err);
+          initCanvas2DFallback();
+        };
+        document.head.appendChild(cdnScript);
+      } else {
+        launchHoloViewport();
+      }
 
-      // 1. Scene setup
-      var scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x05070B);
+      function initThreeViewport() {
+        const width = container.clientWidth || 400;
+        const height = container.clientHeight || 320;
 
-      // 2. Camera configuration: PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000)
-      var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-      camera.position.set(0, 2.5, 6);
-      camera.lookAt(0, 0, 0);
+        // 1. Scene setup
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x05070B);
 
-      // 3. WebGL Renderer
-      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
-      renderer.setSize(width, height, false);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        // 2. Camera configuration: PerspectiveCamera(45, width / height, 0.1, 1000)
+        var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+        camera.position.set(0, 2.5, 6);
+        camera.lookAt(0, 0, 0);
+
+        // 3. WebGL Renderer & Zero-Dimension Guard
+        var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
 
       // 4. Bright Telemetry Lighting
       var ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
@@ -782,17 +812,19 @@
       var inView = true;
       var frameCount = 0;
 
-      // ResizeObserver on container to prevent 0px collapse
+      // Prevent zero-dimension collapses on resize and container changes
+      function syncViewportSize() {
+        const width = container.clientWidth || 400;
+        const height = container.clientHeight || 320;
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+      }
+
+      window.addEventListener('resize', syncViewportSize, { passive: true });
       if (window.ResizeObserver && container) {
-        var ro = new ResizeObserver(function (entries) {
-          for (var i = 0; i < entries.length; i++) {
-            var cr = entries[i].contentRect;
-            var w = Math.max(cr.width, 260);
-            var h = Math.max(cr.height, 200);
-            camera.aspect = w / h;
-            camera.updateProjectionMatrix();
-            renderer.setSize(w, h, false);
-          }
+        var ro = new ResizeObserver(function () {
+          syncViewportSize();
         });
         ro.observe(container);
       }
@@ -872,7 +904,11 @@
           }
         }
 
-        renderer.render(scene, camera);
+        try {
+          renderer.render(scene, camera);
+        } catch (err) {
+          console.error('[HOLO-BAY TELEMETRY FAULT]:', err);
+        }
 
         frameCount++;
         if (yawReadout && (frameCount % 6 === 0)) {
@@ -884,7 +920,7 @@
       }
 
       animate();
-    }
+      }
 
     function initCanvas2DFallback() {
       var ctx = canvas.getContext('2d');
@@ -1127,9 +1163,16 @@
       document.addEventListener('visibilitychange', kick);
       window.addEventListener('resize', kick, { passive: true });
       kick();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', bootHoloBay);
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      bootHoloBay();
     }
   })();
-
+  </script>
+  <script>
   // Rapid-select cluster filter logic
   (function () {
     var filterBtns = document.querySelectorAll('.filter-pill');
@@ -1170,25 +1213,14 @@
   function generateAquireMailto(assetName, trackTier, anchorValuation) {
     var inbox = 'garrett@auraandgrid.io';
     var subject = '[APA TITLE INQUIRY] ' + assetName + ' (' + trackTier + ')';
-    var body = 'Lead Systems Engineer & Dealership Principal,
-
-' +
-      'I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):
-
-' +
-      '• Target Unit: ' + assetName + '
-' +
-      '• Spec Tier: ' + trackTier + '
-' +
-      '• APA Buyout Anchor: ' + anchorValuation + '
-
-' +
-      'Please route the complete APA title transfer agreement and code manifest to:
-' +
-      '- Buyer Entity Name: 
-' +
-      '- Authorized Signer: 
-' +
+    var body = 'Lead Systems Engineer & Dealership Principal,\n\n' +
+      'I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):\n\n' +
+      '• Target Unit: ' + assetName + '\n' +
+      '• Spec Tier: ' + trackTier + '\n' +
+      '• APA Buyout Anchor: ' + anchorValuation + '\n\n' +
+      'Please route the complete APA title transfer agreement and code manifest to:\n' +
+      '- Buyer Entity Name: \n' +
+      '- Authorized Signer: \n' +
       '- Wire / Settlement Email: ';
     return 'mailto:' + inbox + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }

@@ -49,6 +49,36 @@ try {
 
 console.log('⚡ [Aura & Grid] Compiling F1 Pit Wall Telemetry Showroom (Pure APA Title Buyout Model — 500 Vehicles)...');
 
+const DEALERSHIP_INBOX = 'garrett@auraandgrid.io';
+
+/**
+ * Centralized helper function to generate URL-encoded mailto payloads for Pure APA Title Acquisition.
+ *
+ * @param {string} assetName - Name/Identifier of target chassis
+ * @param {string} trackTier - Spec Tier (Track 1 Lean Tuner, Track 2 Hypercar Flagship, Track 3 Skunkworks Engine)
+ * @param {string} anchorValuation - APA Buyout Anchor valuation
+ * @param {string} [inbox=DEALERSHIP_INBOX] - Verified dealership inbox
+ * @returns {string} Fully URL-encoded mailto link
+ */
+function generateAquireMailto(assetName, trackTier, anchorValuation, inbox = DEALERSHIP_INBOX) {
+  const cleanInbox = inbox || DEALERSHIP_INBOX;
+  const subject = `[APA TITLE INQUIRY] ${assetName} (${trackTier})`;
+  const body = `Lead Systems Engineer & Dealership Principal,
+
+I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):
+
+• Target Unit: ${assetName}
+• Spec Tier: ${trackTier}
+• APA Buyout Anchor: ${anchorValuation}
+
+Please route the complete APA title transfer agreement and code manifest to:
+- Buyer Entity Name: 
+- Authorized Signer: 
+- Wire / Settlement Email: `;
+
+  return `mailto:${cleanInbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 if (!fs.existsSync(MANIFEST_PATH)) {
   console.error(`❌ Missing CATALOG_MANIFEST.json at: ${MANIFEST_PATH}`);
   process.exit(1);
@@ -626,9 +656,21 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
   const strokeDashoffset = ((100 - p.pytestScore) * 0.88).toFixed(1);
   const initialHidden = idx >= 6 ? ' hidden' : '';
 
-  // Directive 2: Card Action Buttons strictly [ ⚡ MOUNT CHASSIS ON DYNO ] and [ ACQUIRE TITLE (APA) ]
+  // Dynamic Anchors aligned with Chassis Valuation Matrix:
+  // Track 1: Micro-APA Anchor: $4,500
+  // Track 2: Chassis APA Anchor: $14,500 | Vault Buyout: $25,000–$50,000
+  // Track 3: Full Engine APA: $35,000–$65,000 | Vault Monopoly: $75,000–$185,000
+  const trackTierName = isTrack3 ? 'Track 3 Skunkworks Engine' : isTrack2 ? 'Track 2 Hypercar Flagship' : 'Track 1 Lean Tuner';
+  const apaAnchor = isTrack3 ? '$35,000–$65,000' : isTrack2 ? '$14,500' : '$4,500';
+  const vaultAnchor = isTrack3 ? '$75,000–$185,000' : isTrack2 ? '$25,000–$50,000' : '$4,500';
+  const unitTitle = `Unit #${cleanId} // ${p.name}`;
+  const cardApaMailto = generateAquireMailto(unitTitle, trackTierName, apaAnchor);
+  const cardVaultMailto = generateAquireMailto(unitTitle, trackTierName, vaultAnchor);
+
+  // Directive 2: Card Action Buttons strictly [ ⚡ MOUNT CHASSIS ON DYNO ], [ ACQUIRE TITLE (APA) ], and [ INQUIRE VAULT BUYOUT ]
   const topActionBtn = `<button onclick="event.stopPropagation(); mountChassisToDyno('${p.id}', true)" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border ${isTrack3 ? 'border-[#00FF88]/40 text-[#00FF88] bg-[#00FF88]/10 hover:bg-[#00FF88] hover:text-black' : 'border-[#00F0FF]/50 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black'} transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ⚡ MOUNT CHASSIS ON DYNO ]</button>`;
-  const bottomActionBtn = `<button onclick="event.stopPropagation(); openApaModal('${p.id}')" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ACQUIRE TITLE (APA) ]</button>`;
+  const bottomActionBtn = `<a href="${cardApaMailto}" onclick="event.stopPropagation()" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-amber-500/50 text-[#FF9F0A] bg-[#FF9F0A]/10 hover:bg-[#FF9F0A] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ ACQUIRE TITLE (APA) ]</a>`;
+  const vaultActionBtn = `<a href="${cardVaultMailto}" onclick="event.stopPropagation()" class="w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/10 hover:bg-[#00F0FF] hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer">[ INQUIRE VAULT BUYOUT ]</a>`;
 
   return `
       <!-- F1 Spec Card #${p.id} -->
@@ -695,24 +737,25 @@ const renderedCardsHtml = publicProducts.map((p, idx) => {
           </div>
         </div>
 
-        <!-- Showroom Action Container (Directive 5: dual-button operational stack) -->
+        <!-- Showroom Action Container (Directive 5: vertical flex stack class="flex flex-col gap-2 w-full") -->
         <div class="p-4 bg-[#080C14] border-t border-white/5 font-mono">
           <div class="flex flex-col gap-2 w-full pt-1">
             <!-- Allocation Status Badge -->
-            <div onclick="event.stopPropagation(); openApaTenderModal(${p.id}, 'acquire')" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender mb-0.5" title="Open Secure APA Title Tender">
+            <a href="${cardApaMailto}" onclick="event.stopPropagation()" class="flex items-center justify-between text-xs px-2.5 py-1.5 rounded bg-[#05070B] border border-white/10 hover:border-[#FF9F0A]/50 transition-colors cursor-pointer group/tender mb-0.5" title="Acquire Title (APA)">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full ${isTrack3 ? 'bg-sky-400' : isTrack2 ? 'bg-amber-400' : 'bg-emerald-400'} animate-pulse"></span>
-                <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px] group-hover/tender:text-[#FF9F0A] transition-colors">${primaryApaLabel}</span>
+                <span class="${isTrack3 ? 'text-sky-400' : isTrack2 ? 'text-amber-400' : 'text-emerald-400'} font-bold text-[11px] group-hover/tender:text-[#FF9F0A] transition-colors">[ ACQUIRE TITLE (APA) ]</span>
               </div>
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider group-hover/tender:text-amber-300">TITLE TENDER ↗</span>
-            </div>
+            </a>
 
-            <!-- Action Button Stack: Launch Demo, Mount Dyno & Acquire APA -->
+            <!-- Action Button Stack: Launch Demo, Mount Dyno, Acquire APA & Inquire Vault Buyout -->
             <a href="${p.demo_url || p.preview_url || p.demo_path || '#'}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="demo-btn btn-demo-launch w-full py-2 px-3 text-center text-xs font-mono font-bold rounded border border-emerald-400/50 text-emerald-300 bg-emerald-500/15 hover:bg-emerald-400 hover:text-black transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_12px_rgba(16,185,129,0.25)]">
               [LAUNCH DEMO ↗]
             </a>
             ${topActionBtn}
             ${bottomActionBtn}
+            ${vaultActionBtn}
           </div>
         </div>
       </div>`;
@@ -755,6 +798,9 @@ const fleetDataPayload = publicProducts.map(p => {
   };
 });
 const fleetDataJson = JSON.stringify(fleetDataPayload).replace(/</g, '\\u003c');
+
+const initialUnitApaMailto = generateAquireMailto('Unit #001 // Stride MB', 'Track 1 Lean Tuner', '$4,500');
+const initialUnitVaultMailto = generateAquireMailto('Unit #001 // Stride MB', 'Track 1 Lean Tuner', '$4,500');
 
 const showroomHtml = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -1080,16 +1126,16 @@ const showroomHtml = `<!DOCTYPE html>
         </div>
 
         <!-- Full-Width Vertical CTA Stack -->
-        <div class="flex flex-col gap-2.5 w-full mt-6 pt-4 border-t border-white/10">
+        <div class="flex flex-col gap-2 w-full mt-6 pt-4 border-t border-white/10">
           <a id="dynoLaunchDemoBtn" href="https://stride-manhattan-beach.onrender.com" target="_blank" rel="noopener noreferrer" class="demo-btn btn-demo-launch w-full py-3 px-4 bg-emerald-500/20 hover:bg-emerald-400 hover:text-black border border-emerald-400/60 text-emerald-300 font-mono font-extrabold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(16,185,129,0.35)] flex items-center justify-center gap-2">
             <span>[LAUNCH WORKING DEMO ↗]</span>
           </a>
-          <button id="leftCtaAcquireBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'acquire')" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center">
-            ACQUIRE TITLE (APA) →
-          </button>
-          <button id="leftCtaDossierBtn" onclick="openApaTenderModal(currentLoadedUnitId, 'inquiry')" class="w-full py-2.5 px-4 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer flex items-center justify-center">
-            INQUIRE VAULT BUYOUT
-          </button>
+          <a id="leftCtaAcquireBtn" href="${initialUnitApaMailto}" class="w-full py-3 px-4 bg-[#FF9F0A] hover:bg-[#e08b08] text-black font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-[0_0_15px_-3px_rgba(255,159,10,0.4)] flex items-center justify-center text-center">
+            [ ACQUIRE TITLE (APA) ]
+          </a>
+          <a id="leftCtaDossierBtn" href="${initialUnitVaultMailto}" class="w-full py-2.5 px-4 border border-[#00F0FF]/30 hover:border-[#00F0FF] bg-[#00F0FF]/10 text-[#00F0FF] font-mono font-bold text-xs uppercase tracking-wider rounded-lg transition-all cursor-pointer flex items-center justify-center text-center">
+            [ INQUIRE VAULT BUYOUT ]
+          </a>
         </div>
       </div>
 
@@ -1914,6 +1960,23 @@ ${renderedCardsHtml}
         dynoDemoBtn.href = unit.demo_url || unit.preview_url || unit.demo_path || unit.url || '#';
       }
 
+      // Update URL-encoded mailto acquisition triggers aligned with chassis valuation matrix
+      var isTrack3 = Boolean(unit.isTrack3 || (unit.track && unit.track.indexOf('Track 3') !== -1));
+      var isTrack2 = Boolean(unit.isTrack2 || (unit.track && unit.track.indexOf('Track 2') !== -1));
+      var trackTier = isTrack3 ? 'Track 3 Skunkworks Engine' : isTrack2 ? 'Track 2 Hypercar Flagship' : 'Track 1 Lean Tuner';
+      var apaAnchor = isTrack3 ? '$35,000–$65,000' : isTrack2 ? '$14,500' : '$4,500';
+      var vaultAnchor = isTrack3 ? '$75,000–$185,000' : isTrack2 ? '$25,000–$50,000' : '$4,500';
+      var unitTitle = 'Unit #' + String(unit.id).padStart(3, '0') + ' // ' + (unit.name || unit.title);
+
+      var leftAcquireBtn = document.getElementById('leftCtaAcquireBtn');
+      if (leftAcquireBtn) {
+        leftAcquireBtn.href = generateAquireMailto(unitTitle, trackTier, apaAnchor);
+      }
+      var leftVaultBtn = document.getElementById('leftCtaDossierBtn');
+      if (leftVaultBtn) {
+        leftVaultBtn.href = generateAquireMailto(unitTitle, trackTier, vaultAnchor);
+      }
+
       // Stage 1 telemetry panel updates: Track, Pytest, IP Title Status, Archetype
       const trackEl = document.getElementById('dynoPowertrainReadout');
       if (trackEl) trackEl.textContent = (unit.track || 'Track 1 Lean Tuner') + ' // PRIVATE APA';
@@ -2009,6 +2072,24 @@ ${renderedCardsHtml}
       if (modal) modal.classList.add('hidden');
     }
 
+    // Centralized client-side helper function for URL-encoded mailto telemetry payloads
+    function generateAquireMailto(assetName, trackTier, anchorValuation) {
+      var inbox = 'garrett@auraandgrid.io';
+      var subject = '[APA TITLE INQUIRY] ' + assetName + ' (' + trackTier + ')';
+      var body = 'Lead Systems Engineer & Dealership Principal,\n\n' +
+        'I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):\n\n' +
+        '• Target Unit: ' + assetName + '\n' +
+        '• Spec Tier: ' + trackTier + '\n' +
+        '• APA Buyout Anchor: ' + anchorValuation + '\n\n' +
+        'Please route the complete APA title transfer agreement and code manifest to:\n' +
+        '- Buyer Entity Name: \n' +
+        '- Authorized Signer: \n' +
+        '- Wire / Settlement Email: ';
+      return 'mailto:' + inbox + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+    window.generateAquireMailto = generateAquireMailto;
+    window.generateAcquireMailto = generateAquireMailto;
+
     function openLoadedUnitModal(intent) {
       openApaTenderModal(currentLoadedUnitId, intent);
     }
@@ -2024,16 +2105,11 @@ ${renderedCardsHtml}
       playEngageBeep();
 
       const unitHeader = document.getElementById('apaModalHeader')?.innerText || 'UNIT CHASSIS';
-      const subject = encodeURIComponent('[MUTUAL NDA // APA TENDER] ' + unitHeader + ' — ' + entity);
-      const body = encodeURIComponent(
-        'INSTITUTIONAL APA TITLE TRANSFER TENDER\\n' +
-        '-----------------------------------------\\n' +
-        'Target: ' + unitHeader + '\\n' +
-        'Legal Entity: ' + entity + '\\n' +
-        'Principal Contact: ' + email + '\\n' +
-        'Jurisdiction: ' + jurisdiction + '\\n\\n' +
-        'We formally tender acquisition interest and request the complete Asset Purchase Agreement (APA) tender dossier, clean-room chain-of-title manifest, and bilateral NDA for private closing.'
-      );
+      const trackTier = document.getElementById('apaModalTrackTier')?.innerText || 'Track 1 Lean Tuner';
+      const isTrack3 = trackTier.indexOf('Track 3') !== -1;
+      const isTrack2 = trackTier.indexOf('Track 2') !== -1;
+      const anchor = isTrack3 ? '$35,000–$65,000' : isTrack2 ? '$14,500' : '$4,500';
+      const mailtoUrl = generateAquireMailto(unitHeader + ' — ' + entity, trackTier, anchor);
 
       const notice = document.getElementById('tenderStatusNotice');
       if (notice) {
@@ -2042,7 +2118,7 @@ ${renderedCardsHtml}
       }
 
       setTimeout(() => {
-        window.location.href = 'mailto:advisory@auraandgrid.com?subject=' + subject + '&body=' + body;
+        window.location.href = mailtoUrl;
       }, 750);
     }
 

@@ -194,11 +194,31 @@ if (!unit) {
   }
   frame();
 
+  function generateAquireMailto(assetName, trackTier, anchorValuation) {
+    const inbox = 'garrett@auraandgrid.io';
+    const subject = `[APA TITLE INQUIRY] ${assetName} (${trackTier})`;
+    const body = `Lead Systems Engineer & Dealership Principal,
+
+I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):
+
+• Target Unit: ${assetName}
+• Spec Tier: ${trackTier}
+• APA Buyout Anchor: ${anchorValuation}
+
+Please route the complete APA title transfer agreement and code manifest to:
+- Buyer Entity Name: ${$('fName').value}
+- Authorized Signer: 
+- Wire / Settlement Email: ${$('fEmail').value}`;
+
+    return `mailto:${inbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
   $('form').addEventListener('submit', e => {
     e.preventDefault();
-    const subject = encodeURIComponent('APA Tender Inquiry — Unit ' + no + ' ' + unit.name);
-    const body = encodeURIComponent('Unit: ' + no + ' ' + unit.name + '\nName: ' + $('fName').value + '\nEmail: ' + $('fEmail').value + '\nIntended use: ' + $('fMsg').value + '\n\nAllocation: PRIVATE APA TENDER (single-asset micro-APA; excludes GhostFactoryOS / Aura & Grid brands and shared IP).');
-    location.href = 'mailto:advisory@auraandgrid.com?subject=' + subject + '&body=' + body;
+    const trackTier = unit.isTrack3 ? 'Track 3 Skunkworks Engine' : unit.isTrack2 ? 'Track 2 Hypercar Flagship' : 'Track 1 Lean Tuner';
+    const anchor = unit.isTrack3 ? '$35,000–$65,000' : unit.isTrack2 ? '$14,500' : '$4,500';
+    const assetName = 'Unit ' + no + ' ' + unit.name;
+    location.href = generateAquireMailto(assetName, trackTier, anchor);
     closeModal();
   });
 }

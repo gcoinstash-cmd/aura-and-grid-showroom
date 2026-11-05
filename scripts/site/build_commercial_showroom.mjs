@@ -27,6 +27,38 @@ const rootDir = path.resolve(__dirname, '../..');
 const SITE_DIR = path.join(rootDir, 'site');
 const MANIFEST_PATH = path.join(rootDir, 'docs', 'deal-room', 'MICRO_CLUSTERS_COMMERCIAL_MANIFEST.md');
 
+// Dealership primary inbox for secure APA title transfers
+const DEALERSHIP_INBOX = 'garrett@auraandgrid.io';
+
+/**
+ * Centralized helper function to generate URL-encoded mailto payloads for Pure APA Title Acquisition.
+ *
+ * @param {string} assetName - Name/Identifier of target unit or cluster
+ * @param {string} trackTier - Spec Tier (e.g. Track 1 Lean Tuner, Track 2 Hypercar Flagship, Track 3 Skunkworks Engine, Sealed Micro-Cluster)
+ * @param {string} anchorValuation - APA Buyout Anchor valuation
+ * @param {string} [inbox=DEALERSHIP_INBOX] - Verified dealership inbox
+ * @returns {string} Fully URL-encoded mailto link
+ */
+export function generateAquireMailto(assetName, trackTier, anchorValuation, inbox = DEALERSHIP_INBOX) {
+  const cleanInbox = inbox || DEALERSHIP_INBOX;
+  const subject = `[APA TITLE INQUIRY] ${assetName} (${trackTier})`;
+  const body = `Lead Systems Engineer & Dealership Principal,
+
+I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):
+
+• Target Unit: ${assetName}
+• Spec Tier: ${trackTier}
+• APA Buyout Anchor: ${anchorValuation}
+
+Please route the complete APA title transfer agreement and code manifest to:
+- Buyer Entity Name: 
+- Authorized Signer: 
+- Wire / Settlement Email: `;
+
+  return `mailto:${cleanInbox}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+export const generateAcquireMailto = generateAquireMailto;
+
 // Acquire.com listing inquiry target. Override with ACQUIRE_LISTING_URL once the live listing URL exists.
 const ACQUIRE_URL = process.env.ACQUIRE_LISTING_URL || 'https://acquire.com/';
 
@@ -173,6 +205,9 @@ const clusterCard = (c) => {
   const units = c.triads.length * 3;
   const tests = c.triads.reduce((a, t) => a + t.tests, 0);
   const lead = c.triads[0];
+  const clusterName = `${c.id} — ${c.title}`;
+  const clusterApaMailto = generateAquireMailto(clusterName, 'Sealed Micro-Cluster', fmt(c.ask));
+  const clusterVaultMailto = generateAquireMailto(clusterName, 'Micro-Cluster Vault Buyout', fmt(c.ask));
   return `
       <article class="card cluster" id="${c.id.toLowerCase()}" data-cluster="${c.id}">
         <header class="cluster-head">
@@ -186,7 +221,7 @@ const clusterCard = (c) => {
         <ul class="pills" aria-label="Tech stack">${STACK.map(t => `<li class="pill pill-amber">${esc(t)}</li>`).join('')}</ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
-          <div><dt class="text-xs font-mono text-zinc-400">LICENSE</dt><dd>MIT / APACHE-2.0</dd></div>
+          <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT / APACHE-2.0</dd></div>
         </dl>
         <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
         <details class="triads">
@@ -196,11 +231,15 @@ const clusterCard = (c) => {
           </ol>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
-          <a class="btn btn-cyan" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
-          <a class="btn btn-amber" href="${ACQUIRE_URL}" target="_blank" rel="noopener" data-cluster="${c.id}" aria-label="Acquire title for ${c.id} via Acquire.com listing inquiry">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Inquire on Acquire.com // ${fmt(c.ask)}</small></a>
+          <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire title (APA) for ${c.id}">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Direct Sovereign APA // ${fmt(c.ask)}</small></a>
+          <a class="btn btn-cyan w-full" href="${clusterVaultMailto}" data-cluster="${c.id}" aria-label="Inquire vault buyout for ${c.id}">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Micro-Cluster Vault // ${fmt(c.ask)} Anchor</small></a>
+          <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
         </div>
       </article>`;
 };
+
+const batchApaMailto = generateAquireMailto('5-Cluster Commercial Portfolio Lot (MC-01 through MC-05)', '5-Cluster Portfolio APA', fmt(BATCH_ASK));
+const vaultPortfolioMailto = generateAquireMailto('Full Fleet Master Vault (MC-01 through MC-05)', 'Master Vault Buyout', fmt(BATCH_ASK));
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -338,6 +377,8 @@ const html = `<!DOCTYPE html>
     .btn-cyan:hover{background:rgba(0,240,255,.14);box-shadow:0 0 20px rgba(0,240,255,.3)}
     .btn-amber{background:var(--amber);color:#05070B;border:1px solid var(--amber)}
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
+    .btn-subtle{border:1px solid rgba(255,255,255,.14);color:var(--zinc200);background:#0B0F17}
+    .btn-subtle:hover{border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.1);color:var(--cyan);box-shadow:0 0 16px rgba(0,240,255,.25)}
 
     /* rapid-select filter bar */
     .filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 24px}
@@ -407,7 +448,7 @@ const html = `<!DOCTYPE html>
       <div class="nav-status text-xs md:text-sm font-semibold py-1.5 px-3.5"><span class="pulse-dot" aria-hidden="true"></span>LIVE INVENTORY // 5 PRODUCTION CLUSTERS READY</div>
       <div class="nav-right">
         <span class="gate text-xs md:text-sm font-semibold py-1.5 px-3.5">4/4 VERIFIED GATES</span>
-        <a href="mailto:garrett@auraandgrid.io?subject=Full%20Fleet%20Vault%20Buyout%20Inquiry" class="price-pill-outline text-xs md:text-sm font-semibold py-1.5 px-3.5" aria-label="Inquire full fleet vault buyout">[ FULL FLEET VAULT BUYOUT AVAILABLE ]</a>
+        <a href="${vaultPortfolioMailto}" class="price-pill-outline text-xs md:text-sm font-semibold py-1.5 px-3.5" aria-label="Inquire vault buyout">[ INQUIRE VAULT BUYOUT ]</a>
       </div>
     </div>
   </header>
@@ -417,10 +458,10 @@ const html = `<!DOCTYPE html>
       <div class="hero-copy">
         <p class="eyebrow">AURA &amp; GRID // COMMERCIAL ASSET SHOWROOM</p>
         <h1>High-performance distributed systems &amp; compute infrastructure, <span>sold as clean title.</span></h1>
-        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero licensing seats.</p>
-        <div class="hero-actions flex flex-col sm:flex-row gap-3 w-full">
-          <a class="btn btn-amber flex-1" href="#clusters" aria-label="Acquire standalone cluster (direct sovereign APA)"><span class="nowrap">[ ACQUIRE STANDALONE CLUSTER ]</span><small class="text-xs font-mono">Direct Sovereign APA // From $145,000</small></a>
-          <a class="btn btn-cyan flex-1" href="mailto:garrett@auraandgrid.io?subject=Full%20Fleet%20Vault%20Buyout%20Inquiry" aria-label="Inquire full fleet vault buyout"><span class="nowrap">[ INQUIRE FULL FLEET VAULT ]</span><small class="text-xs font-mono">5-Cluster Monopoly Title // $805,000 Anchor</small></a>
+        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero recurring seats.</p>
+        <div class="hero-actions flex flex-col gap-2 w-full">
+          <a class="btn btn-amber w-full" href="${batchApaMailto}" aria-label="Acquire title (APA) for 5-cluster portfolio lot">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">5-Cluster Portfolio APA // ${fmt(BATCH_ASK)}</small></a>
+          <a class="btn btn-cyan w-full" href="${vaultPortfolioMailto}" aria-label="Inquire vault buyout for full fleet master vault">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Full Fleet Master Vault // ${fmt(BATCH_ASK)} Anchor</small></a>
         </div>
       </div>
 
@@ -461,7 +502,7 @@ const html = `<!DOCTYPE html>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
           <div class="name">Direct Sovereign Title Transfer</div>
-          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO LICENSING SEATS</div>
+          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO RECURRING SEATS</div>
         </div>
         <div class="card metric m-cyan">
           <div class="val">${fmt(BATCH_ASK)}</div>
@@ -472,7 +513,7 @@ const html = `<!DOCTYPE html>
     </section>
 
     <section id="clusters" aria-labelledby="mc-label">
-      <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — BUY ALL FIVE OR ANY ONE</p>
+      <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — ACQUIRE ALL FIVE OR ANY ONE</p>
       <div class="filter-bar" role="group" aria-label="Rapid-select micro-cluster filter">
         <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
         <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ MEMORY FABRICS (MC-01) ]</button>
@@ -507,7 +548,7 @@ const html = `<!DOCTYPE html>
             <li>Carve-out applies strictly to the acquired micro-cluster units</li>
             <li>Seller trademarks, creator development tooling, and parent catalog rights remain reserved by independent seller.</li>
             <li>Shared design tokens and non-conveyed platform roadmaps are excluded</li>
-            <li>Zero debt, zero equity, zero assumed corporate liabilities, zero licensing seats</li>
+            <li>Zero debt, zero equity, zero assumed corporate liabilities, zero recurring seats</li>
           </ul>
         </div>
         <div class="foot-card border border-zinc-800 bg-[#080B10] rounded-xl p-6">
@@ -923,6 +964,24 @@ const html = `<!DOCTYPE html>
       });
     });
   })();
+
+  // Centralized helper function for URL-encoded mailto telemetry payloads
+  function generateAquireMailto(assetName, trackTier, anchorValuation) {
+    var inbox = 'garrett@auraandgrid.io';
+    var subject = '[APA TITLE INQUIRY] ' + assetName + ' (' + trackTier + ')';
+    var body = 'Lead Systems Engineer & Dealership Principal,\n\n' +
+      'I am submitting a formal inquiry to acquire 100% IP Title Transfer via Asset Purchase Agreement (APA):\n\n' +
+      '• Target Unit: ' + assetName + '\n' +
+      '• Spec Tier: ' + trackTier + '\n' +
+      '• APA Buyout Anchor: ' + anchorValuation + '\n\n' +
+      'Please route the complete APA title transfer agreement and code manifest to:\n' +
+      '- Buyer Entity Name: \n' +
+      '- Authorized Signer: \n' +
+      '- Wire / Settlement Email: ';
+    return 'mailto:' + inbox + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+  window.generateAquireMailto = generateAquireMailto;
+  window.generateAcquireMailto = generateAquireMailto;
   </script>
 </body>
 </html>
@@ -984,7 +1043,7 @@ function* walkTextFiles(dir) {
 }
 
 // Rule 5 — strict pricing parity: only these dollar figures may appear in public assets.
-const ALLOWED_PRICES = new Set(['$805,000', '$145,000', '$185,000', '$1,173,000', '$276,000', '$207,000', '$69,000', '$50,000', '$14,500', '$4,500', '$145K', '$185K']);
+const ALLOWED_PRICES = new Set(['$805,000', '$145,000', '$185,000', '$1,173,000', '$276,000', '$207,000', '$69,000', '$50,000', '$14,500', '$4,500', '$25,000', '$35,000', '$65,000', '$75,000', '$145K', '$185K']);
 const PRICE_RE = /\$\s?\d[\d,]*(?:\.\d+)?[KkMm]?\b/g;
 
 function scanGovernance() {

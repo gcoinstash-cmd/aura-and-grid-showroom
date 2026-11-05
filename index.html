@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <style>
     :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#A1A1AA;--zinc200:#E4E4E7;--zinc300:#D4D4D8;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box;margin:0;padding:0}
@@ -232,7 +235,7 @@
           </div>
         </div>
         <div class="holo-stage">
-          <canvas id="dynoHoloCanvas" aria-label="Rotating 3D F1 cyber-chassis CAD wireframe"></canvas>
+          <canvas id="dynoHoloCanvas" data-model="" aria-label="Rotating 3D F1 cyber-chassis CAD wireframe"></canvas>
         </div>
         <div class="holo-hud-bot">
           <div><span>FLEET PAYLOAD</span><b class="c-cyan">17 TRIADS // 51 UNITS</b></div>
@@ -472,363 +475,657 @@
   (function () {
     var canvas = document.getElementById('dynoHoloCanvas');
     if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
+    var container = canvas.parentElement;
     var yawReadout = document.getElementById('holoYawReadout');
     var scanBtn = document.getElementById('scanSchematicBtn');
     var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var dynoYaw = 0.56;
-    var targetYaw = 0.56;
-    var wheelSpin = 0;
-    var isScanning = false;
-    var scanProgress = 0;
-    var pulseTimer = 0;
-    var pulseIntensity = 0;
-    var isDragging = false;
-    var lastX = 0;
-    var inView = true;
-    var rafId = 0;
-    var frameTick = 0;
-
-    // Legacy CAD Metric Wireframe F1 Cyber-Chassis Nodes
-    var f1Nodes = {
-      nose_tip:    { x: 0,     y: -0.10, z: 2.45 },
-      nose_mid:    { x: 0,     y: 0.12,  z: 1.60 },
-      nose_bulk_t: { x: 0,     y: 0.28,  z: 0.85 },
-      nose_bulk_b: { x: 0,     y: -0.15, z: 0.85 },
-      fw_l_tip:    { x: -1.65, y: -0.22, z: 2.15 },
-      fw_r_tip:    { x: 1.65,  y: -0.22, z: 2.15 },
-      fw_l_top:    { x: -1.65, y: 0.10,  z: 2.05 },
-      fw_r_top:    { x: 1.65,  y: 0.10,  z: 2.05 },
-      fw_flap_l:   { x: -1.55, y: -0.05, z: 1.95 },
-      fw_flap_r:   { x: 1.55,  y: -0.05, z: 1.95 },
-      fw_pylon_l:  { x: -0.25, y: -0.20, z: 2.25 },
-      fw_pylon_r:  { x: 0.25,  y: -0.20, z: 2.25 },
-      hub_fl:      { x: -1.35, y: -0.02, z: 1.35 },
-      hub_fr:      { x: 1.35,  y: -0.02, z: 1.35 },
-      cp_rim_f:    { x: 0,     y: 0.42,  z: 0.65 },
-      cp_rim_l:    { x: -0.32, y: 0.38,  z: 0.15 },
-      cp_rim_r:    { x: 0.32,  y: 0.38,  z: 0.15 },
-      cp_rim_b:    { x: 0,     y: 0.42,  z: -0.25 },
-      halo_pylon:  { x: 0,     y: 0.68,  z: 0.62 },
-      halo_apex:   { x: 0,     y: 0.74,  z: 0.45 },
-      halo_l:      { x: -0.38, y: 0.72,  z: 0.05 },
-      halo_r:      { x: 0.38,  y: 0.72,  z: 0.05 },
-      airbox:      { x: 0,     y: 0.95,  z: -0.18 },
-      shark_fin:   { x: 0,     y: 0.88,  z: -1.15 },
-      engine_deck: { x: 0,     y: 0.38,  z: -1.55 },
-      sp_in_tl:    { x: -0.90, y: 0.32,  z: 0.65 },
-      sp_in_tr:    { x: 0.90,  y: 0.32,  z: 0.65 },
-      sp_in_bl:    { x: -0.75, y: -0.08, z: 0.65 },
-      sp_in_br:    { x: 0.75,  y: -0.08, z: 0.65 },
-      sp_mid_l:    { x: -0.95, y: 0.38,  z: -0.10 },
-      sp_mid_r:    { x: 0.95,  y: 0.38,  z: -0.10 },
-      sp_coke_l:   { x: -0.58, y: 0.24,  z: -1.05 },
-      sp_coke_r:   { x: 0.58,  y: 0.24,  z: -1.05 },
-      hub_rl:      { x: -1.45, y: 0.02,  z: -1.15 },
-      hub_rr:      { x: 1.45,  y: 0.02,  z: -1.15 },
-      rw_end_tl:   { x: -0.95, y: 0.92,  z: -1.85 },
-      rw_end_tr:   { x: 0.95,  y: 0.92,  z: -1.85 },
-      rw_end_bl:   { x: -0.95, y: 0.30,  z: -1.78 },
-      rw_end_br:   { x: 0.95,  y: 0.30,  z: -1.78 },
-      rw_main_l:   { x: -0.90, y: 0.72,  z: -1.82 },
-      rw_main_r:   { x: 0.90,  y: 0.72,  z: -1.82 },
-      rw_drs_l:    { x: -0.88, y: 0.88,  z: -1.84 },
-      rw_drs_r:    { x: 0.88,  y: 0.88,  z: -1.84 },
-      diffuser:    { x: 0,     y: -0.18, z: -1.85 }
-    };
-
-    var f1Edges = [
-      ['nose_tip', 'nose_mid'], ['nose_mid', 'nose_bulk_t'], ['nose_tip', 'nose_bulk_b'],
-      ['nose_tip', 'fw_pylon_l'], ['nose_tip', 'fw_pylon_r'],
-      ['fw_pylon_l', 'fw_l_tip'], ['fw_pylon_r', 'fw_r_tip'],
-      ['fw_l_tip', 'fw_l_top'], ['fw_r_tip', 'fw_r_top'],
-      ['fw_l_tip', 'fw_flap_l'], ['fw_r_tip', 'fw_flap_r'],
-      ['fw_flap_l', 'nose_mid'], ['fw_flap_r', 'nose_mid'],
-      ['nose_bulk_t', 'hub_fl'], ['nose_bulk_b', 'hub_fl'],
-      ['nose_bulk_t', 'hub_fr'], ['nose_bulk_b', 'hub_fr'],
-      ['nose_bulk_t', 'cp_rim_f'],
-      ['cp_rim_f', 'cp_rim_l'], ['cp_rim_f', 'cp_rim_r'],
-      ['cp_rim_l', 'cp_rim_b'], ['cp_rim_r', 'cp_rim_b'],
-      ['cp_rim_f', 'halo_pylon'], ['halo_pylon', 'halo_apex'],
-      ['halo_apex', 'halo_l'], ['halo_apex', 'halo_r'],
-      ['halo_l', 'cp_rim_l'], ['halo_r', 'cp_rim_r'],
-      ['cp_rim_b', 'airbox'], ['airbox', 'shark_fin'], ['shark_fin', 'engine_deck'],
-      ['cp_rim_f', 'sp_in_tl'], ['cp_rim_f', 'sp_in_tr'],
-      ['nose_bulk_b', 'sp_in_bl'], ['nose_bulk_b', 'sp_in_br'],
-      ['sp_in_tl', 'sp_in_bl'], ['sp_in_tr', 'sp_in_br'],
-      ['sp_in_tl', 'sp_mid_l'], ['sp_in_tr', 'sp_mid_r'],
-      ['sp_in_bl', 'sp_mid_l'], ['sp_in_br', 'sp_mid_r'],
-      ['sp_mid_l', 'sp_coke_l'], ['sp_mid_r', 'sp_coke_r'],
-      ['sp_coke_l', 'engine_deck'], ['sp_coke_r', 'engine_deck'],
-      ['engine_deck', 'hub_rl'], ['diffuser', 'hub_rl'],
-      ['engine_deck', 'hub_rr'], ['diffuser', 'hub_rr'],
-      ['engine_deck', 'diffuser'],
-      ['engine_deck', 'rw_end_bl'], ['engine_deck', 'rw_end_br'],
-      ['rw_end_bl', 'rw_end_tl'], ['rw_end_br', 'rw_end_tr'],
-      ['rw_end_tl', 'rw_end_tr'],
-      ['rw_main_l', 'rw_main_r'],
-      ['rw_drs_l', 'rw_drs_r'],
-      ['rw_main_l', 'rw_end_bl'], ['rw_main_r', 'rw_end_br']
-    ];
-
-    var f1Wheels = [
-      { cx: -1.45, cy: -0.05, cz: 1.35,  r: 0.44, w: 0.38 },
-      { cx: 1.45,  cy: -0.05, cz: 1.35,  r: 0.44, w: 0.38 },
-      { cx: -1.55, cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 },
-      { cx: 1.55,  cy: -0.02, cz: -1.15, r: 0.48, w: 0.46 }
-    ];
-
-    function project3D(x, y, z, width, height, yaw, pitch) {
-      var cz = z - 0.22;
-      var cosY = Math.cos(yaw), sinY = Math.sin(yaw);
-      var x1 = x * cosY + cz * sinY;
-      var z1 = -x * sinY + cz * cosY;
-      var cosP = Math.cos(pitch), sinP = Math.sin(pitch);
-      var y2 = y * cosP - z1 * sinP;
-      var z2 = y * sinP + z1 * cosP;
-      var pulseMult = 1 + (pulseIntensity * 0.07);
-      var depth = 6.2 - z2;
-      var scale = (4.2 / Math.max(depth, 0.1)) * (Math.min(width, height) / 3.45) * pulseMult;
-      return {
-        px: width / 2 + x1 * scale,
-        py: height / 2 - y2 * scale + (height * 0.05)
-      };
+    function hasWebGL() {
+      try {
+        var c = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+      } catch (e) {
+        return false;
+      }
     }
 
-    function canAnimate() {
-      return !document.hidden && inView && window.innerWidth >= 768 && canvas.offsetParent !== null;
+    if (typeof THREE !== 'undefined' && hasWebGL()) {
+      initThreeViewport();
+    } else {
+      initCanvas2DFallback();
     }
 
-    function renderFrame() {
-      var w = canvas.clientWidth || 560;
-      var h = canvas.clientHeight || 300;
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      var cw = Math.round(w * dpr), ch = Math.round(h * dpr);
-      if (canvas.width !== cw || canvas.height !== ch) {
-        canvas.width = cw;
-        canvas.height = ch;
-      }
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    function initThreeViewport() {
+      var width = (container && container.clientWidth) || canvas.clientWidth || 560;
+      var height = (container && container.clientHeight) || canvas.clientHeight || 310;
 
-      if (!reducedMotion && !isDragging) {
-        targetYaw += 0.0028;
-      }
-      dynoYaw += (targetYaw - dynoYaw) * 0.09;
-      if (!reducedMotion) wheelSpin += 0.055;
+      // 1. Scene setup
+      var scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x05070B);
 
-      if (pulseTimer > 0) {
-        pulseTimer -= 16.6;
-        pulseIntensity = Math.sin((1 - (Math.max(0, pulseTimer) / 1200)) * Math.PI);
-      } else {
-        pulseIntensity = 0;
-      }
+      // 2. Camera configuration: PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000)
+      var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      camera.position.set(0, 2.5, 6);
+      camera.lookAt(0, 0, 0);
 
-      var pitch = 0.38;
-      ctx.fillStyle = '#05070B';
-      ctx.fillRect(0, 0, w, h);
+      // 3. WebGL Renderer
+      var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+      renderer.setSize(width, height, false);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
-      // 1. Pit-lane roller grid deck
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.13)';
-      ctx.beginPath();
-      for (var gz = -3.2; gz <= 3.21; gz += 0.8) {
-        var g1 = project3D(-2.4, -0.52, gz, w, h, dynoYaw, pitch);
-        var g2 = project3D(2.4, -0.52, gz, w, h, dynoYaw, pitch);
-        ctx.moveTo(g1.px, g1.py);
-        ctx.lineTo(g2.px, g2.py);
-      }
-      for (var gx = -2.4; gx <= 2.41; gx += 0.8) {
-        var g3 = project3D(gx, -0.52, -3.2, w, h, dynoYaw, pitch);
-        var g4 = project3D(gx, -0.52, 3.2, w, h, dynoYaw, pitch);
-        ctx.moveTo(g3.px, g3.py);
-        ctx.lineTo(g4.px, g4.py);
-      }
-      ctx.stroke();
+      // 4. Bright Telemetry Lighting
+      var ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      scene.add(ambientLight);
 
-      // 2. Project nodes
-      var proj = {};
-      var keys = Object.keys(f1Nodes);
-      for (var k = 0; k < keys.length; k++) {
-        var nk = keys[k], n = f1Nodes[nk];
-        proj[nk] = project3D(n.x, n.y, n.z, w, h, dynoYaw, pitch);
-      }
+      var dirLightCyan = new THREE.DirectionalLight(0x00F0FF, 2.5);
+      dirLightCyan.position.set(5, 10, 7);
+      scene.add(dirLightCyan);
 
-      // 3. Structural wireframe edges (batched by color for low GPU overhead)
-      ctx.lineWidth = 1.6 + (pulseIntensity * 1.1);
-      ctx.shadowBlur = 6 + (pulseIntensity * 12);
-      ctx.strokeStyle = '#00F0FF';
-      ctx.shadowColor = '#00F0FF';
-      ctx.beginPath();
-      for (var e = 0; e < f1Edges.length; e++) {
-        var fk = f1Edges[e][0], tk = f1Edges[e][1];
-        if (fk.indexOf('halo') === 0 || tk.indexOf('halo') === 0 || fk.indexOf('rw_drs') === 0 || tk.indexOf('rw_drs') === 0) continue;
-        ctx.moveTo(proj[fk].px, proj[fk].py);
-        ctx.lineTo(proj[tk].px, proj[tk].py);
-      }
-      ctx.stroke();
+      var dirLightAmber = new THREE.DirectionalLight(0xFF9F0A, 1.8);
+      dirLightAmber.position.set(-5, -5, -5);
+      scene.add(dirLightAmber);
 
-      ctx.strokeStyle = '#FF9F0A';
-      ctx.shadowColor = '#FF9F0A';
-      ctx.beginPath();
-      for (var ea = 0; ea < f1Edges.length; ea++) {
-        var fka = f1Edges[ea][0], tka = f1Edges[ea][1];
-        if (!(fka.indexOf('halo') === 0 || tka.indexOf('halo') === 0 || fka.indexOf('rw_drs') === 0 || tka.indexOf('rw_drs') === 0)) continue;
-        ctx.moveTo(proj[fka].px, proj[fka].py);
-        ctx.lineTo(proj[tka].px, proj[tka].py);
-      }
-      ctx.stroke();
+      // Ground Telemetry Grid
+      var grid = new THREE.GridHelper(9, 18, 0x00F0FF, 0x1B2536);
+      grid.position.y = -0.52;
+      scene.add(grid);
 
-      // 4. Rotating wireframe wheels
-      for (var wi = 0; wi < f1Wheels.length; wi++) {
-        var wh = f1Wheels[wi], segs = 12, pIn = [], pOut = [];
-        for (var si = 0; si < segs; si++) {
-          var th = (si / segs) * Math.PI * 2 + wheelSpin;
-          var wy = Math.sin(th) * wh.r, wz = Math.cos(th) * wh.r;
-          pIn.push(project3D(wh.cx - wh.w / 2, wh.cy + wy, wh.cz + wz, w, h, dynoYaw, pitch));
-          pOut.push(project3D(wh.cx + wh.w / 2, wh.cy + wy, wh.cz + wz, w, h, dynoYaw, pitch));
+      // 5. Lightweight Procedural Wireframe Racing Chassis
+      var chassisGroup = new THREE.Group();
+      scene.add(chassisGroup);
+
+      // Materials matching garage branding (#00F0FF and #FF9F0A)
+      var matCyanWire = new THREE.MeshBasicMaterial({ color: 0x00F0FF, wireframe: true, transparent: true, opacity: 0.88 });
+      var matAmberWire = new THREE.MeshBasicMaterial({ color: 0xFF9F0A, wireframe: true, transparent: true, opacity: 0.92 });
+      var lineCyan = new THREE.LineBasicMaterial({ color: 0x00F0FF, transparent: true, opacity: 0.88 });
+      var lineAmber = new THREE.LineBasicMaterial({ color: 0xFF9F0A, transparent: true, opacity: 0.92 });
+
+      // Cockpit Monocoque & Nose Cone
+      var tubGeom = new THREE.BoxGeometry(0.85, 0.44, 1.75, 3, 2, 4);
+      var tub = new THREE.Mesh(tubGeom, matCyanWire);
+      tub.position.set(0, 0, 0.1);
+      chassisGroup.add(tub);
+
+      var noseGeom = new THREE.ConeGeometry(0.35, 1.6, 5, 2, true);
+      noseGeom.rotateX(Math.PI / 2);
+      var nose = new THREE.Mesh(noseGeom, matCyanWire);
+      nose.position.set(0, -0.05, 1.6);
+      chassisGroup.add(nose);
+
+      var noseTipGeom = new THREE.OctahedronGeometry(0.12, 0);
+      var noseTip = new THREE.Mesh(noseTipGeom, matAmberWire);
+      noseTip.position.set(0, -0.1, 2.42);
+      chassisGroup.add(noseTip);
+
+      // Halo Safety Cockpit Loop (Amber)
+      var haloGeom = new THREE.TorusGeometry(0.32, 0.045, 8, 16, Math.PI);
+      haloGeom.rotateX(Math.PI / 2);
+      var halo = new THREE.Mesh(haloGeom, matAmberWire);
+      halo.position.set(0, 0.35, 0.2);
+      chassisGroup.add(halo);
+
+      var haloPylonGeom = new THREE.CylinderGeometry(0.03, 0.03, 0.24, 6);
+      var haloPylon = new THREE.Mesh(haloPylonGeom, matAmberWire);
+      haloPylon.position.set(0, 0.24, 0.52);
+      chassisGroup.add(haloPylon);
+
+      var cockpitRimGeom = new THREE.BoxGeometry(0.55, 0.15, 0.72, 2, 1, 2);
+      var cockpitRim = new THREE.Mesh(cockpitRimGeom, matAmberWire);
+      cockpitRim.position.set(0, 0.24, 0.2);
+      chassisGroup.add(cockpitRim);
+
+      // Airbox & Engine Fin
+      var airboxGeom = new THREE.ConeGeometry(0.24, 0.65, 4, 1, true);
+      airboxGeom.rotateX(-Math.PI / 2);
+      var airbox = new THREE.Mesh(airboxGeom, matAmberWire);
+      airbox.position.set(0, 0.44, -0.3);
+      chassisGroup.add(airbox);
+
+      var finGeom = new THREE.BoxGeometry(0.04, 0.46, 1.05, 1, 2, 3);
+      var fin = new THREE.Mesh(finGeom, matCyanWire);
+      fin.position.set(0, 0.42, -0.85);
+      chassisGroup.add(fin);
+
+      var deckGeom = new THREE.BoxGeometry(0.72, 0.34, 1.05, 2, 2, 3);
+      var deck = new THREE.Mesh(deckGeom, matCyanWire);
+      deck.position.set(0, 0.02, -0.85);
+      chassisGroup.add(deck);
+
+      // Sidepods & Aerodynamic Undertray
+      var spGeom = new THREE.BoxGeometry(0.48, 0.32, 1.35, 2, 2, 3);
+      var spL = new THREE.Mesh(spGeom, matCyanWire);
+      spL.position.set(-0.66, -0.06, -0.15);
+      chassisGroup.add(spL);
+
+      var spR = new THREE.Mesh(spGeom, matCyanWire);
+      spR.position.set(0.66, -0.06, -0.15);
+      chassisGroup.add(spR);
+
+      var inletGeom = new THREE.RingGeometry(0.09, 0.15, 6);
+      var inletL = new THREE.Mesh(inletGeom, matAmberWire);
+      inletL.position.set(-0.66, -0.04, 0.54);
+      chassisGroup.add(inletL);
+
+      var inletR = new THREE.Mesh(inletGeom, matAmberWire);
+      inletR.position.set(0.66, -0.04, 0.54);
+      chassisGroup.add(inletR);
+
+      var undertrayGeom = new THREE.BoxGeometry(1.85, 0.04, 3.1, 4, 1, 6);
+      var undertray = new THREE.Mesh(undertrayGeom, matCyanWire);
+      undertray.position.set(0, -0.22, 0);
+      chassisGroup.add(undertray);
+
+      var diffuserGeom = new THREE.BoxGeometry(1.15, 0.18, 0.65, 3, 1, 2);
+      var diffuser = new THREE.Mesh(diffuserGeom, matCyanWire);
+      diffuser.position.set(0, -0.14, -1.45);
+      chassisGroup.add(diffuser);
+
+      // Wings (Front & Rear)
+      var fwMainGeom = new THREE.BoxGeometry(2.4, 0.04, 0.44, 6, 1, 2);
+      var fwMain = new THREE.Mesh(fwMainGeom, matCyanWire);
+      fwMain.position.set(0, -0.2, 1.95);
+      chassisGroup.add(fwMain);
+
+      var fwFlapGeom = new THREE.BoxGeometry(2.2, 0.03, 0.26, 6, 1, 1);
+      var fwFlap = new THREE.Mesh(fwFlapGeom, matAmberWire);
+      fwFlap.position.set(0, -0.13, 1.85);
+      chassisGroup.add(fwFlap);
+
+      var fwPlateGeom = new THREE.BoxGeometry(0.04, 0.24, 0.48, 1, 1, 2);
+      var fwPlateL = new THREE.Mesh(fwPlateGeom, matAmberWire);
+      fwPlateL.position.set(-1.2, -0.1, 1.95);
+      chassisGroup.add(fwPlateL);
+
+      var fwPlateR = new THREE.Mesh(fwPlateGeom, matAmberWire);
+      fwPlateR.position.set(1.2, -0.1, 1.95);
+      chassisGroup.add(fwPlateR);
+
+      var rwMainGeom = new THREE.BoxGeometry(1.6, 0.04, 0.38, 4, 1, 2);
+      var rwMain = new THREE.Mesh(rwMainGeom, matCyanWire);
+      rwMain.position.set(0, 0.52, -1.75);
+      chassisGroup.add(rwMain);
+
+      var rwDrsGeom = new THREE.BoxGeometry(1.5, 0.04, 0.24, 4, 1, 1);
+      var rwDrs = new THREE.Mesh(rwDrsGeom, matAmberWire);
+      rwDrs.position.set(0, 0.72, -1.78);
+      chassisGroup.add(rwDrs);
+
+      var rwPlateGeom = new THREE.BoxGeometry(0.04, 0.65, 0.55, 1, 3, 2);
+      var rwPlateL = new THREE.Mesh(rwPlateGeom, matCyanWire);
+      rwPlateL.position.set(-0.82, 0.52, -1.75);
+      chassisGroup.add(rwPlateL);
+
+      var rwPlateR = new THREE.Mesh(rwPlateGeom, matCyanWire);
+      rwPlateR.position.set(0.82, 0.52, -1.75);
+      chassisGroup.add(rwPlateR);
+
+      // Suspension & Axle Lines
+      var axlePoints = [
+        new THREE.Vector3(-1.25, -0.12, 1.25), new THREE.Vector3(1.25, -0.12, 1.25),
+        new THREE.Vector3(-1.32, -0.10, -1.15), new THREE.Vector3(1.32, -0.10, -1.15),
+        new THREE.Vector3(-1.25, -0.12, 1.25), new THREE.Vector3(-0.42, 0.1, 1.3),
+        new THREE.Vector3(-1.25, -0.12, 1.25), new THREE.Vector3(-0.42, -0.15, 1.1),
+        new THREE.Vector3(1.25, -0.12, 1.25), new THREE.Vector3(0.42, 0.1, 1.3),
+        new THREE.Vector3(1.25, -0.12, 1.25), new THREE.Vector3(0.42, -0.15, 1.1),
+        new THREE.Vector3(-1.32, -0.10, -1.15), new THREE.Vector3(-0.36, 0.15, -1.0),
+        new THREE.Vector3(-1.32, -0.10, -1.15), new THREE.Vector3(-0.36, -0.15, -1.3),
+        new THREE.Vector3(1.32, -0.10, -1.15), new THREE.Vector3(0.36, 0.15, -1.0),
+        new THREE.Vector3(1.32, -0.10, -1.15), new THREE.Vector3(0.36, -0.15, -1.3)
+      ];
+      var axleGeom = new THREE.BufferGeometry().setFromPoints(axlePoints);
+      var axleLines = new THREE.LineSegments(axleGeom, lineCyan);
+      chassisGroup.add(axleLines);
+
+      // Rotating Wireframe Wheels
+      var wheels = [];
+      var wheelDefs = [
+        { x: -1.25, y: -0.12, z: 1.25, r: 0.38, w: 0.32 },
+        { x: 1.25,  y: -0.12, z: 1.25, r: 0.38, w: 0.32 },
+        { x: -1.32, y: -0.10, z: -1.15, r: 0.44, w: 0.42 },
+        { x: 1.32,  y: -0.10, z: -1.15, r: 0.44, w: 0.42 }
+      ];
+
+      wheelDefs.forEach(function (wd) {
+        var wg = new THREE.Group();
+        wg.position.set(wd.x, wd.y, wd.z);
+
+        var tireGeom = new THREE.CylinderGeometry(wd.r, wd.r, wd.w, 16, 2, true);
+        tireGeom.rotateZ(Math.PI / 2);
+        var tire = new THREE.Mesh(tireGeom, matCyanWire);
+        wg.add(tire);
+
+        var spokePoints = [];
+        for (var i = 0; i < 6; i++) {
+          var a = (i / 6) * Math.PI * 2;
+          spokePoints.push(new THREE.Vector3(0, 0, 0));
+          spokePoints.push(new THREE.Vector3(0, Math.sin(a) * wd.r * 0.95, Math.cos(a) * wd.r * 0.95));
         }
-        ctx.strokeStyle = '#00F0FF';
-        ctx.shadowColor = '#00F0FF';
-        ctx.lineWidth = 1.35;
+        var spokeGeom = new THREE.BufferGeometry().setFromPoints(spokePoints);
+        var spokes = new THREE.LineSegments(spokeGeom, lineAmber);
+        wg.add(spokes);
+
+        chassisGroup.add(wg);
+        wheels.push(wg);
+      });
+
+      // Glowing Telemetry Vertices
+      var vertexPoints = [
+        new THREE.Vector3(0, -0.1, 2.42),
+        new THREE.Vector3(-1.2, 0.02, 1.95),
+        new THREE.Vector3(1.2, 0.02, 1.95),
+        new THREE.Vector3(0, 0.35, 0.2),
+        new THREE.Vector3(0, 0.76, -0.3),
+        new THREE.Vector3(-0.82, 0.84, -1.75),
+        new THREE.Vector3(0.82, 0.84, -1.75),
+        new THREE.Vector3(-1.25, -0.12, 1.25),
+        new THREE.Vector3(1.25, -0.12, 1.25),
+        new THREE.Vector3(-1.32, -0.10, -1.15),
+        new THREE.Vector3(1.32, -0.10, -1.15),
+        new THREE.Vector3(0, -0.22, -1.45)
+      ];
+      var vertexGeom = new THREE.BufferGeometry().setFromPoints(vertexPoints);
+      var vertexMat = new THREE.PointsMaterial({ color: 0x00F0FF, size: 0.12, transparent: true, opacity: 0.95 });
+      var vertices = new THREE.Points(vertexGeom, vertexMat);
+      chassisGroup.add(vertices);
+
+      var amberPoints = [
+        new THREE.Vector3(0, 0.35, 0.2),
+        new THREE.Vector3(0, -0.1, 2.42),
+        new THREE.Vector3(0, 0.72, -1.78)
+      ];
+      var amberGeom = new THREE.BufferGeometry().setFromPoints(amberPoints);
+      var amberVertexMat = new THREE.PointsMaterial({ color: 0xFF9F0A, size: 0.16, transparent: true, opacity: 0.95 });
+      var amberVertices = new THREE.Points(amberGeom, amberVertexMat);
+      chassisGroup.add(amberVertices);
+
+      // Animated Scan Wave Mesh (Amber)
+      var scanGeom = new THREE.PlaneGeometry(3.6, 0.1);
+      scanGeom.rotateX(Math.PI / 2);
+      var scanMat = new THREE.MeshBasicMaterial({ color: 0xFF9F0A, transparent: true, opacity: 0.95, side: THREE.DoubleSide });
+      var scanMesh = new THREE.Mesh(scanGeom, scanMat);
+      scanMesh.visible = false;
+      chassisGroup.add(scanMesh);
+
+      // Asset Diagnostic: Check for external model (.glb/.gltf) with bulletproof procedural fallback
+      var externalModelUrl = canvas.getAttribute('data-model') || window.CHASSIS_MODEL_URL || null;
+      if (externalModelUrl && typeof THREE.GLTFLoader !== 'undefined') {
+        var loader = new THREE.GLTFLoader();
+        var timeoutId = setTimeout(function () {
+          console.warn('[3D Viewport] Model fetch timed out, procedural fallback engaged.');
+        }, 2500);
+
+        loader.load(
+          externalModelUrl,
+          function (gltf) {
+            clearTimeout(timeoutId);
+            if (gltf && gltf.scene) {
+              scene.remove(chassisGroup);
+              chassisGroup = gltf.scene;
+              scene.add(chassisGroup);
+            }
+          },
+          undefined,
+          function (err) {
+            clearTimeout(timeoutId);
+            console.warn('[3D Viewport] Model fetch failed, procedural wireframe chassis active.');
+          }
+        );
+      }
+
+      // State & Controls
+      var dynoYaw = 0.56;
+      var targetYaw = 0.56;
+      var isScanning = false;
+      var scanProgress = 0;
+      var isDragging = false;
+      var lastX = 0;
+      var inView = true;
+      var frameCount = 0;
+
+      // ResizeObserver on container to prevent 0px collapse
+      if (window.ResizeObserver && container) {
+        var ro = new ResizeObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            var cr = entries[i].contentRect;
+            var w = Math.max(cr.width, 260);
+            var h = Math.max(cr.height, 200);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h, false);
+          }
+        });
+        ro.observe(container);
+      }
+
+      // Wire UI Buttons to Model Matrix
+      document.querySelectorAll('[data-yaw]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var delta = parseFloat(btn.getAttribute('data-yaw') || '0');
+          targetYaw += (delta * Math.PI) / 180;
+        });
+      });
+
+      if (scanBtn) {
+        scanBtn.addEventListener('click', function () {
+          isScanning = true;
+          scanProgress = 0;
+          scanMesh.visible = true;
+          scanBtn.classList.add('is-scanning');
+        });
+      }
+
+      // Interactive Pointer Drag on Canvas
+      canvas.addEventListener('pointerdown', function (ev) {
+        isDragging = true;
+        lastX = ev.clientX;
+        if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
+      });
+      canvas.addEventListener('pointermove', function (ev) {
+        if (!isDragging) return;
+        var dx = ev.clientX - lastX;
+        lastX = ev.clientX;
+        targetYaw += dx * 0.008;
+        dynoYaw = targetYaw;
+      });
+      function endDrag() { isDragging = false; }
+      canvas.addEventListener('pointerup', endDrag);
+      canvas.addEventListener('pointercancel', endDrag);
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          inView = entries[0] ? entries[0].isIntersecting : true;
+        }, { threshold: 0.05 });
+        io.observe(canvas);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        if (document.hidden || !inView) return;
+
+        if (!reducedMotion && !isDragging) {
+          targetYaw += 0.0028;
+        }
+        dynoYaw += (targetYaw - dynoYaw) * 0.1;
+        chassisGroup.rotation.y = dynoYaw;
+
+        // Rotate wheels
+        if (!reducedMotion) {
+          for (var w = 0; w < wheels.length; w++) {
+            wheels[w].rotation.x += 0.05;
+          }
+        }
+
+        // Animated amber scan-line wave
+        if (isScanning) {
+          scanProgress += 0.02;
+          if (scanProgress > 1) {
+            isScanning = false;
+            scanProgress = 0;
+            scanMesh.visible = false;
+            if (scanBtn) scanBtn.classList.remove('is-scanning');
+            matAmberWire.opacity = 0.92;
+          } else {
+            scanMesh.visible = true;
+            scanMesh.position.z = 2.5 - (scanProgress * 4.6);
+            scanMesh.position.y = -0.1 + Math.sin(scanProgress * Math.PI) * 0.4;
+            matAmberWire.opacity = 0.65 + Math.sin(scanProgress * Math.PI * 4) * 0.35;
+          }
+        }
+
+        renderer.render(scene, camera);
+
+        frameCount++;
+        if (yawReadout && (frameCount % 6 === 0)) {
+          var deg = Math.round(((dynoYaw * 180) / Math.PI) % 360);
+          if (deg > 180) deg -= 360;
+          if (deg < -180) deg += 360;
+          yawReadout.textContent = (deg >= 0 ? '+' : '') + deg + '° // 60 FPS';
+        }
+      }
+
+      animate();
+    }
+
+    function initCanvas2DFallback() {
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      var dynoYaw = 0.56;
+      var targetYaw = 0.56;
+      var wheelSpin = 0;
+      var isDragging = false;
+      var lastX = 0;
+      var inView = true;
+      var rafId = 0;
+      var frameTick = 0;
+
+      var f1Nodes = {
+        nose_tip:    { x: 0,     y: -0.10, z: 2.45 },
+        nose_mid:    { x: 0,     y: 0.12,  z: 1.60 },
+        nose_bulk_t: { x: 0,     y: 0.28,  z: 0.85 },
+        nose_bulk_b: { x: 0,     y: -0.15, z: 0.85 },
+        fw_l_tip:    { x: -1.65, y: -0.22, z: 2.15 },
+        fw_r_tip:    { x: 1.65,  y: -0.22, z: 2.15 },
+        fw_l_top:    { x: -1.65, y: 0.10,  z: 2.05 },
+        fw_r_top:    { x: 1.65,  y: 0.10,  z: 2.05 },
+        fw_flap_l:   { x: -1.55, y: -0.05, z: 1.95 },
+        fw_flap_r:   { x: 1.55,  y: -0.05, z: 1.95 },
+        fw_pylon_l:  { x: -0.25, y: -0.20, z: 2.25 },
+        fw_pylon_r:  { x: 0.25,  y: -0.20, z: 2.25 },
+        hub_fl:      { x: -1.35, y: -0.02, z: 1.35 },
+        hub_fr:      { x: 1.35,  y: -0.02, z: 1.35 },
+        cp_rim_f:    { x: 0,     y: 0.42,  z: 0.65 },
+        cp_rim_l:    { x: -0.32, y: 0.38,  z: 0.15 },
+        cp_rim_r:    { x: 0.32,  y: 0.38,  z: 0.15 },
+        cp_rim_b:    { x: 0,     y: 0.42,  z: -0.25 },
+        halo_pylon:  { x: 0,     y: 0.68,  z: 0.62 },
+        halo_apex:   { x: 0,     y: 0.74,  z: 0.45 },
+        halo_l:      { x: -0.38, y: 0.72,  z: 0.05 },
+        halo_r:      { x: 0.38,  y: 0.72,  z: 0.05 },
+        airbox:      { x: 0,     y: 0.95,  z: -0.18 },
+        shark_fin:   { x: 0,     y: 0.88,  z: -1.15 },
+        engine_deck: { x: 0,     y: 0.38,  z: -1.55 },
+        sp_in_tl:    { x: -0.90, y: 0.32,  z: 0.65 },
+        sp_in_tr:    { x: 0.90,  y: 0.32,  z: 0.65 },
+        sp_in_bl:    { x: -0.75, y: -0.08, z: 0.65 },
+        sp_in_br:    { x: 0.75,  y: -0.08, z: 0.65 },
+        sp_mid_l:    { x: -0.95, y: 0.38,  z: -0.10 },
+        sp_mid_r:    { x: 0.95,  y: 0.38,  z: -0.10 },
+        sp_coke_l:   { x: -0.58, y: 0.24,  z: -1.05 },
+        sp_coke_r:   { x: 0.58,  y: 0.24,  z: -1.05 },
+        hub_rl:      { x: -1.45, y: 0.02,  z: -1.15 },
+        hub_rr:      { x: 1.45,  y: 0.02,  z: -1.15 },
+        rw_end_tl:   { x: -0.95, y: 0.92,  z: -1.85 },
+        rw_end_tr:   { x: 0.95,  y: 0.92,  z: -1.85 },
+        rw_end_bl:   { x: -0.95, y: 0.30,  z: -1.78 },
+        rw_end_br:   { x: 0.95,  y: 0.30,  z: -1.78 },
+        rw_main_l:   { x: -0.90, y: 0.72,  z: -1.82 },
+        rw_main_r:   { x: 0.90,  y: 0.72,  z: -1.82 },
+        rw_drs_l:    { x: -0.88, y: 0.88,  z: -1.84 },
+        rw_drs_r:    { x: 0.88,  y: 0.88,  z: -1.84 },
+        diffuser:    { x: 0,     y: -0.18, z: -1.85 }
+      };
+
+      var f1Edges = [
+        ['nose_tip', 'nose_mid'], ['nose_mid', 'nose_bulk_t'], ['nose_tip', 'nose_bulk_b'],
+        ['nose_tip', 'fw_pylon_l'], ['nose_tip', 'fw_pylon_r'],
+        ['fw_pylon_l', 'fw_l_tip'], ['fw_pylon_r', 'fw_r_tip'],
+        ['fw_l_tip', 'fw_l_top'], ['fw_r_tip', 'fw_r_top'],
+        ['fw_l_tip', 'fw_flap_l'], ['fw_r_tip', 'fw_flap_r'],
+        ['fw_flap_l', 'nose_mid'], ['fw_flap_r', 'nose_mid'],
+        ['nose_bulk_t', 'hub_fl'], ['nose_bulk_b', 'hub_fl'],
+        ['nose_bulk_t', 'hub_fr'], ['nose_bulk_b', 'hub_fr'],
+        ['nose_bulk_t', 'cp_rim_f'],
+        ['cp_rim_f', 'cp_rim_l'], ['cp_rim_f', 'cp_rim_r'],
+        ['cp_rim_l', 'cp_rim_b'], ['cp_rim_r', 'cp_rim_b'],
+        ['cp_rim_f', 'halo_pylon'], ['halo_pylon', 'halo_apex'],
+        ['halo_apex', 'halo_l'], ['halo_apex', 'halo_r'],
+        ['halo_l', 'cp_rim_l'], ['halo_r', 'cp_rim_r'],
+        ['cp_rim_b', 'airbox'], ['airbox', 'shark_fin'], ['shark_fin', 'engine_deck'],
+        ['cp_rim_f', 'sp_in_tl'], ['cp_rim_f', 'sp_in_tr'],
+        ['nose_bulk_b', 'sp_in_bl'], ['nose_bulk_b', 'sp_in_br'],
+        ['sp_in_tl', 'sp_in_bl'], ['sp_in_tr', 'sp_in_br'],
+        ['sp_in_tl', 'sp_mid_l'], ['sp_in_tr', 'sp_mid_r'],
+        ['sp_in_bl', 'sp_mid_l'], ['sp_in_br', 'sp_mid_r'],
+        ['sp_mid_l', 'sp_coke_l'], ['sp_mid_r', 'sp_coke_r'],
+        ['sp_coke_l', 'engine_deck'], ['sp_coke_r', 'engine_deck'],
+        ['engine_deck', 'hub_rl'], ['diffuser', 'hub_rl'],
+        ['engine_deck', 'hub_rr'], ['diffuser', 'hub_rr'],
+        ['engine_deck', 'diffuser'],
+        ['engine_deck', 'rw_end_bl'], ['engine_deck', 'rw_end_br'],
+        ['rw_end_bl', 'rw_end_tl'], ['rw_end_br', 'rw_end_tr'],
+        ['rw_end_tl', 'rw_end_tr'],
+        ['rw_main_l', 'rw_main_r'],
+        ['rw_drs_l', 'rw_drs_r'],
+        ['rw_main_l', 'rw_end_bl'], ['rw_main_r', 'rw_end_br']
+      ];
+
+      function project3D(x, y, z, width, height, yaw, pitch) {
+        var cz = z - 0.22;
+        var cosY = Math.cos(yaw), sinY = Math.sin(yaw);
+        var x1 = x * cosY + cz * sinY;
+        var z1 = -x * sinY + cz * cosY;
+        var cosP = Math.cos(pitch), sinP = Math.sin(pitch);
+        var y2 = y * cosP - z1 * sinP;
+        var z2 = y * sinP + z1 * cosP;
+        var depth = 6.2 - z2;
+        var scale = (4.2 / Math.max(depth, 0.1)) * (Math.min(width, height) / 3.45);
+        return {
+          px: width / 2 + x1 * scale,
+          py: height / 2 - y2 * scale + (height * 0.05)
+        };
+      }
+
+      function canAnimate() {
+        return !document.hidden && inView && canvas.offsetParent !== null;
+      }
+
+      function renderFrame() {
+        var w = canvas.clientWidth || 560;
+        var h = canvas.clientHeight || 300;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var cw = Math.round(w * dpr), ch = Math.round(h * dpr);
+        if (canvas.width !== cw || canvas.height !== ch) {
+          canvas.width = cw;
+          canvas.height = ch;
+        }
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        if (!reducedMotion && !isDragging) {
+          targetYaw += 0.0028;
+        }
+        dynoYaw += (targetYaw - dynoYaw) * 0.09;
+        if (!reducedMotion) wheelSpin += 0.055;
+
+        var pitch = 0.38;
+        ctx.fillStyle = '#05070B';
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.13)';
         ctx.beginPath();
-        for (var o = 0; o < segs; o++) {
-          var no = (o + 1) % segs;
-          ctx.moveTo(pOut[o].px, pOut[o].py);
-          ctx.lineTo(pOut[no].px, pOut[no].py);
+        for (var gz = -3.2; gz <= 3.21; gz += 0.8) {
+          var g1 = project3D(-2.4, -0.52, gz, w, h, dynoYaw, pitch);
+          var g2 = project3D(2.4, -0.52, gz, w, h, dynoYaw, pitch);
+          ctx.moveTo(g1.px, g1.py);
+          ctx.lineTo(g2.px, g2.py);
+        }
+        for (var gx = -2.4; gx <= 2.41; gx += 0.8) {
+          var g3 = project3D(gx, -0.52, -3.2, w, h, dynoYaw, pitch);
+          var g4 = project3D(gx, -0.52, 3.2, w, h, dynoYaw, pitch);
+          ctx.moveTo(g3.px, g3.py);
+          ctx.lineTo(g4.px, g4.py);
+        }
+        ctx.stroke();
+
+        var proj = {};
+        var keys = Object.keys(f1Nodes);
+        for (var k = 0; k < keys.length; k++) {
+          var nk = keys[k], n = f1Nodes[nk];
+          proj[nk] = project3D(n.x, n.y, n.z, w, h, dynoYaw, pitch);
+        }
+
+        ctx.lineWidth = 1.6;
+        ctx.strokeStyle = '#00F0FF';
+        ctx.beginPath();
+        for (var e = 0; e < f1Edges.length; e++) {
+          var fk = f1Edges[e][0], tk = f1Edges[e][1];
+          if (fk.indexOf('halo') === 0 || tk.indexOf('halo') === 0 || fk.indexOf('rw_drs') === 0 || tk.indexOf('rw_drs') === 0) continue;
+          ctx.moveTo(proj[fk].px, proj[fk].py);
+          ctx.lineTo(proj[tk].px, proj[tk].py);
         }
         ctx.stroke();
 
         ctx.strokeStyle = '#FF9F0A';
-        ctx.shadowColor = '#FF9F0A';
-        ctx.lineWidth = 1;
         ctx.beginPath();
-        for (var ii = 0; ii < segs; ii++) {
-          var ni = (ii + 1) % segs;
-          ctx.moveTo(pIn[ii].px, pIn[ii].py);
-          ctx.lineTo(pIn[ni].px, pIn[ni].py);
-          ctx.moveTo(pIn[ii].px, pIn[ii].py);
-          ctx.lineTo(pOut[ii].px, pOut[ii].py);
+        for (var ea = 0; ea < f1Edges.length; ea++) {
+          var fka = f1Edges[ea][0], tka = f1Edges[ea][1];
+          if (!(fka.indexOf('halo') === 0 || tka.indexOf('halo') === 0 || fka.indexOf('rw_drs') === 0 || tka.indexOf('rw_drs') === 0)) continue;
+          ctx.moveTo(proj[fka].px, proj[fka].py);
+          ctx.lineTo(proj[tka].px, proj[tka].py);
         }
         ctx.stroke();
-      }
 
-      // 5. Vertex glow nodes
-      ctx.shadowBlur = 7 + (pulseIntensity * 10);
-      var rad = 2.1 + (pulseIntensity * 0.8);
-      for (var vk = 0; vk < keys.length; vk++) {
-        var key = keys[vk], pt = proj[key];
-        var warm = key.indexOf('halo') === 0 || key.indexOf('hub') === 0 || key === 'airbox';
-        ctx.fillStyle = warm ? '#FF9F0A' : '#00F0FF';
-        ctx.shadowColor = ctx.fillStyle;
-        ctx.beginPath();
-        ctx.arc(pt.px, pt.py, rad, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // 6. Emerald laser schematic scan sweep
-      if (isScanning) {
-        scanProgress += 0.022;
-        if (scanProgress > 1) {
-          isScanning = false;
-          scanProgress = 0;
-          if (scanBtn) scanBtn.classList.remove('is-scanning');
-        } else {
-          var sy = h * scanProgress;
-          ctx.shadowBlur = 16;
-          ctx.shadowColor = '#10B981';
-          ctx.strokeStyle = 'rgba(16, 185, 129, 0.92)';
-          ctx.lineWidth = 2.4;
-          ctx.beginPath();
-          ctx.moveTo(0, sy);
-          ctx.lineTo(w, sy);
-          ctx.stroke();
-
-          var grad = ctx.createLinearGradient(0, sy - 26, 0, sy + 4);
-          grad.addColorStop(0, 'rgba(16, 185, 129, 0)');
-          grad.addColorStop(1, 'rgba(16, 185, 129, 0.28)');
-          ctx.fillStyle = grad;
-          ctx.fillRect(0, sy - 26, w, 26);
-
-          ctx.shadowBlur = 0;
-          ctx.fillStyle = '#34D399';
-          ctx.font = '700 11px "JetBrains Mono", monospace';
-          ctx.fillText('LASER SCANNING CHASSIS CAD // ' + Math.round(scanProgress * 100) + '%', 12, Math.max(sy - 7, 18));
+        frameTick++;
+        if (yawReadout && (frameTick % 6 === 0)) {
+          var deg = Math.round(((dynoYaw * 180) / Math.PI) % 360);
+          if (deg > 180) deg -= 360;
+          if (deg < -180) deg += 360;
+          yawReadout.textContent = (deg >= 0 ? '+' : '') + deg + '° // 60 FPS';
         }
       }
 
-      ctx.shadowBlur = 0;
-      frameTick++;
-      if (yawReadout && (frameTick % 6 === 0)) {
-        var deg = Math.round(((dynoYaw * 180) / Math.PI) % 360);
-        if (deg > 180) deg -= 360;
-        if (deg < -180) deg += 360;
-        yawReadout.textContent = (deg >= 0 ? '+' : '') + deg + '° // 60 FPS';
-      }
-    }
-
-    function loop() {
-      rafId = 0;
-      if (!canAnimate()) return;
-      renderFrame();
-      if (!reducedMotion || isScanning || pulseTimer > 0 || Math.abs(targetYaw - dynoYaw) > 0.002) {
+      function loop() {
+        rafId = 0;
+        if (!canAnimate()) return;
+        renderFrame();
         rafId = requestAnimationFrame(loop);
       }
-    }
 
-    function kick() {
-      if (!rafId && canAnimate()) rafId = requestAnimationFrame(loop);
-    }
+      function kick() {
+        if (!rafId && canAnimate()) rafId = requestAnimationFrame(loop);
+      }
 
-    document.querySelectorAll('[data-yaw]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var delta = parseFloat(btn.getAttribute('data-yaw') || '0');
-        targetYaw += (delta * Math.PI) / 180;
+      document.querySelectorAll('[data-yaw]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var delta = parseFloat(btn.getAttribute('data-yaw') || '0');
+          targetYaw += (delta * Math.PI) / 180;
+          kick();
+        });
+      });
+
+      if (scanBtn) {
+        scanBtn.addEventListener('click', function () {
+          kick();
+        });
+      }
+
+      canvas.addEventListener('pointerdown', function (ev) {
+        isDragging = true;
+        lastX = ev.clientX;
+        if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
+      });
+      canvas.addEventListener('pointermove', function (ev) {
+        if (!isDragging) return;
+        var dx = ev.clientX - lastX;
+        lastX = ev.clientX;
+        targetYaw += dx * 0.009;
+        dynoYaw = targetYaw;
         kick();
       });
-    });
+      function endDrag() { isDragging = false; }
+      canvas.addEventListener('pointerup', endDrag);
+      canvas.addEventListener('pointercancel', endDrag);
 
-    if (scanBtn) {
-      scanBtn.addEventListener('click', function () {
-        isScanning = true;
-        scanProgress = 0;
-        pulseTimer = 1200;
-        scanBtn.classList.add('is-scanning');
-        kick();
-      });
-    }
-
-    canvas.addEventListener('pointerdown', function (ev) {
-      isDragging = true;
-      lastX = ev.clientX;
-      if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
-    });
-    canvas.addEventListener('pointermove', function (ev) {
-      if (!isDragging) return;
-      var dx = ev.clientX - lastX;
-      lastX = ev.clientX;
-      targetYaw += dx * 0.009;
-      dynoYaw = targetYaw;
-      kick();
-    });
-    function endDrag() { isDragging = false; }
-    canvas.addEventListener('pointerup', endDrag);
-    canvas.addEventListener('pointercancel', endDrag);
-
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        inView = entries[0] ? entries[0].isIntersecting : true;
-        if (inView) kick();
-      }, { threshold: 0.05 });
-      io.observe(canvas);
-    }
-    document.addEventListener('visibilitychange', kick);
-    window.addEventListener('resize', kick, { passive: true });
-
-    if (window.innerWidth >= 768) {
-      renderFrame();
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          inView = entries[0] ? entries[0].isIntersecting : true;
+          if (inView) kick();
+        }, { threshold: 0.05 });
+        io.observe(canvas);
+      }
+      document.addEventListener('visibilitychange', kick);
+      window.addEventListener('resize', kick, { passive: true });
       kick();
     }
   })();

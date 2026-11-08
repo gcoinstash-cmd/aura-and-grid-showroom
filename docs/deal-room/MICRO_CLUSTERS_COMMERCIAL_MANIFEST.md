@@ -208,3 +208,24 @@ To reproduce and execute the mechanical test dyno across all 17 engines in one s
 source T3-NEXUS-ORDERBOOK/.venv/bin/activate && pytest
 ```
 **Expected Result**: `105 passed in ~7.2s (100.0% Pass Rate)`.
+
+---
+
+## 6. VAULT EXPANSION ARCHIVE: CLUSTER 06
+
+### 📦 Cluster 06 (Triads 18, 19, 20)
+- **Archive Bundle**: `~/Documents/AuraAndGrid_Vault/cluster_06_bundle.zip`
+- **Archive Checksum (MD5)**: `a78b7624590cd5835c0f06d6938f8f8b`
+- **Archive Size**: 170,208 bytes (166 KB)
+- **Name**: Cluster 06 (Triads 18, 19, 20)
+- **Scope**: 9 Units Total (3x T3 Engines, 3x T2 Cockpits, 3x T1 Utilities)
+- **Benchmark**: $207,000 Retail Replacement Value
+- **Status**: 100% Pure APA Title Transfer Ready
+- **Primary Domain**: Distributed 3D Parallelism & Collective Fabric Interlocks (Expert + Tensor + Pipeline)
+
+| Triad ID | Architectural Domain & Engine Component | Paired SCADA Telemetry Cockpit | Paired Operator Utility | Dyno Verification |
+| :--- | :--- | :--- | :--- | :--- |
+| **Triad 18** | Expert Parallelism & MoE Top-K Routing Interlock | HYPER-ROUTING-3D WebGL Cockpit | MoE Top-K Gate & Dispatch Panel | 100% Pass Rate |
+| **Triad 19** | Tensor Parallelism & Ring-AllReduce Interlock | NV-TORUS-3D WebGL Cockpit | Ring-AllReduce Shard Inspector | 100% Pass Rate |
+| **Triad 20** | Pipeline Parallelism & 1F1B Micro-Batch Schedule | CHRONO-PIPE-3D WebGL Cockpit | 1F1B Micro-Batch Schedule Panel | 100% Pass Rate |
+

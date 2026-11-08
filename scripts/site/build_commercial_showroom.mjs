@@ -1391,7 +1391,11 @@ function* walkTextFiles(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) { if (entry.name !== 'node_modules' && entry.name !== '.git') yield* walkTextFiles(full); }
-    else if (entry.isFile() && SCAN_TEXT_EXT.has(path.extname(entry.name).toLowerCase())) yield full;
+    else if (entry.isFile() && SCAN_TEXT_EXT.has(path.extname(entry.name).toLowerCase())) {
+      // Offline vault cryptographic audit logs retain raw chassis archive filenames
+      if (entry.name.startsWith('VAULT_CHECKSUM_LOG')) continue;
+      yield full;
+    }
   }
 }
 

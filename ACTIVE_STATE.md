@@ -52,7 +52,7 @@ All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/in
 
 ## 4. GIT TELEMETRY & DYNO VERIFICATION STATUS
 
-- **Last Verified Baseline Commit (`main`)**: `0892a42` (`chore(copy): purge internal studio branding and replace AI terminology with high-performance systems architecture`)
+- **Last Verified Baseline Commit (`main`)**: `2e4de6d` (`docs(deal-room): record cluster 06 (triads 18-20) sealed manifest entry`)
 - **Dual-Exhaust Remote Sync**: `origin` configured to push simultaneously to `aura-and-grid.git` (master repo) and `aura-and-grid-showroom.git` (Render live static showroom).
 - **Dyno & Test Suite Verification**: **`105/105` deterministic pytest & dyno gates passing (`4/4 VERIFIED GATES` sealed)** across all 17 triads; clean-room permissive licensing (`MIT / Apache-2.0`).
 - **Canonical Build & Audit Pipeline**:

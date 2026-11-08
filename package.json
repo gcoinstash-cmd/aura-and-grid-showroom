@@ -7,6 +7,7 @@
     "audit:demos": "node scripts/audit_fleet_demos.mjs --strict",
     "audit:vault": "node scripts/audit_fleet_demos.mjs --strict",
     "audit:commercial": "node scripts/site/build_commercial_showroom.mjs --check",
+    "export:pdf": "node scripts/site/export_one_pager_pdf.mjs",
     "build": "node scripts/site/build_commercial_showroom.mjs",
     "build:commercial": "node scripts/site/build_commercial_showroom.mjs",
     "build:vault": "node scripts/site/build_public_showroom.mjs && npm run audit:vault && mkdir -p dist && cp -r site/* dist/",

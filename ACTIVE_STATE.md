@@ -20,6 +20,8 @@
 
 - **Public Scope**: **5 Sealed Micro-Clusters (`MC-01` through `MC-05`) — 51 Units / 17 Triads** *(internal directory mapping `#338`–`#354` is strictly private; all public assets use `MC-01`–`MC-05` identifiers only per §5 Rule 3)*
   - Each triad pairs: (1) a containerized FastAPI Python 3.11 compute engine, (2) an interactive SCADA telemetry cockpit preview, and (3) a React 19 operator utility backed by PostgreSQL 16 RLS schemas.
+- **Sealed Clusters**: **Cluster 01 through Cluster 07**
+- **Total Units Tracked**: **60 Production Units (17 Showroom Triads + Triads 18-23 in Vault)**
 - **Portfolio Batch Asking Price**: **$805,000 USD** (5-Cluster Portfolio APA)
 - **Standalone Micro-Cluster Asking Range**: **$145K–$185K** (**$145,000 – $185,000 USD** individual turnkey buyout)
 - **Retail Replacement Benchmark**: **$1,173,000 USD** (ASC 350-40 Cost-to-Rebuild Scope across 17 Triads)
@@ -52,7 +54,8 @@ All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/in
 
 ## 4. GIT TELEMETRY & DYNO VERIFICATION STATUS
 
-- **Last Verified Baseline Commit (`main`)**: `2e4de6d` (`docs(deal-room): record cluster 06 (triads 18-20) sealed manifest entry`)
+- **Last Verified Baseline Commit (`main`)**: `060cbcb` (`docs(deal-room): record cluster 07 (triads 21-23) sealed manifest entry`)
+- **Baseline Status**: Cluster 07 committed and pushed
 - **Dual-Exhaust Remote Sync**: `origin` configured to push simultaneously to `aura-and-grid.git` (master repo) and `aura-and-grid-showroom.git` (Render live static showroom).
 - **Dyno & Test Suite Verification**: **`105/105` deterministic pytest & dyno gates passing (`4/4 VERIFIED GATES` sealed)** across all 17 triads; clean-room permissive licensing (`MIT / Apache-2.0`).
 - **Canonical Build & Audit Pipeline**:

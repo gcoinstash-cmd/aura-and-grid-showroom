@@ -13,7 +13,7 @@ COHORT:                 Cluster-007 Flagship Series (Batch Charlie)
 COMMERCIAL TAG:         100% Pure APA Buyout Title Transfer (Zero Licenses)
 RETAIL PRICE ANCHOR:    $14,500 USD (Chassis Title Transfer Anchor)
 VAULT BUYOUT RANGE:     $25,000 – $50,000 USD (Exclusive Strategic Acquisition)
-ACTION TARGET CTAS:     "ACQUIRE TITLE (APA)" // "INQUIRE VAULT BUYOUT"
+ACTION TARGET CTA:      "[ ACQUIRE TITLE (APA) ]"
 MATURITY BADGE:         [Product Truth: Interactive Prototype // Simulated Data Stream]
 ================================================================================
 ```
@@ -21,13 +21,13 @@ MATURITY BADGE:         [Product Truth: Interactive Prototype // Simulated Data 
 ---
 
 ### 1. Architectural & Aesthetic Specifications
-- **Stack:** Standalone React 19 + Tailwind CSS + Babel Standalone ESM import maps.
+- **Stack:** Zero-Dependency Local HTML5/CSS3 + Deferred Telemetry Worker (Instant First Paint).
 - **Visual Baseline:** F1 Pit Wall & Cyberpunk Telemetry:
   - Base: Obsidian Carbon Fiber (`#05070B`)
   - Cards: High-Contrast Surfaces (`#0D1117`) with Hairline Borders (`#1F2937`)
   - Accents: Cyber-Amber (`#FF9F0A`) & Cyber-Cyan (`#00F0FF`)
-  - Typography: JetBrains Mono (gauges) + Inter (interface copy)
-- **Interactive Mechanics:** OpenTelemetry (OTel) hierarchical span waterfall timing diagram with service propagation timeline offsets, P99 distributed latency histogram, trace inventory table with status filtering (`ALL`, `OK`, `SLOW`, `ERROR`), and real-time live OTLP span stream ingestion logs.
+  - Typography: 14px minimum floor with 32px–36px bold JetBrains Mono stat gauges
+- **Interactive Mechanics:** OpenTelemetry (OTel) hierarchical span waterfall timing diagram with service propagation timeline offsets, P99 distributed latency gauge, trace inventory table with status filtering (`ALL`, `OK`, `SLOW`, `ERROR`), and deferred live OTLP span stream ingestion logs.
 
 ### 2. Operational IO Telemetry Matrix
 
@@ -40,15 +40,10 @@ MATURITY BADGE:         [Product Truth: Interactive Prototype // Simulated Data 
 
 ---
 
-### 3. Commercial Action Targets (Vertical Container)
+### 3. Commercial Action Target (Single Primary CTA)
 
 ```html
-<div class="flex flex-col gap-2 w-full">
-  <button class="w-full py-3 bg-[#FF9F0A] text-black font-mono font-black text-xs uppercase rounded-lg">
-    ACQUIRE TITLE (APA)
-  </button>
-  <button class="w-full py-2.5 bg-[#1F2937] text-slate-200 font-mono font-bold text-xs uppercase rounded-lg border border-slate-600">
-    INQUIRE VAULT BUYOUT
-  </button>
-</div>
+<a class="btn-acquire" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20PRISM-TELEMETRY">
+  [ ACQUIRE TITLE (APA) ]
+</a>
 ```

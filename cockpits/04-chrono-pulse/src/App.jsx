@@ -258,16 +258,14 @@ export default function ChronoPulseCockpit() {
                 </div>
               </div>
 
-              {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
+              {/* COMMERCIAL ACTION TARGET (SINGLE PRIMARY CTA) */}
               <div className="pt-2">
-                <div className="flex flex-col gap-2 w-full">
-                  <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
-                    ACQUIRE TITLE (APA)
-                  </button>
-                  <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
-                    INQUIRE VAULT BUYOUT
-                  </button>
-                </div>
+                <a
+                  href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20CHRONO-PULSE%20(Track%202%20Hypercar%20Flagship)"
+                  className="block text-center w-full py-3.5 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-[14px] uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20"
+                >
+                  [ ACQUIRE TITLE (APA) ]
+                </a>
               </div>
 
               <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">

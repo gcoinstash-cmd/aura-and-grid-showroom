@@ -4,338 +4,511 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRISM-TELEMETRY // Track 2 Hypercar Flagship Cockpit</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #05070B; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-  </style>
-  <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@19",
-        "react-dom/client": "https://esm.sh/react-dom@19/client"
-      }
+    :root {
+      --bg: #05070B;
+      --panel: #0D1117;
+      --panel-alt: #090D14;
+      --border: #1F2937;
+      --text: #F4F7FB;
+      --muted: #94A3B8;
+      --cyan: #00F0FF;
+      --amber: #FF9F0A;
+      --green: #34D399;
+      --red: #F87171;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
-  </script>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+    .font-mono { font-family: var(--mono); }
+    .cockpit-shell { min-height: 100vh; padding: 16px; }
+    @media (min-width: 768px) { .cockpit-shell { padding: 32px; } }
+    .cockpit-container { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+    .top-header {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 16px; background: var(--panel); padding: 18px 22px; border-radius: 12px; border: 1px solid var(--border);
+    }
+    .header-brand { display: flex; align-items: center; gap: 14px; }
+    .status-orb {
+      width: 12px; height: 12px; border-radius: 999px; background: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan); animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .eyebrow-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .eyebrow-tag {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; letter-spacing: 0.08em;
+      color: var(--cyan); text-transform: uppercase;
+    }
+    .chassis-badge {
+      font-family: var(--mono); font-size: 14px; font-weight: 700; background: var(--border);
+      color: #E2E8F0; padding: 2px 10px; border-radius: 6px; border: 1px solid rgba(0, 240, 255, 0.35);
+    }
+    .cockpit-title {
+      font-family: var(--mono); font-size: clamp(20px, 2.2vw, 26px); font-weight: 900;
+      color: #FFFFFF; letter-spacing: -0.02em; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 4px;
+    }
+    .cockpit-subtitle { font-size: 14px; color: var(--amber); font-weight: 700; letter-spacing: 0.02em; }
+    .header-pills { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 14px; }
+    .header-pill {
+      background: var(--bg); border: 1px solid var(--border); padding: 8px 14px;
+      border-radius: 8px; display: flex; align-items: center; gap: 8px;
+    }
+    .main-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 1024px) { .main-grid { grid-template-columns: 2fr 1fr; } }
+    .left-col, .right-col { display: flex; flex-direction: column; gap: 24px; }
+    .metric-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px) { .metric-grid { grid-template-columns: 1fr 1fr; } }
+    .panel {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+      padding: 22px; position: relative; overflow: hidden;
+    }
+    .accent-bar-cyan { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--cyan); }
+    .accent-bar-amber { position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--amber); }
+    .metric-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .metric-label {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; color: #CBD5E1;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .status-badge {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 6px; letter-spacing: 0.04em; display: inline-block;
+    }
+    .badge-cyan { color: var(--cyan); background: rgba(0, 240, 255, 0.12); border: 1px solid rgba(0, 240, 255, 0.4); }
+    .badge-amber { color: var(--amber); background: rgba(255, 159, 10, 0.14); border: 1px solid rgba(255, 159, 10, 0.45); }
+    .badge-green { color: var(--green); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.4); }
+    .badge-red { color: var(--red); background: rgba(248, 113, 113, 0.14); border: 1px solid rgba(248, 113, 113, 0.45); }
+    .stat-value-row { display: flex; align-items: baseline; gap: 10px; }
+    .stat-value {
+      font-family: var(--mono); font-size: 36px; line-height: 1.1; font-weight: 800;
+      color: #FFFFFF; letter-spacing: -0.02em;
+    }
+    .stat-unit { font-family: var(--mono); font-size: 16px; font-weight: 800; }
+    .metric-foot {
+      margin-top: 14px; font-family: var(--mono); font-size: 14px; font-weight: 700;
+      color: var(--muted); display: flex; justify-content: space-between; align-items: center;
+    }
+    .section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .section-title {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; color: #FFFFFF;
+      text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px;
+    }
+    .dot-cyan { width: 8px; height: 8px; border-radius: 999px; background: var(--cyan); display: inline-block; }
+    .dot-amber { width: 8px; height: 8px; border-radius: 999px; background: var(--amber); display: inline-block; }
+    .waterfall-box {
+      background: var(--bg); border: 1px solid var(--border); padding: 18px;
+      border-radius: 10px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .span-row { display: flex; flex-direction: column; gap: 6px; font-family: var(--mono); font-size: 14px; }
+    .span-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 14px; }
+    .span-track {
+      width: 100%; height: 22px; background: var(--panel); border-radius: 6px;
+      border: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .span-bar {
+      height: 100%; background: linear-gradient(90deg, var(--cyan), var(--amber));
+      border-radius: 4px; position: relative;
+    }
+    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--bg); color: var(--muted); cursor: pointer; transition: all 0.15s;
+    }
+    .filter-btn.is-active { background: var(--cyan); color: #05070B; border-color: var(--cyan); }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 14px; text-align: left; }
+    thead tr { background: var(--panel-alt); border-bottom: 1px solid var(--border); }
+    th {
+      padding: 12px 14px; font-size: 14px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--cyan);
+    }
+    tbody tr { border-bottom: 1px solid rgba(31, 41, 55, 0.65); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
+    td { padding: 13px 14px; font-size: 14px; color: #E2E8F0; vertical-align: middle; }
+    .monroney-head { border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 14px; }
+    .monroney-eyebrow {
+      font-family: var(--mono); font-size: 14px; font-weight: 800; color: var(--amber);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .monroney-title { font-family: var(--mono); font-size: 18px; font-weight: 900; color: #FFFFFF; margin-top: 4px; }
+    .monroney-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .monroney-rows { display: flex; flex-direction: column; gap: 10px; font-family: var(--mono); font-size: 14px; }
+    .monroney-row {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 8px 0; border-bottom: 1px solid rgba(31, 41, 55, 0.6); font-size: 14px;
+    }
+    .monroney-key { color: var(--muted); font-weight: 700; }
+    .monroney-val { font-weight: 800; color: #FFFFFF; text-align: right; }
+    .cta-box { padding-top: 16px; }
+    .btn-acquire {
+      display: flex; align-items: center; justify-content: center; width: 100%;
+      padding: 14px 18px; background: var(--amber); color: #05070B;
+      font-family: var(--mono); font-size: 14px; font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.06em; border-radius: 8px; border: 1px solid var(--amber);
+      text-decoration: none; cursor: pointer; box-shadow: 0 0 20px rgba(255, 159, 10, 0.28);
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+    }
+    .btn-acquire:hover { background: #FFB340; box-shadow: 0 0 26px rgba(255, 159, 10, 0.48); transform: translateY(-1px); }
+    .truth-note { padding-top: 12px; font-family: var(--mono); font-size: 14px; color: var(--muted); line-height: 1.4; }
+    .feed-list { display: flex; flex-direction: column; gap: 10px; }
+    .feed-item {
+      padding: 12px 14px; border-radius: 8px; background: var(--bg);
+      border: 1px solid var(--border); font-family: var(--mono); font-size: 14px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .feed-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 14px; }
+  </style>
 </head>
-<body class="bg-[#05070B] text-slate-100 antialiased">
-  <div id="root"></div>
+<body>
+  <div id="root" class="cockpit-shell">
+    <div class="cockpit-container">
 
-  <script type="text/babel" data-type="module">
-    import React, { useState, useEffect } from 'react';
-    import ReactDOM from 'react-dom/client';
-
-    const MOCK_SPANS = [
-      { id: 'span-01', service: 'ingress-gateway', name: 'HTTP POST /api/v1/checkout', duration: '42.8ms', offsetPct: 0, widthPct: 100, status: 'OK' },
-      { id: 'span-02', service: 'auth-validator', name: 'JWT Verify & Claims Extraction', duration: '3.4ms', offsetPct: 4, widthPct: 12, status: 'OK' },
-      { id: 'span-03', service: 'postgres-pool', name: 'SELECT FOR UPDATE balance FROM ledger', duration: '14.2ms', offsetPct: 18, widthPct: 38, status: 'OK' },
-      { id: 'span-04', service: 'redis-cache', name: 'GET session:token:cache', duration: '1.1ms', offsetPct: 58, widthPct: 8, status: 'OK' },
-      { id: 'span-05', service: 'kafka-producer', name: 'PUBLISH checkout.completed', duration: '6.8ms', offsetPct: 68, widthPct: 22, status: 'OK' }
-    ];
-
-    const RECENT_TRACES = [
-      { id: 'tr-9981a', traceId: '4bf92f3577b3...0e0e4736', root: '/api/v1/checkout', spans: 5, duration: '42.8ms', status: 'OK' },
-      { id: 'tr-9982b', traceId: '8a1c904e22df...11fa9900', root: '/api/v1/telemetry', spans: 8, duration: '18.4ms', status: 'OK' },
-      { id: 'tr-9983c', traceId: '3c89012fbbaa...8831ef01', root: '/api/v1/auth/jwt', spans: 4, duration: '142.0ms', status: 'SLOW' },
-      { id: 'tr-9984d', traceId: '09da781c00fa...4510bc44', root: '/v1/order/dispatch', spans: 6, duration: '98.2ms', status: 'OK' },
-      { id: 'tr-9985e', traceId: '9921fb4431cc...ee291077', root: '/api/v1/payment', spans: 7, duration: '820.5ms', status: 'ERROR' }
-    ];
-
-    function PrismTelemetryCockpit() {
-      const [filterStatus, setFilterStatus] = useState('ALL');
-      const [tracesIngested, setTracesIngested] = useState(482910);
-      const [p99Latency, setP99Latency] = useState(48.2);
-      const [activeTraceLog, setActiveTraceLog] = useState([]);
-
-      useEffect(() => {
-        const interval = setInterval(() => {
-          setTracesIngested(prev => prev + Math.floor(Math.random() * 45) + 20);
-          setP99Latency(Number((46 + Math.random() * 4.5).toFixed(1)));
-
-          const roots = ['/api/v1/checkout', '/v1/auth/verify', '/telemetry/stream', '/order/cancel', '/kms/sign'];
-          const statuses = ['OK', 'OK', 'OK', 'SLOW', 'ERROR'];
-          const randIdx = Math.floor(Math.random() * roots.length);
-
-          const newTrace = {
-            id: Math.random().toString(36).substring(2, 8).toUpperCase(),
-            time: new Date().toISOString().split('T')[1].slice(0, 12),
-            root: roots[randIdx],
-            status: statuses[randIdx],
-            dur: `${(12 + Math.random() * 95).toFixed(1)}ms`
-          };
-
-          setActiveTraceLog(prev => [newTrace, ...prev.slice(0, 5)]);
-        }, 900);
-
-        return () => clearInterval(interval);
-      }, []);
-
-      const filteredTraces = filterStatus === 'ALL'
-        ? RECENT_TRACES
-        : RECENT_TRACES.filter(t => t.status === filterStatus);
-
-      return (
-        <div className="min-h-screen bg-[#05070B] text-slate-200 font-sans p-4 md:p-8 select-none">
-          <div className="max-w-7xl mx-auto space-y-6">
-
-            {/* TOP HEADER */}
-            <header className="flex flex-wrap items-center justify-between border-b border-[#1F2937] pb-4 gap-4 bg-[#0D1117] p-4 rounded-xl border border-[#1F2937]">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-[#00F0FF] animate-pulse" />
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#00F0FF] uppercase">TRACK 2 // HYPERCAR FLAGSHIP</span>
-                    <span className="text-[10px] bg-[#1F2937] text-slate-300 px-2 py-0.5 rounded font-mono">GF-T2-PRISM-05</span>
-                  </div>
-                  <h1 className="text-xl md:text-2xl font-black tracking-tight text-white font-mono flex items-center gap-2">
-                    PRISM-TELEMETRY <span className="text-xs text-[#FF9F0A] font-normal">// DISTRIBUTED OPENTELEMETRY SPAN EXPLORER</span>
-                  </h1>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 text-xs font-mono">
-                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
-                  <span className="text-slate-400">STANDARD:</span>
-                  <span className="text-green-400 font-bold">W3C TRACE CONTEXT / OTLP</span>
-                </div>
-                <div className="bg-[#05070B] border border-[#1F2937] px-3 py-1.5 rounded-lg flex items-center gap-2">
-                  <span className="text-slate-400">SAMPLING:</span>
-                  <span className="text-[#00F0FF] font-bold">100% HEAD-BASED</span>
-                </div>
-              </div>
-            </header>
-
-            {/* MAIN TELEMETRY LAYOUT */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-              {/* LEFT 2 COLUMNS: METRICS, SPAN WATERFALL, TRACE MATRIX */}
-              <div className="lg:col-span-2 space-y-6">
-
-                {/* DUAL METRIC CARDS */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1 h-full bg-[#00F0FF]" />
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">AGGREGATE SPANS RECORDED</span>
-                      <span className="text-xs font-mono text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-0.5 rounded">REALTIME OTLP</span>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{tracesIngested.toLocaleString()}</span>
-                      <span className="text-sm font-mono text-[#00F0FF]">spans</span>
-                    </div>
-                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
-                      <span>DROP RATE: 0.00%</span>
-                      <span className="text-green-400">BUFFERS OK</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl relative overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1 h-full bg-[#FF9F0A]" />
-                    <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">DISTRIBUTED P99 LATENCY</span>
-                      <span className="text-xs font-mono text-[#FF9F0A] bg-[#FF9F0A]/10 px-2 py-0.5 rounded">CROSS-SERVICE</span>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-4xl md:text-5xl font-black font-mono text-white tracking-tight">{p99Latency}</span>
-                      <span className="text-sm font-mono text-[#FF9F0A]">ms</span>
-                    </div>
-                    <div className="mt-4 flex items-center justify-between text-xs font-mono text-slate-400">
-                      <span>ROOT SPAN SLA: 50ms</span>
-                      <span className="text-green-400">WITHIN SLA</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ANIMATED SPAN WATERFALL EXPLORER */}
-                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
-                  <div className="flex justify-between items-center">
-                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
-                      ACTIVE TRACE EXECUTION WATERFALL (TRACE-ID: 4bf92f3577b34da6...)
-                    </h3>
-                    <span className="text-xs font-mono text-[#00F0FF]">TOTAL: 42.8ms</span>
-                  </div>
-
-                  <div className="bg-[#05070B] border border-[#1F2937] p-5 rounded-xl space-y-3">
-                    {MOCK_SPANS.map(span => (
-                      <div key={span.id} className="space-y-1">
-                        <div className="flex justify-between text-xs font-mono">
-                          <span className="text-white font-bold">{span.service} <span className="text-slate-400 font-normal">→ {span.name}</span></span>
-                          <span className="text-[#FF9F0A] font-bold">{span.duration}</span>
-                        </div>
-                        <div className="w-full h-4 bg-[#0D1117] rounded border border-[#1F2937] relative overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-[#00F0FF] to-[#FF9F0A] rounded relative"
-                            style={{
-                              marginLeft: `${span.offsetPct}%`,
-                              width: `${span.widthPct}%`
-                            }}
-                          >
-                            <span className="absolute right-1 top-0 text-[9px] font-mono font-bold text-black leading-4">
-                              {span.duration}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* RECENT TRACE SESSIONS TABLE */}
-                <div className="bg-[#0D1117] border border-[#1F2937] p-6 rounded-xl space-y-4">
-                  <div className="flex flex-wrap justify-between items-center gap-2">
-                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
-                      DISTRIBUTED TRACE INVENTORY ({filteredTraces.length})
-                    </h3>
-                    <div className="flex gap-1 text-xs font-mono">
-                      {['ALL', 'OK', 'SLOW', 'ERROR'].map(st => (
-                        <button
-                          key={st}
-                          onClick={() => setFilterStatus(st)}
-                          className={`px-2.5 py-1 rounded text-[11px] font-bold transition-colors ${
-                            filterStatus === st
-                              ? 'bg-[#00F0FF] text-black'
-                              : 'bg-[#05070B] text-slate-400 hover:text-white border border-[#1F2937]'
-                          }`}
-                        >
-                          {st}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-left text-xs font-mono">
-                      <thead className="bg-[#05070B] text-slate-400 border-b border-[#1F2937]">
-                        <tr>
-                          <th className="py-2.5 px-3">TRACE ID</th>
-                          <th className="py-2.5 px-3">ROOT ENDPOINT</th>
-                          <th className="py-2.5 px-3">SPANS</th>
-                          <th className="py-2.5 px-3">DURATION</th>
-                          <th className="py-2.5 px-3">STATUS</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-[#1F2937]/60">
-                        {filteredTraces.map(tr => (
-                          <tr key={tr.id} className="hover:bg-[#05070B]/50 transition-colors">
-                            <td className="py-2.5 px-3 text-[#00F0FF] font-bold">{tr.traceId}</td>
-                            <td className="py-2.5 px-3 text-white">{tr.root}</td>
-                            <td className="py-2.5 px-3 text-slate-400">{tr.spans} spans</td>
-                            <td className="py-2.5 px-3 text-[#FF9F0A] font-bold">{tr.duration}</td>
-                            <td className="py-2.5 px-3">
-                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
-                                tr.status === 'OK' ? 'bg-green-500/10 text-green-400 border-green-500/30' :
-                                tr.status === 'SLOW' ? 'bg-[#FF9F0A]/10 text-[#FF9F0A] border-[#FF9F0A]/30' :
-                                'bg-red-500/10 text-red-400 border-red-500/30'
-                              }`}>
-                                {tr.status}
-                              </span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* RIGHT COLUMN: MONRONEY SPEC CARD & LIVE OTLP STREAM */}
-              <div className="space-y-6">
-
-                {/* TRACK 2 MONRONEY COMMERCIAL SPECIFICATION */}
-                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-4">
-                  <div className="border-b border-[#1F2937] pb-3">
-                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#FF9F0A] uppercase">DEALERSHIP MONRONEY SPEC</span>
-                    <h3 className="text-lg font-black font-mono text-white">PRISM-TELEMETRY</h3>
-                    <p className="text-xs text-slate-400">Distributed OpenTelemetry Span & Trace Explorer</p>
-                  </div>
-
-                  <div className="space-y-2 text-xs font-mono">
-                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
-                      <span className="text-slate-400">CHASSIS ID</span>
-                      <span className="text-white font-bold">GF-T2-PRISM-05</span>
-                    </div>
-                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
-                      <span className="text-slate-400">COMMERCIAL TAG</span>
-                      <span className="text-[#00F0FF] font-bold">100% PURE APA TITLE</span>
-                    </div>
-                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
-                      <span className="text-slate-400">TITLE ANCHOR</span>
-                      <span className="text-white font-bold">$14,500 USD</span>
-                    </div>
-                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
-                      <span className="text-slate-400">VAULT BUYOUT</span>
-                      <span className="text-[#FF9F0A] font-bold">$25,000 – $50,000</span>
-                    </div>
-                    <div className="flex justify-between py-1 border-b border-[#1F2937]/50">
-                      <span className="text-slate-400">SEAT TIERS</span>
-                      <span className="text-slate-400">ZERO (APA CLEAN TITLE)</span>
-                    </div>
-                  </div>
-
-                  {/* COMMERCIAL ACTION TARGETS (VERTICAL CONTAINER) */}
-                  <div className="pt-2">
-                    <div className="flex flex-col gap-2 w-full">
-                      <button className="w-full py-3 bg-[#FF9F0A] hover:bg-[#FF9F0A]/90 text-black font-mono font-black text-xs uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-[#FF9F0A]/20">
-                        ACQUIRE TITLE (APA)
-                      </button>
-                      <button className="w-full py-2.5 bg-[#1F2937] hover:bg-slate-700 text-slate-200 font-mono font-bold text-xs uppercase tracking-wider rounded-lg border border-slate-600 transition-colors">
-                        INQUIRE VAULT BUYOUT
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 text-[10px] font-mono text-slate-500 leading-tight">
-                    [Product Truth: Interactive Prototype // Simulated Data Stream]
-                  </div>
-                </div>
-
-                {/* LIVE OTLP INGESTION STREAM */}
-                <div className="bg-[#0D1117] border border-[#1F2937] p-5 rounded-xl space-y-3">
-                  <div className="flex justify-between items-center">
-                    <h4 className="text-xs font-mono font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
-                      LIVE OTLP INGESTION FEED
-                    </h4>
-                    <span className="text-[10px] font-mono text-slate-500">SPAN STREAM</span>
-                  </div>
-
-                  <div className="space-y-2">
-                    {activeTraceLog.map((tr) => (
-                      <div key={tr.id} className="p-2.5 rounded bg-[#05070B] border border-[#1F2937] text-[11px] font-mono space-y-1">
-                        <div className="flex justify-between items-center text-slate-400">
-                          <span className="text-white font-bold">{tr.root}</span>
-                          <span className="text-slate-500">{tr.time}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className={`font-bold ${
-                            tr.status === 'OK' ? 'text-green-400' : (tr.status === 'SLOW' ? 'text-[#FF9F0A]' : 'text-red-400')
-                          }`}>
-                            {tr.status}
-                          </span>
-                          <span className="text-[#00F0FF] font-bold">{tr.dur}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-
+      <!-- TOP HEADER -->
+      <header class="top-header">
+        <div class="header-brand">
+          <div class="status-orb"></div>
+          <div>
+            <div class="eyebrow-row">
+              <span class="eyebrow-tag">TRACK 2 // HYPERCAR FLAGSHIP</span>
+              <span class="chassis-badge">MC-03.1 // PRISM-05</span>
             </div>
-
+            <h1 class="cockpit-title">
+              PRISM-TELEMETRY <span class="cockpit-subtitle">// DISTRIBUTED OPENTELEMETRY SPAN EXPLORER</span>
+            </h1>
           </div>
         </div>
-      );
-    }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<PrismTelemetryCockpit />);
+        <div class="header-pills">
+          <div class="header-pill">
+            <span style="color: var(--muted);">STANDARD:</span>
+            <span style="color: var(--green); font-weight: 800;">W3C TRACE CONTEXT / OTLP</span>
+          </div>
+          <div class="header-pill">
+            <span style="color: var(--muted);">SAMPLING:</span>
+            <span style="color: var(--cyan); font-weight: 800;">100% HEAD-BASED</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN TELEMETRY LAYOUT -->
+      <div class="main-grid">
+
+        <!-- LEFT 2 COLUMNS -->
+        <div class="left-col">
+
+          <!-- DUAL METRIC CARDS -->
+          <div class="metric-grid">
+            <div class="panel">
+              <div class="accent-bar-cyan"></div>
+              <div class="metric-head">
+                <span class="metric-label">AGGREGATE SPANS RECORDED</span>
+                <span class="status-badge badge-cyan">REALTIME OTLP</span>
+              </div>
+              <div class="stat-value-row">
+                <span id="stat-spans" class="stat-value">482,910</span>
+                <span class="stat-unit" style="color: var(--cyan);">spans</span>
+              </div>
+              <div class="metric-foot">
+                <span>DROP RATE: 0.00%</span>
+                <span style="color: var(--green);">BUFFERS OK</span>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="accent-bar-amber"></div>
+              <div class="metric-head">
+                <span class="metric-label">DISTRIBUTED P99 LATENCY</span>
+                <span class="status-badge badge-amber">CROSS-SERVICE</span>
+              </div>
+              <div class="stat-value-row">
+                <span id="stat-p99" class="stat-value">48.2</span>
+                <span class="stat-unit" style="color: var(--amber);">ms</span>
+              </div>
+              <div class="metric-foot">
+                <span>ROOT SPAN SLA: 50ms</span>
+                <span style="color: var(--green);">WITHIN SLA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ANIMATED SPAN WATERFALL EXPLORER -->
+          <div class="panel">
+            <div class="section-head">
+              <h3 class="section-title">
+                <span class="dot-cyan"></span>
+                ACTIVE TRACE EXECUTION WATERFALL (TRACE-ID: 4bf92f3577b34da6...)
+              </h3>
+              <span class="status-badge badge-cyan">TOTAL: 42.8ms</span>
+            </div>
+
+            <div class="waterfall-box">
+              <div class="span-row">
+                <div class="span-meta">
+                  <span style="font-weight: 800; color: #FFFFFF;">ingress-gateway <span style="color: var(--muted); font-weight: 600;">&rarr; HTTP POST /api/v1/checkout</span></span>
+                  <span style="color: var(--amber); font-weight: 800;">42.8ms</span>
+                </div>
+                <div class="span-track"><div class="span-bar" style="margin-left: 0%; width: 100%;"></div></div>
+              </div>
+              <div class="span-row">
+                <div class="span-meta">
+                  <span style="font-weight: 800; color: #FFFFFF;">auth-validator <span style="color: var(--muted); font-weight: 600;">&rarr; JWT Verify &amp; Claims Extraction</span></span>
+                  <span style="color: var(--amber); font-weight: 800;">3.4ms</span>
+                </div>
+                <div class="span-track"><div class="span-bar" style="margin-left: 4%; width: 12%;"></div></div>
+              </div>
+              <div class="span-row">
+                <div class="span-meta">
+                  <span style="font-weight: 800; color: #FFFFFF;">postgres-pool <span style="color: var(--muted); font-weight: 600;">&rarr; SELECT FOR UPDATE balance FROM ledger</span></span>
+                  <span style="color: var(--amber); font-weight: 800;">14.2ms</span>
+                </div>
+                <div class="span-track"><div class="span-bar" style="margin-left: 18%; width: 38%;"></div></div>
+              </div>
+              <div class="span-row">
+                <div class="span-meta">
+                  <span style="font-weight: 800; color: #FFFFFF;">redis-cache <span style="color: var(--muted); font-weight: 600;">&rarr; GET session:token:cache</span></span>
+                  <span style="color: var(--amber); font-weight: 800;">1.1ms</span>
+                </div>
+                <div class="span-track"><div class="span-bar" style="margin-left: 58%; width: 10%;"></div></div>
+              </div>
+              <div class="span-row">
+                <div class="span-meta">
+                  <span style="font-weight: 800; color: #FFFFFF;">kafka-producer <span style="color: var(--muted); font-weight: 600;">&rarr; PUBLISH checkout.completed</span></span>
+                  <span style="color: var(--amber); font-weight: 800;">6.8ms</span>
+                </div>
+                <div class="span-track"><div class="span-bar" style="margin-left: 68%; width: 22%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DISTRIBUTED TRACE INVENTORY TABLE -->
+          <div class="panel">
+            <div class="section-head">
+              <h3 class="section-title">
+                <span class="dot-amber"></span>
+                DISTRIBUTED TRACE INVENTORY
+              </h3>
+              <div class="filter-group" id="trace-filters">
+                <button type="button" class="filter-btn is-active" data-filter="ALL">ALL</button>
+                <button type="button" class="filter-btn" data-filter="OK">OK</button>
+                <button type="button" class="filter-btn" data-filter="SLOW">SLOW</button>
+                <button type="button" class="filter-btn" data-filter="ERROR">ERROR</button>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>TRACE ID</th>
+                    <th>ROOT ENDPOINT</th>
+                    <th>SPANS</th>
+                    <th>DURATION</th>
+                    <th>STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="trace-tbody">
+                  <tr data-status="OK">
+                    <td style="color: var(--cyan); font-weight: 800;">4bf92f3577b3...0e0e4736</td>
+                    <td style="color: #FFFFFF; font-weight: 700;">/api/v1/checkout</td>
+                    <td>5 spans</td>
+                    <td style="color: var(--amber); font-weight: 800;">42.8ms</td>
+                    <td><span class="status-badge badge-green">OK</span></td>
+                  </tr>
+                  <tr data-status="OK">
+                    <td style="color: var(--cyan); font-weight: 800;">8a1c904e22df...11fa9900</td>
+                    <td style="color: #FFFFFF; font-weight: 700;">/api/v1/telemetry</td>
+                    <td>8 spans</td>
+                    <td style="color: var(--amber); font-weight: 800;">18.4ms</td>
+                    <td><span class="status-badge badge-green">OK</span></td>
+                  </tr>
+                  <tr data-status="SLOW">
+                    <td style="color: var(--cyan); font-weight: 800;">3c89012fbbaa...8831ef01</td>
+                    <td style="color: #FFFFFF; font-weight: 700;">/api/v1/auth/jwt</td>
+                    <td>4 spans</td>
+                    <td style="color: var(--amber); font-weight: 800;">142.0ms</td>
+                    <td><span class="status-badge badge-amber">SLOW</span></td>
+                  </tr>
+                  <tr data-status="OK">
+                    <td style="color: var(--cyan); font-weight: 800;">09da781c00fa...4510bc44</td>
+                    <td style="color: #FFFFFF; font-weight: 700;">/v1/order/dispatch</td>
+                    <td>6 spans</td>
+                    <td style="color: var(--amber); font-weight: 800;">98.2ms</td>
+                    <td><span class="status-badge badge-green">OK</span></td>
+                  </tr>
+                  <tr data-status="ERROR">
+                    <td style="color: var(--cyan); font-weight: 800;">9921fb4431cc...ee291077</td>
+                    <td style="color: #FFFFFF; font-weight: 700;">/api/v1/payment</td>
+                    <td>7 spans</td>
+                    <td style="color: var(--amber); font-weight: 800;">820.5ms</td>
+                    <td><span class="status-badge badge-red">ERROR</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: SPECIFICATION MONRONEY & DISPATCH EVENT LOG -->
+        <div class="right-col">
+
+          <!-- SPECIFICATION MONRONEY RAIL -->
+          <div class="panel">
+            <div class="monroney-head">
+              <div class="monroney-eyebrow">SPECIFICATION MONRONEY</div>
+              <h2 class="monroney-title">PRISM-TELEMETRY</h2>
+              <p class="monroney-sub">Distributed OpenTelemetry Span &amp; Trace Explorer</p>
+            </div>
+
+            <div class="monroney-rows">
+              <div class="monroney-row">
+                <span class="monroney-key">CHASSIS ID</span>
+                <span class="monroney-val">MC-03.1 // PRISM-05</span>
+              </div>
+              <div class="monroney-row">
+                <span class="monroney-key">COMMERCIAL TAG</span>
+                <span class="monroney-val" style="color: var(--cyan);">100% PURE APA TITLE</span>
+              </div>
+              <div class="monroney-row">
+                <span class="monroney-key">TITLE ANCHOR</span>
+                <span class="monroney-val">$14,500 USD</span>
+              </div>
+              <div class="monroney-row">
+                <span class="monroney-key">VAULT BUYOUT</span>
+                <span class="monroney-val" style="color: var(--amber);">$25,000 – $50,000</span>
+              </div>
+              <div class="monroney-row">
+                <span class="monroney-key">SEAT TIERS</span>
+                <span class="monroney-val">ZERO (APA CLEAN TITLE)</span>
+              </div>
+            </div>
+
+            <div class="cta-box">
+              <a
+                class="btn-acquire"
+                href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20PRISM-TELEMETRY%20(Track%202%20Hypercar%20Flagship)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20PRISM-TELEMETRY%0A%E2%80%A2%20Spec%20Tier%3A%20Track%202%20Hypercar%20Flagship%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%2414%2C500"
+              >
+                [ ACQUIRE TITLE (APA) ]
+              </a>
+            </div>
+
+            <div class="truth-note">
+              [Product Truth: Interactive Prototype // Simulated Data Stream]
+            </div>
+          </div>
+
+          <!-- DISPATCH EVENT LOG -->
+          <div class="panel">
+            <div class="section-head">
+              <h4 class="section-title">
+                <span class="dot-cyan"></span>
+                DISPATCH EVENT LOG
+              </h4>
+              <span class="status-badge badge-cyan">SPAN STREAM</span>
+            </div>
+
+            <div id="event-feed" class="feed-list">
+              <div class="feed-item">
+                <div class="feed-row">
+                  <span style="color: #FFFFFF; font-weight: 800;">/api/v1/checkout</span>
+                  <span style="color: var(--muted);">00:00:01.180</span>
+                </div>
+                <div class="feed-row">
+                  <span style="color: var(--green); font-weight: 800;">OK // OTLP_INGEST</span>
+                  <span style="color: var(--cyan); font-weight: 800;">42.8ms</span>
+                </div>
+              </div>
+              <div class="feed-item">
+                <div class="feed-row">
+                  <span style="color: #FFFFFF; font-weight: 800;">/v1/auth/verify</span>
+                  <span style="color: var(--muted);">00:00:00.740</span>
+                </div>
+                <div class="feed-row">
+                  <span style="color: var(--green); font-weight: 800;">OK // OTLP_INGEST</span>
+                  <span style="color: var(--cyan); font-weight: 800;">18.4ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var filterContainer = document.getElementById('trace-filters');
+      var tbody = document.getElementById('trace-tbody');
+      if (filterContainer && tbody) {
+        filterContainer.addEventListener('click', function (e) {
+          var btn = e.target.closest('button[data-filter]');
+          if (!btn) return;
+          var filter = btn.getAttribute('data-filter');
+          var buttons = filterContainer.querySelectorAll('.filter-btn');
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.toggle('is-active', buttons[i] === btn);
+          }
+          var rows = tbody.querySelectorAll('tr[data-status]');
+          for (var j = 0; j < rows.length; j++) {
+            var st = rows[j].getAttribute('data-status');
+            rows[j].style.display = (filter === 'ALL' || st === filter) ? '' : 'none';
+          }
+        });
+      }
+
+      function startTelemetryWorker() {
+        var spansEl = document.getElementById('stat-spans');
+        var p99El = document.getElementById('stat-p99');
+        var feedEl = document.getElementById('event-feed');
+        var totalSpans = 482910;
+        var roots = ['/api/v1/checkout', '/v1/auth/verify', '/telemetry/stream', '/order/cancel', '/kms/sign'];
+        var statuses = ['OK', 'OK', 'OK', 'SLOW', 'OK'];
+
+        setInterval(function () {
+          totalSpans += Math.floor(Math.random() * 45) + 20;
+          var p99 = (46.2 + Math.random() * 3.8).toFixed(1);
+          if (spansEl) spansEl.textContent = totalSpans.toLocaleString('en-US');
+          if (p99El) p99El.textContent = p99;
+
+          if (feedEl) {
+            var idx = Math.floor(Math.random() * roots.length);
+            var now = new Date().toISOString().split('T')[1].slice(0, 12);
+            var dur = (12 + Math.random() * 68).toFixed(1) + 'ms';
+            var st = statuses[idx];
+            var stColor = st === 'OK' ? 'var(--green)' : 'var(--amber)';
+            var item = document.createElement('div');
+            item.className = 'feed-item';
+            item.innerHTML =
+              '<div class="feed-row"><span style="color:#FFFFFF;font-weight:800;">' + roots[idx] + '</span><span style="color:var(--muted);">' + now + '</span></div>' +
+              '<div class="feed-row"><span style="color:' + stColor + ';font-weight:800;">' + st + ' // OTLP_INGEST</span><span style="color:var(--cyan);font-weight:800;">' + dur + '</span></div>';
+            feedEl.insertBefore(item, feedEl.firstChild);
+            while (feedEl.children.length > 5) {
+              feedEl.removeChild(feedEl.lastChild);
+            }
+          }
+        }, 900);
+      }
+
+      if (document.readyState === 'complete') {
+        requestAnimationFrame(function () { setTimeout(startTelemetryWorker, 120); });
+      } else {
+        window.addEventListener('load', function () {
+          requestAnimationFrame(function () { setTimeout(startTelemetryWorker, 120); });
+        }, { once: true });
+      }
+    })();
   </script>
 </body>
 </html>

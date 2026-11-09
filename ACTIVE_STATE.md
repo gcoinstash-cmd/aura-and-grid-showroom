@@ -21,7 +21,7 @@
 ## 2. PUBLIC COMMERCIAL SCOPE & VALUATION ANCHORS
 
 - **Public Scope**: **5 Sealed Micro-Clusters (`MC-01` through `MC-05`) — 51 Units / 17 Triads** *(internal directory mapping `#338`–`#354` is strictly private; all public assets use `MC-01`–`MC-05` identifiers only per §5 Rule 3)*
-  - Each triad pairs: (1) a containerized FastAPI Python 3.11 compute engine, (2) an interactive SCADA telemetry cockpit preview, and (3) a React 19 operator utility backed by PostgreSQL 16 RLS schemas.
+  - Each triad pairs: (1) a containerized FastAPI Python 3.12 compute engine, (2) an interactive SCADA telemetry cockpit preview, and (3) a React 19 operator utility backed by PostgreSQL 16 RLS schemas.
 - **Sealed Clusters**: **Cluster 01 through Cluster 07**
 - **Total Units Tracked**: **60 Production Units (17 Showroom Triads + Triads 18-23 in Vault)**
 - **Portfolio Batch Asking Price**: **$805,000 USD** (5-Cluster Portfolio APA)

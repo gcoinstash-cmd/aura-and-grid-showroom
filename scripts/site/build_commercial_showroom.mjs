@@ -217,34 +217,39 @@ const clusterCard = (c) => {
         </header>
         <h3 class="text-xl font-extrabold text-white">${esc(c.title)}</h3>
         <p class="blurb text-sm text-zinc-300 leading-relaxed">${esc(c.blurb)}</p>
-        <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS</p>
-        <ul class="pills" aria-label="Domain tags">${c.tags.map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
-        <ul class="pills" aria-label="Tech stack">${STACK.map(t => `<li class="pill pill-amber">${esc(t)}</li>`).join('')}</ul>
+        <ul class="pills" aria-label="Domain tags">${c.tags.slice(0, 3).map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
-          <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
-          <ul class="monroney-list">
-            <li><span>Track 1 (Operator Utility):</span> <b>$4,500 // Micro-APA Sovereign Title</b></li>
-            <li><span>Track 2 (3D SCADA Cockpit):</span> <b>$14,500 // Chassis APA Sovereign Title</b></li>
-            <li><span>Track 3 (Skunkworks Engine):</span> <b>$35,000 – $65,000 // Engine APA Sovereign Title</b></li>
-          </ul>
-          <div class="monroney-bundle">
-            <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-            <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-            <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (${c.id}: ${fmt(clusterMsrp)})</b></div>
+        <details class="cluster-specs" open>
+          <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for ${c.id}"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
+          <div class="cluster-specs-body">
+            <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS</p>
+            <p class="stack-line" aria-label="Tech stack">${STACK.map(esc).join(' <i>&middot;</i> ')}</p>
+            <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
+              <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
+              <ul class="monroney-list">
+                <li><span>Track 1 (Operator Utility):</span> <b>$4,500 // Micro-APA Sovereign Title</b></li>
+                <li><span>Track 2 (3D SCADA Cockpit):</span> <b>$14,500 // Chassis APA Sovereign Title</b></li>
+                <li><span>Track 3 (Skunkworks Engine):</span> <b>$35,000 – $65,000 // Engine APA Sovereign Title</b></li>
+              </ul>
+              <div class="monroney-bundle">
+                <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (${c.id}: ${fmt(clusterMsrp)})</b></div>
+              </div>
+            </div>
+            <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
+            <div class="triads">
+              <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED ${c.triads.length} TRIADS</div>
+              <ol>${c.triads.map((t, i) => `
+                <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
+              </ol>
+            </div>
+            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>${fmt(c.ask)} USD</b></p>
           </div>
-        </div>
-        <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
-        <details class="triads">
-          <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
-          <ol>${c.triads.map((t, i) => `
-            <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
-          </ol>
         </details>
-        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>${fmt(c.ask)} USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire cluster title (APA) for ${c.id}">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
           <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
@@ -501,6 +506,43 @@ const html = `<!DOCTYPE html>
       .foot-in{padding:28px 16px 48px}
       .nav-in{padding:12px 16px}
     }
+    /* Mobile single-chassis tab controller + typography scale */
+    .stack-line{font-family:var(--mono);font-size:.8125rem;font-weight:600;letter-spacing:.04em;color:var(--amber);line-height:1.5;overflow-wrap:anywhere}
+    .stack-line i{font-style:normal;opacity:.6;margin:0 2px}
+    .cluster h3{font-size:1.25rem;font-weight:700;color:#FFFFFF;line-height:1.3}
+    .cluster .blurb{font-size:15px;line-height:1.6;color:#E2E8F0}
+    .cluster .mc-ask,.cluster-anchor b{font-size:24px;font-weight:700;color:#FF9F0A;line-height:1.2}
+    .cluster-specs-toggle{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:9px 12px;border-radius:8px;border:1px solid rgba(0,240,255,.32);background:rgba(0,240,255,.05);font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--cyan);text-align:center;transition:border-color .15s,background .15s,color .15s}
+    .cluster-specs-toggle::-webkit-details-marker{display:none}
+    .cluster-specs-toggle:hover{border-color:rgba(0,240,255,.6);background:rgba(0,240,255,.1)}
+    .cluster-specs-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .cluster-specs .spec-toggle-open{display:none}
+    .cluster-specs[open] .spec-toggle-closed{display:none}
+    .cluster-specs[open] .spec-toggle-open{display:inline}
+    .cluster-specs-body{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+    .triads-head{font-family:var(--mono);font-size:.8125rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    @media (min-width:769px){
+      .cluster-specs-toggle{display:none}
+      .cluster-specs-body{margin-top:0}
+    }
+    @media (max-width:768px){
+      .cluster h3{font-size:1.125rem}
+      .cluster .blurb{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+      .filter-bar{position:sticky;top:var(--nav-h,56px);z-index:40;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scroll-behavior:smooth;margin:12px -16px 16px;padding:10px 16px;background:rgba(5,7,11,.96);border-bottom:1px solid var(--line);scrollbar-width:none}
+      .filter-bar::-webkit-scrollbar{display:none}
+      .filter-pill{flex:0 0 auto;scroll-snap-align:center}
+      .filter-pill .pill-name,.filter-pill.filter-all{display:none}
+      .cluster{padding:16px;gap:10px}
+      .cluster .pill{font-size:.75rem;padding:3px 9px}
+      .cluster .stats{gap:8px}
+      .cluster .stats div{padding:7px 10px;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+      .cluster .stats dt{font-size:.6875rem}
+      .cluster .stats dd{font-size:.75rem;margin-top:0}
+      .cluster .cta-stack{padding-top:4px;gap:8px}
+      .cluster .btn{min-height:48px;padding:8px 12px;font-size:.8125rem}
+      .cluster .btn small.btn-note{font-size:.6875rem}
+      .clusters-grid .cluster[hidden]{display:none!important}
+    }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors,.price-pill-outline,.pulse-dot,.filter-pill{transition:none;animation:none}}
     /* Institutional polish: de-congested hero, slate body copy, calm telemetry */
     body{color:var(--mute)}
@@ -736,12 +778,12 @@ const html = `<!DOCTYPE html>
     <section id="clusters" aria-labelledby="mc-label">
       <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — ACQUIRE ALL FIVE OR ANY ONE</p>
       <div class="filter-bar" role="group" aria-label="Rapid-select micro-cluster filter">
-        <button type="button" class="filter-pill is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ MEMORY FABRICS (MC-01) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-02" aria-pressed="false">[ SCHEDULING (MC-02) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-03" aria-pressed="false">[ COMPRESSION (MC-03) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-04" aria-pressed="false">[ TELEMETRY (MC-04) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-05" aria-pressed="false">[ KERNELS (MC-05) ]</button>
+        <button type="button" class="filter-pill filter-all is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ <span class="pill-name">MEMORY FABRICS (</span>MC-01<span class="pill-name">)</span> ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-02" aria-pressed="false">[ <span class="pill-name">SCHEDULING (</span>MC-02<span class="pill-name">)</span> ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-03" aria-pressed="false">[ <span class="pill-name">COMPRESSION (</span>MC-03<span class="pill-name">)</span> ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-04" aria-pressed="false">[ <span class="pill-name">TELEMETRY (</span>MC-04<span class="pill-name">)</span> ]</button>
+        <button type="button" class="filter-pill" data-filter="MC-05" aria-pressed="false">[ <span class="pill-name">KERNELS (</span>MC-05<span class="pill-name">)</span> ]</button>
       </div>
       <div class="clusters-grid" id="clustersGrid">${CLUSTERS.map(clusterCard).join('')}
       </div>
@@ -1885,40 +1927,63 @@ const html = `<!DOCTYPE html>
   })();
   </script>
   <script>
-  // Rapid-select cluster filter logic
+  // Rapid-select cluster filter logic + mobile single-chassis tab controller
   (function () {
     var filterBtns = document.querySelectorAll('.filter-pill');
     var clusterCards = document.querySelectorAll('.card.cluster');
     var grid = document.getElementById('clustersGrid');
+    var bar = document.querySelector('.filter-bar');
+    var nav = document.querySelector('.nav');
     if (!filterBtns.length || !clusterCards.length) return;
+    var mq = window.matchMedia('(max-width: 768px)');
+    var current = 'all';
+
+    function setNavOffset() {
+      document.documentElement.style.setProperty('--nav-h', (nav ? nav.offsetHeight : 56) + 'px');
+    }
+
+    function apply(filter, fromUser) {
+      if (mq.matches && filter === 'all') filter = 'MC-01';
+      current = filter;
+      filterBtns.forEach(function (b) {
+        var active = (b.getAttribute('data-filter') === filter);
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        if (active && mq.matches && bar && bar.scrollTo) {
+          bar.scrollTo({ left: b.offsetLeft - (bar.clientWidth - b.offsetWidth) / 2, behavior: fromUser ? 'smooth' : 'auto' });
+        }
+      });
+      clusterCards.forEach(function (card) {
+        var match = (filter === 'all' || card.getAttribute('data-cluster') === filter);
+        card.style.display = match ? '' : 'none';
+        if (match) card.removeAttribute('hidden'); else card.setAttribute('hidden', '');
+      });
+      if (grid) grid.classList.toggle('is-filtered', filter !== 'all');
+    }
+
+    function foldSheets() {
+      document.querySelectorAll('.cluster details.cluster-specs').forEach(function (d) { d.open = !mq.matches; });
+    }
 
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var filter = btn.getAttribute('data-filter') || 'all';
-
-        filterBtns.forEach(function (b) {
-          var active = (b === btn);
-          b.classList.toggle('is-active', active);
-          b.setAttribute('aria-pressed', active ? 'true' : 'false');
-        });
-
-        clusterCards.forEach(function (card) {
-          var clusterId = card.getAttribute('data-cluster');
-          var match = (filter === 'all' || clusterId === filter);
-          if (match) {
-            card.style.display = '';
-            card.removeAttribute('hidden');
-          } else {
-            card.style.display = 'none';
-            card.setAttribute('hidden', '');
-          }
-        });
-
-        if (grid) {
-          grid.classList.toggle('is-filtered', filter !== 'all');
+        apply(btn.getAttribute('data-filter') || 'all', true);
+        if (mq.matches && grid) {
+          var top = grid.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 56) - (bar ? bar.offsetHeight : 0) - 8;
+          if (window.pageYOffset > top) window.scrollTo({ top: top, behavior: 'smooth' });
         }
       });
     });
+
+    function onViewport() {
+      setNavOffset();
+      foldSheets();
+      if (mq.matches) apply(current === 'all' ? 'MC-01' : current, false);
+      else apply('all', false);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', onViewport); else if (mq.addListener) mq.addListener(onViewport);
+    window.addEventListener('resize', setNavOffset);
+    onViewport();
   })();
 
   // Centralized helper function for URL-encoded mailto telemetry payloads

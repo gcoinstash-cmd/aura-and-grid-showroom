@@ -237,17 +237,17 @@ const clusterCard = (c) => {
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (${c.id}: ${fmt(clusterMsrp)})</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
           <ol>${c.triads.map((t, i) => `
             <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: ${fmt(c.ask)}</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>${fmt(c.ask)} USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire cluster title (APA) for ${c.id}">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>`;
 };
@@ -432,6 +432,19 @@ const html = `<!DOCTYPE html>
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
     .btn-subtle{border:1px solid rgba(255,255,255,.14);color:var(--zinc200);background:#0B0F17}
     .btn-subtle:hover{border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.1);color:var(--cyan);box-shadow:0 0 16px rgba(0,240,255,.25)}
+    /* Typography overhaul: Inter for reading copy, JetBrains Mono only for numerics/prices/gates/code badges */
+    .cluster h3,.cluster .blurb,.cluster .buyers,.cluster .btn,.cluster .btn small,.cluster .triads summary,.cluster .monroney-list span,.cluster .monroney-bundle-title,.cluster .monroney-bundle-row span,.cluster .triads ol,.cluster .stats dt{font-family:var(--sans)}
+    .cluster{padding:28px;gap:16px}
+    .cluster .blurb,.cluster .buyers{font-size:1rem;line-height:1.6;color:#CBD5E1}
+    .cluster .buyers b{font-family:var(--sans);font-size:.8125rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FF9F0A;margin-bottom:6px}
+    .cluster .monroney-list,.cluster .monroney-bundle,.cluster .triads ol{font-size:.9375rem;line-height:1.55;color:#CBD5E1}
+    .cluster .monroney-list b,.cluster .monroney-bundle-row b,.cluster .triads .uid{font-family:var(--mono)}
+    .cluster .btn{font-size:.9375rem;font-weight:700;letter-spacing:.04em}
+    .cluster .btn small.btn-note{font-family:var(--sans);font-size:.8125rem;font-weight:500;letter-spacing:.01em;color:#94A3B8;opacity:1}
+    .cluster .btn-subtle:hover small.btn-note{color:#CBD5E1}
+    .cluster-anchor{margin-top:4px;display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid rgba(0,240,255,.35);border-radius:10px;background:rgba(0,240,255,.05);min-width:0}
+    .cluster-anchor span{font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#94A3B8}
+    .cluster-anchor b{font-family:var(--mono);font-size:1.375rem;font-weight:700;line-height:1.2;color:#00F0FF;overflow-wrap:anywhere}
 
     /* rapid-select filter bar */
     .filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 24px}

@@ -171,6 +171,19 @@
     .btn-amber:hover{box-shadow:0 0 22px rgba(255,159,10,.5)}
     .btn-subtle{border:1px solid rgba(255,255,255,.14);color:var(--zinc200);background:#0B0F17}
     .btn-subtle:hover{border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.1);color:var(--cyan);box-shadow:0 0 16px rgba(0,240,255,.25)}
+    /* Typography overhaul: Inter for reading copy, JetBrains Mono only for numerics/prices/gates/code badges */
+    .cluster h3,.cluster .blurb,.cluster .buyers,.cluster .btn,.cluster .btn small,.cluster .triads summary,.cluster .monroney-list span,.cluster .monroney-bundle-title,.cluster .monroney-bundle-row span,.cluster .triads ol,.cluster .stats dt{font-family:var(--sans)}
+    .cluster{padding:28px;gap:16px}
+    .cluster .blurb,.cluster .buyers{font-size:1rem;line-height:1.6;color:#CBD5E1}
+    .cluster .buyers b{font-family:var(--sans);font-size:.8125rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FF9F0A;margin-bottom:6px}
+    .cluster .monroney-list,.cluster .monroney-bundle,.cluster .triads ol{font-size:.9375rem;line-height:1.55;color:#CBD5E1}
+    .cluster .monroney-list b,.cluster .monroney-bundle-row b,.cluster .triads .uid{font-family:var(--mono)}
+    .cluster .btn{font-size:.9375rem;font-weight:700;letter-spacing:.04em}
+    .cluster .btn small.btn-note{font-family:var(--sans);font-size:.8125rem;font-weight:500;letter-spacing:.01em;color:#94A3B8;opacity:1}
+    .cluster .btn-subtle:hover small.btn-note{color:#CBD5E1}
+    .cluster-anchor{margin-top:4px;display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid rgba(0,240,255,.35);border-radius:10px;background:rgba(0,240,255,.05);min-width:0}
+    .cluster-anchor span{font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#94A3B8}
+    .cluster-anchor b{font-family:var(--mono);font-size:1.375rem;font-weight:700;line-height:1.2;color:#00F0FF;overflow-wrap:anywhere}
 
     /* rapid-select filter bar */
     .filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 24px}
@@ -497,7 +510,7 @@
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-01: $276,000)</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> Distributed compute platforms, high-throughput data processing clusters, and GPU cloud operators.</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> Distributed compute platforms, high-throughput data processing clusters, and GPU cloud operators.</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW 4 TRIADS</summary>
           <ol>
@@ -507,10 +520,10 @@
             <li><span class="uid">MC-01.4</span> MQA &amp; GQA Attention Flash-Decoding<br><a href="./cockpits/01-apex-telemetry/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: $185,000</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$185,000 USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-01%20%E2%80%94%20Ultra-Low%20Latency%20Attention%20%26%20KV%20Memory%20Fabrics%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-01%20%E2%80%94%20Ultra-Low%20Latency%20Attention%20%26%20KV%20Memory%20Fabrics%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24185%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-01" aria-label="Acquire cluster title (APA) for MC-01">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="./cockpits/batch-foxtrot/12-edge-kv-store-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-01 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="./cockpits/batch-foxtrot/12-edge-kv-store-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-01 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
       <article class="card cluster" id="mc-02" data-cluster="MC-02">
@@ -540,7 +553,7 @@
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-02: $207,000)</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> Parallel execution schedulers, high-concurrency API gateways, and quantitative trading desks.</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> Parallel execution schedulers, high-concurrency API gateways, and quantitative trading desks.</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW 3 TRIADS</summary>
           <ol>
@@ -549,10 +562,10 @@
             <li><span class="uid">MC-02.3</span> Speculative Decoding &amp; Draft Verification<br><a href="./cockpits/03-orbit-pipeline/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: $145,000</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-02%20%E2%80%94%20Distributed%20High-Throughput%20%26%20Speculative%20Scheduling%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-02%20%E2%80%94%20Distributed%20High-Throughput%20%26%20Speculative%20Scheduling%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24145%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-02" aria-label="Acquire cluster title (APA) for MC-02">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="./cockpits/04-chrono-pulse/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-02 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="./cockpits/04-chrono-pulse/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-02 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
       <article class="card cluster" id="mc-03" data-cluster="MC-03">
@@ -582,7 +595,7 @@
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-03: $207,000)</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> High-throughput data processing appliances, embedded compute systems, and on-premise compute centers.</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> High-throughput data processing appliances, embedded compute systems, and on-premise compute centers.</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW 3 TRIADS</summary>
           <ol>
@@ -591,10 +604,10 @@
             <li><span class="uid">MC-03.3</span> FP6 Mixed-Precision Tensor Core &amp; Dot-Product<br><a href="./cockpits/batch-bravo/01-grid-specter/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: $145,000</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-03%20%E2%80%94%20Extreme%20Quantization%20%26%20Sub-Byte%20Compression%20Cores%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-03%20%E2%80%94%20Extreme%20Quantization%20%26%20Sub-Byte%20Compression%20Cores%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24145%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-03" aria-label="Acquire cluster title (APA) for MC-03">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="./cockpits/batch-charlie/05-prism-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-03 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="./cockpits/batch-charlie/05-prism-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-03 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
       <article class="card cluster" id="mc-04" data-cluster="MC-04">
@@ -624,7 +637,7 @@
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-04: $276,000)</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> Hyperscale cluster architects, parallel execution operators, and distributed compute networks.</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> Hyperscale cluster architects, parallel execution operators, and distributed compute networks.</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW 4 TRIADS</summary>
           <ol>
@@ -634,10 +647,10 @@
             <li><span class="uid">MC-04.4</span> Multi-GPU Pipeline Parallelism &amp; Activation Checkpointing<br><a href="./cockpits/batch-golf/24-wal-replication-streamer/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: $185,000</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$185,000 USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-04%20%E2%80%94%20Distributed%20Mesh%20Parallelism%20%26%20Inter-Node%20Interconnects%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-04%20%E2%80%94%20Distributed%20Mesh%20Parallelism%20%26%20Inter-Node%20Interconnects%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24185%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-04" aria-label="Acquire cluster title (APA) for MC-04">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/09-pod-health-grid/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-04 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/09-pod-health-grid/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-04 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
       <article class="card cluster" id="mc-05" data-cluster="MC-05">
@@ -667,7 +680,7 @@
             <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-05: $207,000)</b></div>
           </div>
         </div>
-        <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> Mission-critical edge computing, real-time distributed telemetry, and low-latency FinTech infrastructure.</p>
+        <p class="buyers"><b>TARGET ACQUIRER</b> Mission-critical edge computing, real-time distributed telemetry, and low-latency FinTech infrastructure.</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW 3 TRIADS</summary>
           <ol>
@@ -676,10 +689,10 @@
             <li><span class="uid">MC-05.3</span> Zero-Copy Unified Memory &amp; Host-Device Interlock<br><a href="./cockpits/batch-golf/01-autonomous-pilot-telemetry/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
           </ol>
         </details>
-        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: $145,000</p>
+        <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-05%20%E2%80%94%20Zero-Overhead%20Hardware%20Acceleration%20%26%20Host-GPU%20Fabrics%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-05%20%E2%80%94%20Zero-Overhead%20Hardware%20Acceleration%20%26%20Host-GPU%20Fabrics%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24145%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-05" aria-label="Acquire cluster title (APA) for MC-05">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/05-bot-mitigation/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-05 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
+          <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/05-bot-mitigation/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-05 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
       </div>

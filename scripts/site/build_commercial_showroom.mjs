@@ -207,6 +207,7 @@ const clusterCard = (c) => {
   const tests = c.triads.reduce((a, t) => a + t.tests, 0);
   const lead = c.triads[0];
   const clusterName = `${c.id} — ${c.title}`;
+  const clusterMsrp = c.triads.length * 69000;
   const clusterApaMailto = generateAquireMailto(clusterName, 'Sealed Micro-Cluster', fmt(c.ask));
   const clusterVaultMailto = generateAquireMailto(clusterName, 'Micro-Cluster Vault Buyout', fmt(c.ask));
   return `
@@ -224,6 +225,19 @@ const clusterCard = (c) => {
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT / APACHE-2.0</dd></div>
         </dl>
+        <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
+          <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
+          <ul class="monroney-list">
+            <li><span>Track 1 (Operator Utility):</span> <b>$4,500 // Micro-APA Sovereign Title</b></li>
+            <li><span>Track 2 (3D SCADA Cockpit):</span> <b>$14,500 // Chassis APA Sovereign Title</b></li>
+            <li><span>Track 3 (Skunkworks Engine):</span> <b>$35,000 – $65,000 // Engine APA Sovereign Title</b></li>
+          </ul>
+          <div class="monroney-bundle">
+            <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
+            <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
+            <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (${c.id}: ${fmt(clusterMsrp)})</b></div>
+          </div>
+        </div>
         <p class="buyers text-sm text-zinc-300 leading-relaxed"><b class="text-xs font-mono text-zinc-400">TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
         <details class="triads">
           <summary class="text-xs font-mono text-zinc-400">VIEW ${c.triads.length} TRIADS</summary>
@@ -241,6 +255,14 @@ const clusterCard = (c) => {
 
 const batchApaMailto = generateAquireMailto('5-Cluster Commercial Portfolio Lot (MC-01 through MC-05)', '5-Cluster Portfolio APA', fmt(BATCH_ASK));
 const vaultPortfolioMailto = generateAquireMailto('Full Fleet Master Vault (MC-01 through MC-05)', 'Master Vault Buyout', fmt(BATCH_ASK));
+const track1ApaMailto = generateAquireMailto('Track 1 (Operator Utility)', 'Micro-APA Sovereign Title', '$4,500');
+const track1VaultMailto = generateAquireMailto('Track 1 (Operator Utility) Vault Carve-Out', 'Micro-APA Sovereign Title', '$4,500');
+const track2ApaMailto = generateAquireMailto('Track 2 (3D SCADA Cockpit)', 'Chassis APA Sovereign Title', '$14,500');
+const track2VaultMailto = generateAquireMailto('Track 2 (3D SCADA Cockpit) Vault Carve-Out', 'Chassis APA Sovereign Title', '$14,500');
+const track3ApaMailto = generateAquireMailto('Track 3 (Skunkworks Engine)', 'Engine APA Sovereign Title', '$35,000 – $65,000');
+const track3VaultMailto = generateAquireMailto('Track 3 (Skunkworks Engine) Vault Carve-Out', 'Engine APA Sovereign Title', '$35,000 – $65,000');
+const bundleApaMailto = generateAquireMailto('Cluster Package Buyout (3 Triads / 9 Units)', 'Cluster Package Buyout APA', '$145,000 – $185,000');
+const bundleVaultMailto = generateAquireMailto('Cluster Package Buyout Vault Carve-Out (3 Triads / 9 Units)', 'Cluster Package Vault Buyout', '$145,000 – $185,000');
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -258,7 +280,7 @@ const html = `<!DOCTYPE html>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <style>
-    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#E6EAF2;--mute:#A1A1AA;--zinc200:#E4E4E7;--zinc300:#D4D4D8;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
+    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#F4F7FB;--mute:#D4D4D8;--zinc200:#F4F4F5;--zinc300:#E4E4E7;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;
@@ -272,8 +294,8 @@ const html = `<!DOCTYPE html>
     @media (min-width:640px){.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (min-width:1024px){.lg\\:grid-cols-1{grid-template-columns:minmax(0,1fr)}.lg\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media (min-width:1280px){.xl\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.xl\\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    /* typography & spacing utilities (Tailwind-equivalent scale) */
-    .text-xs{font-size:.75rem;line-height:1rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
+    /* typography & spacing utilities (14px minimum scale on all micro-labels) */
+    .text-xs{font-size:14px;line-height:1.35rem}.text-sm{font-size:.875rem;line-height:1.5}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}
     .font-mono{font-family:var(--mono)}.font-normal{font-weight:400}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-black{font-weight:900}
     .text-white{color:#fff}.text-zinc-200{color:var(--zinc200)}.text-zinc-300{color:var(--zinc300)}.text-zinc-400{color:var(--mute)}
     .tracking-wide{letter-spacing:.025em}.tracking-wider{letter-spacing:.05em}
@@ -289,46 +311,58 @@ const html = `<!DOCTYPE html>
     .nav-left{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}
     .brand{font-family:var(--mono);white-space:nowrap}
     .brand b{color:var(--amber)}
-    .badge{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.08);border-radius:999px;white-space:nowrap}
-    .nav-status{font-family:var(--mono);letter-spacing:.04em;color:var(--cyan);background:rgba(0,240,255,.06);border:1px solid rgba(0,240,255,.32);border-radius:999px;justify-self:center;text-align:center;text-shadow:0 0 12px rgba(0,240,255,.4);white-space:nowrap;display:inline-flex;align-items:center}
+    .badge{font-family:var(--mono);font-weight:700;letter-spacing:.04em;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.1);border-radius:999px;white-space:nowrap}
+    .nav-status{font-family:var(--mono);font-weight:700;letter-spacing:.04em;color:var(--cyan);background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.42);border-radius:999px;justify-self:center;text-align:center;text-shadow:0 0 12px rgba(0,240,255,.45);white-space:nowrap;display:inline-flex;align-items:center}
     .pulse-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#10B981;margin-right:8px;vertical-align:middle;box-shadow:0 0 8px #10B981;animation:pulse-glow 2s cubic-bezier(.4,0,.6,1) infinite}
     @keyframes pulse-glow{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
     .nav-right{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:nowrap}
-    .gate{font-family:var(--mono);letter-spacing:.04em;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06);border-radius:999px;white-space:nowrap}
+    .gate{font-family:var(--mono);font-weight:700;letter-spacing:.04em;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.08);border-radius:999px;white-space:nowrap}
     .gate::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);margin-right:8px;box-shadow:0 0 8px var(--cyan);vertical-align:middle}
     .price-pill{font-family:var(--mono);letter-spacing:.04em;font-weight:800;background:var(--amber);color:#05070B;border-radius:999px;white-space:nowrap;box-shadow:0 0 18px rgba(255,159,10,.38)}
-    .price-pill-outline{font-family:var(--mono);letter-spacing:.04em;font-weight:700;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.08);border-radius:999px;white-space:nowrap;transition:all .2s ease;text-decoration:none;display:inline-flex;align-items:center}
+    .price-pill-outline{font-family:var(--mono);letter-spacing:.04em;font-weight:700;border:1px solid var(--amber);color:var(--amber);background:rgba(255,159,10,.1);border-radius:999px;white-space:nowrap;transition:all .2s ease;text-decoration:none;display:inline-flex;align-items:center}
     .price-pill-outline:hover{background:rgba(255,159,10,.22);box-shadow:0 0 16px rgba(255,159,10,.4);color:#fff;transform:translateY(-1px)}
     .price-pill-outline:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
     main{max-width:1480px;margin:0 auto;padding:44px 24px 72px}
-    .eyebrow{font-family:var(--mono);font-size:.8125rem;letter-spacing:.18em;color:var(--cyan);margin-bottom:12px}
+    .eyebrow{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.18em;color:var(--cyan);text-shadow:0 0 12px rgba(0,240,255,.35);margin-bottom:12px}
     h1{font-size:clamp(1.85rem,2.75vw,2.55rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:25ch;color:#fff}
     h1 span{color:var(--amber)}
     .lede{max-width:60ch;margin-top:16px}
     .hero-actions{margin-top:24px;width:100%}
-    .hero-actions .btn{flex:1;min-width:0;padding:12px 14px;font-size:.84rem;letter-spacing:.035em}
+    .hero-actions .btn{flex:1;min-width:0;padding:12px 14px;font-size:.875rem;letter-spacing:.035em}
     @media (min-width:1440px){.hero-actions .btn{padding:14px 18px;font-size:.9rem;letter-spacing:.05em}}
     section{margin-top:44px}
-    .section-label{font-family:var(--mono);font-size:.8125rem;letter-spacing:.16em;color:var(--mute);margin-bottom:16px}
+    .section-label{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.16em;color:var(--cyan);text-shadow:0 0 12px rgba(0,240,255,.28);margin-bottom:16px}
 
     /* 3D holo-bay */
     .holo-bay{display:flex;flex-direction:column;gap:12px;width:100%;min-width:0;box-shadow:0 0 36px -8px rgba(0,240,255,.18)}
     .holo-hud-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-    .holo-sealed{font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.05em;padding:5px 10px;border-radius:6px;color:#34D399;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.4);box-shadow:0 0 12px rgba(16,185,129,.2);white-space:nowrap}
+    .holo-sealed{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.05em;padding:5px 10px;border-radius:6px;color:#34D399;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.48);box-shadow:0 0 12px rgba(16,185,129,.22);white-space:nowrap}
     .holo-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-    .holo-btn{appearance:none;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:6px;background:#101622;color:var(--zinc200);border:1px solid rgba(255,255,255,.16);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s;white-space:nowrap}
+    .holo-btn{appearance:none;font-family:var(--mono);font-size:.875rem;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:6px;background:#101622;color:#fff;border:1px solid rgba(0,240,255,.28);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s,transform .15s;white-space:nowrap}
     .holo-btn:hover{background:rgba(0,240,255,.16);border-color:rgba(0,240,255,.55);color:var(--cyan)}
     .holo-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .holo-btn-ignition{background:linear-gradient(90deg,#FF9F0A,#FFB340);border:1px solid #FF9F0A;color:#05070B;font-weight:800;box-shadow:0 0 16px rgba(255,159,10,.45)}
+    .holo-btn-ignition:hover{background:#FFB340;border-color:#fff;color:#05070B;box-shadow:0 0 22px rgba(255,159,10,.75);transform:translateY(-1px)}
+    .holo-btn-ignition.is-igniting{background:linear-gradient(90deg,#FF2E54,#FF9F0A);border-color:#00F0FF;color:#fff;box-shadow:0 0 24px rgba(0,240,255,.65),0 0 18px rgba(255,159,10,.65)}
     .holo-btn-scan{background:rgba(0,240,255,.14);border-color:rgba(0,240,255,.55);color:var(--cyan);font-weight:800;box-shadow:0 0 12px rgba(0,240,255,.25)}
     .holo-btn-scan:hover{background:rgba(0,240,255,.24);box-shadow:0 0 18px rgba(0,240,255,.4)}
     .holo-btn-scan.is-scanning{background:rgba(16,185,129,.25);border-color:#34D399;color:#A7F3D0;box-shadow:0 0 16px rgba(16,185,129,.45)}
-    .holo-stage{position:relative;width:100%;height:320px;min-height:320px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden}
+    .holo-stage{position:relative;width:100%;height:320px;min-height:320px;border-radius:10px;border:1px solid rgba(0,240,255,.2);background:#05070B;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+    .holo-stage.is-igniting{border-color:#FF9F0A;box-shadow:0 0 32px rgba(255,159,10,.35),inset 0 0 28px rgba(0,240,255,.18)}
     #dynoHoloCanvas{width:100%;height:100%;min-height:320px;display:block;cursor:grab;touch-action:none}
     #dynoHoloCanvas:active{cursor:grabbing}
+    .holo-rpm-deck{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:8px;background:rgba(11,15,23,.92);border:1px solid rgba(0,240,255,.28);font-family:var(--mono)}
+    .holo-rpm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+    .holo-rpm-label{font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .holo-rpm-val{font-size:.875rem;font-weight:800;letter-spacing:.06em;color:var(--amber);transition:color .15s}
+    .holo-rpm-val.is-redline{color:#FF2E54;text-shadow:0 0 14px rgba(255,46,84,.85)}
+    .holo-rpm-track{position:relative;width:100%;height:10px;border-radius:999px;background:#05070B;border:1px solid rgba(255,255,255,.16);overflow:hidden}
+    .holo-rpm-fill{height:100%;width:21%;border-radius:999px;background:linear-gradient(90deg,#00F0FF 0%,#FF9F0A 68%,#FF2E54 100%);box-shadow:0 0 14px rgba(0,240,255,.55);transition:width .05s linear}
+    .holo-rpm-fill.is-redline{box-shadow:0 0 20px rgba(255,46,84,.95)}
     .holo-hud-bot{display:grid;grid-template-columns:1.12fr 1.22fr .88fr .78fr;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--mono)}
-    .holo-hud-bot span{display:block;font-size:.6875rem;letter-spacing:.06em;color:var(--mute);white-space:nowrap}
-    .holo-hud-bot b{display:block;font-size:.75rem;color:#fff;margin-top:2px;white-space:nowrap}
+    .holo-hud-bot span{display:block;font-size:.875rem;font-weight:700;letter-spacing:.06em;color:var(--cyan);white-space:nowrap}
+    .holo-hud-bot b{display:block;font-size:.875rem;font-weight:800;color:#fff;margin-top:2px;white-space:nowrap}
     .holo-hud-bot b.c-cyan{color:var(--cyan)}.holo-hud-bot b.c-emerald{color:#34D399}.holo-hud-bot b.c-amber{color:var(--amber)}
     @media (max-width:1240px){.holo-hud-bot{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}}
 
@@ -338,7 +372,7 @@ const html = `<!DOCTYPE html>
     .metric .val{font-family:var(--mono);font-weight:800;font-size:clamp(1.5rem,3.2vw,2.05rem);letter-spacing:-.02em;line-height:1.2}
     @media (min-width:1280px){.metric .val{font-size:clamp(1.38rem,1.82vw,1.78rem);white-space:nowrap}}
     .metric .name{font-weight:700;font-size:1.0625rem;color:#fff;margin-top:8px}
-    .metric .sub{font-size:.78125rem;letter-spacing:.03em;margin-top:6px;line-height:1.5}
+    .metric .sub{font-size:.875rem;font-weight:700;letter-spacing:.03em;margin-top:6px;line-height:1.5;color:var(--zinc200)}
     .metric.m-cyan{border-color:rgba(0,240,255,.4)}.metric.m-cyan .val{color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,.35)}
     .metric.m-amber{border-color:rgba(255,159,10,.55);box-shadow:0 0 30px rgba(255,159,10,.08)}.metric.m-amber .val{color:var(--amber);text-shadow:0 0 20px rgba(255,159,10,.35)}
     .metric.m-white .val{color:#fff}
@@ -348,32 +382,46 @@ const html = `<!DOCTYPE html>
     .cluster{grid-column:span 2;display:flex;flex-direction:column;gap:14px}
     .cluster:nth-child(n+4){grid-column:span 3}
     .cluster-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .mc-id{font-family:var(--mono);font-weight:800;font-size:.875rem;letter-spacing:.12em;color:var(--cyan);border:1px solid rgba(0,240,255,.45);border-radius:6px;padding:4px 10px}
+    .mc-id{font-family:var(--mono);font-weight:800;font-size:.875rem;letter-spacing:.12em;color:var(--cyan);background:rgba(0,240,255,.08);border:1px solid rgba(0,240,255,.55);border-radius:6px;padding:4px 10px}
     .mc-ask{font-family:var(--mono);font-weight:800;font-size:1.5rem;color:var(--amber);text-align:right;line-height:1.2}
-    .mc-ask small{display:block;font-size:.75rem;letter-spacing:.14em;font-weight:600;margin-bottom:2px}
+    .mc-ask small{display:block;font-size:.875rem;letter-spacing:.14em;font-weight:800;color:var(--cyan);margin-bottom:2px}
     .cluster h3{line-height:1.32;letter-spacing:-.01em}
     .cluster .blurb{font-size:.9375rem}
-    .meta-line{font-size:.78125rem;letter-spacing:.04em;color:var(--cyan);word-break:break-word;line-height:1.5}
+    .meta-line{font-size:.875rem;font-weight:800;letter-spacing:.04em;color:var(--cyan);word-break:break-word;line-height:1.5}
     .pills{display:flex;flex-wrap:wrap;gap:7px}
-    .pill{font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.02em;padding:4px 11px;border-radius:999px;border:1px solid var(--line)}
-    .pill-cyan{color:var(--cyan);border-color:rgba(0,240,255,.35);background:rgba(0,240,255,.05)}
-    .pill-amber{color:var(--amber);border-color:rgba(255,159,10,.35);background:rgba(255,159,10,.05)}
+    .pill{font-family:var(--mono);font-size:.875rem;font-weight:700;letter-spacing:.02em;padding:4px 11px;border-radius:999px;border:1px solid var(--line)}
+    .pill-cyan{color:var(--cyan);border-color:rgba(0,240,255,.5);background:rgba(0,240,255,.09)}
+    .pill-amber{color:var(--amber);border-color:rgba(255,159,10,.5);background:rgba(255,159,10,.09)}
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .stats div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-    .stats dt{font-size:.75rem;letter-spacing:.08em}
-    .stats dd{font-family:var(--mono);font-size:.875rem;font-weight:700;color:#fff;margin-top:3px}
+    .stats dt{font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .stats dd{font-family:var(--mono);font-size:.875rem;font-weight:800;color:#fff;margin-top:3px}
+    .monroney-sticker{background:rgba(5,7,11,.78);border:1px solid rgba(0,240,255,.28);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;font-family:var(--mono)}
+    .monroney-head{font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan);border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:6px}
+    .monroney-list{display:flex;flex-direction:column;gap:6px;font-size:.875rem;line-height:1.45;color:var(--zinc200)}
+    .monroney-list li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 8px}
+    .monroney-list b{color:#fff;font-weight:800}
+    .monroney-bundle{margin-top:4px;padding-top:8px;border-top:1px dashed rgba(255,159,10,.45);display:flex;flex-direction:column;gap:4px;font-size:.875rem}
+    .monroney-bundle-title{font-weight:800;letter-spacing:.06em;color:var(--amber)}
+    .monroney-bundle-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 8px;color:var(--zinc200)}
+    .monroney-bundle-row b{color:var(--amber);font-weight:800}
+    .monroney-deck{margin-top:16px}
+    .monroney-card{display:flex;flex-direction:column;gap:10px}
+    .monroney-card .mc-tier{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .monroney-card.m-amber .mc-tier{color:var(--amber)}
+    .monroney-card .mc-line{font-family:var(--mono);font-size:.875rem;font-weight:700;color:var(--zinc200);line-height:1.5;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
     .buyers{font-size:.9375rem}
-    .buyers b{display:block;font-size:.75rem;letter-spacing:.08em;margin-bottom:3px}
+    .buyers b{display:block;font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--amber);margin-bottom:3px}
     .triads{border-top:1px solid var(--line);padding-top:12px}
-    .triads summary{cursor:pointer;font-size:.78125rem;letter-spacing:.08em}
-    .triads summary:hover{color:var(--cyan)}
+    .triads summary{cursor:pointer;font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .triads summary:hover{color:var(--amber)}
     .triads ol{margin-top:10px;display:flex;flex-direction:column;gap:12px;font-size:.875rem;line-height:1.55;color:var(--zinc300)}
     .triads .uid{font-family:var(--mono);font-weight:700;color:var(--amber);margin-right:4px}
-    .triads a{font-family:var(--mono);font-size:.78125rem;color:var(--cyan)}
+    .triads a{font-family:var(--mono);font-size:.875rem;font-weight:700;color:var(--cyan)}
     .triads a:hover{text-decoration:underline}
     .cta-stack{margin-top:auto;padding-top:8px}
     .btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;min-height:62px;padding:12px 16px;border-radius:10px;font-family:var(--mono);font-weight:800;font-size:.9rem;letter-spacing:.06em;text-align:center;transition:box-shadow .15s,transform .15s,background .15s}
-    .btn small{font-size:.75rem;font-weight:500;letter-spacing:.02em;opacity:.92}
+    .btn small{font-size:.875rem;font-weight:700;letter-spacing:.02em;opacity:.96}
     .btn:hover{transform:translateY(-1px)}
     .btn:focus-visible,.brand:focus-visible,.triads summary:focus-visible,.triads a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:4px}
     .btn-cyan{border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,240,255,.06)}
@@ -385,7 +433,7 @@ const html = `<!DOCTYPE html>
 
     /* rapid-select filter bar */
     .filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:16px 0 24px}
-    .filter-pill{appearance:none;font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:999px;background:#0B0F17;color:var(--zinc300);border:1px solid var(--line);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s,transform .15s;white-space:nowrap}
+    .filter-pill{appearance:none;font-family:var(--mono);font-size:.875rem;font-weight:700;letter-spacing:.04em;padding:7px 14px;border-radius:999px;background:#0B0F17;color:#fff;border:1px solid rgba(0,240,255,.3);cursor:pointer;transition:background .15s,border-color .15s,color .15s,box-shadow .15s,transform .15s;white-space:nowrap}
     .filter-pill:hover{border-color:rgba(0,240,255,.5);color:var(--cyan);background:rgba(0,240,255,.08);box-shadow:0 0 12px rgba(0,240,255,.2);transform:translateY(-1px)}
     .filter-pill.is-active{border-color:var(--amber);color:#05070B;background:var(--amber);box-shadow:0 0 16px rgba(255,159,10,.4);font-weight:800}
     .filter-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}
@@ -472,13 +520,23 @@ const html = `<!DOCTYPE html>
         <div class="holo-hud-top">
           <span class="holo-sealed">[DYNO SEALED 4/4 GATES]</span>
           <div class="holo-controls">
+            <button type="button" class="holo-btn holo-btn-ignition" id="startEngineBtn" title="Push-to-Start 3s Dyno Ignition &amp; Redline Sweep">[ START ENGINE ]</button>
             <button type="button" class="holo-btn" data-yaw="-15" title="Rotate Chassis Left 15 degrees">[YAW -15&deg;]</button>
             <button type="button" class="holo-btn holo-btn-scan" id="scanSchematicBtn" title="Trigger Laser Chassis Schematic Scan">[SCAN SCHEMATIC]</button>
             <button type="button" class="holo-btn" data-yaw="15" title="Rotate Chassis Right 15 degrees">[YAW +15&deg;]</button>
           </div>
         </div>
-        <div class="holo-stage">
+        <div class="holo-stage" id="holoStage">
           <canvas id="dynoHoloCanvas" data-model="" aria-label="Rotating 3D F1 cyber-chassis CAD wireframe"></canvas>
+        </div>
+        <div class="holo-rpm-deck" id="holoRpmDeck" role="region" aria-label="Dyno RPM Telemetry Gauge">
+          <div class="holo-rpm-head">
+            <span class="holo-rpm-label">DYNO RPM TELEMETRY</span>
+            <b class="holo-rpm-val" id="holoRpmReadout">IDLE // 3,200 RPM</b>
+          </div>
+          <div class="holo-rpm-track" aria-hidden="true">
+            <div class="holo-rpm-fill" id="holoRpmFill"></div>
+          </div>
         </div>
         <div class="holo-hud-bot">
           <div><span>FLEET PAYLOAD</span><b class="c-cyan">17 TRIADS // 51 UNITS</b></div>
@@ -490,7 +548,7 @@ const html = `<!DOCTYPE html>
     </div>
 
     <section aria-labelledby="fin-label">
-      <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY</p>
+      <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY &amp; MONRONEY WINDOW STICKER</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <div class="card metric m-amber">
           <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
@@ -511,6 +569,56 @@ const html = `<!DOCTYPE html>
           <div class="val">${fmt(BATCH_ASK)}</div>
           <div class="name">Take-All Portfolio APA Anchor</div>
           <div class="sub text-xs font-mono text-zinc-400">TAKE-ALL 5-CLUSTER PORTFOLIO APA // 51 PRODUCTION UNITS</div>
+        </div>
+      </div>
+
+      <div class="monroney-deck grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Monroney Window Sticker Itemized Anchors and Cluster Package Buyout Telemetry">
+        <div class="card metric monroney-card m-cyan">
+          <div class="mc-tier">MONRONEY STICKER // TRACK 1</div>
+          <div class="val">$4,500</div>
+          <div class="name">Track 1 (Operator Utility)</div>
+          <div class="mc-line">Track 1 (Operator Utility): $4,500 // Micro-APA Sovereign Title</div>
+          <div class="sub text-xs font-mono text-zinc-400">REACT 19 OPERATOR UTILITY // POSTGRESQL 16 RLS</div>
+          <div class="cta-stack flex flex-col gap-2 w-full">
+            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Micro-APA Sovereign Title // $4,500</small></a>
+            <a class="btn btn-cyan w-full" href="${track1VaultMailto}" aria-label="Inquire vault buyout for Track 1 Operator Utility">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Operator Utility Vault // $4,500 Anchor</small></a>
+          </div>
+        </div>
+
+        <div class="card metric monroney-card m-cyan">
+          <div class="mc-tier">MONRONEY STICKER // TRACK 2</div>
+          <div class="val">$14,500</div>
+          <div class="name">Track 2 (3D SCADA Cockpit)</div>
+          <div class="mc-line">Track 2 (3D SCADA Cockpit): $14,500 // Chassis APA Sovereign Title</div>
+          <div class="sub text-xs font-mono text-zinc-400">HIGH-DENSITY 3D WEBGL &amp; CANVAS TELEMETRY COCKPIT HUD</div>
+          <div class="cta-stack flex flex-col gap-2 w-full">
+            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Chassis APA Sovereign Title // $14,500</small></a>
+            <a class="btn btn-cyan w-full" href="${track2VaultMailto}" aria-label="Inquire vault buyout for Track 2 3D SCADA Cockpit">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">SCADA Cockpit Vault // $14,500 Anchor</small></a>
+          </div>
+        </div>
+
+        <div class="card metric monroney-card m-cyan">
+          <div class="mc-tier">MONRONEY STICKER // TRACK 3</div>
+          <div class="val">$35,000 &ndash; $65,000</div>
+          <div class="name">Track 3 (Skunkworks Engine)</div>
+          <div class="mc-line">Track 3 (Skunkworks Engine): $35,000 – $65,000 // Engine APA Sovereign Title</div>
+          <div class="sub text-xs font-mono text-zinc-400">FASTAPI PYTHON 3.11 COMPUTE ENGINE // $50,000 RETAIL</div>
+          <div class="cta-stack flex flex-col gap-2 w-full">
+            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Engine APA Sovereign Title // $35,000 – $65,000</small></a>
+            <a class="btn btn-cyan w-full" href="${track3VaultMailto}" aria-label="Inquire vault buyout for Track 3 Skunkworks Engine">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Skunkworks Engine Vault // $50,000 Anchor</small></a>
+          </div>
+        </div>
+
+        <div class="card metric monroney-card m-amber">
+          <div class="mc-tier">BUNDLE TELEMETRY // VOLUME DISCOUNT</div>
+          <div class="val">$145,000 &ndash; $185,000</div>
+          <div class="name">Cluster Package Buyout</div>
+          <div class="mc-line">Full Cluster Buyout (3 Triads / 9 Units): $145,000 – $185,000<br>Retail Replacement Baseline: $207,000</div>
+          <div class="sub text-xs font-mono text-zinc-400">VOLUME DISCOUNT SUMMARY // $69,000 PER TRIAD BASELINE</div>
+          <div class="cta-stack flex flex-col gap-2 w-full">
+            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire title (APA) for Cluster Package Buyout">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Cluster Package Buyout // $145,000 – $185,000</small></a>
+            <a class="btn btn-cyan w-full" href="${bundleVaultMailto}" aria-label="Inquire vault buyout for Cluster Package Buyout">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Cluster Vault Buyout // $207,000 Baseline</small></a>
+          </div>
         </div>
       </div>
     </section>
@@ -578,8 +686,12 @@ const html = `<!DOCTYPE html>
       var canvas = document.getElementById('dynoHoloCanvas');
       if (!canvas) return;
       var container = canvas.parentElement || canvas;
+      var holoStage = document.getElementById('holoStage') || container;
       var yawReadout = document.getElementById('holoYawReadout');
+      var rpmReadout = document.getElementById('holoRpmReadout');
+      var rpmFill = document.getElementById('holoRpmFill');
       var scanBtn = document.getElementById('scanSchematicBtn');
+      var startEngineBtn = document.getElementById('startEngineBtn');
       var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       function hasWebGL() {
@@ -873,6 +985,69 @@ const html = `<!DOCTYPE html>
       scanMesh.visible = false;
       chassisGroup.add(scanMesh);
 
+      // Push-to-Start Headlight Shaders & Volumetric Cones on 3D Car
+      var headlightUniforms = {
+        uTime: { value: 0.0 },
+        uIgnition: { value: 0.0 }
+      };
+
+      var headlightShaderMat = new THREE.ShaderMaterial({
+        uniforms: headlightUniforms,
+        vertexShader: [
+          'varying vec2 vUv;',
+          'void main() {',
+          '  vUv = uv;',
+          '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
+          '}'
+        ].join('\\n'),
+        fragmentShader: [
+          'uniform float uTime;',
+          'uniform float uIgnition;',
+          'varying vec2 vUv;',
+          'void main() {',
+          '  float strobe = step(0.15, fract(uTime * 11.0)) * step(uTime, 0.95) + step(0.95, uTime);',
+          '  float beam = pow(1.0 - vUv.y, 1.45) * (0.22 + 0.88 * uIgnition * strobe);',
+          '  vec3 cyanCol = vec3(0.0, 0.94, 1.0);',
+          '  vec3 amberCol = vec3(1.0, 0.62, 0.04);',
+          '  vec3 coreCol = mix(cyanCol, amberCol, 0.35 + 0.45 * sin(uTime * 18.0));',
+          '  vec3 finalCol = mix(coreCol, vec3(1.0, 1.0, 1.0), uIgnition * 0.65);',
+          '  gl_FragColor = vec4(finalCol, clamp(beam, 0.0, 0.95));',
+          '}'
+        ].join('\\n'),
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        side: THREE.DoubleSide
+      });
+
+      var hlPodGeom = new THREE.SphereGeometry(0.085, 10, 10);
+      var hlPodMat = new THREE.MeshBasicMaterial({ color: 0x00F0FF, transparent: true, opacity: 0.45 });
+      var hlPodL = new THREE.Mesh(hlPodGeom, hlPodMat);
+      hlPodL.position.set(-0.56, -0.06, 1.96);
+      chassisGroup.add(hlPodL);
+
+      var hlPodR = new THREE.Mesh(hlPodGeom, hlPodMat);
+      hlPodR.position.set(0.56, -0.06, 1.96);
+      chassisGroup.add(hlPodR);
+
+      var hlBeamGeom = new THREE.ConeGeometry(0.42, 2.35, 16, 1, true);
+      hlBeamGeom.translate(0, -1.175, 0);
+      hlBeamGeom.rotateX(-Math.PI / 2);
+
+      var hlBeamL = new THREE.Mesh(hlBeamGeom, headlightShaderMat);
+      hlBeamL.position.set(-0.56, -0.06, 2.02);
+      hlBeamL.visible = false;
+      chassisGroup.add(hlBeamL);
+
+      var hlBeamR = new THREE.Mesh(hlBeamGeom, headlightShaderMat);
+      hlBeamR.position.set(0.56, -0.06, 2.02);
+      hlBeamR.visible = false;
+      chassisGroup.add(hlBeamR);
+
+      var headlightPointLight = new THREE.PointLight(0x00F0FF, 0, 7.5);
+      headlightPointLight.position.set(0, 0.15, 2.65);
+      chassisGroup.add(headlightPointLight);
+
       // Asset Diagnostic: Check for external model (.glb/.gltf) with bulletproof procedural fallback
       var externalModelUrl = canvas.getAttribute('data-model') || window.CHASSIS_MODEL_URL || null;
       if (externalModelUrl && typeof THREE.GLTFLoader !== 'undefined') {
@@ -904,10 +1079,47 @@ const html = `<!DOCTYPE html>
       var targetYaw = 0.56;
       var isScanning = false;
       var scanProgress = 0;
+      var isIgniting = false;
+      var ignitionStartMs = 0;
+      var IGNITION_DURATION_MS = 3000;
       var isDragging = false;
       var lastX = 0;
       var inView = true;
       var frameCount = 0;
+
+      function updateRpmHud(rpmVal, progressRatio, redlineActive) {
+        var formatted = Math.round(rpmVal).toLocaleString('en-US');
+        var pct = Math.max(12, Math.min(100, Math.round((rpmVal / 15000) * 100)));
+        if (rpmFill) {
+          rpmFill.style.width = pct + '%';
+          rpmFill.classList.toggle('is-redline', !!redlineActive);
+        }
+        if (rpmReadout) {
+          var statusPrefix = redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // ');
+          var suffix = redlineActive ? ' RPM [PEAK]' : ' RPM';
+          rpmReadout.textContent = statusPrefix + formatted + suffix;
+          rpmReadout.classList.toggle('is-redline', !!redlineActive);
+        }
+      }
+
+      function triggerEngineIgnition() {
+        isIgniting = true;
+        ignitionStartMs = performance.now();
+        hlBeamL.visible = true;
+        hlBeamR.visible = true;
+        isScanning = true;
+        scanProgress = 0;
+        scanMesh.visible = true;
+        if (startEngineBtn) {
+          startEngineBtn.classList.add('is-igniting');
+          startEngineBtn.textContent = '[ SPOOLING REDLINE... ]';
+        }
+        if (holoStage) holoStage.classList.add('is-igniting');
+      }
+
+      if (startEngineBtn) {
+        startEngineBtn.addEventListener('click', triggerEngineIgnition);
+      }
 
       // Prevent zero-dimension collapses on resize and container changes
       function syncViewportSize() {
@@ -971,8 +1183,52 @@ const html = `<!DOCTYPE html>
         requestAnimationFrame(animate);
         if (document.hidden || !inView) return;
 
+        var yawSpeed = 0.0028;
+        var wheelSpeed = 0.05;
+
+        if (isIgniting) {
+          var elapsedMs = performance.now() - ignitionStartMs;
+          var t = Math.min(1, Math.max(0, elapsedMs / IGNITION_DURATION_MS));
+          if (elapsedMs >= IGNITION_DURATION_MS) {
+            isIgniting = false;
+            headlightUniforms.uIgnition.value = 0.0;
+            hlBeamL.visible = false;
+            hlBeamR.visible = false;
+            hlPodMat.color.setHex(0x00F0FF);
+            hlPodMat.opacity = 0.45;
+            headlightPointLight.intensity = 0;
+            chassisGroup.position.set(0, 0, 0);
+            if (startEngineBtn) {
+              startEngineBtn.classList.remove('is-igniting');
+              startEngineBtn.textContent = '[ START ENGINE ]';
+            }
+            if (holoStage) holoStage.classList.remove('is-igniting');
+            updateRpmHud(3200, 0, false);
+          } else {
+            // 3-second spool-up curve: accelerate to redline peak and sustain high-RPM surge
+            var spoolCurve = t < 0.78 ? Math.pow(t / 0.78, 1.35) : (1.0 - ((t - 0.78) / 0.22) * 0.08);
+            var currentRpm = 3200 + spoolCurve * (15000 - 3200);
+            var isRedline = currentRpm >= 13200;
+            updateRpmHud(currentRpm, t, isRedline);
+
+            yawSpeed = 0.0028 + spoolCurve * 0.024;
+            wheelSpeed = 0.05 + spoolCurve * 0.38;
+
+            // Flash headlight shaders on the 3D car
+            headlightUniforms.uTime.value = elapsedMs * 0.001;
+            var flashPulse = 0.65 + 0.35 * Math.sin(elapsedMs * 0.032);
+            headlightUniforms.uIgnition.value = spoolCurve * flashPulse;
+            hlPodMat.color.setHex(isRedline ? 0xFF9F0A : 0xFFFFFF);
+            hlPodMat.opacity = 0.75 + 0.25 * Math.sin(elapsedMs * 0.045);
+            headlightPointLight.intensity = 2.8 * spoolCurve * flashPulse;
+
+            // High-RPM harmonic chassis micro-vibration
+            chassisGroup.position.y = Math.sin(elapsedMs * 0.09) * 0.014 * spoolCurve;
+          }
+        }
+
         if (!reducedMotion && !isDragging) {
-          targetYaw += 0.0028;
+          targetYaw += yawSpeed;
         }
         dynoYaw += (targetYaw - dynoYaw) * 0.1;
         chassisGroup.rotation.y = dynoYaw;
@@ -980,7 +1236,7 @@ const html = `<!DOCTYPE html>
         // Rotate wheels
         if (!reducedMotion) {
           for (var w = 0; w < wheels.length; w++) {
-            wheels[w].rotation.x += 0.05;
+            wheels[w].rotation.x += wheelSpeed;
           }
         }
 
@@ -1026,11 +1282,42 @@ const html = `<!DOCTYPE html>
       var dynoYaw = 0.56;
       var targetYaw = 0.56;
       var wheelSpin = 0;
+      var isIgniting = false;
+      var ignitionStartMs = 0;
+      var IGNITION_DURATION_MS = 3000;
       var isDragging = false;
       var lastX = 0;
       var inView = true;
       var rafId = 0;
       var frameTick = 0;
+
+      function updateFallbackRpmHud(rpmVal, redlineActive) {
+        var formatted = Math.round(rpmVal).toLocaleString('en-US');
+        var pct = Math.max(12, Math.min(100, Math.round((rpmVal / 15000) * 100)));
+        if (rpmFill) {
+          rpmFill.style.width = pct + '%';
+          rpmFill.classList.toggle('is-redline', !!redlineActive);
+        }
+        if (rpmReadout) {
+          var statusPrefix = redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // ');
+          var suffix = redlineActive ? ' RPM [PEAK]' : ' RPM';
+          rpmReadout.textContent = statusPrefix + formatted + suffix;
+          rpmReadout.classList.toggle('is-redline', !!redlineActive);
+        }
+      }
+
+      if (startEngineBtn) {
+        startEngineBtn.addEventListener('click', function () {
+          isIgniting = true;
+          ignitionStartMs = performance.now();
+          if (startEngineBtn) {
+            startEngineBtn.classList.add('is-igniting');
+            startEngineBtn.textContent = '[ SPOOLING REDLINE... ]';
+          }
+          if (holoStage) holoStage.classList.add('is-igniting');
+          kick();
+        });
+      }
 
       var f1Nodes = {
         nose_tip:    { x: 0,     y: -0.10, z: 2.45 },
@@ -1144,11 +1431,32 @@ const html = `<!DOCTYPE html>
         }
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+        var yawStep = 0.0028;
+        var spoolFactor = 0;
+        if (isIgniting) {
+          var elapsedMs = performance.now() - ignitionStartMs;
+          if (elapsedMs >= IGNITION_DURATION_MS) {
+            isIgniting = false;
+            if (startEngineBtn) {
+              startEngineBtn.classList.remove('is-igniting');
+              startEngineBtn.textContent = '[ START ENGINE ]';
+            }
+            if (holoStage) holoStage.classList.remove('is-igniting');
+            updateFallbackRpmHud(3200, false);
+          } else {
+            var t = Math.min(1, Math.max(0, elapsedMs / IGNITION_DURATION_MS));
+            spoolFactor = t < 0.78 ? Math.pow(t / 0.78, 1.35) : (1.0 - ((t - 0.78) / 0.22) * 0.08);
+            var currentRpm = 3200 + spoolFactor * (15000 - 3200);
+            updateFallbackRpmHud(currentRpm, currentRpm >= 13200);
+            yawStep = 0.0028 + spoolFactor * 0.024;
+          }
+        }
+
         if (!reducedMotion && !isDragging) {
-          targetYaw += 0.0028;
+          targetYaw += yawStep;
         }
         dynoYaw += (targetYaw - dynoYaw) * 0.09;
-        if (!reducedMotion) wheelSpin += 0.055;
+        if (!reducedMotion) wheelSpin += 0.055 + spoolFactor * 0.35;
 
         var pitch = 0.38;
         ctx.fillStyle = '#05070B';

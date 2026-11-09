@@ -209,7 +209,6 @@ const clusterCard = (c) => {
   const clusterName = `${c.id} — ${c.title}`;
   const clusterMsrp = c.triads.length * 69000;
   const clusterApaMailto = generateAquireMailto(clusterName, 'Sealed Micro-Cluster', fmt(c.ask));
-  const clusterVaultMailto = generateAquireMailto(clusterName, 'Micro-Cluster Vault Buyout', fmt(c.ask));
   return `
       <article class="card cluster" id="${c.id.toLowerCase()}" data-cluster="${c.id}">
         <header class="cluster-head">
@@ -246,8 +245,7 @@ const clusterCard = (c) => {
           </ol>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
-          <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire title (APA) for ${c.id}">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Direct Sovereign APA // ${fmt(c.ask)}</small></a>
-          <a class="btn btn-cyan w-full" href="${clusterVaultMailto}" data-cluster="${c.id}" aria-label="Inquire vault buyout for ${c.id}">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Micro-Cluster Vault // ${fmt(c.ask)} Anchor</small></a>
+          <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire cluster title (APA) for ${c.id}">[ ACQUIRE CLUSTER TITLE (APA) // ${fmt(c.ask)} ]</a>
           <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
         </div>
       </article>`;
@@ -256,13 +254,9 @@ const clusterCard = (c) => {
 const batchApaMailto = generateAquireMailto('5-Cluster Commercial Portfolio Lot (MC-01 through MC-05)', '5-Cluster Portfolio APA', fmt(BATCH_ASK));
 const vaultPortfolioMailto = generateAquireMailto('Full Fleet Master Vault (MC-01 through MC-05)', 'Master Vault Buyout', fmt(BATCH_ASK));
 const track1ApaMailto = generateAquireMailto('Track 1 (Operator Utility)', 'Micro-APA Sovereign Title', '$4,500');
-const track1VaultMailto = generateAquireMailto('Track 1 (Operator Utility) Vault Carve-Out', 'Micro-APA Sovereign Title', '$4,500');
 const track2ApaMailto = generateAquireMailto('Track 2 (3D SCADA Cockpit)', 'Chassis APA Sovereign Title', '$14,500');
-const track2VaultMailto = generateAquireMailto('Track 2 (3D SCADA Cockpit) Vault Carve-Out', 'Chassis APA Sovereign Title', '$14,500');
 const track3ApaMailto = generateAquireMailto('Track 3 (Skunkworks Engine)', 'Engine APA Sovereign Title', '$35,000 – $65,000');
-const track3VaultMailto = generateAquireMailto('Track 3 (Skunkworks Engine) Vault Carve-Out', 'Engine APA Sovereign Title', '$35,000 – $65,000');
 const bundleApaMailto = generateAquireMailto('Cluster Package Buyout (3 Triads / 9 Units)', 'Cluster Package Buyout APA', '$145,000 – $185,000');
-const bundleVaultMailto = generateAquireMailto('Cluster Package Buyout Vault Carve-Out (3 Triads / 9 Units)', 'Cluster Package Vault Buyout', '$145,000 – $185,000');
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -513,7 +507,6 @@ const html = `<!DOCTYPE html>
         <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero recurring seats.</p>
         <div class="hero-actions flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="${batchApaMailto}" aria-label="Acquire title (APA) for 5-cluster portfolio lot">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">5-Cluster Portfolio APA // ${fmt(BATCH_ASK)}</small></a>
-          <a class="btn btn-cyan w-full" href="${vaultPortfolioMailto}" aria-label="Inquire vault buyout for full fleet master vault">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Full Fleet Master Vault // ${fmt(BATCH_ASK)} Anchor</small></a>
         </div>
       </div>
 
@@ -581,8 +574,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 1 (Operator Utility)</div>
           <div class="sub text-xs font-mono text-zinc-200">React 19 / Vite / Postgres RLS</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Micro-APA Sovereign Title // $4,500</small></a>
-            <a class="btn btn-cyan w-full" href="${track1VaultMailto}" aria-label="Inquire vault buyout for Track 1 Operator Utility">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Operator Utility Vault // $4,500 Anchor</small></a>
+            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) // $4,500 ]</a>
           </div>
         </div>
 
@@ -592,8 +584,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 2 (3D SCADA Cockpit)</div>
           <div class="sub text-xs font-mono text-zinc-200">Three.js WebGL 60 FPS Telemetry HUD</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Chassis APA Sovereign Title // $14,500</small></a>
-            <a class="btn btn-cyan w-full" href="${track2VaultMailto}" aria-label="Inquire vault buyout for Track 2 3D SCADA Cockpit">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">SCADA Cockpit Vault // $14,500 Anchor</small></a>
+            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) // $14,500 ]</a>
           </div>
         </div>
 
@@ -603,8 +594,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 3 (Skunkworks Engine)</div>
           <div class="sub text-xs font-mono text-zinc-200">FastAPI Python 3.12 Asynchronous Core</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Engine APA Sovereign Title // $35,000 – $65,000</small></a>
-            <a class="btn btn-cyan w-full" href="${track3VaultMailto}" aria-label="Inquire vault buyout for Track 3 Skunkworks Engine">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Skunkworks Engine Vault // $50,000 Anchor</small></a>
+            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) // $35,000 - $65,000 ]</a>
           </div>
         </div>
 
@@ -614,8 +604,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Full Triad Cluster Bundle</div>
           <div class="sub text-xs font-mono text-zinc-200">3 Triads / 9 Units // $207k Retail Baseline</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire title (APA) for Full Triad Cluster Bundle">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Cluster Package Buyout // $145,000 – $185,000</small></a>
-            <a class="btn btn-cyan w-full" href="${bundleVaultMailto}" aria-label="Inquire vault buyout for Full Triad Cluster Bundle">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Cluster Vault Buyout // $207,000 Baseline</small></a>
+            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire cluster title (APA) for Full Triad Cluster Bundle">[ ACQUIRE CLUSTER TITLE (APA) // $145,000 - $185,000 ]</a>
           </div>
         </div>
       </div>

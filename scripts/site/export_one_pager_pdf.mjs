@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Aura & Grid — Acquire.com Executive Buyer Brief PDF Exporter
+ * Aura & Grid — Direct B2B Executive Architecture Brief PDF Exporter
  *
  * Compiles `docs/deal-room/MICRO_CLUSTERS_ONE_PAGER.md` into a clean, print-ready
  * institutional PDF (`docs/deal-room/MICRO_CLUSTERS_ONE_PAGER.pdf`) using headless
@@ -67,7 +67,7 @@ function markdownToHtml(markdown) {
     }
 
     if (line.startsWith('# ')) {
-      out.push(`<header class="doc-header"><div class="doc-eyebrow">AURA &amp; GRID // ACQUIRE.COM EXECUTIVE BUYER BRIEF</div><h1>${formatInline(line.slice(2).trim())}</h1>`);
+      out.push(`<header class="doc-header"><div class="doc-eyebrow">AURA &amp; GRID // DIRECT B2B EXECUTIVE ARCHITECTURE BRIEF</div><h1>${formatInline(line.slice(2).trim())}</h1>`);
       i++;
       while (i < lines.length && lines[i].trim() !== '---') {
         if (lines[i].trim()) {
@@ -209,7 +209,7 @@ const fullHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aura &amp; Grid — Acquire.com Buyer Brief (MICRO_CLUSTERS_ONE_PAGER)</title>
+  <title>Aura &amp; Grid — Direct B2B Architecture Brief (MICRO_CLUSTERS_ONE_PAGER)</title>
   <style>
     @page {
       size: Letter;

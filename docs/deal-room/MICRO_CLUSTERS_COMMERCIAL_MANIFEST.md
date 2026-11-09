@@ -12,17 +12,17 @@
 
 > [!IMPORTANT]
 > **100% PURE SOFTWARE ASSET SALE (DIRECT TURNKEY APA TITLE TRANSFER)**  
-> Every micro-cluster transaction conveys outright title to the specified source code, data schemas, container specifications, and deployment scripts, sold directly by the independent sole developer through Acquire.com escrow. **Unencumbered sole-proprietorship asset sale: zero corporate equity, zero debt, zero assumed liabilities, zero recurring seat fees.** Seller trademarks, creator development tooling, and parent catalog rights remain reserved by independent seller.
+> Every micro-cluster transaction conveys outright title to the specified source code, data schemas, container specifications, and deployment scripts, sold directly by the independent sole developer via direct B2B settlement and sovereign escrow. **Unencumbered sole-proprietorship asset sale: zero corporate equity, zero debt, zero assumed liabilities, zero recurring seat fees.** Seller trademarks, creator development tooling, and parent catalog rights remain reserved by independent seller.
 
 ### Transaction Governance Matrix
 
 | Commercial Parameter | Governance Covenant & Standard |
 | :--- | :--- |
 | **Seller Structure** | Independent Systems Architect, sole proprietorship — unencumbered asset sale |
-| **Transaction Structure** | 100% Pure Asset Purchase Agreement (APA) via Acquire.com Escrow |
+| **Transaction Structure** | 100% Pure Asset Purchase Agreement (APA) via Direct Sovereign Escrow |
 | **IP Conveyance** | 100% Outright Title, Source Code, Dockerfiles, OpenAPI 3.1 Specs & DB Schemas |
 | **Corporate Equity Impact** | **0.0% Corporate Equity Conveyance** (pure software asset buyout; zero debt, zero assumed liabilities) |
-| **Settlement Mechanism** | Acquire.com Escrow / Institutional Attorney Escrow |
+| **Settlement Mechanism** | Direct Bank Wire / Institutional Attorney Escrow Desk |
 | **Inspection Window** | 5 Business Days Technical Code Audit & Dyno Test Suite Replication |
 | **Retained by Seller** | Seller trademarks, creator development tooling, and parent catalog rights |
 | **Deployment Target** | Containerized deployment (Google Cloud Run, AWS ECS, or private Kubernetes) |

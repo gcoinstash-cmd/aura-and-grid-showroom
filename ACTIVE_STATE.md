@@ -1,6 +1,6 @@
 # ACTIVE_STATE.md — Canonical Commercial & Telemetry Synchronization Anchor
 
-> **TURN-0 MANDATORY BOOT DIRECTIVE**: Every incoming engineering session, automation workflow, or copy review MUST load this file on Turn 0 as the authoritative single source of truth for all public showroom builds, Acquire.com deal-room materials, and buyer-facing communications. Where legacy workspace notes differ on public positioning, **`ACTIVE_STATE.md` takes strict precedence**.
+> **TURN-0 MANDATORY BOOT DIRECTIVE**: Every incoming engineering session, automation workflow, or copy review MUST load this file on Turn 0 as the authoritative single source of truth for all public showroom builds, direct B2B buyer-facing communications, and transaction briefs. Where legacy workspace notes differ on public positioning, **`ACTIVE_STATE.md` takes strict precedence**.
 
 ---
 
@@ -10,7 +10,9 @@
 | :--- | :--- |
 | **Commercial Public Name** | **Aura & Grid** |
 | **Entity Status** | **Sole Entrepreneur / Independent Software Architect** |
-| **Transaction Type** | **Pure Asset Purchase Agreement (APA) via Acquire.com Escrow** |
+| **Transaction Type** | **Direct Pure Asset Purchase Agreement (APA)** |
+| **Primary Distribution Vector** | **Direct B2B Outbound to Boutique WebGL Creative Agencies, Interactive Design Shops & SCADA Integrators** |
+| **Core Sales Collateral** | **15s 60 FPS WebGL Demo Video (`showroom_demo_15s.webm`) + 1-Page Executive Architecture Brief (`MICRO_CLUSTERS_ONE_PAGER.pdf`)** |
 | **Conveyance Standard** | **100% Pure Software Asset Sale (Direct Turnkey APA Title Transfer)** — full source code, database schemas, and deployment scripts conveyed directly by sole developer; zero debt, zero equity, zero assumed corporate liabilities, zero recurring seat licenses |
 | **IP Boundary Disclosure** | *"Seller trademarks, creator development tooling, and parent catalog rights remain reserved by independent seller."* |
 
@@ -39,22 +41,23 @@
 
 ---
 
-## 3. EXCLUDED VOCABULARY (STRICT PUBLIC & DEAL-ROOM BAN)
+## 3. EXCLUDED VOCABULARY & BLACKLIST (STRICT BAN)
 
-All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/index.html`, `index.html`, `dist/index.html`) and external Acquire.com deal assets MUST strictly exclude the following terms (enforced automatically by `npm run audit:commercial`):
+All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/index.html`, `index.html`, `dist/index.html`) and direct B2B collateral MUST strictly exclude the following terms (enforced automatically by `npm run audit:commercial`):
 
 1. **`Ghost Factory OS` / `GhostFactoryOS` / `GF-T1` / `GF-T2` / `GF-T3`** — Strictly internal workspace nomenclature only. Never expose publicly; use **Aura & Grid** or **Independent Systems Architect**.
-2. **`AI`** (including `LLM` and `inference`) — Frame strictly around *high-performance distributed systems*, *compute infrastructure*, *parallel execution*, and *high-throughput data processing*.
-3. **`autonomous`** — Frame strictly around *mission-critical edge computing*, *real-time distributed telemetry*, and *low-latency FinTech infrastructure*.
-4. **`automated`** — Frame strictly around *verified deterministic test suites* and *105/105 passing test gates*.
-5. **`agents` / `agent`** — Frame strictly around *distributed services*, *deterministic state machines*, or *consensus workers*.
-6. **Unverified Marketing Claims** — Never claim `production-ready` or `enterprise-grade`; cockpits must carry clear *simulated sample data* previews disclosures.
+2. **Third-Party Public Brokerages (`Acquire.com`, `Flippa`)** — Zero references to public brokerages or listing marketplaces; distribution is 100% direct B2B agency outreach.
+3. **`AI`** (including `LLM` and `inference`) — Frame strictly around *high-performance distributed systems*, *compute infrastructure*, *parallel execution*, and *high-throughput data processing*.
+4. **`autonomous`** — Frame strictly around *mission-critical edge computing*, *real-time distributed telemetry*, and *low-latency FinTech infrastructure*.
+5. **`automated`** — Frame strictly around *verified deterministic test suites* and *105/105 passing test gates*.
+6. **`agents` / `agent`** — Frame strictly around *distributed services*, *deterministic state machines*, or *consensus workers*.
+7. **Unverified Marketing Claims** — Never claim `production-ready` or `enterprise-grade`; cockpits must carry clear *simulated sample data* previews disclosures.
 
 ---
 
 ## 4. GIT TELEMETRY & DYNO VERIFICATION STATUS
 
-- **Last Verified Baseline Commit (`main`)**: `060cbcb` (`docs(deal-room): record cluster 07 (triads 21-23) sealed manifest entry`)
+- **Last Verified Baseline Commit (`main`)**: `e9def27` (`feat(audio): install option b high-fidelity exotic engine start and tachometer sync`)
 - **Baseline Status**: Cluster 07 committed and pushed
 - **Dual-Exhaust Remote Sync**: `origin` configured to push simultaneously to `aura-and-grid.git` (master repo) and `aura-and-grid-showroom.git` (Render live static showroom).
 - **Dyno & Test Suite Verification**: **`105/105` deterministic pytest & dyno gates passing (`4/4 VERIFIED GATES` sealed)** across all 17 triads; clean-room permissive licensing (`MIT / Apache-2.0`).
@@ -67,10 +70,10 @@ All public showroom code (`scripts/site/build_commercial_showroom.mjs`, `site/in
 
 ## 5. ZERO-LEAK COMMERCIAL GOVERNANCE STANDARD (PERMANENT RULEBOOK)
 
-Every build and CI/CD run (`npm run audit:commercial`) recursively inspects `site/` and `docs/deal-room/` and fails with exit code `1` on any violation of the five permanent rules below:
+Every build and CI/CD run (`npm run audit:commercial`) recursively inspects `site/` and `docs/deal-room/` and fails with exit code `1` on any violation of the permanent rules below:
 
 - **Rule 1 — Internal Engine Isolation**: Zero public exposure of `"Ghost Factory OS"` or `"GhostFactoryOS"` (strictly internal development engine). Public assets reference **Aura & Grid** and **Independent Systems Architect** only.
-- **Rule 2 — Prohibited Buzzwords & Automotive Brands**: Zero inclusion of `"AI"` (including `LLM`, `inference`, `agent`/`agents`, `unsupervised agent`), `"autonomous"`, `"automated"`, or automotive brand names (e.g., `Lexus`).
+- **Rule 2 — Prohibited Buzzwords, Automotive Brands & Public Brokerages**: Zero inclusion of `"AI"` (including `LLM`, `inference`, `agent`/`agents`, `unsupervised agent`), `"autonomous"`, `"automated"`, automotive brand names (e.g., `Lexus`), or third-party brokerage names (`Acquire.com`, `Flippa`).
 - **Rule 3 — Public Identifier Anonymization**: Zero internal unit serial numbers (`#338`, etc.) or internal registry prefixes (`GF-T1`/`GF-T2`/`GF-T3`, `T1-`/`T2-`) on public showroom or deal-room assets; use **`MC-01` through `MC-05`** (and sub-triad labels `MC-01.1`–`MC-05.3`) only.
 - **Rule 4 — Unencumbered Sole-Proprietor APA Framing**: Sole Proprietor **100% Pure APA** software asset sale framing only (zero corporate equity, zero debt, zero assumed corporate liabilities, zero `LLC` or corporate entity claims).
 - **Rule 5 — Strict Pricing Parity & Floor Redaction**: Strict pricing parity across showroom and deal-room collateral (**`$805,000`** 5-cluster batch ask, **`$145,000–$185,000`** standalone range, and **`MC-05` locked at `$145,000`**), with zero exposure of internal reserve, wholesale, or walk-away figures.

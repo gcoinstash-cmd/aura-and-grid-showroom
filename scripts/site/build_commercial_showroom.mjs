@@ -2,7 +2,7 @@
 
 /**
  * Aura & Grid — 5-Cluster Commercial Acquisition Showroom Compiler
- * (F1 Pit Wall × Cyberpunk Spec Configurator, for Acquire.com buyers)
+ * (F1 Pit Wall × Cyberpunk Spec Configurator, for Direct B2B Studio Buyers)
  *
  * Generates site/index.html (mirrored to root index.html and dist/index.html) as a
  * dependency-free static page: inline CSS, lightweight inline Canvas 2D 3D-wireframe
@@ -60,8 +60,8 @@ Please route the complete APA title transfer agreement and code manifest to:
 }
 export const generateAcquireMailto = generateAquireMailto;
 
-// Acquire.com listing inquiry target. Override with ACQUIRE_LISTING_URL once the live listing URL exists.
-const ACQUIRE_URL = process.env.ACQUIRE_LISTING_URL || 'https://acquire.com/';
+// Direct inquiry target URL (defaults to direct dealership endpoint)
+const DIRECT_INQUIRY_URL = process.env.DIRECT_INQUIRY_URL || 'https://auraandgrid.com/';
 
 // `--check` (npm run audit:commercial): validate only. Writes nothing; exits non-zero if the
 // manifest cross-check or redaction scan fails, or if site/index.html is not the compiled output.
@@ -269,7 +269,7 @@ const html = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura &amp; Grid — Commercial Asset Showroom // Acquire.com</title>
+  <title>Aura &amp; Grid — Commercial Asset Showroom // Direct B2B Studio Outreach</title>
   <meta name="description" content="5 sealed micro-clusters, 51 units (17 triads) of high-performance distributed systems and compute infrastructure authored by a sole systems architect and offered as a 100% pure Software Asset Purchase Agreement (APA). Retail replacement benchmark ${fmt(RETAIL_BENCHMARK)}; portfolio asking price ${fmt(BATCH_ASK)}.">
   <meta name="theme-color" content="#05070B">
   <link rel="canonical" href="https://auraandgrid.com/">
@@ -646,7 +646,7 @@ const html = `<!DOCTYPE html>
           <ul class="foot-list text-sm md:text-base text-zinc-200 leading-relaxed space-y-2.5">
             <li>100% Pure Software Asset Sale (Direct Turnkey APA Title Transfer)</li>
             <li>Authored and transferred directly by sole developer/systems architect</li>
-            <li>5-Business-Day Technical Dyno Inspection via Acquire.com Escrow</li>
+            <li>5-Business-Day Technical Dyno Inspection via Sovereign Attorney Escrow</li>
             <li>Full source code, deployment scripts, and database schemas included</li>
           </ul>
         </div>
@@ -1793,7 +1793,7 @@ const FORBIDDEN = [
 for (const re of FORBIDDEN) if (re.test(html)) fail(`forbidden pattern ${re} found in compiled markup`);
 
 const htmlCopy = html.replace(/href="\.\/cockpits\/[^"]+"/g, '');
-const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i, /\bagents?\b/i];
+const FORBIDDEN_COPY = [/\bai\b/i, /\bllm\b/i, /\binference\b/i, /\bautonomous\b/i, /\bautomated\b/i, /\bagents?\b/i, /acquire\.com/i, /\bflippa\b/i];
 for (const re of FORBIDDEN_COPY) if (re.test(htmlCopy)) fail(`forbidden terminology ${re} found in showroom copy`);
 
 /* ------------------------------------------------------------------ */
@@ -1807,7 +1807,7 @@ const SCAN_FORBIDDEN = [
   // Rule 1 — internal development engine never public
   { rule: 1, label: 'GhostFactory / GHOSTFACTORYOS', re: /ghostfactory/i },
   { rule: 1, label: 'Ghost Factory OS', re: /ghost\s+factory/i },
-  // Rule 2 — no AI / autonomous / automated vocabulary, no automotive brand names
+  // Rule 2 — no AI / autonomous / automated vocabulary, no automotive brand names, no third-party brokerages
   { rule: 2, label: 'AI', re: /\bai\b/i },
   { rule: 2, label: 'LLM', re: /\bllm\b/i },
   { rule: 2, label: 'inference', re: /\binference\b/i },
@@ -1816,6 +1816,7 @@ const SCAN_FORBIDDEN = [
   { rule: 2, label: 'agent / agents', re: /\bagents?\b/i },
   { rule: 2, label: 'unsupervised agent', re: /unsupervised\s+agents?/i },
   { rule: 2, label: 'automotive brand', re: new RegExp(`\\b(?:${CAR_BRANDS})\\b`, 'i') },
+  { rule: 2, label: 'third-party brokerage (Acquire.com/Flippa)', re: /acquire\.com|\bflippa\b/i },
   // Rule 3 — no internal unit serials / registry tags (use MC-01 .. MC-05 only)
   { rule: 3, label: 'unit serial (#10-#500 / Unit #)', re: /#\s?(?:0*[1-9]\d|[1-4]\d{2}|500)\b(?![0-9a-fA-F])|\bUnit\s*#\s*\d+\b/i },
   { rule: 3, label: 'registry tag (GF-T1/T2/T3)', re: /\bgf-t[123]\b/i },

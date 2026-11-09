@@ -1,9 +1,9 @@
 # Turnkey Multi-Cluster High-Performance Distributed Systems Suite (5 Sealed Micro-Clusters // 51 Verified Units)
 **Asset Class**: High-Performance Distributed Systems, Parallel Execution & KV Memory Fabric Engine Fleet  
-**Transaction Structure**: 100% Pure Asset Purchase Agreement (APA) | Direct Turnkey APA Title Transfer via Acquire.com Escrow  
+**Transaction Structure**: 100% Pure Asset Purchase Agreement (APA) | Direct Turnkey APA Title Transfer via Sovereign Escrow  
 **Seller / Transferor**: Aura & Grid — Independent Systems Architect (Sole Entrepreneur / Sole Proprietorship)  
 **Seller Structure**: Unencumbered sole-proprietorship asset sale — zero corporate equity, zero debt, zero assumed liabilities  
-**Closing Facility**: Acquire.com Escrow / Attorney Escrow Desk  
+**Closing Facility**: Institutional Attorney Escrow Desk / Direct Wire Settlement  
 **Inspection Period**: 5 Business Days Technical Code Audit & Dyno Replication via Verified Test Gates  
 
 ---
@@ -77,7 +77,7 @@ GATE 04: MECHANICAL TEST DYNO        [100% PASSED] 105/105 Passed (100.0% Pass R
 ### Buyer Diligence & Closing Process
 
 1. **Transaction Vehicle:** Pure Asset Purchase Agreement (APA) drafted under Delaware / Wyoming commercial law.
-2. **Escrow Guarantee:** Funds placed in Acquire.com escrow or attorney escrow prior to confidential repository handoff.
+2. **Escrow Guarantee:** Funds placed in sovereign attorney escrow prior to confidential repository handoff.
 3. **Inspection Access:** 5 business days to execute the verified test gates and verify architecture contracts.
 4. **Closing Deliverables:** Full Git source code access, signed copyright and patent assignments, PostgreSQL 16 migration scripts, container specs, and OpenAPI 3.1 contracts.
 

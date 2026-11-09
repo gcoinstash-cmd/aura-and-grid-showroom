@@ -276,6 +276,7 @@ const html = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="audio" href="./assets/audio/engine_start.mp3" type="audio/mpeg">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -528,6 +529,7 @@ const html = `<!DOCTYPE html>
         </div>
         <div class="holo-stage" id="holoStage">
           <canvas id="dynoHoloCanvas" data-model="" aria-label="Rotating 3D F1 cyber-chassis CAD wireframe"></canvas>
+          <audio id="engineStartAudio" preload="auto" src="./assets/audio/engine_start.mp3" hidden></audio>
         </div>
         <div class="holo-rpm-deck" id="holoRpmDeck" role="region" aria-label="Dyno RPM Telemetry Gauge">
           <div class="holo-rpm-head">
@@ -688,7 +690,135 @@ const html = `<!DOCTYPE html>
       var rpmFill = document.getElementById('holoRpmFill');
       var scanBtn = document.getElementById('scanSchematicBtn');
       var startEngineBtn = document.getElementById('startEngineBtn');
+      var engineAudioEl = document.getElementById('engineStartAudio');
       var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Option B Exotic Cold-Start Web Audio API Controller + Preloaded MP3 Buffer
+      var ENGINE_AUDIO_SRC = './assets/audio/engine_start.mp3';
+      var audioCtx = null;
+      var decodedEngineBuffer = null;
+      var activeSourceNode = null;
+      var rawAudioArrayBufferPromise = (typeof window.fetch === 'function')
+        ? window.fetch(ENGINE_AUDIO_SRC).then(function (res) {
+            return res.ok ? res.arrayBuffer() : null;
+          }).catch(function () { return null; })
+        : Promise.resolve(null);
+
+      function triggerColdStartAudio() {
+        try {
+          var AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioContextClass) {
+            if (!audioCtx) {
+              audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+              audioCtx.resume();
+            }
+            if (activeSourceNode) {
+              try { activeSourceNode.stop(0); } catch (e) {}
+              activeSourceNode = null;
+            }
+            if (decodedEngineBuffer) {
+              var srcNode = audioCtx.createBufferSource();
+              var gainNode = audioCtx.createGain();
+              gainNode.gain.value = 0.92;
+              srcNode.buffer = decodedEngineBuffer;
+              srcNode.connect(gainNode);
+              gainNode.connect(audioCtx.destination);
+              srcNode.start(0);
+              activeSourceNode = srcNode;
+              return;
+            }
+            rawAudioArrayBufferPromise.then(function (rawBuf) {
+              if (rawBuf && audioCtx) {
+                audioCtx.decodeAudioData(rawBuf.slice(0), function (decoded) {
+                  decodedEngineBuffer = decoded;
+                  if (activeSourceNode) {
+                    try { activeSourceNode.stop(0); } catch (e) {}
+                  }
+                  var srcNode = audioCtx.createBufferSource();
+                  var gainNode = audioCtx.createGain();
+                  gainNode.gain.value = 0.92;
+                  srcNode.buffer = decoded;
+                  srcNode.connect(gainNode);
+                  gainNode.connect(audioCtx.destination);
+                  srcNode.start(0);
+                  activeSourceNode = srcNode;
+                }, function () {
+                  playFallbackAudioElement();
+                });
+              } else {
+                playFallbackAudioElement();
+              }
+            });
+            return;
+          }
+        } catch (err) {
+          console.warn('[AUDIO ENGINE]: Web Audio API fallback engaged', err);
+        }
+        playFallbackAudioElement();
+      }
+
+      function playFallbackAudioElement() {
+        try {
+          var el = engineAudioEl || new Audio(ENGINE_AUDIO_SRC);
+          el.currentTime = 0;
+          el.volume = 0.92;
+          var p = el.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) {}
+      }
+
+      // Synchronized 3-Phase Showroom Tachometer & Camera Vibration Timeline (0.0s - 3.0s):
+      //   0.0s - 0.5s: Starter motor churn (Tachometer climbs from 0 to 3,200 RPM)
+      //   0.5s - 1.5s: Exhaust ignition roar (Tachometer blips to 15,000 RPM peak + subtle Three.js camera vibration)
+      //   1.5s - 3.0s: Exhaust burble decrescendo (Tachometer settles to steady 3,200 RPM idle)
+      function computeIgnitionTimeline(elapsedMs) {
+        var rpm = 3200;
+        var spoolCurve = 0;
+        var camShakeX = 0;
+        var camShakeY = 0;
+        var phasePrefix = 'IDLE // ';
+        var isRedline = false;
+
+        if (elapsedMs < 500) {
+          var u1 = Math.max(0, elapsedMs / 500);
+          rpm = 3200 * Math.pow(u1, 1.08);
+          spoolCurve = 0.18 * u1;
+          phasePrefix = 'STARTER CHURN // ';
+        } else if (elapsedMs < 1500) {
+          var u2 = (elapsedMs - 500) / 1000;
+          var roarCurve = u2 < 0.72
+            ? Math.pow(u2 / 0.72, 0.72)
+            : 1.0 - 0.04 * ((u2 - 0.72) / 0.28);
+          rpm = 3200 + (15000 - 3200) * roarCurve;
+          spoolCurve = 0.22 + 0.78 * roarCurve;
+          isRedline = rpm >= 13200;
+          phasePrefix = isRedline ? 'REDLINE // ' : 'IGNITION ROAR // ';
+          if (!reducedMotion) {
+            var vibEnv = Math.sin(u2 * Math.PI) * roarCurve;
+            camShakeX = Math.sin(elapsedMs * 0.11) * 0.032 * vibEnv;
+            camShakeY = Math.cos(elapsedMs * 0.15) * 0.026 * vibEnv;
+          }
+        } else {
+          var u3 = Math.min(1, (elapsedMs - 1500) / 1500);
+          var decay = Math.pow(1 - u3, 2.15);
+          var burbleOsc = Math.sin(elapsedMs * 0.048) * 165 * decay * (1 - decay);
+          rpm = 3200 + (14528 - 3200) * decay + burbleOsc;
+          spoolCurve = 0.85 * decay;
+          isRedline = rpm >= 13200;
+          phasePrefix = isRedline ? 'REDLINE // ' : (u3 < 0.85 ? 'BURBLE DECAY // ' : 'IDLE // ');
+        }
+
+        return {
+          rpm: rpm,
+          spoolCurve: spoolCurve,
+          camShakeX: camShakeX,
+          camShakeY: camShakeY,
+          phasePrefix: phasePrefix,
+          isRedline: isRedline
+        };
+      }
 
       function hasWebGL() {
         try {
@@ -1083,15 +1213,15 @@ const html = `<!DOCTYPE html>
       var inView = true;
       var frameCount = 0;
 
-      function updateRpmHud(rpmVal, progressRatio, redlineActive) {
+      function updateRpmHud(rpmVal, progressRatio, redlineActive, customPrefix) {
         var formatted = Math.round(rpmVal).toLocaleString('en-US');
-        var pct = Math.max(12, Math.min(100, Math.round((rpmVal / 15000) * 100)));
+        var pct = Math.max(2, Math.min(100, Math.round((rpmVal / 15000) * 100)));
         if (rpmFill) {
           rpmFill.style.width = pct + '%';
           rpmFill.classList.toggle('is-redline', !!redlineActive);
         }
         if (rpmReadout) {
-          var statusPrefix = redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // ');
+          var statusPrefix = customPrefix || (redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // '));
           var suffix = redlineActive ? ' RPM [PEAK]' : ' RPM';
           rpmReadout.textContent = statusPrefix + formatted + suffix;
           rpmReadout.classList.toggle('is-redline', !!redlineActive);
@@ -1099,6 +1229,7 @@ const html = `<!DOCTYPE html>
       }
 
       function triggerEngineIgnition() {
+        triggerColdStartAudio();
         isIgniting = true;
         ignitionStartMs = performance.now();
         hlBeamL.visible = true;
@@ -1106,6 +1237,7 @@ const html = `<!DOCTYPE html>
         isScanning = true;
         scanProgress = 0;
         scanMesh.visible = true;
+        updateRpmHud(0, 0, false, 'STARTER CHURN // ');
         if (startEngineBtn) {
           startEngineBtn.classList.add('is-igniting');
           startEngineBtn.textContent = '[ SPOOLING REDLINE... ]';
@@ -1194,18 +1326,20 @@ const html = `<!DOCTYPE html>
             hlPodMat.opacity = 0.45;
             headlightPointLight.intensity = 0;
             chassisGroup.position.set(0, 0, 0);
+            camera.position.set(0, 2.5, 6);
+            camera.lookAt(0, 0, 0);
             if (startEngineBtn) {
               startEngineBtn.classList.remove('is-igniting');
               startEngineBtn.textContent = '[ START ENGINE ]';
             }
             if (holoStage) holoStage.classList.remove('is-igniting');
-            updateRpmHud(3200, 0, false);
+            updateRpmHud(3200, 0, false, 'IDLE // ');
           } else {
-            // 3-second spool-up curve: accelerate to redline peak and sustain high-RPM surge
-            var spoolCurve = t < 0.78 ? Math.pow(t / 0.78, 1.35) : (1.0 - ((t - 0.78) / 0.22) * 0.08);
-            var currentRpm = 3200 + spoolCurve * (15000 - 3200);
-            var isRedline = currentRpm >= 13200;
-            updateRpmHud(currentRpm, t, isRedline);
+            var tl = computeIgnitionTimeline(elapsedMs);
+            var spoolCurve = tl.spoolCurve;
+            var currentRpm = tl.rpm;
+            var isRedline = tl.isRedline;
+            updateRpmHud(currentRpm, t, isRedline, tl.phasePrefix);
 
             yawSpeed = 0.0028 + spoolCurve * 0.024;
             wheelSpeed = 0.05 + spoolCurve * 0.38;
@@ -1218,8 +1352,10 @@ const html = `<!DOCTYPE html>
             hlPodMat.opacity = 0.75 + 0.25 * Math.sin(elapsedMs * 0.045);
             headlightPointLight.intensity = 2.8 * spoolCurve * flashPulse;
 
-            // High-RPM harmonic chassis micro-vibration
+            // High-RPM harmonic chassis micro-vibration & Three.js camera vibration during exhaust roar
             chassisGroup.position.y = Math.sin(elapsedMs * 0.09) * 0.014 * spoolCurve;
+            camera.position.set(tl.camShakeX, 2.5 + tl.camShakeY, 6);
+            camera.lookAt(0, 0, 0);
           }
         }
 
@@ -1287,15 +1423,15 @@ const html = `<!DOCTYPE html>
       var rafId = 0;
       var frameTick = 0;
 
-      function updateFallbackRpmHud(rpmVal, redlineActive) {
+      function updateFallbackRpmHud(rpmVal, redlineActive, customPrefix) {
         var formatted = Math.round(rpmVal).toLocaleString('en-US');
-        var pct = Math.max(12, Math.min(100, Math.round((rpmVal / 15000) * 100)));
+        var pct = Math.max(2, Math.min(100, Math.round((rpmVal / 15000) * 100)));
         if (rpmFill) {
           rpmFill.style.width = pct + '%';
           rpmFill.classList.toggle('is-redline', !!redlineActive);
         }
         if (rpmReadout) {
-          var statusPrefix = redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // ');
+          var statusPrefix = customPrefix || (redlineActive ? 'REDLINE // ' : (isIgniting ? 'SPOOLING // ' : 'IDLE // '));
           var suffix = redlineActive ? ' RPM [PEAK]' : ' RPM';
           rpmReadout.textContent = statusPrefix + formatted + suffix;
           rpmReadout.classList.toggle('is-redline', !!redlineActive);
@@ -1304,8 +1440,10 @@ const html = `<!DOCTYPE html>
 
       if (startEngineBtn) {
         startEngineBtn.addEventListener('click', function () {
+          triggerColdStartAudio();
           isIgniting = true;
           ignitionStartMs = performance.now();
+          updateFallbackRpmHud(0, false, 'STARTER CHURN // ');
           if (startEngineBtn) {
             startEngineBtn.classList.add('is-igniting');
             startEngineBtn.textContent = '[ SPOOLING REDLINE... ]';
@@ -1438,12 +1576,11 @@ const html = `<!DOCTYPE html>
               startEngineBtn.textContent = '[ START ENGINE ]';
             }
             if (holoStage) holoStage.classList.remove('is-igniting');
-            updateFallbackRpmHud(3200, false);
+            updateFallbackRpmHud(3200, false, 'IDLE // ');
           } else {
-            var t = Math.min(1, Math.max(0, elapsedMs / IGNITION_DURATION_MS));
-            spoolFactor = t < 0.78 ? Math.pow(t / 0.78, 1.35) : (1.0 - ((t - 0.78) / 0.22) * 0.08);
-            var currentRpm = 3200 + spoolFactor * (15000 - 3200);
-            updateFallbackRpmHud(currentRpm, currentRpm >= 13200);
+            var tl = computeIgnitionTimeline(elapsedMs);
+            spoolFactor = tl.spoolCurve;
+            updateFallbackRpmHud(tl.rpm, tl.isRedline, tl.phasePrefix);
             yawStep = 0.0028 + spoolFactor * 0.024;
           }
         }
@@ -1769,6 +1906,8 @@ if (CHECK_ONLY) {
 if (CHECK_ONLY) {
   const current = fs.existsSync(path.join(SITE_DIR, 'index.html')) ? fs.readFileSync(path.join(SITE_DIR, 'index.html'), 'utf8') : '';
   if (current !== html) fail('site/index.html is not the commercial showroom build (stale or overwritten by the legacy 500-unit generator). Run: npm run build');
+  const siteAudioPath = path.join(SITE_DIR, 'assets', 'audio', 'engine_start.mp3');
+  if (!fs.existsSync(siteAudioPath) || fs.statSync(siteAudioPath).size < 1000) fail('site/assets/audio/engine_start.mp3 missing or invalid — run: npm run build');
   for (const c of CLUSTERS) for (const t of c.triads) {
     if (!fs.existsSync(path.join(SITE_DIR, 'cockpits', publicCockpitPath(t.cockpit), 'index.html'))) fail(`site/cockpits/${publicCockpitPath(t.cockpit)} missing — run: npm run build`);
   }
@@ -1788,6 +1927,15 @@ fs.writeFileSync(path.join(rootDir, 'index.html'), rootHtml);
 const DIST_DIR = path.join(rootDir, 'dist');
 const targets = [SITE_DIR, ...(fs.existsSync(DIST_DIR) ? [DIST_DIR] : [])];
 if (targets.length > 1) fs.writeFileSync(path.join(DIST_DIR, 'index.html'), html);
+
+const srcAudio = path.join(rootDir, 'assets', 'audio', 'engine_start.mp3');
+if (fs.existsSync(srcAudio)) {
+  for (const base of targets) {
+    const destAudioDir = path.join(base, 'assets', 'audio');
+    fs.mkdirSync(destAudioDir, { recursive: true });
+    fs.copyFileSync(srcAudio, path.join(destAudioDir, 'engine_start.mp3'));
+  }
+}
 
 let copied = 0;
 for (const c of CLUSTERS) for (const t of c.triads) {

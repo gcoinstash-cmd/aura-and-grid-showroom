@@ -550,25 +550,25 @@ const html = `<!DOCTYPE html>
     <section aria-labelledby="fin-label">
       <p class="section-label" id="fin-label">// FINANCIAL TELEMETRY &amp; MONRONEY WINDOW STICKER</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-        <div class="card metric m-amber">
-          <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
-          <div class="name">Standalone Cluster Range</div>
-          <div class="sub text-xs font-mono text-zinc-400">INDIVIDUAL TURNKEY BUYOUT // <span class="nowrap">MC-01</span> THROUGH <span class="nowrap">MC-05</span></div>
-        </div>
         <div class="card metric m-cyan">
           <div class="val">${fmt(RETAIL_BENCHMARK)}</div>
           <div class="name">Retail Replacement Benchmark</div>
-          <div class="sub text-xs font-mono text-zinc-400">ASC 350-40 SCOPE // COST-TO-REBUILD, 17 TRIADS</div>
+          <div class="sub text-xs font-mono text-zinc-200">ASC 350-40 Scope // Cost-to-Rebuild</div>
+        </div>
+        <div class="card metric m-amber">
+          <div class="val">${fmt(BATCH_ASK)}</div>
+          <div class="name">Take-All Portfolio APA Anchor</div>
+          <div class="sub text-xs font-mono text-zinc-200">5-Cluster Portfolio // 51 Production Units</div>
+        </div>
+        <div class="card metric m-cyan">
+          <div class="val">${fmt(MIN_CLUSTER_ASK)} &ndash; ${fmt(MAX_CLUSTER_ASK)}</div>
+          <div class="name">Single Cluster Buyout Range</div>
+          <div class="sub text-xs font-mono text-zinc-200"><span class="nowrap">MC-01</span> through <span class="nowrap">MC-05</span> Individual Lots</div>
         </div>
         <div class="card metric m-white">
           <div class="val">100% Pure APA</div>
           <div class="name">Direct Sovereign Title Transfer</div>
-          <div class="sub text-xs font-mono text-zinc-400">SOLE DEVELOPER // ZERO EQUITY // ZERO RECURRING SEATS</div>
-        </div>
-        <div class="card metric m-cyan">
-          <div class="val">${fmt(BATCH_ASK)}</div>
-          <div class="name">Take-All Portfolio APA Anchor</div>
-          <div class="sub text-xs font-mono text-zinc-400">TAKE-ALL 5-CLUSTER PORTFOLIO APA // 51 PRODUCTION UNITS</div>
+          <div class="sub text-xs font-mono text-zinc-200">Sole Developer // Zero Equity // Zero Debt</div>
         </div>
       </div>
 
@@ -577,8 +577,7 @@ const html = `<!DOCTYPE html>
           <div class="mc-tier">MONRONEY STICKER // TRACK 1</div>
           <div class="val">$4,500</div>
           <div class="name">Track 1 (Operator Utility)</div>
-          <div class="mc-line">Track 1 (Operator Utility): $4,500 // Micro-APA Sovereign Title</div>
-          <div class="sub text-xs font-mono text-zinc-400">REACT 19 OPERATOR UTILITY // POSTGRESQL 16 RLS</div>
+          <div class="sub text-xs font-mono text-zinc-200">React 19 / Vite / Postgres RLS</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
             <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Micro-APA Sovereign Title // $4,500</small></a>
             <a class="btn btn-cyan w-full" href="${track1VaultMailto}" aria-label="Inquire vault buyout for Track 1 Operator Utility">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Operator Utility Vault // $4,500 Anchor</small></a>
@@ -589,8 +588,7 @@ const html = `<!DOCTYPE html>
           <div class="mc-tier">MONRONEY STICKER // TRACK 2</div>
           <div class="val">$14,500</div>
           <div class="name">Track 2 (3D SCADA Cockpit)</div>
-          <div class="mc-line">Track 2 (3D SCADA Cockpit): $14,500 // Chassis APA Sovereign Title</div>
-          <div class="sub text-xs font-mono text-zinc-400">HIGH-DENSITY 3D WEBGL &amp; CANVAS TELEMETRY COCKPIT HUD</div>
+          <div class="sub text-xs font-mono text-zinc-200">Three.js WebGL 60 FPS Telemetry HUD</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
             <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Chassis APA Sovereign Title // $14,500</small></a>
             <a class="btn btn-cyan w-full" href="${track2VaultMailto}" aria-label="Inquire vault buyout for Track 2 3D SCADA Cockpit">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">SCADA Cockpit Vault // $14,500 Anchor</small></a>
@@ -601,8 +599,7 @@ const html = `<!DOCTYPE html>
           <div class="mc-tier">MONRONEY STICKER // TRACK 3</div>
           <div class="val">$35,000 &ndash; $65,000</div>
           <div class="name">Track 3 (Skunkworks Engine)</div>
-          <div class="mc-line">Track 3 (Skunkworks Engine): $35,000 – $65,000 // Engine APA Sovereign Title</div>
-          <div class="sub text-xs font-mono text-zinc-400">FASTAPI PYTHON 3.11 COMPUTE ENGINE // $50,000 RETAIL</div>
+          <div class="sub text-xs font-mono text-zinc-200">FastAPI Python 3.12 Asynchronous Core</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
             <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Engine APA Sovereign Title // $35,000 – $65,000</small></a>
             <a class="btn btn-cyan w-full" href="${track3VaultMailto}" aria-label="Inquire vault buyout for Track 3 Skunkworks Engine">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Skunkworks Engine Vault // $50,000 Anchor</small></a>
@@ -612,12 +609,11 @@ const html = `<!DOCTYPE html>
         <div class="card metric monroney-card m-amber">
           <div class="mc-tier">BUNDLE TELEMETRY // VOLUME DISCOUNT</div>
           <div class="val">$145,000 &ndash; $185,000</div>
-          <div class="name">Cluster Package Buyout</div>
-          <div class="mc-line">Full Cluster Buyout (3 Triads / 9 Units): $145,000 – $185,000<br>Retail Replacement Baseline: $207,000</div>
-          <div class="sub text-xs font-mono text-zinc-400">VOLUME DISCOUNT SUMMARY // $69,000 PER TRIAD BASELINE</div>
+          <div class="name">Full Triad Cluster Bundle</div>
+          <div class="sub text-xs font-mono text-zinc-200">3 Triads / 9 Units // $207k Retail Baseline</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire title (APA) for Cluster Package Buyout">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Cluster Package Buyout // $145,000 – $185,000</small></a>
-            <a class="btn btn-cyan w-full" href="${bundleVaultMailto}" aria-label="Inquire vault buyout for Cluster Package Buyout">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Cluster Vault Buyout // $207,000 Baseline</small></a>
+            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire title (APA) for Full Triad Cluster Bundle">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">Cluster Package Buyout // $145,000 – $185,000</small></a>
+            <a class="btn btn-cyan w-full" href="${bundleVaultMailto}" aria-label="Inquire vault buyout for Full Triad Cluster Bundle">[ INQUIRE VAULT BUYOUT ]<small class="text-xs font-mono">Cluster Vault Buyout // $207,000 Baseline</small></a>
           </div>
         </div>
       </div>
@@ -1708,7 +1704,7 @@ function* walkTextFiles(dir) {
 }
 
 // Rule 5 — strict pricing parity: only these dollar figures may appear in public assets.
-const ALLOWED_PRICES = new Set(['$805,000', '$145,000', '$185,000', '$1,173,000', '$276,000', '$207,000', '$69,000', '$50,000', '$14,500', '$4,500', '$25,000', '$35,000', '$65,000', '$75,000', '$145K', '$185K']);
+const ALLOWED_PRICES = new Set(['$805,000', '$145,000', '$185,000', '$1,173,000', '$276,000', '$207,000', '$69,000', '$50,000', '$14,500', '$4,500', '$25,000', '$35,000', '$65,000', '$75,000', '$145K', '$185K', '$207K']);
 const PRICE_RE = /\$\s?\d[\d,]*(?:\.\d+)?[KkMm]?\b/g;
 
 function scanGovernance() {

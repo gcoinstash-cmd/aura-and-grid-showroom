@@ -136,7 +136,7 @@ const CLUSTERS = [
   },
 ];
 
-const STACK = ['FastAPI', 'Python 3.11', 'React 19', 'PostgreSQL 16 RLS'];
+const STACK = ['FastAPI', 'Python 3.12', 'React 19', 'PostgreSQL 16 RLS'];
 
 // Public-mirror naming: the published copy of a cockpit may use a different folder name than its
 // repo source so the public tree stays free of prohibited vocabulary. Source folders are untouched.
@@ -350,6 +350,9 @@ const html = `<!DOCTYPE html>
     .holo-rpm-deck{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:8px;background:rgba(11,15,23,.92);border:1px solid rgba(0,240,255,.28);font-family:var(--mono)}
     .holo-rpm-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
     .holo-rpm-label{font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .holo-rpm-telemetry-group{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .holo-sfx-pill{display:inline-flex;align-items:center;font-family:'JetBrains Mono',var(--mono);font-size:11px;font-weight:700;line-height:1;letter-spacing:.05em;padding:4px 8px;border-radius:999px;border:1px solid #00F0FF;color:#00F0FF;background:rgba(0,240,255,.08);box-shadow:0 0 10px rgba(0,240,255,.22);animation:sfx-neon-pulse 2.2s ease-in-out infinite;white-space:nowrap}
+    @keyframes sfx-neon-pulse{0%,100%{box-shadow:0 0 8px rgba(0,240,255,.18),inset 0 0 4px rgba(0,240,255,.08);opacity:.92}50%{box-shadow:0 0 14px rgba(0,240,255,.42),inset 0 0 8px rgba(0,240,255,.18);opacity:1}}
     .holo-rpm-val{font-size:.875rem;font-weight:800;letter-spacing:.06em;color:var(--amber);transition:color .15s}
     .holo-rpm-val.is-redline{color:#FF2E54;text-shadow:0 0 14px rgba(255,46,84,.85)}
     .holo-rpm-track{position:relative;width:100%;height:10px;border-radius:999px;background:#05070B;border:1px solid rgba(255,255,255,.16);overflow:hidden}
@@ -402,6 +405,8 @@ const html = `<!DOCTYPE html>
     .monroney-bundle-row b{color:var(--amber);font-weight:800}
     .monroney-deck{margin-top:16px}
     .monroney-card{display:flex;flex-direction:column;gap:10px}
+    .monroney-card,.cluster,.monroney-sticker{transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease}
+    .monroney-card:hover,.cluster:hover,.monroney-sticker:hover,.card.monroney-card:hover,.card.cluster:hover{border-color:#00F0FF;box-shadow:0 0 20px rgba(0, 240, 255, 0.15);transform:translateY(-2px)}
     .monroney-card .mc-tier{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
     .monroney-card.m-amber .mc-tier{color:var(--amber)}
     .monroney-card .mc-line{font-family:var(--mono);font-size:.875rem;font-weight:700;color:var(--zinc200);line-height:1.5;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
@@ -527,7 +532,10 @@ const html = `<!DOCTYPE html>
         <div class="holo-rpm-deck" id="holoRpmDeck" role="region" aria-label="Dyno RPM Telemetry Gauge">
           <div class="holo-rpm-head">
             <span class="holo-rpm-label">DYNO RPM TELEMETRY</span>
-            <b class="holo-rpm-val" id="holoRpmReadout">IDLE // 3,200 RPM</b>
+            <div class="holo-rpm-telemetry-group">
+              <span class="holo-sfx-pill" id="holoSfxBadge">[ 🔊 EXOTIC AUDIO ARMED ]</span>
+              <b class="holo-rpm-val" id="holoRpmReadout">IDLE // 3,200 RPM</b>
+            </div>
           </div>
           <div class="holo-rpm-track" aria-hidden="true">
             <div class="holo-rpm-fill" id="holoRpmFill"></div>
@@ -879,10 +887,61 @@ const html = `<!DOCTYPE html>
       dirLightAmber.position.set(-5, -5, -5);
       scene.add(dirLightAmber);
 
-      // Ground Telemetry Grid
-      var grid = new THREE.GridHelper(9, 18, 0x00F0FF, 0x1B2536);
+      // Ground Telemetry Grid: 40x40 perspective ground grid plane beneath vehicle chassis (#00F0FF @ 0.12 opacity) with soft radial alpha fade into #05070B
+      var grid = new THREE.GridHelper(40, 40, 0x00F0FF, 0x00F0FF);
       grid.position.y = -0.52;
+      grid.renderOrder = -1;
+      grid.material.color.setHex(0x00F0FF);
+      grid.material.transparent = true;
+      grid.material.opacity = 0.12;
+      grid.material.depthWrite = false;
+      grid.material.onBeforeCompile = function (shader) {
+        shader.vertexShader = 'varying vec3 vGridPos;\\n' + shader.vertexShader.replace(
+          '#include <begin_vertex>',
+          '#include <begin_vertex>\\nvGridPos = position;'
+        );
+        shader.fragmentShader = 'varying vec3 vGridPos;\\n' + shader.fragmentShader.replace(
+          '#include <dithering_fragment>',
+          'float radialDist = length(vGridPos.xz) / 20.0;\\n' +
+          'float radialAlphaFade = 1.0 - smoothstep(0.14, 0.88, radialDist);\\n' +
+          'gl_FragColor.rgb = mix(vec3(0.0196, 0.0275, 0.0431), gl_FragColor.rgb, radialAlphaFade);\\n' +
+          'gl_FragColor.a *= radialAlphaFade;\\n' +
+          '#include <dithering_fragment>'
+        );
+      };
       scene.add(grid);
+
+      var groundPlaneGeom = new THREE.PlaneGeometry(40, 40, 40, 40);
+      groundPlaneGeom.rotateX(-Math.PI / 2);
+      var groundHorizonFadeMat = new THREE.ShaderMaterial({
+        uniforms: {
+          uGridColor: { value: new THREE.Color(0x00F0FF) },
+          uHorizonColor: { value: new THREE.Color(0x05070B) },
+          uBaseOpacity: { value: 0.12 }
+        },
+        vertexShader: [
+          'varying vec3 vWorldPos;',
+          'void main() {',
+          '  vWorldPos = position;',
+          '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
+          '}'
+        ].join('\\n'),
+        fragmentShader: [
+          'uniform vec3 uHorizonColor;',
+          'varying vec3 vWorldPos;',
+          'void main() {',
+          '  float r = length(vWorldPos.xz) / 20.0;',
+          '  float horizonMask = smoothstep(0.22, 0.92, r);',
+          '  gl_FragColor = vec4(uHorizonColor, horizonMask * 0.96);',
+          '}'
+        ].join('\\n'),
+        transparent: true,
+        depthWrite: false
+      });
+      var groundHorizonPlane = new THREE.Mesh(groundPlaneGeom, groundHorizonFadeMat);
+      groundHorizonPlane.position.y = -0.519;
+      groundHorizonPlane.renderOrder = -1;
+      scene.add(groundHorizonPlane);
 
       // 5. Lightweight Procedural Wireframe Racing Chassis
       var chassisGroup = new THREE.Group();

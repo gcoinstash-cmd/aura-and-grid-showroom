@@ -15,13 +15,17 @@ Engineered for software aggregators and infrastructure holding firms, this trans
 
 ---
 
-### Master Valuation & Acquisition Horizon
+### Master Valuation & Monroney Window Sticker Telemetry
 
 | Acquisition Instrument | Valuation Anchor | Structural Terms & Valuation Basis |
 | :--- | :---: | :--- |
 | **Retail Replacement Benchmark** | **$1,173,000** | ASC 350-40 / ASC 985 Independent Engineering Cost-to-Rebuild across all 17 full triads (51 units). |
 | **Full 5-Cluster Portfolio Asking Price** | **$805,000** | Complete buyout of all 5 Micro-Clusters (17 Triads / 51 Units). Includes full source code and manifests. |
 | **Single Micro-Cluster Carve-Out** | **$145,000 – $185,000** | Standalone carve-out acquisition per sealed domain cluster (3–4 Triads / 9–12 Units each). |
+| **Track 1 (Operator Utility)** | **$4,500** | Micro-APA Sovereign Title — React 19 + TypeScript operator utility backed by PostgreSQL 16 RLS schemas. |
+| **Track 2 (3D SCADA Cockpit)** | **$14,500** | Chassis APA Sovereign Title — High-density 3D WebGL & Canvas SCADA telemetry cockpit preview. |
+| **Track 3 (Skunkworks Engine)** | **$35,000 – $65,000** | Engine APA Sovereign Title — Containerized FastAPI Python 3.11 compute engine ($50,000 retail baseline). |
+| **Cluster Package Buyout (3 Triads / 9 Units)** | **$145,000 – $185,000** | Volume Discount Bundle — Full cluster buyout vs. **$207,000** retail replacement baseline (**$69,000** per triad). |
 
 > [!IMPORTANT]
 > **100% PURE APA TITLE STANDARD (ZERO ROYALTIES · ZERO LIABILITIES)**  

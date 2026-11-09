@@ -244,8 +244,9 @@ const clusterCard = (c) => {
             <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
           </ol>
         </details>
+        <p class="title-anchor text-sm font-mono text-amber-300">TITLE ANCHOR: ${fmt(c.ask)}</p>
         <div class="cta-stack flex flex-col gap-2 w-full">
-          <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire cluster title (APA) for ${c.id}">[ ACQUIRE CLUSTER TITLE (APA) // ${fmt(c.ask)} ]</a>
+          <a class="btn btn-amber w-full" href="${clusterApaMailto}" data-cluster="${c.id}" aria-label="Acquire cluster title (APA) for ${c.id}">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
           <a class="btn btn-subtle w-full" href="${cockpitHref(lead)}" target="_blank" rel="noopener" aria-label="Test drive ${c.id} cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="text-xs font-mono">SCADA preview // simulated sample data</small></a>
         </div>
       </article>`;
@@ -275,10 +276,10 @@ const html = `<!DOCTYPE html>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <style>
-    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#F4F7FB;--mute:#D4D4D8;--zinc200:#F4F4F5;--zinc300:#E4E4E7;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
+    :root{--bg:#05070B;--panel:#0B0F17;--panel2:#0F1520;--line:#1B2536;--text:#F8FAFC;--mute:#94A3B8;--zinc200:#F4F4F5;--zinc300:#E4E4E7;--amber:#FF9F0A;--cyan:#00F0FF;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:'Inter',system-ui,sans-serif}
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
       background-image:linear-gradient(rgba(0,240,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.035) 1px,transparent 1px);background-size:48px 48px}
     a{color:inherit;text-decoration:none}
     ul,ol{list-style:none}
@@ -322,8 +323,9 @@ const html = `<!DOCTYPE html>
     .eyebrow{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.18em;color:var(--cyan);text-shadow:0 0 12px rgba(0,240,255,.35);margin-bottom:12px}
     h1{font-size:clamp(1.85rem,2.75vw,2.55rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;max-width:25ch;color:#fff}
     h1 span{color:var(--amber)}
-    .lede{max-width:60ch;margin-top:16px}
-    .hero-actions{margin-top:24px;width:100%}
+    .lede{max-width:60ch;margin-top:16px;font-size:1rem;line-height:1.6;color:var(--mute)}.lede strong{color:var(--text);font-weight:700}
+    .title-anchor{margin-top:16px;letter-spacing:.04em}
+    .hero-actions{margin-top:8px;width:100%}
     .hero-actions .btn{flex:1;min-width:0;padding:12px 14px;font-size:.875rem;letter-spacing:.035em}
     @media (min-width:1440px){.hero-actions .btn{padding:14px 18px;font-size:.9rem;letter-spacing:.05em}}
     section{margin-top:44px}
@@ -509,9 +511,10 @@ const html = `<!DOCTYPE html>
       <div class="hero-copy">
         <p class="eyebrow">AURA &amp; GRID // COMMERCIAL ASSET SHOWROOM</p>
         <h1>High-performance distributed systems &amp; compute infrastructure, <span>sold as clean title.</span></h1>
-        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed">17 triads — each pairing a containerized FastAPI compute engine, an interactive SCADA telemetry cockpit, and a React 19 operator utility — authored by a sole systems architect and sealed into 5 micro-clusters. Direct turnkey APA title transfer with full source code, schemas, and deployment rights — zero debt, zero equity, and zero recurring seats.</p>
+        <p class="lede text-lg text-zinc-200 font-medium leading-relaxed"><strong>Production Fleet: 17 Turnkey Web Engines. Zero Licensing Debt. 100% Clean APA Title.</strong> Built for elite digital agencies, high-load operators, and scaling technical studios. Aura &amp; Grid packages fully realized web application systems—complete with low-latency edge data layers, SCADA telemetry cockpit previews (simulated sample data), and single-tenant architectures. No recurring seat fees, no vendor lock-in, and zero shared dependencies. You acquire 100% full intellectual property ownership, deterministic test suites (105/105 passing gates), and deployment-ready assets from day one.</p>
+        <p class="title-anchor text-sm font-mono text-amber-300">5-CLUSTER PORTFOLIO TITLE ANCHOR: ${fmt(BATCH_ASK)}</p>
         <div class="hero-actions flex flex-col gap-2 w-full">
-          <a class="btn btn-amber w-full" href="${batchApaMailto}" aria-label="Acquire title (APA) for 5-cluster portfolio lot">[ ACQUIRE TITLE (APA) ]<small class="text-xs font-mono">5-Cluster Portfolio APA // ${fmt(BATCH_ASK)}</small></a>
+          <a class="btn btn-amber w-full" href="${batchApaMailto}" aria-label="Acquire title (APA) for 5-cluster portfolio lot">[ ACQUIRE TITLE (APA) ]</a>
         </div>
       </div>
 
@@ -582,7 +585,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 1 (Operator Utility)</div>
           <div class="sub text-xs font-mono text-zinc-200">React 19 / Vite / Postgres RLS</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) // $4,500 ]</a>
+            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]</a>
           </div>
         </div>
 
@@ -592,7 +595,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 2 (3D SCADA Cockpit)</div>
           <div class="sub text-xs font-mono text-zinc-200">Three.js WebGL 60 FPS Telemetry HUD</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) // $14,500 ]</a>
+            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]</a>
           </div>
         </div>
 
@@ -602,7 +605,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Track 3 (Skunkworks Engine)</div>
           <div class="sub text-xs font-mono text-zinc-200">FastAPI Python 3.12 Asynchronous Core</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) // $35,000 - $65,000 ]</a>
+            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]</a>
           </div>
         </div>
 
@@ -612,7 +615,7 @@ const html = `<!DOCTYPE html>
           <div class="name">Full Triad Cluster Bundle</div>
           <div class="sub text-xs font-mono text-zinc-200">3 Triads / 9 Units // $207k Retail Baseline</div>
           <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire cluster title (APA) for Full Triad Cluster Bundle">[ ACQUIRE CLUSTER TITLE (APA) // $145,000 - $185,000 ]</a>
+            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire cluster title (APA) for Full Triad Cluster Bundle">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
           </div>
         </div>
       </div>

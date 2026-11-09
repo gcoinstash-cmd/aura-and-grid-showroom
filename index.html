@@ -146,7 +146,7 @@
     .monroney-deck{margin-top:16px}
     .monroney-card{display:flex;flex-direction:column;gap:10px}
     .monroney-card,.cluster,.monroney-sticker{transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease}
-    .monroney-card:hover,.cluster:hover,.monroney-sticker:hover,.card.monroney-card:hover,.card.cluster:hover{border-color:#00F0FF;box-shadow:0 0 20px rgba(0, 240, 255, 0.15);transform:translateY(-2px)}
+    .monroney-card:hover,.cluster:hover,.monroney-sticker:hover,.card.monroney-card:hover,.card.cluster:hover{border-color:#00F0FF;box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);transform:translateY(-2px)}
     .monroney-card .mc-tier{font-family:var(--mono);font-size:.875rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
     .monroney-card.m-amber .mc-tier{color:var(--amber)}
     .monroney-card .mc-line{font-family:var(--mono);font-size:.875rem;font-weight:700;color:var(--zinc200);line-height:1.5;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
@@ -834,13 +834,14 @@
       dirLightAmber.position.set(-5, -5, -5);
       scene.add(dirLightAmber);
 
-      // Ground Telemetry Grid: 40x40 perspective ground grid plane beneath vehicle chassis (#00F0FF @ 0.12 opacity) with soft radial alpha fade into #05070B
+      // Ground Telemetry Grid: 40x40 perspective ground grid plane beneath vehicle chassis (#00F0FF @ 0.40 opacity) with soft radial glow against #05070B
       var grid = new THREE.GridHelper(40, 40, 0x00F0FF, 0x00F0FF);
       grid.position.y = -0.52;
       grid.renderOrder = -1;
       grid.material.color.setHex(0x00F0FF);
       grid.material.transparent = true;
-      grid.material.opacity = 0.12;
+      grid.material.opacity = 0.40;
+      grid.material.blending = THREE.AdditiveBlending;
       grid.material.depthWrite = false;
       grid.material.onBeforeCompile = function (shader) {
         shader.vertexShader = 'varying vec3 vGridPos;\n' + shader.vertexShader.replace(
@@ -850,8 +851,9 @@
         shader.fragmentShader = 'varying vec3 vGridPos;\n' + shader.fragmentShader.replace(
           '#include <dithering_fragment>',
           'float radialDist = length(vGridPos.xz) / 20.0;\n' +
-          'float radialAlphaFade = 1.0 - smoothstep(0.14, 0.88, radialDist);\n' +
-          'gl_FragColor.rgb = mix(vec3(0.0196, 0.0275, 0.0431), gl_FragColor.rgb, radialAlphaFade);\n' +
+          'float radialAlphaFade = 1.0 - smoothstep(0.18, 0.92, radialDist);\n' +
+          'float coreGlow = 1.0 + 0.35 * (1.0 - smoothstep(0.0, 0.45, radialDist));\n' +
+          'gl_FragColor.rgb = mix(vec3(0.0196, 0.0275, 0.0431), gl_FragColor.rgb * coreGlow, radialAlphaFade);\n' +
           'gl_FragColor.a *= radialAlphaFade;\n' +
           '#include <dithering_fragment>'
         );
@@ -864,7 +866,7 @@
         uniforms: {
           uGridColor: { value: new THREE.Color(0x00F0FF) },
           uHorizonColor: { value: new THREE.Color(0x05070B) },
-          uBaseOpacity: { value: 0.12 }
+          uBaseOpacity: { value: 0.40 }
         },
         vertexShader: [
           'varying vec3 vWorldPos;',
@@ -874,20 +876,24 @@
           '}'
         ].join('\n'),
         fragmentShader: [
+          'uniform vec3 uGridColor;',
           'uniform vec3 uHorizonColor;',
           'varying vec3 vWorldPos;',
           'void main() {',
           '  float r = length(vWorldPos.xz) / 20.0;',
-          '  float horizonMask = smoothstep(0.22, 0.92, r);',
-          '  gl_FragColor = vec4(uHorizonColor, horizonMask * 0.96);',
+          '  float underChassisGlow = (1.0 - smoothstep(0.0, 0.38, r)) * 0.14;',
+          '  float horizonMask = smoothstep(0.28, 0.94, r);',
+          '  vec3 col = mix(uGridColor, uHorizonColor, horizonMask);',
+          '  float alpha = max(underChassisGlow, horizonMask * 0.92);',
+          '  gl_FragColor = vec4(col, alpha);',
           '}'
         ].join('\n'),
         transparent: true,
         depthWrite: false
       });
       var groundHorizonPlane = new THREE.Mesh(groundPlaneGeom, groundHorizonFadeMat);
-      groundHorizonPlane.position.y = -0.519;
-      groundHorizonPlane.renderOrder = -1;
+      groundHorizonPlane.position.y = -0.525;
+      groundHorizonPlane.renderOrder = -2;
       scene.add(groundHorizonPlane);
 
       // 5. Lightweight Procedural Wireframe Racing Chassis
@@ -1590,8 +1596,11 @@
         ctx.fillStyle = '#05070B';
         ctx.fillRect(0, 0, w, h);
 
+        ctx.save();
         ctx.lineWidth = 1;
-        ctx.strokeStyle = 'rgba(0, 240, 255, 0.13)';
+        ctx.strokeStyle = 'rgba(0, 240, 255, 0.40)';
+        ctx.shadowColor = 'rgba(0, 240, 255, 0.45)';
+        ctx.shadowBlur = 6;
         ctx.beginPath();
         for (var gz = -3.2; gz <= 3.21; gz += 0.8) {
           var g1 = project3D(-2.4, -0.52, gz, w, h, dynoYaw, pitch);
@@ -1606,6 +1615,7 @@
           ctx.lineTo(g4.px, g4.py);
         }
         ctx.stroke();
+        ctx.restore();
 
         var proj = {};
         var keys = Object.keys(f1Nodes);

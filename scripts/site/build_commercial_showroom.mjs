@@ -210,23 +210,26 @@ const clusterCard = (c) => {
   const clusterMsrp = c.triads.length * 69000;
   const clusterApaMailto = generateAquireMailto(clusterName, 'Sealed Micro-Cluster', fmt(c.ask));
   return `
-      <article class="card cluster" id="${c.id.toLowerCase()}" data-cluster="${c.id}">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-${c.id}" aria-labelledby="tab-${c.id}" data-panel="${c.id}" data-cluster="${c.id}" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">${c.id}</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>${fmt(c.ask)}</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>${fmt(c.ask)} USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">${esc(c.title)}</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">${esc(c.blurb)}</p>
-        <ul class="pills" aria-label="Domain tags">${c.tags.slice(0, 3).map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
+        <div class="cluster-narr">
+          <p class="blurb">${esc(c.blurb)}</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>${esc(c.buyers)}</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights">${c.tags.slice(0, 3).map(t => `<li class="pill pill-cyan">${esc(t)}</li>`).join('')}</ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>${tests}/${tests} PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for ${c.id}"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">${c.triads.length} TRIADS // ${units} UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">${STACK.map(esc).join(' <i>&middot;</i> ')}</p>
+            <p class="stack-line" aria-label="Engine specifications">${STACK.map(esc).join(' <i>&middot;</i> ')}<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -236,18 +239,16 @@ const clusterCard = (c) => {
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (${c.id}: ${fmt(clusterMsrp)})</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (${c.triads.length} Triads / ${units} Units):</span> <b>${fmt(c.ask)}</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>${fmt(clusterMsrp)}</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> ${esc(c.buyers)}</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED ${c.triads.length} TRIADS</div>
               <ol>${c.triads.map((t, i) => `
                 <li><span class="uid">${c.id}.${i + 1}</span> ${esc(t.engine)}<br><a href="${cockpitHref(t)}" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>`).join('')}
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>${fmt(c.ask)} USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -257,12 +258,23 @@ const clusterCard = (c) => {
       </article>`;
 };
 
+const fleetMatrix = `
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-matrix" aria-labelledby="tab-matrix" data-panel="matrix" aria-hidden="true" inert>
+        <h3 class="text-xl font-extrabold text-white">Full Fleet Matrix // 5 Sealed Micro-Clusters</h3>
+        <div class="matrix-scroll">
+          <table class="matrix-table">
+            <thead><tr><th>Cluster</th><th>Architecture Domain</th><th class="num">Triads / Units</th><th class="num">Dyno Tests</th><th class="num">Standalone Ask</th></tr></thead>
+            <tbody>${CLUSTERS.map(c => `
+              <tr><td><button type="button" class="matrix-open" data-open-panel="${c.id}" aria-label="Open ${c.id} chassis">${c.id} &rarr;</button></td><td>${esc(c.title)}</td><td class="num">${c.triads.length} / ${c.triads.length * 3}</td><td class="num">${c.triads.reduce((a, t) => a + t.tests, 0)}/${c.triads.reduce((a, t) => a + t.tests, 0)} PASS</td><td class="num ask">${fmt(c.ask)}</td></tr>`).join('')}
+            </tbody>
+            <tfoot><tr><td colspan="2">FULL 5-CLUSTER LOT</td><td class="num">${triadCount} / ${triadCount * 3}</td><td class="num">${testSum}/${testSum} PASS</td><td class="num ask">${fmt(BATCH_ASK)}</td></tr></tfoot>
+          </table>
+        </div>
+      </article>`;
+
+
 const batchApaMailto = generateAquireMailto('5-Cluster Commercial Portfolio Lot (MC-01 through MC-05)', '5-Cluster Portfolio APA', fmt(BATCH_ASK));
 const vaultPortfolioMailto = generateAquireMailto('Full Fleet Master Vault (MC-01 through MC-05)', 'Master Vault Buyout', fmt(BATCH_ASK));
-const track1ApaMailto = generateAquireMailto('Track 1 (Operator Utility)', 'Micro-APA Sovereign Title', '$4,500');
-const track2ApaMailto = generateAquireMailto('Track 2 (3D SCADA Cockpit)', 'Chassis APA Sovereign Title', '$14,500');
-const track3ApaMailto = generateAquireMailto('Track 3 (Skunkworks Engine)', 'Engine APA Sovereign Title', '$35,000 – $65,000');
-const bundleApaMailto = generateAquireMailto('Cluster Package Buyout (3 Triads / 9 Units)', 'Cluster Package Buyout APA', '$145,000 – $185,000');
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -457,8 +469,6 @@ const html = `<!DOCTYPE html>
     .filter-pill:hover{border-color:rgba(0,240,255,.5);color:var(--cyan);background:rgba(0,240,255,.08);box-shadow:0 0 12px rgba(0,240,255,.2);transform:translateY(-1px)}
     .filter-pill.is-active{border-color:var(--amber);color:#05070B;background:var(--amber);box-shadow:0 0 16px rgba(255,159,10,.4);font-weight:800}
     .filter-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}
-    .clusters-grid.is-filtered{display:flex;justify-content:center}
-    .clusters-grid.is-filtered .cluster{max-width:760px;width:100%}
 
     footer{border-top:1px solid var(--line);margin-top:16px}
     .foot-in{max-width:1480px;margin:0 auto;padding:38px 24px 68px}
@@ -521,17 +531,44 @@ const html = `<!DOCTYPE html>
     .cluster-specs[open] .spec-toggle-open{display:inline}
     .cluster-specs-body{display:flex;flex-direction:column;gap:14px;margin-top:14px}
     .triads-head{font-family:var(--mono);font-size:.8125rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
-    @media (min-width:769px){
-      .cluster-specs-toggle{display:none}
-      .cluster-specs-body{margin-top:0}
-    }
+    .dyno-stage>.dyno-panel{grid-column:1/2!important;grid-row:1}
+    .dyno-stage{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+    .dyno-panel{grid-area:1/1;min-width:0;visibility:hidden;opacity:0;transform:translateY(6px);transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s}
+    .dyno-panel.is-active{visibility:visible;opacity:1;transform:none;transition:opacity .22s ease,transform .22s ease,visibility 0s}
+    .cluster{max-width:none;width:100%}
+    .cluster-narr{display:flex;flex-direction:column;gap:4px}
+    .cluster .blurb{margin:0}
+    .cluster .blurb.line2{color:#E2E8F0}
+    .cluster .blurb.line2 b{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FF9F0A;margin-right:8px}
+    .cluster-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .filter-pill.filter-matrix{border-style:dashed}
+    @media (min-width:769px){.dyno-tab.filter-pill{font-size:.78125rem;padding:7px 10px;letter-spacing:.02em}}
+    .matrix-table{width:100%;border-collapse:collapse;font-size:.9375rem;color:#E2E8F0}
+    .matrix-table th{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#94A3B8;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+    .matrix-table td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+    .matrix-table td.num,.matrix-table th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+    .matrix-table td.ask{color:#FF9F0A;font-weight:700}
+    .matrix-table tfoot td{font-weight:800;color:#fff;border-bottom:0}
+    .matrix-open{appearance:none;background:none;border:0;color:#00F0FF;font-family:var(--mono);font-size:.8125rem;font-weight:700;cursor:pointer;padding:4px 0;text-align:left}
+    .matrix-open:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .matrix-scroll{overflow-x:auto}
+    .stack-line.tracks{display:block;margin-top:2px;color:#E2E8F0;font-weight:500}
+    .cluster-specs-toggle{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:9px 12px;border-radius:8px;border:1px solid rgba(0,240,255,.32);background:rgba(0,240,255,.05);font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--cyan);text-align:center;transition:border-color .15s,background .15s,color .15s}
+    .cluster-specs-toggle::-webkit-details-marker{display:none}
+    .cluster-specs-toggle:hover{border-color:rgba(0,240,255,.6);background:rgba(0,240,255,.1)}
+    .cluster-specs-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .cluster-specs .spec-toggle-open{display:none}
+    .cluster-specs[open] .spec-toggle-closed{display:none}
+    .cluster-specs[open] .spec-toggle-open{display:inline}
+    .cluster-specs-body{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+    .triads-head{font-family:var(--mono);font-size:.8125rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .filter-bar{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none;padding:4px 2px}
+    .filter-bar::-webkit-scrollbar{display:none}
+    .filter-pill{flex:0 0 auto;scroll-snap-align:center}
+    @media (min-width:1280px){.filter-bar{flex-wrap:wrap}}
     @media (max-width:768px){
       .cluster h3{font-size:1.125rem}
-      .cluster .blurb{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-      .filter-bar{position:sticky;top:var(--nav-h,56px);z-index:40;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scroll-behavior:smooth;margin:12px -16px 16px;padding:10px 16px;background:rgba(5,7,11,.96);border-bottom:1px solid var(--line);scrollbar-width:none}
-      .filter-bar::-webkit-scrollbar{display:none}
-      .filter-pill{flex:0 0 auto;scroll-snap-align:center}
-      .filter-pill .pill-name,.filter-pill.filter-all{display:none}
+      .filter-bar{position:sticky;top:var(--nav-h,56px);z-index:40;margin:12px -16px 16px;padding:10px 16px;background:rgba(5,7,11,.96);border-bottom:1px solid var(--line)}
       .cluster{padding:16px;gap:10px}
       .cluster .pill{font-size:.75rem;padding:3px 9px}
       .cluster .stats{gap:8px}
@@ -541,8 +578,8 @@ const html = `<!DOCTYPE html>
       .cluster .cta-stack{padding-top:4px;gap:8px}
       .cluster .btn{min-height:48px;padding:8px 12px;font-size:.8125rem}
       .cluster .btn small.btn-note{font-size:.6875rem}
-      .clusters-grid .cluster[hidden]{display:none!important}
     }
+
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors,.price-pill-outline,.pulse-dot,.filter-pill{transition:none;animation:none}}
     /* Institutional polish: de-congested hero, high-contrast silver body copy, calm telemetry */
     body{color:#E2E8F0}
@@ -732,60 +769,19 @@ const html = `<!DOCTYPE html>
         </div>
       </div>
 
-      <div class="monroney-deck grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Monroney Window Sticker Itemized Anchors and Cluster Package Buyout Telemetry">
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 1</div>
-          <div class="val">$4,500</div>
-          <div class="name">Track 1 (Operator Utility)</div>
-          <div class="sub text-xs font-mono text-zinc-200">React 19 / Vite / Postgres RLS</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track1ApaMailto}" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 2</div>
-          <div class="val">$14,500</div>
-          <div class="name">Track 2 (3D SCADA Cockpit)</div>
-          <div class="sub text-xs font-mono text-zinc-200">Three.js WebGL 60 FPS Telemetry HUD</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track2ApaMailto}" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 3</div>
-          <div class="val">$35,000 &ndash; $65,000</div>
-          <div class="name">Track 3 (Skunkworks Engine)</div>
-          <div class="sub text-xs font-mono text-zinc-200">FastAPI Python 3.12 Asynchronous Core</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${track3ApaMailto}" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-amber">
-          <div class="mc-tier">BUNDLE TELEMETRY // VOLUME DISCOUNT</div>
-          <div class="val">$145,000 &ndash; $185,000</div>
-          <div class="name">Full Triad Cluster Bundle</div>
-          <div class="sub text-xs font-mono text-zinc-200">3 Triads / 9 Units // $207k Retail Baseline</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="${bundleApaMailto}" aria-label="Acquire cluster title (APA) for Full Triad Cluster Bundle">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="clusters" aria-labelledby="mc-label">
       <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — ACQUIRE ALL FIVE OR ANY ONE</p>
-      <div class="filter-bar" role="group" aria-label="Rapid-select micro-cluster filter">
-        <button type="button" class="filter-pill filter-all is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ <span class="pill-name">MEMORY FABRICS (</span>MC-01<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-02" aria-pressed="false">[ <span class="pill-name">SCHEDULING (</span>MC-02<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-03" aria-pressed="false">[ <span class="pill-name">COMPRESSION (</span>MC-03<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-04" aria-pressed="false">[ <span class="pill-name">TELEMETRY (</span>MC-04<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-05" aria-pressed="false">[ <span class="pill-name">KERNELS (</span>MC-05<span class="pill-name">)</span> ]</button>
+      <div class="filter-bar" role="tablist" aria-label="Dyno Bay cluster selector">
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-01" data-panel="MC-01" aria-selected="false" aria-controls="panel-MC-01" tabindex="-1">[ MC-01: MEMORY FABRICS ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-02" data-panel="MC-02" aria-selected="false" aria-controls="panel-MC-02" tabindex="-1">[ MC-02: SCHEDULING ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-03" data-panel="MC-03" aria-selected="false" aria-controls="panel-MC-03" tabindex="-1">[ MC-03: COMPRESSION ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-04" data-panel="MC-04" aria-selected="false" aria-controls="panel-MC-04" tabindex="-1">[ MC-04: TELEMETRY ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-05" data-panel="MC-05" aria-selected="false" aria-controls="panel-MC-05" tabindex="-1">[ MC-05: KERNELS ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill filter-matrix" id="tab-matrix" data-panel="matrix" aria-selected="false" aria-controls="panel-matrix" tabindex="-1">[ VIEW FULL FLEET MATRIX ]</button>
       </div>
-      <div class="clusters-grid" id="clustersGrid">${CLUSTERS.map(clusterCard).join('')}
+      <div class="dyno-stage" id="dynoStage">${CLUSTERS.map(clusterCard).join('')}${fleetMatrix}
       </div>
     </section>
   </main>
@@ -1927,64 +1923,56 @@ const html = `<!DOCTYPE html>
   })();
   </script>
   <script>
-  // Rapid-select cluster filter logic + mobile single-chassis tab controller
+  // Dyno Bay master-detail stage: single active chassis, zero layout shift
   (function () {
-    var filterBtns = document.querySelectorAll('.filter-pill');
-    var clusterCards = document.querySelectorAll('.card.cluster');
-    var grid = document.getElementById('clustersGrid');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.dyno-tab'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.dyno-panel'));
     var bar = document.querySelector('.filter-bar');
     var nav = document.querySelector('.nav');
-    if (!filterBtns.length || !clusterCards.length) return;
-    var mq = window.matchMedia('(max-width: 768px)');
-    var current = 'all';
-
+    if (!tabs.length || !panels.length) return;
     function setNavOffset() {
       document.documentElement.style.setProperty('--nav-h', (nav ? nav.offsetHeight : 56) + 'px');
     }
-
-    function apply(filter, fromUser) {
-      if (mq.matches && filter === 'all') filter = 'MC-01';
-      current = filter;
-      filterBtns.forEach(function (b) {
-        var active = (b.getAttribute('data-filter') === filter);
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-pressed', active ? 'true' : 'false');
-        if (active && mq.matches && bar && bar.scrollTo) {
-          bar.scrollTo({ left: b.offsetLeft - (bar.clientWidth - b.offsetWidth) / 2, behavior: fromUser ? 'smooth' : 'auto' });
+    function select(id, fromUser, focus) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-panel') === id;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus({ preventScroll: true });
+        if (on && bar && bar.scrollTo && bar.scrollWidth > bar.clientWidth) {
+          bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: fromUser ? 'smooth' : 'auto' });
         }
       });
-      clusterCards.forEach(function (card) {
-        var match = (filter === 'all' || card.getAttribute('data-cluster') === filter);
-        card.style.display = match ? '' : 'none';
-        if (match) card.removeAttribute('hidden'); else card.setAttribute('hidden', '');
+      panels.forEach(function (p) {
+        var on = p.getAttribute('data-panel') === id;
+        p.classList.toggle('is-active', on);
+        p.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (on) p.removeAttribute('inert'); else p.setAttribute('inert', '');
+        if (!on) p.querySelectorAll('details.cluster-specs').forEach(function (d) { d.open = false; });
       });
-      if (grid) grid.classList.toggle('is-filtered', filter !== 'all');
     }
-
-    function foldSheets() {
-      document.querySelectorAll('.cluster details.cluster-specs').forEach(function (d) { d.open = !mq.matches; });
-    }
-
-    filterBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        apply(btn.getAttribute('data-filter') || 'all', true);
-        if (mq.matches && grid) {
-          var top = grid.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 56) - (bar ? bar.offsetHeight : 0) - 8;
-          if (window.pageYOffset > top) window.scrollTo({ top: top, behavior: 'smooth' });
-        }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t.getAttribute('data-panel'), true, false); });
+      t.addEventListener('keydown', function (e) {
+        var n = -1;
+        if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') n = 0;
+        else if (e.key === 'End') n = tabs.length - 1;
+        if (n < 0) return;
+        e.preventDefault();
+        select(tabs[n].getAttribute('data-panel'), true, true);
       });
     });
-
-    function onViewport() {
-      setNavOffset();
-      foldSheets();
-      if (mq.matches) apply(current === 'all' ? 'MC-01' : current, false);
-      else apply('all', false);
-    }
-    if (mq.addEventListener) mq.addEventListener('change', onViewport); else if (mq.addListener) mq.addListener(onViewport);
+    document.querySelectorAll('[data-open-panel]').forEach(function (b) {
+      b.addEventListener('click', function () { select(b.getAttribute('data-open-panel'), true, false); });
+    });
     window.addEventListener('resize', setNavOffset);
-    onViewport();
+    setNavOffset();
+    select('MC-01', false, false);
   })();
+
 
   // Centralized helper function for URL-encoded mailto telemetry payloads
   function generateAquireMailto(assetName, trackTier, anchorValuation) {

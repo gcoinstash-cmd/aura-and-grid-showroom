@@ -191,8 +191,6 @@
     .filter-pill:hover{border-color:rgba(0,240,255,.5);color:var(--cyan);background:rgba(0,240,255,.08);box-shadow:0 0 12px rgba(0,240,255,.2);transform:translateY(-1px)}
     .filter-pill.is-active{border-color:var(--amber);color:#05070B;background:var(--amber);box-shadow:0 0 16px rgba(255,159,10,.4);font-weight:800}
     .filter-pill:focus-visible{outline:2px solid #fff;outline-offset:2px}
-    .clusters-grid.is-filtered{display:flex;justify-content:center}
-    .clusters-grid.is-filtered .cluster{max-width:760px;width:100%}
 
     footer{border-top:1px solid var(--line);margin-top:16px}
     .foot-in{max-width:1480px;margin:0 auto;padding:38px 24px 68px}
@@ -255,17 +253,44 @@
     .cluster-specs[open] .spec-toggle-open{display:inline}
     .cluster-specs-body{display:flex;flex-direction:column;gap:14px;margin-top:14px}
     .triads-head{font-family:var(--mono);font-size:.8125rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
-    @media (min-width:769px){
-      .cluster-specs-toggle{display:none}
-      .cluster-specs-body{margin-top:0}
-    }
+    .dyno-stage>.dyno-panel{grid-column:1/2!important;grid-row:1}
+    .dyno-stage{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+    .dyno-panel{grid-area:1/1;min-width:0;visibility:hidden;opacity:0;transform:translateY(6px);transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s}
+    .dyno-panel.is-active{visibility:visible;opacity:1;transform:none;transition:opacity .22s ease,transform .22s ease,visibility 0s}
+    .cluster{max-width:none;width:100%}
+    .cluster-narr{display:flex;flex-direction:column;gap:4px}
+    .cluster .blurb{margin:0}
+    .cluster .blurb.line2{color:#E2E8F0}
+    .cluster .blurb.line2 b{font-family:var(--sans);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FF9F0A;margin-right:8px}
+    .cluster-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .filter-pill.filter-matrix{border-style:dashed}
+    @media (min-width:769px){.dyno-tab.filter-pill{font-size:.78125rem;padding:7px 10px;letter-spacing:.02em}}
+    .matrix-table{width:100%;border-collapse:collapse;font-size:.9375rem;color:#E2E8F0}
+    .matrix-table th{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#94A3B8;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+    .matrix-table td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+    .matrix-table td.num,.matrix-table th.num{text-align:right;font-family:var(--mono);white-space:nowrap}
+    .matrix-table td.ask{color:#FF9F0A;font-weight:700}
+    .matrix-table tfoot td{font-weight:800;color:#fff;border-bottom:0}
+    .matrix-open{appearance:none;background:none;border:0;color:#00F0FF;font-family:var(--mono);font-size:.8125rem;font-weight:700;cursor:pointer;padding:4px 0;text-align:left}
+    .matrix-open:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .matrix-scroll{overflow-x:auto}
+    .stack-line.tracks{display:block;margin-top:2px;color:#E2E8F0;font-weight:500}
+    .cluster-specs-toggle{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:9px 12px;border-radius:8px;border:1px solid rgba(0,240,255,.32);background:rgba(0,240,255,.05);font-family:var(--mono);font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--cyan);text-align:center;transition:border-color .15s,background .15s,color .15s}
+    .cluster-specs-toggle::-webkit-details-marker{display:none}
+    .cluster-specs-toggle:hover{border-color:rgba(0,240,255,.6);background:rgba(0,240,255,.1)}
+    .cluster-specs-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .cluster-specs .spec-toggle-open{display:none}
+    .cluster-specs[open] .spec-toggle-closed{display:none}
+    .cluster-specs[open] .spec-toggle-open{display:inline}
+    .cluster-specs-body{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+    .triads-head{font-family:var(--mono);font-size:.8125rem;font-weight:800;letter-spacing:.08em;color:var(--cyan)}
+    .filter-bar{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scrollbar-width:none;padding:4px 2px}
+    .filter-bar::-webkit-scrollbar{display:none}
+    .filter-pill{flex:0 0 auto;scroll-snap-align:center}
+    @media (min-width:1280px){.filter-bar{flex-wrap:wrap}}
     @media (max-width:768px){
       .cluster h3{font-size:1.125rem}
-      .cluster .blurb{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-      .filter-bar{position:sticky;top:var(--nav-h,56px);z-index:40;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;scroll-behavior:smooth;margin:12px -16px 16px;padding:10px 16px;background:rgba(5,7,11,.96);border-bottom:1px solid var(--line);scrollbar-width:none}
-      .filter-bar::-webkit-scrollbar{display:none}
-      .filter-pill{flex:0 0 auto;scroll-snap-align:center}
-      .filter-pill .pill-name,.filter-pill.filter-all{display:none}
+      .filter-bar{position:sticky;top:var(--nav-h,56px);z-index:40;margin:12px -16px 16px;padding:10px 16px;background:rgba(5,7,11,.96);border-bottom:1px solid var(--line)}
       .cluster{padding:16px;gap:10px}
       .cluster .pill{font-size:.75rem;padding:3px 9px}
       .cluster .stats{gap:8px}
@@ -275,8 +300,8 @@
       .cluster .cta-stack{padding-top:4px;gap:8px}
       .cluster .btn{min-height:48px;padding:8px 12px;font-size:.8125rem}
       .cluster .btn small.btn-note{font-size:.6875rem}
-      .clusters-grid .cluster[hidden]{display:none!important}
     }
+
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.transition-colors,.price-pill-outline,.pulse-dot,.filter-pill{transition:none;animation:none}}
     /* Institutional polish: de-congested hero, high-contrast silver body copy, calm telemetry */
     body{color:#E2E8F0}
@@ -466,77 +491,39 @@
         </div>
       </div>
 
-      <div class="monroney-deck grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4" aria-label="Monroney Window Sticker Itemized Anchors and Cluster Package Buyout Telemetry">
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 1</div>
-          <div class="val">$4,500</div>
-          <div class="name">Track 1 (Operator Utility)</div>
-          <div class="sub text-xs font-mono text-zinc-200">React 19 / Vite / Postgres RLS</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20Track%201%20(Operator%20Utility)%20(Micro-APA%20Sovereign%20Title)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20Track%201%20(Operator%20Utility)%0A%E2%80%A2%20Spec%20Tier%3A%20Micro-APA%20Sovereign%20Title%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%244%2C500%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" aria-label="Acquire title (APA) for Track 1 Operator Utility">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 2</div>
-          <div class="val">$14,500</div>
-          <div class="name">Track 2 (3D SCADA Cockpit)</div>
-          <div class="sub text-xs font-mono text-zinc-200">Three.js WebGL 60 FPS Telemetry HUD</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20Track%202%20(3D%20SCADA%20Cockpit)%20(Chassis%20APA%20Sovereign%20Title)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20Track%202%20(3D%20SCADA%20Cockpit)%0A%E2%80%A2%20Spec%20Tier%3A%20Chassis%20APA%20Sovereign%20Title%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%2414%2C500%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" aria-label="Acquire title (APA) for Track 2 3D SCADA Cockpit">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-cyan">
-          <div class="mc-tier">MONRONEY STICKER // TRACK 3</div>
-          <div class="val">$35,000 &ndash; $65,000</div>
-          <div class="name">Track 3 (Skunkworks Engine)</div>
-          <div class="sub text-xs font-mono text-zinc-200">FastAPI Python 3.12 Asynchronous Core</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20Track%203%20(Skunkworks%20Engine)%20(Engine%20APA%20Sovereign%20Title)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20Track%203%20(Skunkworks%20Engine)%0A%E2%80%A2%20Spec%20Tier%3A%20Engine%20APA%20Sovereign%20Title%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%2435%2C000%20%E2%80%93%20%2465%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" aria-label="Acquire title (APA) for Track 3 Skunkworks Engine">[ ACQUIRE TITLE (APA) ]</a>
-          </div>
-        </div>
-
-        <div class="card metric monroney-card m-amber">
-          <div class="mc-tier">BUNDLE TELEMETRY // VOLUME DISCOUNT</div>
-          <div class="val">$145,000 &ndash; $185,000</div>
-          <div class="name">Full Triad Cluster Bundle</div>
-          <div class="sub text-xs font-mono text-zinc-200">3 Triads / 9 Units // $207k Retail Baseline</div>
-          <div class="cta-stack flex flex-col gap-2 w-full">
-            <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20Cluster%20Package%20Buyout%20(3%20Triads%20%2F%209%20Units)%20(Cluster%20Package%20Buyout%20APA)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20Cluster%20Package%20Buyout%20(3%20Triads%20%2F%209%20Units)%0A%E2%80%A2%20Spec%20Tier%3A%20Cluster%20Package%20Buyout%20APA%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24145%2C000%20%E2%80%93%20%24185%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" aria-label="Acquire cluster title (APA) for Full Triad Cluster Bundle">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="clusters" aria-labelledby="mc-label">
       <p class="section-label" id="mc-label">// 5 SEALED MICRO-CLUSTERS — ACQUIRE ALL FIVE OR ANY ONE</p>
-      <div class="filter-bar" role="group" aria-label="Rapid-select micro-cluster filter">
-        <button type="button" class="filter-pill filter-all is-active" data-filter="all" aria-pressed="true">[ ALL CLUSTERS (5) ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-01" aria-pressed="false">[ <span class="pill-name">MEMORY FABRICS (</span>MC-01<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-02" aria-pressed="false">[ <span class="pill-name">SCHEDULING (</span>MC-02<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-03" aria-pressed="false">[ <span class="pill-name">COMPRESSION (</span>MC-03<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-04" aria-pressed="false">[ <span class="pill-name">TELEMETRY (</span>MC-04<span class="pill-name">)</span> ]</button>
-        <button type="button" class="filter-pill" data-filter="MC-05" aria-pressed="false">[ <span class="pill-name">KERNELS (</span>MC-05<span class="pill-name">)</span> ]</button>
+      <div class="filter-bar" role="tablist" aria-label="Dyno Bay cluster selector">
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-01" data-panel="MC-01" aria-selected="false" aria-controls="panel-MC-01" tabindex="-1">[ MC-01: MEMORY FABRICS ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-02" data-panel="MC-02" aria-selected="false" aria-controls="panel-MC-02" tabindex="-1">[ MC-02: SCHEDULING ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-03" data-panel="MC-03" aria-selected="false" aria-controls="panel-MC-03" tabindex="-1">[ MC-03: COMPRESSION ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-04" data-panel="MC-04" aria-selected="false" aria-controls="panel-MC-04" tabindex="-1">[ MC-04: TELEMETRY ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill" id="tab-MC-05" data-panel="MC-05" aria-selected="false" aria-controls="panel-MC-05" tabindex="-1">[ MC-05: KERNELS ]</button>
+        <button type="button" role="tab" class="dyno-tab filter-pill filter-matrix" id="tab-matrix" data-panel="matrix" aria-selected="false" aria-controls="panel-matrix" tabindex="-1">[ VIEW FULL FLEET MATRIX ]</button>
       </div>
-      <div class="clusters-grid" id="clustersGrid">
-      <article class="card cluster" id="mc-01" data-cluster="MC-01">
+      <div class="dyno-stage" id="dynoStage">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-MC-01" aria-labelledby="tab-MC-01" data-panel="MC-01" data-cluster="MC-01" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">MC-01</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$185,000</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$185,000 USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">Ultra-Low Latency Attention &amp; KV Memory Fabrics</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">Radix tree prefix hashing, multi-block flash decoding, paged memory pools and MQA/GQA engines.</p>
-        <ul class="pills" aria-label="Domain tags"><li class="pill pill-cyan">KV Cache</li><li class="pill pill-cyan">Flash Decoding</li><li class="pill pill-cyan">Paged Attention</li></ul>
+        <div class="cluster-narr">
+          <p class="blurb">Radix tree prefix hashing, multi-block flash decoding, paged memory pools and MQA/GQA engines.</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>Distributed compute platforms, high-throughput data processing clusters, and GPU cloud operators.</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights"><li class="pill pill-cyan">KV Cache</li><li class="pill pill-cyan">Flash Decoding</li><li class="pill pill-cyan">Paged Attention</li></ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>26/26 PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for MC-01"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">4 TRIADS // 12 UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS</p>
+            <p class="stack-line" aria-label="Engine specifications">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -546,11 +533,10 @@
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-01: $276,000)</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (4 Triads / 12 Units):</span> <b>$185,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$276,000</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> Distributed compute platforms, high-throughput data processing clusters, and GPU cloud operators.</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED 4 TRIADS</div>
               <ol>
@@ -560,7 +546,6 @@
                 <li><span class="uid">MC-01.4</span> MQA &amp; GQA Attention Flash-Decoding<br><a href="./cockpits/01-apex-telemetry/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$185,000 USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -568,23 +553,26 @@
           <a class="btn btn-subtle w-full" href="./cockpits/batch-foxtrot/12-edge-kv-store-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-01 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
-      <article class="card cluster" id="mc-02" data-cluster="MC-02">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-MC-02" aria-labelledby="tab-MC-02" data-panel="MC-02" data-cluster="MC-02" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">MC-02</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000 USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">Distributed High-Throughput &amp; Speculative Scheduling</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">Continuous iteration batching, chunked prefill scheduling and speculative draft verification.</p>
-        <ul class="pills" aria-label="Domain tags"><li class="pill pill-cyan">Continuous Batching</li><li class="pill pill-cyan">Chunked Prefill</li><li class="pill pill-cyan">Speculative Decoding</li></ul>
+        <div class="cluster-narr">
+          <p class="blurb">Continuous iteration batching, chunked prefill scheduling and speculative draft verification.</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>Parallel execution schedulers, high-concurrency API gateways, and quantitative trading desks.</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights"><li class="pill pill-cyan">Continuous Batching</li><li class="pill pill-cyan">Chunked Prefill</li><li class="pill pill-cyan">Speculative Decoding</li></ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>19/19 PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for MC-02"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">3 TRIADS // 9 UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS</p>
+            <p class="stack-line" aria-label="Engine specifications">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -594,11 +582,10 @@
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-02: $207,000)</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> Parallel execution schedulers, high-concurrency API gateways, and quantitative trading desks.</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED 3 TRIADS</div>
               <ol>
@@ -607,7 +594,6 @@
                 <li><span class="uid">MC-02.3</span> Speculative Decoding &amp; Draft Verification<br><a href="./cockpits/03-orbit-pipeline/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -615,23 +601,26 @@
           <a class="btn btn-subtle w-full" href="./cockpits/04-chrono-pulse/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-02 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
-      <article class="card cluster" id="mc-03" data-cluster="MC-03">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-MC-03" aria-labelledby="tab-MC-03" data-panel="MC-03" data-cluster="MC-03" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">MC-03</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000 USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">Extreme Quantization &amp; Sub-Byte Compression Cores</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">FP8/INT4 hierarchical KV cache compression, 4-bit weight dequantization and FP6 tensor processing.</p>
-        <ul class="pills" aria-label="Domain tags"><li class="pill pill-cyan">FP8 / INT4</li><li class="pill pill-cyan">FP4 Dequant</li><li class="pill pill-cyan">FP6 Tensor Core</li></ul>
+        <div class="cluster-narr">
+          <p class="blurb">FP8/INT4 hierarchical KV cache compression, 4-bit weight dequantization and FP6 tensor processing.</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>High-throughput data processing appliances, embedded compute systems, and on-premise compute centers.</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights"><li class="pill pill-cyan">FP8 / INT4</li><li class="pill pill-cyan">FP4 Dequant</li><li class="pill pill-cyan">FP6 Tensor Core</li></ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>19/19 PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for MC-03"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">3 TRIADS // 9 UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS</p>
+            <p class="stack-line" aria-label="Engine specifications">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -641,11 +630,10 @@
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-03: $207,000)</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> High-throughput data processing appliances, embedded compute systems, and on-premise compute centers.</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED 3 TRIADS</div>
               <ol>
@@ -654,7 +642,6 @@
                 <li><span class="uid">MC-03.3</span> FP6 Mixed-Precision Tensor Core &amp; Dot-Product<br><a href="./cockpits/batch-bravo/01-grid-specter/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -662,23 +649,26 @@
           <a class="btn btn-subtle w-full" href="./cockpits/batch-charlie/05-prism-telemetry/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-03 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
-      <article class="card cluster" id="mc-04" data-cluster="MC-04">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-MC-04" aria-labelledby="tab-MC-04" data-panel="MC-04" data-cluster="MC-04" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">MC-04</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$185,000</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$185,000 USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">Distributed Mesh Parallelism &amp; Inter-Node Interconnects</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">MoE expert routing, ring-attention context parallelism, hybrid pipeline and activation checkpointing.</p>
-        <ul class="pills" aria-label="Domain tags"><li class="pill pill-cyan">Expert Parallelism</li><li class="pill pill-cyan">Ring Attention</li><li class="pill pill-cyan">Pipeline Parallelism</li></ul>
+        <div class="cluster-narr">
+          <p class="blurb">MoE expert routing, ring-attention context parallelism, hybrid pipeline and activation checkpointing.</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>Hyperscale cluster architects, parallel execution operators, and distributed compute networks.</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights"><li class="pill pill-cyan">Expert Parallelism</li><li class="pill pill-cyan">Ring Attention</li><li class="pill pill-cyan">Pipeline Parallelism</li></ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>23/23 PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for MC-04"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">4 TRIADS // 12 UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS</p>
+            <p class="stack-line" aria-label="Engine specifications">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -688,11 +678,10 @@
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-04: $276,000)</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (4 Triads / 12 Units):</span> <b>$185,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$276,000</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> Hyperscale cluster architects, parallel execution operators, and distributed compute networks.</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED 4 TRIADS</div>
               <ol>
@@ -702,7 +691,6 @@
                 <li><span class="uid">MC-04.4</span> Multi-GPU Pipeline Parallelism &amp; Activation Checkpointing<br><a href="./cockpits/batch-golf/24-wal-replication-streamer/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$185,000 USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
@@ -710,23 +698,26 @@
           <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/09-pod-health-grid/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-04 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
         </div>
       </article>
-      <article class="card cluster" id="mc-05" data-cluster="MC-05">
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-MC-05" aria-labelledby="tab-MC-05" data-panel="MC-05" data-cluster="MC-05" aria-hidden="true" inert>
         <header class="cluster-head">
           <span class="mc-id">MC-05</span>
-          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000</span>
+          <span class="mc-ask"><small class="text-xs font-mono text-zinc-400">ASKING</small>$145,000 USD</span>
         </header>
         <h3 class="text-xl font-extrabold text-white">Zero-Overhead Hardware Acceleration &amp; Host-GPU Fabrics</h3>
-        <p class="blurb text-sm text-zinc-300 leading-relaxed">CUDA graph capture and launch serialization, FP8 tensor math and zero-copy unified memory.</p>
-        <ul class="pills" aria-label="Domain tags"><li class="pill pill-cyan">CUDA Graphs</li><li class="pill pill-cyan">FP8 Tensor Core</li><li class="pill pill-cyan">Unified Memory</li></ul>
+        <div class="cluster-narr">
+          <p class="blurb">CUDA graph capture and launch serialization, FP8 tensor math and zero-copy unified memory.</p>
+          <p class="blurb line2"><b>TARGET ACQUIRER</b>Mission-critical edge computing, real-time distributed telemetry, and low-latency FinTech infrastructure.</p>
+        </div>
+        <ul class="pills" aria-label="Core architectural highlights"><li class="pill pill-cyan">CUDA Graphs</li><li class="pill pill-cyan">FP8 Tensor Core</li><li class="pill pill-cyan">Unified Memory</li></ul>
         <dl class="stats">
           <div><dt class="text-xs font-mono text-zinc-400">DYNO TESTS</dt><dd>18/18 PASS</dd></div>
           <div><dt class="text-xs font-mono text-zinc-400">CLEAN-ROOM IP</dt><dd>MIT &bull; APACHE-2.0</dd></div>
         </dl>
-        <details class="cluster-specs" open>
+        <details class="cluster-specs">
           <summary class="cluster-specs-toggle" aria-label="View specification Monroney and triads for MC-05"><span class="spec-toggle-closed">[ + VIEW SPECIFICATION MONRONEY &amp; TRIADS ]</span><span class="spec-toggle-open">[ &minus; HIDE SPECIFICATION MONRONEY &amp; TRIADS ]</span></summary>
           <div class="cluster-specs-body">
             <p class="meta-line text-xs font-mono">3 TRIADS // 9 UNITS</p>
-            <p class="stack-line" aria-label="Tech stack">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS</p>
+            <p class="stack-line" aria-label="Engine specifications">FastAPI <i>&middot;</i> Python 3.12 <i>&middot;</i> React 19 <i>&middot;</i> PostgreSQL 16 RLS<span class="stack-line tracks">Operator utility: React 19 / Vite / Postgres RLS <i>&middot;</i> SCADA cockpit: Three.js WebGL 60 FPS HUD <i>&middot;</i> Compute engine: FastAPI Python 3.12 async core</span></p>
             <div class="monroney-sticker" aria-label="Monroney Window Sticker Pricing Telemetry">
               <div class="monroney-head">// MONRONEY WINDOW STICKER (ITEMIZED &amp; BUNDLE)</div>
               <ul class="monroney-list">
@@ -736,11 +727,10 @@
               </ul>
               <div class="monroney-bundle">
                 <div class="monroney-bundle-title">Cluster Package Buyout // Volume Discount</div>
-                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000 – $185,000</b></div>
-                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000 (MC-05: $207,000)</b></div>
+                <div class="monroney-bundle-row"><span>Full Cluster Buyout (3 Triads / 9 Units):</span> <b>$145,000</b></div>
+                <div class="monroney-bundle-row"><span>Retail Replacement Baseline:</span> <b>$207,000</b></div>
               </div>
             </div>
-            <p class="buyers"><b>TARGET ACQUIRER</b> Mission-critical edge computing, real-time distributed telemetry, and low-latency FinTech infrastructure.</p>
             <div class="triads">
               <div class="triads-head text-xs font-mono text-zinc-400">INCLUDED 3 TRIADS</div>
               <ol>
@@ -749,12 +739,27 @@
                 <li><span class="uid">MC-05.3</span> Zero-Copy Unified Memory &amp; Host-Device Interlock<br><a href="./cockpits/batch-golf/01-distributed-pilot-telemetry/index.html" target="_blank" rel="noopener">SCADA cockpit preview &rarr;</a></li>
               </ol>
             </div>
-            <p class="cluster-anchor"><span>TITLE ANCHOR</span><b>$145,000 USD</b></p>
           </div>
         </details>
         <div class="cta-stack flex flex-col gap-2 w-full">
           <a class="btn btn-amber w-full" href="mailto:garrett@auraandgrid.io?subject=%5BAPA%20TITLE%20INQUIRY%5D%20MC-05%20%E2%80%94%20Zero-Overhead%20Hardware%20Acceleration%20%26%20Host-GPU%20Fabrics%20(Sealed%20Micro-Cluster)&body=Lead%20Systems%20Engineer%20%26%20Dealership%20Principal%2C%0A%0AI%20am%20submitting%20a%20formal%20inquiry%20to%20acquire%20100%25%20IP%20Title%20Transfer%20via%20Asset%20Purchase%20Agreement%20(APA)%3A%0A%0A%E2%80%A2%20Target%20Unit%3A%20MC-05%20%E2%80%94%20Zero-Overhead%20Hardware%20Acceleration%20%26%20Host-GPU%20Fabrics%0A%E2%80%A2%20Spec%20Tier%3A%20Sealed%20Micro-Cluster%0A%E2%80%A2%20APA%20Buyout%20Anchor%3A%20%24145%2C000%0A%0APlease%20route%20the%20complete%20APA%20title%20transfer%20agreement%20and%20code%20manifest%20to%3A%0A-%20Buyer%20Entity%20Name%3A%20%0A-%20Authorized%20Signer%3A%20%0A-%20Wire%20%2F%20Settlement%20Email%3A%20" data-cluster="MC-05" aria-label="Acquire cluster title (APA) for MC-05">[ ACQUIRE CLUSTER TITLE (APA) ]</a>
           <a class="btn btn-subtle w-full" href="./cockpits/batch-delta/05-bot-mitigation/index.html" target="_blank" rel="noopener" aria-label="Test drive MC-05 cockpit (simulated sample data)">[ TEST DRIVE COCKPIT ]<small class="btn-note">SCADA preview // simulated sample data</small></a>
+        </div>
+      </article>
+      <article class="card cluster dyno-panel" role="tabpanel" id="panel-matrix" aria-labelledby="tab-matrix" data-panel="matrix" aria-hidden="true" inert>
+        <h3 class="text-xl font-extrabold text-white">Full Fleet Matrix // 5 Sealed Micro-Clusters</h3>
+        <div class="matrix-scroll">
+          <table class="matrix-table">
+            <thead><tr><th>Cluster</th><th>Architecture Domain</th><th class="num">Triads / Units</th><th class="num">Dyno Tests</th><th class="num">Standalone Ask</th></tr></thead>
+            <tbody>
+              <tr><td><button type="button" class="matrix-open" data-open-panel="MC-01" aria-label="Open MC-01 chassis">MC-01 &rarr;</button></td><td>Ultra-Low Latency Attention &amp; KV Memory Fabrics</td><td class="num">4 / 12</td><td class="num">26/26 PASS</td><td class="num ask">$185,000</td></tr>
+              <tr><td><button type="button" class="matrix-open" data-open-panel="MC-02" aria-label="Open MC-02 chassis">MC-02 &rarr;</button></td><td>Distributed High-Throughput &amp; Speculative Scheduling</td><td class="num">3 / 9</td><td class="num">19/19 PASS</td><td class="num ask">$145,000</td></tr>
+              <tr><td><button type="button" class="matrix-open" data-open-panel="MC-03" aria-label="Open MC-03 chassis">MC-03 &rarr;</button></td><td>Extreme Quantization &amp; Sub-Byte Compression Cores</td><td class="num">3 / 9</td><td class="num">19/19 PASS</td><td class="num ask">$145,000</td></tr>
+              <tr><td><button type="button" class="matrix-open" data-open-panel="MC-04" aria-label="Open MC-04 chassis">MC-04 &rarr;</button></td><td>Distributed Mesh Parallelism &amp; Inter-Node Interconnects</td><td class="num">4 / 12</td><td class="num">23/23 PASS</td><td class="num ask">$185,000</td></tr>
+              <tr><td><button type="button" class="matrix-open" data-open-panel="MC-05" aria-label="Open MC-05 chassis">MC-05 &rarr;</button></td><td>Zero-Overhead Hardware Acceleration &amp; Host-GPU Fabrics</td><td class="num">3 / 9</td><td class="num">18/18 PASS</td><td class="num ask">$145,000</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="2">FULL 5-CLUSTER LOT</td><td class="num">17 / 51</td><td class="num">105/105 PASS</td><td class="num ask">$805,000</td></tr></tfoot>
+          </table>
         </div>
       </article>
       </div>
@@ -1898,64 +1903,56 @@
   })();
   </script>
   <script>
-  // Rapid-select cluster filter logic + mobile single-chassis tab controller
+  // Dyno Bay master-detail stage: single active chassis, zero layout shift
   (function () {
-    var filterBtns = document.querySelectorAll('.filter-pill');
-    var clusterCards = document.querySelectorAll('.card.cluster');
-    var grid = document.getElementById('clustersGrid');
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.dyno-tab'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.dyno-panel'));
     var bar = document.querySelector('.filter-bar');
     var nav = document.querySelector('.nav');
-    if (!filterBtns.length || !clusterCards.length) return;
-    var mq = window.matchMedia('(max-width: 768px)');
-    var current = 'all';
-
+    if (!tabs.length || !panels.length) return;
     function setNavOffset() {
       document.documentElement.style.setProperty('--nav-h', (nav ? nav.offsetHeight : 56) + 'px');
     }
-
-    function apply(filter, fromUser) {
-      if (mq.matches && filter === 'all') filter = 'MC-01';
-      current = filter;
-      filterBtns.forEach(function (b) {
-        var active = (b.getAttribute('data-filter') === filter);
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-pressed', active ? 'true' : 'false');
-        if (active && mq.matches && bar && bar.scrollTo) {
-          bar.scrollTo({ left: b.offsetLeft - (bar.clientWidth - b.offsetWidth) / 2, behavior: fromUser ? 'smooth' : 'auto' });
+    function select(id, fromUser, focus) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-panel') === id;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus({ preventScroll: true });
+        if (on && bar && bar.scrollTo && bar.scrollWidth > bar.clientWidth) {
+          bar.scrollTo({ left: t.offsetLeft - (bar.clientWidth - t.offsetWidth) / 2, behavior: fromUser ? 'smooth' : 'auto' });
         }
       });
-      clusterCards.forEach(function (card) {
-        var match = (filter === 'all' || card.getAttribute('data-cluster') === filter);
-        card.style.display = match ? '' : 'none';
-        if (match) card.removeAttribute('hidden'); else card.setAttribute('hidden', '');
+      panels.forEach(function (p) {
+        var on = p.getAttribute('data-panel') === id;
+        p.classList.toggle('is-active', on);
+        p.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (on) p.removeAttribute('inert'); else p.setAttribute('inert', '');
+        if (!on) p.querySelectorAll('details.cluster-specs').forEach(function (d) { d.open = false; });
       });
-      if (grid) grid.classList.toggle('is-filtered', filter !== 'all');
     }
-
-    function foldSheets() {
-      document.querySelectorAll('.cluster details.cluster-specs').forEach(function (d) { d.open = !mq.matches; });
-    }
-
-    filterBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        apply(btn.getAttribute('data-filter') || 'all', true);
-        if (mq.matches && grid) {
-          var top = grid.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 56) - (bar ? bar.offsetHeight : 0) - 8;
-          if (window.pageYOffset > top) window.scrollTo({ top: top, behavior: 'smooth' });
-        }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t.getAttribute('data-panel'), true, false); });
+      t.addEventListener('keydown', function (e) {
+        var n = -1;
+        if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') n = 0;
+        else if (e.key === 'End') n = tabs.length - 1;
+        if (n < 0) return;
+        e.preventDefault();
+        select(tabs[n].getAttribute('data-panel'), true, true);
       });
     });
-
-    function onViewport() {
-      setNavOffset();
-      foldSheets();
-      if (mq.matches) apply(current === 'all' ? 'MC-01' : current, false);
-      else apply('all', false);
-    }
-    if (mq.addEventListener) mq.addEventListener('change', onViewport); else if (mq.addListener) mq.addListener(onViewport);
+    document.querySelectorAll('[data-open-panel]').forEach(function (b) {
+      b.addEventListener('click', function () { select(b.getAttribute('data-open-panel'), true, false); });
+    });
     window.addEventListener('resize', setNavOffset);
-    onViewport();
+    setNavOffset();
+    select('MC-01', false, false);
   })();
+
 
   // Centralized helper function for URL-encoded mailto telemetry payloads
   function generateAquireMailto(assetName, trackTier, anchorValuation) {
